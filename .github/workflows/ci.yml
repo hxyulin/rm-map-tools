@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  rust:
+    name: Rust (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets --locked
+      - run: cargo test --workspace --locked
+      - run: cargo doc --workspace --no-deps --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - name: Smoke test on a synthetic STEP file
+        run: |
+          cargo build --release --locked
+          printf 'ISO-10303-21;\r\nHEADER;\r\nFILE_DESCRIPTION((\x27\x27),\x272;1\x27);\r\nFILE_NAME(\x27t\x27,\x27\x27,(\x27\x27),(\x27\x27),\x27\x27,\x27\x27,\x27\x27);\r\nFILE_SCHEMA((\x27CONFIG_CONTROL_DESIGN\x27));\r\nENDSEC;\r\nDATA;\r\n#1=CARTESIAN_POINT(\x27\x27,(0.,0.,0.));\r\n#2=DIRECTION(\x27\x27,(0.,0.,1.));\r\n#3=AXIS2_PLACEMENT_3D(\x27\x27,#1,#2,$);\r\nENDSEC;\r\nEND-ISO-10303-21;\r\n' > t.stp
+          target/release/rm-map-tools index t.stp -o t.p21idx
+          target/release/rm-map-tools inspect t.p21idx --json t.json
+          grep -q '"entities": 3' t.json || grep -q '"entities":3' t.json
+
+  python:
+    name: Python prototypes compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m compileall -q prototype
