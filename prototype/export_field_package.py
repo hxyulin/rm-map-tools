@@ -8,7 +8,8 @@ The articulated equipment (rune, outpost) and the rigid equipment directory
 (base, tech core) are carried over from an existing extraction, since
 their placements are in the same arena frame.
 
-Every arena body (`BREP_*` product) is read from its split part file with
+Every arena body (`BREP_*` product, plus `--arena-products` such as the
+V1.2.0 base pedestals `0010_1`) is read from its split part file with
 OCCT, tessellated, placed by the STEP assembly transforms and written as one
 glTF node named `source_<product id>_<product name>[_<instance>]`, with one
 primitive per effective face colour (face > shell > body). Coordinates stay
@@ -195,6 +196,67 @@ def source_checksum(source_path):
     return sha256(source_path), "computed"
 
 
+def skipped_assemblies(m, ix, transforms, parts, exported):
+    """The topmost products with solid bodies that export nothing: the rune,
+    outpost, base and tech-core assemblies the equipment copy covers, and
+    anything else the package leaves out. Listed so an omission is visible."""
+    by_id = {p["product_id"]: p for p in parts}
+    solids = ("MANIFOLD_SOLID_BREP", "BREP_WITH_VOIDS")
+
+    def subtree(r):
+        out = [r]
+        for _, c in m.children.get(r, []):
+            if c is not None:
+                out += subtree(c)
+        return out
+
+    def exports(r):
+        return any(m.product_name[q] in exported for q in subtree(r))
+
+    def placed(r):
+        pts, count = [], 0
+        for q in subtree(r):
+            bodies = by_id.get(int(ix.ids[q]), {}).get("bodies", [])
+            count += sum(1 for b in bodies if b.get("type") in solids)
+            for M in transforms.get(q, []):
+                for b in bodies:
+                    lo, hi = b["bbox_min"], b["bbox_max"]
+                    corners = np.array([[lo[0] if c & 1 == 0 else hi[0], lo[1] if c & 2 == 0 else hi[1], lo[2] if c & 4 == 0 else hi[2], 1.0] for c in range(8)])
+                    pts.append((M @ corners.T).T[:, :3] / 1000.0)
+        return count, pts
+
+    out = []
+    seen = set()
+
+    def walk(r):
+        if r in seen or m.product_name[r] in exported:
+            return
+        seen.add(r)
+        if exports(r):
+            for _, c in m.children.get(r, []):
+                if c is not None:
+                    walk(c)
+            return
+        count, pts = placed(r)
+        if count == 0:
+            return
+        P = np.vstack(pts)
+        out.append(
+            {
+                "product": m.product_name[r],
+                "product_id": int(ix.ids[r]),
+                "occurrences": len(transforms.get(r, [])),
+                "solids": count,
+                "bbox_min_m": P.min(0).round(3).tolist(),
+                "bbox_max_m": P.max(0).round(3).tolist(),
+            }
+        )
+
+    for r in m.roots:
+        walk(r)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pkg")
@@ -206,6 +268,12 @@ def main():
     ap.add_argument("--collision-lin", type=float, default=10.0)
     ap.add_argument("--collision-ang", type=float, default=0.7)
     ap.add_argument("--floor", default=None, help="floor slab product name (default: largest footprint)")
+    ap.add_argument(
+        "--arena-products",
+        default="0010_1,00_1",
+        help="comma-separated names of products outside the BREP_* arena to export as arena solids "
+        "(default: V1.2.0's base pedestals and the steps behind them, top-level products of their own)",
+    )
     a = ap.parse_args()
     if os.path.exists(a.out):
         sys.exit(f"{a.out} exists; the output directory must be new")
@@ -215,8 +283,19 @@ def main():
     transforms = occurrence_transforms(ix, m)
     prow = {int(ix.ids[r]): r for r in m.product_name}
     manifest_in = json.load(open(os.path.join(a.pkg, "parts.json")))
-    arena = [p for p in manifest_in["parts"] if p["name"].startswith("BREP_")]
+    extra = {n for n in a.arena_products.split(",") if n}
+    arena = [p for p in manifest_in["parts"] if p["name"].startswith("BREP_") or p["name"] in extra]
+    missing = extra - {p["name"] for p in arena}
+    if missing:
+        sys.exit(f"--arena-products not in the package: {sorted(missing)}")
     print(f"model ready in {time.time() - t0:.1f}s; {len(arena)} arena parts", flush=True)
+    skipped = skipped_assemblies(m, ix, transforms, manifest_in["parts"], {p["name"] for p in arena})
+    for e in skipped:
+        print(
+            f"skipped {e['product']} (id {e['product_id']}, {e['occurrences']} occurrences, {e['solids']} solids)"
+            f" bbox {e['bbox_min_m']}..{e['bbox_max_m']}: not arena; expected from the equipment copy",
+            flush=True,
+        )
 
     # Floor: the arena part with the largest XY footprint after placement.
     def footprint(p):
@@ -380,6 +459,7 @@ def main():
             np.max([e["bbox_max_m"] for k in report for e in report[k]], axis=0).tolist(),
         ],
         "carried_equipment_sha256": carried,
+        "skipped_assemblies": skipped,
         "seconds": round(time.time() - t0, 1),
         "nodes": report,
     }
