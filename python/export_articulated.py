@@ -231,7 +231,7 @@ def export(root, out, selected=None, formats=('sdf', 'urdf', 'usd')):
                     write_usd(asset, directory)
                 else:
                     {'sdf': write_sdf, 'urdf': write_urdf}[fmt](asset, records, directory)
-            metadata = {k: asset[k] for k in ('graph', 'semantics', 'placements', 'source_directory')}
+            metadata = {k: asset[k] for k in ('graph', 'semantics', 'semantic_context', 'placements', 'source_directory')}
             metadata.update(schema_version=1, units={'length': 'metres', 'angle': 'radians'},
                             frame='source GLB asset frame, before arena placement',
                             names=name_map(asset['graph']), meshes=records,

@@ -42,7 +42,7 @@ def topology(document, binding):
     joints = copy.deepcopy(binding.get('joints', []))
     ids = [j['id'] for j in joints]
     motions = [j['motion_node'] for j in joints]
-    if len(set(ids)) != len(ids) or len(set(motions)) != len(motions):
+    if 'root' in ids or len(set(ids)) != len(ids) or len(set(motions)) != len(motions):
         raise ValueError('duplicate joint ID or motion node')
     by_node = {j['motion_node']: j for j in joints}
     owners, links = {}, {'root': {'id': 'root', 'parent': None, 'rest': np.eye(4).tolist()}}
@@ -140,6 +140,7 @@ def load_asset(root, name, entry):
         geometry[kind] = extract_geometry(*docs[kind], binding['files'][kind], graph)
     return {'name': name, 'graph': graph, 'geometry': geometry, 'documents': docs,
             'semantics': sidecar['assets'][ref['asset']],
+            'semantic_context': {k: v for k, v in sidecar.items() if k != 'assets'},
             'placements': [placement(p).tolist() for p in entry.get('placements_in_source_arena_frame', [])],
             'source_entry': entry, 'source_directory': str(Path(root).resolve())}
 
