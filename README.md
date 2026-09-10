@@ -75,14 +75,24 @@ extraction, whose placements share the arena frame.
 python3 prototype/p21index.py ~/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V1.2.0.step v12.npz
 $B split v12.npz -o rs_v12
 ocpenv/bin/python prototype/export_field_package.py rs_v12 v12.npz \
-  --equipment ~/dev/RM/assets/rm2026-extracted --out ~/dev/RM/assets/rm2026-field
+  --equipment ~/dev/RM/assets/rm2026-extracted --out ~/dev/RM/assets/rm2026-field \
+  --graft rs_v20:v20.npz:BREP_220,BREP_192
 ```
 
 The V1.2.0 arena (353 solids, 382 placements, 33 k triangles at 2 mm) is the
 one with face colours, and it shares the arena origin with V2.0.0: the V2.0.0
 equipment placements land exactly on its plate tops. Its slab is flat at
-z = −1641.3 mm, where V2.0.0's crowned slab is at −1530.4 mm on its pads, and
-its 起伏路段 bump road is a row of 70° ridges rather than V2.0.0's 17° ramps.
+z = −1641.3 mm, where V2.0.0's crowned slab is at −1530.4 mm on its pads.
+Both releases put the same hex-marked truncated pyramid (17° ramps, 0.15 m
+top) on the centre line, but where V2.0.0 models the 起伏路段 undulating road
+near each side wall (`BREP_220` and `BREP_192`, one solid each: a 2.4 × 2.1 m
+strip of 70 mm waves on the 0.2 m deck) the V1.2.0 STEP has a flat deck whose
+marking skin has a cutout of that size, so `--graft` takes those two solids
+from the V2.0.0 split package (`rs_v20`, `v20.npz`), removes the 2.6 % tilt of
+the crowned slab under each, sets them on the V1.2.0 floor top and colours
+them with V1.2.0's plate top and side colours (`--graft-colours`). They are
+`graft_*` nodes with their own collision proxies, and the manifest records
+them under the arena asset's `grafted` entry with the donor file's checksum.
 The exporter checks that every part reads, that each node's mesh covers the
 part's vertex box, and fails on any mismatch. The collision proxies are the
 same solids at 10 mm / 0.7 rad, one closed node each, within 2.5 mm of the

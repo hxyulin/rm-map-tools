@@ -16,10 +16,20 @@ primitive per effective face colour (face > shell > body). Coordinates stay
 in the CAD arena frame (Z up) converted to metres, exactly like the earlier
 extraction, so consumers keep their arena transform.
 
+Solids the source STEP leaves out can be grafted from another split package
+of the same arena (`--graft`): the V1.2.0 STEP has a flat deck where V2.0.0
+models the 起伏路段 undulating road (`BREP_220`, `BREP_192`), so those two
+solids are read from the V2.0.0 package, the tilt of V2.0.0's crowned slab
+under each is removed and they are set on this package's floor top, coloured
+with this package's plate colours (`--graft-colours`). Grafted nodes are
+named `graft_<product id>_<product name>[_<instance>]` and listed in the
+manifest under the asset's `grafted` entry with the donor file's checksum.
+
 Usage:
   export_field_package.py <pkg_dir> <index.npz> --equipment <extracted_dir>
       --out <dir> [--lin 2] [--ang 0.35] [--collision-lin 10]
       [--collision-ang 0.7] [--floor NAME]
+      [--graft <donor_pkg_dir>:<donor_index.npz>:<NAME,...>]
 
 Run in the OCP venv (see docs/previews.md). The output directory must not
 exist yet.
@@ -55,6 +65,8 @@ MATERIALS = (
     "STEP face colours (face > shell > body) as glTF base colour factors, "
     "one primitive per colour, flat normals. No textures or emission."
 )
+# V1.2.0 plate colours for grafted solids: tops Opaque(65,65,65), sides Opaque(200,200,180).
+GRAFT_COLOURS = "top=0.2549,0.2549,0.2549;side=0.7843,0.7843,0.7059"
 
 
 def srgb_to_linear(c):
@@ -196,6 +208,108 @@ def source_checksum(source_path):
     return sha256(source_path), "computed"
 
 
+def footprint(p, transforms, prow):
+    """Largest placed XY footprint of a part's bodies, mm²."""
+    best = 0.0
+    for M in transforms.get(prow.get(p["product_id"]), [np.eye(4)]):
+        for b in p["bodies"]:
+            ext = np.abs(M[:3, :3]) @ (np.array(b["bbox_max"]) - np.array(b["bbox_min"]))
+            best = max(best, ext[0] * ext[1])
+    return best
+
+
+def place(P_mm, M):
+    """Part-frame millimetre positions to placed arena-frame metres."""
+    return (P_mm @ M[:3, :3].T + M[:3, 3]) / 1000.0
+
+
+def bbox_corners(body, M):
+    """The eight corners of a body's STEP vertex box, placed, in metres."""
+    corners = np.array(
+        [[body["bbox_min"][j] if (c >> j) & 1 == 0 else body["bbox_max"][j] for j in range(3)] for c in range(8)]
+    )
+    return place(corners, M)
+
+
+def bbox_check(world, corners):
+    """How far the mesh box falls short of the vertex box and how far it
+    exceeds it (metres): the mesh must cover the vertices; on curved faces it
+    may legitimately reach a little beyond them."""
+    missing_m = max(float((world.min(0) - corners.min(0)).max()), float((corners.max(0) - world.max(0)).max()))
+    excess_m = max(float((corners.min(0) - world.min(0)).max()), float((world.max(0) - corners.max(0)).max()))
+    return missing_m, excess_m
+
+
+def height_at(P, T, x, y):
+    """Highest z of a triangle mesh under (x, y), or None when nothing is there."""
+    A, B, C = P[T[:, 0]], P[T[:, 1]], P[T[:, 2]]
+
+    def side(U, V):
+        return (V[:, 0] - U[:, 0]) * (y - U[:, 1]) - (V[:, 1] - U[:, 1]) * (x - U[:, 0])
+
+    d1, d2, d3 = side(A, B), side(B, C), side(C, A)
+    inside = ((d1 >= 0) & (d2 >= 0) & (d3 >= 0)) | ((d1 <= 0) & (d2 <= 0) & (d3 <= 0))
+    n = np.cross(B - A, C - A)
+    inside &= np.abs(n[:, 2]) > 1e-12
+    if not inside.any():
+        return None
+    a, n = A[inside], n[inside]
+    z = a[:, 2] - (n[:, 0] * (x - a[:, 0]) + n[:, 1] * (y - a[:, 1])) / n[:, 2]
+    return float(z.max())
+
+
+class Donor:
+    """Another split package of the same arena whose solids can be grafted
+    in: its model and placements, and the top of its floor slab as a coarse
+    mesh, so a graft can be re-based from that slab onto the recipient's."""
+
+    def __init__(self, pkg, index, floor_name, lin, ang):
+        self.pkg = pkg
+        self.ix = Index(index)
+        self.m = Model(self.ix)
+        self.transforms = occurrence_transforms(self.ix, self.m)
+        self.prow = {int(self.ix.ids[r]): r for r in self.m.product_name}
+        parts_json = json.load(open(os.path.join(pkg, "parts.json")))
+        self.source = parts_json["source"]
+        self.by_name = {p["name"]: p for p in parts_json["parts"]}
+        arena = [p for p in parts_json["parts"] if p["name"].startswith("BREP_")]
+        self.floor = self.by_name[floor_name] if floor_name else max(arena, key=lambda p: footprint(p, self.transforms, self.prow))
+        doc, rd, err = read_part(os.path.join(pkg, self.floor["file"]))
+        mesh = None if err else tessellate(doc, lin, ang)
+        if mesh is None:
+            sys.exit(f"donor floor slab {self.floor['name']} unusable: {err or 'no triangulation'}")
+        M = self.transforms.get(self.prow.get(self.floor["product_id"]), [np.eye(4)])[0]
+        self.floor_P = place(mesh[0], M)
+        self.floor_T = mesh[1]
+
+    def placements(self, p):
+        return self.transforms.get(self.prow.get(p["product_id"]), [np.eye(4)])
+
+    def slab_plane(self, lo, hi):
+        """Least-squares plane z = a x + b y + c (metres) through the slab top
+        sampled on a 3 × 3 grid over the footprint lo..hi."""
+        rows, zs = [], []
+        for fx in (0.1, 0.5, 0.9):
+            for fy in (0.1, 0.5, 0.9):
+                x = lo[0] + fx * (hi[0] - lo[0])
+                y = lo[1] + fy * (hi[1] - lo[1])
+                z = height_at(self.floor_P, self.floor_T, x, y)
+                if z is not None:
+                    rows.append([x, y, 1.0])
+                    zs.append(z)
+        if len(rows) < 3:
+            sys.exit(f"graft footprint {lo[:2]}..{hi[:2]} is off the donor floor slab")
+        coeffs, *_ = np.linalg.lstsq(np.array(rows), np.array(zs), rcond=None)
+        return coeffs
+
+
+def graft_colour_keys(spec):
+    keys = dict(item.split("=", 1) for item in spec.split(";") if item)
+    if set(keys) != {"top", "side"}:
+        sys.exit("--graft-colours must be top=R,G,B;side=R,G,B")
+    return keys["top"], keys["side"]
+
+
 def skipped_assemblies(m, ix, transforms, parts, exported):
     """The topmost products with solid bodies that export nothing: the rune,
     outpost, base and tech-core assemblies the equipment copy covers, and
@@ -274,6 +388,21 @@ def main():
         help="comma-separated names of products outside the BREP_* arena to export as arena solids "
         "(default: V1.2.0's base pedestals and the steps behind them, top-level products of their own)",
     )
+    ap.add_argument(
+        "--graft",
+        action="append",
+        default=[],
+        metavar="PKG_DIR:INDEX_NPZ:NAME[,NAME...]",
+        help="solids from another split package of the same arena to add as arena nodes, re-based from "
+        "that package's floor slab onto this one's (V2.0.0's 起伏路段 undulating road is BREP_220,BREP_192; "
+        "the V1.2.0 STEP has a flat deck there)",
+    )
+    ap.add_argument("--graft-floor", default=None, help="donor floor slab product name (default: largest footprint)")
+    ap.add_argument(
+        "--graft-colours",
+        default=GRAFT_COLOURS,
+        help="colour keys for grafted faces, upward faces and the rest (default: V1.2.0's plate top and side)",
+    )
     a = ap.parse_args()
     if os.path.exists(a.out):
         sys.exit(f"{a.out} exists; the output directory must be new")
@@ -298,15 +427,7 @@ def main():
         )
 
     # Floor: the arena part with the largest XY footprint after placement.
-    def footprint(p):
-        best = 0.0
-        for M in transforms.get(prow.get(p["product_id"]), [np.eye(4)]):
-            for b in p["bodies"]:
-                ext = np.abs(M[:3, :3]) @ (np.array(b["bbox_max"]) - np.array(b["bbox_min"]))
-                best = max(best, ext[0] * ext[1])
-        return best
-
-    floor_name = a.floor or max(arena, key=footprint)["name"]
+    floor_name = a.floor or max(arena, key=lambda p: footprint(p, transforms, prow))["name"]
     print("floor slab:", floor_name)
 
     generator = "rm-map-tools export_field_package.py"
@@ -335,11 +456,11 @@ def main():
             name = f"source_{p['product_id']}_{p['name']}" + (f"_{k}" if k else "")
             flip = np.linalg.det(M[:3, :3]) < 0
             for writer, (P, T, C, cols) in ((visual[asset], fine), (collision[asset], coarse)):
-                world = (P @ M[:3, :3].T + M[:3, 3]) / 1000.0
+                world = place(P, M)
                 tris = T[:, [0, 2, 1]] if flip else T
                 writer.add_node(name, world, tris, [cols[c] for c in C])
             P, T, C, cols = fine
-            world = (P @ M[:3, :3].T + M[:3, 3]) / 1000.0
+            world = place(P, M)
             entry = {
                 "node": name,
                 "product_id": p["product_id"],
@@ -353,23 +474,7 @@ def main():
             }
             # The mesh box must agree with the exact vertex box of the STEP text scan.
             for b in p["bodies"]:
-                corners = np.array(
-                    [
-                        [b["bbox_min"][j] if (c >> j) & 1 == 0 else b["bbox_max"][j] for j in range(3)]
-                        for c in range(8)
-                    ]
-                )
-                corners = (corners @ M[:3, :3].T + M[:3, 3]) / 1000.0
-                # The mesh must cover the vertex box; on curved faces it may
-                # legitimately reach a little beyond the vertices.
-                missing_m = max(
-                    float((world.min(0) - corners.min(0)).max()),
-                    float((corners.max(0) - world.max(0)).max()),
-                )
-                excess_m = max(
-                    float((corners.min(0) - world.min(0)).max()),
-                    float((world.max(0) - corners.max(0)).max()),
-                )
+                missing_m, excess_m = bbox_check(world, bbox_corners(b, M))
                 entry["bbox_missing_m"] = round(missing_m, 6)
                 entry["bbox_excess_m"] = round(excess_m, 6)
                 if missing_m > 0.002 or excess_m > 0.1:
@@ -378,6 +483,89 @@ def main():
         if (i + 1) % 50 == 0:
             print(f"[{i + 1}/{len(arena)}] {visual['arena-static'].triangles} arena triangles", flush=True)
 
+    floor_top = max(e["bbox_max_m"][2] for e in report["floor"])
+    grafted = []
+    top_key, side_key = graft_colour_keys(a.graft_colours)
+    for spec in a.graft:
+        pkg_dir, index, names = spec.split(":")
+        donor = Donor(pkg_dir, index, a.graft_floor, a.collision_lin, a.collision_ang)
+        donor_hash, donor_hash_origin = source_checksum(donor.source)
+        print(f"graft donor {donor.source}: floor slab {donor.floor['name']}", flush=True)
+        for gname in names.split(","):
+            p = donor.by_name.get(gname)
+            if p is None:
+                sys.exit(f"--graft: {gname} is not in {pkg_dir}")
+            doc, rd, err = read_part(os.path.join(pkg_dir, p["file"]))
+            coarse = None if err else tessellate(doc, a.collision_lin, a.collision_ang)
+            fine = None if err else tessellate(doc, a.lin, a.ang)
+            if fine is None or coarse is None:
+                sys.exit(f"--graft: {gname} unusable: {err or 'no triangulation'}")
+            for k, M in enumerate(donor.placements(p)):
+                node = f"graft_{p['product_id']}_{gname}" + (f"_{k}" if k else "")
+                flip = np.linalg.det(M[:3, :3]) < 0
+                placed = place(fine[0], M)
+                plane = donor.slab_plane(placed.min(0), placed.max(0))
+
+                def rebase(world):
+                    # Take the donor slab's local tilt out and set the solid on this floor.
+                    out = world.copy()
+                    out[:, 2] += floor_top - (plane[0] * world[:, 0] + plane[1] * world[:, 1] + plane[2])
+                    return out
+
+                colours = {}
+                for writer, (P, T, C, cols) in ((visual["arena-static"], fine), (collision["arena-static"], coarse)):
+                    world = rebase(place(P, M))
+                    tris = T[:, [0, 2, 1]] if flip else T
+                    n = np.cross(world[tris[:, 1]] - world[tris[:, 0]], world[tris[:, 2]] - world[tris[:, 0]])
+                    up = n[:, 2] > 0.5 * np.linalg.norm(n, axis=1)
+                    keys = [top_key if u else side_key for u in up]
+                    writer.add_node(node, world, tris, keys)
+                    if writer is visual["arena-static"]:
+                        colours = {top_key: int(up.sum()), side_key: int((~up).sum())}
+                world = rebase(placed)
+                entry = {
+                    "node": node,
+                    "product_id": p["product_id"],
+                    "part_file": p["file"],
+                    "instance": k,
+                    "triangles": int(len(fine[1])),
+                    "collision_triangles": int(len(coarse[1])),
+                    "colours_srgb": colours,
+                    "bbox_min_m": world.min(0).round(6).tolist(),
+                    "bbox_max_m": world.max(0).round(6).tolist(),
+                    "graft": {
+                        "source_file": donor.source,
+                        "source_sha256": donor_hash,
+                        "donor_slab_plane_z_m": [round(float(c), 6) for c in plane],
+                        "floor_top_source_z_m": round(floor_top, 6),
+                    },
+                }
+                # Checked before the re-base: the shear would move a wavy top's
+                # crest against a vertex box that only holds the edge vertices.
+                for b in p["bodies"]:
+                    missing_m, excess_m = bbox_check(placed, bbox_corners(b, M))
+                    entry["bbox_missing_m"] = round(missing_m, 6)
+                    entry["bbox_excess_m"] = round(excess_m, 6)
+                    if missing_m > 0.002 or excess_m > 0.1:
+                        bbox_errors.append({"node": node, "missing_m": missing_m, "excess_m": excess_m})
+                report["arena-static"].append(entry)
+                grafted.append(
+                    {
+                        "node": node,
+                        "product": gname,
+                        "product_id": p["product_id"],
+                        "source_file": donor.source,
+                        "source_sha256": donor_hash,
+                        "source_sha256_origin": donor_hash_origin,
+                    }
+                )
+                print(
+                    f"graft {node}: donor slab tilt {plane[0] * 100:+.2f}% x {plane[1] * 100:+.2f}% y; "
+                    f"top {world[:, 2].max() - floor_top:.3f} m above the floor, "
+                    f"{len(fine[1])} / {len(coarse[1])} triangles",
+                    flush=True,
+                )
+
     os.makedirs(a.out)
     files = {}
     for asset in ("floor", "arena-static"):
@@ -385,7 +573,6 @@ def main():
             name = f"{asset}.glb" if kind == "visual" else f"{asset}-collision.glb"
             writer.write(os.path.join(a.out, name))
             files[(asset, kind)] = name
-    floor_top = max(e["bbox_max_m"][2] for e in report["floor"])
     floor_box = (
         np.min([e["bbox_min_m"] for e in report["floor"]], axis=0).tolist(),
         np.max([e["bbox_max_m"] for e in report["floor"]], axis=0).tolist(),
@@ -400,13 +587,15 @@ def main():
             "visual_sha256": sha256(os.path.join(a.out, files[(asset, "visual")])),
             "collision": files[(asset, "collision")],
             "collision_sha256": sha256(os.path.join(a.out, files[(asset, "collision")])),
-            "source_products": sorted({e["product_id"] for e in report[asset]}),
+            "source_products": sorted({e["product_id"] for e in report[asset] if "graft" not in e}),
             "placements_in_source_arena_frame": [],
             "nodes": len(report[asset]),
             "triangles": sum(e["triangles"] for e in report[asset]),
             "collision_triangles": sum(e["collision_triangles"] for e in report[asset]),
             "colours_srgb": sorted({c for e in report[asset] for c in e["colours_srgb"]}),
         }
+        if asset == "arena-static" and grafted:
+            assets[asset]["grafted"] = grafted
     carried = {}
     for name in ("rune", "outpost"):
         entry = dict(old["assets"][name])
@@ -460,6 +649,7 @@ def main():
         ],
         "carried_equipment_sha256": carried,
         "skipped_assemblies": skipped,
+        "grafted": grafted,
         "seconds": round(time.time() - t0, 1),
         "nodes": report,
     }
