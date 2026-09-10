@@ -59,6 +59,36 @@ $B split /tmp/v20.p21idx -o /tmp/pkg_one --products 59853   # a single product i
 `inspect` and `split` accept either the sidecar or the STEP file. A sidecar is
 reused only if its recorded source path and size still match.
 
+### Field package for the simulators
+
+`prototype/export_field_package.py` (OCP venv, see `docs/previews.md`) turns a
+split package's arena into the asset directory that `rm-simulator` and
+`rm-vision-sim` load: `floor.glb`, `arena-static.glb`, their `*-collision.glb`
+proxies, `manifest.json` (schema 1, SHA-256 per file, `floor_top_source_z_m`)
+and `validation.json`. Every `BREP_*` solid becomes one glTF node named
+`source_<product id>_<name>` in the CAD arena frame (Z up, metres), placed by
+the STEP assembly transforms, with one primitive per effective face colour.
+The rune, outpost and `equipment/` files are copied from an earlier
+extraction, whose placements share the arena frame.
+
+```sh
+python3 prototype/p21index.py ~/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V1.2.0.step v12.npz
+$B split v12.npz -o rs_v12
+ocpenv/bin/python prototype/export_field_package.py rs_v12 v12.npz \
+  --equipment ~/dev/RM/assets/rm2026-extracted --out ~/dev/RM/assets/rm2026-field
+```
+
+The V1.2.0 arena (353 solids, 382 placements, 33 k triangles at 2 mm) is the
+one with face colours, and it shares the arena origin with V2.0.0: the V2.0.0
+equipment placements land exactly on its plate tops. Its slab is flat at
+z = −1641.3 mm, where V2.0.0's crowned slab is at −1530.4 mm on its pads, and
+its 起伏路段 bump road is a row of 70° ridges rather than V2.0.0's 17° ramps.
+The exporter checks that every part reads, that each node's mesh covers the
+part's vertex box, and fails on any mismatch. The collision proxies are the
+same solids at 10 mm / 0.7 rad, one closed node each, within 2.5 mm of the
+visual; the manifest's `collision_solids: true` tells consumers they can use
+those nodes as they are and need only drop the flat marking sheets.
+
 ## Status
 
 | Step | State |
@@ -68,6 +98,7 @@ reused only if its recorded source path and size still match.
 | OCCT validation of every part, per-part meshes vs the 9 h whole-file glb | done |
 | Rust `index`, `inspect`, `split` | done, byte-identical to the validated Python output |
 | 3D previews of V2.0.0 and V1.2.0 from the split parts | done, `docs/previews.md` |
+| Simulator field package (V1.2.0 arena in colour + carried-over equipment) | done, `prototype/export_field_package.py`, installed as `~/dev/RM/assets/rm2026-field` |
 | Per-body split for the flat V2.0.0 equipment products | not started |
 | `assembly.stp`, package layout, `rules/`, `match`, `report` | not started, see `HANDOFF.md` §4–§6 |
 
