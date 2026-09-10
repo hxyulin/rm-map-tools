@@ -1,0 +1,76 @@
+{
+  "part": "7000001_1_ASM",
+  "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+  "samples": {
+    "current": {
+      "triangles": 474598,
+      "tolerance": {
+        "linear_deflection_mm": 4,
+        "angular_deflection_rad": 0.9
+      },
+      "seconds": 5.296210000000428,
+      "recovery": {
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "fine_retries": 53,
+        "narrow_face_retries": 1
+      }
+    },
+    "linear8": {
+      "triangles": 440221,
+      "tolerance": {
+        "linear_deflection_mm": 8,
+        "angular_deflection_rad": 0.9
+      },
+      "seconds": 4.128393749997485,
+      "recovery": {
+        "fine_retries": 192,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "linear16": {
+      "triangles": 424991,
+      "tolerance": {
+        "linear_deflection_mm": 16,
+        "angular_deflection_rad": 0.9
+      },
+      "seconds": 7.251314416993409,
+      "recovery": {
+        "fine_retries": 433,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "linear32": {
+      "triangles": 417924,
+      "tolerance": {
+        "linear_deflection_mm": 32,
+        "angular_deflection_rad": 0.9
+      },
+      "seconds": 7.139409374969546,
+      "recovery": {
+        "fine_retries": 660,
+        "split_retries": 5,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "coarse": {
+      "triangles": 385712,
+      "tolerance": {
+        "linear_deflection_mm": 16,
+        "angular_deflection_rad": 1.5
+      },
+      "seconds": 7.651565583015326,
+      "recovery": {
+        "fine_retries": 447,
+        "split_retries": 5,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    }
+  }
+}

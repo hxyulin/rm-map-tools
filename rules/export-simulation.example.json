@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "resource-zone": {
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    }
+  },
+  "parts": {
+    "centre-logo-sheets": {
+      "collision_enabled": false
+    }
+  },
+  "preset": "simulation"
+}

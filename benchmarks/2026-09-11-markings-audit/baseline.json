@@ -1,0 +1,3998 @@
+{
+  "assets": {
+    "floor": {
+      "placements": 1,
+      "visual_per_instance": 12,
+      "visual_sha256": "f3371ce858bbc7940ca741411ba3d83a5f90d443a90fc284ea561e8f1c6dbe00",
+      "collision_sha256": "ade8d9f4c7ca158e3541bed415b2d72edc99552def78a06982893ca63d66936d"
+    },
+    "arena-static": {
+      "placements": 1,
+      "visual_per_instance": 119776,
+      "visual_sha256": "7ca3512fad0085286dfd5f2c42d393707e88e73518f6a46a054e6602b324891a",
+      "collision_sha256": "696d93054cab84d1c5d96aa7f98290a9064aa825656c0d254d5107a726b66afc"
+    },
+    "rune": {
+      "placements": 1,
+      "visual_per_instance": 231258,
+      "visual_sha256": "6293816066a26767f0d3a8340c9be7c24882f651ece29b1d80fd668b84e3bdc6",
+      "collision_sha256": "02514b032bfd09680314f80b9d00ed25b30cb5f60b6e9f72f2e79c77bfc6456a"
+    },
+    "outpost": {
+      "placements": 2,
+      "visual_per_instance": 99793,
+      "visual_sha256": "7c4b4d19816bdb27ef68f66413cfde6189ba677aadcbb043b5b1fc26b479ed7e",
+      "collision_sha256": "4f1a841d0f67f75f7fdb9c2658d2d94bc0de3bdbaf790ef2a22227707ae77d9c"
+    },
+    "centre-platform": {
+      "placements": 1,
+      "visual_per_instance": 33255,
+      "visual_sha256": "6e8920fa0b5a7a5fe3b0a31974232a148026b765c123b0de98213ad1489e2255",
+      "collision_sha256": "c402f92367b74c832c03e468af0d33750440f3257dd4ab551941b4d58ed486fe"
+    },
+    "dart-station": {
+      "placements": 2,
+      "visual_per_instance": 389586,
+      "visual_sha256": "179c81b413f667c7129a86363f03d8d8b50e33caeace610bbf5dc0ba0c6ee37e",
+      "collision_sha256": "68ff3a7d693d4c4d584a3f49cdf445f8f507e34a40d3e59a4a67da537ce4bf6c"
+    },
+    "resource-zone": {
+      "placements": 2,
+      "visual_per_instance": 462486,
+      "visual_sha256": "1c03d78370174d2a4aa0d959e7061d4543d76234af43c9084a24b91410eeb373",
+      "collision_sha256": "1c9283adbd113e9c031208db6dbe7ed89bc4ba6b8497ead3c2e98ebe3cf5fec0"
+    },
+    "outpost-footing": {
+      "placements": 2,
+      "visual_per_instance": 20,
+      "visual_sha256": "134b95a7ed3bbc9c3425bb1940f2683693d851de3f4a0a67a2b6129be2170640",
+      "collision_sha256": "f4ac2bd22fabf5d3a619a7874943e55eb187a4ee9e526324f34526aed2dc50ba"
+    },
+    "base": {
+      "placements": 2,
+      "visual_per_instance": 316623,
+      "visual_sha256": "3e0ada5a6536cd433e57fe85bc57388989dbc1d75819a35581a3e5224dfbabcb",
+      "collision_sha256": "35ba6d6aad3449fa0a5cf148f926ad9755195e291999f74bd5bf540fa43bd599"
+    },
+    "tech-core": {
+      "placements": 2,
+      "visual_per_instance": 48712,
+      "visual_sha256": "19eda42312b3487cb36fecdf11277add0585354143259305f71bebd727a02db8",
+      "collision_sha256": "0aacf6631f3617701f6ed6a50bd0e7911abcc02d07b12fb930cbac2e4cf44689"
+    }
+  },
+  "groups": {
+    "floor lettering and white markings": {
+      "asset": "arena-static",
+      "sections": 280,
+      "visual": 31824,
+      "collision_file": 31824
+    },
+    "coloured boundary candidates": {
+      "asset": "arena-static",
+      "sections": 59,
+      "visual": 1380,
+      "collision_file": 1380
+    },
+    "rune R artwork": {
+      "asset": "rune",
+      "sections": 2,
+      "visual": 108,
+      "collision_file": 108
+    },
+    "centre lettering": {
+      "asset": "centre-platform",
+      "sections": 46,
+      "visual": 4645,
+      "collision_file": 4352
+    },
+    "dart gate logo": {
+      "asset": "dart-station",
+      "sections": 1,
+      "visual": 824,
+      "collision_file": 824
+    },
+    "base logo and wordmark": {
+      "asset": "base",
+      "sections": 1,
+      "visual": 1048,
+      "collision_file": 1048
+    }
+  },
+  "visual_total": 3018741,
+  "selected_visual": 39829,
+  "selected_collision_file": 39536,
+  "sections": 1083,
+  "selected_sections": [
+    {
+      "asset": "arena-static",
+      "node": 1,
+      "name": "source_13266958_BREP_80_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 82,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 82
+    },
+    {
+      "asset": "arena-static",
+      "node": 2,
+      "name": "source_13266959_BREP_81_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 3,
+      "name": "source_13266960_BREP_82_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 4,
+      "name": "source_13266961_BREP_83_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 5,
+      "name": "source_13266962_BREP_84_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 6,
+      "name": "source_13266963_BREP_85_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 7,
+      "name": "source_13266964_BREP_86_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 8,
+      "name": "source_13266965_BREP_87_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 9,
+      "name": "source_13266966_BREP_88_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 90,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 90
+    },
+    {
+      "asset": "arena-static",
+      "node": 10,
+      "name": "source_13266967_BREP_89_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 11,
+      "name": "source_13266968_BREP_90_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 12,
+      "name": "source_13266969_BREP_91_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 13,
+      "name": "source_13266970_BREP_92_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 302,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 302
+    },
+    {
+      "asset": "arena-static",
+      "node": 14,
+      "name": "source_13266971_BREP_217_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 60,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 15,
+      "name": "source_13266972_BREP_1129_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 16,
+      "name": "source_13266973_BREP_1130_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 17,
+      "name": "source_13266974_BREP_1142_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 18,
+      "name": "source_13266975_BREP_1143_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 19,
+      "name": "source_13266976_BREP_1144_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 20,
+      "name": "source_13266977_BREP_1145_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 21,
+      "name": "source_13266978_BREP_1146_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 22,
+      "name": "source_13266979_BREP_1147_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 23,
+      "name": "source_13266980_BREP_1148_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 24,
+      "name": "source_13266981_BREP_1149_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 25,
+      "name": "source_13266982_BREP_1150_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 26,
+      "name": "source_13266984_BREP_24_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 27,
+      "name": "source_13266985_BREP_25_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 56,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 56
+    },
+    {
+      "asset": "arena-static",
+      "node": 28,
+      "name": "source_13266986_BREP_1151_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 292,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 292
+    },
+    {
+      "asset": "arena-static",
+      "node": 29,
+      "name": "source_13266987_BREP_1152_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 32,
+      "name": "source_13266991_BREP_96_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 33,
+      "name": "source_13266992_BREP_97_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 34,
+      "name": "source_13266993_BREP_98_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 35,
+      "name": "source_13266994_BREP_228_1",
+      "primitive": 1,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 37,
+      "name": "source_13266996_BREP_553_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 38,
+      "name": "source_13266997_BREP_552_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 39,
+      "name": "source_13266998_BREP_554_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 40,
+      "name": "source_13267001_BREP_149_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 168,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 168
+    },
+    {
+      "asset": "arena-static",
+      "node": 41,
+      "name": "source_13267002_BREP_150_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 42,
+      "name": "source_13267003_BREP_151_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 43,
+      "name": "source_13267004_BREP_152_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 44,
+      "name": "source_13267005_BREP_153_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 376,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 376
+    },
+    {
+      "asset": "arena-static",
+      "node": 45,
+      "name": "source_13267006_BREP_154_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 376,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 376
+    },
+    {
+      "asset": "arena-static",
+      "node": 46,
+      "name": "source_13267007_BREP_155_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 228,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 228
+    },
+    {
+      "asset": "arena-static",
+      "node": 47,
+      "name": "source_13267008_BREP_156_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 48,
+      "name": "source_13267009_BREP_157_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 406,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 406
+    },
+    {
+      "asset": "arena-static",
+      "node": 49,
+      "name": "source_13267010_BREP_158_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 406,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 406
+    },
+    {
+      "asset": "arena-static",
+      "node": 50,
+      "name": "source_13267011_BREP_159_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 226,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 226
+    },
+    {
+      "asset": "arena-static",
+      "node": 51,
+      "name": "source_13267012_BREP_160_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 52,
+      "name": "source_13267013_BREP_212_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 68,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 68
+    },
+    {
+      "asset": "arena-static",
+      "node": 53,
+      "name": "source_13267014_BREP_213_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 56,
+      "name": "source_13267017_BREP_216_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 57,
+      "name": "source_13267018_BREP_78_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 248,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 248
+    },
+    {
+      "asset": "arena-static",
+      "node": 58,
+      "name": "source_13267019_BREP_79_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 59,
+      "name": "source_13267020_BREP_1103_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 292,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 292
+    },
+    {
+      "asset": "arena-static",
+      "node": 60,
+      "name": "source_13267021_BREP_1104_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 61,
+      "name": "source_13267022_BREP_1105_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 63,
+      "name": "source_13267025_BREP_3_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 20,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 64,
+      "name": "source_13267026_BREP_4_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 65,
+      "name": "source_13267027_BREP_30_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 60,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 66,
+      "name": "source_13267029_BREP_31_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 67,
+      "name": "source_13267030_BREP_32_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 68,
+      "name": "source_13267031_BREP_33_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 69,
+      "name": "source_13267032_BREP_34_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 70,
+      "name": "source_13267033_BREP_35_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 71,
+      "name": "source_13267034_BREP_36_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 72,
+      "name": "source_13267035_BREP_15_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 73,
+      "name": "source_13267036_BREP_16_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 74,
+      "name": "source_13267037_BREP_17_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 268,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 268
+    },
+    {
+      "asset": "arena-static",
+      "node": 75,
+      "name": "source_13267038_BREP_37_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 76,
+      "name": "source_13267039_BREP_38_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 77,
+      "name": "source_13267040_BREP_39_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 78,
+      "name": "source_13267041_BREP_40_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 79,
+      "name": "source_13267042_BREP_41_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 80,
+      "name": "source_13267043_BREP_42_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 81,
+      "name": "source_13267044_BREP_43_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 268,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 268
+    },
+    {
+      "asset": "arena-static",
+      "node": 82,
+      "name": "source_13267045_BREP_44_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 83,
+      "name": "source_13267046_BREP_45_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 84,
+      "name": "source_13267047_BREP_46_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 60,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 85,
+      "name": "source_13267048_BREP_161_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 312,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 312
+    },
+    {
+      "asset": "arena-static",
+      "node": 86,
+      "name": "source_13267049_BREP_162_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 604,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 604
+    },
+    {
+      "asset": "arena-static",
+      "node": 87,
+      "name": "source_13267050_BREP_163_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 88,
+      "name": "source_13267051_BREP_164_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 89,
+      "name": "source_13267052_BREP_165_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 90,
+      "name": "source_13267053_BREP_166_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 432,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 432
+    },
+    {
+      "asset": "arena-static",
+      "node": 91,
+      "name": "source_13267054_BREP_167_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 432,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 432
+    },
+    {
+      "asset": "arena-static",
+      "node": 92,
+      "name": "source_13267055_BREP_168_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 382,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 382
+    },
+    {
+      "asset": "arena-static",
+      "node": 93,
+      "name": "source_13267056_BREP_169_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 386,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 386
+    },
+    {
+      "asset": "arena-static",
+      "node": 94,
+      "name": "source_13267057_BREP_170_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 612,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 612
+    },
+    {
+      "asset": "arena-static",
+      "node": 95,
+      "name": "source_13267058_BREP_171_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 136,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 136
+    },
+    {
+      "asset": "arena-static",
+      "node": 96,
+      "name": "source_13267059_BREP_172_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 814,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 814
+    },
+    {
+      "asset": "arena-static",
+      "node": 97,
+      "name": "source_13267060_BREP_173_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 286,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 286
+    },
+    {
+      "asset": "arena-static",
+      "node": 98,
+      "name": "source_13267061_BREP_174_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 660,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 660
+    },
+    {
+      "asset": "arena-static",
+      "node": 99,
+      "name": "source_13267062_BREP_175_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 602,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 602
+    },
+    {
+      "asset": "arena-static",
+      "node": 100,
+      "name": "source_13267063_BREP_566_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 101,
+      "name": "source_13267064_BREP_567_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 105,
+      "name": "source_13267068_BREP_560_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 106,
+      "name": "source_13267069_BREP_561_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 107,
+      "name": "source_13267070_BREP_562_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 108,
+      "name": "source_13267071_BREP_563_1",
+      "primitive": 2,
+      "material": 1,
+      "triangles": 4,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 4
+    },
+    {
+      "asset": "arena-static",
+      "node": 109,
+      "name": "source_13267072_BREP_564_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 110,
+      "name": "source_13267073_BREP_12_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 111,
+      "name": "source_13267074_BREP_13_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 112,
+      "name": "source_13267076_BREP_576_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 64,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 64
+    },
+    {
+      "asset": "arena-static",
+      "node": 114,
+      "name": "source_13267078_BREP_28_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 115,
+      "name": "source_13267079_BREP_29_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 119,
+      "name": "source_13267085_BREP_222_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 68,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 68
+    },
+    {
+      "asset": "arena-static",
+      "node": 120,
+      "name": "source_13267086_BREP_223_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 124,
+      "name": "source_13267090_BREP_203_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 125,
+      "name": "source_13267091_BREP_204_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 248,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 248
+    },
+    {
+      "asset": "arena-static",
+      "node": 126,
+      "name": "source_13267092_BREP_176_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 127,
+      "name": "source_13267093_BREP_177_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 226,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 226
+    },
+    {
+      "asset": "arena-static",
+      "node": 128,
+      "name": "source_13267094_BREP_178_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 406,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 406
+    },
+    {
+      "asset": "arena-static",
+      "node": 129,
+      "name": "source_13267095_BREP_179_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 406,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 406
+    },
+    {
+      "asset": "arena-static",
+      "node": 130,
+      "name": "source_13267096_BREP_180_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 131,
+      "name": "source_13267097_BREP_181_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 228,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 228
+    },
+    {
+      "asset": "arena-static",
+      "node": 132,
+      "name": "source_13267098_BREP_182_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 376,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 376
+    },
+    {
+      "asset": "arena-static",
+      "node": 133,
+      "name": "source_13267099_BREP_183_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 376,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 376
+    },
+    {
+      "asset": "arena-static",
+      "node": 134,
+      "name": "source_13267100_BREP_184_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 135,
+      "name": "source_13267101_BREP_185_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 136,
+      "name": "source_13267102_BREP_186_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 137,
+      "name": "source_13267103_BREP_187_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 168,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 168
+    },
+    {
+      "asset": "arena-static",
+      "node": 138,
+      "name": "source_13267104_BREP_573_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 292,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 292
+    },
+    {
+      "asset": "arena-static",
+      "node": 139,
+      "name": "source_13267105_BREP_574_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 140,
+      "name": "source_13267106_BREP_575_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 141,
+      "name": "source_13267108_BREP_10_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 20,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 142,
+      "name": "source_13267109_BREP_11_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 143,
+      "name": "source_13267110_BREP_21_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 144,
+      "name": "source_13267111_BREP_22_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 145,
+      "name": "source_13267112_BREP_23_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 16,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 16
+    },
+    {
+      "asset": "arena-static",
+      "node": 146,
+      "name": "source_13267114_BREP_455_A_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 176,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 176
+    },
+    {
+      "asset": "arena-static",
+      "node": 147,
+      "name": "source_13267114_BREP_455_A_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 176,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 176
+    },
+    {
+      "asset": "arena-static",
+      "node": 148,
+      "name": "source_13267114_BREP_455_A_1_2",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 176,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 176
+    },
+    {
+      "asset": "arena-static",
+      "node": 149,
+      "name": "source_13267114_BREP_455_A_1_3",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 176,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 176
+    },
+    {
+      "asset": "arena-static",
+      "node": 150,
+      "name": "source_13267115_BREP_456_A_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 84,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 84
+    },
+    {
+      "asset": "arena-static",
+      "node": 151,
+      "name": "source_13267115_BREP_456_A_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 84,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 84
+    },
+    {
+      "asset": "arena-static",
+      "node": 152,
+      "name": "source_13267115_BREP_456_A_1_2",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 84,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 84
+    },
+    {
+      "asset": "arena-static",
+      "node": 153,
+      "name": "source_13267115_BREP_456_A_1_3",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 84,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 84
+    },
+    {
+      "asset": "arena-static",
+      "node": 154,
+      "name": "source_13267117_BREP_48_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 155,
+      "name": "source_13267118_BREP_49_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 156,
+      "name": "source_13267119_BREP_50_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 157,
+      "name": "source_13267120_BREP_51_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 158,
+      "name": "source_13267121_BREP_52_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 159,
+      "name": "source_13267122_BREP_53_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 160,
+      "name": "source_13267123_BREP_19_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 161,
+      "name": "source_13267124_BREP_20_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 268,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 268
+    },
+    {
+      "asset": "arena-static",
+      "node": 162,
+      "name": "source_13267125_BREP_18_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 163,
+      "name": "source_13267126_BREP_47_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 60,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 164,
+      "name": "source_13267127_BREP_54_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 165,
+      "name": "source_13267128_BREP_55_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 166,
+      "name": "source_13267129_BREP_56_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 167,
+      "name": "source_13267130_BREP_57_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 168,
+      "name": "source_13267131_BREP_58_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 169,
+      "name": "source_13267132_BREP_59_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 170,
+      "name": "source_13267133_BREP_60_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 268,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 268
+    },
+    {
+      "asset": "arena-static",
+      "node": 171,
+      "name": "source_13267134_BREP_61_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 172,
+      "name": "source_13267135_BREP_62_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 156,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 156
+    },
+    {
+      "asset": "arena-static",
+      "node": 173,
+      "name": "source_13267136_BREP_63_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 60,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 174,
+      "name": "source_13267137_BREP_188_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 602,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 602
+    },
+    {
+      "asset": "arena-static",
+      "node": 175,
+      "name": "source_13267138_BREP_189_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 660,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 660
+    },
+    {
+      "asset": "arena-static",
+      "node": 176,
+      "name": "source_13267139_BREP_190_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 286,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 286
+    },
+    {
+      "asset": "arena-static",
+      "node": 177,
+      "name": "source_13267140_BREP_191_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 814,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 814
+    },
+    {
+      "asset": "arena-static",
+      "node": 178,
+      "name": "source_13267141_BREP_192_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 136,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 136
+    },
+    {
+      "asset": "arena-static",
+      "node": 179,
+      "name": "source_13267142_BREP_193_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 612,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 612
+    },
+    {
+      "asset": "arena-static",
+      "node": 180,
+      "name": "source_13267143_BREP_194_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 386,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 386
+    },
+    {
+      "asset": "arena-static",
+      "node": 181,
+      "name": "source_13267144_BREP_195_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 382,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 382
+    },
+    {
+      "asset": "arena-static",
+      "node": 182,
+      "name": "source_13267145_BREP_196_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 432,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 432
+    },
+    {
+      "asset": "arena-static",
+      "node": 183,
+      "name": "source_13267146_BREP_197_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 432,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 432
+    },
+    {
+      "asset": "arena-static",
+      "node": 184,
+      "name": "source_13267147_BREP_198_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 185,
+      "name": "source_13267148_BREP_199_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 186,
+      "name": "source_13267149_BREP_200_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 187,
+      "name": "source_13267150_BREP_201_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 604,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 604
+    },
+    {
+      "asset": "arena-static",
+      "node": 188,
+      "name": "source_13267151_BREP_202_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 312,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 312
+    },
+    {
+      "asset": "arena-static",
+      "node": 190,
+      "name": "source_13267153_BREP_1107_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 191,
+      "name": "source_13267154_BREP_1108_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 192,
+      "name": "source_13267155_BREP_1109_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 193,
+      "name": "source_13267156_BREP_1110_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 194,
+      "name": "source_13267157_BREP_1111_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 18,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 18
+    },
+    {
+      "asset": "arena-static",
+      "node": 195,
+      "name": "source_13267158_BREP_1112_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 196,
+      "name": "source_13267159_BREP_1113_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 199,
+      "name": "source_13267162_BREP_555_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 4,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 4
+    },
+    {
+      "asset": "arena-static",
+      "node": 200,
+      "name": "source_13267164_BREP_93_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 201,
+      "name": "source_13267165_BREP_94_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 202,
+      "name": "source_13267166_BREP_95_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 205,
+      "name": "source_13267169_BREP_549_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 206,
+      "name": "source_13267170_BREP_550_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 207,
+      "name": "source_13267171_BREP_551_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 40,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 40
+    },
+    {
+      "asset": "arena-static",
+      "node": 208,
+      "name": "source_13267173_BREP_570_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 64,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 64
+    },
+    {
+      "asset": "arena-static",
+      "node": 211,
+      "name": "source_13267176_BREP_26_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 212,
+      "name": "source_13267177_BREP_27_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 215,
+      "name": "source_13267181_BREP_3_1_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 216,
+      "name": "source_13267181_BREP_3_1_1_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 28,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 217,
+      "name": "source_13267182_BREP_4_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 218,
+      "name": "source_13267182_BREP_4_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 219,
+      "name": "source_13267183_BREP_5_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 220,
+      "name": "source_13267183_BREP_5_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 221,
+      "name": "source_13267184_BREP_6_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 222,
+      "name": "source_13267184_BREP_6_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 223,
+      "name": "source_13267185_BREP_7_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 224,
+      "name": "source_13267185_BREP_7_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 225,
+      "name": "source_13267186_BREP_8_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 226,
+      "name": "source_13267186_BREP_8_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 227,
+      "name": "source_13267187_BREP_9_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 228,
+      "name": "source_13267187_BREP_9_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 229,
+      "name": "source_13267188_BREP_10_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 230,
+      "name": "source_13267188_BREP_10_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 231,
+      "name": "source_13267189_BREP_11_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 232,
+      "name": "source_13267189_BREP_11_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 233,
+      "name": "source_13267191_BREP_1_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 32,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 234,
+      "name": "source_13267192_BREP_2_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 56,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 56
+    },
+    {
+      "asset": "arena-static",
+      "node": 235,
+      "name": "source_13267193_BREP_1155_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 292,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 292
+    },
+    {
+      "asset": "arena-static",
+      "node": 236,
+      "name": "source_13267194_BREP_1156_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 239,
+      "name": "source_13267198_BREP_5_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 32,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 240,
+      "name": "source_13267199_BREP_6_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 241,
+      "name": "source_13267200_BREP_7_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 242,
+      "name": "source_13267201_BREP_8_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 32,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 32
+    },
+    {
+      "asset": "arena-static",
+      "node": 243,
+      "name": "source_13267202_BREP_9_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 244,
+      "name": "source_13267203_BREP_1100_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 245,
+      "name": "source_13267204_BREP_1101_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 247,
+      "name": "source_13267206_BREP_220_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 248,
+      "name": "source_13267207_BREP_218_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 249,
+      "name": "source_13267208_BREP_219_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 250,
+      "name": "source_13267209_BREP_77_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 253,
+      "name": "source_13267211_BREP_76_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 254,
+      "name": "source_13267212_BREP_75_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 255,
+      "name": "source_13267213_BREP_100_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 256,
+      "name": "source_13267214_BREP_101_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 257,
+      "name": "source_13267215_BREP_102_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 74,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 74
+    },
+    {
+      "asset": "arena-static",
+      "node": 258,
+      "name": "source_13267216_BREP_103_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 259,
+      "name": "source_13267217_BREP_105_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 82,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 82
+    },
+    {
+      "asset": "arena-static",
+      "node": 260,
+      "name": "source_13267218_BREP_111_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 261,
+      "name": "source_13267219_BREP_112_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 262,
+      "name": "source_13267220_BREP_113_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 263,
+      "name": "source_13267221_BREP_114_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 74,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 74
+    },
+    {
+      "asset": "arena-static",
+      "node": 264,
+      "name": "source_13267222_BREP_115_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 265,
+      "name": "source_13267223_BREP_116_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 266,
+      "name": "source_13267224_BREP_117_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 82,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 82
+    },
+    {
+      "asset": "arena-static",
+      "node": 267,
+      "name": "source_13267225_BREP_118_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 268,
+      "name": "source_13267226_BREP_119_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 269,
+      "name": "source_13267227_BREP_120_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 270,
+      "name": "source_13267228_BREP_121_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 271,
+      "name": "source_13267229_BREP_122_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 76,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 76
+    },
+    {
+      "asset": "arena-static",
+      "node": 272,
+      "name": "source_13267230_BREP_206_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 273,
+      "name": "source_13267231_BREP_207_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 274,
+      "name": "source_13267232_BREP_208_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 275,
+      "name": "source_13267233_BREP_556_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 276,
+      "name": "source_13267234_BREP_557_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 277,
+      "name": "source_13267235_BREP_1078_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 292,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 292
+    },
+    {
+      "asset": "arena-static",
+      "node": 278,
+      "name": "source_13267236_BREP_1079_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 288,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 288
+    },
+    {
+      "asset": "arena-static",
+      "node": 279,
+      "name": "source_13267237_BREP_1084_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 280,
+      "name": "source_13267238_BREP_1090_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 281,
+      "name": "source_13267239_BREP_1091_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 282,
+      "name": "source_13267240_BREP_1093_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 200,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 200
+    },
+    {
+      "asset": "arena-static",
+      "node": 283,
+      "name": "source_13267241_BREP_1095_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 284,
+      "name": "source_13267242_BREP_1096_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 285,
+      "name": "source_13267243_BREP_1098_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 36,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 36
+    },
+    {
+      "asset": "arena-static",
+      "node": 286,
+      "name": "source_13267244_BREP_123_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 287,
+      "name": "source_13267245_BREP_124_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 288,
+      "name": "source_13267246_BREP_125_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 289,
+      "name": "source_13267247_BREP_126_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 74,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 74
+    },
+    {
+      "asset": "arena-static",
+      "node": 290,
+      "name": "source_13267248_BREP_127_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 291,
+      "name": "source_13267249_BREP_128_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 292,
+      "name": "source_13267250_BREP_129_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 293,
+      "name": "source_13267251_BREP_130_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 294,
+      "name": "source_13267252_BREP_131_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 295,
+      "name": "source_13267253_BREP_132_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 296,
+      "name": "source_13267254_BREP_133_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 297,
+      "name": "source_13267255_BREP_134_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 82,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 82
+    },
+    {
+      "asset": "arena-static",
+      "node": 298,
+      "name": "source_13267256_BREP_565_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 18,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 18
+    },
+    {
+      "asset": "arena-static",
+      "node": 299,
+      "name": "source_13267257_BREP_1082_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 300,
+      "name": "source_13267258_BREP_1088_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 301,
+      "name": "source_13267259_BREP_1092_1",
+      "primitive": 0,
+      "material": 1,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 302,
+      "name": "source_13267260_BREP_72_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 303,
+      "name": "source_13267261_BREP_73_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 304,
+      "name": "source_13267262_BREP_74_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 305,
+      "name": "source_13267263_BREP_99_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 306,
+      "name": "source_13267264_BREP_104_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 307,
+      "name": "source_13267265_BREP_106_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 308,
+      "name": "source_13267266_BREP_107_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 309,
+      "name": "source_13267267_BREP_108_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 310,
+      "name": "source_13267268_BREP_109_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 311,
+      "name": "source_13267269_BREP_110_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 76,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 76
+    },
+    {
+      "asset": "arena-static",
+      "node": 312,
+      "name": "source_13267270_BREP_209_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 313,
+      "name": "source_13267271_BREP_210_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 314,
+      "name": "source_13267272_BREP_211_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 315,
+      "name": "source_13267273_BREP_1097_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 20,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 316,
+      "name": "source_13267274_BREP_135_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 317,
+      "name": "source_13267275_BREP_136_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 318,
+      "name": "source_13267276_BREP_137_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 319,
+      "name": "source_13267277_BREP_138_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 74,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 74
+    },
+    {
+      "asset": "arena-static",
+      "node": 320,
+      "name": "source_13267278_BREP_139_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 321,
+      "name": "source_13267279_BREP_140_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 322,
+      "name": "source_13267280_BREP_141_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 82,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 82
+    },
+    {
+      "asset": "arena-static",
+      "node": 323,
+      "name": "source_13267281_BREP_142_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 324,
+      "name": "source_13267282_BREP_143_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 325,
+      "name": "source_13267283_BREP_144_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 326,
+      "name": "source_13267284_BREP_145_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 329,
+      "name": "source_13267286_BREP_146_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 84,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 84
+    },
+    {
+      "asset": "arena-static",
+      "node": 330,
+      "name": "source_13267287_BREP_1083_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 331,
+      "name": "source_13267288_BREP_1085_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 28,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 28
+    },
+    {
+      "asset": "arena-static",
+      "node": 332,
+      "name": "source_13267289_BREP_1099_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 333,
+      "name": "source_13267291_BREP_14_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 290,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 290
+    },
+    {
+      "asset": "arena-static",
+      "node": 334,
+      "name": "source_13267292_BREP_221_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 60,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "arena-static",
+      "node": 335,
+      "name": "source_13267293_BREP_1116_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 74,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 74
+    },
+    {
+      "asset": "arena-static",
+      "node": 336,
+      "name": "source_13267294_BREP_1117_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 337,
+      "name": "source_13267295_BREP_1118_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 338,
+      "name": "source_13267296_BREP_1119_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 339,
+      "name": "source_13267297_BREP_1120_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 340,
+      "name": "source_13267298_BREP_1121_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 341,
+      "name": "source_13267299_BREP_1122_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 342,
+      "name": "source_13267300_BREP_1123_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 8,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 8
+    },
+    {
+      "asset": "arena-static",
+      "node": 343,
+      "name": "source_13267301_BREP_1124_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 72,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 72
+    },
+    {
+      "asset": "arena-static",
+      "node": 344,
+      "name": "source_13267302_BREP_1125_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 345,
+      "name": "source_13267303_BREP_1126_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 346,
+      "name": "source_13267304_BREP_1127_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 347,
+      "name": "source_13267305_BREP_1131_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 348,
+      "name": "source_13267306_BREP_1132_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 44,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 44
+    },
+    {
+      "asset": "arena-static",
+      "node": 349,
+      "name": "source_13267307_BREP_1133_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 350,
+      "name": "source_13267308_BREP_1134_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 20,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 351,
+      "name": "source_13267309_BREP_1135_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 20,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 352,
+      "name": "source_13267310_BREP_1136_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 20,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 20
+    },
+    {
+      "asset": "arena-static",
+      "node": 353,
+      "name": "source_13267311_BREP_1137_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 354,
+      "name": "source_13267312_BREP_1138_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 355,
+      "name": "source_13267313_BREP_1139_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 356,
+      "name": "source_13267314_BREP_1140_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 357,
+      "name": "source_13267315_BREP_1141_1",
+      "primitive": 0,
+      "material": 4,
+      "triangles": 12,
+      "group": "coloured boundary candidates",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 360,
+      "name": "source_13267320_BREP_590_1",
+      "primitive": 1,
+      "material": 0,
+      "triangles": 10,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "arena-static",
+      "node": 361,
+      "name": "source_13267320_BREP_590_1_1",
+      "primitive": 1,
+      "material": 0,
+      "triangles": 10,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "arena-static",
+      "node": 364,
+      "name": "source_13267322_BREP_592_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 365,
+      "name": "source_13267322_BREP_592_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 366,
+      "name": "source_13267323_BREP_593_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 367,
+      "name": "source_13267323_BREP_593_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 12,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "node": 376,
+      "name": "source_13267328_BREP_599_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 16,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 16
+    },
+    {
+      "asset": "arena-static",
+      "node": 377,
+      "name": "source_13267328_BREP_599_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 16,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 16
+    },
+    {
+      "asset": "arena-static",
+      "node": 378,
+      "name": "source_13267329_BREP_600_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 16,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 16
+    },
+    {
+      "asset": "arena-static",
+      "node": 379,
+      "name": "source_13267329_BREP_600_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 16,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 16
+    },
+    {
+      "asset": "arena-static",
+      "node": 380,
+      "name": "source_13267330_BREP_601_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 48,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 48
+    },
+    {
+      "asset": "arena-static",
+      "node": 381,
+      "name": "source_13267330_BREP_601_1_1",
+      "primitive": 0,
+      "material": 0,
+      "triangles": 48,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 48
+    },
+    {
+      "asset": "arena-static",
+      "node": 384,
+      "name": "source_13267586_0010_1",
+      "primitive": 1,
+      "material": 8,
+      "triangles": 1737,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 1737
+    },
+    {
+      "asset": "arena-static",
+      "node": 385,
+      "name": "source_13267586_0010_1_1",
+      "primitive": 1,
+      "material": 8,
+      "triangles": 1737,
+      "group": "floor lettering and white markings",
+      "collision_triangles": 1737
+    },
+    {
+      "asset": "rune",
+      "node": 17,
+      "name": "rune/fixed/face_0/logo",
+      "primitive": 1,
+      "material": 15,
+      "triangles": 54,
+      "group": "rune R artwork",
+      "collision_triangles": 54
+    },
+    {
+      "asset": "rune",
+      "node": 19,
+      "name": "rune/fixed/face_1/logo",
+      "primitive": 1,
+      "material": 15,
+      "triangles": 54,
+      "group": "rune R artwork",
+      "collision_triangles": 54
+    },
+    {
+      "asset": "centre-platform",
+      "node": 2,
+      "name": "source_13267332_centre-logo-sheets",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 223,
+      "group": "centre lettering",
+      "collision_triangles": 0
+    },
+    {
+      "asset": "centre-platform",
+      "node": 2,
+      "name": "source_13267332_centre-logo-sheets",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 70,
+      "group": "centre lettering",
+      "collision_triangles": 0
+    },
+    {
+      "asset": "centre-platform",
+      "node": 3,
+      "name": "source_13267334_0006_1_2",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 190,
+      "group": "centre lettering",
+      "collision_triangles": 190
+    },
+    {
+      "asset": "centre-platform",
+      "node": 3,
+      "name": "source_13267334_0006_1_2",
+      "primitive": 1,
+      "material": 6,
+      "triangles": 190,
+      "group": "centre lettering",
+      "collision_triangles": 190
+    },
+    {
+      "asset": "centre-platform",
+      "node": 4,
+      "name": "source_13267335_0006_1_3",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 4,
+      "name": "source_13267335_0006_1_3",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 5,
+      "name": "source_13267336_0006_1_4",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 5,
+      "name": "source_13267336_0006_1_4",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 6,
+      "name": "source_13267337_0006_1_5",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 22,
+      "group": "centre lettering",
+      "collision_triangles": 22
+    },
+    {
+      "asset": "centre-platform",
+      "node": 6,
+      "name": "source_13267337_0006_1_5",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 6,
+      "group": "centre lettering",
+      "collision_triangles": 6
+    },
+    {
+      "asset": "centre-platform",
+      "node": 7,
+      "name": "source_13267338_0006_1_6",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 180,
+      "group": "centre lettering",
+      "collision_triangles": 180
+    },
+    {
+      "asset": "centre-platform",
+      "node": 7,
+      "name": "source_13267338_0006_1_6",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 60,
+      "group": "centre lettering",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "centre-platform",
+      "node": 8,
+      "name": "source_13267339_0006_1_7",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 302,
+      "group": "centre lettering",
+      "collision_triangles": 302
+    },
+    {
+      "asset": "centre-platform",
+      "node": 8,
+      "name": "source_13267339_0006_1_7",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 100,
+      "group": "centre lettering",
+      "collision_triangles": 100
+    },
+    {
+      "asset": "centre-platform",
+      "node": 9,
+      "name": "source_13267340_0006_1_8",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 9,
+      "name": "source_13267340_0006_1_8",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 10,
+      "name": "source_13267341_0006_1_9",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 49,
+      "group": "centre lettering",
+      "collision_triangles": 49
+    },
+    {
+      "asset": "centre-platform",
+      "node": 10,
+      "name": "source_13267341_0006_1_9",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 15,
+      "group": "centre lettering",
+      "collision_triangles": 15
+    },
+    {
+      "asset": "centre-platform",
+      "node": 11,
+      "name": "source_13267342_0006_1_10",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 190,
+      "group": "centre lettering",
+      "collision_triangles": 190
+    },
+    {
+      "asset": "centre-platform",
+      "node": 11,
+      "name": "source_13267342_0006_1_10",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 190,
+      "group": "centre lettering",
+      "collision_triangles": 190
+    },
+    {
+      "asset": "centre-platform",
+      "node": 12,
+      "name": "source_13267343_0006_1_11",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 179,
+      "group": "centre lettering",
+      "collision_triangles": 179
+    },
+    {
+      "asset": "centre-platform",
+      "node": 12,
+      "name": "source_13267343_0006_1_11",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 59,
+      "group": "centre lettering",
+      "collision_triangles": 59
+    },
+    {
+      "asset": "centre-platform",
+      "node": 13,
+      "name": "source_13267344_0006_1_12",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 204,
+      "group": "centre lettering",
+      "collision_triangles": 204
+    },
+    {
+      "asset": "centre-platform",
+      "node": 13,
+      "name": "source_13267344_0006_1_12",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 204,
+      "group": "centre lettering",
+      "collision_triangles": 204
+    },
+    {
+      "asset": "centre-platform",
+      "node": 14,
+      "name": "source_13267345_0006_1_13",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 286,
+      "group": "centre lettering",
+      "collision_triangles": 286
+    },
+    {
+      "asset": "centre-platform",
+      "node": 14,
+      "name": "source_13267345_0006_1_13",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 94,
+      "group": "centre lettering",
+      "collision_triangles": 94
+    },
+    {
+      "asset": "centre-platform",
+      "node": 15,
+      "name": "source_13267346_0006_1_14",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 15,
+      "name": "source_13267346_0006_1_14",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 16,
+      "name": "source_13267347_0006_1_15",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 16,
+      "name": "source_13267347_0006_1_15",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 17,
+      "name": "source_13267348_0006_1_16",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 22,
+      "group": "centre lettering",
+      "collision_triangles": 22
+    },
+    {
+      "asset": "centre-platform",
+      "node": 17,
+      "name": "source_13267348_0006_1_16",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 6,
+      "group": "centre lettering",
+      "collision_triangles": 6
+    },
+    {
+      "asset": "centre-platform",
+      "node": 18,
+      "name": "source_13267349_0006_1_17",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 180,
+      "group": "centre lettering",
+      "collision_triangles": 180
+    },
+    {
+      "asset": "centre-platform",
+      "node": 18,
+      "name": "source_13267349_0006_1_17",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 60,
+      "group": "centre lettering",
+      "collision_triangles": 60
+    },
+    {
+      "asset": "centre-platform",
+      "node": 19,
+      "name": "source_13267350_0006_1_18",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 302,
+      "group": "centre lettering",
+      "collision_triangles": 302
+    },
+    {
+      "asset": "centre-platform",
+      "node": 19,
+      "name": "source_13267350_0006_1_18",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 100,
+      "group": "centre lettering",
+      "collision_triangles": 100
+    },
+    {
+      "asset": "centre-platform",
+      "node": 20,
+      "name": "source_13267351_0006_1_19",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 10,
+      "group": "centre lettering",
+      "collision_triangles": 10
+    },
+    {
+      "asset": "centre-platform",
+      "node": 20,
+      "name": "source_13267351_0006_1_19",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 2,
+      "group": "centre lettering",
+      "collision_triangles": 2
+    },
+    {
+      "asset": "centre-platform",
+      "node": 21,
+      "name": "source_13267352_0006_1_20",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 49,
+      "group": "centre lettering",
+      "collision_triangles": 49
+    },
+    {
+      "asset": "centre-platform",
+      "node": 21,
+      "name": "source_13267352_0006_1_20",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 15,
+      "group": "centre lettering",
+      "collision_triangles": 15
+    },
+    {
+      "asset": "centre-platform",
+      "node": 22,
+      "name": "source_13267353_0006_1_21",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 286,
+      "group": "centre lettering",
+      "collision_triangles": 286
+    },
+    {
+      "asset": "centre-platform",
+      "node": 22,
+      "name": "source_13267353_0006_1_21",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 94,
+      "group": "centre lettering",
+      "collision_triangles": 94
+    },
+    {
+      "asset": "centre-platform",
+      "node": 23,
+      "name": "source_13267354_0006_1_22",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 179,
+      "group": "centre lettering",
+      "collision_triangles": 179
+    },
+    {
+      "asset": "centre-platform",
+      "node": 23,
+      "name": "source_13267354_0006_1_22",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 59,
+      "group": "centre lettering",
+      "collision_triangles": 59
+    },
+    {
+      "asset": "centre-platform",
+      "node": 24,
+      "name": "source_13267355_0006_1_23",
+      "primitive": 0,
+      "material": 2,
+      "triangles": 303,
+      "group": "centre lettering",
+      "collision_triangles": 303
+    },
+    {
+      "asset": "centre-platform",
+      "node": 24,
+      "name": "source_13267355_0006_1_23",
+      "primitive": 1,
+      "material": 5,
+      "triangles": 105,
+      "group": "centre lettering",
+      "collision_triangles": 105
+    },
+    {
+      "asset": "dart-station",
+      "node": 192,
+      "name": "dart_station/gate",
+      "primitive": 3,
+      "material": 17,
+      "triangles": 412,
+      "group": "dart gate logo",
+      "collision_triangles": 412
+    },
+    {
+      "asset": "base",
+      "node": 2,
+      "name": "source_13267588_001_1_1",
+      "primitive": 5,
+      "material": 7,
+      "triangles": 524,
+      "group": "base logo and wordmark",
+      "collision_triangles": 524
+    }
+  ]
+}

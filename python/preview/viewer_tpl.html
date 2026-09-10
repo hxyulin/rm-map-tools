@@ -1,0 +1,257 @@
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F4F3EE; --paper-2:#EAE8E0; --ink:#1A2029; --ink-2:#4E5865; --ink-3:#8A929C;
+  --line:#D5D2C7; --line-2:#BFBBAE; --accent:#1F4E79; --accent-2:#3C74A8; --accent-soft:#DDE7F1; --sel:#C8471F;
+  --sky:#EEF2F5; --ground:#D9DBD4;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#141A21; --paper-2:#1C242D; --ink:#E7E5DD; --ink-2:#A9B0B9; --ink-3:#6E7781;
+  --line:#2B3541; --line-2:#3A4655; --accent:#7FB0E0; --accent-2:#9CC7F0; --accent-soft:#1E3247; --sel:#F07A52;
+  --sky:#1A2129; --ground:#232C36;
+}}
+:root[data-theme="dark"]{
+  --paper:#141A21; --paper-2:#1C242D; --ink:#E7E5DD; --ink-2:#A9B0B9; --ink-3:#6E7781;
+  --line:#2B3541; --line-2:#3A4655; --accent:#7FB0E0; --accent-2:#9CC7F0; --accent-soft:#1E3247; --sel:#F07A52;
+  --sky:#1A2129; --ground:#232C36;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 "Barlow",system-ui,sans-serif;padding-block:0 40px;padding-inline:clamp(16px,3vw,40px)}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;text-wrap:balance;margin:0;line-height:1.05}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.88em;background:var(--paper-2);padding:1px 5px;border-radius:3px}
+.sheet{max-width:1400px;margin:0 auto}
+.titleblock{display:grid;grid-template-columns:1fr auto;gap:14px 32px;align-items:end;padding-block:22px 14px;border-bottom:2px solid var(--ink)}
+.titleblock h1{font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.01em}
+.titleblock .sub{color:var(--ink-2);max-width:66ch;margin-top:6px}
+.tb-meta{display:grid;grid-template-columns:repeat(4,auto);border:1px solid var(--line-2)}
+.tb-meta div{padding:8px 14px;border-left:1px solid var(--line-2);min-width:104px}
+.tb-meta div:first-child{border-left:0}
+.tb-meta b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:600;line-height:1.1;margin-top:2px;font-variant-numeric:tabular-nums}
+@media (max-width:820px){.titleblock{grid-template-columns:1fr}.tb-meta{grid-template-columns:repeat(2,1fr)}.tb-meta div:nth-child(3){border-left:0}}
+.stage{position:relative;margin-top:18px;border:1px solid var(--line-2);background:var(--sky);border-radius:2px;overflow:hidden}
+.stage canvas{display:block;width:100%;height:100%;touch-action:none;outline:none}
+.stage{height:min(72vh,820px);min-height:380px}
+.hud{position:absolute;left:12px;top:12px;display:flex;flex-direction:column;gap:8px;max-width:calc(100% - 24px)}
+.hud .bar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:color-mix(in srgb,var(--paper) 88%,transparent);border:1px solid var(--line-2);padding:8px 12px;font-size:13px;border-radius:3px;backdrop-filter:blur(4px)}
+.hud label{display:inline-flex;gap:6px;align-items:center;color:var(--ink-2);cursor:pointer}
+.hud input{accent-color:var(--accent)}
+.hud button{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--line-2);background:var(--paper);color:var(--ink);border-radius:3px;cursor:pointer}
+.hud button:hover{background:var(--accent-soft)}
+.hud button:focus-visible,.hud input:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+.pick{position:absolute;right:12px;bottom:12px;background:color-mix(in srgb,var(--paper) 90%,transparent);border:1px solid var(--line-2);padding:10px 14px;font-size:13px;border-radius:3px;min-width:220px;max-width:min(360px,calc(100% - 24px));backdrop-filter:blur(4px)}
+.pick h3{font-size:22px;font-weight:600;overflow-wrap:anywhere}
+.pick .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin-top:6px}
+.pick .kv span:nth-child(odd){color:var(--ink-3)}
+.pick .kv span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums}
+.help{position:absolute;left:12px;bottom:12px;font-size:12px;color:var(--ink-3);background:color-mix(in srgb,var(--paper) 80%,transparent);padding:4px 8px;border-radius:3px}
+.loading{position:absolute;inset:0;display:grid;place-items:center;font-family:"Barlow Condensed",sans-serif;font-size:26px;color:var(--ink-2);background:var(--sky)}
+.loading[hidden]{display:none}
+section{margin-top:32px}
+section > h2{font-size:28px;font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line-2);margin-bottom:12px}
+p{max-width:70ch}
+.muted{color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 32px}
+ul.plain{padding-left:18px;max-width:68ch;margin:0}
+ul.plain li{margin:4px 0}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="sheet">
+<header class="titleblock">
+  <div>
+    <div class="eyebrow">__EYEBROW__</div>
+    <h1>__TITLE__</h1>
+    <div class="sub">__SUB__ Drag to orbit, scroll to zoom, right-drag or shift-drag to pan, click a part to name it.</div>
+  </div>
+  <div class="tb-meta">
+    <div><span class="eyebrow">Parts</span><b id="m-parts"></b></div>
+    <div><span class="eyebrow">Instances</span><b id="m-inst"></b></div>
+    <div><span class="eyebrow">Triangles</span><b id="m-tris"></b></div>
+    <div><span class="eyebrow">Meshed in</span><b id="m-sec"></b></div>
+  </div>
+</header>
+
+<div class="stage" id="stage">
+  <canvas id="c" tabindex="0" aria-label="3D view of the RMUC 2026 field"></canvas>
+  <div class="loading" id="loading">Decoding mesh…</div>
+  <div class="hud">
+    <div class="bar">
+      <span class="eyebrow">Arena colour</span>
+      <label><input type="radio" name="tint" id="tint-h" value="h"__CHK_H__> height tint</label>
+      <label><input type="radio" name="tint" id="tint-x" value="x"__CHK_X__> as exported</label>
+      <label><input type="checkbox" id="eq" checked> equipment</label>
+      <button id="v-iso" type="button">Isometric</button>
+      <button id="v-top" type="button">Top</button>
+      <button id="v-red" type="button">Red base</button>
+      <button id="v-blue" type="button">Blue base</button>
+    </div>
+  </div>
+  <div class="pick" id="pick" hidden></div>
+  <div class="help">orbit · zoom · pan · click</div>
+</div>
+
+<section>
+  <h2>What you are looking at</h2>
+  <div class="cols">
+    <div>
+      <p>__ABOUT__</p>
+    </div>
+    <div>
+      <ul class="plain">
+        <li><b>Frame:</b> file millimetres shown as metres, Z up, origin as exported. The floor slab top is about 1.53 m below the origin.</li>
+        <li><b>Detail:</b> a preview tolerance, not the 1 mm validation mesh. Curved parts look faceted on purpose so the page stays small.</li>
+        <li><b>Reproduce:</b> <code>python/mesh_parts.py &lt;pkg&gt; &lt;index.npz&gt; out.bin out.json</code> in the OCP venv; the page embeds that binary.</li>
+        <li><b>Plan view:</b> the companion page draws the same parts as footprints with per-part statistics.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const META = __META__;
+const B64 = "__B64__";
+const FLOOR_TOP = __FLOOR_TOP__;   // mm, top of the floor slab
+const DEFAULT_TINT = '__TINT__';
+
+async function decode(b64) {
+  const s = atob(b64), n = s.length, u = new Uint8Array(n);
+  for (let i = 0; i < n; i++) u[i] = s.charCodeAt(i);
+  const ds = new DecompressionStream('deflate');
+  return new Response(new Blob([u]).stream().pipeThrough(ds)).arrayBuffer();
+}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// ---- scene ----------------------------------------------------------------
+const canvas = document.getElementById('c'), stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 1, 0.05, 400);
+camera.up.set(0, 0, 1);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f96, 0.9));
+const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(-18, -30, 40); scene.add(sun);
+const fill = new THREE.DirectionalLight(0xffffff, 0.25); fill.position.set(30, 20, 10); scene.add(fill);
+
+(async () => {
+// ---- decode mesh ------------------------------------------------------------
+const buf = await decode(B64);
+const RAMP = ['#DCE6F0', '#9DBAD6', '#4F7FAF', '#1F4E79', '#0E2740'].map(h => new THREE.Color(h));
+function rampColour(t) { const s = Math.min(Math.max(t, 0), 1) * (RAMP.length - 1); const i = Math.min(Math.floor(s), RAMP.length - 2); return RAMP[i].clone().lerp(RAMP[i + 1], s - i); }
+const CREAM = new THREE.Color(1, 1, 0.949);
+const meshes = [], arenaMeshes = [], eqMeshes = [];
+const matArena = new THREE.MeshPhongMaterial({vertexColors: true, flatShading: true, shininess: 8, specular: 0x222222});
+const matEq = new THREE.MeshPhongMaterial({vertexColors: true, flatShading: true, shininess: 18, specular: 0x333333, side: THREE.DoubleSide});
+let totalInst = 0;
+const bbox = new THREE.Box3();
+for (const part of META.parts) {
+  const isArena = part.name.startsWith('BREP_');
+  const cols = part.colours.map(k => { if (!k || k === 'None') return null; const [r, g, b] = k.split(',').map(Number); return new THREE.Color(r, g, b); });
+  for (const ch of part.chunks) {
+    const q = new Uint16Array(buf, ch.vo, ch.nv * 3);
+    const pos = new Float32Array(ch.nv * 3);
+    for (let i = 0; i < ch.nv; i++) for (let k = 0; k < 3; k++) pos[i * 3 + k] = (ch.origin[k] + q[i * 3 + k] / 65535 * ch.scale[k]) / 1000;
+    const idx = new Uint16Array(buf, ch.io, ch.nt * 3);
+    const tc = new Uint8Array(buf, ch.co, ch.nt);
+    // per-vertex colour: vertices are per face in OCCT triangulations, so one colour per vertex is exact
+    const colExported = new Float32Array(ch.nv * 3), colHeight = new Float32Array(ch.nv * 3);
+    for (let t = 0; t < ch.nt; t++) {
+      const c = cols[tc[t]] || (isArena ? CREAM : new THREE.Color(0.55, 0.57, 0.6));
+      for (let k = 0; k < 3; k++) { const v = idx[t * 3 + k]; colExported[v * 3] = c.r; colExported[v * 3 + 1] = c.g; colExported[v * 3 + 2] = c.b; }
+    }
+    if (isArena) {
+      // tint by vertex height above the floor top: -0.45 m .. +1.65 m
+      for (let i = 0; i < ch.nv; i++) { const z = pos[i * 3 + 2] * 1000 - FLOOR_TOP; const c = rampColour((z + 450) / 2100); colHeight[i * 3] = c.r; colHeight[i * 3 + 1] = c.g; colHeight[i * 3 + 2] = c.b; }
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(isArena && DEFAULT_TINT === 'h' ? colHeight : colExported, 3));
+    geo.setIndex(new THREE.BufferAttribute(idx, 1));
+    geo.computeBoundingSphere(); geo.computeBoundingBox();
+    for (const m16 of part.instances) {
+      const mesh = new THREE.Mesh(geo, isArena ? matArena : matEq);
+      // m16 is column-major (numpy .T.flatten()); translation in mm
+      const mm = new THREE.Matrix4().set(m16[0], m16[4], m16[8], m16[12] / 1000, m16[1], m16[5], m16[9], m16[13] / 1000, m16[2], m16[6], m16[10], m16[14] / 1000, 0, 0, 0, 1);
+      mesh.matrixAutoUpdate = false; mesh.matrix.copy(mm);
+      mesh.userData = {part, colExported, colHeight, isArena};
+      scene.add(mesh); meshes.push(mesh); (isArena ? arenaMeshes : eqMeshes).push(mesh);
+      bbox.union(geo.boundingBox.clone().applyMatrix4(mm));
+    }
+    totalInst += part.instances.length;
+  }
+}
+document.getElementById('loading').hidden = true;
+document.getElementById('m-parts').textContent = META.parts.length.toLocaleString('en-US');
+document.getElementById('m-inst').textContent = totalInst.toLocaleString('en-US');
+document.getElementById('m-tris').textContent = (META.triangles / 1e6).toFixed(2) + ' M';
+document.getElementById('m-sec').textContent = Math.round(META.seconds / 60) + ' min';
+
+// ---- controls (orbit / dolly / pan) ------------------------------------------
+const center = bbox.getCenter(new THREE.Vector3());
+const ctrl = {target: center.clone(), dist: 34, az: -0.9, el: 0.55};
+function applyCamera() {
+  const el = Math.min(Math.max(ctrl.el, 0.02), Math.PI / 2 - 0.02);
+  camera.position.set(ctrl.target.x + ctrl.dist * Math.cos(el) * Math.cos(ctrl.az), ctrl.target.y + ctrl.dist * Math.cos(el) * Math.sin(ctrl.az), ctrl.target.z + ctrl.dist * Math.sin(el));
+  camera.lookAt(ctrl.target); dirty = true;
+}
+let dirty = true, drag = null;
+canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture(e.pointerId); drag = {x: e.clientX, y: e.clientY, pan: e.button === 2 || e.shiftKey, moved: false}; });
+canvas.addEventListener('pointermove', e => {
+  if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.x = e.clientX; drag.y = e.clientY; if (Math.abs(dx) + Math.abs(dy) > 2) drag.moved = true;
+  if (drag.pan) { const s = ctrl.dist / canvas.clientHeight * 1.2; const right = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 0); const up = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 1); ctrl.target.addScaledVector(right, -dx * s).addScaledVector(up, dy * s); }
+  else { ctrl.az -= dx * 0.006; ctrl.el += dy * 0.006; }
+  applyCamera();
+});
+canvas.addEventListener('pointerup', e => { if (drag && !drag.moved) pick(e); drag = null; });
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+canvas.addEventListener('wheel', e => { e.preventDefault(); ctrl.dist *= Math.exp(e.deltaY * 0.0012); ctrl.dist = Math.min(Math.max(ctrl.dist, 0.5), 200); applyCamera(); }, {passive: false});
+let pinch = null;
+canvas.addEventListener('touchstart', e => { if (e.touches.length === 2) pinch = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); }, {passive: true});
+canvas.addEventListener('touchmove', e => { if (e.touches.length === 2 && pinch) { const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); ctrl.dist *= pinch / d; pinch = d; applyCamera(); } }, {passive: true});
+canvas.addEventListener('keydown', e => { const k = {ArrowLeft: [-0.08, 0], ArrowRight: [0.08, 0], ArrowUp: [0, 0.06], ArrowDown: [0, -0.06]}[e.key]; if (k) { ctrl.az += k[0]; ctrl.el += k[1]; applyCamera(); e.preventDefault(); } });
+function view(az, el, dist, target) { ctrl.az = az; ctrl.el = el; ctrl.dist = dist; ctrl.target.copy(target || center); applyCamera(); }
+document.getElementById('v-iso').onclick = () => view(-0.9, 0.55, 34);
+document.getElementById('v-top').onclick = () => view(-Math.PI / 2, Math.PI / 2 - 0.03, 36);
+document.getElementById('v-red').onclick = () => view(-2.4, 0.35, 14, new THREE.Vector3(bbox.min.x + 6, center.y, center.z));
+document.getElementById('v-blue').onclick = () => view(-0.7, 0.35, 14, new THREE.Vector3(bbox.max.x - 6, center.y, center.z));
+
+// ---- toggles ------------------------------------------------------------------
+function setTint(mode) { for (const m of arenaMeshes) { m.geometry.attributes.color.array.set(mode === 'h' ? m.userData.colHeight : m.userData.colExported); m.geometry.attributes.color.needsUpdate = true; } dirty = true; }
+document.querySelectorAll('input[name=tint]').forEach(i => i.addEventListener('change', e => setTint(e.target.value)));
+document.getElementById('eq').addEventListener('change', e => { for (const m of eqMeshes) m.visible = e.target.checked; dirty = true; });
+
+// ---- picking ---------------------------------------------------------------------
+const ray = new THREE.Raycaster(); let selected = null;
+const selMat = new THREE.MeshPhongMaterial({color: new THREE.Color(css('--sel')), flatShading: true, emissive: 0x331100});
+function pick(e) {
+  const r = canvas.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height * 2 - 1)), camera);
+  const hits = ray.intersectObjects(meshes.filter(m => m.visible), false);
+  if (selected) { selected.material = selected.userData.isArena ? matArena : matEq; selected = null; }
+  const box = document.getElementById('pick');
+  if (!hits.length) { box.hidden = true; dirty = true; return; }
+  selected = hits[0].object; selected.material = selMat;
+  const p = selected.userData.part; const b = selected.geometry.boundingBox;
+  const size = b.getSize(new THREE.Vector3());
+  const hit = hits[0].point;
+  box.hidden = false;
+  box.innerHTML = `<h3>${p.name}</h3><div class="kv"><span>product</span><span>#${p.id}</span><span>triangles</span><span>${p.tris.toLocaleString('en-US')}</span><span>instances</span><span>${p.instances.length}</span><span>chunk size</span><span>${size.x.toFixed(2)} × ${size.y.toFixed(2)} × ${size.z.toFixed(2)} m</span><span>hit point</span><span>${hit.x.toFixed(2)}, ${hit.y.toFixed(2)}, ${(hit.z - FLOOR_TOP / 1000).toFixed(2)} m above floor</span></div>`;
+  dirty = true;
+}
+
+// ---- render loop -----------------------------------------------------------------
+function resize() { const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); dirty = true; }
+new ResizeObserver(resize).observe(stage); resize();
+function paintBg() { scene.background = new THREE.Color(css('--sky')); dirty = true; }
+paintBg();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', paintBg);
+new MutationObserver(paintBg).observe(document.documentElement, {attributes: true, attributeFilter: ['data-theme']});
+applyCamera();
+(function loop() { if (dirty) { renderer.render(scene, camera); dirty = false; } requestAnimationFrame(loop); })();
+})().catch(e => { document.getElementById('loading').textContent = 'Could not decode the mesh: ' + e.message; });
+</script>

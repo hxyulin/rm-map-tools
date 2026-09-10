@@ -1,0 +1,96 @@
+{
+  "before": {
+    "visual": 3018741,
+    "static_colliders": 2169201,
+    "glb_bytes": 259669320,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 231258,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 99793,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 389586,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 316623,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "placements": 2
+      }
+    }
+  },
+  "after": {
+    "visual": 1183564,
+    "static_colliders": 938536,
+    "glb_bytes": 113885912,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 73705,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 25349,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 90904,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 167914,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 176155,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 18066,
+        "placements": 2
+      }
+    }
+  }
+}

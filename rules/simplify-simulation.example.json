@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "input": "../../assets/rm2026-simulation-source",
+  "output": "../out/simplified-semantic-field",
+  "defaults": {
+    "visual_error_mm": 4,
+    "collision_error_mm": 4,
+    "visual_sampled_limit_mm": 12,
+    "collision_sampled_limit_mm": 8,
+    "deviation_samples": 4096,
+    "visual_lock_borders": false,
+    "collision_lock_borders": false
+  },
+  "assets": {
+    "floor": {
+      "enabled": false
+    },
+    "arena-static": {
+      "enabled": false
+    },
+    "centre-platform": {
+      "enabled": false
+    },
+    "outpost-footing": {
+      "enabled": false
+    },
+    "base": {
+      "visual_preserve": [
+        {
+          "node": "source_13267588_001_1_1",
+          "primitive": 5
+        }
+      ],
+      "visual_error_mm": 0.5,
+      "visual_sampled_limit_mm": 2
+    },
+    "dart-station": {
+      "visual_preserve": [
+        {
+          "node": "dart_station/gate",
+          "primitive": 3
+        }
+      ]
+    },
+    "rune": {
+      "visual_preserve": [
+        {
+          "node": "rune/fixed/face_0/logo",
+          "primitive": 1
+        },
+        {
+          "node": "rune/fixed/face_1/logo",
+          "primitive": 1
+        }
+      ]
+    },
+    "resource-zone": {
+      "visual_preserve": [
+        {
+          "node": "source_13267852_7000001_1_6",
+          "primitive": 0
+        }
+      ]
+    }
+  }
+}

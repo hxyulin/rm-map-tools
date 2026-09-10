@@ -1,0 +1,4 @@
+rune: visual 983,603->182,039, collision 983,603->151,586; 4.47s
+outpost: visual 433,511->81,053, collision 433,511->79,057; 2.23s
+dart-station: visual 891,322->321,063, collision 891,322->264,275; 8.49s
+base: visual 894,899->317,070, collision 894,899->253,467; 7.65s

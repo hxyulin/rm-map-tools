@@ -1,0 +1,28 @@
+{
+  "versions": [
+    {
+      "version": "1.2.0",
+      "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+      "product_id": 13267588,
+      "body_id": 161758,
+      "source_faces": 5219,
+      "fresh_triangles": 316540,
+      "image": "base-main-body-step.png"
+    },
+    {
+      "version": "2.0.0",
+      "source_sha256": "8dfe9ebd761e44d91361b3e593bc05416329112217b58cb35800b3cde2ffae33",
+      "product_id": 5891079,
+      "body_id": 3908086,
+      "source_faces": 6190,
+      "fresh_triangles": 324996,
+      "image": "base-main-body-v20-step.png"
+    }
+  ],
+  "method": "Extract source main body; fresh OCCT tessellation at 0.5 mm and 0.2 rad; same source-body placement and VTK camera; no glTF writer or semantic export.",
+  "unmeshed_faces": [
+    0,
+    0
+  ],
+  "finding": "Both available versions contain the same open interior structure; V2.0 adds surface detail but does not restore a filled interior."
+}

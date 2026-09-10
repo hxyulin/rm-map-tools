@@ -1,0 +1,926 @@
+{
+  "rune/visual": {
+    "sample_count": 258195,
+    "max_mm": 6.997267026502606,
+    "p99_mm": 2.0000006492123172,
+    "worst": [
+      {
+        "node": 15,
+        "primitive": 2,
+        "max_mm": 6.997267026502606,
+        "before": 12520,
+        "after": 2666
+      },
+      {
+        "node": 15,
+        "primitive": 1,
+        "max_mm": 5.311277666880819,
+        "before": 48211,
+        "after": 9889
+      },
+      {
+        "node": 15,
+        "primitive": 0,
+        "max_mm": 4.858722764035431,
+        "before": 15344,
+        "after": 1406
+      },
+      {
+        "node": 8,
+        "primitive": 0,
+        "max_mm": 4.176831448832127,
+        "before": 53596,
+        "after": 3046
+      },
+      {
+        "node": 11,
+        "primitive": 0,
+        "max_mm": 4.162808391689471,
+        "before": 1528,
+        "after": 648
+      },
+      {
+        "node": 5,
+        "primitive": 0,
+        "max_mm": 4.1391194734243495,
+        "before": 1528,
+        "after": 646
+      },
+      {
+        "node": 4,
+        "primitive": 0,
+        "max_mm": 4.009862548315192,
+        "before": 1528,
+        "after": 640
+      },
+      {
+        "node": 9,
+        "primitive": 1,
+        "max_mm": 3.9475560188293457,
+        "before": 66516,
+        "after": 8522
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 3.716485294244776,
+        "before": 1528,
+        "after": 640
+      },
+      {
+        "node": 7,
+        "primitive": 0,
+        "max_mm": 3.716479769927777,
+        "before": 1528,
+        "after": 644
+      }
+    ]
+  },
+  "rune/collision": {
+    "sample_count": 260217,
+    "max_mm": 10.642477573707287,
+    "p99_mm": 4.5921110951091695,
+    "worst": [
+      {
+        "node": 15,
+        "primitive": 1,
+        "max_mm": 10.642477573707287,
+        "before": 48211,
+        "after": 7791
+      },
+      {
+        "node": 9,
+        "primitive": 2,
+        "max_mm": 10.228738112322418,
+        "before": 7890,
+        "after": 3990
+      },
+      {
+        "node": 8,
+        "primitive": 0,
+        "max_mm": 9.19563688308286,
+        "before": 53596,
+        "after": 2230
+      },
+      {
+        "node": 7,
+        "primitive": 1,
+        "max_mm": 9.108243565022427,
+        "before": 66512,
+        "after": 7788
+      },
+      {
+        "node": 14,
+        "primitive": 0,
+        "max_mm": 9.013326169172714,
+        "before": 53596,
+        "after": 2218
+      },
+      {
+        "node": 12,
+        "primitive": 3,
+        "max_mm": 8.463947467550561,
+        "before": 9199,
+        "after": 2009
+      },
+      {
+        "node": 10,
+        "primitive": 1,
+        "max_mm": 8.07779298616693,
+        "before": 66512,
+        "after": 7812
+      },
+      {
+        "node": 5,
+        "primitive": 1,
+        "max_mm": 8.010256649087864,
+        "before": 66534,
+        "after": 7784
+      },
+      {
+        "node": 15,
+        "primitive": 2,
+        "max_mm": 7.969489119627639,
+        "before": 12520,
+        "after": 1986
+      },
+      {
+        "node": 15,
+        "primitive": 3,
+        "max_mm": 7.915020499229929,
+        "before": 656,
+        "after": 106
+      }
+    ]
+  },
+  "outpost/visual": {
+    "sample_count": 97338,
+    "max_mm": 5.00001080742347,
+    "p99_mm": 1.9308297527952276,
+    "worst": [
+      {
+        "node": 6,
+        "primitive": 1,
+        "max_mm": 5.00001080742347,
+        "before": 174145,
+        "after": 24417
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "max_mm": 4.24527299280237,
+        "before": 42703,
+        "after": 12000
+      },
+      {
+        "node": 5,
+        "primitive": 1,
+        "max_mm": 3.8634147140655317,
+        "before": 42478,
+        "after": 2568
+      },
+      {
+        "node": 2,
+        "primitive": 1,
+        "max_mm": 3.8618753452099512,
+        "before": 45254,
+        "after": 3490
+      },
+      {
+        "node": 3,
+        "primitive": 0,
+        "max_mm": 3.7192026172390875,
+        "before": 45178,
+        "after": 3439
+      },
+      {
+        "node": 6,
+        "primitive": 7,
+        "max_mm": 3.4659372888935733,
+        "before": 9602,
+        "after": 1509
+      },
+      {
+        "node": 4,
+        "primitive": 0,
+        "max_mm": 3.333968745885899,
+        "before": 41068,
+        "after": 3188
+      },
+      {
+        "node": 3,
+        "primitive": 3,
+        "max_mm": 2.999962673618658,
+        "before": 4878,
+        "after": 4257
+      },
+      {
+        "node": 6,
+        "primitive": 5,
+        "max_mm": 2.9872828016355606,
+        "before": 2544,
+        "after": 670
+      },
+      {
+        "node": 5,
+        "primitive": 2,
+        "max_mm": 2.8067859243554434,
+        "before": 2144,
+        "after": 230
+      }
+    ]
+  },
+  "outpost/collision": {
+    "sample_count": 96876,
+    "max_mm": 9.642005716634781,
+    "p99_mm": 3.3568907916625417,
+    "worst": [
+      {
+        "node": 5,
+        "primitive": 1,
+        "max_mm": 9.642005716634781,
+        "before": 42478,
+        "after": 1600
+      },
+      {
+        "node": 6,
+        "primitive": 1,
+        "max_mm": 8.208557579186197,
+        "before": 174145,
+        "after": 20849
+      },
+      {
+        "node": 6,
+        "primitive": 7,
+        "max_mm": 6.729613462719295,
+        "before": 9602,
+        "after": 1224
+      },
+      {
+        "node": 2,
+        "primitive": 1,
+        "max_mm": 6.463033909395284,
+        "before": 45254,
+        "after": 2641
+      },
+      {
+        "node": 5,
+        "primitive": 2,
+        "max_mm": 5.818481019008088,
+        "before": 2144,
+        "after": 162
+      },
+      {
+        "node": 4,
+        "primitive": 0,
+        "max_mm": 5.30255575397004,
+        "before": 41068,
+        "after": 2400
+      },
+      {
+        "node": 3,
+        "primitive": 0,
+        "max_mm": 5.185107128924307,
+        "before": 45178,
+        "after": 2572
+      },
+      {
+        "node": 6,
+        "primitive": 5,
+        "max_mm": 4.483449814067896,
+        "before": 2544,
+        "after": 628
+      },
+      {
+        "node": 6,
+        "primitive": 3,
+        "max_mm": 3.817345644227597,
+        "before": 9506,
+        "after": 3724
+      },
+      {
+        "node": 2,
+        "primitive": 4,
+        "max_mm": 3.5000114182374746,
+        "before": 4878,
+        "after": 4236
+      }
+    ]
+  },
+  "dart-station/visual": {
+    "sample_count": 245571,
+    "max_mm": 30.099557386390046,
+    "p99_mm": 2.999995304259011,
+    "worst": [
+      {
+        "node": 2,
+        "primitive": 0,
+        "max_mm": 30.099557386390046,
+        "before": 153899,
+        "after": 12803
+      },
+      {
+        "node": 15,
+        "primitive": 0,
+        "max_mm": 5.491017963279349,
+        "before": 108524,
+        "after": 9536
+      },
+      {
+        "node": 2,
+        "primitive": 3,
+        "max_mm": 4.886162099942267,
+        "before": 67876,
+        "after": 9626
+      },
+      {
+        "node": 67,
+        "primitive": 0,
+        "max_mm": 4.633716799226583,
+        "before": 1918,
+        "after": 30
+      },
+      {
+        "node": 182,
+        "primitive": 0,
+        "max_mm": 4.282931681075659,
+        "before": 436,
+        "after": 4
+      },
+      {
+        "node": 14,
+        "primitive": 0,
+        "max_mm": 4.174332229957878,
+        "before": 7930,
+        "after": 713
+      },
+      {
+        "node": 147,
+        "primitive": 0,
+        "max_mm": 4.112994960074352,
+        "before": 100,
+        "after": 4
+      },
+      {
+        "node": 27,
+        "primitive": 0,
+        "max_mm": 4.106589517638456,
+        "before": 2928,
+        "after": 50
+      },
+      {
+        "node": 190,
+        "primitive": 0,
+        "max_mm": 4.0000196262435175,
+        "before": 4080,
+        "after": 220
+      },
+      {
+        "node": 191,
+        "primitive": 0,
+        "max_mm": 3.9999946029651134,
+        "before": 4080,
+        "after": 220
+      }
+    ]
+  },
+  "dart-station/collision": {
+    "sample_count": 227877,
+    "max_mm": 20.238114065362144,
+    "p99_mm": 4.771489296261488,
+    "worst": [
+      {
+        "node": 2,
+        "primitive": 0,
+        "max_mm": 20.238114065362144,
+        "before": 153899,
+        "after": 19887
+      },
+      {
+        "node": 55,
+        "primitive": 0,
+        "max_mm": 9.092918106224696,
+        "before": 6260,
+        "after": 924
+      },
+      {
+        "node": 7,
+        "primitive": 0,
+        "max_mm": 8.82304893063019,
+        "before": 1948,
+        "after": 282
+      },
+      {
+        "node": 15,
+        "primitive": 0,
+        "max_mm": 8.543537526066473,
+        "before": 108524,
+        "after": 8500
+      },
+      {
+        "node": 5,
+        "primitive": 0,
+        "max_mm": 8.333335320154845,
+        "before": 1948,
+        "after": 280
+      },
+      {
+        "node": 4,
+        "primitive": 0,
+        "max_mm": 7.927456918474938,
+        "before": 2324,
+        "after": 74
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "max_mm": 7.616711306127,
+        "before": 1948,
+        "after": 282
+      },
+      {
+        "node": 8,
+        "primitive": 0,
+        "max_mm": 7.426016118071475,
+        "before": 1948,
+        "after": 284
+      },
+      {
+        "node": 185,
+        "primitive": 0,
+        "max_mm": 7.01294572533883,
+        "before": 446,
+        "after": 48
+      },
+      {
+        "node": 184,
+        "primitive": 0,
+        "max_mm": 7.012945704889565,
+        "before": 446,
+        "after": 50
+      }
+    ]
+  },
+  "resource-zone/visual": {
+    "sample_count": 373602,
+    "max_mm": 10.187811805300704,
+    "p99_mm": 2.65228494980206,
+    "worst": [
+      {
+        "node": 75,
+        "primitive": 0,
+        "max_mm": 10.187811805300704,
+        "before": 115830,
+        "after": 11749
+      },
+      {
+        "node": 132,
+        "primitive": 0,
+        "max_mm": 4.999995231628418,
+        "before": 1532,
+        "after": 106
+      },
+      {
+        "node": 2,
+        "primitive": 0,
+        "max_mm": 4.939254821998265,
+        "before": 99771,
+        "after": 9052
+      },
+      {
+        "node": 114,
+        "primitive": 0,
+        "max_mm": 4.857021133331927,
+        "before": 1780,
+        "after": 134
+      },
+      {
+        "node": 70,
+        "primitive": 0,
+        "max_mm": 4.754557218091443,
+        "before": 43500,
+        "after": 4691
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 4.709563721121066,
+        "before": 6288,
+        "after": 492
+      },
+      {
+        "node": 131,
+        "primitive": 0,
+        "max_mm": 4.607575426854086,
+        "before": 1624,
+        "after": 100
+      },
+      {
+        "node": 92,
+        "primitive": 0,
+        "max_mm": 4.606685788645779,
+        "before": 8025,
+        "after": 692
+      },
+      {
+        "node": 75,
+        "primitive": 1,
+        "max_mm": 4.51119033068322,
+        "before": 26514,
+        "after": 8142
+      },
+      {
+        "node": 90,
+        "primitive": 0,
+        "max_mm": 4.372140377777779,
+        "before": 8452,
+        "after": 755
+      }
+    ]
+  },
+  "resource-zone/collision": {
+    "sample_count": 327048,
+    "max_mm": 15.059004843605312,
+    "p99_mm": 4.744638714590744,
+    "worst": [
+      {
+        "node": 75,
+        "primitive": 0,
+        "max_mm": 15.059004843605312,
+        "before": 115830,
+        "after": 10809
+      },
+      {
+        "node": 66,
+        "primitive": 0,
+        "max_mm": 11.499647635266697,
+        "before": 5916,
+        "after": 176
+      },
+      {
+        "node": 2,
+        "primitive": 0,
+        "max_mm": 9.157142265670968,
+        "before": 99771,
+        "after": 7394
+      },
+      {
+        "node": 87,
+        "primitive": 0,
+        "max_mm": 8.749835259863275,
+        "before": 2927,
+        "after": 13
+      },
+      {
+        "node": 17,
+        "primitive": 8,
+        "max_mm": 8.170067586748901,
+        "before": 25790,
+        "after": 5900
+      },
+      {
+        "node": 117,
+        "primitive": 0,
+        "max_mm": 8.000001311302185,
+        "before": 1076,
+        "after": 22
+      },
+      {
+        "node": 60,
+        "primitive": 0,
+        "max_mm": 7.590293884277344,
+        "before": 896,
+        "after": 24
+      },
+      {
+        "node": 17,
+        "primitive": 2,
+        "max_mm": 7.499992847442627,
+        "before": 4746,
+        "after": 1098
+      },
+      {
+        "node": 92,
+        "primitive": 0,
+        "max_mm": 7.355711697110579,
+        "before": 8025,
+        "after": 646
+      },
+      {
+        "node": 58,
+        "primitive": 0,
+        "max_mm": 7.097956946143732,
+        "before": 372,
+        "after": 36
+      }
+    ]
+  },
+  "base/visual": {
+    "sample_count": 344670,
+    "max_mm": 11.150002991245156,
+    "p99_mm": 3.3333555858412365,
+    "worst": [
+      {
+        "node": 22,
+        "primitive": 2,
+        "max_mm": 11.150002991245156,
+        "before": 28383,
+        "after": 2367
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 7.499999864051805,
+        "before": 32297,
+        "after": 4250
+      },
+      {
+        "node": 27,
+        "primitive": 0,
+        "max_mm": 5.000003160599711,
+        "before": 2544,
+        "after": 182
+      },
+      {
+        "node": 3,
+        "primitive": 1,
+        "max_mm": 4.999996649402378,
+        "before": 23749,
+        "after": 2059
+      },
+      {
+        "node": 21,
+        "primitive": 0,
+        "max_mm": 4.999979293380943,
+        "before": 2544,
+        "after": 182
+      },
+      {
+        "node": 24,
+        "primitive": 0,
+        "max_mm": 4.999971614836755,
+        "before": 2544,
+        "after": 172
+      },
+      {
+        "node": 39,
+        "primitive": 0,
+        "max_mm": 4.914760332266542,
+        "before": 849,
+        "after": 4
+      },
+      {
+        "node": 35,
+        "primitive": 0,
+        "max_mm": 4.914679451724276,
+        "before": 849,
+        "after": 8
+      },
+      {
+        "node": 48,
+        "primitive": 0,
+        "max_mm": 4.914678356161353,
+        "before": 849,
+        "after": 4
+      },
+      {
+        "node": 31,
+        "primitive": 0,
+        "max_mm": 4.914664017299118,
+        "before": 849,
+        "after": 6
+      }
+    ]
+  },
+  "base/collision": {
+    "sample_count": 254877,
+    "max_mm": 12.232561373188148,
+    "p99_mm": 4.684386053729077,
+    "worst": [
+      {
+        "node": 22,
+        "primitive": 2,
+        "max_mm": 12.232561373188148,
+        "before": 28383,
+        "after": 2021
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 9.068437635452534,
+        "before": 32297,
+        "after": 3462
+      },
+      {
+        "node": 18,
+        "primitive": 2,
+        "max_mm": 7.810456382108066,
+        "before": 6370,
+        "after": 1578
+      },
+      {
+        "node": 1,
+        "primitive": 1,
+        "max_mm": 7.589844700099694,
+        "before": 206191,
+        "after": 149357
+      },
+      {
+        "node": 24,
+        "primitive": 0,
+        "max_mm": 7.4616011373220115,
+        "before": 2544,
+        "after": 106
+      },
+      {
+        "node": 28,
+        "primitive": 3,
+        "max_mm": 7.388684171328276,
+        "before": 8291,
+        "after": 1699
+      },
+      {
+        "node": 25,
+        "primitive": 1,
+        "max_mm": 7.130605518891356,
+        "before": 32643,
+        "after": 985
+      },
+      {
+        "node": 29,
+        "primitive": 0,
+        "max_mm": 6.834128776310919,
+        "before": 1060,
+        "after": 20
+      },
+      {
+        "node": 18,
+        "primitive": 1,
+        "max_mm": 6.753106796510658,
+        "before": 913,
+        "after": 117
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "max_mm": 6.645267249055687,
+        "before": 432,
+        "after": 6
+      }
+    ]
+  },
+  "tech-core/visual": {
+    "sample_count": 68832,
+    "max_mm": 6.750004567295513,
+    "p99_mm": 2.32124785965349,
+    "worst": [
+      {
+        "node": 9,
+        "primitive": 1,
+        "max_mm": 6.750004567295513,
+        "before": 44461,
+        "after": 6785
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "max_mm": 5.350057221327136,
+        "before": 3210,
+        "after": 536
+      },
+      {
+        "node": 11,
+        "primitive": 0,
+        "max_mm": 4.679393386595752,
+        "before": 6278,
+        "after": 550
+      },
+      {
+        "node": 12,
+        "primitive": 0,
+        "max_mm": 3.7013596069334307,
+        "before": 195,
+        "after": 39
+      },
+      {
+        "node": 1,
+        "primitive": 0,
+        "max_mm": 3.483056265065353,
+        "before": 2313,
+        "after": 500
+      },
+      {
+        "node": 9,
+        "primitive": 4,
+        "max_mm": 3.4563676300991197,
+        "before": 465,
+        "after": 183
+      },
+      {
+        "node": 7,
+        "primitive": 0,
+        "max_mm": 3.3256469292229625,
+        "before": 75,
+        "after": 43
+      },
+      {
+        "node": 1,
+        "primitive": 1,
+        "max_mm": 3.254417568328024,
+        "before": 4920,
+        "after": 780
+      },
+      {
+        "node": 14,
+        "primitive": 0,
+        "max_mm": 3.122049522595617,
+        "before": 118288,
+        "after": 52742
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 3.0821022084337018,
+        "before": 192,
+        "after": 30
+      }
+    ]
+  },
+  "tech-core/collision": {
+    "sample_count": 63450,
+    "max_mm": 24.80324697853515,
+    "p99_mm": 3.7116882894959584,
+    "worst": [
+      {
+        "node": 14,
+        "primitive": 0,
+        "max_mm": 24.80324697853515,
+        "before": 118288,
+        "after": 52268
+      },
+      {
+        "node": 1,
+        "primitive": 0,
+        "max_mm": 7.722288250977394,
+        "before": 2313,
+        "after": 344
+      },
+      {
+        "node": 9,
+        "primitive": 1,
+        "max_mm": 7.583096721557326,
+        "before": 44461,
+        "after": 5977
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "max_mm": 7.365349373272816,
+        "before": 192,
+        "after": 24
+      },
+      {
+        "node": 12,
+        "primitive": 0,
+        "max_mm": 6.867720833222203,
+        "before": 195,
+        "after": 33
+      },
+      {
+        "node": 10,
+        "primitive": 0,
+        "max_mm": 5.716017344487967,
+        "before": 320,
+        "after": 124
+      },
+      {
+        "node": 11,
+        "primitive": 0,
+        "max_mm": 5.251376139728716,
+        "before": 6278,
+        "after": 442
+      },
+      {
+        "node": 9,
+        "primitive": 4,
+        "max_mm": 4.834257783040867,
+        "before": 465,
+        "after": 177
+      },
+      {
+        "node": 9,
+        "primitive": 2,
+        "max_mm": 4.736868485774241,
+        "before": 3912,
+        "after": 1184
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "max_mm": 4.408230460045346,
+        "before": 3210,
+        "after": 778
+      }
+    ]
+  }
+}

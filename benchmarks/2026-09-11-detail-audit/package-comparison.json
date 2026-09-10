@@ -1,0 +1,154 @@
+{
+  "before": {
+    "assets": {
+      "floor": {
+        "instances": 1,
+        "visual": 12,
+        "static_collision_input": 12,
+        "visual_sha256": "2d4c39e6a2a854b2de5af94ad894cba00afcd76a766ae69238ff3895e669e42b",
+        "collision_sha256": "b05d64106c3d2f00906459ccc0c48ee12f4885e91b63605aea1d63d812a4713a"
+      },
+      "arena-static": {
+        "instances": 1,
+        "visual": 119776,
+        "static_collision_input": 119776,
+        "visual_sha256": "7f99c31ba06d7b1866ea23bfa832db847bc633640bbd46fbeacb24128fb4f0d7",
+        "collision_sha256": "6ad4c8cec29097f3dd3c99c668e98e49a8fed81dfa900e8ed528fee88f1bbdc8"
+      },
+      "rune": {
+        "instances": 1,
+        "visual": 983603,
+        "static_collision_input": 76731,
+        "visual_sha256": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b",
+        "collision_sha256": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b"
+      },
+      "outpost": {
+        "instances": 2,
+        "visual": 867022,
+        "static_collision_input": 484670,
+        "visual_sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+        "collision_sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795"
+      },
+      "centre-platform": {
+        "instances": 1,
+        "visual": 33255,
+        "static_collision_input": 32962,
+        "visual_sha256": "f96d52b5c169b3b48d3fd0db61cd6220c133e2c5a170802d87777ef3dff3fd3c",
+        "collision_sha256": "29960ed2e5bb50c19068cc04c6875c76a1f7aa9b6118e5ae15f16ddce3630bff"
+      },
+      "dart-station": {
+        "instances": 2,
+        "visual": 1242440,
+        "static_collision_input": 1008362,
+        "visual_sha256": "0e476008bdde3fcbc6153ccb00c0099dc1d6b86c94e5db8c39badbdd8ec03541",
+        "collision_sha256": "2d55ca96f8a6a010315d6a813f96cf74d044b14efb7ff512649c6de3d9846fb0"
+      },
+      "resource-zone": {
+        "instances": 2,
+        "visual": 2468504,
+        "static_collision_input": 1988184,
+        "visual_sha256": "79f52255193ab16a506cf0ab77e5eb41db8bb2e3618b7f04faa58c94a3e85b08",
+        "collision_sha256": "34f5ee092da2cd251b3955063834c35de9edb149b1cc517e2698a44db3bc298a"
+      },
+      "outpost-footing": {
+        "instances": 2,
+        "visual": 40,
+        "static_collision_input": 40,
+        "visual_sha256": "863ca3c609adac382ea7da16c2118455f64552b8aa9434178d432e0c06582e82",
+        "collision_sha256": "d38436b0505b5ed7d2690f24b1872a4b32ff8c409d3342b9f6430a53ad8e39cc"
+      },
+      "base": {
+        "instances": 2,
+        "visual": 1305338,
+        "static_collision_input": 1009088,
+        "visual_sha256": "72ca6b9758254b05ba0e95e089399569cc5e6904a0c4b01f4877cc9b6ad9937c",
+        "collision_sha256": "6b79d7724261a96c89de312574e5bc164a71ee652a1c4dc9496676430bfa2c26"
+      },
+      "tech-core": {
+        "instances": 2,
+        "visual": 288830,
+        "static_collision_input": 209916,
+        "visual_sha256": "d9e2cc67b661d4374b95a207ebbbe0b7612c9a646dbea1e6af780a8c13033360",
+        "collision_sha256": "1d18a5995a9eda4a15d3431a0634772df28d8769dacdde8ec6afd2c0aa7cfcf6"
+      }
+    },
+    "visual": 7308820,
+    "static_collision_input": 4929741
+  },
+  "after": {
+    "assets": {
+      "floor": {
+        "instances": 1,
+        "visual": 12,
+        "static_collision_input": 12,
+        "visual_sha256": "f3371ce858bbc7940ca741411ba3d83a5f90d443a90fc284ea561e8f1c6dbe00",
+        "collision_sha256": "ade8d9f4c7ca158e3541bed415b2d72edc99552def78a06982893ca63d66936d"
+      },
+      "arena-static": {
+        "instances": 1,
+        "visual": 119776,
+        "static_collision_input": 119776,
+        "visual_sha256": "7ca3512fad0085286dfd5f2c42d393707e88e73518f6a46a054e6602b324891a",
+        "collision_sha256": "696d93054cab84d1c5d96aa7f98290a9064aa825656c0d254d5107a726b66afc"
+      },
+      "rune": {
+        "instances": 1,
+        "visual": 983603,
+        "static_collision_input": 76731,
+        "visual_sha256": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b",
+        "collision_sha256": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b"
+      },
+      "outpost": {
+        "instances": 2,
+        "visual": 867022,
+        "static_collision_input": 484670,
+        "visual_sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+        "collision_sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795"
+      },
+      "centre-platform": {
+        "instances": 1,
+        "visual": 33255,
+        "static_collision_input": 32962,
+        "visual_sha256": "6e8920fa0b5a7a5fe3b0a31974232a148026b765c123b0de98213ad1489e2255",
+        "collision_sha256": "c402f92367b74c832c03e468af0d33750440f3257dd4ab551941b4d58ed486fe"
+      },
+      "dart-station": {
+        "instances": 2,
+        "visual": 888038,
+        "static_collision_input": 771998,
+        "visual_sha256": "9f4642cd621b169abdc50370286768f254de2ae4bf3f78e9e0a5528ab5a927b3",
+        "collision_sha256": "0ac4f7f078c8a46998f5e0c851e96c4f9859c866ef615526c86c8345095f26e7"
+      },
+      "resource-zone": {
+        "instances": 2,
+        "visual": 1775862,
+        "static_collision_input": 1528012,
+        "visual_sha256": "928e302525e154afdaaa04a99b5c36e61d2942ed4b19e7017b9ab05dbf656d69",
+        "collision_sha256": "ebc7528a2d61fbcefdede4853e5f9e884a2ffae1a5ecfcc71c0d979d04837f60"
+      },
+      "outpost-footing": {
+        "instances": 2,
+        "visual": 40,
+        "static_collision_input": 40,
+        "visual_sha256": "134b95a7ed3bbc9c3425bb1940f2683693d851de3f4a0a67a2b6129be2170640",
+        "collision_sha256": "f4ac2bd22fabf5d3a619a7874943e55eb187a4ee9e526324f34526aed2dc50ba"
+      },
+      "base": {
+        "instances": 2,
+        "visual": 943050,
+        "static_collision_input": 817564,
+        "visual_sha256": "57de02f848165ebda5f4acc3d0ec37f371d9db54a5f21e8e0c6eb7e75a290782",
+        "collision_sha256": "3cabf569afb5419df4b46c9560c20a8c5506210cf5625a0028e68334883114d1"
+      },
+      "tech-core": {
+        "instances": 2,
+        "visual": 175034,
+        "static_collision_input": 141898,
+        "visual_sha256": "f528f6bccb4110651d547ed7082c2fd6515d759c54ae80b2ddfd45304d200698",
+        "collision_sha256": "8d9cae5d28298ec138ee603b33dc4a10cfbe74ca1c6f1170078732b0e1df1357"
+      }
+    },
+    "visual": 5785692,
+    "static_collision_input": 3973663
+  }
+}

@@ -1,0 +1,27 @@
+2026-09-10T18:44:38.633052Z  INFO bevy_diagnostic::system_information_diagnostics_plugin::internal: SystemInfo { os: "macOS 26.6.2", kernel: "25.6.0", cpu: "Apple M3 Pro", core_count: "11", memory: "18.0 GiB" }
+2026-09-10T18:44:38.694290Z  INFO bevy_render::renderer: AdapterInfo { name: "Apple M3 Pro", vendor: 0, device: 0, device_type: IntegratedGpu, device_pci_bus_id: "", driver: "", driver_info: "", backend: Metal, subgroup_min_size: 4, subgroup_max_size: 64, transient_saves_memory: true }
+2026-09-10T18:44:38.785821Z  INFO bevy_pbr::cluster: GPU clustering is supported on this device.
+2026-09-10T18:44:38.785891Z  INFO bevy_render::batching::gpu_preprocessing: GPU preprocessing is fully supported on this device.
+2026-09-10T18:44:38.811357Z  INFO bevy_winit::system: Creating new window rm-simulator (65v0)
+field collision: 685168 ground triangles, 43780 fixture triangles, 209588 equipment triangles (source tessellations or CAD visual meshes)
+joined as client 1, red, spectating
+2026-09-10T18:44:42.869243Z  WARN rm_simulator::session: pilot joined as red, spectating
+2026-09-10T18:44:42.872589Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="floor.glb" loaded=1 expected=16
+2026-09-10T18:44:42.928387Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="arena-static.glb" loaded=2 expected=16
+2026-09-10T18:44:42.946516Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="rune.glb" joints=2
+2026-09-10T18:44:42.962422Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="outpost.glb" joints=1
+2026-09-10T18:44:42.962489Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="outpost.glb" joints=1
+2026-09-10T18:44:42.990212Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="equipment/base.glb" joints=3
+2026-09-10T18:44:42.990352Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="equipment/base.glb" joints=3
+2026-09-10T18:44:42.996645Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/tech-core.glb" loaded=8 expected=16
+2026-09-10T18:44:42.996698Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/tech-core.glb" loaded=9 expected=16
+2026-09-10T18:44:43.018083Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="centre-platform.glb" loaded=10 expected=16
+2026-09-10T18:44:43.035372Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="dart-station.glb" joints=1
+2026-09-10T18:44:43.035645Z  INFO rm_simulator_render::cad: semantic CAD instance ready file="dart-station.glb" joints=1
+2026-09-10T18:44:43.057836Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="resource-zone.glb" loaded=13 expected=16
+2026-09-10T18:44:43.057907Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="resource-zone.glb" loaded=14 expected=16
+2026-09-10T18:44:43.064609Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost-footing.glb" loaded=15 expected=16
+2026-09-10T18:44:43.064666Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost-footing.glb" loaded=16 expected=16
+2026-09-10T18:44:43.177282Z  INFO bevy_render::view::window::screenshot: Screenshot saved to ../rm-map-tools/out/unlocked-validation/deployed.png
+2026-09-10T18:44:43.177306Z  INFO rm_simulator::screenshot: saved screenshot to ../rm-map-tools/out/unlocked-validation/deployed.png
+2026-09-10T18:44:43.179035Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(44522619520)

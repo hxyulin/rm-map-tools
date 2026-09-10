@@ -1,0 +1,378 @@
+{
+  "deployed": {
+    "visual": 3018741,
+    "static_colliders": 2169201,
+    "glb_bytes": 259669320,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 231258,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 99793,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 389586,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 316623,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "placements": 2
+      }
+    }
+  },
+  "control": {
+    "visual": 3761695,
+    "static_colliders": 3025441,
+    "glb_bytes": 326836292,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 231258,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 99793,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 389586,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 798624,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 316623,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 84051,
+        "placements": 2
+      }
+    }
+  },
+  "moderate": {
+    "visual": 3252318,
+    "static_colliders": 2842313,
+    "glb_bytes": 291878428,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 187093,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 81687,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 272225,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 742715,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 281469,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 77975,
+        "placements": 2
+      }
+    }
+  },
+  "aggressive": {
+    "visual": 3018109,
+    "static_colliders": 3022757,
+    "glb_bytes": 286887160,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 142510,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 67007,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 241555,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 730886,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 248439,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 73371,
+        "placements": 2
+      }
+    }
+  },
+  "coarse": {
+    "visual": 3181457,
+    "static_colliders": 2980519,
+    "glb_bytes": 291641596,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 139098,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 60601,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 277831,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 746495,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 284602,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 75109,
+        "placements": 2
+      }
+    }
+  },
+  "checked-moderate": {
+    "visual": 2673570,
+    "static_colliders": 2107611,
+    "glb_bytes": 236936420,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 183341,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 81687,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 298169,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 277519,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "placements": 2
+      }
+    }
+  },
+  "checked-aggressive": {
+    "visual": 2520663,
+    "static_colliders": 2107611,
+    "glb_bytes": 229180948,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 151586,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 79057,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 264275,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 253467,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "placements": 2
+      }
+    }
+  },
+  "checked-coarse": {
+    "visual": 2795890,
+    "static_colliders": 2107611,
+    "glb_bytes": 242018840,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "placements": 1
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "placements": 1
+      },
+      "rune": {
+        "visual_per_instance": 182039,
+        "placements": 1
+      },
+      "outpost": {
+        "visual_per_instance": 81053,
+        "placements": 2
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "placements": 1
+      },
+      "dart-station": {
+        "visual_per_instance": 321063,
+        "placements": 2
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "placements": 2
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "placements": 2
+      },
+      "base": {
+        "visual_per_instance": 317070,
+        "placements": 2
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "placements": 2
+      }
+    }
+  }
+}

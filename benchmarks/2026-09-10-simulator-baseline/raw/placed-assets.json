@@ -1,0 +1,62 @@
+[
+  {
+    "asset": "floor",
+    "instances": 1,
+    "visual_triangles": 12,
+    "raw_collision_triangles": 12
+  },
+  {
+    "asset": "arena-static",
+    "instances": 1,
+    "visual_triangles": 119776,
+    "raw_collision_triangles": 36804
+  },
+  {
+    "asset": "rune",
+    "instances": 1,
+    "visual_triangles": 983603,
+    "raw_collision_triangles": 10152
+  },
+  {
+    "asset": "outpost",
+    "instances": 2,
+    "visual_triangles": 867022,
+    "raw_collision_triangles": 33942
+  },
+  {
+    "asset": "centre-platform",
+    "instances": 1,
+    "visual_triangles": 51402,
+    "raw_collision_triangles": 26570
+  },
+  {
+    "asset": "dart-station",
+    "instances": 2,
+    "visual_triangles": 1234144,
+    "raw_collision_triangles": 605238
+  },
+  {
+    "asset": "resource-zone",
+    "instances": 2,
+    "visual_triangles": 1545112,
+    "raw_collision_triangles": 763952
+  },
+  {
+    "asset": "outpost-footing",
+    "instances": 2,
+    "visual_triangles": 40,
+    "raw_collision_triangles": 40
+  },
+  {
+    "asset": "base",
+    "instances": 2,
+    "visual_triangles": 1359294,
+    "raw_collision_triangles": 649610
+  },
+  {
+    "asset": "tech-core",
+    "instances": 2,
+    "visual_triangles": 180296,
+    "raw_collision_triangles": 77224
+  }
+]

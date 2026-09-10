@@ -1,0 +1,19 @@
+{
+  "simulator_commit": "0a93409d23ea4f8a3f46b02a9069245c60d8d3d8",
+  "build": "cargo build --release -p rm-simulator-app; instrumented app linked against those freshly built release rlibs with rustc -C opt-level=3",
+  "rlibs": {
+    "libbevy-12322ecbafa977e1.rlib": "1b0a9aebfe9b1ee7fd13576d5301d83a933d0a37631d5ccf4134f17ae56a414f",
+    "libclap-fa2aab00f0786cfb.rlib": "f112c368641f545b375c52b098ef1aa704b5caf46a58821f483beb2b46fec890",
+    "libanyhow-5ac1c59001ece441.rlib": "0f85ef54cbc5f6889705398c4c07614d48e0c75a165c0c75f759d048738fbe56",
+    "libserde-bb85ae110e7a19ae.rlib": "8217c6c751b1e6006f01e186f941fe889e37a63d87bf1d5c7af14aee863c6867",
+    "libserde_json-59ccef6e4ff7a24b.rlib": "6c3fae4e2df61687fac6998bf60995ff64dcb7f7cd43a139d970b42d13ed22f0",
+    "librm_simulator_world-3d6a55c8cf58750c.rlib": "2f00e2d0fe3ec87a977865fae4bf2a1512025700cb67643223bc1ae99ded90a2",
+    "librm_simulator_server-c7826d33c9688b13.rlib": "03a7b06ece9e4e45400401cddafeae757784665508836859936a565310aad170",
+    "librm_simulator_render-47841e4f356168d0.rlib": "2ef99e520ad27998c500ad08b2134f70eb12932f5f2b7f5d9374e44cf7029f42"
+  },
+  "binaries": {
+    "rm-benchmark": "8a09632a24a61870e2cdfbe66f4859d99135e21de9c627e38047a94d59d69ddb",
+    "physics": "4aa807c7971f467f88f2241ef7e42d0d25c4fc329dc17812ce8bc7cf505e17d0",
+    "collider-count": "04749fec44c83d23686a27cd7674aaf2b1bbc1270282f89ea1cbcf9570251b7c"
+  }
+}

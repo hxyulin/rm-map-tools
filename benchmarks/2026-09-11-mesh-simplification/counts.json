@@ -1,0 +1,114 @@
+{
+  "before": {
+    "visual_triangles": 7527046,
+    "glb_bytes": 587168572,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "instances": 1,
+        "glb_bytes": 7364
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "instances": 1,
+        "glb_bytes": 20706780
+      },
+      "rune": {
+        "visual_per_instance": 983603,
+        "instances": 1,
+        "glb_bytes": 70258084
+      },
+      "outpost": {
+        "visual_per_instance": 433511,
+        "instances": 2,
+        "glb_bytes": 36439464
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "instances": 1,
+        "glb_bytes": 5634340
+      },
+      "dart-station": {
+        "visual_per_instance": 891322,
+        "instances": 2,
+        "glb_bytes": 151202856
+      },
+      "resource-zone": {
+        "visual_per_instance": 887931,
+        "instances": 2,
+        "glb_bytes": 139015588
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "instances": 2,
+        "glb_bytes": 7276
+      },
+      "base": {
+        "visual_per_instance": 894899,
+        "instances": 2,
+        "glb_bytes": 150545732
+      },
+      "tech-core": {
+        "visual_per_instance": 87517,
+        "instances": 2,
+        "glb_bytes": 13351088
+      }
+    }
+  },
+  "after": {
+    "visual_triangles": 3018741,
+    "glb_bytes": 259669320,
+    "assets": {
+      "floor": {
+        "visual_per_instance": 12,
+        "instances": 1,
+        "glb_bytes": 7364
+      },
+      "arena-static": {
+        "visual_per_instance": 119776,
+        "instances": 1,
+        "glb_bytes": 20706780
+      },
+      "rune": {
+        "visual_per_instance": 231258,
+        "instances": 1,
+        "glb_bytes": 35257284
+      },
+      "outpost": {
+        "visual_per_instance": 99793,
+        "instances": 2,
+        "glb_bytes": 15299156
+      },
+      "centre-platform": {
+        "visual_per_instance": 33255,
+        "instances": 1,
+        "glb_bytes": 5634340
+      },
+      "dart-station": {
+        "visual_per_instance": 389586,
+        "instances": 2,
+        "glb_bytes": 56084128
+      },
+      "resource-zone": {
+        "visual_per_instance": 462486,
+        "instances": 2,
+        "glb_bytes": 69074128
+      },
+      "outpost-footing": {
+        "visual_per_instance": 20,
+        "instances": 2,
+        "glb_bytes": 7276
+      },
+      "base": {
+        "visual_per_instance": 316623,
+        "instances": 2,
+        "glb_bytes": 50443740
+      },
+      "tech-core": {
+        "visual_per_instance": 48712,
+        "instances": 2,
+        "glb_bytes": 7155124
+      }
+    }
+  }
+}

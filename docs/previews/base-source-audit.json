@@ -1,0 +1,489 @@
+{
+  "source": "RMUC2026 V1.2.0 STEP split package",
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+  "products": [
+    {
+      "product": "001_1_ASM",
+      "product_id": 13267587,
+      "source_faces": 12188,
+      "imported_faces": 12194,
+      "error": null
+    },
+    {
+      "product": "001_1_1",
+      "product_id": 13267588,
+      "source_faces": 5219,
+      "imported_faces": 5219,
+      "error": null
+    },
+    {
+      "product": "001_1_2",
+      "product_id": 13267589,
+      "source_faces": 1397,
+      "imported_faces": 1397,
+      "error": null
+    },
+    {
+      "product": "001_1_3",
+      "product_id": 13267590,
+      "source_faces": 6,
+      "imported_faces": 6,
+      "error": null
+    },
+    {
+      "product": "001_1_4",
+      "product_id": 13267591,
+      "source_faces": 1397,
+      "imported_faces": 1397,
+      "error": null
+    },
+    {
+      "product": "001_1_5",
+      "product_id": 13267592,
+      "source_faces": 6,
+      "imported_faces": 6,
+      "error": null
+    },
+    {
+      "product": "001_1_6",
+      "product_id": 13267593,
+      "source_faces": 1397,
+      "imported_faces": 1397,
+      "error": null
+    },
+    {
+      "product": "001_1_7",
+      "product_id": 13267594,
+      "source_faces": 6,
+      "imported_faces": 6,
+      "error": null
+    },
+    {
+      "product": "001_1_8",
+      "product_id": 13267595,
+      "source_faces": 96,
+      "imported_faces": 96,
+      "error": null
+    },
+    {
+      "product": "001_1_9",
+      "product_id": 13267596,
+      "source_faces": 96,
+      "imported_faces": 96,
+      "error": null
+    },
+    {
+      "product": "001_1_10",
+      "product_id": 13267597,
+      "source_faces": 96,
+      "imported_faces": 96,
+      "error": null
+    },
+    {
+      "product": "001_1_11",
+      "product_id": 13267598,
+      "source_faces": 1883,
+      "imported_faces": 1883,
+      "error": null
+    },
+    {
+      "product": "001_1_12",
+      "product_id": 13267599,
+      "source_faces": 798,
+      "imported_faces": 798,
+      "error": null
+    },
+    {
+      "product": "001_1_13",
+      "product_id": 13267600,
+      "source_faces": 299,
+      "imported_faces": 299,
+      "error": null
+    },
+    {
+      "product": "001_1_14",
+      "product_id": 13267601,
+      "source_faces": 910,
+      "imported_faces": 910,
+      "error": null
+    },
+    {
+      "product": "001_1_15",
+      "product_id": 13267602,
+      "source_faces": 18,
+      "imported_faces": 18,
+      "error": null
+    },
+    {
+      "product": "001_1_16",
+      "product_id": 13267603,
+      "source_faces": 18,
+      "imported_faces": 18,
+      "error": null
+    },
+    {
+      "product": "001_1_17",
+      "product_id": 13267604,
+      "source_faces": 148,
+      "imported_faces": 148,
+      "error": null
+    },
+    {
+      "product": "001_1_18",
+      "product_id": 13267605,
+      "source_faces": 34,
+      "imported_faces": 34,
+      "error": null
+    },
+    {
+      "product": "001_1_19",
+      "product_id": 13267606,
+      "source_faces": 51,
+      "imported_faces": 51,
+      "error": null
+    },
+    {
+      "product": "001_1_20",
+      "product_id": 13267607,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_21",
+      "product_id": 13267608,
+      "source_faces": 7156,
+      "imported_faces": 7156,
+      "error": null
+    },
+    {
+      "product": "001_1_22",
+      "product_id": 13267609,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_23",
+      "product_id": 13267610,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_24",
+      "product_id": 13267611,
+      "source_faces": 7156,
+      "imported_faces": 7156,
+      "error": null
+    },
+    {
+      "product": "001_1_25",
+      "product_id": 13267612,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_26",
+      "product_id": 13267613,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_27",
+      "product_id": 13267614,
+      "source_faces": 7156,
+      "imported_faces": 7156,
+      "error": null
+    },
+    {
+      "product": "001_1_28",
+      "product_id": 13267615,
+      "source_faces": 66,
+      "imported_faces": 66,
+      "error": null
+    },
+    {
+      "product": "001_1_29",
+      "product_id": 13267616,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_30",
+      "product_id": 13267617,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_31",
+      "product_id": 13267618,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_32",
+      "product_id": 13267619,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_33",
+      "product_id": 13267620,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_34",
+      "product_id": 13267621,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_35",
+      "product_id": 13267622,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_36",
+      "product_id": 13267623,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_37",
+      "product_id": 13267624,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_38",
+      "product_id": 13267625,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_39",
+      "product_id": 13267626,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_40",
+      "product_id": 13267627,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_41",
+      "product_id": 13267628,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_42",
+      "product_id": 13267629,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_43",
+      "product_id": 13267630,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_44",
+      "product_id": 13267631,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_45",
+      "product_id": 13267632,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_46",
+      "product_id": 13267633,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_47",
+      "product_id": 13267634,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_48",
+      "product_id": 13267635,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_49",
+      "product_id": 13267636,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_50",
+      "product_id": 13267637,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_51",
+      "product_id": 13267638,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_52",
+      "product_id": 13267639,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_53",
+      "product_id": 13267640,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_54",
+      "product_id": 13267641,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_55",
+      "product_id": 13267642,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_56",
+      "product_id": 13267643,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_57",
+      "product_id": 13267644,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_58",
+      "product_id": 13267645,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_59",
+      "product_id": 13267646,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_60",
+      "product_id": 13267647,
+      "source_faces": 35,
+      "imported_faces": 35,
+      "error": null
+    },
+    {
+      "product": "001_1_61",
+      "product_id": 13267648,
+      "source_faces": 87,
+      "imported_faces": 87,
+      "error": null
+    },
+    {
+      "product": "001_1_62",
+      "product_id": 13267649,
+      "source_faces": 62,
+      "imported_faces": 62,
+      "error": null
+    },
+    {
+      "product": "001_1_63",
+      "product_id": 13267650,
+      "source_faces": 29,
+      "imported_faces": 29,
+      "error": null
+    },
+    {
+      "product": "001_1_64",
+      "product_id": 13267651,
+      "source_faces": 29,
+      "imported_faces": 29,
+      "error": null
+    },
+    {
+      "product": "001_1_65",
+      "product_id": 13267652,
+      "source_faces": 29,
+      "imported_faces": 29,
+      "error": null
+    },
+    {
+      "product": "001_1_66",
+      "product_id": 13267653,
+      "source_faces": 29,
+      "imported_faces": 29,
+      "error": null
+    }
+  ],
+  "recorded_source_faces": 49312,
+  "imported_faces": 49318,
+  "products_with_fewer_imported_faces": [],
+  "direct_main_body_tessellation": {
+    "product_id": 13267588,
+    "source_faces": 5219,
+    "imported_faces": 5219,
+    "linear_deflection_mm": 0.5,
+    "angular_deflection_rad": 0.2,
+    "triangles": 316540,
+    "retry_or_failure_stats": {},
+    "image": "base-main-body-step.png"
+  },
+  "finding": "The main body is already hollow in the STEP import; direct tessellation reproduces the open structure without glTF or semantic processing."
+}

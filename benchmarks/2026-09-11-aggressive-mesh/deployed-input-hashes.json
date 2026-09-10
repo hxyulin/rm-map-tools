@@ -1,0 +1,42 @@
+{
+  "floor": {
+    "visual": "f3371ce858bbc7940ca741411ba3d83a5f90d443a90fc284ea561e8f1c6dbe00",
+    "collision": "ade8d9f4c7ca158e3541bed415b2d72edc99552def78a06982893ca63d66936d"
+  },
+  "arena-static": {
+    "visual": "7ca3512fad0085286dfd5f2c42d393707e88e73518f6a46a054e6602b324891a",
+    "collision": "696d93054cab84d1c5d96aa7f98290a9064aa825656c0d254d5107a726b66afc"
+  },
+  "rune": {
+    "visual": "6293816066a26767f0d3a8340c9be7c24882f651ece29b1d80fd668b84e3bdc6",
+    "collision": "02514b032bfd09680314f80b9d00ed25b30cb5f60b6e9f72f2e79c77bfc6456a"
+  },
+  "outpost": {
+    "visual": "7c4b4d19816bdb27ef68f66413cfde6189ba677aadcbb043b5b1fc26b479ed7e",
+    "collision": "4f1a841d0f67f75f7fdb9c2658d2d94bc0de3bdbaf790ef2a22227707ae77d9c"
+  },
+  "centre-platform": {
+    "visual": "6e8920fa0b5a7a5fe3b0a31974232a148026b765c123b0de98213ad1489e2255",
+    "collision": "c402f92367b74c832c03e468af0d33750440f3257dd4ab551941b4d58ed486fe"
+  },
+  "dart-station": {
+    "visual": "179c81b413f667c7129a86363f03d8d8b50e33caeace610bbf5dc0ba0c6ee37e",
+    "collision": "68ff3a7d693d4c4d584a3f49cdf445f8f507e34a40d3e59a4a67da537ce4bf6c"
+  },
+  "resource-zone": {
+    "visual": "1c03d78370174d2a4aa0d959e7061d4543d76234af43c9084a24b91410eeb373",
+    "collision": "1c9283adbd113e9c031208db6dbe7ed89bc4ba6b8497ead3c2e98ebe3cf5fec0"
+  },
+  "outpost-footing": {
+    "visual": "134b95a7ed3bbc9c3425bb1940f2683693d851de3f4a0a67a2b6129be2170640",
+    "collision": "f4ac2bd22fabf5d3a619a7874943e55eb187a4ee9e526324f34526aed2dc50ba"
+  },
+  "base": {
+    "visual": "3e0ada5a6536cd433e57fe85bc57388989dbc1d75819a35581a3e5224dfbabcb",
+    "collision": "35ba6d6aad3449fa0a5cf148f926ad9755195e291999f74bd5bf540fa43bd599"
+  },
+  "tech-core": {
+    "visual": "19eda42312b3487cb36fecdf11277add0585354143259305f71bebd727a02db8",
+    "collision": "0aacf6631f3617701f6ed6a50bd0e7911abcc02d07b12fb930cbac2e4cf44689"
+  }
+}

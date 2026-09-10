@@ -1,0 +1,88 @@
+{
+  "asset": "tech-core",
+  "input_visual_sha256": "38c4ee9dafe3d20fc909e6c61c0355d032a22829754875351ce09b909d3b7a73",
+  "articulation_sha256": "4f5410e942b0086afde69e76b5ec9ab8aba096e81da4a8c6cd9eb0c365b21316",
+  "joints": [
+    "tech-core.arm.base_yaw",
+    "tech-core.arm.shoulder_pitch",
+    "tech-core.arm.elbow_pitch",
+    "tech-core.arm.wrist_1",
+    "tech-core.arm.wrist_2",
+    "tech-core.arm.tool_roll"
+  ],
+  "hidden_roles": [],
+  "hidden_layers": [],
+  "hidden_nodes": [],
+  "reconstructed_nodes": [],
+  "presentation": {
+    "background": "black",
+    "overlays": false,
+    "camera": "360-degree perspective orbit"
+  },
+  "fps": 20,
+  "seconds": 14.0,
+  "frames": 280,
+  "size": [
+    960,
+    720
+  ],
+  "motion": "IK pose tour with a fixed-orientation 100 mm insertion segment",
+  "geometry_binding": "preview_only_rig",
+  "technology_core_demo": {
+    "kind": "preview_only_cad_links_with_schematic_bearings",
+    "rulebook": "V2.1.0 section 5.3.3, Level 2 post-insertion translation: 100 mm",
+    "translation_m": 0.1,
+    "direction_in_asset_frame": [
+      0.7071067811156341,
+      -0.707106781257461,
+      0.0
+    ],
+    "tool_reference_m": [
+      -0.3338121175765991,
+      0.2683262228965759,
+      0.25702786445617676
+    ],
+    "orientation": "varies during pose tour; held during 100 mm translation",
+    "timing": "seven equal-duration quintic segments; illustrative",
+    "absolute_rulebook_frame_calibrated": false,
+    "hidden_shared_hardware_node": 14,
+    "hidden_hardware_triangles": 91775,
+    "restored_tool_enclosure_node": 33,
+    "restored_tool_enclosure_triangles": 26513,
+    "tool_enclosure_partition_sha256": "315dfc86ca5ebaa88d7a513755765dabcedc29fa3b0ba977c57b721662c42977",
+    "schematic_bearings": [
+      "demo/tech-core/base_mount",
+      "demo/tech-core/shoulder",
+      "demo/tech-core/elbow",
+      "demo/tech-core/wrist_1",
+      "demo/tech-core/wrist_2",
+      "demo/tech-core/tool_flange"
+    ],
+    "maximum_position_error_m": 2.1650171846201333e-13,
+    "maximum_orientation_error_rad": 9.707691971804227e-12,
+    "maximum_absolute_joint_angle_rad": 1.1444258290438099,
+    "profile": "pose_tour",
+    "stages": [
+      "lift",
+      "turn_left",
+      "sweep_right",
+      "align",
+      "translate_100mm",
+      "retract",
+      "return"
+    ],
+    "maximum_tool_displacement_m": 0.20493901531919198
+  },
+  "demo_motion": {},
+  "timing": "inspection sweep, not rulebook timing",
+  "files": {
+    "tech-core-demo-orbit.mp4": {
+      "sha256": "7f62e654275ff4f78928e7efddd8eab5cee3a67d921d24a5d71c9d282991c6ed",
+      "bytes": 508859
+    },
+    "tech-core-demo-orbit.gif": {
+      "sha256": "b7f125b6f3c73506143c9f824af58bf66ede757766a91777af334e6f7c674570",
+      "bytes": 2942781
+    }
+  }
+}

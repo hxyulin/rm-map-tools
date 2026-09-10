@@ -1,0 +1,22 @@
+model ready in 1.7s; 355 arena parts
+skipped 0006_1_ASM (id 13267332, 1 occurrences, 63 solids) bbox [-2.768, -1.123, -1.641]..[2.768, 4.413, 0.066]: not arena; expected from the equipment copy
+skipped 0007_1_ASM (id 13267382, 1 occurrences, 252 solids) bbox [-1.811, 0.085, -1.405]..[1.811, 3.203, 1.857]: not arena; expected from the equipment copy
+skipped 0008_1 (id 13267542, 2 occurrences, 1 solids) bbox [-3.381, -2.613, -1.341]..[3.381, 5.901, -1.241]: not arena; expected from the equipment copy
+skipped 0009_1_ASM (id 13267543, 2 occurrences, 52 solids) bbox [-3.357, -2.495, -1.242]..[3.374, 5.802, 0.227]: not arena; expected from the equipment copy
+skipped 001_1_ASM (id 13267587, 2 occurrences, 76 solids) bbox [-12.226, 1.049, -1.444]..[12.226, 2.24, -0.263]: not arena; expected from the equipment copy
+skipped 0013_1_ASM (id 13267654, 2 occurrences, 203 solids) bbox [-14.473, -2.246, -1.641]..[14.473, 5.534, 1.111]: not arena; expected from the equipment copy
+skipped 0001_ASM (id 13267845, 2 occurrences, 217 solids) bbox [-14.881, -5.307, -1.642]..[14.881, 8.594, 0.041]: not arena; expected from the equipment copy
+floor slab: BREP_1128_0001_1
+[50/355] 4512 arena triangles
+[100/355] 12642 arena triangles
+[150/355] 18432 arena triangles
+[200/355] 26222 arena triangles
+[250/355] 28744 arena triangles
+[300/355] 31150 arena triangles
+[350/355] 33026 arena triangles
+graft donor /Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V2.0.0.stp: floor slab BREP_9
+graft graft_141103_BREP_220: donor slab tilt -0.00% x -2.62% y; top 0.270 m above the floor, 40588 / 40588 triangles
+graft graft_128896_BREP_192: donor slab tilt +0.00% x +2.62% y; top 0.270 m above the floor, 40474 / 40474 triangles
+floor: 1 nodes, 12 visual / 12 collision triangles, colours ['0.2000,0.2000,0.2000', '0.6275,0.6275,0.6275']
+arena-static: 387 nodes, 119776 visual / 119776 collision triangles, colours ['0.0667,0.0039,0.5922', '0.2000,0.2000,0.2000', '0.2549,0.2549,0.2549', '0.4706,0.4706,0.4706', '0.6275,0.6275,0.6275', '0.7843,0.7843,0.7059', '0.9804,0.9804,0.9804', '1.0000,0.0275,0.0275', '1.0000,1.0000,1.0000']
+floor top z = -1.6413 m; failures 0; bbox mismatches 0; 10s

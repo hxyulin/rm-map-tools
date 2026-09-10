@@ -1,0 +1,54 @@
+{
+  "notes": [
+    "Official DJI / RoboMaster CAD releases for the 2026 season, as published on bbs.robomaster.com.",
+    "sha256 is over the file exactly as served; null means nobody has downloaded that file through this script yet (run `download.py record <name>` after a download to fill it in).",
+    "These files are never committed (see NOTICE.md and .gitignore); this record and the script are."
+  ],
+  "files": [
+    {
+      "name": "RMUC2026_V2.0.0.stp",
+      "title": "RMUC 2026 场地 V2.0.0",
+      "url": "https://bbs-web-static.robomaster.com/f637e13eadfc4602a76c7a05c54f71271782803452461/RMUC2026_V2.0.0.stp",
+      "bytes": 1254821405,
+      "sha256": "8dfe9ebd761e44d91361b3e593bc05416329112217b58cb35800b3cde2ffae33",
+      "etag": "B163054834802D688D57A96520CD87B2-1197",
+      "last_modified": "Tue, 30 Jun 2026 07:12:44 GMT"
+    },
+    {
+      "name": "RMUC2026_V1.2.0.step",
+      "title": "RMUC 2026 场地 V1.2.0 (IGES round trip, face colours)",
+      "url": "https://bbs-web-static.robomaster.com/29ce9515248f4a45b64387c4a83206c81767087556146/RMUC2026_V1.2.0.step",
+      "bytes": 993297750,
+      "sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+      "etag": "57979987CDE170B4B4290C0AB2FFEFC6-948",
+      "last_modified": "Tue, 30 Dec 2025 09:40:36 GMT"
+    },
+    {
+      "name": "RMUC2026.stp",
+      "title": "RMUC 2026 场地 (first release, October 2025)",
+      "url": "https://bbs-web-static.robomaster.com/3abb26b20cd946509523df5d9f42bd631761107118068/RMUC2026.stp",
+      "bytes": 648723011,
+      "sha256": "bbf8265ae25dff154e902f5c2299f489a675034c1a84a87034911b30a532e5a2",
+      "etag": "AFF85DE9F7F1A4ED0E9EED51306BF868-619",
+      "last_modified": "Wed, 22 Oct 2025 04:26:13 GMT"
+    },
+    {
+      "name": "RMUL2026.stp",
+      "title": "RMUL 2026 场地",
+      "url": "https://bbs-web-static.robomaster.com/390f5a969de14811948cc0e102fc699f1761107116899/RMUL2026.stp",
+      "bytes": 1680693,
+      "sha256": "b0d380030c3d0dacf21bc53345bd3dc5c4c11763ab180f1de0b86fb0240d651c",
+      "etag": "C5A07B75C5271A381FB4EAE9E7B9FEAE-2",
+      "last_modified": "Wed, 22 Oct 2025 04:25:17 GMT"
+    },
+    {
+      "name": "能量单元.stp",
+      "title": "能量单元 (rune energy unit)",
+      "url": "https://bbs-web-static.robomaster.com/21cbbecaaceb47729bc477cd12f8de5b1761107116144/%E8%83%BD%E9%87%8F%E5%8D%95%E5%85%83.stp",
+      "bytes": 842155,
+      "sha256": "35d105a221f4527e5c5e84ac607c94c797ec2e19c734974de4c5485c2c2d5ee7",
+      "etag": "19F4C1927FE85A1A7D020EFB1DCA17C6-1",
+      "last_modified": "Wed, 22 Oct 2025 04:25:16 GMT"
+    }
+  ]
+}

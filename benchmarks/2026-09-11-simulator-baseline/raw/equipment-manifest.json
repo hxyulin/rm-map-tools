@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "units": "metres",
+  "generator": "rm-map-tools export_elements.py 0fd3f73-dirty (https://github.com/hxyulin/rm-map-tools)",
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+  "collision_solids": false,
+  "collision_contract": "Identical to visual triangles, including sheets; two-sided contacts required.",
+  "status": "visuals and collision proxies from the elements export; joints not assigned",
+  "assets": {
+    "base": {
+      "label": "\u57fa\u5730",
+      "visual": "base.glb",
+      "visual_sha256": "e7b1289fc3cf844700bb1501cb03543f083042028884ceb6fa936fe0fe26d297",
+      "collision": "base-collision.glb",
+      "collision_sha256": "e7b1289fc3cf844700bb1501cb03543f083042028884ceb6fa936fe0fe26d297",
+      "source_products": [
+        13267587,
+        13267588,
+        13267589,
+        13267590,
+        13267591,
+        13267592,
+        13267593,
+        13267594,
+        13267595,
+        13267596,
+        13267597,
+        13267598,
+        13267599,
+        13267600,
+        13267601,
+        13267602,
+        13267603,
+        13267604,
+        13267605,
+        13267606,
+        13267607,
+        13267608,
+        13267609,
+        13267610,
+        13267611,
+        13267612,
+        13267613,
+        13267614,
+        13267615,
+        13267616,
+        13267617,
+        13267618,
+        13267619,
+        13267620,
+        13267621,
+        13267622,
+        13267623,
+        13267624,
+        13267625,
+        13267626,
+        13267627,
+        13267628,
+        13267629,
+        13267630,
+        13267631,
+        13267632,
+        13267633,
+        13267634,
+        13267635,
+        13267636,
+        13267637,
+        13267638,
+        13267639,
+        13267640,
+        13267641,
+        13267642,
+        13267643,
+        13267644,
+        13267645,
+        13267646,
+        13267647,
+        13267648,
+        13267649,
+        13267650,
+        13267651,
+        13267652,
+        13267653
+      ],
+      "local_frame": "arena axes; origin at the footprint centre (x, y) and lowest vertex (z) of the reference instance; apply the placement to get the arena frame",
+      "placements_in_source_arena_frame": [
+        {
+          "instance": 0,
+          "translation_m": [
+            11.679959,
+            1.644594,
+            -1.444491
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "matrix_local_to_arena": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              11.679959116
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.644593674
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.444490707
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "method": "reference",
+          "bbox_residual_m": 0.0
+        },
+        {
+          "instance": 1,
+          "translation_m": [
+            -11.679959,
+            1.644094,
+            -1.444491
+          ],
+          "rotation_xyzw": [
+            0.0,
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "matrix_local_to_arena": [
+            [
+              -1.0,
+              0.0,
+              0.0,
+              -11.679959116
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0,
+              1.644093679
+            ],
+            [
+              0.0,
+              -0.0,
+              1.0,
+              -1.444490707
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "method": "instance",
+          "bbox_residual_m": 0.0
+        }
+      ],
+      "nodes": 67,
+      "triangles": 894899,
+      "collision_triangles": 894899,
+      "colours_srgb": [
+        null,
+        "0.0000,0.3765,0.5804",
+        "0.0000,1.0000,1.0000",
+        "0.0667,0.9804,0.0627",
+        "0.1451,0.0353,0.0000",
+        "0.2471,0.2471,0.2471",
+        "0.2471,0.5922,0.6314",
+        "0.3333,0.3333,0.3333",
+        "0.4196,0.4196,0.4196",
+        "0.6275,0.6275,0.6275",
+        "0.9373,0.9373,0.6510",
+        "1.0000,0.0000,0.0000",
+        "1.0000,1.0000,1.0000"
+      ],
+      "bbox_local_m": [
+        [
+          -0.546027,
+          -0.595077,
+          0.0
+        ],
+        [
+          0.546027,
+          0.595077,
+          1.181205
+        ]
+      ],
+      "in_full_map": true,
+      "collision_bytes": 75246192,
+      "collision_method": "visual triangles; node hierarchy preserved"
+    },
+    "tech-core": {
+      "label": "\u56fd\u8d5b\u79d1\u6280\u6838\u5fc3",
+      "visual": "tech-core.glb",
+      "visual_sha256": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+      "collision": "tech-core-collision.glb",
+      "collision_sha256": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+      "source_products": [
+        13267332,
+        13267356,
+        13267357,
+        13267358,
+        13267359,
+        13267360,
+        13267361,
+        13267362,
+        13267363,
+        13267364,
+        13267365,
+        13267366,
+        13267367,
+        13267368
+      ],
+      "local_frame": "arena axes; origin at the footprint centre (x, y) and lowest vertex (z) of the reference instance; apply the placement to get the arena frame",
+      "placements_in_source_arena_frame": [
+        {
+          "instance": 0,
+          "translation_m": [
+            -0.339663,
+            1.128413,
+            -0.810144
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "matrix_local_to_arena": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.339662838
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.128412778
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.810143696
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "method": "reference",
+          "bbox_residual_m": 0.0
+        },
+        {
+          "instance": 1,
+          "translation_m": [
+            0.340148,
+            2.159789,
+            -0.810144
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "matrix_local_to_arena": [
+            [
+              -1.0,
+              -0.0,
+              0.0,
+              0.340147771
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              2.159789099
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.810143696
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "method": "matched_yaw_180",
+          "bbox_residual_m": 0.000486,
+          "mesh_residual_p95_m": 0.031454,
+          "mesh_residual_max_m": 0.07866
+        }
+      ],
+      "nodes": 14,
+      "triangles": 216438,
+      "collision_triangles": 216438,
+      "colours_srgb": [
+        "0.0000,0.0118,1.0000",
+        "0.2000,0.2000,0.2000",
+        "0.2471,0.5922,0.6314",
+        "0.3412,0.3098,0.1608",
+        "0.4706,0.2000,0.0706",
+        "0.6275,0.6275,0.6275",
+        "0.8784,0.9490,1.0000",
+        "1.0000,0.0000,0.0000",
+        "1.0000,1.0000,1.0000"
+      ],
+      "bbox_local_m": [
+        [
+          -0.389491,
+          -0.324006,
+          0.0
+        ],
+        [
+          0.389491,
+          0.324006,
+          0.876087
+        ]
+      ],
+      "in_full_map": true,
+      "collision_bytes": 18200824,
+      "collision_method": "visual triangles; node hierarchy preserved"
+    }
+  }
+}

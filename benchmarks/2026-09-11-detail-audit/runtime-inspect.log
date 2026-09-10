@@ -1,0 +1,2 @@
+manifest + semantic verification: 0.953s
+field collision: 2452800 ground triangles, 561401 fixture triangles, 959462 equipment triangles (source tessellations or CAD visual meshes); parsed in 3.763s

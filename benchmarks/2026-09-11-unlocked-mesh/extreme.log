@@ -1,0 +1,6 @@
+rune: visual 983,603->87,460, collision 983,603->108,087; 16.05s
+outpost: visual 433,511->51,498, collision 433,511->34,740; 8.34s
+dart-station: visual 891,322->171,337, collision 891,322->152,164; 32.09s
+resource-zone: visual 1,854,209->256,758, collision 1,854,209->249,622; 43.63s
+base: visual 894,899->145,436, collision 894,899->159,465; 25.22s
+tech-core: visual 216,438->28,678, collision 216,438->26,747; 6.38s

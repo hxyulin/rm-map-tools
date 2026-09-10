@@ -1,0 +1,14 @@
+model ready in 2.5s; 79247 bodies assigned
+base (基地): 67 nodes, 652669 / 504544 triangles, 2 placements reference at [11.679959, 1.644594] r=0.0000, instance at [-11.679959, 1.644094] r=0.0000; 36s
+outpost (前哨站): 43 nodes, 547358 / 387314 triangles, 2 placements instance at [3.091034, 5.502603] r=0.0000, reference at [-3.091039, -2.211715] r=0.0000; 12s
+rune (能量机关): 160 nodes, 1367202 / 967937 triangles, 1 placements reference at [-0.0, 1.644344] r=0.0000; 20s
+dart-station (飞镖发射井): 191 nodes, 621220 / 504181 triangles, 2 placements reference at [13.44495, -1.625656] r=0.0000, instance at [-13.44495, 4.914344] r=0.0000; 32s
+resource-zone (资源区): 153 nodes, 1234252 / 994092 triangles, 2 placements reference at [13.7335, 8.189344] r=0.0000, instance at [-13.7335, -4.901656] r=0.0000; 71s
+centre-platform (中央平台): 24 nodes, 33255 / 32962 triangles, 1 placements reference at [0.000134, 1.644344] r=0.0000; 3s
+fortress (堡垒): 5 nodes, 272 / 272 triangles, 2 placements reference at [-7.4, 1.64434] r=0.0000, matched_yaw_180 at [7.4, 1.644344] r=0.0010; 0s
+tech-core (国赛科技核心): 14 nodes, 144415 / 104958 triangles, 2 placements reference at [-0.339663, 1.128413] r=0.0000, matched_yaw_180 at [0.340148, 2.159789] r=0.0005; 24s
+graft donor /Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V2.0.0.stp: floor slab BREP_9
+undulating-road (起伏路段): 1 nodes, 40588 / 40588 triangles, 2 placements reference at [7.538001, 8.074797] r=0.0000, matched_yaw_180 at [-7.537987, -4.82611] r=0.0046; 5s
+outpost-footing (前哨站底座): 1 nodes, 20 / 20 triangles, 2 placements reference at [3.056089, 5.501428] r=0.0000, instance at [-3.056089, -2.21274] r=0.0000; 0s
+full map: 1510 nodes, 7920113 / 6110905 triangles
+failures 0; bbox mismatches 0; warnings 0; 207s

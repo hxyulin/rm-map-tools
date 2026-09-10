@@ -1,0 +1,24 @@
+field collision: arena 17002 of 36804 triangles kept from 387 parts (325 markings dropped, 62 solids kept, 0 panels boxed, 0 passages kept, 0 extruded); rune frame and outpost towers 28996 triangles; equipment 726834 triangles from 4 proxies
+2026-09-10T15:54:11.308851Z  INFO bevy_diagnostic::system_information_diagnostics_plugin::internal: SystemInfo { os: "macOS 26.6.2", kernel: "25.6.0", cpu: "Apple M3 Pro", core_count: "11", memory: "18.0 GiB" }
+2026-09-10T15:54:11.369083Z  INFO bevy_render::renderer: AdapterInfo { name: "Apple M3 Pro", vendor: 0, device: 0, device_type: IntegratedGpu, device_pci_bus_id: "", driver: "", driver_info: "", backend: Metal, subgroup_min_size: 4, subgroup_max_size: 64, transient_saves_memory: true }
+2026-09-10T15:54:11.423916Z  INFO bevy_pbr::cluster: GPU clustering is supported on this device.
+2026-09-10T15:54:11.423955Z  INFO bevy_render::batching::gpu_preprocessing: GPU preprocessing is fully supported on this device.
+2026-09-10T15:54:11.443797Z  INFO bevy_winit::system: Creating new window rm-simulator benchmark (65v0)
+2026-09-10T15:54:11.520980Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost-footing.glb" loaded=1 expected=16
+2026-09-10T15:54:11.521030Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost-footing.glb" loaded=2 expected=16
+2026-09-10T15:54:11.543919Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="floor.glb" loaded=3 expected=16
+2026-09-10T15:54:11.543982Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="arena-static.glb" loaded=4 expected=16
+2026-09-10T15:54:11.544005Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/tech-core.glb" loaded=5 expected=16
+2026-09-10T15:54:11.544014Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/tech-core.glb" loaded=6 expected=16
+2026-09-10T15:54:11.582533Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="rune.glb" loaded=7 expected=16
+2026-09-10T15:54:11.582758Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost.glb" loaded=8 expected=16
+2026-09-10T15:54:11.582812Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="outpost.glb" loaded=9 expected=16
+2026-09-10T15:54:11.582838Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="centre-platform.glb" loaded=10 expected=16
+2026-09-10T15:54:11.615089Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/base.glb" loaded=11 expected=16
+2026-09-10T15:54:11.615146Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="equipment/base.glb" loaded=12 expected=16
+2026-09-10T15:54:11.615169Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="dart-station.glb" loaded=13 expected=16
+2026-09-10T15:54:11.615191Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="dart-station.glb" loaded=14 expected=16
+2026-09-10T15:54:11.697774Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="resource-zone.glb" loaded=15 expected=16
+2026-09-10T15:54:11.697825Z  INFO rm_simulator_render::cad: CAD scenery instance ready file="resource-zone.glb" loaded=16 expected=16
+BASELINE {"frame":{"max_ms":39.202334,"mean_ms":14.082211666666678,"n":600,"p50_ms":13.400458,"p95_ms":28.068167000000003,"p99_ms":34.378166},"mesh_entities":2181,"physics_advance":{"max_ms":0.005582999999999999,"mean_ms":0.00014352833333333345,"n":600,"p50_ms":0.000125,"p95_ms":0.000292,"p99_ms":0.000417},"physics_ms_per_tick":0.0,"physics_ticks":0,"scene_triangles":6366457,"view_visible_mesh_entities":1771,"view_visible_triangles":6065749}
+2026-09-10T15:54:22.872410Z  WARN bevy_winit::state: Skipped event Destroyed for unknown winit Window Id WindowId(39289275008)

@@ -1,0 +1,62 @@
+{
+  "/rune/visual": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/rune.glb",
+    "sha256": "a486c7a51cd7ec7287c47023e0bd5208b328c6d98f756233ba2ea6a6d737e6d9",
+    "exact_previous_input": true
+  },
+  "/rune/collision": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/rune-collision.glb",
+    "sha256": "35bd46545afcf3e3ea75214b7433c512b23baf5554627d366ea1d051cc715bab",
+    "exact_previous_input": true
+  },
+  "/outpost/visual": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/outpost.glb",
+    "sha256": "f49d077bdac0bd2725dc15212de7a501d34150e12c13b35e476ed70e282637b3",
+    "exact_previous_input": true
+  },
+  "/outpost/collision": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/outpost-collision.glb",
+    "sha256": "b43ec3526ebd117dfd8fbf2e3ce1f6f6299b0ecc38da9c34f71081cc301b0927",
+    "exact_previous_input": true
+  },
+  "/dart-station/visual": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/dart-station.glb",
+    "sha256": "1f6f0443e2f6779535663fdb4a277c6f6594d514f1f5103903da3afbc6e37940",
+    "exact_previous_input": true
+  },
+  "/dart-station/collision": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789060975636086000/dart-station-collision.glb",
+    "sha256": "ff92252e8e8a3042b61133f6f3bfa57b44d5b5fecf2108f14505845fd0377c84",
+    "exact_previous_input": true
+  },
+  "/resource-zone/visual": {
+    "file": "/Users/hxyulin/dev/RM/assets/rm2026-reference.backup-1789058270939907000/resource-zone.glb",
+    "sha256": "f2bf4fc0e410a4413a97b8c9e1eca998998b4c15d276628a4850b508b922ec5c",
+    "exact_previous_input": false
+  },
+  "/resource-zone/collision": {
+    "file": "/Users/hxyulin/dev/RM/assets/rm2026-reference.backup-1789058270939907000/resource-zone-collision.glb",
+    "sha256": "f2bf4fc0e410a4413a97b8c9e1eca998998b4c15d276628a4850b508b922ec5c",
+    "exact_previous_input": false
+  },
+  "equipment/base/visual": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789058270939907000/equipment/base.glb",
+    "sha256": "76a98d1c8673265dd4b757798f82a631a74a92522e67cde7f55d75aeb6f8f5de",
+    "exact_previous_input": true
+  },
+  "equipment/base/collision": {
+    "file": "/Users/hxyulin/dev/RM/rm-map-tools/../assets/rm2026-reference.backup-1789058270939907000/equipment/base-collision.glb",
+    "sha256": "55bef4a9306c4c793d5f9440c54dbe637831ea56687d4b7006e2165d83bed7f9",
+    "exact_previous_input": true
+  },
+  "equipment/tech-core/visual": {
+    "file": "/Users/hxyulin/dev/RM/assets/rm2026-reference.backup-1789058270939907000/equipment/tech-core.glb",
+    "sha256": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+    "exact_previous_input": false
+  },
+  "equipment/tech-core/collision": {
+    "file": "/Users/hxyulin/dev/RM/assets/rm2026-reference.backup-1789058270939907000/equipment/tech-core-collision.glb",
+    "sha256": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+    "exact_previous_input": false
+  }
+}

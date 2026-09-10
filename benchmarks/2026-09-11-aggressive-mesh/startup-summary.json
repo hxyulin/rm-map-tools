@@ -1,0 +1,12 @@
+{
+  "before": {
+    "scene_ready_seconds": 5.417556,
+    "verification_seconds": 0.99,
+    "terrain_parse_seconds": 2.016
+  },
+  "after": {
+    "scene_ready_seconds": 5.084322,
+    "verification_seconds": 0.83,
+    "terrain_parse_seconds": 2.017
+  }
+}

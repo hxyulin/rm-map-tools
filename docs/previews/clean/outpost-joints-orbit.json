@@ -1,0 +1,39 @@
+{
+  "asset": "outpost",
+  "input_visual_sha256": "f49d077bdac0bd2725dc15212de7a501d34150e12c13b35e476ed70e282637b3",
+  "articulation_sha256": "81e8a2a1224d799460959d79dd798eacdd9aa4157e680b023de07213a7005eb6",
+  "joints": [
+    "outpost.spin"
+  ],
+  "hidden_roles": [],
+  "hidden_layers": [],
+  "hidden_nodes": [],
+  "reconstructed_nodes": [],
+  "presentation": {
+    "background": "black",
+    "overlays": false,
+    "camera": "360-degree perspective orbit"
+  },
+  "fps": 20,
+  "seconds": 8.0,
+  "frames": 160,
+  "size": [
+    960,
+    720
+  ],
+  "motion": "demo_motion profiles where present; otherwise continuous 2*pi or bounded cosine inspection sweeps",
+  "geometry_binding": "mesh_nodes",
+  "technology_core_demo": null,
+  "demo_motion": {},
+  "timing": "inspection sweep, not rulebook timing",
+  "files": {
+    "outpost-joints-orbit.mp4": {
+      "sha256": "be4c21b648e4cb581861f6e14382ddf778a0a51a9f7b0ca105b227febce05ba6",
+      "bytes": 255516
+    },
+    "outpost-joints-orbit.gif": {
+      "sha256": "3e79283ce5bb6b579357c9f991c1e0e91491e2486c7ba126baf6a73db1272d29",
+      "bytes": 1659202
+    }
+  }
+}

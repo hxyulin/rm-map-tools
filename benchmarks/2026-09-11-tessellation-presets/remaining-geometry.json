@@ -1,0 +1,216 @@
+{
+  "assets": [
+    {
+      "asset": "resource-zone",
+      "instances": 2,
+      "visual": 2468504,
+      "collider_input": 1988184
+    },
+    {
+      "asset": "base",
+      "instances": 2,
+      "visual": 1305338,
+      "collider_input": 1009088
+    },
+    {
+      "asset": "dart-station",
+      "instances": 2,
+      "visual": 1242440,
+      "collider_input": 1008362
+    },
+    {
+      "asset": "rune",
+      "instances": 1,
+      "visual": 983603,
+      "collider_input": 76731
+    },
+    {
+      "asset": "outpost",
+      "instances": 2,
+      "visual": 867022,
+      "collider_input": 484670
+    },
+    {
+      "asset": "tech-core",
+      "instances": 2,
+      "visual": 288830,
+      "collider_input": 209916
+    },
+    {
+      "asset": "arena-static",
+      "instances": 1,
+      "visual": 119776,
+      "collider_input": 119776
+    },
+    {
+      "asset": "centre-platform",
+      "instances": 1,
+      "visual": 33255,
+      "collider_input": 32962
+    },
+    {
+      "asset": "outpost-footing",
+      "instances": 2,
+      "visual": 40,
+      "collider_input": 40
+    },
+    {
+      "asset": "floor",
+      "instances": 1,
+      "visual": 12,
+      "collider_input": 12
+    }
+  ],
+  "largest_visual_nodes": [
+    {
+      "asset": "resource-zone",
+      "part": "source_13267846_7000001_1_ASM",
+      "per_instance": 670718,
+      "placed": 1341436
+    },
+    {
+      "asset": "outpost",
+      "part": "static",
+      "per_instance": 242335,
+      "placed": 484670
+    },
+    {
+      "asset": "resource-zone",
+      "part": "source_13267862_7000001_1_16",
+      "per_instance": 226304,
+      "placed": 452608
+    },
+    {
+      "asset": "dart-station",
+      "part": "source_13267654_0013_1_ASM",
+      "per_instance": 222716,
+      "placed": 445432
+    },
+    {
+      "asset": "dart-station",
+      "part": "source_13267655_0013_1_1",
+      "per_instance": 163363,
+      "placed": 326726
+    },
+    {
+      "asset": "base",
+      "part": "source_13267587_001_1_ASM",
+      "per_instance": 145105,
+      "placed": 290210
+    },
+    {
+      "asset": "base",
+      "part": "source_13267588_001_1_1",
+      "per_instance": 130094,
+      "placed": 260188
+    },
+    {
+      "asset": "resource-zone",
+      "part": "source_13267920_7000001_1_74",
+      "per_instance": 95283,
+      "placed": 190566
+    },
+    {
+      "asset": "dart-station",
+      "part": "source_13267668_0013_1_14",
+      "per_instance": 88993,
+      "placed": 177986
+    },
+    {
+      "asset": "tech-core",
+      "part": "source_13267332_tech-core-positive-details",
+      "per_instance": 73311,
+      "placed": 146622
+    },
+    {
+      "asset": "dart-station",
+      "part": "source_13267684_0013_1_30",
+      "per_instance": 70111,
+      "placed": 140222
+    },
+    {
+      "asset": "resource-zone",
+      "part": "source_13267847_7000001_1_1",
+      "per_instance": 69995,
+      "placed": 139990
+    },
+    {
+      "asset": "tech-core",
+      "part": "source_13267364_0006_1_32",
+      "per_instance": 56504,
+      "placed": 113008
+    },
+    {
+      "asset": "outpost",
+      "part": "rotor/armor_1",
+      "per_instance": 51922,
+      "placed": 103844
+    },
+    {
+      "asset": "outpost",
+      "part": "rotor/armor_0",
+      "per_instance": 51884,
+      "placed": 103768
+    },
+    {
+      "asset": "base",
+      "part": "source_13267598_001_1_11",
+      "per_instance": 50713,
+      "placed": 101426
+    },
+    {
+      "asset": "outpost",
+      "part": "rotor/carrier",
+      "per_instance": 46302,
+      "placed": 92604
+    },
+    {
+      "asset": "outpost",
+      "part": "rotor/armor_2",
+      "per_instance": 41068,
+      "placed": 82136
+    },
+    {
+      "asset": "base",
+      "part": "source_13267608_001_1_21",
+      "per_instance": 39658,
+      "placed": 79316
+    },
+    {
+      "asset": "base",
+      "part": "source_13267611_001_1_24",
+      "per_instance": 39598,
+      "placed": 79196
+    },
+    {
+      "asset": "base",
+      "part": "source_13267614_001_1_27",
+      "per_instance": 39598,
+      "placed": 79196
+    },
+    {
+      "asset": "rune",
+      "part": "face_0/blade_1",
+      "per_instance": 78600,
+      "placed": 78600
+    },
+    {
+      "asset": "rune",
+      "part": "face_0/blade_0",
+      "per_instance": 78596,
+      "placed": 78596
+    },
+    {
+      "asset": "rune",
+      "part": "face_1/blade_2",
+      "per_instance": 78592,
+      "placed": 78592
+    },
+    {
+      "asset": "rune",
+      "part": "face_0/blade_2",
+      "per_instance": 78590,
+      "placed": 78590
+    }
+  ]
+}

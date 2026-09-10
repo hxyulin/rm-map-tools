@@ -1,0 +1,288 @@
+[
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "visual_triangles": 1030355,
+    "collision_triangles": 1030355,
+    "seconds": 7.887812957982533,
+    "stats": {
+      "visual": {
+        "fine_retries": 10,
+        "split_retries": 82,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "fine_retries": 10,
+        "split_retries": 82,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    }
+  },
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "visual_triangles": 670718,
+    "collision_triangles": 525843,
+    "seconds": 10.241100332990754,
+    "stats": {
+      "visual": {
+        "split_retries": 13,
+        "fine_retries": 54,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "split_retries": 13,
+        "fine_retries": 72,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    }
+  },
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "visual_triangles": 456640,
+    "collision_triangles": 435286,
+    "seconds": 10.182109000044875,
+    "stats": {
+      "visual": {
+        "fine_retries": 185,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "fine_retries": 296,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    }
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "visual_triangles": 323469,
+    "collision_triangles": 323469,
+    "seconds": 2.340759832994081,
+    "stats": {
+      "visual": {
+        "split_retries": 19,
+        "analytic_bands": 3,
+        "fine_retries": 1
+      },
+      "collision": {
+        "split_retries": 19,
+        "analytic_bands": 3,
+        "fine_retries": 1
+      }
+    }
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "visual_triangles": 222716,
+    "collision_triangles": 183620,
+    "seconds": 3.744659917021636,
+    "stats": {
+      "visual": {
+        "fine_retries": 9,
+        "split_retries": 5
+      },
+      "collision": {
+        "fine_retries": 17,
+        "split_retries": 4
+      }
+    }
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "visual_triangles": 160987,
+    "collision_triangles": 150887,
+    "seconds": 3.227713375003077,
+    "stats": {
+      "visual": {
+        "fine_retries": 16
+      },
+      "collision": {
+        "fine_retries": 25
+      }
+    }
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "visual_triangles": 206617,
+    "collision_triangles": 206617,
+    "seconds": 1.5367330419830978,
+    "stats": {
+      "visual": {
+        "analytic_bands": 3,
+        "split_retries": 7
+      },
+      "collision": {
+        "analytic_bands": 3,
+        "split_retries": 7
+      }
+    }
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "visual_triangles": 145105,
+    "collision_triangles": 117392,
+    "seconds": 2.6290254580089822,
+    "stats": {
+      "visual": {
+        "fine_retries": 24,
+        "analytic_bands": 3,
+        "split_retries": 4
+      },
+      "collision": {
+        "fine_retries": 26,
+        "analytic_bands": 3,
+        "split_retries": 4
+      }
+    }
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "visual_triangles": 103805,
+    "collision_triangles": 98978,
+    "seconds": 3.633732250018511,
+    "stats": {
+      "visual": {
+        "fine_retries": 24,
+        "analytic_bands": 3,
+        "split_retries": 4
+      },
+      "collision": {
+        "fine_retries": 32,
+        "analytic_bands": 3,
+        "split_retries": 4
+      }
+    }
+  }
+]

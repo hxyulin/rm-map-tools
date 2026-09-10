@@ -1,0 +1,65 @@
+{
+  "scope": "Alternating local runs, OS caches not cleared. Scene-ready is CPU scene instantiation, not first presented frame. Screenshot exit includes fixed warmup frames.",
+  "runs": [
+    {
+      "package": "before",
+      "run": 0,
+      "loader_wall_seconds": 3.0049612500006333,
+      "verification_seconds": 0.99,
+      "terrain_parse_seconds": 1.996,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 5.81659420800861,
+      "scene_ready_seconds": 5.468982
+    },
+    {
+      "package": "after",
+      "run": 0,
+      "loader_wall_seconds": 2.8362794580170885,
+      "verification_seconds": 0.83,
+      "terrain_parse_seconds": 1.987,
+      "collider_triangles": 2107611,
+      "app_exit_seconds": 5.962991333042737,
+      "scene_ready_seconds": 5.706285
+    },
+    {
+      "package": "before",
+      "run": 1,
+      "loader_wall_seconds": 3.043746374954935,
+      "verification_seconds": 0.993,
+      "terrain_parse_seconds": 2.03,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 5.442146082990803,
+      "scene_ready_seconds": 5.206465
+    },
+    {
+      "package": "after",
+      "run": 1,
+      "loader_wall_seconds": 2.853053291037213,
+      "verification_seconds": 0.82,
+      "terrain_parse_seconds": 2.017,
+      "collider_triangles": 2107611,
+      "app_exit_seconds": 5.1667161250370555,
+      "scene_ready_seconds": 4.934022
+    },
+    {
+      "package": "before",
+      "run": 2,
+      "loader_wall_seconds": 2.9888200419954956,
+      "verification_seconds": 0.955,
+      "terrain_parse_seconds": 2.016,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 5.655271666997578,
+      "scene_ready_seconds": 5.417556
+    },
+    {
+      "package": "after",
+      "run": 2,
+      "loader_wall_seconds": 3.0682850829907693,
+      "verification_seconds": 0.838,
+      "terrain_parse_seconds": 2.211,
+      "collider_triangles": 2107611,
+      "app_exit_seconds": 5.362300666980445,
+      "scene_ready_seconds": 5.084322
+    }
+  ]
+}

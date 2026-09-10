@@ -1,0 +1,79 @@
+{
+  "source_sha256": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+  "reference_sha256": "38c4ee9dafe3d20fc909e6c61c0355d032a22829754875351ce09b909d3b7a73",
+  "source_reference_triangle_material_match": true,
+  "source_triangles": 216438,
+  "preview_hidden_node": "tech-core/shared_joint_hardware",
+  "previous_preview_hidden_triangles": 118288,
+  "preview_hidden_triangles": 91775,
+  "restored_tool_enclosure_triangles": 26513,
+  "partition": {
+    "primitive": 0,
+    "triangle_ranges": [
+      [
+        91775,
+        118288
+      ]
+    ],
+    "mesh_sha256": "315dfc86ca5ebaa88d7a513755765dabcedc29fa3b0ba977c57b721662c42977"
+  },
+  "source_parts": [
+    {
+      "name": "tech-core/upper_arm",
+      "triangles": 7233
+    },
+    {
+      "name": "tech-core/upper_arm/seal_0",
+      "triangles": 406
+    },
+    {
+      "name": "tech-core/upper_arm/seal_1",
+      "triangles": 320
+    },
+    {
+      "name": "tech-core/upper_arm/seal_2",
+      "triangles": 406
+    },
+    {
+      "name": "tech-core/upper_arm/seal_3",
+      "triangles": 406
+    },
+    {
+      "name": "tech-core/forearm",
+      "triangles": 4326
+    },
+    {
+      "name": "tech-core/forearm/detail_0",
+      "triangles": 75
+    },
+    {
+      "name": "tech-core/forearm/detail_1",
+      "triangles": 32
+    },
+    {
+      "name": "tech-core/tool/assembly",
+      "triangles": 77923
+    },
+    {
+      "name": "tech-core/shoulder/housing",
+      "triangles": 320
+    },
+    {
+      "name": "tech-core/tool/cover",
+      "triangles": 6316
+    },
+    {
+      "name": "tech-core/tool/side_0",
+      "triangles": 195
+    },
+    {
+      "name": "tech-core/tool/side_1",
+      "triangles": 192
+    },
+    {
+      "name": "tech-core/shared_joint_hardware",
+      "triangles": 118288
+    }
+  ],
+  "culling": "Disabled for every audit actor; open areas are not backface culling."
+}

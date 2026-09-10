@@ -1,0 +1,50 @@
+[
+  {
+    "asset": "resource-zone",
+    "node": 1,
+    "primitive": 1,
+    "triangles": 335459,
+    "welded_vertices": 285389,
+    "boundary_vertices": 268093,
+    "open_edges": 279790,
+    "components": 2414,
+    "triangles_in_components_le_12": 2272,
+    "triangles_touching_boundary": 320410
+  },
+  {
+    "asset": "dart-station",
+    "node": 1,
+    "primitive": 5,
+    "triangles": 168320,
+    "welded_vertices": 147896,
+    "boundary_vertices": 139633,
+    "open_edges": 143593,
+    "components": 582,
+    "triangles_in_components_le_12": 584,
+    "triangles_touching_boundary": 154580
+  },
+  {
+    "asset": "base",
+    "node": 1,
+    "primitive": 1,
+    "triangles": 154049,
+    "welded_vertices": 130814,
+    "boundary_vertices": 121173,
+    "open_edges": 124613,
+    "components": 140,
+    "triangles_in_components_le_12": 104,
+    "triangles_touching_boundary": 138623
+  },
+  {
+    "asset": "dart-station",
+    "node": 2,
+    "primitive": 0,
+    "triangles": 97715,
+    "welded_vertices": 48458,
+    "boundary_vertices": 1141,
+    "open_edges": 1141,
+    "components": 5,
+    "triangles_in_components_le_12": 0,
+    "triangles_touching_boundary": 1983
+  }
+]

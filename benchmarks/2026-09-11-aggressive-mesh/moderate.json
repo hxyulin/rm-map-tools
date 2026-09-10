@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "input": "../../out/tolerance-source",
+  "output": "../../out/tolerance-moderate",
+  "defaults": {
+    "visual_error_mm": 1,
+    "collision_error_mm": 2,
+    "visual_sampled_limit_mm": 3,
+    "collision_sampled_limit_mm": 5
+  },
+  "assets": {
+    "floor": {
+      "enabled": false
+    },
+    "arena-static": {
+      "enabled": false
+    },
+    "centre-platform": {
+      "enabled": false
+    },
+    "outpost-footing": {
+      "enabled": false
+    }
+  }
+}

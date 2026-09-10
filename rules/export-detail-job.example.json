@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "policy": "export-detail-preview.example.json",
+  "stages": [
+    {
+      "type": "field",
+      "package": "../out/v12",
+      "index": "../v12.npz",
+      "equipment": "../../assets/rm2026-field",
+      "out": "../out/detail-preview-field",
+      "grafts": [
+        {
+          "package": "../out/v20",
+          "index": "../v20.npz",
+          "products": [
+            "BREP_220",
+            "BREP_192"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "elements",
+      "package": "../out/v12",
+      "index": "../v12.npz",
+      "rules": "elements-v1.2.0.json",
+      "field": "../out/detail-preview-field",
+      "out": "../out/detail-preview-elements",
+      "graft": {
+        "package": "../out/v20",
+        "index": "../v20.npz"
+      }
+    },
+    {
+      "type": "deploy",
+      "field": "../out/detail-preview-field",
+      "elements": "../out/detail-preview-elements",
+      "out": "../out/detail-preview-runtime"
+    }
+  ]
+}

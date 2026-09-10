@@ -1,0 +1,182 @@
+[
+  {
+    "file": "arena-static-collision.glb",
+    "triangles_unique": 36804,
+    "triangles_scene": 36804,
+    "meshes": 387,
+    "primitives": 408,
+    "bytes": 3383412,
+    "sha256": "2c779bfbc42a00926c3f2aa70f59d96faceb96f45d28cc928524222d4eefab3f"
+  },
+  {
+    "file": "arena-static.glb",
+    "triangles_unique": 119776,
+    "triangles_scene": 119776,
+    "meshes": 387,
+    "primitives": 408,
+    "bytes": 10353372,
+    "sha256": "52fa4fc9f458afbb37de889aa8c35da0bb2cbd286eb7b002fbdb5aabb4c60f95"
+  },
+  {
+    "file": "centre-platform-collision.glb",
+    "triangles_unique": 26570,
+    "triangles_scene": 26570,
+    "meshes": 24,
+    "primitives": 51,
+    "bytes": 2267948,
+    "sha256": "4cd46eb44cc1c6835087b351c0a07966553a637815e153995fd96c7c57060e8d"
+  },
+  {
+    "file": "centre-platform.glb",
+    "triangles_unique": 51402,
+    "triangles_scene": 51402,
+    "meshes": 24,
+    "primitives": 51,
+    "bytes": 4353828,
+    "sha256": "4b4767b17f2f2939df5987a3467f7a138e59d1ebf2d5fa7a4ef89f157e1d55a1"
+  },
+  {
+    "file": "dart-station-collision.glb",
+    "triangles_unique": 302619,
+    "triangles_scene": 302619,
+    "meshes": 191,
+    "primitives": 228,
+    "bytes": 25585276,
+    "sha256": "4b10afeb365b6384fe9a045ae257ae1a2ee9339193c41e84c39cda580ac8a743"
+  },
+  {
+    "file": "dart-station.glb",
+    "triangles_unique": 617072,
+    "triangles_scene": 617072,
+    "meshes": 191,
+    "primitives": 228,
+    "bytes": 51999572,
+    "sha256": "7c011c42ac761db8699c91801dcaa627515429f61b0b9ea03abe7c8235d4125c"
+  },
+  {
+    "file": "equipment/base-collision.glb",
+    "triangles_unique": 324805,
+    "triangles_scene": 324805,
+    "meshes": 67,
+    "primitives": 99,
+    "bytes": 27355760,
+    "sha256": "f2b4cbfe9fd7f591219f75e1e0cdbda81292fc070a17db496f1bdeb2dd3d71ac"
+  },
+  {
+    "file": "equipment/base.glb",
+    "triangles_unique": 679647,
+    "triangles_scene": 679647,
+    "meshes": 67,
+    "primitives": 99,
+    "bytes": 57162652,
+    "sha256": "1af77008d1a64a29ecc2a35aa39e67ea46ca78814f5690d5f70af8ad0348e216"
+  },
+  {
+    "file": "equipment/tech-core-collision.glb",
+    "triangles_unique": 38612,
+    "triangles_scene": 38612,
+    "meshes": 13,
+    "primitives": 24,
+    "bytes": 3262624,
+    "sha256": "c9dcb8dd298e3c7d778e6db615d89d59cd2af49d489d40f61d2d3d9ea2e8b0a2"
+  },
+  {
+    "file": "equipment/tech-core.glb",
+    "triangles_unique": 90148,
+    "triangles_scene": 90148,
+    "meshes": 13,
+    "primitives": 24,
+    "bytes": 7591688,
+    "sha256": "598f77beffe9eb292eb4f4db918a3fbd46fc2ec433e8e53b4f10ce0bbf806dd5"
+  },
+  {
+    "file": "floor-collision.glb",
+    "triangles_unique": 12,
+    "triangles_scene": 12,
+    "meshes": 1,
+    "primitives": 2,
+    "bytes": 3676,
+    "sha256": "cdb2b20ddfa7bc13d8f1541a8977ae3a8448ecc5bf2fbaef22c2dfc80932322c"
+  },
+  {
+    "file": "floor.glb",
+    "triangles_unique": 12,
+    "triangles_scene": 12,
+    "meshes": 1,
+    "primitives": 2,
+    "bytes": 3664,
+    "sha256": "b3a2ab65a041a1b0a95a6bab1e313b33d2d2373578b3ed02fc2c962f41e85dfb"
+  },
+  {
+    "file": "outpost-collision.glb",
+    "triangles_unique": 16971,
+    "triangles_scene": 16971,
+    "meshes": 5,
+    "primitives": 5,
+    "bytes": 1347652,
+    "sha256": "96a5230a5c2324943a298779b8622d8cef4d0b9369cdb073fa47c595daa721ec"
+  },
+  {
+    "file": "outpost-footing-collision.glb",
+    "triangles_unique": 20,
+    "triangles_scene": 20,
+    "meshes": 1,
+    "primitives": 1,
+    "bytes": 7008,
+    "sha256": "79167ee4af30a4e93355185d1345e4b2f3ffe71776b536be36536fa2d88de1cf"
+  },
+  {
+    "file": "outpost-footing.glb",
+    "triangles_unique": 20,
+    "triangles_scene": 20,
+    "meshes": 1,
+    "primitives": 1,
+    "bytes": 6992,
+    "sha256": "a21c9bc0550e67f50914a12a6f235b7f61c54894ed87a047399aa2ee1e2bd460"
+  },
+  {
+    "file": "outpost.glb",
+    "triangles_unique": 433511,
+    "triangles_scene": 433511,
+    "meshes": 5,
+    "primitives": 23,
+    "bytes": 16109312,
+    "sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795"
+  },
+  {
+    "file": "resource-zone-collision.glb",
+    "triangles_unique": 381976,
+    "triangles_scene": 381976,
+    "meshes": 153,
+    "primitives": 169,
+    "bytes": 32210908,
+    "sha256": "a9587509f1321758f374f1b057db4c2cdcfc484c509428e532e3cb2aeff93d79"
+  },
+  {
+    "file": "resource-zone.glb",
+    "triangles_unique": 772556,
+    "triangles_scene": 772556,
+    "meshes": 153,
+    "primitives": 169,
+    "bytes": 65019904,
+    "sha256": "1d1f75d7f9043749d2ca79101522ee54f2d3f633dd6d8a0e4546896b1858e08b"
+  },
+  {
+    "file": "rune-collision.glb",
+    "triangles_unique": 10152,
+    "triangles_scene": 10152,
+    "meshes": 13,
+    "primitives": 13,
+    "bytes": 516040,
+    "sha256": "e0c26a61be7a40ede82f0ecc8ab97f6fe58b9ec82c4d64b18f8eddddecaa02cd"
+  },
+  {
+    "file": "rune.glb",
+    "triangles_unique": 983603,
+    "triangles_scene": 983603,
+    "meshes": 13,
+    "primitives": 57,
+    "bytes": 35114584,
+    "sha256": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b"
+  }
+]

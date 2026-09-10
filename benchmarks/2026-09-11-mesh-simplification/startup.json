@@ -1,0 +1,65 @@
+{
+  "scope": "Alternating local runs, OS caches not cleared. Scene-ready is CPU scene instantiation, not first presented frame. Screenshot exit includes fixed warmup frames.",
+  "runs": [
+    {
+      "package": "before",
+      "run": 0,
+      "loader_wall_seconds": 7.793840500002261,
+      "verification_seconds": 2.355,
+      "terrain_parse_seconds": 5.408,
+      "collider_triangles": 5968039,
+      "app_exit_seconds": 16.12254904198926,
+      "scene_ready_seconds": 14.171224
+    },
+    {
+      "package": "after",
+      "run": 0,
+      "loader_wall_seconds": 3.0484725840506144,
+      "verification_seconds": 1.008,
+      "terrain_parse_seconds": 2.023,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 6.3291124170063995,
+      "scene_ready_seconds": 5.424693
+    },
+    {
+      "package": "before",
+      "run": 1,
+      "loader_wall_seconds": 7.801847832975909,
+      "verification_seconds": 2.359,
+      "terrain_parse_seconds": 5.413,
+      "collider_triangles": 5968039,
+      "app_exit_seconds": 17.510992499999702,
+      "scene_ready_seconds": 15.497087
+    },
+    {
+      "package": "after",
+      "run": 1,
+      "loader_wall_seconds": 3.776634458976332,
+      "verification_seconds": 1.556,
+      "terrain_parse_seconds": 2.174,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 8.783283500000834,
+      "scene_ready_seconds": 7.190532
+    },
+    {
+      "package": "before",
+      "run": 2,
+      "loader_wall_seconds": 9.446678625012282,
+      "verification_seconds": 2.815,
+      "terrain_parse_seconds": 6.575,
+      "collider_triangles": 5968039,
+      "app_exit_seconds": 18.14097083301749,
+      "scene_ready_seconds": 16.233027
+    },
+    {
+      "package": "after",
+      "run": 2,
+      "loader_wall_seconds": 3.2383777500363067,
+      "verification_seconds": 1.08,
+      "terrain_parse_seconds": 2.13,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 7.372521665995009,
+      "scene_ready_seconds": 5.733958
+    }
+  ]
+}

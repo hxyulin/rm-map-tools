@@ -1,0 +1,492 @@
+{
+  "render": {
+    "paused": {
+      "frame": {
+        "max_ms": 67.24991700000001,
+        "mean_ms": 16.70044479166666,
+        "n": 600,
+        "p50_ms": 16.6565,
+        "p95_ms": 17.467750000000002,
+        "p99_ms": 17.804166
+      },
+      "mesh_entities": 2218,
+      "physics_advance": {
+        "max_ms": 0.001041,
+        "mean_ms": 0.00015570833333333346,
+        "n": 600,
+        "p50_ms": 0.000125,
+        "p95_ms": 0.000334,
+        "p99_ms": 0.000584
+      },
+      "physics_ms_per_tick": 0.0,
+      "physics_ticks": 0,
+      "scene_triangles": 9743200,
+      "view_visible_mesh_entities": 1808,
+      "view_visible_triangles": 9442492
+    },
+    "overview": {
+      "frame": {
+        "max_ms": 19.448125,
+        "mean_ms": 16.668117015000004,
+        "n": 600,
+        "p50_ms": 16.661625,
+        "p95_ms": 17.570249999999998,
+        "p99_ms": 17.847917000000002
+      },
+      "mesh_entities": 2137,
+      "physics_advance": {
+        "max_ms": 0.015792,
+        "mean_ms": 0.0019415199999999954,
+        "n": 600,
+        "p50_ms": 0.001792,
+        "p95_ms": 0.0029579999999999997,
+        "p99_ms": 0.0055
+      },
+      "physics_ms_per_tick": 0.00011649119999999967,
+      "physics_ticks": 10000,
+      "scene_triangles": 9730532,
+      "view_visible_mesh_entities": 1727,
+      "view_visible_triangles": 9429824
+    },
+    "pilot-1": {
+      "frame": {
+        "max_ms": 20.888333,
+        "mean_ms": 16.66678347333335,
+        "n": 600,
+        "p50_ms": 16.639208999999997,
+        "p95_ms": 17.730417,
+        "p99_ms": 17.990166
+      },
+      "mesh_entities": 2218,
+      "physics_advance": {
+        "max_ms": 0.400083,
+        "mean_ms": 0.158391255,
+        "n": 600,
+        "p50_ms": 0.15312499999999998,
+        "p95_ms": 0.199042,
+        "p99_ms": 0.224208
+      },
+      "physics_ms_per_tick": 0.009502525047495249,
+      "physics_ticks": 10001,
+      "scene_triangles": 9743200,
+      "view_visible_mesh_entities": 1808,
+      "view_visible_triangles": 9442492
+    },
+    "pilot-3": {
+      "frame": {
+        "max_ms": 1012.246916,
+        "mean_ms": 19.34137402666666,
+        "n": 600,
+        "p50_ms": 16.684917000000002,
+        "p95_ms": 32.664125000000006,
+        "p99_ms": 39.320083
+      },
+      "mesh_entities": 2218,
+      "physics_advance": {
+        "max_ms": 3.688041,
+        "mean_ms": 0.19499826833333336,
+        "n": 600,
+        "p50_ms": 0.16975,
+        "p95_ms": 0.323791,
+        "p99_ms": 0.45166599999999996
+      },
+      "physics_ms_per_tick": 0.010820212799408108,
+      "physics_ticks": 10813,
+      "scene_triangles": 9743200,
+      "view_visible_mesh_entities": 1808,
+      "view_visible_triangles": 9442492
+    },
+    "pilot-2": {
+      "frame": {
+        "max_ms": 42.025208,
+        "mean_ms": 18.042186945000005,
+        "n": 600,
+        "p50_ms": 17.210458000000003,
+        "p95_ms": 32.79475,
+        "p99_ms": 37.943625000000004
+      },
+      "mesh_entities": 2218,
+      "physics_advance": {
+        "max_ms": 0.717208,
+        "mean_ms": 0.19904202166666668,
+        "n": 600,
+        "p50_ms": 0.18829200000000001,
+        "p95_ms": 0.32899999999999996,
+        "p99_ms": 0.42633299999999996
+      },
+      "physics_ms_per_tick": 0.011032352240184755,
+      "physics_ticks": 10825,
+      "scene_triangles": 9743200,
+      "view_visible_mesh_entities": 1808,
+      "view_visible_triangles": 9442492
+    }
+  },
+  "physics": [
+    {
+      "build_ms": 5140.163791,
+      "collision": true,
+      "max_ms": 0.001917,
+      "mean_ms": 2.6779099999996035e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 8.4e-05,
+      "repeat": 0,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4853.1446670000005,
+      "collision": true,
+      "max_ms": 0.009917,
+      "mean_ms": 2.3625799999996778e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 4.2e-05,
+      "repeat": 1,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4725.198375,
+      "collision": true,
+      "max_ms": 0.004209,
+      "mean_ms": 2.2751499999996948e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 4.2e-05,
+      "repeat": 2,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4826.334416,
+      "collision": true,
+      "max_ms": 0.050875000000000004,
+      "mean_ms": 0.007049608699999785,
+      "p50_ms": 0.006791,
+      "p95_ms": 0.008624999999999999,
+      "p99_ms": 0.0095,
+      "repeat": 0,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4783.825583999999,
+      "collision": true,
+      "max_ms": 0.0335,
+      "mean_ms": 0.006987740699999696,
+      "p50_ms": 0.00675,
+      "p95_ms": 0.008375,
+      "p99_ms": 0.009415999999999999,
+      "repeat": 1,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4721.477875,
+      "collision": true,
+      "max_ms": 0.030333,
+      "mean_ms": 0.006985966599999661,
+      "p50_ms": 0.00675,
+      "p95_ms": 0.008416,
+      "p99_ms": 0.009375,
+      "repeat": 2,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4789.9015,
+      "collision": true,
+      "max_ms": 0.436833,
+      "mean_ms": 0.04789588170000007,
+      "p50_ms": 0.051583,
+      "p95_ms": 0.064875,
+      "p99_ms": 0.073458,
+      "repeat": 0,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4854.696709,
+      "collision": true,
+      "max_ms": 0.143542,
+      "mean_ms": 0.04772083940000002,
+      "p50_ms": 0.051415999999999996,
+      "p95_ms": 0.064875,
+      "p99_ms": 0.073375,
+      "repeat": 1,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4783.002166,
+      "collision": true,
+      "max_ms": 0.218417,
+      "mean_ms": 0.04828462609999986,
+      "p50_ms": 0.051541000000000003,
+      "p95_ms": 0.065166,
+      "p99_ms": 0.07470800000000001,
+      "repeat": 2,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4719.744334,
+      "collision": true,
+      "max_ms": 0.608625,
+      "mean_ms": 0.19195632620000008,
+      "p50_ms": 0.187667,
+      "p95_ms": 0.235125,
+      "p99_ms": 0.328375,
+      "repeat": 0,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4825.615667,
+      "collision": true,
+      "max_ms": 0.678125,
+      "mean_ms": 0.19195910230000046,
+      "p50_ms": 0.187333,
+      "p95_ms": 0.236042,
+      "p99_ms": 0.3285,
+      "repeat": 1,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4760.911542,
+      "collision": true,
+      "max_ms": 0.772167,
+      "mean_ms": 0.1940708598999993,
+      "p50_ms": 0.188083,
+      "p95_ms": 0.254208,
+      "p99_ms": 0.341167,
+      "repeat": 2,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 0.0,
+      "collision": false,
+      "max_ms": 0.000375,
+      "mean_ms": 2.2308399999996827e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 4.2e-05,
+      "repeat": 0,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 0.0,
+      "collision": false,
+      "max_ms": 0.000375,
+      "mean_ms": 2.2087899999996923e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 4.2e-05,
+      "repeat": 1,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.2e-05,
+      "collision": false,
+      "max_ms": 0.000166,
+      "mean_ms": 2.2085199999996896e-05,
+      "p50_ms": 4.1e-05,
+      "p95_ms": 4.2e-05,
+      "p99_ms": 4.2e-05,
+      "repeat": 2,
+      "scenario": "empty",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.2e-05,
+      "collision": false,
+      "max_ms": 0.017708,
+      "mean_ms": 0.005540950000000402,
+      "p50_ms": 0.0053750000000000004,
+      "p95_ms": 0.006125,
+      "p99_ms": 0.00725,
+      "repeat": 0,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 0.0,
+      "collision": false,
+      "max_ms": 0.015000000000000001,
+      "mean_ms": 0.005532012400000383,
+      "p50_ms": 0.0053750000000000004,
+      "p95_ms": 0.006083,
+      "p99_ms": 0.007125,
+      "repeat": 1,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.2e-05,
+      "collision": false,
+      "max_ms": 0.017459,
+      "mean_ms": 0.005470210900000168,
+      "p50_ms": 0.005332999999999999,
+      "p95_ms": 0.005958000000000001,
+      "p99_ms": 0.007125,
+      "repeat": 2,
+      "scenario": "one_idle",
+      "shots_fired": 0,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 0.0,
+      "collision": false,
+      "max_ms": 0.112875,
+      "mean_ms": 0.03937787500000011,
+      "p50_ms": 0.046,
+      "p95_ms": 0.051042,
+      "p99_ms": 0.055875,
+      "repeat": 0,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 0.0,
+      "collision": false,
+      "max_ms": 0.140834,
+      "mean_ms": 0.03984624370000006,
+      "p50_ms": 0.046333,
+      "p95_ms": 0.052250000000000005,
+      "p99_ms": 0.058125,
+      "repeat": 1,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.2e-05,
+      "collision": false,
+      "max_ms": 0.139709,
+      "mean_ms": 0.03961557729999995,
+      "p50_ms": 0.04625,
+      "p95_ms": 0.051875,
+      "p99_ms": 0.057083,
+      "repeat": 2,
+      "scenario": "one_drive_fire",
+      "shots_fired": 100,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.2e-05,
+      "collision": false,
+      "max_ms": 2.232333,
+      "mean_ms": 0.08324750219999964,
+      "p50_ms": 0.078875,
+      "p95_ms": 0.09466699999999999,
+      "p99_ms": 0.21945800000000001,
+      "repeat": 0,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.1e-05,
+      "collision": false,
+      "max_ms": 0.384083,
+      "mean_ms": 0.07892637790000034,
+      "p50_ms": 0.078708,
+      "p95_ms": 0.091,
+      "p99_ms": 0.099834,
+      "repeat": 1,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    },
+    {
+      "build_ms": 4.1e-05,
+      "collision": false,
+      "max_ms": 0.171292,
+      "mean_ms": 0.0787321313999999,
+      "p50_ms": 0.0785,
+      "p95_ms": 0.090917,
+      "p99_ms": 0.09945799999999999,
+      "repeat": 2,
+      "scenario": "14_drive_fire",
+      "shots_fired": 1400,
+      "ticks": 10000
+    }
+  ],
+  "placed_assets": [
+    {
+      "asset": "floor",
+      "instances": 1,
+      "visual_triangles": 12
+    },
+    {
+      "asset": "arena-static",
+      "instances": 1,
+      "visual_triangles": 119776
+    },
+    {
+      "asset": "rune",
+      "instances": 1,
+      "visual_triangles": 983603
+    },
+    {
+      "asset": "outpost",
+      "instances": 2,
+      "visual_triangles": 867022
+    },
+    {
+      "asset": "centre-platform",
+      "instances": 1,
+      "visual_triangles": 33255
+    },
+    {
+      "asset": "dart-station",
+      "instances": 2,
+      "visual_triangles": 1782644
+    },
+    {
+      "asset": "resource-zone",
+      "instances": 2,
+      "visual_triangles": 3708418
+    },
+    {
+      "asset": "outpost-footing",
+      "instances": 2,
+      "visual_triangles": 40
+    },
+    {
+      "asset": "base",
+      "instances": 2,
+      "visual_triangles": 1789798
+    },
+    {
+      "asset": "tech-core",
+      "instances": 2,
+      "visual_triangles": 432876
+    }
+  ],
+  "actual_static_triangles": 8425384,
+  "actual_static_vertices": 5049115
+}

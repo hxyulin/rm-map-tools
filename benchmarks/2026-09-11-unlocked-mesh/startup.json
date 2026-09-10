@@ -1,0 +1,65 @@
+{
+  "scope": "Alternating local runs, OS caches not cleared. Scene-ready is CPU scene instantiation, not first presented frame. Screenshot exit includes fixed warmup frames.",
+  "runs": [
+    {
+      "package": "before",
+      "run": 0,
+      "loader_wall_seconds": 3.0456098330323584,
+      "verification_seconds": 0.992,
+      "terrain_parse_seconds": 2.034,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 6.475943207973614,
+      "scene_ready_seconds": 6.184307
+    },
+    {
+      "package": "after",
+      "run": 0,
+      "loader_wall_seconds": 1.3263766669551842,
+      "verification_seconds": 0.397,
+      "terrain_parse_seconds": 0.917,
+      "collider_triangles": 938536,
+      "app_exit_seconds": 2.9939476249855943,
+      "scene_ready_seconds": 2.83839
+    },
+    {
+      "package": "before",
+      "run": 1,
+      "loader_wall_seconds": 2.986810708011035,
+      "verification_seconds": 0.961,
+      "terrain_parse_seconds": 2.009,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 6.284995416004676,
+      "scene_ready_seconds": 6.089577
+    },
+    {
+      "package": "after",
+      "run": 1,
+      "loader_wall_seconds": 1.3263846669578925,
+      "verification_seconds": 0.397,
+      "terrain_parse_seconds": 0.92,
+      "collider_triangles": 938536,
+      "app_exit_seconds": 2.946372250036802,
+      "scene_ready_seconds": 2.802785
+    },
+    {
+      "package": "before",
+      "run": 2,
+      "loader_wall_seconds": 2.9920660000061616,
+      "verification_seconds": 0.963,
+      "terrain_parse_seconds": 2.014,
+      "collider_triangles": 2169201,
+      "app_exit_seconds": 6.312364541983698,
+      "scene_ready_seconds": 6.105292
+    },
+    {
+      "package": "after",
+      "run": 2,
+      "loader_wall_seconds": 1.3296942919841968,
+      "verification_seconds": 0.401,
+      "terrain_parse_seconds": 0.916,
+      "collider_triangles": 938536,
+      "app_exit_seconds": 2.9276604170445353,
+      "scene_ready_seconds": 2.775173
+    }
+  ]
+}

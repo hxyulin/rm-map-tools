@@ -1,0 +1,12 @@
+{
+  "package": "/Users/hxyulin/dev/RM/rm-simulator/local-assets/field",
+  "previous_package": "/Users/hxyulin/dev/RM/assets/rm2026-before-unlocked-20260911",
+  "binaries": {
+    "rm-simulator": "37f4f94aa8fc6000c9222dd0d728934975663d1ebbe382e62fc35dae6b99ecd4",
+    "rm-simulator-server": "0ba0c03603c3aaa8fad876d62c6b8e27bb67a850d00b77b78949344741d9d842"
+  },
+  "package_manifests": {
+    "manifest.json": "3421f5551a4adc5e15bb922a1f4706d8cef947df1c429420b0607a3aff7d4636",
+    "equipment/manifest.json": "89a9f6749c5e507c2bcbf5cd5ad117cae4b6f7aa52fb6b2ddda230ec459a46bd"
+  }
+}

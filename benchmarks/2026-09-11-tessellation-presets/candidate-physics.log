@@ -1,0 +1,7 @@
+manifest_load_ms 1416.114417
+terrain_load_ms 211.406792
+field collision: 3149336 ground triangles, 561401 fixture triangles, 1219004 equipment triangles (source tessellations or CAD visual meshes)
+ground_triangles 3149336 fixtures_triangles 561401 equipment_triangles 1219004
+PHYSICS {"build_ms":4345.530292,"collision":true,"max_ms":1.72125,"mean_ms":0.20670766820000025,"p50_ms":0.197083,"p95_ms":0.299666,"p99_ms":0.3905,"repeat":0,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":3378.9512090000003,"collision":true,"max_ms":26.503417000000002,"mean_ms":0.2601465924000002,"p50_ms":0.20458400000000002,"p95_ms":0.49050000000000005,"p99_ms":0.970208,"repeat":1,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":3401.430916,"collision":true,"max_ms":0.941458,"mean_ms":0.20672590820000084,"p50_ms":0.197083,"p95_ms":0.290375,"p99_ms":0.3715,"repeat":2,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}

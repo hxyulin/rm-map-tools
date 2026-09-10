@@ -1,0 +1,14 @@
+{
+  "before": {
+    "scene_ready_seconds": 6.105292,
+    "terrain_parse_seconds": 2.014,
+    "verification_seconds": 0.963,
+    "loader_wall_seconds": 2.9920660000061616
+  },
+  "after": {
+    "scene_ready_seconds": 2.802785,
+    "terrain_parse_seconds": 0.917,
+    "verification_seconds": 0.397,
+    "loader_wall_seconds": 1.3263846669578925
+  }
+}

@@ -1,0 +1,72 @@
+--- a/crates/rm-simulator-app/src/main.rs
++++ b/crates/rm-simulator-app/src/main.rs
+@@ -10,6 +10,7 @@
+ //! renderer's scene state, `hud` writes the overlay, `debug` draws the
+ //! physics wireframe, `screenshot` serves `--screenshot` and `frames` holds
+ //! the FLU-to-Bevy conversions.
++mod benchmark;
+ mod args;
+ mod controls;
+ mod debug;
+@@ -57,7 +58,9 @@
+     let plugins = DefaultPlugins
+         .set(WindowPlugin {
+             primary_window: Some(Window {
+-                title: "rm-simulator".into(),
++                title: "rm-simulator benchmark".into(),
++                present_mode: bevy::window::PresentMode::AutoNoVsync,
++                resolution: bevy::window::WindowResolution::new(1280, 720).with_scale_factor_override(1.0),
+                 ..default()
+             }),
+             ..default()
+@@ -121,6 +124,7 @@
+     if let Some(path) = args.screenshot {
+         app.insert_resource(ScreenshotRequest::new(path));
+     }
++    app.init_resource::<benchmark::Baseline>().add_systems(Last, benchmark::sample);
+     app.run();
+     Ok(())
+ }
+--- a/crates/rm-simulator-app/src/session.rs
++++ b/crates/rm-simulator-app/src/session.rs
+@@ -253,7 +253,9 @@
+         match &mut self.backend {
+             Backend::Local { simulation, .. } => {
+                 let mut simulation = simulation.lock().unwrap_or_else(|p| p.into_inner());
+-                simulation.advance(delta_ns).map_err(|e| e.to_string())?;
++                let start = std::time::Instant::now();
++                let ticks = simulation.advance(delta_ns).map_err(|e| e.to_string())?;
++                crate::benchmark::physics_sample(start.elapsed().as_secs_f64()*1000.0, ticks);
+                 self.snapshot = simulation.snapshot();
+                 self.paused = simulation.paused();
+             }
+--- /dev/null
++++ b/crates/rm-simulator-app/src/benchmark.rs
+@@ -0,0 +1,27 @@
++// SPDX-License-Identifier: LicenseRef-Proprietary
++use bevy::prelude::*;
++use rm_simulator_render::cad::CadSceneStatus;
++use std::sync::Mutex;
++static PHYSICS: Mutex<Vec<(f64,u64)>> = Mutex::new(Vec::new());
++pub fn physics_sample(ms: f64, ticks: u64) { PHYSICS.lock().unwrap().push((ms,ticks)); }
++#[derive(Resource,Default)]
++pub struct Baseline { frames: usize, last: Option<std::time::Instant>, times: Vec<f64> }
++fn stats(mut v: Vec<f64>) -> serde_json::Value {
++    v.sort_by(f64::total_cmp);
++    if v.is_empty() {return serde_json::json!(null)}
++    serde_json::json!({"n":v.len(),"mean_ms":v.iter().sum::<f64>()/v.len() as f64,"p50_ms":v[v.len()/2],"p95_ms":v[(v.len()-1)*95/100],"p99_ms":v[(v.len()-1)*99/100],"max_ms":v[v.len()-1]})
++}
++pub fn sample(mut b: ResMut<Baseline>, cad: Res<CadSceneStatus>, meshes: Res<Assets<Mesh>>, query: Query<(&Mesh3d, &ViewVisibility)>, mut exit: MessageWriter<AppExit>) {
++    if let Some(failure)= &cad.failed { panic!("CAD: {failure}"); }
++    if !cad.ready() { PHYSICS.lock().unwrap().clear(); return; }
++    let now=std::time::Instant::now();
++    b.frames+=1;
++    if b.frames>180 {if let Some(last)=b.last { b.times.push(now.duration_since(last).as_secs_f64()*1000.0); }} else {PHYSICS.lock().unwrap().clear();}
++    b.last=Some(now);
++    if b.times.len()!=600 {return;}
++    let mut all=0usize;let mut visible=0usize;let mut entities=0usize;let mut visible_entities=0usize;
++    for (handle,visibility) in &query {if let Some(mesh)=meshes.get(&handle.0) {if mesh.primitive_topology()!=bevy::mesh::PrimitiveTopology::TriangleList {continue;} let n=mesh.indices().map_or(mesh.count_vertices(),|i|i.len())/3;all+=n;entities+=1;if visibility.get(){visible+=n;visible_entities+=1;}}}
++    let p=PHYSICS.lock().unwrap();let ticks:u64=p.iter().map(|x|x.1).sum();let ms:f64=p.iter().map(|x|x.0).sum();
++    println!("BASELINE {}",serde_json::json!({"frame":stats(b.times.clone()),"physics_advance":stats(p.iter().map(|x|x.0).collect()),"physics_ticks":ticks,"physics_ms_per_tick":if ticks>0 {ms/ticks as f64}else{0.0},"mesh_entities":entities,"scene_triangles":all,"view_visible_mesh_entities":visible_entities,"view_visible_triangles":visible}));
++    exit.write(AppExit::Success);
++}

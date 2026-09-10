@@ -1,0 +1,61 @@
+{
+  "asset": "base",
+  "input_visual_sha256": "31e460be51cf88e4e59988f104d4f7f573d8d63a253cc5ff5514671fce8deb3f",
+  "articulation_sha256": "4f5410e942b0086afde69e76b5ec9ab8aba096e81da4a8c6cd9eb0c365b21316",
+  "joints": [
+    "base.shield.0.slide",
+    "base.shield.1.slide",
+    "base.shield.2.slide",
+    "base.dart_target.slide"
+  ],
+  "hidden_roles": [],
+  "hidden_layers": [],
+  "hidden_nodes": [],
+  "reconstructed_nodes": [
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77
+  ],
+  "presentation": {
+    "background": "black",
+    "overlays": false,
+    "camera": "360-degree perspective orbit"
+  },
+  "fps": 20,
+  "seconds": 8.0,
+  "frames": 160,
+  "size": [
+    960,
+    720
+  ],
+  "motion": "demo_motion profiles where present; otherwise continuous 2*pi or bounded cosine inspection sweeps",
+  "geometry_binding": "mesh_nodes",
+  "technology_core_demo": null,
+  "demo_motion": {
+    "base.dart_target.slide": {
+      "type": "sinusoidal",
+      "demo_only": true,
+      "when": "no_target_mode",
+      "period_s": 4.0,
+      "phase_rad": 0.0,
+      "range": "joint_limits",
+      "period_source": "illustrative_default_not_rulebook"
+    }
+  },
+  "timing": "inspection sweep, not rulebook timing",
+  "files": {
+    "base-joints-orbit.mp4": {
+      "sha256": "3364989cf21805ed3bca5c7e2271c5cccbfd8c4fd73ad0fea182254345a113a2",
+      "bytes": 878014
+    },
+    "base-joints-orbit.gif": {
+      "sha256": "dbb8d50efca2259a62e13979ff78728f54a03d2d087cf7176e2b4e8df0ac884a",
+      "bytes": 4013112
+    }
+  }
+}

@@ -1,0 +1,28 @@
+manifest_load_ms 1738.2341669999998
+terrain_load_ms 281.33133300000003
+field collision: 5644145 ground triangles, 561401 fixture triangles, 2222674 equipment triangles (CAD visual meshes)
+ground_triangles 5644145 fixtures_triangles 561401 equipment_triangles 2222674
+PHYSICS {"build_ms":5140.163791,"collision":true,"max_ms":0.001917,"mean_ms":0.000026779099999996035,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000084,"repeat":0,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4853.1446670000005,"collision":true,"max_ms":0.009917,"mean_ms":0.000023625799999996778,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000042,"repeat":1,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4725.198375,"collision":true,"max_ms":0.004209,"mean_ms":0.000022751499999996948,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000042,"repeat":2,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4826.334416,"collision":true,"max_ms":0.050875000000000004,"mean_ms":0.007049608699999785,"p50_ms":0.006791,"p95_ms":0.008624999999999999,"p99_ms":0.0095,"repeat":0,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4783.825583999999,"collision":true,"max_ms":0.0335,"mean_ms":0.006987740699999696,"p50_ms":0.00675,"p95_ms":0.008375,"p99_ms":0.009415999999999999,"repeat":1,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4721.477875,"collision":true,"max_ms":0.030333,"mean_ms":0.006985966599999661,"p50_ms":0.00675,"p95_ms":0.008416,"p99_ms":0.009375,"repeat":2,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":4789.9015,"collision":true,"max_ms":0.436833,"mean_ms":0.04789588170000007,"p50_ms":0.051583,"p95_ms":0.064875,"p99_ms":0.073458,"repeat":0,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":4854.696709,"collision":true,"max_ms":0.143542,"mean_ms":0.04772083940000002,"p50_ms":0.051415999999999996,"p95_ms":0.064875,"p99_ms":0.073375,"repeat":1,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":4783.002166,"collision":true,"max_ms":0.218417,"mean_ms":0.04828462609999986,"p50_ms":0.051541000000000003,"p95_ms":0.065166,"p99_ms":0.07470800000000001,"repeat":2,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":4719.744334,"collision":true,"max_ms":0.608625,"mean_ms":0.19195632620000008,"p50_ms":0.187667,"p95_ms":0.235125,"p99_ms":0.328375,"repeat":0,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":4825.615667,"collision":true,"max_ms":0.678125,"mean_ms":0.19195910230000046,"p50_ms":0.187333,"p95_ms":0.236042,"p99_ms":0.3285,"repeat":1,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":4760.911542,"collision":true,"max_ms":0.772167,"mean_ms":0.1940708598999993,"p50_ms":0.188083,"p95_ms":0.254208,"p99_ms":0.341167,"repeat":2,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":0.0,"collision":false,"max_ms":0.000375,"mean_ms":0.000022308399999996827,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000042,"repeat":0,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.0,"collision":false,"max_ms":0.000375,"mean_ms":0.000022087899999996923,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000042,"repeat":1,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.000042,"collision":false,"max_ms":0.000166,"mean_ms":0.000022085199999996896,"p50_ms":0.000041,"p95_ms":0.000042,"p99_ms":0.000042,"repeat":2,"scenario":"empty","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.000042,"collision":false,"max_ms":0.017708,"mean_ms":0.005540950000000402,"p50_ms":0.0053750000000000004,"p95_ms":0.006125,"p99_ms":0.00725,"repeat":0,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.0,"collision":false,"max_ms":0.015000000000000001,"mean_ms":0.005532012400000383,"p50_ms":0.0053750000000000004,"p95_ms":0.006083,"p99_ms":0.007125,"repeat":1,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.000042,"collision":false,"max_ms":0.017459,"mean_ms":0.005470210900000168,"p50_ms":0.005332999999999999,"p95_ms":0.005958000000000001,"p99_ms":0.007125,"repeat":2,"scenario":"one_idle","shots_fired":0,"ticks":10000}
+PHYSICS {"build_ms":0.0,"collision":false,"max_ms":0.112875,"mean_ms":0.03937787500000011,"p50_ms":0.046,"p95_ms":0.051042,"p99_ms":0.055875,"repeat":0,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":0.0,"collision":false,"max_ms":0.140834,"mean_ms":0.03984624370000006,"p50_ms":0.046333,"p95_ms":0.052250000000000005,"p99_ms":0.058125,"repeat":1,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":0.000042,"collision":false,"max_ms":0.139709,"mean_ms":0.03961557729999995,"p50_ms":0.04625,"p95_ms":0.051875,"p99_ms":0.057083,"repeat":2,"scenario":"one_drive_fire","shots_fired":100,"ticks":10000}
+PHYSICS {"build_ms":0.000042,"collision":false,"max_ms":2.232333,"mean_ms":0.08324750219999964,"p50_ms":0.078875,"p95_ms":0.09466699999999999,"p99_ms":0.21945800000000001,"repeat":0,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":0.000041,"collision":false,"max_ms":0.384083,"mean_ms":0.07892637790000034,"p50_ms":0.078708,"p95_ms":0.091,"p99_ms":0.099834,"repeat":1,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}
+PHYSICS {"build_ms":0.000041,"collision":false,"max_ms":0.171292,"mean_ms":0.0787321313999999,"p50_ms":0.0785,"p95_ms":0.090917,"p99_ms":0.09945799999999999,"repeat":2,"scenario":"14_drive_fire","shots_fired":1400,"ticks":10000}

@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "part": "7000001_1_ASM",
+  "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+  "thresholds": {
+    "small_body_mm": 30,
+    "small_hole_radius_mm": 5
+  },
+  "scope": "Unique imported part geometry, not placed scene counts. Candidate groups overlap. Small shells may be individual faces of larger objects, not removable hardware. Inward cylinder orientation alone does not prove a hole in an open shell. No automatic removals.",
+  "samples": {
+    "simulation_visual": {
+      "triangles": 670718,
+      "surfaces": {
+        "Cylinder": {
+          "faces": 9564,
+          "triangles": 170023
+        },
+        "Plane": {
+          "faces": 20412,
+          "triangles": 240193
+        },
+        "Torus": {
+          "faces": 1385,
+          "triangles": 109408
+        },
+        "BSplineSurface": {
+          "faces": 6202,
+          "triangles": 76623
+        },
+        "Sphere": {
+          "faces": 367,
+          "triangles": 35857
+        },
+        "Cone": {
+          "faces": 964,
+          "triangles": 38614
+        }
+      },
+      "topology": {
+        "solids": 5,
+        "shells_outside_solids": 38002,
+        "single_face_shells": 37978
+      },
+      "small_radius_surfaces": {
+        "Cylinder": {
+          "faces": 7716,
+          "triangles": 124628
+        },
+        "Torus": {
+          "faces": 1240,
+          "triangles": 99409
+        },
+        "Sphere": {
+          "faces": 341,
+          "triangles": 33944
+        }
+      },
+      "tolerance": {
+        "linear_deflection_mm": 4,
+        "angular_deflection_rad": 0.5
+      },
+      "seconds": 7.585762499948032,
+      "recovery": {
+        "split_retries": 13,
+        "fine_retries": 54,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "small_bodies": {
+        "count": 34368,
+        "triangles": 502407
+      },
+      "hole_candidates": {
+        "faces": 3010,
+        "wall_triangles": 44571
+      },
+      "perforated_planes": {
+        "faces": 2014,
+        "triangles": 152941,
+        "small_circular_openings": 51
+      }
+    },
+    "relaxed_angle_visual": {
+      "triangles": 474598,
+      "surfaces": {
+        "Cylinder": {
+          "faces": 9564,
+          "triangles": 117679
+        },
+        "Plane": {
+          "faces": 20412,
+          "triangles": 198275
+        },
+        "Torus": {
+          "faces": 1385,
+          "triangles": 59057
+        },
+        "BSplineSurface": {
+          "faces": 6202,
+          "triangles": 58796
+        },
+        "Sphere": {
+          "faces": 367,
+          "triangles": 15813
+        },
+        "Cone": {
+          "faces": 964,
+          "triangles": 24978
+        }
+      },
+      "topology": {
+        "solids": 5,
+        "shells_outside_solids": 38002,
+        "single_face_shells": 37978
+      },
+      "small_radius_surfaces": {
+        "Cylinder": {
+          "faces": 7716,
+          "triangles": 89534
+        },
+        "Torus": {
+          "faces": 1240,
+          "triangles": 54141
+        },
+        "Sphere": {
+          "faces": 341,
+          "triangles": 14611
+        }
+      },
+      "tolerance": {
+        "linear_deflection_mm": 4,
+        "angular_deflection_rad": 0.9
+      },
+      "seconds": 4.752780582988635,
+      "recovery": {
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "fine_retries": 53,
+        "narrow_face_retries": 1
+      },
+      "small_bodies": {
+        "count": 34368,
+        "triangles": 359543
+      },
+      "hole_candidates": {
+        "faces": 3010,
+        "wall_triangles": 33548
+      },
+      "perforated_planes": {
+        "faces": 2014,
+        "triangles": 119927,
+        "small_circular_openings": 51
+      }
+    },
+    "simulation_collision": {
+      "triangles": 525843,
+      "surfaces": {
+        "Cylinder": {
+          "faces": 9564,
+          "triangles": 132938
+        },
+        "Plane": {
+          "faces": 20412,
+          "triangles": 205055
+        },
+        "Torus": {
+          "faces": 1385,
+          "triangles": 73338
+        },
+        "BSplineSurface": {
+          "faces": 6202,
+          "triangles": 59690
+        },
+        "Sphere": {
+          "faces": 367,
+          "triangles": 22404
+        },
+        "Cone": {
+          "faces": 964,
+          "triangles": 32418
+        }
+      },
+      "topology": {
+        "solids": 5,
+        "shells_outside_solids": 38002,
+        "single_face_shells": 37978
+      },
+      "small_radius_surfaces": {
+        "Cylinder": {
+          "faces": 7716,
+          "triangles": 96743
+        },
+        "Torus": {
+          "faces": 1240,
+          "triangles": 66974
+        },
+        "Sphere": {
+          "faces": 341,
+          "triangles": 20935
+        }
+      },
+      "tolerance": {
+        "linear_deflection_mm": 6,
+        "angular_deflection_rad": 0.65
+      },
+      "seconds": 5.6608131670509465,
+      "recovery": {
+        "split_retries": 13,
+        "fine_retries": 72,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "small_bodies": {
+        "count": 34368,
+        "triangles": 398624
+      },
+      "hole_candidates": {
+        "faces": 3010,
+        "wall_triangles": 34849
+      },
+      "perforated_planes": {
+        "faces": 2014,
+        "triangles": 121819,
+        "small_circular_openings": 51
+      }
+    },
+    "relaxed_angle_collision": {
+      "triangles": 398757,
+      "surfaces": {
+        "Cylinder": {
+          "faces": 9564,
+          "triangles": 97230
+        },
+        "Plane": {
+          "faces": 20412,
+          "triangles": 173343
+        },
+        "Torus": {
+          "faces": 1385,
+          "triangles": 45789
+        },
+        "BSplineSurface": {
+          "faces": 6202,
+          "triangles": 49079
+        },
+        "Sphere": {
+          "faces": 367,
+          "triangles": 11646
+        },
+        "Cone": {
+          "faces": 964,
+          "triangles": 21670
+        }
+      },
+      "topology": {
+        "solids": 5,
+        "shells_outside_solids": 38002,
+        "single_face_shells": 37978
+      },
+      "small_radius_surfaces": {
+        "Cylinder": {
+          "faces": 7716,
+          "triangles": 73636
+        },
+        "Torus": {
+          "faces": 1240,
+          "triangles": 41959
+        },
+        "Sphere": {
+          "faces": 341,
+          "triangles": 10693
+        }
+      },
+      "tolerance": {
+        "linear_deflection_mm": 6,
+        "angular_deflection_rad": 1.2
+      },
+      "seconds": 6.31734312500339,
+      "recovery": {
+        "fine_retries": 84,
+        "split_retries": 5,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "small_bodies": {
+        "count": 34368,
+        "triangles": 306034
+      },
+      "hole_candidates": {
+        "faces": 3010,
+        "wall_triangles": 27795
+      },
+      "perforated_planes": {
+        "faces": 2014,
+        "triangles": 97115,
+        "small_circular_openings": 51
+      }
+    }
+  },
+  "sphere_patches": {
+    "full": 0,
+    "hemisphere": 51,
+    "trimmed": 316
+  }
+}

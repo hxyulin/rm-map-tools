@@ -1,0 +1,198 @@
+{
+ "source": "UTF-8__RMUC2026_V1.2.0.step",
+ "notes": [
+  "Product names are opaque in V1.2.0 (the IGES round trip dropped the Chinese occurrence names), so each field element is pinned to product names here.",
+  "Identified 2026-09-10 by placing every sub-assembly in the arena frame and matching it against the named occurrences of V2.0.0 (前哨站, 基地260629, 能量机关, 资源区, 飞镖发射井, 国赛科技核心 are the NEXT_ASSEMBLY_USAGE_OCCURRENCE descriptions there).",
+  "起伏路段 does not exist in V1.2.0 (flat deck with a cutout in the marking skin); it is grafted from the V2.0.0 split package as in the field export.",
+  "The mixed 0006_1_ASM directly owns 3424 bodies: 62 sheet faces forming the two missing M letters, and two groups of 1681 tech-core bodies each, including seven solids each. The explicit body groups partition it completely. All sheet bodies are retained throughout the element exports.",
+  "Fortress contains the ramp body and its on-top white markings. BREP_549..554_1 are ground-level coloured outlines and remain exclusively in arena-static, not in the standalone fortress.",
+  "Element origins are the actual meshed footprint centre and lowest vertex of the reference instance. Rotated source vertex boxes overestimate footprints and miss curved extrema.",
+  "The outpost body and footing are separate elements because one V1.2.0 body is rotated 3.607 degrees relative to its axis-aligned footing. Each retains its exact STEP occurrence transforms; no shared rigid placement is inferred. The base pedestals and steps remain in arena-static."
+ ],
+ "elements": [
+  {
+   "name": "base",
+   "label": "基地",
+   "products": [
+    "001_1_ASM"
+   ]
+  },
+  {
+   "name": "outpost",
+   "label": "前哨站",
+   "products": [
+    "0009_1_ASM"
+   ]
+  },
+  {
+   "name": "rune",
+   "label": "能量机关",
+   "products": [
+    "0007_1_ASM"
+   ]
+  },
+  {
+   "name": "dart-station",
+   "label": "飞镖发射井",
+   "products": [
+    "0013_1_ASM"
+   ]
+  },
+  {
+   "name": "resource-zone",
+   "label": "资源区",
+   "products": [
+    "7000001_1_ASM"
+   ]
+  },
+  {
+   "name": "centre-platform",
+   "label": "中央平台",
+   "products": [
+    "0006_1_1",
+    "centre-logo-sheets",
+    "0006_1_2",
+    "0006_1_3",
+    "0006_1_4",
+    "0006_1_5",
+    "0006_1_6",
+    "0006_1_7",
+    "0006_1_8",
+    "0006_1_9",
+    "0006_1_10",
+    "0006_1_11",
+    "0006_1_12",
+    "0006_1_13",
+    "0006_1_14",
+    "0006_1_15",
+    "0006_1_16",
+    "0006_1_17",
+    "0006_1_18",
+    "0006_1_19",
+    "0006_1_20",
+    "0006_1_21",
+    "0006_1_22",
+    "0006_1_23"
+   ],
+   "body_groups": {
+    "centre-logo-sheets": {
+     "product": "0006_1_ASM",
+     "body_id_ranges": [
+      [
+       78039,
+       78100
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "name": "fortress",
+   "label": "堡垒",
+   "in_arena": true,
+   "instances": [
+    [
+     "BREP_547_1",
+     "BREP_147_1_1",
+     "BREP_93_1",
+     "BREP_94_1",
+     "BREP_95_1"
+    ],
+    [
+     "BREP_228_1",
+     "BREP_148_1",
+     "BREP_96_1",
+     "BREP_97_1",
+     "BREP_98_1"
+    ]
+   ]
+  },
+  {
+   "name": "tech-core",
+   "label": "国赛科技核心",
+   "instances": [
+    [
+     "0006_1_24",
+     "0006_1_25",
+     "0006_1_26",
+     "0006_1_27",
+     "0006_1_28",
+     "0006_1_29",
+     "0006_1_30",
+     "0006_1_31",
+     "0006_1_32",
+     "0006_1_33",
+     "0006_1_34",
+     "0006_1_35",
+     "0006_1_36",
+     "tech-core-positive-details"
+    ],
+    [
+     "0006_1_37",
+     "0006_1_38",
+     "0006_1_39",
+     "0006_1_40",
+     "0006_1_41",
+     "0006_1_42",
+     "0006_1_43",
+     "0006_1_44",
+     "0006_1_45",
+     "0006_1_46",
+     "0006_1_47",
+     "0006_1_48",
+     "0006_1_49",
+     "tech-core-negative-details"
+    ]
+   ],
+   "body_groups": {
+    "tech-core-positive-details": {
+     "product": "0006_1_ASM",
+     "body_id_ranges": [
+      [
+       78101,
+       79774
+      ],
+      [
+       427827,
+       427833
+      ]
+     ]
+    },
+    "tech-core-negative-details": {
+     "product": "0006_1_ASM",
+     "body_id_ranges": [
+      [
+       79775,
+       81448
+      ],
+      [
+       427823,
+       427826
+      ],
+      [
+       427834,
+       427836
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "name": "undulating-road",
+   "label": "起伏路段",
+   "graft": {
+    "products": [
+     "BREP_220",
+     "BREP_192"
+    ]
+   }
+  },
+  {
+   "name": "outpost-footing",
+   "label": "前哨站底座",
+   "products": [
+    "0008_1"
+   ]
+  }
+ ]
+}

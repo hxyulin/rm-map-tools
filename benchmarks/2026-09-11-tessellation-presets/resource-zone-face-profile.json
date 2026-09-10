@@ -1,0 +1,146 @@
+{
+  "part": "7000001_1_ASM",
+  "linear_deflection_mm": 4,
+  "angular_deflection_rad": 0.5,
+  "triangles": 670718,
+  "surfaces": {
+    "GeomAbs_Cylinder": {
+      "faces": 9564,
+      "triangles": 170023,
+      "recovery_faces": 0,
+      "recovery_triangles": 0
+    },
+    "GeomAbs_Plane": {
+      "faces": 20412,
+      "triangles": 240193,
+      "recovery_faces": 53,
+      "recovery_triangles": 2500
+    },
+    "GeomAbs_Torus": {
+      "faces": 1385,
+      "triangles": 109408,
+      "recovery_faces": 0,
+      "recovery_triangles": 0
+    },
+    "GeomAbs_BSplineSurface": {
+      "faces": 6202,
+      "triangles": 76623,
+      "recovery_faces": 1,
+      "recovery_triangles": 2
+    },
+    "GeomAbs_Sphere": {
+      "faces": 367,
+      "triangles": 35857,
+      "recovery_faces": 0,
+      "recovery_triangles": 0
+    },
+    "GeomAbs_Cone": {
+      "faces": 964,
+      "triangles": 38614,
+      "recovery_faces": 15,
+      "recovery_triangles": 9206
+    }
+  },
+  "largest_faces": [
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 3124,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 2993,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 1255,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 1255,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 1249,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 998,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 970,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 970,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 924,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 918,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 905,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 905,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 905,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 905,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 905,
+      "recovery": true
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 884,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 869,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 834,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Plane",
+      "triangles": 756,
+      "recovery": false
+    },
+    {
+      "surface": "GeomAbs_Cone",
+      "triangles": 745,
+      "recovery": true
+    }
+  ]
+}

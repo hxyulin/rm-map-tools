@@ -1,0 +1,40 @@
+/Users/hxyulin/dev/RM/rm-map-tools/ocpenv/bin/python /Users/hxyulin/dev/RM/rm-map-tools/python/export_field_package.py /Users/hxyulin/dev/RM/rm-map-tools/out/v12 /Users/hxyulin/dev/RM/rm-map-tools/v12.npz --policy /Users/hxyulin/dev/RM/rm-map-tools/rules/export-detail-preview.example.json --equipment=/Users/hxyulin/dev/RM/assets/rm2026-field --out=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-field --graft /Users/hxyulin/dev/RM/rm-map-tools/out/v20:/Users/hxyulin/dev/RM/rm-map-tools/v20.npz:BREP_220,BREP_192
+model ready in 1.5s; 355 arena parts
+skipped 0006_1_ASM (id 13267332, 1 occurrences, 63 solids) bbox [-2.768, -1.123, -1.641]..[2.768, 4.413, 0.066]: not arena; expected from the equipment copy
+skipped 0007_1_ASM (id 13267382, 1 occurrences, 252 solids) bbox [-1.811, 0.085, -1.405]..[1.811, 3.203, 1.857]: not arena; expected from the equipment copy
+skipped 0008_1 (id 13267542, 2 occurrences, 1 solids) bbox [-3.381, -2.613, -1.341]..[3.381, 5.901, -1.241]: not arena; expected from the equipment copy
+skipped 0009_1_ASM (id 13267543, 2 occurrences, 52 solids) bbox [-3.357, -2.495, -1.242]..[3.374, 5.802, 0.227]: not arena; expected from the equipment copy
+skipped 001_1_ASM (id 13267587, 2 occurrences, 76 solids) bbox [-12.226, 1.049, -1.444]..[12.226, 2.24, -0.263]: not arena; expected from the equipment copy
+skipped 0013_1_ASM (id 13267654, 2 occurrences, 203 solids) bbox [-14.473, -2.246, -1.641]..[14.473, 5.534, 1.111]: not arena; expected from the equipment copy
+skipped 0001_ASM (id 13267845, 2 occurrences, 217 solids) bbox [-14.881, -5.307, -1.642]..[14.881, 8.594, 0.041]: not arena; expected from the equipment copy
+floor slab: BREP_1128_0001_1
+[50/355] 4512 arena triangles
+[100/355] 12642 arena triangles
+[150/355] 18432 arena triangles
+[200/355] 26222 arena triangles
+[250/355] 28744 arena triangles
+[300/355] 31150 arena triangles
+[350/355] 33026 arena triangles
+graft donor /Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V2.0.0.stp: floor slab BREP_9
+graft graft_141103_BREP_220: donor slab tilt -0.00% x -2.62% y; top 0.270 m above the floor, 40588 / 40588 triangles
+graft graft_128896_BREP_192: donor slab tilt +0.00% x +2.62% y; top 0.270 m above the floor, 40474 / 40474 triangles
+floor: 1 nodes, 12 visual / 12 collision triangles, colours ['0.2000,0.2000,0.2000', '0.6275,0.6275,0.6275']
+arena-static: 387 nodes, 119776 visual / 119776 collision triangles, colours ['0.0667,0.0039,0.5922', '0.2000,0.2000,0.2000', '0.2549,0.2549,0.2549', '0.4706,0.4706,0.4706', '0.6275,0.6275,0.6275', '0.7843,0.7843,0.7059', '0.9804,0.9804,0.9804', '1.0000,0.0275,0.0275', '1.0000,1.0000,1.0000']
+floor top z = -1.6413 m; failures 0; bbox mismatches 0; 8s
+/Users/hxyulin/dev/RM/rm-map-tools/ocpenv/bin/python /Users/hxyulin/dev/RM/rm-map-tools/python/export_elements.py /Users/hxyulin/dev/RM/rm-map-tools/out/v12 /Users/hxyulin/dev/RM/rm-map-tools/v12.npz --policy /Users/hxyulin/dev/RM/rm-map-tools/rules/export-detail-preview.example.json --rules=/Users/hxyulin/dev/RM/rm-map-tools/rules/elements-v1.2.0.json --field=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-field --out=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-elements --graft /Users/hxyulin/dev/RM/rm-map-tools/out/v20:/Users/hxyulin/dev/RM/rm-map-tools/v20.npz
+model ready in 2.4s; 79247 bodies assigned
+base (基地): 67 nodes, 471525 / 408782 triangles, 2 placements reference at [11.679959, 1.644594] r=0.0000, instance at [-11.679959, 1.644094] r=0.0000; 37s
+outpost (前哨站): 43 nodes, 547358 / 387314 triangles, 2 placements instance at [3.091034, 5.502603] r=0.0000, reference at [-3.091039, -2.211715] r=0.0000; 15s
+rune (能量机关): 160 nodes, 1367202 / 967937 triangles, 1 placements reference at [-0.0, 1.644344] r=0.0000; 23s
+dart-station (飞镖发射井): 191 nodes, 444019 / 385999 triangles, 2 placements reference at [13.44495, -1.625656] r=0.0000, instance at [-13.44495, 4.914344] r=0.0000; 30s
+resource-zone (资源区): 153 nodes, 887931 / 764006 triangles, 2 placements reference at [13.7335, 8.189344] r=0.0000, instance at [-13.7335, -4.901656] r=0.0000; 64s
+centre-platform (中央平台): 24 nodes, 33255 / 32962 triangles, 1 placements reference at [0.000134, 1.644344] r=0.0000; 1s
+fortress (堡垒): 5 nodes, 272 / 272 triangles, 2 placements reference at [-7.4, 1.64434] r=0.0000, matched_yaw_180 at [7.4, 1.644344] r=0.0010; 0s
+tech-core (国赛科技核心): 14 nodes, 87517 / 70949 triangles, 2 placements reference at [-0.339663, 1.128413] r=0.0000, matched_yaw_180 at [0.340148, 2.159789] r=0.0005; 19s
+graft donor /Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V2.0.0.stp: floor slab BREP_9
+undulating-road (起伏路段): 1 nodes, 40588 / 40588 triangles, 2 placements reference at [7.538001, 8.074797] r=0.0000, matched_yaw_180 at [-7.537987, -4.82611] r=0.0046; 5s
+outpost-footing (前哨站底座): 1 nodes, 20 / 20 triangles, 2 placements reference at [3.056089, 5.501428] r=0.0000, instance at [-3.056089, -2.21274] r=0.0000; 0s
+full map: 1510 nodes, 6396985 / 5154827 triangles
+failures 0; bbox mismatches 0; warnings 0; 197s
+/Users/hxyulin/dev/RM/rm-map-tools/ocpenv/bin/python /Users/hxyulin/dev/RM/rm-map-tools/python/deploy_field.py --field=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-field --elements=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-elements --out=/Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-runtime
+Installed /Users/hxyulin/dev/RM/rm-map-tools/out/detail-preview-runtime

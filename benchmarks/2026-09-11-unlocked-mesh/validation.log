@@ -1,0 +1,69 @@
+{
+  "unchanged_terrain": [
+    "floor.glb",
+    "floor-collision.glb",
+    "arena-static.glb",
+    "arena-static-collision.glb",
+    "centre-platform.glb",
+    "centre-platform-collision.glb",
+    "outpost-footing.glb",
+    "outpost-footing-collision.glb"
+  ],
+  "preserved_visuals": [
+    {
+      "asset": "rune",
+      "node": "rune/fixed/face_0/logo",
+      "primitive": 1
+    },
+    {
+      "asset": "rune",
+      "node": "rune/fixed/face_1/logo",
+      "primitive": 1
+    },
+    {
+      "asset": "dart-station",
+      "node": "dart_station/gate",
+      "primitive": 3
+    },
+    {
+      "asset": "resource-zone",
+      "node": "source_13267852_7000001_1_6",
+      "primitive": 0
+    },
+    {
+      "asset": "base",
+      "node": "source_13267588_001_1_1",
+      "primitive": 5
+    }
+  ],
+  "unchanged_sidecars_except_hashes": [
+    "articulation.json",
+    "equipment/articulation.json"
+  ],
+  "deviations_mm": {
+    "rune": {
+      "visual": 10.63970866219503,
+      "collision": 7.915020499229929
+    },
+    "outpost": {
+      "visual": 9.642005716634781,
+      "collision": 7.298009150332494
+    },
+    "dart-station": {
+      "visual": 10.449991508825208,
+      "collision": 7.957322648243215
+    },
+    "resource-zone": {
+      "visual": 11.499647635266697,
+      "collision": 7.8864421234991315
+    },
+    "base": {
+      "visual": 1.9999500157149548,
+      "collision": 7.9242255569461575
+    },
+    "tech-core": {
+      "visual": 10.28988766227812,
+      "collision": 7.964266499743619
+    }
+  }
+}

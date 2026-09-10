@@ -1,0 +1,20 @@
+{
+  "simulator_commit": "ad3e9f50f26e75bd3fb9c14acf5297ed1268b263",
+  "rustc": "1.98.1 (48a229cea 2026-09-01)",
+  "compile": "rustc --edition=2024 -C opt-level=3; cached release rlibs reused",
+  "rlibs": {
+    "bevy-12322ecbafa977e1": "1b0a9aebfe9b1ee7fd13576d5301d83a933d0a37631d5ccf4134f17ae56a414f",
+    "clap-fa2aab00f0786cfb": "f112c368641f545b375c52b098ef1aa704b5caf46a58821f483beb2b46fec890",
+    "anyhow-5ac1c59001ece441": "0f85ef54cbc5f6889705398c4c07614d48e0c75a165c0c75f759d048738fbe56",
+    "serde-bb85ae110e7a19ae": "8217c6c751b1e6006f01e186f941fe889e37a63d87bf1d5c7af14aee863c6867",
+    "serde_json-59ccef6e4ff7a24b": "6c3fae4e2df61687fac6998bf60995ff64dcb7f7cd43a139d970b42d13ed22f0",
+    "rm_simulator_world-3d6a55c8cf58750c": "1aa2978766121d315166affab27581bf11ab9b3ab37ae802b217c8e1fb105d8f",
+    "rm_simulator_server-c7826d33c9688b13": "97780ff318240466c029845c9020b02fb5a41bae7e544da62fe59c351543b011",
+    "rm_simulator_render-47841e4f356168d0": "2ef99e520ad27998c500ad08b2134f70eb12932f5f2b7f5d9374e44cf7029f42"
+  },
+  "binaries": {
+    "rm-benchmark": "32df458395a1b08a672cbe9fab55412d3dc17c3cda9c4574bf62c85ea07c3896",
+    "physics": "fdd0c5f7bd699289656bd08cfc84b2ee5157ae43874607d55ff0e3e876a08058",
+    "collider-count": "3d3be33321eeeb6c90d1cdc1690e3a871cc725b9d722598cbed4f02df941f9c7"
+  }
+}

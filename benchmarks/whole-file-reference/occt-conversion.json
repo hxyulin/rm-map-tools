@@ -1,0 +1,14 @@
+{
+  "source": "/Users/hxyulin/Downloads/UTF-8__RMUC2026_V2.0.0.stp",
+  "xbf": "/Users/hxyulin/Downloads/RMUC_full_xde/RMUC2026_full.xbf",
+  "glb": "/Users/hxyulin/Downloads/RMUC_full_xde/RMUC2026_full.glb",
+  "free_shape_roots": 1,
+  "linear_deflection_mm": 1.0,
+  "angular_deflection_rad": 0.35,
+  "read_seconds": 25.101908922195435,
+  "transfer_seconds": 7834.578490972519,
+  "mesh_seconds": 21.34735083580017,
+  "glb_seconds": 24342.163622140884,
+  "total_seconds": 32229.366670131683,
+  "xbf_save_status": 0
+}

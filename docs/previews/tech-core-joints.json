@@ -1,0 +1,35 @@
+{
+  "asset": "tech-core",
+  "input_visual_sha256": "38c4ee9dafe3d20fc909e6c61c0355d032a22829754875351ce09b909d3b7a73",
+  "articulation_sha256": "20f89d8325401484bf9d4cc1a18f32fff15176d4b8cb4a57fc27e334080dfe0e",
+  "joints": [
+    "tech-core.arm.base_yaw",
+    "tech-core.arm.shoulder_pitch",
+    "tech-core.arm.elbow_pitch",
+    "tech-core.arm.wrist_1",
+    "tech-core.arm.wrist_2",
+    "tech-core.arm.tool_roll"
+  ],
+  "hidden_roles": [],
+  "hidden_nodes": [],
+  "fps": 20,
+  "seconds": 6,
+  "frames": 120,
+  "size": [
+    960,
+    720
+  ],
+  "motion": "continuous joints: positive 2*pi sweep; other joints: cosine cycle over preview_range, otherwise limits",
+  "geometry_binding": "frames_only",
+  "timing": "inspection sweep, not rulebook timing",
+  "files": {
+    "tech-core-joints.mp4": {
+      "sha256": "fc52c311ca7fdec39e02700eb17d722f3ee703f24d6fba6cd2d6e586100767a2",
+      "bytes": 149325
+    },
+    "tech-core-joints.gif": {
+      "sha256": "3f4be2f186314c9e075c874fef5431c8f7ec2bd571320eff54c86f95c35c2162",
+      "bytes": 511640
+    }
+  }
+}
