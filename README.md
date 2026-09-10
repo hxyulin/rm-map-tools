@@ -87,7 +87,14 @@ The exporter checks that every part reads, that each node's mesh covers the
 part's vertex box, and fails on any mismatch. The collision proxies are the
 same solids at 10 mm / 0.7 rad, one closed node each, within 2.5 mm of the
 visual; the manifest's `collision_solids: true` tells consumers they can use
-those nodes as they are and need only drop the flat marking sheets.
+those nodes as they are and need only drop the flat marking sheets. The
+arena is every `BREP_*` product plus `--arena-products` (default `0010_1,00_1`,
+the base pedestals and the steps behind them, which V1.2.0 keeps as top-level
+products of their own);
+the exporter prints and records in `validation.json` every other assembly
+with solids it leaves out, so an omission is visible: the outposts, bases,
+runes and the corner structures, which the copied equipment files cover or
+which neither package carries.
 
 ## Status
 
