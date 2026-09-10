@@ -1,0 +1,27 @@
+# build
+/target
+**/__pycache__/
+*.pyc
+
+# derived from the DJI CAD files: never commit (see NOTICE.md)
+*.stp
+*.step
+*.STP
+*.STEP
+*.igs
+*.iges
+*.p21idx
+*.npz
+*.xbf
+*.glb
+*.gltf
+*.bin
+/out/**/parts/
+/out/v12/parts.json
+
+# local environments and editors
+ocpenv/
+.venv/
+.DS_Store
+.idea/
+.vscode/

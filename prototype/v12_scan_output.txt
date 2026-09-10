@@ -1,0 +1,145 @@
+kept entities 3840609
+vertex points 666981
+points loaded 666981
+styled by kind/colour:
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(160,160,160)') 77497
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(51,51,51)') 63505
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(63,63,63)') 17325
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(107,107,107)') 8603
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,255,255)') 3475
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(239,239,166)') 2230
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(0,0,255)') 2143
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(214,204,182)') 1890
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,0,0)') 1426
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(153,153,153)') 1295
+   ('STYLED_ITEM', 'MANIFOLD_SOLID_BREP', 'Opaque(160,160,160)') 1187
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,7,7)') 1007
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,153,255)') 737
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(200,200,180)') 641
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(0,102,102)') 565
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(153,153,255)') 492
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,184,0)') 489
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(85,85,85)') 472
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(51,51,51)') 462
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(153,255,153)') 444
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(206,215,230)') 309
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(63,151,161)') 290
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(17,1,151)') 278
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(215,229,238)') 256
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(65,65,65)') 246
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(100,100,100)') 228
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(197,192,187)') 227
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(250,250,250)') 197
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(25,25,25)') 168
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,255,242)') 120
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(228,228,228)') 120
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(0,96,148)') 111
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(77,77,77)') 101
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(186,120,84)') 78
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(128,128,128)') 75
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(224,242,255)') 71
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(0,3,255)') 66
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(171,0,135)') 49
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(120,120,120)') 49
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(0,255,255)') 46
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(70,70,70)') 41
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(150,150,150)') 40
+   ('STYLED_ITEM', 'BREP_WITH_VOIDS', 'Opaque(160,160,160)') 32
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,139,0)') 28
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(64,64,64)') 26
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(37,9,0)') 20
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(20,26,28)') 18
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(120,51,18)') 16
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(255,139,0)') 16
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(87,79,41)') 14
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(0,255,0)') 8
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(0,0,255)') 8
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(255,255,0)') 6
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(192,0,0)') 5
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(34,0,231)') 5
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(255,255,0)') 5
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(208,47,255)') 5
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(255,0,0)') 4
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(255,0,255)') 4
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(197,192,187)') 4
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(255,255,255)') 2
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(165,131,0)') 2
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(128,128,128)') 2
+   ('STYLED_ITEM', 'ADVANCED_FACE', 'Opaque(17,250,16)') 1
+   ('STYLED_ITEM', 'SHELL_BASED_SURFACE_MODEL', 'Opaque(17,250,16)') 1
+roots ['(\\X2\\672A4FDD5B58\\X0\\)']
+(\X2\672A4FDD5B58\X0\)
+rmuc2026__0001_asm_1230_igs x1 (3 children)
+  RMUC2026__0001_ASM_1_ASM x1 (13 children)
+    ID_V1_202509280001_ASM_1_ASM x1 (1 children)
+    0006_1_ASM x1 (49 children)
+    0007_1_ASM x1 (159 children)
+    0008_1 x2 (0 children)
+    0009_1_ASM x2 (42 children)
+    0010_1 x2 (0 children)
+    001_1_ASM x2 (66 children)
+    0013_1_ASM x2 (190 children)
+  0001_ASM x2 (1 children)
+    7000001_1_ASM x1 (152 children)
+bodies 79247
+largest 60 bodies:
+   MANIFOLD_SOL BREP_1128_0001_1 body Opaque(160,160,160) faces 6 ext [29050, 16050, 200] zrange -1841 -1641 {'None': 5, 'Opaque(51,51,51)': 1}
+   MANIFOLD_SOL BREP_215_1 body Opaque(160,160,160) faces 26 ext [11124, 5066, 600] zrange -1641 -1041 {'Opaque(65,65,65)': 16, 'Opaque(200,200,180)': 10}
+   MANIFOLD_SOL BREP_225_1 body Opaque(160,160,160) faces 31 ext [11124, 5065, 600] zrange -1641 -1041 {'Opaque(65,65,65)': 21, 'Opaque(200,200,180)': 10}
+   MANIFOLD_SOL BREP_227_1 body Opaque(160,160,160) faces 39 ext [5865, 10970, 558] zrange -1641 -1083 {'Opaque(200,200,180)': 37, 'Opaque(65,65,65)': 2}
+   MANIFOLD_SOL BREP_1102_1 body Opaque(160,160,160) faces 17 ext [8376, 10820, 303] zrange -1644 -1341 {'Opaque(65,65,65)': 17}
+   MANIFOLD_SOL BREP_569_1 body Opaque(160,160,160) faces 16 ext [10592, 3950, 350] zrange -1641 -1291 {'Opaque(200,200,180)': 5, 'Opaque(65,65,65)': 11}
+   MANIFOLD_SOL BREP_1115_1 body Opaque(160,160,160) faces 16 ext [10592, 3951, 350] zrange -1641 -1291 {'Opaque(200,200,180)': 5, 'Opaque(65,65,65)': 11}
+   MANIFOLD_SOL BREP_212_1 body Opaque(160,160,160) faces 24 ext [9105, 4260, 1] zrange -1441 -1440 {'Opaque(255,7,7)': 24}
+   MANIFOLD_SOL BREP_222_1 body Opaque(160,160,160) faces 24 ext [9105, 4260, 1] zrange -1441 -1440 {'Opaque(17,1,151)': 24}
+   MANIFOLD_SOL BREP_561_1 body Opaque(160,160,160) faces 10 ext [8679, 3680, 1] zrange -1441 -1440 {'Opaque(255,7,7)': 10}
+   MANIFOLD_SOL BREP_1108_1 body Opaque(160,160,160) faces 10 ext [8679, 3681, 1] zrange -1441 -1440 {'Opaque(17,1,151)': 10}
+   MANIFOLD_SOL BREP_217_1 body Opaque(160,160,160) faces 24 ext [7204, 3897, 1] zrange -1641 -1640 {'Opaque(255,7,7)': 24}
+   MANIFOLD_SOL BREP_221_1 body Opaque(160,160,160) faces 24 ext [7204, 3897, 1] zrange -1641 -1640 {'Opaque(17,1,151)': 24}
+   MANIFOLD_SOL BREP_546_1 body Opaque(160,160,160) faces 8 ext [300, 4852, 553] zrange -1644 -1091 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_544_1 body Opaque(160,160,160) faces 28 ext [2462, 4852, 420] zrange -1641 -1221 {'Opaque(200,200,180)': 28}
+   MANIFOLD_SOL BREP_226_1 body Opaque(160,160,160) faces 8 ext [300, 4851, 553] zrange -1644 -1091 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_542_1 body Opaque(160,160,160) faces 28 ext [2462, 4851, 420] zrange -1641 -1221 {'Opaque(200,200,180)': 28}
+   BREP_WITH_VO 0006_1_1 body Opaque(160,160,160) faces 1245 ext [3194, 900, 4635] zrange -2218 2417 {'None': 182, 'Opaque(51,51,51)': 952, 'Opaque(200,200,180)': 99, 'Opaque(255,255,255)': 2, 'Opaque(0,0,255)': 5, 'Opaque(255,0,0)': 5}
+   MANIFOLD_SOL BREP_1106_1 body Opaque(160,160,160) faces 8 ext [200, 3951, 1100] zrange -1641 -541 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_559_1 body Opaque(160,160,160) faces 8 ext [200, 3950, 1100] zrange -1641 -541 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_1090_1 body Opaque(160,160,160) faces 12 ext [1371, 3925, 1] zrange -1341 -1340 {'Opaque(255,255,255)': 12}
+   MANIFOLD_SOL BREP_1096_1 body Opaque(160,160,160) faces 12 ext [1371, 3924, 1] zrange -1341 -1340 {'Opaque(255,255,255)': 12}
+   MANIFOLD_SOL BREP_545_1 body Opaque(160,160,160) faces 8 ext [313, 3610, 500] zrange -1641 -1141 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_543_1 body Opaque(160,160,160) faces 8 ext [313, 3610, 500] zrange -1641 -1141 {'Opaque(200,200,180)': 8}
+   MANIFOLD_SOL BREP_5_1 body Opaque(160,160,160) faces 11 ext [2197, 3574, 1] zrange -1341 -1340 {'Opaque(255,7,7)': 11}
+   MANIFOLD_SOL BREP_8_1 body Opaque(160,160,160) faces 11 ext [2197, 3574, 1] zrange -1341 -1340 {'Opaque(17,1,151)': 11}
+   MANIFOLD_SOL BREP_590_1 body Opaque(160,160,160) faces 6 ext [3500, 1910, 3] zrange -1641 -1638 {'Opaque(51,51,51)': 1, 'Opaque(255,255,255)': 5}
+   MANIFOLD_SOL BREP_1129_1 body Opaque(160,160,160) faces 14 ext [3475, 1622, 1] zrange -1638 -1637 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL BREP_1130_1 body Opaque(160,160,160) faces 14 ext [3475, 1622, 1] zrange -1638 -1637 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL BREP_1131_1 body Opaque(160,160,160) faces 14 ext [3475, 1622, 1] zrange -1638 -1637 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL BREP_1132_1 body Opaque(160,160,160) faces 14 ext [3475, 1622, 1] zrange -1638 -1637 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL 00_1 body Opaque(160,160,160) faces 6 ext [338, 3252, 200] zrange -481 -281 {'Opaque(200,200,180)': 4, 'None': 2}
+   MANIFOLD_SOL BREP_2370_1 body Opaque(160,160,160) faces 38 ext [2775, 3240, 958] zrange -1641 -683 {'Opaque(200,200,180)': 38}
+   MANIFOLD_SOL BREP_571_1 body Opaque(160,160,160) faces 38 ext [2775, 3239, 958] zrange -1641 -683 {'Opaque(200,200,180)': 38}
+   MANIFOLD_SOL BREP_556_1 body Opaque(160,160,160) faces 14 ext [890, 2872, 1] zrange -1641 -1640 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL BREP_557_1 body Opaque(160,160,160) faces 14 ext [890, 2872, 1] zrange -1641 -1640 {'Opaque(255,255,255)': 14}
+   MANIFOLD_SOL BREP_562_1 body Opaque(160,160,160) faces 6 ext [2594, 40, 1] zrange -1441 -1440 {'Opaque(255,7,7)': 6}
+   MANIFOLD_SOL BREP_1109_1 body Opaque(160,160,160) faces 6 ext [2594, 40, 1] zrange -1441 -1440 {'Opaque(17,1,151)': 6}
+   MANIFOLD_SOL BREP_4_1 body Opaque(160,160,160) faces 10 ext [2551, 350, 1] zrange -1441 -1440 {'Opaque(255,7,7)': 10}
+   MANIFOLD_SOL BREP_11_1 body Opaque(160,160,160) faces 10 ext [2551, 350, 1] zrange -1441 -1440 {'Opaque(17,1,151)': 10}
+   BREP_WITH_VO 0013_1_30 body Opaque(160,160,160) faces 2778 ext [852, 2526, 593] zrange -809 -216 {'None': 609, 'Opaque(51,51,51)': 927, 'Opaque(153,153,153)': 1231, 'Opaque(255,255,255)': 11}
+   MANIFOLD_SOL 0007_1_ASM body Opaque(160,160,160) faces 291 ext [331, 406, 2511] zrange -2156 355 {'None': 291}
+   MANIFOLD_SOL 0007_1_ASM body Opaque(160,160,160) faces 290 ext [324, 405, 2511] zrange -2156 355 {'None': 290}
+   MANIFOLD_SOL BREP_568_1 body Opaque(160,160,160) faces 7 ext [2465, 150, 400] zrange -1641 -1241 {'Opaque(200,200,180)': 7}
+   MANIFOLD_SOL BREP_1114_1 body Opaque(160,160,160) faces 7 ext [2465, 150, 400] zrange -1641 -1241 {'Opaque(200,200,180)': 7}
+   MANIFOLD_SOL BREP_572_1 body Opaque(160,160,160) faces 10 ext [2389, 2390, 250] zrange -991 -741 {'Opaque(65,65,65)': 1, 'Opaque(200,200,180)': 9}
+   MANIFOLD_SOL BREP_577_1 body Opaque(160,160,160) faces 10 ext [2389, 2389, 250] zrange -991 -741 {'Opaque(65,65,65)': 1, 'Opaque(200,200,180)': 9}
+   MANIFOLD_SOL BREP_228_1 body Opaque(160,160,160) faces 14 ext [2240, 1939, 147] zrange -1641 -1494 {'Opaque(65,65,65)': 4, 'Opaque(255,255,255)': 10}
+   MANIFOLD_SOL BREP_148_1 body Opaque(160,160,160) faces 72 ext [2240, 1940, 148] zrange -1641 -1493 {'Opaque(65,65,65)': 72}
+   MANIFOLD_SOL BREP_547_1 body Opaque(160,160,160) faces 14 ext [2240, 1939, 147] zrange -1641 -1494 {'Opaque(65,65,65)': 14}
+   MANIFOLD_SOL BREP_147_1_1 body Opaque(160,160,160) faces 72 ext [2240, 1940, 148] zrange -1641 -1493 {'Opaque(65,65,65)': 72}
+   MANIFOLD_SOL BREP_214_1 body Opaque(160,160,160) faces 17 ext [2208, 1719, 401] zrange -1641 -1240 {'Opaque(255,7,7)': 17}
+   MANIFOLD_SOL BREP_224_1 body Opaque(160,160,160) faces 17 ext [2208, 1719, 401] zrange -1641 -1240 {'Opaque(17,1,151)': 17}
+   MANIFOLD_SOL BREP_1152_1 body Opaque(160,160,160) faces 12 ext [2179, 200, 1] zrange -1641 -1640 {'Opaque(255,255,255)': 12}
+   MANIFOLD_SOL BREP_1156_1 body Opaque(160,160,160) faces 12 ext [2179, 200, 1] zrange -1641 -1640 {'Opaque(255,255,255)': 12}
+   BREP_WITH_VO 0013_1_1 body Opaque(160,160,160) faces 5929 ext [1240, 1884, 2056] zrange -1230 826 {'None': 1147, 'Opaque(51,51,51)': 4608, 'Opaque(128,128,128)': 23, 'Opaque(206,215,230)': 62, 'Opaque(197,192,187)': 46, 'Opaque(70,70,70)': 41, 'Opaque(255,7,7)': 2}
+   MANIFOLD_SOL BREP_1091_1 body Opaque(160,160,160) faces 8 ext [631, 1966, 1] zrange -1341 -1340 {'Opaque(255,255,255)': 8}
+   MANIFOLD_SOL BREP_1097_1 body Opaque(160,160,160) faces 8 ext [631, 1966, 1] zrange -1341 -1340 {'Opaque(255,255,255)': 8}
+   MANIFOLD_SOL 0010_1 body Opaque(160,160,160) faces 244 ext [1881, 207, 1609] zrange -1824 -215 {'Opaque(250,250,250)': 195, 'Opaque(120,120,120)': 49}
+   MANIFOLD_SOL 0007_1_ASM body Opaque(160,160,160) faces 184 ext [1838, 830, 205] zrange -2271 -2066 {'None': 184}

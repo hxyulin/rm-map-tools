@@ -1,0 +1,19 @@
+[package]
+name = "step21"
+description = "Streaming STEP Part 21 scanner, entity index and product/body/style model for very large files"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+memmap2.workspace = true
+rayon.workspace = true
+memchr.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
