@@ -35,6 +35,7 @@ REVERSE = {
 }
 LIST_RE = re.compile(rb'\(\s*#\d+(?:\s*,\s*#\d+)*\s*\)')
 SAFE_RE = re.compile(r'[^A-Za-z0-9_.\-一-鿿]+')
+SOLID_TYPES = ('MANIFOLD_SOLID_BREP', 'BREP_WITH_VOIDS', 'FACETED_BREP')
 
 
 def gather_refs(ix, rows):
@@ -107,13 +108,33 @@ class Splitter:
         seeds += [row for row, r1, r2 in self.srr if r1 in reps and r2 in reps]
         return seeds, reps
 
-    def closure(self, p):
-        """returns (mask, rewritten: {row: bytes})"""
+    def sheet_bodies(self, reps):
+        """rows of the non-solid bodies (sheet models) in these representations."""
+        return [b for b, rep in self.m.bodies if rep in reps and self.ix.tname(b) not in SOLID_TYPES]
+
+    def closure(self, p, solids_only=False):
+        """returns (mask, rewritten: {row: bytes}).
+
+        solids_only drops the product's sheet bodies: they are blocked from the
+        closure and each representation's item list is re-emitted without them,
+        so the file holds the solids only (the V1.2.0 assemblies carry tens of
+        thousands of single-face sheets next to a handful of solids)."""
         ix = self.ix
         seeds, reps = self.product_seeds(p)
         mask = np.zeros(ix.n, dtype=bool)
-        forward_closure(ix, seeds, mask)
         rewritten = {}
+        blocked = np.array(self.sheet_bodies(reps) if solids_only else [], dtype=np.int64)
+        if len(blocked):
+            blocked_set = set(blocked.tolist())
+            mask[blocked] = True
+            for rep in reps:
+                text = ix.text(rep)
+                mt = LIST_RE.search(text, text.index(b'('))
+                lids = [int(x) for x in re.findall(rb'#(\d+)', mt.group(0))]
+                keep = np.array([i for i in lids if ix.row[i] not in blocked_set], dtype=np.int64)
+                rewritten[rep] = text[:mt.start()] + self.emit_list(keep) + text[mt.end():]
+        forward_closure(ix, seeds, mask)
+        mask[blocked] = False
         for _ in range(6):
             before = int(mask.sum())
             add = []
@@ -148,6 +169,7 @@ class Splitter:
                         body = rewritten[r][rewritten[r].index(b'='):]  # skip own '#id='
                         kept.extend(ix.row[int(x)] for x in re.findall(rb'#(\d+)', body))
                 forward_closure(ix, np.array(kept, dtype=np.int64), mask)
+                mask[blocked] = False
             if int(mask.sum()) == before:
                 break
         return mask, rewritten
@@ -164,9 +186,9 @@ class Splitter:
         out.append(line)
         return b'(' + self.crlf.join(out) + b')'
 
-    def write(self, p, path):
+    def write(self, p, path, solids_only=False):
         ix = self.ix
-        mask, rewritten = self.closure(p)
+        mask, rewritten = self.closure(p, solids_only)
         rows = np.nonzero(mask)[0]
         kind = np.zeros(len(rows), np.int8)
         if rewritten:

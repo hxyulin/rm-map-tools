@@ -106,6 +106,41 @@ with solids it leaves out, so an omission is visible: the outposts, bases,
 runes and the corner structures, which the copied equipment files cover or
 which neither package carries.
 
+### Field elements and the full map
+
+`prototype/export_elements.py` (OCP venv) builds on a field package and adds
+one placed asset per field element, driven by `rules/elements-v1.2.0.json`,
+which pins each element to product names (the IGES round trip stripped the
+Chinese names from V1.2.0; they were recovered by placing every sub-assembly
+in the arena frame and matching it against the named occurrences of
+V2.0.0). Each element is exported once in a local frame (arena axes, origin
+at the reference instance's footprint centre and lowest vertex) as
+`<name>.glb` plus `<name>-collision.glb`, and the manifest lists every
+instance as a rigid placement (translation, xyzw quaternion, 4×4 matrix):
+exact from the STEP occurrence transforms for instanced sub-assemblies, or
+the best quarter turn about Z for elements whose instances are distinct
+products, with the residual recorded. `full-map.glb` composes the floor, the
+arena and every placed element. Assemblies that carry tens of thousands of
+single-face sheets next to their solids are split solids-only first
+(`Splitter.write(..., solids_only=True)` into `<pkg>/solids/`).
+
+| Asset | 名称 | V1.2.0 products | Instances |
+|---|---|---|---|
+| `base` | 基地 | `001_1_ASM` | 2, exact |
+| `outpost` | 前哨站 | `0009_1_ASM` + footing `0008_1` | 2, exact (one footing sits 3.6° off, reported) |
+| `rune` | 能量机关 | `0007_1_ASM` | 1 |
+| `dart-station` | 飞镖发射井 | `0013_1_ASM` | 2, exact |
+| `resource-zone` | 资源区 | `7000001_1_ASM` | 2, exact |
+| `fortress` | 堡垒 | `0006_1_ASM` minus the tech cores | 1 |
+| `tech-core` | 国赛科技核心 | `0006_1_24..36`, `0006_1_37..49` | 2, matched half turn |
+| `undulating-road` | 起伏路段 | V2.0.0 `BREP_220`, `BREP_192` (graft) | 2, matched half turn |
+
+```sh
+ocpenv/bin/python prototype/export_elements.py out/v12 v12.npz \
+  --rules rules/elements-v1.2.0.json --field ~/dev/RM/assets/rm2026-field \
+  --out ~/dev/RM/assets/rm2026-field-elements --graft out/v20:v20.npz
+```
+
 ## Status
 
 | Step | State |
@@ -116,6 +151,7 @@ which neither package carries.
 | Rust `index`, `inspect`, `split` | done, byte-identical to the validated Python output |
 | 3D previews of V2.0.0 and V1.2.0 from the split parts | done, `docs/previews.md` |
 | Simulator field package (V1.2.0 arena in colour + carried-over equipment) | done, `prototype/export_field_package.py`, installed as `~/dev/RM/assets/rm2026-field` |
+| Field elements (base, outpost, rune, dart station, resource zone, fortress, tech core, 起伏路段) as placed assets plus `full-map.glb` | done, `prototype/export_elements.py`, installed as `~/dev/RM/assets/rm2026-field-elements` |
 | Per-body split for the flat V2.0.0 equipment products | not started |
 | `assembly.stp`, package layout, `rules/`, `match`, `report` | not started, see `HANDOFF.md` §4–§6 |
 

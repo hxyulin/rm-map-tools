@@ -42,8 +42,8 @@ def placement(ix, row):
     return M
 
 
-def occurrence_transforms(ix, m):
-    """product row -> list of 4x4 world matrices (one per occurrence path)."""
+def nauo_transforms(ix, m):
+    """NEXT_ASSEMBLY_USAGE_OCCURRENCE row -> 4x4 child-to-parent matrix (identity when absent)."""
     t_idt = ix.tid.get('ITEM_DEFINED_TRANSFORMATION', -1); t_ax = ix.tid['AXIS2_PLACEMENT_3D']
     pds_nauo = {}
     for row in ix.rows_of('PRODUCT_DEFINITION_SHAPE'):
@@ -60,6 +60,13 @@ def occurrence_transforms(ix, m):
         axes = [ix.r(int(x)) for x in ix.refs_of(idt) if ix.types[ix.r(int(x))] == t_ax]
         if len(axes) == 2:
             nauo_T[nauo] = placement(ix, axes[1]) @ np.linalg.inv(placement(ix, axes[0]))
+    return nauo_T
+
+
+def occurrence_transforms(ix, m, nauo_T=None):
+    """product row -> list of 4x4 world matrices (one per occurrence path)."""
+    if nauo_T is None:
+        nauo_T = nauo_transforms(ix, m)
     out = collections.defaultdict(list)
     def walk(p, M):
         out[p].append(M)
