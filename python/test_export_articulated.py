@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
 import json
+import hashlib
 from pathlib import Path
 import shutil
 import subprocess
@@ -9,8 +10,10 @@ import xml.etree.ElementTree as ET
 
 import numpy as np
 from scipy.spatial.transform import Rotation
-from articulated_scene import topology, extract_geometry, link_poses
-from export_articulated import meshes, name_map, write_sdf, write_urdf, write_usd
+from articulated_scene import topology, extract_geometry, link_poses, load_asset
+from export_articulated import export, meshes, name_map, write_sdf, write_urdf, write_usd
+from gltf_scene import write_glb
+from unittest.mock import patch
 from test_articulated_scene import rig
 
 
@@ -98,6 +101,39 @@ class ExportArticulatedTests(unittest.TestCase):
             collisions = [p for p in stage.Traverse() if p.HasAPI(UsdPhysics.CollisionAPI)]
             self.assertEqual(len(collisions), len(asset['geometry']['collision']))
             self.assertTrue(all(UsdGeom.Imageable(p).GetPurposeAttr().Get() == 'guide' for p in collisions))
+
+    def test_package_integrity_metadata_and_atomic_failure(self):
+        doc, binary, binding = rig()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'source'
+            root.mkdir()
+            write_glb(root / 'visual.glb', doc, binary)
+            write_glb(root / 'collision.glb', doc, binary)
+            files = {k: {'file': k + '.glb',
+                         'sha256': hashlib.sha256((root / (k + '.glb')).read_bytes()).hexdigest(),
+                         **binding} for k in ('visual', 'collision')}
+            sidecar = {'schema_version': 1, 'layers': {'markings': {'visible': True}},
+                       'assets': {'test': {'files': files}}}
+            (root / 'articulation.json').write_text(json.dumps(sidecar))
+            entry = {'visual': 'visual.glb', 'collision': 'collision.glb',
+                     'semantics': {'file': 'articulation.json', 'asset': 'test'}}
+            (root / 'manifest.json').write_text(json.dumps({'assets': {'test': entry}}))
+            out = Path(tmp) / 'result'
+            with patch('export_articulated.write_sdf', side_effect=RuntimeError('writer failed')):
+                with self.assertRaises(RuntimeError):
+                    export(root, out, formats=['sdf'])
+            self.assertFalse(out.exists())
+            self.assertFalse(list(Path(tmp).glob('.articulated-*')))
+            export(root, out, formats=['urdf'])
+            metadata = json.loads((out / 'test/semantics.json').read_text())
+            self.assertEqual(metadata['semantic_context']['layers'], sidecar['layers'])
+            self.assertTrue((out / 'package.xml').is_file())
+            self.assertTrue((out / 'CMakeLists.txt').is_file())
+            with self.assertRaises(ValueError):
+                export(root, out, formats=['urdf'])
+            (root / 'visual.glb').write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                load_asset(root, 'test', entry)
 
     def test_frames_only_stays_fixed_without_preview_limits(self):
         asset = asset_fixture()
