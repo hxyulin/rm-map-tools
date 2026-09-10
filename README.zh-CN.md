@@ -51,7 +51,7 @@ V2.0.0 的首次索引另需 **1.3 秒**。993 MB 的 V1.2.0 可在 **2.7 秒**�
 | glTF 元数据与 `articulation.json` | 易读名称、关节、装甲板大小与类型、LED、队伍颜色和图层 |
 | 语义参考资源包 | 可检查的机构及明确标注的补建结构，与仿真器安装目录分开 |
 | GIF、MP4、PNG 与 JSON 报告 | 环绕镜头、关节检查、原始模型与演示模型对照 |
-| SDF、MJCF、USD | 面向 Gazebo、MuJoCo、Isaac Sim 的场景导出，见[使用指南](docs/getting-started.md) |
+| SDF、URDF、USD | 使用现有关节绑定的[设备模型导出](docs/articulated-formats.md)；[静态场景导出](docs/getting-started.md)另支持 MJCF |
 
 STEP 拆分逐字节保留几何实体。曲面网格化本身有近似误差；可选网格简化则是经过采样误差检查的有损步骤。各阶段分别记录验证结果，见[拆分证明](docs/split-proof.md)、[几何审计](docs/geometry-audit.md)和[简化约定](docs/mesh-simplification.md)。
 

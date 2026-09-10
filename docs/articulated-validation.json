@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-11",
+  "checks": [
+    "libsdformat 15 parse",
+    "check_urdf parse",
+    "OpenUSD parse and joint count",
+    "STL geometry at rest and nonzero joint coordinates against semantic GLB"
+  ],
+  "assets": {
+    "rune": {
+      "joint_records": 2,
+      "moving_joints": 2,
+      "maximum_stl_coordinate_error_m": 2.8728566636715414e-08,
+      "source_visual_sha256": "a486c7a51cd7ec7287c47023e0bd5208b328c6d98f756233ba2ea6a6d737e6d9"
+    },
+    "outpost": {
+      "joint_records": 1,
+      "moving_joints": 1,
+      "maximum_stl_coordinate_error_m": 5.399608676848189e-09,
+      "source_visual_sha256": "f49d077bdac0bd2725dc15212de7a501d34150e12c13b35e476ed70e282637b3"
+    },
+    "dart-station": {
+      "joint_records": 1,
+      "moving_joints": 1,
+      "maximum_stl_coordinate_error_m": 4.2915344167226976e-08,
+      "source_visual_sha256": "09a51c7d78b2c7dd0f848ffa05ebf7d4789c3fc3b631b355032c00a5a863f8e7"
+    },
+    "base": {
+      "joint_records": 4,
+      "moving_joints": 4,
+      "maximum_stl_coordinate_error_m": 2.8610229518832853e-08,
+      "source_visual_sha256": "31e460be51cf88e4e59988f104d4f7f573d8d63a253cc5ff5514671fce8deb3f"
+    },
+    "tech-core": {
+      "joint_records": 6,
+      "moving_joints": 0,
+      "maximum_stl_coordinate_error_m": 0,
+      "source_visual_sha256": "38c4ee9dafe3d20fc909e6c61c0355d032a22829754875351ce09b909d3b7a73"
+    }
+  }
+}

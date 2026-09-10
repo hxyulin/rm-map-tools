@@ -44,11 +44,17 @@ flowchart TB
     K --> SIM["rm-simulator consumer<br/>仿真器读取"]
     B --> X["Static scene adapters<br/>静态场景转换"]
     X --> F["SDF / MJCF / USD"]
+    S --> A["Rigid links from motion nodes<br/>按运动节点划分连杆"]
+    A --> J["Articulated SDF / URDF / USD<br/>关节模型导出"]
 ```
 
 Visual and collision tolerances are independent. Semantic bindings precede simplification so node, material, and joint boundaries can be preserved. The simplifier has its own collision contract and sampled deviation checks. File hashes verify package integrity. SDF/MJCF/USD adapters export static scene arrangements; articulated assets require an explicit rest-pose bake in that path.
 
 可视与碰撞精度独立设置。先做语义绑定，再简化网格，以保留节点、材质和关节边界。简化器有独立的碰撞约定与采样偏差检查，文件哈希用于检查资源包完整性。SDF/MJCF/USD 路径导出静态场景，遇到带关节的资源时需明确选择静止姿态烘焙。
+
+The separate [articulated exporter](articulated-formats.md) preserves semantic joint bindings as SDF, URDF, and USD kinematic equipment models.
+
+独立的[关节导出器](articulated-formats.md)将语义关节绑定保留为 SDF、URDF、USD 运动学设备模型。
 
 ## 3. Semantic reference and motion / 语义参考与运动
 
