@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "policy": "export-simulation.example.json",
+  "stages": [
+    {
+      "type": "field",
+      "package": "../out/v12",
+      "index": "../v12.npz",
+      "equipment": "../../assets/rm2026-field",
+      "out": "../out/configured-field",
+      "grafts": [{"package": "../out/v20", "index": "../v20.npz", "products": ["BREP_220", "BREP_192"]}]
+    },
+    {
+      "type": "elements",
+      "package": "../out/v12",
+      "index": "../v12.npz",
+      "rules": "elements-v1.2.0.json",
+      "field": "../out/configured-field",
+      "out": "../out/configured-elements",
+      "graft": {"package": "../out/v20", "index": "../v20.npz"}
+    },
+    {
+      "type": "deploy",
+      "field": "../out/configured-field",
+      "elements": "../out/configured-elements",
+      "out": "../out/configured-runtime"
+    }
+  ]
+}

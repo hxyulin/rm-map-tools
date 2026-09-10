@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "preset": "simulation",
+  "assets": {
+    "resource-zone": {
+      "visual": {
+        "angular_deflection_rad": 0.9
+      },
+      "collision": {
+        "angular_deflection_rad": 1.2
+      }
+    },
+    "base": {
+      "visual": {
+        "angular_deflection_rad": 0.9
+      },
+      "collision": {
+        "angular_deflection_rad": 1.2
+      }
+    },
+    "dart-station": {
+      "visual": {
+        "angular_deflection_rad": 0.9
+      },
+      "collision": {
+        "angular_deflection_rad": 1.2
+      }
+    },
+    "tech-core": {
+      "visual": {
+        "angular_deflection_rad": 0.9
+      },
+      "collision": {
+        "angular_deflection_rad": 1.2
+      }
+    }
+  }
+}

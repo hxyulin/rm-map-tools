@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+  "assets": {
+    "outpost": {
+      "id": "outpost",
+      "input_sha256": {
+        "visual": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+        "collision": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795"
+      },
+      "nodes": [
+        {
+          "select": {
+            "name": "OUTPOST"
+          },
+          "metadata": {
+            "id": "outpost",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "static"
+          },
+          "metadata": {
+            "id": "outpost.static",
+            "roles": [
+              "static"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "rotor"
+          },
+          "metadata": {
+            "id": "outpost.rotor",
+            "roles": [
+              "rotor"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "rotor/carrier"
+          },
+          "metadata": {
+            "id": "outpost.rotor.carrier",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "rotor/armor_0"
+          },
+          "metadata": {
+            "id": "outpost.rotor.armor.0",
+            "roles": [
+              "armor_module"
+            ],
+            "armor": {
+              "family": "outpost",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "rotor/armor_1"
+          },
+          "metadata": {
+            "id": "outpost.rotor.armor.1",
+            "roles": [
+              "armor_module"
+            ],
+            "armor": {
+              "family": "outpost",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "rotor/armor_2"
+          },
+          "metadata": {
+            "id": "outpost.rotor.armor.2",
+            "roles": [
+              "armor_module"
+            ],
+            "armor": {
+              "family": "outpost",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "id": "outpost.spin",
+          "type": "continuous",
+          "parent": "outpost",
+          "children": [
+            "outpost.rotor"
+          ],
+          "origin_m": [
+            -0.009437883461093843,
+            1.1399999856948853,
+            -0.0010455167618112736
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "evidence": [
+            "Existing rotor translation in input GLB; rm-simulator-world/outpost.rs PIVOT_CAD_M; rulebook V2.1.0 section 5.5.1."
+          ]
+        }
+      ],
+      "pending": [
+        "Split armor housing, artwork and LED primitives by verified source faces; imported armor meshes currently combine those surfaces.",
+        "Export separately fitted target frames and detection profiles."
+      ],
+      "geometry_groups": [
+        {
+          "select": {
+            "name": "static"
+          },
+          "parent": {
+            "name": "rotor"
+          },
+          "name": "outpost/rotor/arm_fasteners",
+          "parts": [
+            {
+              "primitive": 1,
+              "triangle_ranges": [
+                [
+                  98047,
+                  99215
+                ]
+              ]
+            }
+          ],
+          "metadata": {
+            "id": "outpost.rotor.arm_fasteners",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Eight disconnected 146-triangle fastener meshes at x=-0.257..-0.202m, y=1.113..1.133m, z=+/-0.025m were assigned to static by the legacy nearest-armor classifier.",
+            "All selected fastener vertices are within 2.5mm of existing moving rotor geometry; they belong to the external carrier arm. Shaft-ring bolts at y=1.14m remain static.",
+            "Exact triangle ordinals are pinned to the input GLB hash. No geometry or collision triangles are removed."
+          ]
+        }
+      ]
+    },
+    "rune": {
+      "id": "rune",
+      "input_sha256": {
+        "visual": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b",
+        "collision": "c2088dc1547d599ee3c623eafd511a3573c86fc74a93bb2facb2cb5f9c1cd69b"
+      },
+      "nodes": [
+        {
+          "select": {
+            "name": "RUNE"
+          },
+          "metadata": {
+            "id": "rune",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "static"
+          },
+          "metadata": {
+            "id": "rune.static",
+            "roles": [
+              "static"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0"
+          },
+          "metadata": {
+            "id": "rune.face.0",
+            "roles": [
+              "rotor"
+            ],
+            "supported_modes": [
+              "small",
+              "big"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/blade_0"
+          },
+          "metadata": {
+            "id": "rune.face.0.arm.0",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/blade_1"
+          },
+          "metadata": {
+            "id": "rune.face.0.arm.1",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/blade_2"
+          },
+          "metadata": {
+            "id": "rune.face.0.arm.2",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/blade_3"
+          },
+          "metadata": {
+            "id": "rune.face.0.arm.3",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/blade_4"
+          },
+          "metadata": {
+            "id": "rune.face.0.arm.4",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/hub"
+          },
+          "metadata": {
+            "id": "rune.face.0.hub",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1"
+          },
+          "metadata": {
+            "id": "rune.face.1",
+            "roles": [
+              "rotor"
+            ],
+            "supported_modes": [
+              "small",
+              "big"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/blade_0"
+          },
+          "metadata": {
+            "id": "rune.face.1.arm.0",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/blade_1"
+          },
+          "metadata": {
+            "id": "rune.face.1.arm.1",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/blade_2"
+          },
+          "metadata": {
+            "id": "rune.face.1.arm.2",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/blade_3"
+          },
+          "metadata": {
+            "id": "rune.face.1.arm.3",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/blade_4"
+          },
+          "metadata": {
+            "id": "rune.face.1.arm.4",
+            "roles": [
+              "arm"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/hub"
+          },
+          "metadata": {
+            "id": "rune.face.1.hub",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "id": "rune.face.0.spin",
+          "type": "continuous",
+          "parent": "rune",
+          "children": [
+            "rune.face.0"
+          ],
+          "origin_m": [
+            -0.03583022968527626,
+            0.09300000046955605,
+            -0.27031874028118646
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "evidence": [
+            "Existing face pivot in input GLB; rm-simulator-server/layout.rs RUNE_FACE_PIVOTS_M. Positive right-hand rotation around the common asset axis; viewing directions differ."
+          ]
+        },
+        {
+          "id": "rune.face.1.spin",
+          "type": "continuous",
+          "parent": "rune",
+          "children": [
+            "rune.face.1"
+          ],
+          "origin_m": [
+            -0.03583206093730813,
+            0.09300000046955607,
+            0.3672812591799875
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "evidence": [
+            "Existing face pivot in input GLB; rm-simulator-server/layout.rs RUNE_FACE_PIVOTS_M. Positive right-hand rotation around the common asset axis; viewing directions differ."
+          ]
+        }
+      ],
+      "pending": [
+        "Export LED and detector surface bindings; these are currently generated by rm-simulator.",
+        "The two face joints share an axis; runtime must apply the rulebook coupling and direction policy rather than treating these as independent physical motors."
+      ],
+      "geometry_groups": [
+        {
+          "select": {
+            "name": "face_0/hub"
+          },
+          "parent": {
+            "name": "RUNE"
+          },
+          "name": "rune/fixed/face_0/shaft_cap",
+          "parts": [
+            {
+              "primitive": 0
+            }
+          ],
+          "metadata": {
+            "id": "rune.fixed.face.0.shaft_cap",
+            "roles": [
+              "static"
+            ],
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "User confirms only the central R logo and shaft remain stationary; hub/arms rotate.",
+            "Original hub primitives 0, 2, 3: 53 mm radius shaft-end cylinder, black logo disk and R artwork; surrounding hub is primitive 1."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_0/hub"
+          },
+          "parent": {
+            "name": "RUNE"
+          },
+          "name": "rune/fixed/face_0/logo",
+          "parts": [
+            {
+              "primitive": 2
+            },
+            {
+              "primitive": 3
+            }
+          ],
+          "metadata": {
+            "id": "rune.fixed.face.0.logo",
+            "roles": [
+              "decoration"
+            ],
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "User confirms only the central R logo and shaft remain stationary; hub/arms rotate.",
+            "Original hub primitives 0, 2, 3: 53 mm radius shaft-end cylinder, black logo disk and R artwork; surrounding hub is primitive 1."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/hub"
+          },
+          "parent": {
+            "name": "RUNE"
+          },
+          "name": "rune/fixed/face_1/shaft_cap",
+          "parts": [
+            {
+              "primitive": 0
+            }
+          ],
+          "metadata": {
+            "id": "rune.fixed.face.1.shaft_cap",
+            "roles": [
+              "static"
+            ],
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "User confirms only the central R logo and shaft remain stationary; hub/arms rotate.",
+            "Original hub primitives 0, 2, 3: 53 mm radius shaft-end cylinder, black logo disk and R artwork; surrounding hub is primitive 1."
+          ]
+        },
+        {
+          "select": {
+            "name": "face_1/hub"
+          },
+          "parent": {
+            "name": "RUNE"
+          },
+          "name": "rune/fixed/face_1/logo",
+          "parts": [
+            {
+              "primitive": 2
+            },
+            {
+              "primitive": 3
+            }
+          ],
+          "metadata": {
+            "id": "rune.fixed.face.1.logo",
+            "roles": [
+              "decoration"
+            ],
+            "color": {
+              "mode": "source_material"
+            }
+          },
+          "evidence": [
+            "User confirms only the central R logo and shaft remain stationary; hub/arms rotate.",
+            "Original hub primitives 0, 2, 3: 53 mm radius shaft-end cylinder, black logo disk and R artwork; surrounding hub is primitive 1."
+          ]
+        }
+      ]
+    },
+    "dart-station": {
+      "id": "dart-station",
+      "input_sha256": {
+        "visual": "ed87d73756f68fccb9adfa2ac870a1e77f38a72dc3a0698d47aedf9444887c19",
+        "collision": "ed87d73756f68fccb9adfa2ac870a1e77f38a72dc3a0698d47aedf9444887c19"
+      },
+      "nodes": [
+        {
+          "select": {
+            "name": "DART-STATION"
+          },
+          "metadata": {
+            "id": "dart-station",
+            "roles": [
+              "assembly"
+            ]
+          },
+          "evidence": [
+            "Existing extracted GLB hierarchy; reviewed against rm-simulator render/cad.rs."
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "id": "dart-station.gate.slide",
+          "type": "prismatic",
+          "parent": "dart-station",
+          "children": [
+            "dart-station.gate"
+          ],
+          "origin_m": [
+            -0.3,
+            0,
+            1.33
+          ],
+          "axis": [
+            0.25881904510252074,
+            0,
+            0.9659258262890683
+          ],
+          "limits": [
+            -1.164477547065046,
+            0
+          ],
+          "preview_start": "upper",
+          "verification": "illustrative_travel",
+          "evidence": [
+            "Rulebook V2.1.0 Figures 4-14/4-15 show the raised window travelling along inclined guides and closing at the gliding-platform level, not at ground level.",
+            "Pinned CAD guides confirm the 15-degree axis. Illustrative lower stop places the carriage lowest point at 205 mm, matching Figure 4-16 platform height; the previous 80 mm stop passed below the platform.",
+            "Exact actuator stroke and physical end stops remain uncalibrated. The platform extension is a separate mechanism and remains fixed."
+          ]
+        }
+      ],
+      "pending": [
+        "Calibrate gate end stops and actuator timing; current lower stop is inferred at the 205 mm gliding-platform level.",
+        "Identify gliding platform separately; it stays fixed in this gate preview."
+      ],
+      "geometry_groups": [
+        {
+          "select": {
+            "name": "source_13267684_0013_1_30"
+          },
+          "parent": {
+            "name": "DART-STATION"
+          },
+          "name": "dart_station/gate",
+          "parts": [
+            {
+              "primitive": 0,
+              "triangle_ranges": [
+                [
+                  0,
+                  9051
+                ],
+                [
+                  9056,
+                  9066
+                ],
+                [
+                  9069,
+                  9195
+                ],
+                [
+                  9199,
+                  35238
+                ],
+                [
+                  35245,
+                  35255
+                ],
+                [
+                  35260,
+                  40518
+                ]
+              ]
+            },
+            {
+              "primitive": 1
+            },
+            {
+              "primitive": 2
+            },
+            {
+              "primitive": 3
+            }
+          ],
+          "metadata": {
+            "id": "dart-station.gate",
+            "roles": [
+              "gate"
+            ]
+          },
+          "evidence": [
+            "Identified panel and attached carriage in source_13267684_0013_1_30; retain the two 12-triangle lower guide rails stationary.",
+            "Travel axis follows the 15-degree inclined guides. Figures 4-14/4-15 distinguish the sliding window from the horizontal gliding platform."
+          ]
+        }
+      ]
+    }
+  }
+}

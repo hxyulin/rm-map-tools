@@ -1,0 +1,2059 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "base": {
+      "id": "base",
+      "input_sha256": {
+        "visual": "e7b1289fc3cf844700bb1501cb03543f083042028884ceb6fa936fe0fe26d297",
+        "collision": "e7b1289fc3cf844700bb1501cb03543f083042028884ceb6fa936fe0fe26d297"
+      },
+      "nodes": [
+        {
+          "select": {
+            "name": "BASE"
+          },
+          "metadata": {
+            "id": "base",
+            "roles": [
+              "assembly"
+            ]
+          }
+        },
+        {
+          "select": {
+            "name": "source_13267589_001_1_2"
+          },
+          "name": "base/shield_0",
+          "metadata": {
+            "id": "base.shield.0",
+            "roles": [
+              "protective_shield"
+            ]
+          },
+          "evidence": [
+            "Protective cover source assembly identified in the pinned CAD export. Interior armor completeness has not been verified; see docs/base-interior-audit.md."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267591_001_1_4"
+          },
+          "name": "base/shield_1",
+          "metadata": {
+            "id": "base.shield.1",
+            "roles": [
+              "protective_shield"
+            ]
+          },
+          "evidence": [
+            "Protective cover source assembly identified in the pinned CAD export. Interior armor completeness has not been verified; see docs/base-interior-audit.md."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267593_001_1_6"
+          },
+          "name": "base/shield_2",
+          "metadata": {
+            "id": "base.shield.2",
+            "roles": [
+              "protective_shield"
+            ]
+          },
+          "evidence": [
+            "Protective cover source assembly identified in the pinned CAD export. Interior armor completeness has not been verified; see docs/base-interior-audit.md."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267598_001_1_11"
+          },
+          "name": "base/dart_target/rail",
+          "metadata": {
+            "id": "base.dart_target.rail",
+            "roles": [
+              "rail",
+              "static"
+            ],
+            "rail": {
+              "joint_ref": "base.dart_target.slide",
+              "axis": [
+                0,
+                1,
+                0
+              ],
+              "travel_limits_m": [
+                -0.28,
+                0.28
+              ],
+              "source_geometry_extent_m": [
+                -0.49025,
+                0.48975
+              ],
+              "extent_frame": "base local Y; rail mesh bounds, not mechanical stops",
+              "travel_source": "rulebook_v2.1.0_section_5.6.5"
+            }
+          },
+          "evidence": [
+            "The fixed source rail spans approximately 0.980m along base-local Y. The rulebook restricts target travel to +/-0.280m from its initial position, rather than the raw rail endpoints."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267600_001_1_13"
+          },
+          "name": "base/dart_target/source_part_13",
+          "metadata": {
+            "id": "base.dart_target.part.13",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267601_001_1_14"
+          },
+          "name": "base/dart_target/source_part_14",
+          "metadata": {
+            "id": "base.dart_target.part.14",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267602_001_1_15"
+          },
+          "name": "base/dart_target/source_part_15",
+          "metadata": {
+            "id": "base.dart_target.part.15",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267603_001_1_16"
+          },
+          "name": "base/dart_target/source_part_16",
+          "metadata": {
+            "id": "base.dart_target.part.16",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267616_001_1_29"
+          },
+          "name": "base/dart_target/source_part_29",
+          "metadata": {
+            "id": "base.dart_target.part.29",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267617_001_1_30"
+          },
+          "name": "base/dart_target/source_part_30",
+          "metadata": {
+            "id": "base.dart_target.part.30",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267618_001_1_31"
+          },
+          "name": "base/dart_target/source_part_31",
+          "metadata": {
+            "id": "base.dart_target.part.31",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267619_001_1_32"
+          },
+          "name": "base/dart_target/source_part_32",
+          "metadata": {
+            "id": "base.dart_target.part.32",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267620_001_1_33"
+          },
+          "name": "base/dart_target/source_part_33",
+          "metadata": {
+            "id": "base.dart_target.part.33",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267621_001_1_34"
+          },
+          "name": "base/dart_target/source_part_34",
+          "metadata": {
+            "id": "base.dart_target.part.34",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267622_001_1_35"
+          },
+          "name": "base/dart_target/source_part_35",
+          "metadata": {
+            "id": "base.dart_target.part.35",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267623_001_1_36"
+          },
+          "name": "base/dart_target/source_part_36",
+          "metadata": {
+            "id": "base.dart_target.part.36",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267624_001_1_37"
+          },
+          "name": "base/dart_target/source_part_37",
+          "metadata": {
+            "id": "base.dart_target.part.37",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267625_001_1_38"
+          },
+          "name": "base/dart_target/source_part_38",
+          "metadata": {
+            "id": "base.dart_target.part.38",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267626_001_1_39"
+          },
+          "name": "base/dart_target/source_part_39",
+          "metadata": {
+            "id": "base.dart_target.part.39",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267627_001_1_40"
+          },
+          "name": "base/dart_target/source_part_40",
+          "metadata": {
+            "id": "base.dart_target.part.40",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267628_001_1_41"
+          },
+          "name": "base/dart_target/source_part_41",
+          "metadata": {
+            "id": "base.dart_target.part.41",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267629_001_1_42"
+          },
+          "name": "base/dart_target/source_part_42",
+          "metadata": {
+            "id": "base.dart_target.part.42",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267630_001_1_43"
+          },
+          "name": "base/dart_target/source_part_43",
+          "metadata": {
+            "id": "base.dart_target.part.43",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267631_001_1_44"
+          },
+          "name": "base/dart_target/source_part_44",
+          "metadata": {
+            "id": "base.dart_target.part.44",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267632_001_1_45"
+          },
+          "name": "base/dart_target/source_part_45",
+          "metadata": {
+            "id": "base.dart_target.part.45",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267633_001_1_46"
+          },
+          "name": "base/dart_target/source_part_46",
+          "metadata": {
+            "id": "base.dart_target.part.46",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267634_001_1_47"
+          },
+          "name": "base/dart_target/source_part_47",
+          "metadata": {
+            "id": "base.dart_target.part.47",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267635_001_1_48"
+          },
+          "name": "base/dart_target/source_part_48",
+          "metadata": {
+            "id": "base.dart_target.part.48",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267636_001_1_49"
+          },
+          "name": "base/dart_target/source_part_49",
+          "metadata": {
+            "id": "base.dart_target.part.49",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267637_001_1_50"
+          },
+          "name": "base/dart_target/source_part_50",
+          "metadata": {
+            "id": "base.dart_target.part.50",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267638_001_1_51"
+          },
+          "name": "base/dart_target/source_part_51",
+          "metadata": {
+            "id": "base.dart_target.part.51",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267639_001_1_52"
+          },
+          "name": "base/dart_target/source_part_52",
+          "metadata": {
+            "id": "base.dart_target.part.52",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267640_001_1_53"
+          },
+          "name": "base/dart_target/source_part_53",
+          "metadata": {
+            "id": "base.dart_target.part.53",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267641_001_1_54"
+          },
+          "name": "base/dart_target/source_part_54",
+          "metadata": {
+            "id": "base.dart_target.part.54",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267642_001_1_55"
+          },
+          "name": "base/dart_target/source_part_55",
+          "metadata": {
+            "id": "base.dart_target.part.55",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267643_001_1_56"
+          },
+          "name": "base/dart_target/source_part_56",
+          "metadata": {
+            "id": "base.dart_target.part.56",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267644_001_1_57"
+          },
+          "name": "base/dart_target/source_part_57",
+          "metadata": {
+            "id": "base.dart_target.part.57",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267645_001_1_58"
+          },
+          "name": "base/dart_target/source_part_58",
+          "metadata": {
+            "id": "base.dart_target.part.58",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267646_001_1_59"
+          },
+          "name": "base/dart_target/source_part_59",
+          "metadata": {
+            "id": "base.dart_target.part.59",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267647_001_1_60"
+          },
+          "name": "base/dart_target/source_part_60",
+          "metadata": {
+            "id": "base.dart_target.part.60",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267648_001_1_61"
+          },
+          "name": "base/dart_target/source_part_61",
+          "metadata": {
+            "id": "base.dart_target.part.61",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267649_001_1_62"
+          },
+          "name": "base/dart_target/source_part_62",
+          "metadata": {
+            "id": "base.dart_target.part.62",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267650_001_1_63"
+          },
+          "name": "base/dart_target/source_part_63",
+          "metadata": {
+            "id": "base.dart_target.part.63",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267651_001_1_64"
+          },
+          "name": "base/dart_target/source_part_64",
+          "metadata": {
+            "id": "base.dart_target.part.64",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267652_001_1_65"
+          },
+          "name": "base/dart_target/source_part_65",
+          "metadata": {
+            "id": "base.dart_target.part.65",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267653_001_1_66"
+          },
+          "name": "base/dart_target/source_part_66",
+          "metadata": {
+            "id": "base.dart_target.part.66",
+            "roles": [
+              "assembly"
+            ],
+            "assembly_ref": "base.dart_target.carriage"
+          },
+          "evidence": [
+            "Target-module fittings and raised source detail within the central detector envelope move with the carriage. Fixed rail, end motors and the support beneath the rail are excluded."
+          ]
+        }
+      ],
+      "pending": [
+        "Calibrate actual shield linkage and end stops; current expansion is 170 mm outward and 45 mm down, inferred from Figures 4-11/4-12.",
+        "Reconstructed low armor support and narrow red central column follow Figure 4-12; detailed internal dimensions and hidden armor placements remain inferred.",
+        "Original base LED surfaces beyond the isolated dart guiding light remain unclassified. Rule-driven target-mode control belongs to a future simulator feature."
+      ],
+      "joints": [
+        {
+          "id": "base.shield.0.slide",
+          "type": "prismatic",
+          "parent": "base",
+          "children": [
+            "base.shield.0"
+          ],
+          "origin_m": [
+            -0.111,
+            0,
+            0.28
+          ],
+          "axis": [
+            0.9667052278615119,
+            0.0,
+            -0.25589256031628255
+          ],
+          "limits": [
+            0,
+            0.17585505395068976
+          ],
+          "verification": "illustrative_travel",
+          "evidence": [
+            "Rulebook V2.1.0 Figures 4-11/4-12 and user screenshots show shallow outward expansion with the panels remaining upright, exposing the lower armor through the bays.",
+            "Illustrative slide: 170 mm outward and 45 mm down, replacing the unsupported 230 mm descent. The actuator stroke and linkage remain uncalibrated."
+          ]
+        },
+        {
+          "id": "base.shield.1.slide",
+          "type": "prismatic",
+          "parent": "base",
+          "children": [
+            "base.shield.1"
+          ],
+          "origin_m": [
+            -0.111,
+            0,
+            0.28
+          ],
+          "axis": [
+            -0.4833526139307558,
+            0.8371912852992937,
+            -0.25589256031628255
+          ],
+          "limits": [
+            0,
+            0.17585505395068976
+          ],
+          "verification": "illustrative_travel",
+          "evidence": [
+            "Rulebook V2.1.0 Figures 4-11/4-12 and user screenshots show shallow outward expansion with the panels remaining upright, exposing the lower armor through the bays.",
+            "Illustrative slide: 170 mm outward and 45 mm down, replacing the unsupported 230 mm descent. The actuator stroke and linkage remain uncalibrated."
+          ]
+        },
+        {
+          "id": "base.shield.2.slide",
+          "type": "prismatic",
+          "parent": "base",
+          "children": [
+            "base.shield.2"
+          ],
+          "origin_m": [
+            -0.111,
+            0,
+            0.28
+          ],
+          "axis": [
+            -0.48335261393075635,
+            -0.8371912852992933,
+            -0.25589256031628255
+          ],
+          "limits": [
+            0,
+            0.17585505395068976
+          ],
+          "verification": "illustrative_travel",
+          "evidence": [
+            "Rulebook V2.1.0 Figures 4-11/4-12 and user screenshots show shallow outward expansion with the panels remaining upright, exposing the lower armor through the bays.",
+            "Illustrative slide: 170 mm outward and 45 mm down, replacing the unsupported 230 mm descent. The actuator stroke and linkage remain uncalibrated."
+          ]
+        },
+        {
+          "id": "base.dart_target.slide",
+          "type": "prismatic",
+          "parent": "base",
+          "children": [
+            "base.dart_target.carriage",
+            "base.dart_target.guiding_light",
+            "base.dart_target.part.13",
+            "base.dart_target.part.14",
+            "base.dart_target.part.15",
+            "base.dart_target.part.16",
+            "base.dart_target.part.29",
+            "base.dart_target.part.30",
+            "base.dart_target.part.31",
+            "base.dart_target.part.32",
+            "base.dart_target.part.33",
+            "base.dart_target.part.34",
+            "base.dart_target.part.35",
+            "base.dart_target.part.36",
+            "base.dart_target.part.37",
+            "base.dart_target.part.38",
+            "base.dart_target.part.39",
+            "base.dart_target.part.40",
+            "base.dart_target.part.41",
+            "base.dart_target.part.42",
+            "base.dart_target.part.43",
+            "base.dart_target.part.44",
+            "base.dart_target.part.45",
+            "base.dart_target.part.46",
+            "base.dart_target.part.47",
+            "base.dart_target.part.48",
+            "base.dart_target.part.49",
+            "base.dart_target.part.50",
+            "base.dart_target.part.51",
+            "base.dart_target.part.52",
+            "base.dart_target.part.53",
+            "base.dart_target.part.54",
+            "base.dart_target.part.55",
+            "base.dart_target.part.56",
+            "base.dart_target.part.57",
+            "base.dart_target.part.58",
+            "base.dart_target.part.59",
+            "base.dart_target.part.60",
+            "base.dart_target.part.61",
+            "base.dart_target.part.62",
+            "base.dart_target.part.63",
+            "base.dart_target.part.64",
+            "base.dart_target.part.65",
+            "base.dart_target.part.66"
+          ],
+          "origin_m": [
+            -0.09,
+            -0.00025,
+            1.08
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ],
+          "limits": [
+            -0.28,
+            0.28
+          ],
+          "verification": "rulebook_travel_cad_membership",
+          "rail_ref": "base.dart_target.rail",
+          "demo_motion": {
+            "type": "sinusoidal",
+            "demo_only": true,
+            "when": "no_target_mode",
+            "period_s": 4.0,
+            "phase_rad": 0.0,
+            "range": "joint_limits",
+            "period_source": "illustrative_default_not_rulebook"
+          },
+          "rulebook_motion": {
+            "document": "RoboMaster 2026 University Championship Rule Manual V2.1.0 (20260717)",
+            "section": "5.6.5",
+            "printed_pages": [
+              124,
+              125
+            ],
+            "constant_cruising_speed_m_s": null,
+            "target_modes": {
+              "fixed_target": {
+                "position": "initial"
+              },
+              "random_fixed_target": {
+                "before_gate_fully_open": "move_to_random_position",
+                "on_hit": "move_to_new_position",
+                "on_window_end": "return_to_initial"
+              },
+              "random_moving_target": {
+                "on_gate_start_opening": "start_moving",
+                "on_launch": "move_to_position_different_from_launch_position_and_stop",
+                "reposition_deadline_s": 0.6,
+                "resume": "on_hit_or_10s_after_first_detected_launch_in_window"
+              },
+              "terminal_moving_target": {
+                "on_gate_opening": "start_moving",
+                "launch_delay_before_reposition_s": 1.2,
+                "reposition_deadline_after_delay_s": 0.6,
+                "destination": "different_from_launch_position",
+                "resume": "on_hit_or_10s_after_first_detected_launch_in_window"
+              }
+            },
+            "controller_implemented": false
+          },
+          "evidence": [
+            "Rulebook V2.1.0 section 5.6.5: target and guiding light maintain their relative positions and translate parallel to field width from -280mm to +280mm.",
+            "The physical fixed rail is longer than this allowed carriage travel. A four-second sine sweep is demo-only when no target mode is selected; it is not a match controller or a rulebook cruising speed."
+          ]
+        }
+      ],
+      "geometry_additions": [
+        {
+          "type": "tapered_prism",
+          "name": "base/reconstructed/inner_housing",
+          "parent": {
+            "name": "BASE"
+          },
+          "profile": {
+            "sides": 3,
+            "radius_m": [
+              0.3,
+              0.27
+            ],
+            "z_range_m": [
+              0.1,
+              0.32
+            ],
+            "center_xy_m": [
+              -0.111,
+              -0.00025
+            ],
+            "vertex_phase_rad": 0
+          },
+          "material": {
+            "name": "reconstructed_inner_housing",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.06,
+                0.065,
+                0.07,
+                1
+              ],
+              "metallicFactor": 0.15,
+              "roughnessFactor": 0.82
+            }
+          },
+          "metadata": {
+            "id": "base.reconstructed.inner_housing",
+            "roles": [
+              "static",
+              "armor_housing"
+            ],
+            "layer": "reconstruction",
+            "collision_accuracy": "approximate_reconstruction"
+          },
+          "evidence": [
+            "Rulebook V2.1.0 Figure 4-12: lower armor sits above the plinth; open upper bays surround a narrow red central column. Replaces the previous full-height triangular solid.",
+            "Low triangular mounting plinth is an approximate support, not recovered manufacturer internals."
+          ]
+        },
+        {
+          "type": "copy_mesh",
+          "name": "base/reconstructed/hidden_armor_0",
+          "parent": {
+            "name": "BASE"
+          },
+          "source": {
+            "file": "outpost.glb",
+            "sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+            "select": {
+              "name": "rotor/armor_0"
+            }
+          },
+          "matrix": [
+            -0.4751201791656082,
+            -0.8229322900160612,
+            -0.31151767429563587,
+            0.0,
+            -0.155758837147818,
+            -0.2697822196678673,
+            0.9502403583312162,
+            0.0,
+            -0.8660254037844386,
+            0.5000000000000001,
+            0.0,
+            0.0,
+            -0.173568036396763,
+            -0.10862128147119934,
+            0.40454386211203175,
+            1.0
+          ],
+          "metadata": {
+            "id": "base.reconstructed.armor.0",
+            "roles": [
+              "armor_module"
+            ],
+            "layer": "reconstruction",
+            "armor": {
+              "family": "base",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            },
+            "collision_accuracy": "approximate_placement"
+          },
+          "surfaces": [
+            {
+              "primitive": 2,
+              "metadata": {
+                "id": "base.reconstructed.armor.0.led",
+                "module_id": "base.reconstructed.armor.0",
+                "roles": [
+                  "led_surface"
+                ],
+                "led": {
+                  "function": "armor_bar",
+                  "channel": "base.reconstructed.armor.0.lights"
+                },
+                "color": {
+                  "mode": "team",
+                  "owner_ref": "instance.team"
+                }
+              }
+            }
+          ],
+          "evidence": [
+            "Rulebook Figure 5-17 presents the shared Base/Outpost armor-module design; reuse the pinned outpost module without scaling.",
+            "Figure 4-12 shows three lower modules above the plinth. LED centers are placed at 360 mm; dimensions and placement are inferred. Existing upper modules are retained.",
+            "Donor LED material group 2 contains the paired red light bars. Source geometry and remaining materials are retained."
+          ]
+        },
+        {
+          "type": "copy_mesh",
+          "name": "base/reconstructed/hidden_armor_1",
+          "parent": {
+            "name": "BASE"
+          },
+          "source": {
+            "file": "outpost.glb",
+            "sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+            "select": {
+              "name": "rotor/armor_0"
+            }
+          },
+          "matrix": [
+            0.9502403583312162,
+            -1.1637088132509578e-16,
+            -0.31151767429563587,
+            0.0,
+            0.31151767429563587,
+            -3.8149912270397816e-17,
+            0.9502403583312162,
+            0.0,
+            -1.2246467991473532e-16,
+            -1.0,
+            0.0,
+            0.0,
+            0.01413630099311397,
+            -0.0002498682489064248,
+            0.40454386211203175,
+            1.0
+          ],
+          "metadata": {
+            "id": "base.reconstructed.armor.1",
+            "roles": [
+              "armor_module"
+            ],
+            "layer": "reconstruction",
+            "armor": {
+              "family": "base",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            },
+            "collision_accuracy": "approximate_placement"
+          },
+          "surfaces": [
+            {
+              "primitive": 2,
+              "metadata": {
+                "id": "base.reconstructed.armor.1.led",
+                "module_id": "base.reconstructed.armor.1",
+                "roles": [
+                  "led_surface"
+                ],
+                "led": {
+                  "function": "armor_bar",
+                  "channel": "base.reconstructed.armor.1.lights"
+                },
+                "color": {
+                  "mode": "team",
+                  "owner_ref": "instance.team"
+                }
+              }
+            }
+          ],
+          "evidence": [
+            "Rulebook Figure 5-17 presents the shared Base/Outpost armor-module design; reuse the pinned outpost module without scaling.",
+            "Figure 4-12 shows three lower modules above the plinth. LED centers are placed at 360 mm; dimensions and placement are inferred. Existing upper modules are retained.",
+            "Donor LED material group 2 contains the paired red light bars. Source geometry and remaining materials are retained."
+          ]
+        },
+        {
+          "type": "copy_mesh",
+          "name": "base/reconstructed/hidden_armor_2",
+          "parent": {
+            "name": "BASE"
+          },
+          "source": {
+            "file": "outpost.glb",
+            "sha256": "07946cd6f51a9f9b3778927e1b9b8c9d0c20e6989ba03ae2966d16300eb4f795",
+            "select": {
+              "name": "rotor/armor_0"
+            }
+          },
+          "matrix": [
+            -0.47512017916560745,
+            0.8229322900160615,
+            -0.31151767429563587,
+            0.0,
+            -0.15575883714781774,
+            0.2697822196678674,
+            0.9502403583312162,
+            0.0,
+            0.866025403784439,
+            0.49999999999999933,
+            0.0,
+            0.0,
+            -0.1735682645963509,
+            0.10812114972010581,
+            0.40454386211203175,
+            1.0
+          ],
+          "metadata": {
+            "id": "base.reconstructed.armor.2",
+            "roles": [
+              "armor_module"
+            ],
+            "layer": "reconstruction",
+            "armor": {
+              "family": "base",
+              "size_class": "small"
+            },
+            "color": {
+              "mode": "source_material"
+            },
+            "collision_accuracy": "approximate_placement"
+          },
+          "surfaces": [
+            {
+              "primitive": 2,
+              "metadata": {
+                "id": "base.reconstructed.armor.2.led",
+                "module_id": "base.reconstructed.armor.2",
+                "roles": [
+                  "led_surface"
+                ],
+                "led": {
+                  "function": "armor_bar",
+                  "channel": "base.reconstructed.armor.2.lights"
+                },
+                "color": {
+                  "mode": "team",
+                  "owner_ref": "instance.team"
+                }
+              }
+            }
+          ],
+          "evidence": [
+            "Rulebook Figure 5-17 presents the shared Base/Outpost armor-module design; reuse the pinned outpost module without scaling.",
+            "Figure 4-12 shows three lower modules above the plinth. LED centers are placed at 360 mm; dimensions and placement are inferred. Existing upper modules are retained.",
+            "Donor LED material group 2 contains the paired red light bars. Source geometry and remaining materials are retained."
+          ]
+        },
+        {
+          "type": "tapered_prism",
+          "name": "base/reconstructed/core_wall",
+          "parent": {
+            "name": "BASE"
+          },
+          "profile": {
+            "sides": 3,
+            "radius_m": [
+              0.17,
+              0.15
+            ],
+            "z_range_m": [
+              0.32,
+              0.845
+            ],
+            "center_xy_m": [
+              -0.111,
+              -0.00025
+            ],
+            "vertex_phase_rad": 0
+          },
+          "material": {
+            "name": "reconstructed_core_wall",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.06,
+                0.065,
+                0.07,
+                1
+              ],
+              "metallicFactor": 0.15,
+              "roughnessFactor": 0.82
+            }
+          },
+          "metadata": {
+            "id": "base.reconstructed.core_wall",
+            "roles": [
+              "static",
+              "armor_housing"
+            ],
+            "layer": "reconstruction",
+            "collision_accuracy": "approximate_reconstruction"
+          },
+          "evidence": [
+            "User requests a simple solid wall around the Base central core so the upper interior is not see-through.",
+            "Narrow closed triangular housing behind the status strips; dimensions are illustrative and do not replace the original outer frame or lower armor."
+          ]
+        },
+        {
+          "type": "tapered_prism",
+          "name": "base/reconstructed/status_strip_0",
+          "parent": {
+            "name": "BASE"
+          },
+          "profile": {
+            "sides": 4,
+            "radius_m": [
+              0.027,
+              0.027
+            ],
+            "z_range_m": [
+              0.4,
+              0.83
+            ],
+            "center_xy_m": [
+              -0.06899999999999999,
+              0.07249613391789285
+            ],
+            "vertex_phase_rad": 1.832595714594046
+          },
+          "material": {
+            "name": "reconstructed_red_status_column",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.65,
+                0.002,
+                0.004,
+                1
+              ],
+              "metallicFactor": 0.15,
+              "roughnessFactor": 0.82
+            }
+          },
+          "metadata": {
+            "id": "base.reconstructed.status_strip.0",
+            "roles": [
+              "static",
+              "led_surface"
+            ],
+            "layer": "reconstruction",
+            "collision_accuracy": "approximate_reconstruction",
+            "led": {
+              "function": "status",
+              "channel": "base.status_column"
+            },
+            "color": {
+              "mode": "team",
+              "owner_ref": "instance.team"
+            }
+          },
+          "evidence": [
+            "Red status strip on the reconstructed solid Base core wall; illustrative appearance and placement."
+          ]
+        },
+        {
+          "type": "tapered_prism",
+          "name": "base/reconstructed/status_strip_1",
+          "parent": {
+            "name": "BASE"
+          },
+          "profile": {
+            "sides": 4,
+            "radius_m": [
+              0.027,
+              0.027
+            ],
+            "z_range_m": [
+              0.4,
+              0.83
+            ],
+            "center_xy_m": [
+              -0.195,
+              -0.0002499999999999897
+            ],
+            "vertex_phase_rad": 3.9269908169872414
+          },
+          "material": {
+            "name": "reconstructed_red_status_column",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.65,
+                0.002,
+                0.004,
+                1
+              ],
+              "metallicFactor": 0.15,
+              "roughnessFactor": 0.82
+            }
+          },
+          "metadata": {
+            "id": "base.reconstructed.status_strip.1",
+            "roles": [
+              "static",
+              "led_surface"
+            ],
+            "layer": "reconstruction",
+            "collision_accuracy": "approximate_reconstruction",
+            "led": {
+              "function": "status",
+              "channel": "base.status_column"
+            },
+            "color": {
+              "mode": "team",
+              "owner_ref": "instance.team"
+            }
+          },
+          "evidence": [
+            "Red status strip on the reconstructed solid Base core wall; illustrative appearance and placement."
+          ]
+        },
+        {
+          "type": "tapered_prism",
+          "name": "base/reconstructed/status_strip_2",
+          "parent": {
+            "name": "BASE"
+          },
+          "profile": {
+            "sides": 4,
+            "radius_m": [
+              0.027,
+              0.027
+            ],
+            "z_range_m": [
+              0.4,
+              0.83
+            ],
+            "center_xy_m": [
+              -0.06899999999999999,
+              -0.07299613391789285
+            ],
+            "vertex_phase_rad": 6.021385919380437
+          },
+          "material": {
+            "name": "reconstructed_red_status_column",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.65,
+                0.002,
+                0.004,
+                1
+              ],
+              "metallicFactor": 0.15,
+              "roughnessFactor": 0.82
+            }
+          },
+          "metadata": {
+            "id": "base.reconstructed.status_strip.2",
+            "roles": [
+              "static",
+              "led_surface"
+            ],
+            "layer": "reconstruction",
+            "collision_accuracy": "approximate_reconstruction",
+            "led": {
+              "function": "status",
+              "channel": "base.status_column"
+            },
+            "color": {
+              "mode": "team",
+              "owner_ref": "instance.team"
+            }
+          },
+          "evidence": [
+            "Red status strip on the reconstructed solid Base core wall; illustrative appearance and placement."
+          ]
+        }
+      ],
+      "geometry_groups": [
+        {
+          "select": {
+            "name": "source_13267587_001_1_ASM"
+          },
+          "parent": {
+            "name": "BASE"
+          },
+          "name": "base/dart_target/carriage",
+          "parts": [
+            {
+              "primitive": 1,
+              "triangle_ranges": [
+                [
+                  47248,
+                  195019
+                ]
+              ]
+            },
+            {
+              "primitive": 2
+            },
+            {
+              "primitive": 3
+            }
+          ],
+          "metadata": {
+            "id": "base.dart_target.carriage",
+            "roles": [
+              "carriage",
+              "dart_detector"
+            ],
+            "subsystems": [
+              "small_armor_module",
+              "dart_detection_sensor"
+            ],
+            "rail_ref": "base.dart_target.rail"
+          },
+          "evidence": [
+            "Rulebook V2.1.0 section 5.6.5, printed pages 124-125: the target translates with its guiding light within +/-280mm.",
+            "Explicit triangle ranges select the complete disconnected central target components above z=0.965m in the pinned source assembly, plus its red/gray surface groups. The lower rail mounts remain fixed."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267587_001_1_ASM"
+          },
+          "parent": {
+            "name": "BASE"
+          },
+          "name": "base/dart_target/guiding_light",
+          "parts": [
+            {
+              "primitive": 0
+            }
+          ],
+          "metadata": {
+            "id": "base.dart_target.guiding_light",
+            "module_id": "base.dart_target.carriage",
+            "roles": [
+              "guiding_light",
+              "led_surface"
+            ],
+            "led": {
+              "function": "dart_guidance",
+              "channel": "base.dart_target.guiding_light"
+            },
+            "color": {
+              "mode": "fixed",
+              "fixed_srgb": [
+                0.0667,
+                0.9804,
+                0.0627
+              ]
+            }
+          },
+          "evidence": [
+            "Green guiding-light source surface; Figure 4-13 identifies this light as part of the Base Dart Detection Module. Section 5.6.5 requires it to maintain its position relative to the moving detector."
+          ]
+        }
+      ]
+    },
+    "tech-core": {
+      "id": "tech-core",
+      "input_sha256": {
+        "visual": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+        "collision": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef"
+      },
+      "nodes": [
+        {
+          "select": {
+            "name": "TECH-CORE"
+          },
+          "metadata": {
+            "id": "tech-core",
+            "roles": [
+              "assembly"
+            ]
+          }
+        },
+        {
+          "select": {
+            "name": "source_13267356_0006_1_24"
+          },
+          "name": "tech-core/upper_arm",
+          "metadata": {
+            "id": "tech-core.part.upper_arm",
+            "roles": [
+              "arm"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267357_0006_1_25"
+          },
+          "name": "tech-core/upper_arm/seal_0",
+          "metadata": {
+            "id": "tech-core.part.upper_arm.seal_0",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267358_0006_1_26"
+          },
+          "name": "tech-core/upper_arm/seal_1",
+          "metadata": {
+            "id": "tech-core.part.upper_arm.seal_1",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267359_0006_1_27"
+          },
+          "name": "tech-core/upper_arm/seal_2",
+          "metadata": {
+            "id": "tech-core.part.upper_arm.seal_2",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267360_0006_1_28"
+          },
+          "name": "tech-core/upper_arm/seal_3",
+          "metadata": {
+            "id": "tech-core.part.upper_arm.seal_3",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267361_0006_1_29"
+          },
+          "name": "tech-core/forearm",
+          "metadata": {
+            "id": "tech-core.part.forearm",
+            "roles": [
+              "arm"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267362_0006_1_30"
+          },
+          "name": "tech-core/forearm/detail_0",
+          "metadata": {
+            "id": "tech-core.part.forearm.detail_0",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267363_0006_1_31"
+          },
+          "name": "tech-core/forearm/detail_1",
+          "metadata": {
+            "id": "tech-core.part.forearm.detail_1",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267364_0006_1_32"
+          },
+          "name": "tech-core/tool/assembly",
+          "metadata": {
+            "id": "tech-core.part.tool.assembly",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267365_0006_1_33"
+          },
+          "name": "tech-core/shoulder/housing",
+          "metadata": {
+            "id": "tech-core.part.shoulder.housing",
+            "roles": [
+              "arm"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267366_0006_1_34"
+          },
+          "name": "tech-core/tool/cover",
+          "metadata": {
+            "id": "tech-core.part.tool.cover",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267367_0006_1_35"
+          },
+          "name": "tech-core/tool/side_0",
+          "metadata": {
+            "id": "tech-core.part.tool.side_0",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267368_0006_1_36"
+          },
+          "name": "tech-core/tool/side_1",
+          "metadata": {
+            "id": "tech-core.part.tool.side_1",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        },
+        {
+          "select": {
+            "name": "source_13267332_tech-core-positive-details"
+          },
+          "name": "tech-core/shared_joint_hardware",
+          "metadata": {
+            "id": "tech-core.part.shared_joint_hardware",
+            "roles": [
+              "assembly"
+            ],
+            "rigid_binding_status": "unverified"
+          },
+          "evidence": [
+            "Visual inspection of the checksum-pinned source mesh. Names identify CAD parts; they do not assert rigid membership of the shared joint hardware."
+          ]
+        }
+      ],
+      "pending": [
+        "Partition shared_joint_hardware into rigid links before enabling arm mesh animation or articulated collision. The exported six-joint chain currently contains frames only.",
+        "Mechanical joint stops, zero calibration, velocity limits and control convention are not specified by the source CAD.",
+        "The tool P/Q mechanism in rulebook Figure 5-7 is separate from the six arm joints and still needs its own CAD binding."
+      ],
+      "frames": [
+        {
+          "parent": "tech-core",
+          "name": "tech-core/kinematics/link_1",
+          "metadata": {
+            "id": "tech-core.link.1",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        },
+        {
+          "parent": "tech-core.link.1",
+          "name": "tech-core/kinematics/link_2",
+          "metadata": {
+            "id": "tech-core.link.2",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        },
+        {
+          "parent": "tech-core.link.2",
+          "name": "tech-core/kinematics/link_3",
+          "metadata": {
+            "id": "tech-core.link.3",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        },
+        {
+          "parent": "tech-core.link.3",
+          "name": "tech-core/kinematics/link_4",
+          "metadata": {
+            "id": "tech-core.link.4",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        },
+        {
+          "parent": "tech-core.link.4",
+          "name": "tech-core/kinematics/link_5",
+          "metadata": {
+            "id": "tech-core.link.5",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        },
+        {
+          "parent": "tech-core.link.5",
+          "name": "tech-core/kinematics/link_6",
+          "metadata": {
+            "id": "tech-core.link.6",
+            "roles": [
+              "arm"
+            ],
+            "geometry_binding": "unbound"
+          },
+          "evidence": [
+            "Serial arm chain identified from STEP bearing axes; identity rest frame in the reference asset coordinate basis."
+          ]
+        }
+      ],
+      "joints": [
+        {
+          "id": "tech-core.arm.base_yaw",
+          "type": "revolute",
+          "parent": "tech-core",
+          "children": [
+            "tech-core.link.1"
+          ],
+          "origin_m": [
+            0.2744317889482553,
+            -0.05523448764104821,
+            0.0523003235050002
+          ],
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_ASM, coaxial 58 to 78.5 mm base bearing cylinders. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        },
+        {
+          "id": "tech-core.arm.shoulder_pitch",
+          "type": "revolute",
+          "parent": "tech-core.link.1",
+          "children": [
+            "tech-core.link.2"
+          ],
+          "origin_m": [
+            0.1342478696924017,
+            -0.1954184068493674,
+            0.16230032349606727
+          ],
+          "axis": [
+            0.7071067811865476,
+            0.7071067811865476,
+            0
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_24, 76 mm shoulder cylinder. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        },
+        {
+          "id": "tech-core.arm.elbow_pitch",
+          "type": "revolute",
+          "parent": "tech-core.link.2",
+          "children": [
+            "tech-core.link.3"
+          ],
+          "origin_m": [
+            0.07988556010955405,
+            -0.15413757270518424,
+            0.8057559898330002
+          ],
+          "axis": [
+            0.7071067811865476,
+            0.7071067811865476,
+            0
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_24, 59 mm elbow cylinder. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        },
+        {
+          "id": "tech-core.arm.wrist_1",
+          "type": "revolute",
+          "parent": "tech-core.link.3",
+          "children": [
+            "tech-core.link.4"
+          ],
+          "origin_m": [
+            -0.05686580959878618,
+            0.05452615030045371,
+            0.2571719424938983
+          ],
+          "axis": [
+            0.7071067811865476,
+            0.7071067811865476,
+            0
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_29, coaxial 30.5 to 43.5 mm wrist cylinders. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        },
+        {
+          "id": "tech-core.arm.wrist_2",
+          "type": "revolute",
+          "parent": "tech-core.link.4",
+          "children": [
+            "tech-core.link.5"
+          ],
+          "origin_m": [
+            -0.0878284960513539,
+            0.022344201219698046,
+            0.3065644186345512
+          ],
+          "axis": [
+            0.012340714912758876,
+            -0.012340714912758876,
+            0.9998476951570596
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_ASM, coaxial 27 to 41 mm wrist cylinders. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        },
+        {
+          "id": "tech-core.arm.tool_roll",
+          "type": "revolute",
+          "parent": "tech-core.link.5",
+          "children": [
+            "tech-core.link.6"
+          ],
+          "origin_m": [
+            -0.12210142704447552,
+            0.05661713222089493,
+            0.3603185105865153
+          ],
+          "axis": [
+            -0.7069990853283799,
+            0.7069990854701851,
+            0.01745240640016661
+          ],
+          "verification": "cad_axis_identified",
+          "geometry_binding": "frames_only",
+          "limits_status": "unknown",
+          "preview_range": [
+            -0.13962634015954636,
+            0.13962634015954636
+          ],
+          "evidence": [
+            "0006_1_ASM, coaxial 27 to 39.2 mm flange cylinders. Extracted with BRepAdaptor_Surface.Cylinder in the V1.2.0 source and transformed into the reference GLB frame.",
+            "The six mechanical axes form a serial chain. Rulebook section 5.3.3 end-effector pose angles are not mechanical joint limits.",
+            "Geometry remains outside the joint chain until the merged hardware has a verified rigid-body partition. Preview range is an inspection angle only."
+          ]
+        }
+      ]
+    }
+  }
+}
