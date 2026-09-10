@@ -51,7 +51,7 @@ The optional mesh simplification pass also reduced measured simulator scene setu
 | glTF metadata + `articulation.json` | Readable part names, joints, armor size/family, LEDs, team color, and layers |
 | Semantic reference package | Reviewable mechanisms and explicitly labeled reconstructions, separate from the simulator installation |
 | GIF / MP4 / PNG + JSON reports | Clean camera orbits, joint inspections, and source-versus-demo audits |
-| SDF / MJCF / USD | Scene export paths for Gazebo, MuJoCo, and Isaac Sim; see the [workflow guide](docs/getting-started.md) |
+| SDF / URDF / USD | [Articulated equipment](docs/articulated-formats.md) with existing joint bindings; [static scene export](docs/getting-started.md) also supports MJCF |
 
 The STEP split preserves geometry entities verbatim. Tessellation approximates surfaces, and optional mesh simplification is lossy with sampled deviation checks. These are separate stages with separate evidence. See the [split proof](docs/split-proof.md), [geometry audit](docs/geometry-audit.md), and [simplification contract](docs/mesh-simplification.md).
 

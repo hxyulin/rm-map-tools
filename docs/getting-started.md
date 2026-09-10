@@ -89,6 +89,17 @@ Use `../assets/rm2026-reference` with `--asset rune`, `outpost`, or `dart-statio
 
 `rune`、`outpost` 和 `dart-station` 使用 `../assets/rm2026-reference`。省略 `--presentation` 可生成固定视角、带说明和关节标记的检查动画。[画廊](demos.md)包含两种形式，[参考资源文档](reference-assets.md)说明具体绑定。
 
+## Articulated equipment / 关节设备
+
+Export existing joint bindings to SDF, URDF, and USD with the [articulated exporter](articulated-formats.md). It preserves rigid links, visual/collision membership, axes, and known travel. These are kinematic assets without calibrated dynamics or match controllers.
+
+使用[关节导出器](articulated-formats.md)将现有关节绑定导出为 SDF、URDF 和 USD，保留连杆、可视与碰撞归属、轴及已知行程。输出为运动学资源，不包含标定动力学参数或比赛控制器。
+
+```sh
+OPENBLAS_NUM_THREADS=1 ocpenv/bin/python python/export_articulated.py \
+  ../assets/rm2026-reference --out out/articulated-models
+```
+
 ## Static simulator scenes / 静态仿真场景
 
 `python/export_sim.py` converts an element package to SDF, MJCF, and USD. USD generation requires `usd-core`; verification/rendering uses the corresponding runtime libraries, including MuJoCo. Articulated inputs require `--static-rest-pose`, which explicitly bakes the source rest pose rather than exporting match controllers.
