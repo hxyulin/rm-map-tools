@@ -1,0 +1,130 @@
+{
+ "source": "UTF-8__RMUC2026_V1.2.0.step",
+ "notes": [
+  "Product names are opaque in V1.2.0 (the IGES round trip dropped the Chinese occurrence names), so each field element is pinned to product names here.",
+  "Identified 2026-09-10 by placing every sub-assembly in the arena frame and matching it against the named occurrences of V2.0.0 (前哨站, 基地260629, 能量机关, 资源区, 飞镖发射井, 国赛科技核心 are the NEXT_ASSEMBLY_USAGE_OCCURRENCE descriptions there).",
+  "堡垒 is taken to be the 5.5 m centre platform 0006_1_ASM under the rune, minus the two tech-core clusters it carries; the tech cores are its leaves 0006_1_24..36 and 0006_1_37..49 (V2.0.0 places 国赛科技核心 at (±0.43, 0.8 / 2.49)).",
+  "The base pedestal 0010_1 and the steps 00_1 stay in arena-static; the outpost footing 0008_1 is part of the outpost.",
+  "起伏路段 does not exist in V1.2.0 (flat deck with a cutout in the marking skin); it is grafted from the V2.0.0 split package as in the field export.",
+  "V1.2.0 places the first outpost (instance 0, at (3.06, 5.50)) rotated 3.6° short of a half turn while its footing 0008_1 is axis-aligned; V2.0.0 has both outposts at exact half turns. The export keeps the STEP transform for the outpost body and reports the footing as placed differently."
+ ],
+ "elements": [
+  {
+   "name": "base",
+   "label": "基地",
+   "products": [
+    "001_1_ASM"
+   ]
+  },
+  {
+   "name": "outpost",
+   "label": "前哨站",
+   "products": [
+    "0009_1_ASM",
+    "0008_1"
+   ]
+  },
+  {
+   "name": "rune",
+   "label": "能量机关",
+   "products": [
+    "0007_1_ASM"
+   ]
+  },
+  {
+   "name": "dart-station",
+   "label": "飞镖发射井",
+   "products": [
+    "0013_1_ASM"
+   ]
+  },
+  {
+   "name": "resource-zone",
+   "label": "资源区",
+   "products": [
+    "7000001_1_ASM"
+   ]
+  },
+  {
+   "name": "fortress",
+   "label": "堡垒",
+   "products": [
+    "0006_1_ASM"
+   ],
+   "exclude": [
+    "0006_1_24",
+    "0006_1_25",
+    "0006_1_26",
+    "0006_1_27",
+    "0006_1_28",
+    "0006_1_29",
+    "0006_1_30",
+    "0006_1_31",
+    "0006_1_32",
+    "0006_1_33",
+    "0006_1_34",
+    "0006_1_35",
+    "0006_1_36",
+    "0006_1_37",
+    "0006_1_38",
+    "0006_1_39",
+    "0006_1_40",
+    "0006_1_41",
+    "0006_1_42",
+    "0006_1_43",
+    "0006_1_44",
+    "0006_1_45",
+    "0006_1_46",
+    "0006_1_47",
+    "0006_1_48",
+    "0006_1_49"
+   ]
+  },
+  {
+   "name": "tech-core",
+   "label": "国赛科技核心",
+   "instances": [
+    [
+     "0006_1_24",
+     "0006_1_25",
+     "0006_1_26",
+     "0006_1_27",
+     "0006_1_28",
+     "0006_1_29",
+     "0006_1_30",
+     "0006_1_31",
+     "0006_1_32",
+     "0006_1_33",
+     "0006_1_34",
+     "0006_1_35",
+     "0006_1_36"
+    ],
+    [
+     "0006_1_37",
+     "0006_1_38",
+     "0006_1_39",
+     "0006_1_40",
+     "0006_1_41",
+     "0006_1_42",
+     "0006_1_43",
+     "0006_1_44",
+     "0006_1_45",
+     "0006_1_46",
+     "0006_1_47",
+     "0006_1_48",
+     "0006_1_49"
+    ]
+   ]
+  },
+  {
+   "name": "undulating-road",
+   "label": "起伏路段",
+   "graft": {
+    "products": [
+     "BREP_220",
+     "BREP_192"
+    ]
+   }
+  }
+ ]
+}
