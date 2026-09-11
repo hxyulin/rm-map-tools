@@ -6,6 +6,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 
 | Guide | Contents |
 | --- | --- |
+| [Releases and downloads](releases.md) | Choose STEP, GLB, simulator, or viewer archives |
 | [Getting started](getting-started.md) | Install, download, split, and validate |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
