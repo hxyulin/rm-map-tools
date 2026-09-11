@@ -12,7 +12,7 @@ export default defineConfig({
     nav: [{ text: 'Guides', link: '/getting-started' }, { text: 'Model viewer', link: '/viewer' }],
     sidebar: [
       { text: 'Use the tools', items: [
-        { text: 'Overview', link: '/' }, { text: 'Getting started', link: '/getting-started' },
+        { text: 'Overview', link: '/' }, { text: 'Downloads', link: '/releases' }, { text: 'Getting started', link: '/getting-started' },
         { text: 'Exporting', link: '/exporting' }, { text: 'Simplification', link: '/simplification' },
         { text: 'Model viewer', link: '/viewer' }
       ] },

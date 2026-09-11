@@ -20,6 +20,8 @@ The tool splits the STEP reference graph before loading geometry into a CAD kern
 - Export static scenes as SDF, MJCF, or USD, and jointed equipment as SDF, URDF, or USD.
 - Inspect models and move joints in the [interactive documentation viewer](docs/viewer.md).
 
+Download prepared assets from the [latest release](https://github.com/hxyulin/rm-map-tools/releases/latest). See [Releases and downloads](docs/releases.md) to choose a format.
+
 ## Quick start
 
 Clone the repository and run these commands from its root. You need Rust 1.88+ and Python 3 for the download helper. Indexing and splitting do not require a CAD kernel.
