@@ -103,6 +103,8 @@ class GlbWriter:
         self.meshes = []
         self.nodes = []
         self.triangles = 0
+        self._geometry = {}
+        self._mesh_triangles = {}
 
     def material(self, key):
         if key not in self.material_index:
@@ -138,11 +140,33 @@ class GlbWriter:
         self.accessors.append(acc)
         return len(self.accessors) - 1
 
-    def add_node(self, name, positions_m, triangles, colour_keys):
+    def add_node(self, name, positions_m, triangles, colour_keys, matrix=None):
         """positions_m: (n,3) float64 metres; triangles: (t,3) int; colour_keys: list per triangle."""
+        if matrix is not None:
+            matrix = np.asarray(matrix, dtype=float)
+            if (matrix.shape != (4, 4) or not np.isfinite(matrix).all()
+                    or not np.allclose(matrix[3], [0, 0, 0, 1])):
+                raise ValueError('invalid node transform')
         if len(triangles) == 0:
             # Preserve the source node as an anchor for semantic bindings.
             self.nodes.append({"name": name})
+            if matrix is not None:
+                self.nodes[-1]['matrix'] = matrix.flatten(order='F').tolist()
+            return
+        # Hash local geometry and appearance, independent of placement and name.
+        digest = hashlib.sha256()
+        for data in (np.asarray(positions_m, dtype='<f8').tobytes(),
+                     np.asarray(triangles, dtype='<i8').tobytes(),
+                     json.dumps(list(colour_keys), separators=(',', ':')).encode()):
+            digest.update(struct.pack('<Q', len(data)))
+            digest.update(data)
+        signature = digest.digest()
+        if signature in self._geometry:
+            mesh = self._geometry[signature]
+            self.nodes.append({'name': name, 'mesh': mesh})
+            if matrix is not None:
+                self.nodes[-1]['matrix'] = np.asarray(matrix).flatten(order='F').tolist()
+            self.triangles += self._mesh_triangles[mesh]
             return
         primitives = []
         for key in sorted(set(colour_keys), key=lambda k: (k is None, k)):
@@ -155,7 +179,13 @@ class GlbWriter:
             length = np.linalg.norm(n, axis=1, keepdims=True)
             n = np.where(length > 0, n / np.maximum(length, 1e-30), [0.0, 0.0, 1.0]).astype(np.float32)
             normals = np.repeat(n, 3, axis=0)
-            indices = np.arange(len(p), dtype=np.uint32)
+            # Only merge byte-identical position/normal pairs, preserving hard edges.
+            records = np.concatenate((p, normals), axis=1)
+            packed = records.view(np.dtype((np.void, records.dtype.itemsize * 6))).ravel()
+            _, first, inverse = np.unique(packed, return_index=True, return_inverse=True)
+            p, normals = p[first], normals[first]
+            index_component = 5123 if len(p) < 65536 else 5125
+            indices = inverse.astype('<u2' if index_component == 5123 else '<u4')
             pv = self._view(p.tobytes(), 34962)
             nv = self._view(normals.tobytes(), 34962)
             iv = self._view(indices.tobytes(), 34963)
@@ -165,14 +195,19 @@ class GlbWriter:
                         "POSITION": self._accessor(pv, 5126, len(p), "VEC3", (p.min(0), p.max(0))),
                         "NORMAL": self._accessor(nv, 5126, len(p), "VEC3"),
                     },
-                    "indices": self._accessor(iv, 5125, len(indices), "SCALAR"),
+                    "indices": self._accessor(iv, index_component, len(indices), "SCALAR"),
                     "material": self.material(key),
                     "mode": 4,
                 }
             )
             self.triangles += len(tris)
         self.meshes.append({"name": name, "primitives": primitives})
-        self.nodes.append({"name": name, "mesh": len(self.meshes) - 1})
+        mesh = len(self.meshes) - 1
+        self._geometry[signature] = mesh
+        self._mesh_triangles[mesh] = len(triangles)
+        self.nodes.append({"name": name, "mesh": mesh})
+        if matrix is not None:
+            self.nodes[-1]['matrix'] = np.asarray(matrix).flatten(order='F').tolist()
 
     def write(self, path):
         children = list(range(1, len(self.nodes) + 1))
@@ -465,11 +500,10 @@ def main():
             continue
         for k, M in enumerate(transforms.get(prow.get(p["product_id"]), [np.eye(4)])):
             name = f"source_{p['product_id']}_{p['name']}" + (f"_{k}" if k else "")
-            flip = np.linalg.det(M[:3, :3]) < 0
             for writer, (P, T, C, cols) in ((visual[asset], fine), (collision[asset], coarse)):
-                world = place(P, M)
-                tris = T[:, [0, 2, 1]] if flip else T
-                writer.add_node(name, world, tris, [cols[c] for c in C])
+                transform = M.copy()
+                transform[:3, 3] /= 1000.0
+                writer.add_node(name, P / 1000.0, T, [cols[c] for c in C], matrix=transform)
             P, T, C, cols = fine
             world = place(P, M)
             entry = {

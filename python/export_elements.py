@@ -136,7 +136,7 @@ def corners_of(lo, hi):
 
 
 # Shared traversal also handles articulated assets and repeated mesh instances.
-from gltf_scene import read_glb_nodes
+from gltf_scene import read_glb_nodes, read_glb_local_nodes
 
 
 class Package:
@@ -474,8 +474,8 @@ def main():
         for kind in ("visual", "collision"):
             shutil.copyfile(source_visual, os.path.join(a.out, entry[kind]))
             entry[f"{kind}_sha256"] = entry["visual_sha256"]
-            for node, P, T, K in read_glb_nodes(os.path.join(a.out, entry[kind])):
-                full[kind].add_node(node, P, T, K)
+            for node, P, T, K, M in read_glb_local_nodes(os.path.join(a.out, entry[kind])):
+                full[kind].add_node(node, P, T, K, matrix=M)
         entry["collision_triangles"] = entry["triangles"]
         entry["carried_from"] = {"directory": a.field, "generator": field.get("generator")}
         assets[name] = entry
@@ -662,7 +662,7 @@ def main():
                 P = np.array(pl["matrix_local_to_arena"])
                 for node, fine, coarse in meshes:
                     for kind, (Pm, T, K) in (("visual", fine), ("collision", coarse)):
-                        full[kind].add_node(f"{name}_{k}_{node}", Pm @ P[:3, :3].T + P[:3, 3], T, K)
+                        full[kind].add_node(f"{name}_{k}_{node}", Pm, T, K, matrix=P)
             composed.append(name)
         assets[name] = {
             "label": label,
