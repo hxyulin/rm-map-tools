@@ -60,8 +60,8 @@ footings remain unchanged. The base visual uses a tighter 0.5 mm metric and 2 mm
 
 Meshoptimizer 0.2.30a0 collapses edges within each existing glTF primitive.
 Exactly equal positions are welded; nearby positions are not rounded together.
-Materials and primitive order remain unchanged. Components that would disappear
-entirely are restored. There is no blanket size filter that deletes fasteners,
+Materials and primitive order remain unchanged. Components that would disappear entirely are retried independently at tighter
+settings for up to twelve refinements. Irreducible components retain their original triangles. There is no blanket size filter that deletes fasteners,
 small parts or faces. Normals are rebuilt as flat triangle normals.
 
 Unlocked borders can lose subdivisions, move and collapse within the accepted

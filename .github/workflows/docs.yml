@@ -1,0 +1,57 @@
+name: Documentation
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Download mechanism models
+        if: vars.DOCS_MODELS_URL != ''
+        env:
+          DOCS_MODELS_URL: ${{ vars.DOCS_MODELS_URL }}
+        run: |
+          mkdir -p docs/public
+          curl --fail --location --retry 3 "$DOCS_MODELS_URL" --output /tmp/docs-models.zip
+          python3 -m zipfile -e /tmp/docs-models.zip docs/public
+      - name: Verify movable CAD entities
+        if: vars.DOCS_MODELS_URL != '' || github.event_name != 'pull_request'
+        run: npm run docs:test-models
+      - run: npm run docs:check
+      - run: npm run docs:test
+      - run: npm run docs:build
+      - run: npm run docs:check -- --built
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: docs/.vitepress/dist
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - uses: actions/deploy-pages@v4
+        id: deployment

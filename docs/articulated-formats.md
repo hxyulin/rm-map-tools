@@ -97,14 +97,13 @@ to its world.
 SDF、USD 引擎的默认质量也不是实测值。根连杆是模型锚点，由仿真器决定如何连接世界。
 
 The reference package exports eight moving joints: two Rune rotors, one Outpost
-rotor, three Base shields, one Base rail target, and one Dart window. Illustrative
-travel remains labeled in the original evidence. The Technology Core's six
+rotor, three Base shields, one Base rail target, and one Dart window. Travel constants and their sources remain in the original evidence. The Technology Core's six
 `frames_only` axes export as fixed reference frames; their unverified source
 joint definitions remain in metadata. Preview angles do not become mechanical
 limits, and the preview arm rig is not promoted to a physics model.
 
 参考资源共导出八个可动关节：能量机关两个、前哨站一个、基地护盾三个、
-基地轨道靶一个、飞镖窗口一个。示意行程的依据说明保持不变。
+基地轨道靶一个、飞镖窗口一个。行程常量及其依据保持不变。
 科技核心六个 `frames_only` 轴导出为固定参考坐标系，元数据保留原关节定义。
 不把预览角度当作机械限位，也不把演示机械臂绑定升级为物理模型。
 
@@ -112,7 +111,7 @@ No match controller or animation is generated. Consumers can evaluate coordinate
 with `articulated_scene.link_poses(graph, coordinates)` using the sidecar graph.
 It returns asset-local link poses in metres and radians and rejects unknown,
 out-of-range, or nonzero frames-only coordinates. Existing preview scripts remain
-responsible for sinusoidal rail motion and illustrative shield sweeps.
+responsible for sinusoidal rail motion and shield sweeps.
 
 不生成比赛控制器或动画。使用方可以调用 `articulated_scene.link_poses`
 计算设备局部连杆姿态，输入单位为米和弧度。函数拒绝未知关节、越界坐标及

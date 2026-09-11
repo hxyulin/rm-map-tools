@@ -21,7 +21,7 @@ Accordingly:
   official files on demand.
 - `out/` is ignored, regenerable staging for local split packages, indexes,
   meshes and intermediate reports. Retained derived reports and rendered
-  PNG/GIF/MP4 previews are committed under `docs/` and `benchmarks/` to explain
+  PNG audit images are committed under `docs/` and `benchmarks/` to explain
   and check the tooling. They remain derivatives of DJI's models and do not
   transfer ownership of the underlying CAD or change DJI's terms.
 - Product names, entity ids and numbers quoted in the documentation are

@@ -9,7 +9,7 @@ The two lower guide rails remain fixed. Their measured long axis agrees with
 `[sin(15 degrees), 0, cos(15 degrees)]` in the asset frame. Opening raises the
 window along that inclined axis; closing follows it downward.
 
-The corrected illustrative lower stop places the lowest carriage point at
+The corrected lower stop places the lowest carriage point at
 205 mm instead of 79.9 mm. The latter passed below the platform level. This
 produces approximately 1.16448 m of travel from the source open pose. It is
 inferred from the figure, not a measured actuator stop. The separate platform
@@ -17,6 +17,3 @@ remains fixed pending its own verified mesh partition and joint binding.
 
 The integration verifier checks the lower height, unchanged guide/platform
 transforms, and preservation of every source triangle and material.
-
-[Clean orbit](previews/clean/dart-station-joints-orbit.mp4) ·
-[Fixed-camera inspection](previews/dart-station-joints.mp4)

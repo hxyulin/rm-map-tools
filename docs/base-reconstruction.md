@@ -33,15 +33,8 @@ visibility rays per lower module. No rays hit the fully opened covers; closed
 covers obstruct the modules. This checks sampled frontal visibility, not complete
 collision-free actuator mechanics.
 
-[Clean orbit demo](previews/clean/base-joints-orbit.mp4) and
-[inspection demo](previews/base-joints.mp4).
-
 The source audit remains in [base-interior-audit.md](base-interior-audit.md).
-Hide `reconstruction` to inspect the original hollow CAD:
-
-```sh
-ocpenv/bin/python python/preview/render_joints.py ../assets/rm2026-reference/equipment --asset base --hide-layer reconstruction --out out/base-source-only
-```
+The source audit above shows the original hollow CAD without the reconstruction.
 
 Authored dimensions, donor hash, and bindings are in
 [semantics-legacy-equipment.json](../rules/semantics-legacy-equipment.json).

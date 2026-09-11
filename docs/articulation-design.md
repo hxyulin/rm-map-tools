@@ -197,7 +197,7 @@ per placed instance or per rune face, while fixed green dart-guidance lights
 remain green regardless of team. Source paint, team ownership, LED emission
 color and current light state are separate properties.
 
-Illustrative records below demonstrate the contract, not verified source-part
+Example records below demonstrate the contract, not verified source-part
 assignments. Unknown classifications remain explicit until the CAD/rule mapping
 is reviewed. A real export also supplies the provenance and node bindings
 described above.
@@ -291,8 +291,7 @@ renderer. Neither requires duplicating the complete rune geometry per state.
    Regenerate/deploy the package after consumer compatibility is established.
 
 The initial implementation exports metadata, visibility layers and joint nodes,
-with checksum-pinned mappings for the existing rune/outpost hierarchy. Base shield and dart gate bindings now support explicitly illustrative
-travel. Actual linkage/stroke calibration and remaining surface identification
+with checksum-pinned mappings for the existing rune/outpost hierarchy. Base shield and dart gate bindings now include travel limits. Actual linkage/stroke calibration and remaining surface identification
 still require CAD/mechanism work; the rulebook alone cannot supply them. Text and logo classification
 and collision removal are deferred; only layer infrastructure is included.
 Production assets have not been replaced.
