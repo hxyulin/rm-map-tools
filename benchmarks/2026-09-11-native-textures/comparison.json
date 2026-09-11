@@ -1,0 +1,64 @@
+{
+  "assets": {
+    "floor": {
+      "before": 12,
+      "after": 12,
+      "instances": 1
+    },
+    "arena-static": {
+      "before": 108268,
+      "after": 10329,
+      "instances": 1
+    },
+    "rune": {
+      "before": 73705,
+      "after": 73705,
+      "instances": 1
+    },
+    "outpost": {
+      "before": 25349,
+      "after": 25349,
+      "instances": 2
+    },
+    "centre-platform": {
+      "before": 33255,
+      "after": 33255,
+      "instances": 1
+    },
+    "dart-station": {
+      "before": 90904,
+      "after": 90904,
+      "instances": 2
+    },
+    "resource-zone": {
+      "before": 167914,
+      "after": 167914,
+      "instances": 2
+    },
+    "outpost-footing": {
+      "before": 20,
+      "after": 20,
+      "instances": 2
+    },
+    "base": {
+      "before": 176155,
+      "after": 78166,
+      "instances": 2
+    },
+    "tech-core": {
+      "before": 18066,
+      "after": 18066,
+      "instances": 2
+    }
+  },
+  "collision_unchanged": true,
+  "before": 1172056,
+  "after": 878139,
+  "removed": 293917,
+  "percent": 25.0770441002819,
+  "base_artwork_occlusion": {
+    "samples": 7004,
+    "occluded": 0,
+    "max_backing_protrusion_m": 0.00029565284068856193
+  }
+}

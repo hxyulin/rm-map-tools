@@ -32,6 +32,10 @@ class ExportJobTests(unittest.TestCase):
         self.assertIn('--field=' + str(self.root / 'field'), commands[1])
         self.assertIn('--out=' + str(self.root / 'runtime'), commands[2])
 
+    def test_atlas_path_is_relative_to_job(self):
+        self.config['stages'][1]['texture_atlas'] = 'artwork.json'
+        self.assertIn('--texture-atlas=' + str(self.root / 'artwork.json'), self.build()[1])
+
     def test_typo_existing_and_overlapping_outputs_fail_before_running(self):
         self.config['stages'][1]['typo'] = 1
         with self.assertRaises(ValueError): self.build()

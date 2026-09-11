@@ -1,0 +1,64 @@
+{
+  "assets": {
+    "floor": {
+      "before": 12,
+      "after": 12,
+      "instances": 1
+    },
+    "arena-static": {
+      "before": 108268,
+      "after": 10197,
+      "instances": 1
+    },
+    "rune": {
+      "before": 78603,
+      "after": 78603,
+      "instances": 1
+    },
+    "outpost": {
+      "before": 26304,
+      "after": 26304,
+      "instances": 2
+    },
+    "centre-platform": {
+      "before": 32962,
+      "after": 32962,
+      "instances": 1
+    },
+    "dart-station": {
+      "before": 98064,
+      "after": 98064,
+      "instances": 2
+    },
+    "resource-zone": {
+      "before": 168125,
+      "after": 168125,
+      "instances": 2
+    },
+    "outpost-footing": {
+      "before": 20,
+      "after": 20,
+      "instances": 2
+    },
+    "base": {
+      "before": 85583,
+      "after": 85519,
+      "instances": 2
+    },
+    "tech-core": {
+      "before": 19211,
+      "after": 19211,
+      "instances": 2
+    }
+  },
+  "visuals_unchanged": true,
+  "ground_outliers": [],
+  "ground_samples": {
+    "rays": 19400,
+    "both_hit": 11754,
+    "hit_status_changes": 0,
+    "max_height_delta_mm": 4.977557705697411,
+    "p99_height_delta_mm": 1.4864817775093453,
+    "over_8mm": 0
+  }
+}

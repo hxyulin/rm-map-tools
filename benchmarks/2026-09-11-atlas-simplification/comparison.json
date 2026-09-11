@@ -1,0 +1,245 @@
+{
+  "before": {
+    "placed_visual_triangles": 1172056,
+    "assets": {
+      "floor": {
+        "per_instance": 12,
+        "instances": 1,
+        "placed": 12
+      },
+      "arena-static": {
+        "per_instance": 108268,
+        "instances": 1,
+        "placed": 108268
+      },
+      "rune": {
+        "per_instance": 73705,
+        "instances": 1,
+        "placed": 73705
+      },
+      "outpost": {
+        "per_instance": 25349,
+        "instances": 2,
+        "placed": 50698
+      },
+      "centre-platform": {
+        "per_instance": 33255,
+        "instances": 1,
+        "placed": 33255
+      },
+      "dart-station": {
+        "per_instance": 90904,
+        "instances": 2,
+        "placed": 181808
+      },
+      "resource-zone": {
+        "per_instance": 167914,
+        "instances": 2,
+        "placed": 335828
+      },
+      "outpost-footing": {
+        "per_instance": 20,
+        "instances": 2,
+        "placed": 40
+      },
+      "base": {
+        "per_instance": 176155,
+        "instances": 2,
+        "placed": 352310
+      },
+      "tech-core": {
+        "per_instance": 18066,
+        "instances": 2,
+        "placed": 36132
+      }
+    }
+  },
+  "after": {
+    "placed_visual_triangles": 1155846,
+    "assets": {
+      "floor": {
+        "per_instance": 12,
+        "instances": 1,
+        "placed": 12
+      },
+      "arena-static": {
+        "per_instance": 92058,
+        "instances": 1,
+        "placed": 92058
+      },
+      "rune": {
+        "per_instance": 73705,
+        "instances": 1,
+        "placed": 73705
+      },
+      "outpost": {
+        "per_instance": 25349,
+        "instances": 2,
+        "placed": 50698
+      },
+      "centre-platform": {
+        "per_instance": 33255,
+        "instances": 1,
+        "placed": 33255
+      },
+      "dart-station": {
+        "per_instance": 90904,
+        "instances": 2,
+        "placed": 181808
+      },
+      "resource-zone": {
+        "per_instance": 167914,
+        "instances": 2,
+        "placed": 335828
+      },
+      "outpost-footing": {
+        "per_instance": 20,
+        "instances": 2,
+        "placed": 40
+      },
+      "base": {
+        "per_instance": 176155,
+        "instances": 2,
+        "placed": 352310
+      },
+      "tech-core": {
+        "per_instance": 18066,
+        "instances": 2,
+        "placed": 36132
+      }
+    }
+  },
+  "removed_artwork_triangles": 16210,
+  "patches": 77,
+  "replacement_triangles": 154,
+  "net_reduction": 16056,
+  "already_absent_selections": [],
+  "atlas_sections": 243,
+  "net_reduction_percent": 1.3699004143146742,
+  "validation": {
+    "all_other_visual_and_collision_files_identical": true,
+    "sidecar_and_page_checksums_valid": true,
+    "verified_files": [
+      [
+        "",
+        "floor",
+        "visual",
+        "f3371ce858bbc7940ca741411ba3d83a5f90d443a90fc284ea561e8f1c6dbe00"
+      ],
+      [
+        "",
+        "floor",
+        "collision",
+        "ade8d9f4c7ca158e3541bed415b2d72edc99552def78a06982893ca63d66936d"
+      ],
+      [
+        "",
+        "arena-static",
+        "visual",
+        "41da44ce78cdadd37823a6dc1a584fb1f1ef277a5c4c67fdb27b3b2cbd3bae82"
+      ],
+      [
+        "",
+        "arena-static",
+        "collision",
+        "9ec93d29c0e0e23b91c17ab413981e152f48abb4aed2db4e1928a27551686299"
+      ],
+      [
+        "",
+        "rune",
+        "visual",
+        "5cc0fab5259d282ef2cb369213c8fa050c645a9767a3c054d2d75e19d8088e56"
+      ],
+      [
+        "",
+        "rune",
+        "collision",
+        "0f472a4804b759ec7cbb472df116fde5d4c10fd3df1184c394cbd8e6f34ca293"
+      ],
+      [
+        "",
+        "outpost",
+        "visual",
+        "432c5553cdfbf3ccf4b66aa8cde0d01782e6983423f06e777705023bbff3b334"
+      ],
+      [
+        "",
+        "outpost",
+        "collision",
+        "bb8c1fe8e65d340f3d08f407f79b9e4f54e707fbe3b8c703463c12c7fa061f39"
+      ],
+      [
+        "",
+        "centre-platform",
+        "visual",
+        "6e8920fa0b5a7a5fe3b0a31974232a148026b765c123b0de98213ad1489e2255"
+      ],
+      [
+        "",
+        "centre-platform",
+        "collision",
+        "c402f92367b74c832c03e468af0d33750440f3257dd4ab551941b4d58ed486fe"
+      ],
+      [
+        "",
+        "dart-station",
+        "visual",
+        "58f156af5afedf2285fa544a918cf9a6387277ac7c27c40e397e4a2fe2ee0bbe"
+      ],
+      [
+        "",
+        "dart-station",
+        "collision",
+        "9724f1e8fcde190bb4f7187d157329161516c6698039d53daa43e3eee6273e10"
+      ],
+      [
+        "",
+        "resource-zone",
+        "visual",
+        "d27fd2a3adcd736a2e1887e931d1813279422c83cb38544590720929688772d7"
+      ],
+      [
+        "",
+        "resource-zone",
+        "collision",
+        "fdf4c6380e8bf2a27f3bb6d1e3de82fcf421b50262ac0c1c057042ff2930765d"
+      ],
+      [
+        "",
+        "outpost-footing",
+        "visual",
+        "134b95a7ed3bbc9c3425bb1940f2683693d851de3f4a0a67a2b6129be2170640"
+      ],
+      [
+        "",
+        "outpost-footing",
+        "collision",
+        "f4ac2bd22fabf5d3a619a7874943e55eb187a4ee9e526324f34526aed2dc50ba"
+      ],
+      [
+        "equipment",
+        "base",
+        "visual",
+        "53d4afea8f72631f726127244e69f02a6761bc1392fbac9fb5832c93e3269d61"
+      ],
+      [
+        "equipment",
+        "base",
+        "collision",
+        "f6745c6405e2c980a0af5497327fbb90aabc0b05e7c706dc7d92b4ab8943aa1a"
+      ],
+      [
+        "equipment",
+        "tech-core",
+        "visual",
+        "d89cd351e56e19bd5defbeab7236e0b52ef6842c1cead01dc333ca74268af47d"
+      ],
+      [
+        "equipment",
+        "tech-core",
+        "collision",
+        "130fcdd432e235f0449e261b4c34f98d21a78d8b62a0485504aadd70839a1e11"
+      ]
+    ]
+  }
+}

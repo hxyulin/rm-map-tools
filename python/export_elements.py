@@ -432,6 +432,7 @@ def main():
     ap.add_argument("--graft-floor", default=None)
     ap.add_argument("--graft-colours", default=GRAFT_COLOURS)
     add_arguments(ap)
+    ap.add_argument("--texture-atlas", help="JSON artwork selections to bake into PNG atlases and a placement sidecar")
     a = ap.parse_args()
     a.export_policy = from_arguments(a, ap)
     default_settings = a.export_policy.settings("")
@@ -754,6 +755,10 @@ def main():
     print(f"failures {len(failures)}; bbox mismatches {len(bbox_errors)}; warnings {len(warnings)}; {time.time() - t0:.0f}s")
     if failures or bbox_errors:
         sys.exit(1)
+
+    if a.texture_atlas:
+        from texture_atlas import export_atlas
+        export_atlas(a.out, a.texture_atlas)
 
 
 if __name__ == "__main__":

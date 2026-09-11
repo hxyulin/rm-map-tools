@@ -1,0 +1,126 @@
+Starting matched-source simplification
+rune: visual 983,603->73,705, collision 983,603->78,603; 11.25s
+outpost: visual 433,511->25,349, collision 433,511->26,304; 6.47s
+dart-station: visual 891,322->90,904, collision 891,322->98,064; 28.33s
+resource-zone: visual 1,854,209->167,914, collision 1,854,209->168,125; 47.59s
+base: visual 894,899->176,155, collision 894,899->85,583; 24.37s
+tech-core: visual 216,438->18,066, collision 216,438->19,211; 5.25s
+{
+  "before": {
+    "placed_visual_triangles": 1172056,
+    "assets": {
+      "floor": {
+        "per_instance": 12,
+        "instances": 1,
+        "placed": 12
+      },
+      "arena-static": {
+        "per_instance": 108268,
+        "instances": 1,
+        "placed": 108268
+      },
+      "rune": {
+        "per_instance": 73705,
+        "instances": 1,
+        "placed": 73705
+      },
+      "outpost": {
+        "per_instance": 25349,
+        "instances": 2,
+        "placed": 50698
+      },
+      "centre-platform": {
+        "per_instance": 33255,
+        "instances": 1,
+        "placed": 33255
+      },
+      "dart-station": {
+        "per_instance": 90904,
+        "instances": 2,
+        "placed": 181808
+      },
+      "resource-zone": {
+        "per_instance": 167914,
+        "instances": 2,
+        "placed": 335828
+      },
+      "outpost-footing": {
+        "per_instance": 20,
+        "instances": 2,
+        "placed": 40
+      },
+      "base": {
+        "per_instance": 176155,
+        "instances": 2,
+        "placed": 352310
+      },
+      "tech-core": {
+        "per_instance": 18066,
+        "instances": 2,
+        "placed": 36132
+      }
+    }
+  },
+  "after": {
+    "placed_visual_triangles": 1155846,
+    "assets": {
+      "floor": {
+        "per_instance": 12,
+        "instances": 1,
+        "placed": 12
+      },
+      "arena-static": {
+        "per_instance": 92058,
+        "instances": 1,
+        "placed": 92058
+      },
+      "rune": {
+        "per_instance": 73705,
+        "instances": 1,
+        "placed": 73705
+      },
+      "outpost": {
+        "per_instance": 25349,
+        "instances": 2,
+        "placed": 50698
+      },
+      "centre-platform": {
+        "per_instance": 33255,
+        "instances": 1,
+        "placed": 33255
+      },
+      "dart-station": {
+        "per_instance": 90904,
+        "instances": 2,
+        "placed": 181808
+      },
+      "resource-zone": {
+        "per_instance": 167914,
+        "instances": 2,
+        "placed": 335828
+      },
+      "outpost-footing": {
+        "per_instance": 20,
+        "instances": 2,
+        "placed": 40
+      },
+      "base": {
+        "per_instance": 176155,
+        "instances": 2,
+        "placed": 352310
+      },
+      "tech-core": {
+        "per_instance": 18066,
+        "instances": 2,
+        "placed": 36132
+      }
+    }
+  },
+  "removed_artwork_triangles": 16210,
+  "patches": 77,
+  "replacement_triangles": 154,
+  "net_reduction": 16056,
+  "already_absent_selections": [],
+  "atlas_sections": 243,
+  "net_reduction_percent": 1.3699004143146742
+}
