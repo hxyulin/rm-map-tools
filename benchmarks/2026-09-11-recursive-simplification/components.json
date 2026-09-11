@@ -1,0 +1,26 @@
+{
+  "resource-zone": {
+    "guarded-3": {
+      "source_components": 2888,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    },
+    "guarded-18mm-3": {
+      "source_components": 2888,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    }
+  },
+  "base": {
+    "guarded-3": {
+      "source_components": 2110,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    },
+    "guarded-18mm-3": {
+      "source_components": 2110,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    }
+  }
+}

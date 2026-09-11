@@ -1,0 +1,309 @@
+{
+  "resource-zone": {
+    "asset": "resource-zone",
+    "source_sha256": "d162ba0f2f47499fe0c428c441065a14e20836828278bf92baedaae109860a2c",
+    "current_sha256": "dab096d59aae6e1ce3f232539bde84cf5c03e5e871ca7283c1c63e8ccf1cf285",
+    "results": [
+      {
+        "name": "current",
+        "triangles": 112591,
+        "max_source_sampled_deviation_mm": 11.929915881085451,
+        "worst_node_material": [
+          "source_13267868_7000001_1_22",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-1",
+        "triangles": 92285,
+        "local_deviation_mm": 11.597106172633833,
+        "seconds": 4.997821092605591,
+        "max_source_sampled_deviation_mm": 16.365297003677725,
+        "worst_node_material": [
+          "source_13267905_7000001_1_59",
+          "colour_0.2000,0.2000,0.2000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-2",
+        "triangles": 87872,
+        "local_deviation_mm": 11.399984359741211,
+        "seconds": 4.56345009803772,
+        "max_source_sampled_deviation_mm": 17.474951406750314,
+        "worst_node_material": [
+          "source_13267863_7000001_1_17",
+          "colour_1.0000,0.7216,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-3",
+        "triangles": 86272,
+        "local_deviation_mm": 10.180575286838481,
+        "seconds": 4.431884050369263,
+        "max_source_sampled_deviation_mm": 21.20577399045505,
+        "worst_node_material": [
+          "source_13267862_7000001_1_16",
+          "colour_0.6000,1.0000,0.6000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "direct-6mm",
+        "triangles": 102308,
+        "local_deviation_mm": 17.41491678149895,
+        "seconds": 21.913199186325073,
+        "max_source_sampled_deviation_mm": 17.41491678149895,
+        "worst_node_material": [
+          "source_13267912_7000001_1_66",
+          "colour_0.2000,0.2000,0.2000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "direct-8mm",
+        "triangles": 94195,
+        "local_deviation_mm": 23.957223601362212,
+        "seconds": 21.389627933502197,
+        "max_source_sampled_deviation_mm": 23.95722500635212,
+        "worst_node_material": [
+          "source_13267920_7000001_1_74",
+          "colour_0.2000,0.2000,0.2000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-1",
+        "triangles": 107187,
+        "accepted_groups": 90,
+        "retained_previous_groups": 73,
+        "max_source_sampled_deviation_mm": 11.929915881085451,
+        "worst_node_material": [
+          "source_13267868_7000001_1_22",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-2",
+        "triangles": 106352,
+        "accepted_groups": 29,
+        "retained_previous_groups": 134,
+        "max_source_sampled_deviation_mm": 11.929915881085451,
+        "worst_node_material": [
+          "source_13267868_7000001_1_22",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-3",
+        "triangles": 106232,
+        "accepted_groups": 9,
+        "retained_previous_groups": 154,
+        "max_source_sampled_deviation_mm": 11.929915881085451,
+        "worst_node_material": [
+          "source_13267868_7000001_1_22",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-1",
+        "triangles": 92285,
+        "accepted_groups": 99,
+        "retained_previous_groups": 64,
+        "max_source_sampled_deviation_mm": 16.365297003677725,
+        "worst_node_material": [
+          "source_13267905_7000001_1_59",
+          "colour_0.2000,0.2000,0.2000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-2",
+        "triangles": 87872,
+        "accepted_groups": 37,
+        "retained_previous_groups": 126,
+        "max_source_sampled_deviation_mm": 17.474951406750314,
+        "worst_node_material": [
+          "source_13267863_7000001_1_17",
+          "colour_1.0000,0.7216,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-3",
+        "triangles": 86282,
+        "accepted_groups": 14,
+        "retained_previous_groups": 149,
+        "max_source_sampled_deviation_mm": 17.474951406750314,
+        "worst_node_material": [
+          "source_13267863_7000001_1_17",
+          "colour_1.0000,0.7216,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      }
+    ]
+  },
+  "base": {
+    "asset": "base",
+    "source_sha256": "a4a4b9e352777233b7bd67e7e8ea6186811eccc15af0cf9bbb50deca09e2fa7b",
+    "current_sha256": "ae5d5a483d40194a0e5de337261c1659d2458c5f5f8beb4e8275f9ad87684649",
+    "results": [
+      {
+        "name": "current",
+        "triangles": 60434,
+        "max_source_sampled_deviation_mm": 11.795160694001963,
+        "worst_node_material": [
+          "source_13267608_001_1_21",
+          "colour_0.2471,0.2471,0.2471"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-1",
+        "triangles": 53096,
+        "local_deviation_mm": 11.646737472828226,
+        "seconds": 6.280874013900757,
+        "max_source_sampled_deviation_mm": 16.94467884687383,
+        "worst_node_material": [
+          "base/shield_2",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-2",
+        "triangles": 52504,
+        "local_deviation_mm": 11.770218092920764,
+        "seconds": 6.227648019790649,
+        "max_source_sampled_deviation_mm": 20.313260792477767,
+        "worst_node_material": [
+          "source_13267605_001_1_18",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "recursive-3",
+        "triangles": 52397,
+        "local_deviation_mm": 11.960595587802246,
+        "seconds": 6.1892170906066895,
+        "max_source_sampled_deviation_mm": 20.313260792477767,
+        "worst_node_material": [
+          "source_13267605_001_1_18",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "direct-6mm",
+        "triangles": 56978,
+        "local_deviation_mm": 13.83409574966554,
+        "seconds": 9.62069034576416,
+        "max_source_sampled_deviation_mm": 13.83409574966554,
+        "worst_node_material": [
+          "source_13267600_001_1_13",
+          "colour_0.2471,0.2471,0.2471"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "direct-8mm",
+        "triangles": 53059,
+        "local_deviation_mm": 19.82881207130926,
+        "seconds": 9.515993118286133,
+        "max_source_sampled_deviation_mm": 19.82881207130926,
+        "worst_node_material": [
+          "source_13267587_001_1_ASM",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-1",
+        "triangles": 53618,
+        "accepted_groups": 45,
+        "retained_previous_groups": 56,
+        "max_source_sampled_deviation_mm": 11.959271034728841,
+        "worst_node_material": [
+          "source_13267609_001_1_22",
+          "colour_1.0000,0.0000,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-2",
+        "triangles": 53342,
+        "accepted_groups": 20,
+        "retained_previous_groups": 81,
+        "max_source_sampled_deviation_mm": 11.959271034728841,
+        "worst_node_material": [
+          "source_13267609_001_1_22",
+          "colour_1.0000,0.0000,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-3",
+        "triangles": 53300,
+        "accepted_groups": 11,
+        "retained_previous_groups": 90,
+        "max_source_sampled_deviation_mm": 11.959271034728841,
+        "worst_node_material": [
+          "source_13267609_001_1_22",
+          "colour_1.0000,0.0000,0.0000"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-1",
+        "triangles": 53096,
+        "accepted_groups": 50,
+        "retained_previous_groups": 51,
+        "max_source_sampled_deviation_mm": 16.94467884687383,
+        "worst_node_material": [
+          "base/shield_2",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-2",
+        "triangles": 52518,
+        "accepted_groups": 29,
+        "retained_previous_groups": 72,
+        "max_source_sampled_deviation_mm": 16.94467884687383,
+        "worst_node_material": [
+          "base/shield_2",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      },
+      {
+        "name": "guarded-18mm-3",
+        "triangles": 52413,
+        "accepted_groups": 17,
+        "retained_previous_groups": 84,
+        "max_source_sampled_deviation_mm": 16.94467884687383,
+        "worst_node_material": [
+          "base/shield_2",
+          "colour_0.6275,0.6275,0.6275"
+        ],
+        "sampling": "4096 triangles per direction, per node/material group"
+      }
+    ]
+  },
+  "recommended": {
+    "resource-zone": "guarded-18mm-3",
+    "base": "guarded-3",
+    "placed_triangles_removed": 66886,
+    "field_visual_before": 781913,
+    "field_visual_after": 715027,
+    "installed": false,
+    "collision_changed": false
+  }
+}
