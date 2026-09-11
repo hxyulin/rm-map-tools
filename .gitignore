@@ -24,3 +24,10 @@ ocpenv/
 .DS_Store
 .idea/
 .vscode/
+
+# documentation site
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+# Generated model catalog for the documentation site
+/docs/public/models/

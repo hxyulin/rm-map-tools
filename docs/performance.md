@@ -19,9 +19,9 @@ OCCT 日志对应 `RMUC2026_V2.0.0.stp`：读取 25.1 秒、XCAF 转换 7,834.6 
 
 ## rm-map-tools on M3 Pro / M3 Pro 上的实测
 
-Apple M3 Pro, 11 cores, 18 GiB RAM. Rust measurements are recorded in the [implementation reference](architecture.md); OCCT and source-preservation details are in the [split proof](split-proof.md). These are historical measurements, not a new rerun for this README.
+Apple M3 Pro, 11 cores, 18 GiB RAM. Rust measurements are recorded in the [split proof](split-proof.md); OCCT and source-preservation details are in the [split proof](split-proof.md). These are historical measurements, not a new rerun for this README.
 
-机器为 Apple M3 Pro、11 核、18 GiB 内存。Rust 数字见[实现文档](architecture.md)，OCCT 和源数据保留检查见[拆分证明](split-proof.md)。这里整理的是已有测试记录，并非为本次 README 重新跑出的结果。
+机器为 Apple M3 Pro、11 核、18 GiB 内存。Rust 数字见[拆分证明](split-proof.md)，OCCT 和源数据保留检查见[拆分证明](split-proof.md)。这里整理的是已有测试记录，并非为本次 README 重新跑出的结果。
 
 | Operation / 操作 | V2.0.0, 1.25 GB | V1.2.0, 993 MB |
 | --- | ---: | ---: |

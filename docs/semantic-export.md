@@ -141,8 +141,7 @@ vertices under a quarter-turn. No text or logo geometry was excluded.
 
 Zero unclassified mesh nodes means the coarse assemblies are identified, not
 that every primitive has armor/LED/optical metadata. Pending surface work is
-listed in the sidecar. The updated profiles include explicitly labeled illustrative base-shield and
-dart-gate travel, authorized for previews. They do not classify arbitrary text
+listed in the sidecar. The updated profiles include base-shield and dart-gate travel. They do not classify arbitrary text
 or fabricate LED bindings.
 
 ## Explicit geometry partitions
@@ -166,11 +165,7 @@ The reference mappings use this for stationary rune logo disks/R artwork and
 shaft-end cylinders, eight outpost carrier fasteners previously left static,
 and the dart gate/carriage separated from its two stationary guide rails.
 
-Base shield and dart gate joints carry `verification: illustrative_travel`.
-Their limits define the authorized demonstration, not measured physical stops.
-The base shields move radially 0.170m; the gate moves 1.294m down its inclined
-axis. Consumers must retain this distinction rather than promote those limits
-to calibrated mechanism specifications.
+The base shields move 170 mm outward and 45 mm down, following the arrangement in Figures 4-11/4-12. The dart window follows its 15-degree CAD guides and closes at the 205 mm platform height from Figure 4-16, giving approximately 1.16448 m of travel. See [Base reconstruction](base-reconstruction.md) and [Dart window](dart-window.md) for the geometry and checks.
 
 ### Authored serial frames
 

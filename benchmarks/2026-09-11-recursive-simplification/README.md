@@ -58,7 +58,6 @@ ocpenv/bin/python benchmarks/2026-09-11-recursive-simplification/guarded.py reso
 ocpenv/bin/python benchmarks/2026-09-11-recursive-simplification/guarded.py base 12
 ocpenv/bin/python benchmarks/2026-09-11-recursive-simplification/guarded.py resource-zone 18
 ocpenv/bin/python benchmarks/2026-09-11-recursive-simplification/guarded.py base 18
-ocpenv/bin/python benchmarks/2026-09-11-recursive-simplification/render.py
 ```
 
 Local outputs remain outside Git:

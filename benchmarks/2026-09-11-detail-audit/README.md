@@ -92,9 +92,6 @@ ocpenv/bin/python python/audit_geometry.py rules/audit-resource.example.json
 ocpenv/bin/python python/export_job.py rules/export-detail-job.example.json
 python3 benchmarks/2026-09-11-detail-audit/compare_packages.py \
   out/simulation-runtime out/detail-preview-runtime /tmp/package-comparison.json
-ocpenv/bin/python benchmarks/2026-09-11-detail-audit/render_comparison.py \
-  out/simulation-elements/base.glb out/detail-preview-elements/base.glb \
-  out/detail-preview-validation/base-comparison.png
 ```
 
 The full face-level audit is in `out/resource-detail-audit.json`, ignored along

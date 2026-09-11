@@ -39,7 +39,6 @@ schemas published at sdformat.org (mirrored into ~/.cache/rm-map-tools).
 Usage:
   export_sim.py <elements dir> --out <dir> [--no-isaac]
   export_sim.py <elements dir> --out <dir> verify
-  export_sim.py <elements dir> --out <dir> render [--png file]   (MUJOCO_GL=cgl on macOS)
 """
 import argparse
 import hashlib
@@ -573,28 +572,6 @@ def sdformat_schemas():
     return os.path.join(cache, os.path.basename(SDF_SCHEMA))
 
 
-def render(out, png, width=1920, height=1080):
-    """Offscreen MuJoCo render of the visual geoms, as a preview."""
-    import mujoco
-
-    model = mujoco.MjModel.from_xml_path(os.path.join(out, "mujoco", "rmuc2026.xml"))
-    data = mujoco.MjData(model)
-    mujoco.mj_forward(model, data)
-    renderer = mujoco.Renderer(model, height, width)
-    cam = mujoco.MjvCamera()
-    cam.lookat[:] = (0, 1.65, 0)
-    cam.distance, cam.azimuth, cam.elevation = 26, -90, -45
-    opt = mujoco.MjvOption()
-    opt.geomgroup[:] = 0
-    opt.geomgroup[2] = 1
-    renderer.update_scene(data, cam, opt)
-    img = renderer.render()
-    from PIL import Image
-
-    Image.fromarray(img).save(png)
-    print(f"rendered {width}x{height} to {png}")
-
-
 # -------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -602,17 +579,13 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--static-rest-pose", action="store_true", help="explicitly bake semantic assets at their CAD rest pose")
     ap.add_argument("--no-isaac", action="store_true")
-    ap.add_argument("command", nargs="?", default="export", choices=["export", "verify", "render"])
-    ap.add_argument("--png", default=None, help="render: output image (default <out>/mujoco-preview.png)")
+    ap.add_argument("command", nargs="?", default="export", choices=["export", "verify"])
     a = ap.parse_args()
     t0 = time.time()
     manifest = json.load(open(os.path.join(a.elements, "manifest.json")))
     assets = [Asset(n, e, a.elements, a.static_rest_pose) for n, e in manifest["assets"].items() if n != "full-map"]
     print(f"{len(assets)} assets loaded in {time.time() - t0:.0f}s", flush=True)
     report_path = os.path.join(a.out, "manifest.json")
-    if a.command == "render":
-        render(a.out, a.png or os.path.join(a.out, "mujoco-preview.png"))
-        return
     if a.command == "verify":
         sys.exit(0 if verify(assets, a.out, json.load(open(report_path))) else 1)
     os.makedirs(a.out, exist_ok=True)

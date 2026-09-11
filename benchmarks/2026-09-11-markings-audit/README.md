@@ -78,9 +78,6 @@ Run from the map-tools repository with the existing geometry environment:
 
 ```sh
 ocpenv/bin/python benchmarks/2026-09-11-markings-audit/audit.py ../rm-simulator/local-assets/field out/markings-audit
-ocpenv/bin/python benchmarks/2026-09-11-markings-audit/capture_sections.py out/markings-audit/report.json
-ocpenv/bin/python benchmarks/2026-09-11-markings-audit/capture_sections.py out/markings-audit/report.json --small
-ocpenv/bin/python benchmarks/2026-09-11-markings-audit/capture.py out/markings-audit/report.json
 ```
 
 `baseline.json` pins the inspected visual and collider files. The audit refuses

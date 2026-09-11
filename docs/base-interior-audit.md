@@ -36,7 +36,7 @@ source face; there is no hidden-face removal pass in this path. It does not
 establish that the original CAD or an earlier import contains every real part.
 
 The three shield bindings currently move whole source assemblies
-`001_1_2`, `001_1_4`, and `001_1_6`. Their radial travel is illustrative.
+`001_1_2`, `001_1_4`, and `001_1_6`. Their configured travel is 170 mm outward and 45 mm down.
 Material groups are not reliable part boundaries: the first assembly splits
 its dark and gray faces, while the other two combine much of the corresponding
 geometry. Moving only a particular material group would break their symmetry.
@@ -51,17 +51,11 @@ does not add a made-up panel, remove collision, or claim calibrated opening
 kinematics. The earlier rule evidence claiming that hidden armor was verified
 in the static body has been corrected.
 
-Reproduce the diagnostic with:
+Run the numerical motion checks with:
 
 ```sh
-OPENBLAS_NUM_THREADS=1 ocpenv/bin/python python/preview/render_joints.py \
-  ../assets/rm2026-reference/equipment --asset base \
-  --hide-role protective_shield --out out/base-interior --seconds 1 --fps 4
 ocpenv/bin/python python/verify_reference_motion.py
 ```
-
-`--hide-role` affects directly tagged mesh nodes in the preview only. It is an
-inspection aid, not a GLB edit, layer assignment, or collision filter.
 
 ## Comparison with V2.0
 

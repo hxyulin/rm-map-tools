@@ -52,6 +52,4 @@ speed. Those event semantics belong to a future simulator controller and do
 not change the standalone sine-wave demo.
 
 The integration check verifies both travel limits, fixed rail transforms,
-constant detector/light relative pose, and containment of the complete moving
-carriage within the rail's span. The updated [base GIF](previews/base-joints.gif)
-shows the rail demo alongside the illustrative shield opening.
+constant detector/light relative pose, and containment of the complete moving group within its allowed travel. Inspect the exported joint in the [interactive viewer](viewer.md).

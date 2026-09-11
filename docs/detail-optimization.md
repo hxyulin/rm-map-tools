@@ -5,38 +5,7 @@ Keep the source STEP intact and export candidates to a new directory. The
 simulation preset remains the default. The experimental detail policy changes
 angular tolerances only for resource-zone, base, dart-station and tech-core.
 
-## Configure a complete export
-
-Use a JSON job for input paths, grafts, output directories and export stages:
-
-```sh
-ocpenv/bin/python python/export_job.py rules/export-job.example.json --dry-run
-ocpenv/bin/python python/export_job.py rules/export-job.example.json
-```
-
-Paths resolve relative to the JSON file, regardless of the current directory.
-The runner validates the complete job structure and shared policy before
-starting. It uses the current Python interpreter, invokes scripts without a
-shell and stops at the first failed stage. Output directories must be new and
-must not overlap. Completed stages remain available if a later stage fails;
-there is no automatic rollback or resume. Input geometry and semantic checks
-still run in the individual exporters.
-
-A stage's `type` is `field`, `elements`, `semantics` or `deploy`. Parameters use
-snake_case names. `package` and `index` replace the positional CLI arguments.
-Grafts use structured `package`, `index` and, for the field exporter, `products`
-fields. The example shows a full field/elements/deploy pipeline. Add a semantic
-stage with `package`, `rules` and `out` after reviewing the new export's catalog.
-Semantic rules are checksum-pinned; this runner does not rewrite their pins.
-
-The shared `policy` file controls tessellation and exact-name overrides. It can
-now contain `"preset": "simulation"`, so the preset lives in configuration too.
-An explicit CLI `--preset` takes precedence. See [export presets](export-presets.md)
-for tolerance precedence and collision exclusions.
-
-This gives us an inspectable configuration format before adding a TUI. A future
-TUI can edit these files and show audit results without creating a second policy
-implementation.
+For package setup and JSON jobs, see [Exporting](exporting.md#configure-a-complete-export). For the full reduction workflow, see [Simplification](simplification.md).
 
 ## Audit source geometry
 

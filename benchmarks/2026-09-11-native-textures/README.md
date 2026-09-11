@@ -64,7 +64,6 @@ The grouped arena selectors come from `out/texture-atlas-grouped-preview/rules.j
 ```sh
 PYTHONPATH=python ocpenv/bin/python benchmarks/2026-09-11-native-textures/build.py
 PYTHONPATH=python ocpenv/bin/python benchmarks/2026-09-11-native-textures/validate.py
-PYTHONPATH=python ocpenv/bin/python benchmarks/2026-09-11-native-textures/render.py
 ```
 
 The emitted `arena-atlas-rules.json` and `base-atlas-rules.json` record the actual

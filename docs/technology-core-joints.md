@@ -60,26 +60,15 @@ visual and collision triangles are preserved at rest. The integration verifier
 also checks that moving this frame-only chain leaves unbound mesh transforms
 unchanged.
 
-[Joint-frame inspection GIF](previews/tech-core-joints.gif) ·
-[MP4](previews/tech-core-joints.mp4). Gold lines show the moving serial frames;
-the caption explicitly identifies the unbound CAD geometry.
+Inspect the fixed exported frames in the [interactive viewer](viewer.md).
 
 ## Rule-based translation demo
-
-[100 mm translation GIF](previews/tech-core-demo.gif) ·
-[MP4](previews/tech-core-demo.mp4)
-
-```sh
-ocpenv/bin/python python/preview/render_joints.py \
-  ../assets/rm2026-reference/equipment --asset tech-core \
-  --tech-core-demo --out out/core-motion
-```
 
 This separate demo illustrates the Level 2 requirement in rulebook section
 5.3.3 for 100 mm of translation after insertion. Inverse kinematics drives
 all six identified axes while holding the tool at its CAD rest orientation.
 The example translates toward the arm and returns in a six-second loop.
-Direction, timing and return motion are illustrative; no insertion event,
+The helper supplies direction, timing, and return motion; no insertion event,
 match state or absolute rulebook pose frame is simulated.
 
 The disposable preview rig uses the existing CAD link and tool meshes. It
@@ -87,7 +76,7 @@ partitions 26,513 tool-enclosure and fitting triangles out of the shared hardwar
 mesh and attaches them to the tool link. The remaining 91,775 mixed hardware
 triangles are hidden and six schematic bearing housings stand in for the joints. Bearing radii follow the
 identified source cylinders; their lengths and ownership are approximate.
-The video labels this distinction. This rig is never written back into the
+This rig is never written back into the
 reference GLB and does not add articulated collision to the simulator.
 
 [`tech_core_demo.py`](../python/preview/tech_core_demo.py) stores the rig and
@@ -95,24 +84,24 @@ trajectory implementation. The solver's angular bounds are numerical guards,
 not mechanical stops. Tests compare its forward kinematics with the exported
 serial-frame transforms. The integration verifier also applies the solution
 to the actual preview scene and checks a 0.100 m tool displacement with
-unchanged orientation. Error measurements are recorded alongside the video.
+unchanged orientation. Error measurements are retained in the motion verification report.
 
 Q-axis tool rotation, the separate P/Q tool bindings, and the other difficulty
 levels are not included in this translation demo.
 
 ## Pose tour
 
-The clean orbit demo now uses `--core-motion pose-tour --seconds 14`.
+The retained rig helper includes a fourteen-second pose tour.
 Seven smooth segments lift the tool, turn left, sweep right, align, translate
 100 mm at fixed orientation, retract, and return to the source pose. The path
 includes up to 160 mm of lift and 200 mm of lateral sweep. Rotation varies
 during the positioning stages. All six joints are solved against the requested
-tool poses, with errors recorded in the clip's JSON report.
+tool poses.
 
-The pose tour is illustrative choreography around the CAD rest pose. Only the
+The pose tour follows an authored path around the CAD rest pose. Only the
 100 mm translation segment comes directly from the Level 2 insertion requirement.
 It does not claim calibrated world coordinates, collision-free operation, or
-hardware limits. `--core-motion translation` retains the earlier simple motion.
+hardware limits. The helper also retains the earlier translation trajectory.
 
 ## Missing enclosure faces in the demo
 
@@ -137,11 +126,7 @@ disable backface culling, so the observed demo holes were not one-sided renderin
 [Audit measurements](previews/core-audit/audit.json) and
 [STEP validation](previews/core-audit/step-validation.json).
 
-Reproduce the static/demo views with:
-
-```sh
-OPENBLAS_NUM_THREADS=1 ocpenv/bin/python python/preview/audit_tech_core.py
-```
+The static comparison images are retained as audit evidence.
 
 For the STEP check, split `0006_1_ASM` and `0006_1_24` through `0006_1_36`
 from `v12.npz` with `python/p21split.py --products` and run
