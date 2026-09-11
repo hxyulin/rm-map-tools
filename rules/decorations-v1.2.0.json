@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "evidence": "Reviewed artwork overview and section contact sheets in the 2026-09-11 markings audit. Centre wordmarks include both wall faces; gate and rune logos exclude backing geometry. Centre platform main-mesh white primitive visually reviewed as two circle-and-slash markings on the elevated deck.",
+  "assets": {
+    "centre-platform": [
+      {
+        "node": "source_13267332_centre-logo-sheets",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text",
+        "collision_absent": true
+      },
+      {
+        "node": "source_13267332_centre-logo-sheets",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text",
+        "collision_absent": true
+      },
+      {
+        "node": "source_13267334_0006_1_2",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267334_0006_1_2",
+        "material": "colour_0.9804,0.9804,0.9804",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267335_0006_1_3",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267335_0006_1_3",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267336_0006_1_4",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267336_0006_1_4",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267337_0006_1_5",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267337_0006_1_5",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267338_0006_1_6",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267338_0006_1_6",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267339_0006_1_7",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267339_0006_1_7",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267340_0006_1_8",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267340_0006_1_8",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267341_0006_1_9",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267341_0006_1_9",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267342_0006_1_10",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267342_0006_1_10",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267343_0006_1_11",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267343_0006_1_11",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267344_0006_1_12",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267344_0006_1_12",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267345_0006_1_13",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267345_0006_1_13",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267346_0006_1_14",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267346_0006_1_14",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267347_0006_1_15",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267347_0006_1_15",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267348_0006_1_16",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267348_0006_1_16",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267349_0006_1_17",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267349_0006_1_17",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267350_0006_1_18",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267350_0006_1_18",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267351_0006_1_19",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267351_0006_1_19",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267352_0006_1_20",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267352_0006_1_20",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267353_0006_1_21",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267353_0006_1_21",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267354_0006_1_22",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267354_0006_1_22",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267355_0006_1_23",
+        "material": "colour_0.6275,0.6275,0.6275",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267355_0006_1_23",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "text"
+      },
+      {
+        "node": "source_13267333_0006_1_1",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "symbol"
+      }
+    ],
+    "dart-station": [
+      {
+        "node": "dart_station/gate",
+        "material": "colour_1.0000,1.0000,1.0000",
+        "kind": "logo"
+      }
+    ],
+    "rune": [
+      {
+        "node": "rune/fixed/face_0/logo",
+        "material": "mat_15",
+        "kind": "logo"
+      },
+      {
+        "node": "rune/fixed/face_1/logo",
+        "material": "mat_15",
+        "kind": "logo"
+      }
+    ]
+  },
+  "backing_repairs": {
+    "centre-platform": {
+      "node": "source_13267333_0006_1_1",
+      "cap_material": "colour_1.0000,1.0000,1.0000",
+      "side_material": "colour_0.6275,0.6275,0.6275",
+      "deck_material": "colour_0.2000,0.2000,0.2000",
+      "deck_height_m": 0.4,
+      "side_geometry_sha256": "2dd496f6f345d8945cd4e3d92e419220c4aa580e6208fde07128ae0ea7d7d37e",
+      "deck_geometry_sha256": "8eb6c8af4f2ad9a3ee6e386eeea72c344691becd0da3bc4cc7a790fb58aebaf3",
+      "side_triangle_ranges": [
+        [
+          137,
+          281
+        ],
+        [
+          287,
+          431
+        ]
+      ],
+      "cap_geometry_sha256": "91b37b92714b8fa5f73042df5dd4114aa84ff03aa5bfdcb9dbe4123c3ef2f5ca"
+    }
+  }
+}

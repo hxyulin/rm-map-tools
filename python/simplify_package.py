@@ -28,7 +28,7 @@ from mesh_quality import deviation
 METHOD = 'meshopt-simplification-v1'
 BOUNDARY_METHOD = 'meshopt-boundary-simplification-v1'
 PROTECTED_ROLES = {'led_surface', 'rune_target', 'dart_detector', 'guiding_light'}
-PROTECTED_LAYERS = {'markings', 'lights'}
+PROTECTED_LAYERS = {'markings', 'decoration', 'lights'}
 
 
 def digest(path):

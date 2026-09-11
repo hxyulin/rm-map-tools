@@ -24,6 +24,7 @@ ROLES = {'assembly', 'static', 'rotor', 'arm', 'armor_module', 'armor_housing',
          'status_indicator', 'protective_shield', 'decoration', 'gate', 'platform',
          'carriage', 'rail', 'target_frame', 'unclassified'}
 LAYERS = {
+    'decoration': {'visible_by_default': True, 'purpose': 'Reviewed text and logos on floors, walls and elevated structures; collision exclusion must be explicit.'},
     'reconstruction': {'visible_by_default': True, 'purpose': 'Authored approximate geometry and reused parts filling gaps in source CAD; provenance and collision accuracy must remain explicit.'},
     'geometry': {'visible_by_default': True, 'purpose': 'Physical housings, structures and moving parts.'},
     'markings': {'visible_by_default': True, 'purpose': 'Text, logos, paint sheets and visual decals; classification does not disable collision.'},
