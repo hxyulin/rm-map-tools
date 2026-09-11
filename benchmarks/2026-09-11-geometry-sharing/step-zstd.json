@@ -1,0 +1,42 @@
+{
+  "source": "/Users/hxyulin/dev/RM/assets/rm2026-field-elements",
+  "glob": "*.step",
+  "files": {
+    "base.step": "6fb5e5968493729cd2283f1dc76bc8b5a52f0546cb556356c37106cf569447b7",
+    "centre-platform.step": "a01a23db79f2c3d156f71a546e778d7c8911b716aa4f285abd0ae62885e73b8b",
+    "dart-station.step": "d08ecb5ea6ad0b72f3e5125c8f65116f69be28c4bf022d2008206f7e8eb8cf1c",
+    "fortress.step": "fd8818bb4a1a41daa3ef2bf4e3c1ac03e23aa44458195f00d7b8503c1ec028b3",
+    "outpost-footing.step": "393d41448ead2edb52e9890821af3f6e3e784260d66964c70bebbb39d51d5917",
+    "outpost.step": "4960c2e3015301fc0ef0f879d908bbaad4352afe113d713822a2ef12bca3f659",
+    "resource-zone.step": "77f86ac3f22253672789e068435f0ca25164cd2385cef2937cfc72af6cde7cb4",
+    "rune.step": "31f7b0dfc2143cd5c2e53ff1bdf27aad9e21ddf994d10eb852c218aedcb5af51",
+    "tech-core.step": "20aa30a86c0da61f3957b9432178bcb3acaaa03f98fe52354e6fa8bfcb786559",
+    "undulating-road.step": "8e80ee93cc281425b18b36800aa30319581feb9ca2438dc2dd75f57d75dbe659"
+  },
+  "source_bytes": 941145765,
+  "tar_bytes": 941158400,
+  "zstd_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "results": [
+    {
+      "level": 3,
+      "bytes": 200504408,
+      "compress_seconds": 2.2736549580004066,
+      "decompress_and_verify_seconds": 0.8462656249757856,
+      "verified_files": 10
+    },
+    {
+      "level": 9,
+      "bytes": 170528793,
+      "compress_seconds": 10.786328417016193,
+      "decompress_and_verify_seconds": 0.8205373340169899,
+      "verified_files": 10
+    },
+    {
+      "level": 15,
+      "bytes": 167194537,
+      "compress_seconds": 78.9472138749552,
+      "decompress_and_verify_seconds": 0.75853004201781,
+      "verified_files": 10
+    }
+  ]
+}

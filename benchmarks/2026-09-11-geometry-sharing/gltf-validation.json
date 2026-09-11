@@ -1,0 +1,1556 @@
+[
+  {
+    "name": "arena-static-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 30,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/1/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/2/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/3/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/4/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/5/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/6/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/7/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/8/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/9/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/10/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/11/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/12/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/13/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/14/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/15/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/16/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/17/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/18/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/19/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/20/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/21/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/22/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/23/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/24/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/25/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/26/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/27/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/28/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/29/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/30/matrix"
+      }
+    ],
+    "truncated": true
+  },
+  {
+    "name": "arena-static-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 30,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/1/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/2/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/3/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/4/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/5/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/6/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/7/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/8/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/9/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/10/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/11/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/12/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/13/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/14/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/15/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/16/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/17/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/18/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/19/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/20/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/21/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/22/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/23/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/24/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/25/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/26/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/27/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/28/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/29/matrix"
+      },
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/30/matrix"
+      }
+    ],
+    "truncated": true
+  },
+  {
+    "name": "base-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 30,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 199).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 206191).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 215).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 159065).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 42 degenerate triangles (out of 16407).",
+        "severity": 2,
+        "pointer": "/meshes/2/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 6 degenerate triangles (out of 1349).",
+        "severity": 2,
+        "pointer": "/meshes/2/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 24 degenerate triangles (out of 34071).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 6 degenerate triangles (out of 3887).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 22 degenerate triangles (out of 3205).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 34304).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 3975).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 20 degenerate triangles (out of 3288).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 34 degenerate triangles (out of 42958).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 96 degenerate triangles (out of 23630).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 47 degenerate triangles (out of 32297).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 5 degenerate triangles (out of 3855).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 14295).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 18 degenerate triangles (out of 41924).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/21/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/24/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/27/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/29/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/30/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/32/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/33/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/34/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/35/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/36/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/37/primitives/0/indices"
+      }
+    ],
+    "truncated": true
+  },
+  {
+    "name": "base-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 30,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 199).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 206191).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 215).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 159065).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 42 degenerate triangles (out of 16407).",
+        "severity": 2,
+        "pointer": "/meshes/2/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 6 degenerate triangles (out of 1349).",
+        "severity": 2,
+        "pointer": "/meshes/2/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 24 degenerate triangles (out of 34071).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 6 degenerate triangles (out of 3887).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 22 degenerate triangles (out of 3205).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 34304).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 3975).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 20 degenerate triangles (out of 3288).",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 34 degenerate triangles (out of 42958).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 96 degenerate triangles (out of 23630).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 47 degenerate triangles (out of 32297).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 5 degenerate triangles (out of 3855).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 14295).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 18 degenerate triangles (out of 41924).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/21/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/24/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 961).",
+        "severity": 2,
+        "pointer": "/meshes/27/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/29/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/30/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/32/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/33/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/34/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/35/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/36/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 849).",
+        "severity": 2,
+        "pointer": "/meshes/37/primitives/0/indices"
+      }
+    ],
+    "truncated": true
+  },
+  {
+    "name": "centre-platform-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 10 degenerate triangles (out of 26236).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "centre-platform-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 10 degenerate triangles (out of 26236).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "dart-station-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 14,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 16017).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 59 degenerate triangles (out of 301259).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 22 degenerate triangles (out of 153899).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 14 degenerate triangles (out of 67876).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 6806).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 14978).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 7930).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 18 degenerate triangles (out of 108524).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 7 degenerate triangles (out of 21779).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 2928).",
+        "severity": 2,
+        "pointer": "/meshes/26/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 1027).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 749).",
+        "severity": 2,
+        "pointer": "/meshes/32/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 1027).",
+        "severity": 2,
+        "pointer": "/meshes/41/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 741).",
+        "severity": 2,
+        "pointer": "/meshes/42/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "dart-station-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 14,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 16017).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 59 degenerate triangles (out of 301259).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 22 degenerate triangles (out of 153899).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 14 degenerate triangles (out of 67876).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 6806).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 14978).",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 7930).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 18 degenerate triangles (out of 108524).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 7 degenerate triangles (out of 21779).",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 2928).",
+        "severity": 2,
+        "pointer": "/meshes/26/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 1027).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 749).",
+        "severity": 2,
+        "pointer": "/meshes/32/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 1027).",
+        "severity": 2,
+        "pointer": "/meshes/41/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 741).",
+        "severity": 2,
+        "pointer": "/meshes/42/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "floor-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/1/matrix"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "floor-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "NODE_MATRIX_DEFAULT",
+        "message": "Do not specify default transform matrix.",
+        "severity": 2,
+        "pointer": "/nodes/1/matrix"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "fortress-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  {
+    "name": "fortress-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  {
+    "name": "outpost-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 9,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 8 degenerate triangles (out of 88610).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 5 degenerate triangles (out of 3135).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 7678).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 199).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 2560).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 7 degenerate triangles (out of 23546).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/4/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 5308).",
+        "severity": 2,
+        "pointer": "/meshes/29/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 1146).",
+        "severity": 2,
+        "pointer": "/meshes/30/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 1146).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "outpost-footing-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  {
+    "name": "outpost-footing-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  {
+    "name": "outpost-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 9,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 8 degenerate triangles (out of 88610).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 5 degenerate triangles (out of 3135).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 7678).",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/3/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 199).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 2560).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 7 degenerate triangles (out of 23546).",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/4/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 5308).",
+        "severity": 2,
+        "pointer": "/meshes/29/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 1146).",
+        "severity": 2,
+        "pointer": "/meshes/30/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 1146).",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "resource-zone-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 18,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 522 degenerate triangles (out of 1030300).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 50).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 31 degenerate triangles (out of 99771).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 4746).",
+        "severity": 2,
+        "pointer": "/meshes/16/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 35 degenerate triangles (out of 130583).",
+        "severity": 2,
+        "pointer": "/meshes/16/primitives/6/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 675).",
+        "severity": 2,
+        "pointer": "/meshes/18/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 43500).",
+        "severity": 2,
+        "pointer": "/meshes/69/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 19 degenerate triangles (out of 115830).",
+        "severity": 2,
+        "pointer": "/meshes/74/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 14 degenerate triangles (out of 26514).",
+        "severity": 2,
+        "pointer": "/meshes/74/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 2927).",
+        "severity": 2,
+        "pointer": "/meshes/86/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 21830).",
+        "severity": 2,
+        "pointer": "/meshes/88/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 8452).",
+        "severity": 2,
+        "pointer": "/meshes/89/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 14978).",
+        "severity": 2,
+        "pointer": "/meshes/90/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 8025).",
+        "severity": 2,
+        "pointer": "/meshes/91/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 2504).",
+        "severity": 2,
+        "pointer": "/meshes/115/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 217).",
+        "severity": 2,
+        "pointer": "/meshes/127/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 217).",
+        "severity": 2,
+        "pointer": "/meshes/128/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 4582).",
+        "severity": 2,
+        "pointer": "/meshes/136/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "resource-zone-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 18,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 522 degenerate triangles (out of 1030300).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 50).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 31 degenerate triangles (out of 99771).",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 4746).",
+        "severity": 2,
+        "pointer": "/meshes/16/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 35 degenerate triangles (out of 130583).",
+        "severity": 2,
+        "pointer": "/meshes/16/primitives/6/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 3 degenerate triangles (out of 675).",
+        "severity": 2,
+        "pointer": "/meshes/18/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 43500).",
+        "severity": 2,
+        "pointer": "/meshes/69/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 19 degenerate triangles (out of 115830).",
+        "severity": 2,
+        "pointer": "/meshes/74/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 14 degenerate triangles (out of 26514).",
+        "severity": 2,
+        "pointer": "/meshes/74/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 4 degenerate triangles (out of 2927).",
+        "severity": 2,
+        "pointer": "/meshes/86/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 21830).",
+        "severity": 2,
+        "pointer": "/meshes/88/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 8452).",
+        "severity": 2,
+        "pointer": "/meshes/89/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 14978).",
+        "severity": 2,
+        "pointer": "/meshes/90/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 15 degenerate triangles (out of 8025).",
+        "severity": 2,
+        "pointer": "/meshes/91/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 12 degenerate triangles (out of 2504).",
+        "severity": 2,
+        "pointer": "/meshes/115/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 217).",
+        "severity": 2,
+        "pointer": "/meshes/127/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 217).",
+        "severity": 2,
+        "pointer": "/meshes/128/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 4582).",
+        "severity": 2,
+        "pointer": "/meshes/136/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "rune-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 309 degenerate triangles (out of 487017).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "rune-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 1,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 309 degenerate triangles (out of 487017).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/1/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "tech-core-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 6,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 2313).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 36 degenerate triangles (out of 44461).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 3912).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 42 degenerate triangles (out of 26845).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 195).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 30 degenerate triangles (out of 118288).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "tech-core-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 6,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 1 degenerate triangles (out of 2313).",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 36 degenerate triangles (out of 44461).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/1/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 16 degenerate triangles (out of 3912).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/2/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 42 degenerate triangles (out of 26845).",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/5/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 2 degenerate triangles (out of 195).",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/indices"
+      },
+      {
+        "code": "ACCESSOR_INDEX_TRIANGLE_DEGENERATE",
+        "message": "Indices accessor contains 30 degenerate triangles (out of 118288).",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/indices"
+      }
+    ],
+    "truncated": false
+  },
+  {
+    "name": "undulating-road-collision.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  {
+    "name": "undulating-road-visual.glb",
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "source": "/Users/hxyulin/dev/RM/rm-map-tools/out/geometry-sharing",
+  "glob": "*.glb",
+  "files": {
+    "arena-static-collision.glb": "6bc1a81a41a02354ad8cb31dba2ad1c64427e99e6edf3b2fbf5cb02b1814f3bc",
+    "arena-static-visual.glb": "6bc1a81a41a02354ad8cb31dba2ad1c64427e99e6edf3b2fbf5cb02b1814f3bc",
+    "base-collision.glb": "e786cb364417d3816616e55c8d527d26adf8e1029f07ba61c31fcfe0e6ad5104",
+    "base-visual.glb": "e786cb364417d3816616e55c8d527d26adf8e1029f07ba61c31fcfe0e6ad5104",
+    "centre-platform-collision.glb": "b7b92e0716e86a0c21062ea32483d636a0b0fbabb8bee77c63b80c73ccd16cda",
+    "centre-platform-visual.glb": "b7b92e0716e86a0c21062ea32483d636a0b0fbabb8bee77c63b80c73ccd16cda",
+    "dart-station-collision.glb": "7b7c883e91241e04d572597489d4b57dcd6eb51f56ea37759f09295a1bc461cc",
+    "dart-station-visual.glb": "7b7c883e91241e04d572597489d4b57dcd6eb51f56ea37759f09295a1bc461cc",
+    "floor-collision.glb": "c00662cbe8af6eee4f50a3707468a7a3cf1d8169e47526e498fba05337105105",
+    "floor-visual.glb": "c00662cbe8af6eee4f50a3707468a7a3cf1d8169e47526e498fba05337105105",
+    "fortress-collision.glb": "b7ba7ab857128d04dc2eb6e55ccad7a335f36e24b881ed79185849cb610b39c6",
+    "fortress-visual.glb": "b7ba7ab857128d04dc2eb6e55ccad7a335f36e24b881ed79185849cb610b39c6",
+    "outpost-collision.glb": "61db1b95409b53b46dd51fad8a4b4f14b76e2694a4be3fbeeca9da278901f0d3",
+    "outpost-footing-collision.glb": "07b55d794bca7d051e227c2704b7aed08cda6dd49a9f8256c84f2d3f1e57eeff",
+    "outpost-footing-visual.glb": "07b55d794bca7d051e227c2704b7aed08cda6dd49a9f8256c84f2d3f1e57eeff",
+    "outpost-visual.glb": "61db1b95409b53b46dd51fad8a4b4f14b76e2694a4be3fbeeca9da278901f0d3",
+    "resource-zone-collision.glb": "75f5fd108be8e8dbb6e0e80b1c1e643b9f28ba2cd08cedf8915c2e2bf6ca0ed0",
+    "resource-zone-visual.glb": "75f5fd108be8e8dbb6e0e80b1c1e643b9f28ba2cd08cedf8915c2e2bf6ca0ed0",
+    "rune-collision.glb": "3ff30230fc33558bba21790e75b45ae696683abd04bc1c6648c4561d70f8353f",
+    "rune-visual.glb": "3ff30230fc33558bba21790e75b45ae696683abd04bc1c6648c4561d70f8353f",
+    "tech-core-collision.glb": "44d5a2eb8febfbe9b4deca71d65f99856ca2be3e3d96e7eaaed1c96ad841d307",
+    "tech-core-visual.glb": "44d5a2eb8febfbe9b4deca71d65f99856ca2be3e3d96e7eaaed1c96ad841d307",
+    "undulating-road-collision.glb": "f5d241aac50569bd0f480eb2f516627d8224daa5674a5536f5cc42b9325e90e0",
+    "undulating-road-visual.glb": "f5d241aac50569bd0f480eb2f516627d8224daa5674a5536f5cc42b9325e90e0"
+  },
+  "source_bytes": 802133072,
+  "tar_bytes": 802160640,
+  "zstd_version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "results": [
+    {
+      "level": 3,
+      "bytes": 294686712,
+      "compress_seconds": 1.7525728329783306,
+      "decompress_and_verify_seconds": 0.721534124983009,
+      "verified_files": 24
+    },
+    {
+      "level": 9,
+      "bytes": 257082401,
+      "compress_seconds": 6.137385625042953,
+      "decompress_and_verify_seconds": 0.620708333037328,
+      "verified_files": 24
+    },
+    {
+      "level": 15,
+      "bytes": 252028512,
+      "compress_seconds": 28.655972375010606,
+      "decompress_and_verify_seconds": 0.6923180830199271,
+      "verified_files": 24
+    }
+  ]
+}

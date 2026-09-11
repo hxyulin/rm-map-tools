@@ -96,10 +96,12 @@ def accessor(document, binary, index):
     return arr[:, 0] if width == 1 else arr
 
 
-def mesh_instances(document, binary):
+def mesh_instances(document, binary, *, apply_transforms=True):
     """Yield index, primitive index, transformed points, triangles, material index."""
     for index, world, _ in scene_nodes(document):
         node = document['nodes'][index]
+        if not apply_transforms:
+            world = np.eye(4)
         if 'skin' in node or 'weights' in node:
             raise ValueError('skinned or morphed nodes are unsupported')
         if 'mesh' not in node:
@@ -124,8 +126,22 @@ def mesh_instances(document, binary):
 def read_glb_nodes(path):
     """Placed mesh instances with source sRGB color keys, preserving scene order."""
     document, binary = read_glb(path)
+    yield from _read_nodes(document, binary)
+
+
+def read_glb_local_nodes(path):
+    """Yield name, local points, triangles, colours, world matrix for mesh nodes."""
+    document, binary = read_glb(path)
+    transforms = [world for index, world, _ in scene_nodes(document)
+                  if 'mesh' in document['nodes'][index]
+                  and document['meshes'][document['nodes'][index]['mesh']]['primitives']]
+    for record, world in zip(_read_nodes(document, binary, apply_transforms=False), transforms):
+        yield (*record, world)
+
+
+def _read_nodes(document, binary, *, apply_transforms=True):
     grouped = {}
-    for index, _, points, triangles, material in mesh_instances(document, binary):
+    for index, _, points, triangles, material in mesh_instances(document, binary, apply_transforms=apply_transforms):
         mat = document.get('materials', [])[material] if material is not None else {}
         rgb = mat.get('extras', {}).get('step_colour_srgb')
         if rgb is None:
