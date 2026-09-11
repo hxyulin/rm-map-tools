@@ -18,6 +18,7 @@ export default defineConfig({
       ] },
       { text: 'Understand the pipeline', items: [
         { text: 'Architecture', link: '/architecture' }, { text: 'Export presets', link: '/export-presets' },
+        { text: 'Simplification counts', link: '/simplification-results' },
         { text: 'Mesh simplification', link: '/mesh-simplification' }, { text: 'Texture atlases', link: '/texture-atlas' },
         { text: 'Composition', link: '/composition' }, { text: 'Semantic bindings', link: '/semantic-export' },
         { text: 'Articulated formats', link: '/articulated-formats' }, { text: 'Performance', link: '/performance' }

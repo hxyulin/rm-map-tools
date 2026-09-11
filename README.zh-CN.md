@@ -41,6 +41,7 @@ target/release/rm-map-tools split out/v20.p21idx -o out/v20
 | [入门](docs/getting-started.md) | 安装、下载、拆分与校验 |
 | [导出](docs/exporting.md) | 支持格式、输入要求与命令 |
 | [简化](docs/simplification.md) | 各优化步骤、执行顺序、设置与检查 |
+| [简化统计](docs/simplification-results.md) | 四种预设的网格、图元、顶点、三角形与文件大小，以及后续处理的实测结果 |
 | [架构](docs/architecture.md) | STEP 处理、资源生成及代码结构 |
 | [交互查看器](docs/viewer.md) | 旋转模型与调节关节 |
 | [全部文档](docs/README.md) | 技术参考、几何审计与测试记录 |

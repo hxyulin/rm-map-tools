@@ -1,5 +1,8 @@
 # Simplify bound meshes for faster startup
 
+See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
+
+
 The simulator's default export uses checked edge-collapse simplification with
 open boundaries unlocked. Visual and collider settings are independent and live
 in JSON, so the command stays short:

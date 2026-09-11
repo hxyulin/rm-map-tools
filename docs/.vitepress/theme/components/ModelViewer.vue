@@ -18,6 +18,8 @@ const duration = ref(0)
 const playing = ref(false)
 const ready = ref(false)
 const loading = ref(false)
+const coreAvailable = ref(false), draggingTool = ref(false), toolStatus = ref('')
+let coreIK, toolTarget, transform
 let files = [], api, renderer, scene, camera, orbit, object, mixer, action, observer, raf, active = true, loadId = 0
 let urls = []
 let jointNodes = new Map(), fetchController
@@ -34,6 +36,9 @@ function disposeObject(target) {
   textures.forEach(t => t.dispose()); materials.forEach(m => m.dispose()); geometries.forEach(g => g.dispose())
 }
 function clearModel() {
+  draggingTool.value = false; coreAvailable.value = false; toolStatus.value = ''; coreIK = null
+  transform?.detach(); if (orbit) orbit.enabled = true
+  if (toolTarget) { scene.remove(toolTarget); toolTarget = null }
   playing.value = false
   if (mixer) { mixer.stopAllAction(); mixer.uncacheRoot(object); mixer = null; action = null }
   if (object) { scene.remove(object); disposeObject(object); object = null }
@@ -55,6 +60,17 @@ function updateJoint(joint, value) {
   if (!object?.setJointValue) return
   joint.value = Math.max(joint.min, Math.min(joint.max, Number(value)))
   object.setJointValue(joint.name, joint.value)
+  syncTool()
+}
+function syncTool() {
+  if (coreIK && toolTarget) toolTarget.position.copy(coreIK.position())
+  toolStatus.value = ''
+}
+function toggleTool() {
+  draggingTool.value = !draggingTool.value
+  syncTool()
+  if (draggingTool.value) transform.attach(toolTarget)
+  else transform.detach()
 }
 function chooseClip() {
   if (!mixer) return
@@ -183,7 +199,11 @@ async function showMechanism() {
     const binding = api.utils.bindCatalogJoints(gltf, model)
     joints.value = binding.controls; jointNodes = binding.nodes
     if (model.up[1] === 1) candidate.rotation.x = Math.PI / 2
-    object = candidate; scene.add(object); fit(); ready.value = true
+    object = candidate; scene.add(object)
+    coreIK = api.createCoreIK(object, model, joints.value, jointNodes)
+    coreAvailable.value = !!coreIK
+    if (coreIK) { toolTarget = new api.THREE.Object3D(); scene.add(toolTarget); syncTool() }
+    fit(); ready.value = true
     status.value = `${model.label} · ${joints.value.length} movable entities`
   } catch (e) {
     if (candidate !== object) disposeObject(candidate)
@@ -193,19 +213,29 @@ async function showMechanism() {
 
 onMounted(async () => {
   try {
-    const [THREE, { OrbitControls }, { default: URDFLoader }, { GLTFLoader }, { STLLoader }, { ColladaLoader }, utils] = await Promise.all([
+    const [THREE, { OrbitControls }, { default: URDFLoader }, { GLTFLoader }, { STLLoader }, { ColladaLoader }, utils, { TransformControls }, { createCoreIK }] = await Promise.all([
       import('three'), import('three/addons/controls/OrbitControls.js'), import('urdf-loader'),
       import('three/addons/loaders/GLTFLoader.js'), import('three/addons/loaders/STLLoader.js'),
-      import('three/addons/loaders/ColladaLoader.js'), import('./model-utils.mjs')
+      import('three/addons/loaders/ColladaLoader.js'), import('./model-utils.mjs'),
+      import('three/addons/controls/TransformControls.js'), import('./core-ik.mjs')
     ])
     if (!active) return
-    api = { THREE, URDFLoader, GLTFLoader, STLLoader, ColladaLoader, utils }
+    api = { THREE, URDFLoader, GLTFLoader, STLLoader, ColladaLoader, utils, createCoreIK }
     scene = new THREE.Scene(); scene.background = new THREE.Color('#101923')
     camera = new THREE.PerspectiveCamera(42, 1, 0.001, 1000); camera.up.set(0, 0, 1)
     renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
     renderer.domElement.setAttribute('aria-label', 'Interactive 3D model. Use the joint sliders below to change its pose.')
     canvasHost.value.appendChild(renderer.domElement)
     orbit = new OrbitControls(camera, renderer.domElement); orbit.enableDamping = true
+    transform = new TransformControls(camera, renderer.domElement)
+    transform.setMode('translate'); transform.setSize(0.85)
+    scene.add(transform.getHelper())
+    transform.addEventListener('dragging-changed', event => { orbit.enabled = !event.value })
+    transform.addEventListener('objectChange', () => {
+      if (!coreIK || !draggingTool.value) return
+      const result = coreIK.solve(toolTarget.position)
+      toolStatus.value = `${result.reached ? 'Target reached' : 'Preview range / solver limit'} · ${(result.error * 1000).toFixed(1)} mm remaining`
+    })
     scene.add(new THREE.HemisphereLight(0xffffff, 0x526278, 3))
     const light = new THREE.DirectionalLight(0xffffff, 3); light.position.set(3, -4, 6); scene.add(light)
     const grid = new THREE.GridHelper(10, 20, 0x37516a, 0x263747); grid.rotation.x = Math.PI / 2; grid.position.z = -0.065; scene.add(grid)
@@ -228,7 +258,7 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   active = false; loadId++; fetchController?.abort(); cancelAnimationFrame(raf); observer?.disconnect(); orbit?.dispose()
   if (scene) { clearModel(); disposeObject(scene) }
-  renderer?.dispose(); renderer?.forceContextLoss()
+  transform?.dispose(); renderer?.dispose(); renderer?.forceContextLoss()
 })
 </script>
 
@@ -244,10 +274,13 @@ onBeforeUnmount(() => {
       <button :disabled="!api || loading" @click="browseMechanisms">Browse mechanisms</button>
       <button :disabled="!ready" @click="fit()">Fit view</button>
       <button :disabled="!ready" @click="reset">Reset</button>
+      <button v-if="coreAvailable" :aria-pressed="draggingTool" @click="toggleTool">{{ draggingTool ? 'Stop dragging tool' : 'Drag tool' }}</button>
     </div>
     <label v-if="models.length > 1" class="model-select">Model <select :disabled="loading" v-model="selected" @change="loadSelected"><option v-for="m in models" :key="m.name" :value="m.name">{{ m.name }}</option></select></label>
     <div ref="canvasHost" class="viewer-canvas"></div>
     <p class="viewer-status" role="status">{{ status }}</p>
+    <p v-if="draggingTool" class="mechanism-note">Drag an arrow or plane square to move the tool. Orientation is free; joint ranges are preview guards. Use sliders for individual axes.</p>
+    <p v-if="toolStatus" class="mechanism-note" role="status">{{ toolStatus }}</p>
     <p v-if="error" class="viewer-error" role="alert">{{ error }}</p>
     <div v-if="joints.length" class="joint-controls">
       <label v-for="j in joints" :key="j.name" class="joint-control">
