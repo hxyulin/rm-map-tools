@@ -163,9 +163,9 @@ class SimplificationTests(unittest.TestCase):
             self.assertEqual(report['before_triangles'], report['after_triangles'])
             self.assertEqual(report['primitives'][0]['kept'], 'explicit_preservation')
 
-    def test_unlocked_search_avoids_restoring_a_whole_tiny_component(self):
-        # At a very coarse error this closed sphere disappears and is restored
-        # by the component safeguard. A finer candidate retains a cheap mesh.
+    def test_component_refinement_preserves_and_reduces_tiny_fittings(self):
+        # A coarse error erases this fitting in meshoptimizer. The component
+        # safeguard must recover a reduced mesh at a tighter error.
         points = np.array([[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0],
                            [0, 0, 1], [0, 0, -1]], dtype=float)
         triangles = np.array([[0, 2, 4], [2, 1, 4], [1, 3, 4], [3, 0, 4],
@@ -186,7 +186,20 @@ class SimplificationTests(unittest.TestCase):
             points, triangles = np.array(vertices), np.array(faces)
         points *= .001
         _, coarse, _ = simplify_mesh(points, triangles, .004, lock_borders=False)
-        self.assertEqual(len(coarse), len(triangles))
+        self.assertGreater(len(coarse), 0)
+        self.assertLess(len(coarse), len(triangles) // 4)
+        # Fittings of different sizes sharing one material need independent
+        # retries; refining the entire mesh cannot choose both tolerances.
+        mixed = np.vstack([points, points * .01 + [1, 0, 0], points * 1000 + [4, 0, 0]])
+        faces = np.vstack([triangles + i * len(points) for i in range(3)])
+        reduced_points, reduced_faces, error = simplify_mesh(mixed, faces, .004, lock_borders=False)
+        centers = reduced_points[reduced_faces].mean(axis=1)[:, 0]
+        self.assertTrue((centers < .1).any())
+        self.assertTrue(((centers > .9) & (centers < 1.1)).any())
+        self.assertTrue((centers > 2).any())
+        self.assertLess(len(reduced_faces), len(faces))
+        self.assertLessEqual(error, .004 + 1e-7)
+        self.assertLessEqual(deviation(mixed, faces, reduced_points, reduced_faces, count=len(faces))['max'], .012)
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / 'tiny.glb'
             writer = GlbWriter('root', {'version': '2.0'})
@@ -194,7 +207,7 @@ class SimplificationTests(unittest.TestCase):
             writer.write(path)
             report = simplify_glb(path, 4, sampled_limit_mm=12, lock_borders=False)
             self.assertGreater(report['after_triangles'], 0)
-            self.assertLess(report['after_triangles'], len(coarse) // 4)
+            self.assertLessEqual(report['after_triangles'], len(coarse))
 
     def test_invalid_semantic_binding_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:

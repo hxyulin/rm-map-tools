@@ -1,0 +1,54 @@
+{
+  "resource-zone": {
+    "visual": {
+      "before": 160836,
+      "after": 112591,
+      "removed": 48245,
+      "reduction_percent": 29.996393842174637,
+      "sampled_limit_mm": 12,
+      "max_sampled_deviation_mm": 11.929915226464887,
+      "source_components": 2888,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    },
+    "collision": {
+      "before": 159088,
+      "after": 149571,
+      "removed": 9517,
+      "reduction_percent": 5.982223674947199,
+      "sampled_limit_mm": 8,
+      "max_sampled_deviation_mm": 7.8864421234991315,
+      "source_components": 2888,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    }
+  },
+  "base": {
+    "visual": {
+      "before": 78166,
+      "after": 60434,
+      "removed": 17732,
+      "reduction_percent": 22.6850548831973,
+      "sampled_limit_mm": 12,
+      "max_sampled_deviation_mm": 11.795185375372673,
+      "source_components": 2110,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    },
+    "collision": {
+      "before": 85519,
+      "after": 69560,
+      "removed": 15959,
+      "reduction_percent": 18.661350109332428,
+      "sampled_limit_mm": 8,
+      "max_sampled_deviation_mm": 7.9242255569461575,
+      "source_components": 2110,
+      "missing_components": 0,
+      "new_vertex_positions": 0
+    }
+  },
+  "placed_removed": {
+    "visual": 131954,
+    "collision": 50952
+  }
+}
