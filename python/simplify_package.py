@@ -244,7 +244,9 @@ def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_
             # Flat normals match this exporter's existing shading and retain creases.
             flat = np.ascontiguousarray(points[triangles.ravel()], dtype='<f4')
             normals = np.cross(flat[1::3] - flat[0::3], flat[2::3] - flat[0::3])
-            normals /= np.maximum(np.linalg.norm(normals, axis=1, keepdims=True), 1e-30)
+            lengths = np.linalg.norm(normals, axis=1, keepdims=True)
+            # Retained degenerate components still require valid glTF normals.
+            normals = np.where(lengths > 1e-30, normals / np.maximum(lengths, 1e-30), [0.0, 0.0, 1.0])
             normals = np.ascontiguousarray(np.repeat(normals, 3, axis=0), dtype='<f4')
             p['attributes'] = {'POSITION': append_accessor(doc, data, flat, 'VEC3', 5126),
                                'NORMAL': append_accessor(doc, data, normals, 'VEC3', 5126)}

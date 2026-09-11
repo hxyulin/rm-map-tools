@@ -29,6 +29,23 @@ def border_edges(points, triangles):
 
 
 class SimplificationTests(unittest.TestCase):
+    def test_retained_degenerate_component_has_valid_gltf_normals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'mesh.glb'
+            points,triangles=grid()
+            n=len(points)
+            points=np.vstack([points,[[2,0,0],[2,1,0],[2,2,0]]])
+            triangles=np.vstack([triangles,[[n,n+1,n+2]]])
+            writer=GlbWriter('root',{'version':'2.0'})
+            writer.add_node('panel',points,triangles,['1,1,1']*len(triangles))
+            writer.write(path)
+            simplify_glb(path,1)
+            doc,binary=read_glb(path)
+            for mesh in doc['meshes']:
+                for pr in mesh['primitives']:
+                    normals=accessor(doc,binary,pr['attributes']['NORMAL'])
+                    np.testing.assert_allclose(np.linalg.norm(normals,axis=1),1,atol=1e-6)
+
     def test_dense_sampling_detects_a_local_deviation_sparse_sampling_misses(self):
         points, triangles = grid(64)
         sparse = triangles[np.linspace(0, len(triangles) - 1, 96, dtype=int)]

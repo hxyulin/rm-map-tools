@@ -406,6 +406,7 @@ def main():
         default=GRAFT_COLOURS,
         help="colour keys for grafted faces, upward faces and the rest (default: V1.2.0's plate top and side)",
     )
+    ap.add_argument("--texture-atlas", help="JSON artwork selections to bake into PNG atlases and a placement sidecar")
     a = ap.parse_args()
     a.export_policy = from_arguments(a, ap)
     default_settings = a.export_policy.settings("arena-static")
@@ -673,6 +674,10 @@ def main():
     print(f"floor top z = {floor_top:.4f} m; failures {len(failures)}; bbox mismatches {len(bbox_errors)}; {time.time() - t0:.0f}s")
     if failures or bbox_errors:
         sys.exit(1)
+
+    if a.texture_atlas:
+        from texture_atlas import export_atlas
+        export_atlas(a.out, a.texture_atlas)
 
 
 if __name__ == "__main__":

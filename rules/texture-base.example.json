@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "render_mode": "embedded",
+  "pixels_per_metre": 4096,
+  "atlas_size": 2048,
+  "merge_distance_m": 0,
+  "offset_m": 0.0005,
+  "files": {
+    "base.glb": [
+      {"node": "source_13267588_001_1_1", "material": "colour_1.0000,1.0000,1.0000"}
+    ]
+  },
+  "simplify": {
+    "base.glb": {
+      "error_mm": 4,
+      "sampled_limit_mm": 12,
+      "deviation_samples": 4096,
+      "lock_borders": false
+    }
+  }
+}

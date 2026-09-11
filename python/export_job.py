@@ -28,11 +28,11 @@ REQUIRED = {
     'deploy': {'field', 'elements', 'out'},
 }
 OPTIONAL = {
-    'field': {'floor', 'arena_products', 'grafts', 'graft_floor', 'graft_colours'},
-    'elements': {'semantics', 'graft', 'graft_floor', 'graft_colours'},
+    'field': {'floor', 'arena_products', 'grafts', 'graft_floor', 'graft_colours', 'texture_atlas'},
+    'elements': {'semantics', 'graft', 'graft_floor', 'graft_colours', 'texture_atlas'},
     'semantics': set(), 'deploy': set(),
 }
-PATHS = {'package', 'index', 'equipment', 'out', 'rules', 'field', 'elements', 'semantics'}
+PATHS = {'package', 'index', 'equipment', 'out', 'rules', 'field', 'elements', 'semantics', 'texture_atlas'}
 
 
 def build_commands(job_path, interpreter=None):
