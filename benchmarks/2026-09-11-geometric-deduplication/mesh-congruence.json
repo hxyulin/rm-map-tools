@@ -1,0 +1,6396 @@
+{
+  "method": "Read-only mesh congruence audit across distinct source nodes.\n\nTests the 24 axis-aligned proper rotations, then 24 reflections, with arbitrary\ntranslation. Requires a bijection of all unique vertices within tolerance and\nidentical oriented triangle connectivity after that mapping. Materials are\ncompared separately. This is evidence about meshes, not exact CAD surfaces.\n",
+  "inputs": {
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/floor.glb": "b3a2ab65a041a1b0a95a6bab1e313b33d2d2373578b3ed02fc2c962f41e85dfb",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/arena-static.glb": "52fa4fc9f458afbb37de889aa8c35da0bb2cbd286eb7b002fbdb5aabb4c60f95",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/base.glb": "e7b1289fc3cf844700bb1501cb03543f083042028884ceb6fa936fe0fe26d297",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/outpost.glb": "545ad562574d1370e80aadcec0c232cb4be3433350fa677e8b9bffe67813a4ce",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/rune.glb": "fbe078369ead3dc284e0c58af7bed268d3d1ff8c5e1cb27eaae8a48ade4071b9",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/dart-station.glb": "ed87d73756f68fccb9adfa2ac870a1e77f38a72dc3a0698d47aedf9444887c19",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/resource-zone.glb": "f2bf4fc0e410a4413a97b8c9e1eca998998b4c15d276628a4850b508b922ec5c",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/centre-platform.glb": "47d2ee19236d3820551ca7384c09b1750c9f03b3b814c2298cdd3c49e5cdd911",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/fortress.glb": "8f5f18708f457dbce4adf3cb5aa2dac4289246882fb5c903dc364053085cafe9",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/tech-core.glb": "c4220952f576de522498165c507d6583008675dcb3ef625d878ebb353a1d68ef",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/undulating-road.glb": "379ee82103b11a7917c63e4168a15da321c38c2f57d42ca2f809d0060ba23960",
+    "/Users/hxyulin/dev/RM/assets/rm2026-field-elements/outpost-footing.glb": "5b3620949ae631d36f3a16a28bd0ee5dbb44c5d4fbb10bdcd239e806579b6af1"
+  },
+  "tolerance_m": 1e-05,
+  "nodes": 1047,
+  "triangles": 5406042,
+  "matches": [
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.02102947235107422
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          4.549896717071533
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -3.2756872177124023
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 6.4373016357421875e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13266965_BREP_87_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.16099995374679565
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "arena-static/source_13266975_BREP_1143_1",
+      "candidate": "arena-static/source_13266976_BREP_1144_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.4020000696182251
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13266981_BREP_1149_1",
+      "candidate": "arena-static/source_13266982_BREP_1150_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.09000015258789062
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267031_BREP_33_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.8399996757507324
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267029_BREP_31_1",
+      "candidate": "arena-static/source_13267032_BREP_34_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.8399996757507324
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267033_BREP_35_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.8399996757507324
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.09000015258789062
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267034_BREP_36_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.08999967575073242
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.024115443229675293
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267038_BREP_37_1",
+      "candidate": "arena-static/source_13267039_BREP_38_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.08999967575073242
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.024115443229675293
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267041_BREP_40_1",
+      "candidate": "arena-static/source_13267042_BREP_41_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.7416572570800781
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267078_BREP_28_1",
+      "candidate": "arena-static/source_13267079_BREP_29_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687586784363
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.344650268554688e-07,
+      "same_colours": false,
+      "reference": "arena-static/source_13267013_BREP_212_1",
+      "candidate": "arena-static/source_13267085_BREP_222_1",
+      "triangles": 68,
+      "vertices": 36
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874079704285
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 6.556510925292969e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267023_BREP_546_1",
+      "candidate": "arena-static/source_13267089_BREP_226_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          17.96572780609131
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -14.251589059829712
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13267005_BREP_153_1",
+      "candidate": "arena-static/source_13267099_BREP_183_1",
+      "triangles": 376,
+      "vertices": 188
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886877059936523
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267021_BREP_1104_1",
+      "candidate": "arena-static/source_13267105_BREP_574_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          5.781749486923218
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.857481718063354
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.8817625045776367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.152557373046875e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267114_BREP_455_A_1",
+      "candidate": "arena-static/source_13267114_BREP_455_A_1_1",
+      "triangles": 176,
+      "vertices": 90
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.857481718063354
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.8817625045776367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.152557373046875e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267114_BREP_455_A_1",
+      "candidate": "arena-static/source_13267114_BREP_455_A_1_2",
+      "triangles": 176,
+      "vertices": 90
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.781749486923218
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267114_BREP_455_A_1",
+      "candidate": "arena-static/source_13267114_BREP_455_A_1_3",
+      "triangles": 176,
+      "vertices": 90
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          5.781749486923218
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.857481956481934
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.8817625045776367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267115_BREP_456_A_1",
+      "candidate": "arena-static/source_13267115_BREP_456_A_1_1",
+      "triangles": 84,
+      "vertices": 44
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.857481956481934
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.8817625045776367
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267115_BREP_456_A_1",
+      "candidate": "arena-static/source_13267115_BREP_456_A_1_2",
+      "triangles": 84,
+      "vertices": 44
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.781749486923218
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267115_BREP_456_A_1",
+      "candidate": "arena-static/source_13267115_BREP_456_A_1_3",
+      "triangles": 84,
+      "vertices": 44
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          10.172908782958984
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.064800024032593
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267118_BREP_49_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          10.172908782958984
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.974800109863281
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267119_BREP_50_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.8399996757507324
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267117_BREP_48_1",
+      "candidate": "arena-static/source_13267120_BREP_51_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          9.332909107208252
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          12.064800024032593
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267121_BREP_52_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          9.332909107208252
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.974800109863281
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267030_BREP_32_1",
+      "candidate": "arena-static/source_13267122_BREP_53_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267038_BREP_37_1",
+      "candidate": "arena-static/source_13267127_BREP_54_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.1986875534057617
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.024115443229675293
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267038_BREP_37_1",
+      "candidate": "arena-static/source_13267128_BREP_55_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267040_BREP_39_1",
+      "candidate": "arena-static/source_13267129_BREP_56_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267041_BREP_40_1",
+      "candidate": "arena-static/source_13267130_BREP_57_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.1986875534057617
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.024115443229675293
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267041_BREP_40_1",
+      "candidate": "arena-static/source_13267131_BREP_58_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          16.51403522491455
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          14.251220941543579
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.596304119739507e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267052_BREP_165_1",
+      "candidate": "arena-static/source_13267147_BREP_198_1",
+      "triangles": 32,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          16.51403498649597
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          14.251220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.596304119739507e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267051_BREP_164_1",
+      "candidate": "arena-static/source_13267148_BREP_199_1",
+      "triangles": 32,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          2.384185791015625e-07
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886873483657837
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.251217997429632e-07,
+      "same_colours": false,
+      "reference": "arena-static/source_13267068_BREP_560_1",
+      "candidate": "arena-static/source_13267153_BREP_1107_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          4.76837158203125e-07
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687586784363
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539062e-07,
+      "same_colours": false,
+      "reference": "arena-static/source_13267072_BREP_564_1",
+      "candidate": "arena-static/source_13267156_BREP_1110_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          2.384185791015625e-07
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886877059936523
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267064_BREP_567_1",
+      "candidate": "arena-static/source_13267159_BREP_1113_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267077_BREP_577_1",
+      "candidate": "arena-static/source_13267175_BREP_572_1",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          23.483580589294434
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.710852861404419
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": false,
+      "reference": "arena-static/source_13267078_BREP_28_1",
+      "candidate": "arena-static/source_13267176_BREP_26_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          25.22523784637451
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -13.710852861404419
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": false,
+      "reference": "arena-static/source_13267078_BREP_28_1",
+      "candidate": "arena-static/source_13267177_BREP_27_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886873483657837
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267082_BREP_545_1",
+      "candidate": "arena-static/source_13267179_BREP_543_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288661301136017
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.2098083538618706e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267181_BREP_3_1_1",
+      "candidate": "arena-static/source_13267181_BREP_3_1_1_1",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288661301136017
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.1490760299348766e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267182_BREP_4_1_1",
+      "candidate": "arena-static/source_13267182_BREP_4_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886614203453064
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.172325134277344e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267183_BREP_5_1_1",
+      "candidate": "arena-static/source_13267183_BREP_5_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886611223220825
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267184_BREP_6_1_1",
+      "candidate": "arena-static/source_13267184_BREP_6_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886611819267273
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          6.556510925292969e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.884864366154897e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267185_BREP_7_1_1",
+      "candidate": "arena-static/source_13267185_BREP_7_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288661241531372
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267186_BREP_8_1_1",
+      "candidate": "arena-static/source_13267186_BREP_8_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288661241531372
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267187_BREP_9_1_1",
+      "candidate": "arena-static/source_13267187_BREP_9_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.23446881771087646
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006139814853668213
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.3328003749250113e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267187_BREP_9_1_1",
+      "candidate": "arena-static/source_13267188_BREP_10_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.054192304611206
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.006140470504760742
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267187_BREP_9_1_1",
+      "candidate": "arena-static/source_13267188_BREP_10_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886613607406616
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.152557373046875e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.6858739404357614e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267189_BREP_11_1_1",
+      "candidate": "arena-static/source_13267189_BREP_11_1_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267206_BREP_220_1",
+      "candidate": "arena-static/source_13267207_BREP_218_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.0999999940395355
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9802322387695312e-08,
+      "same_colours": true,
+      "reference": "arena-static/source_13267206_BREP_220_1",
+      "candidate": "arena-static/source_13267208_BREP_219_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.5762786865234375e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267210_BREP_227_1",
+      "candidate": "arena-static/source_13267210_BREP_227_1_1",
+      "triangles": 144,
+      "vertices": 72
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687527179718
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.172325134277344e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267215_BREP_102_1",
+      "candidate": "arena-static/source_13267221_BREP_114_1",
+      "triangles": 74,
+      "vertices": 39
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886871993541718
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.6816874742507935
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 3.8743019104003906e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267216_BREP_103_1",
+      "candidate": "arena-static/source_13267222_BREP_115_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267241_BREP_1095_1",
+      "candidate": "arena-static/source_13267243_BREP_1098_1",
+      "triangles": 36,
+      "vertices": 20
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          12.461441278457642
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          7.762394547462463
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.29699987173080444
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.8689419052255e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266967_BREP_89_1",
+      "candidate": "arena-static/source_13267244_BREP_123_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.958680152893066
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -3.4223403930664062
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.978687345981598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.364418029785156e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13267248_BREP_127_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.937650799751282
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -3.2404890060424805
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.978687345981598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.3328003749250113e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266964_BREP_86_1",
+      "candidate": "arena-static/source_13267249_BREP_128_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.937650680541992
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          7.608534336090088
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.29699987173080444
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 6.2037526774079116e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13267253_BREP_132_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.9166213274002075
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -3.058645725250244
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.29699987173080444
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.107327289032316e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266964_BREP_86_1",
+      "candidate": "arena-static/source_13267254_BREP_133_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267157_BREP_1111_1",
+      "candidate": "arena-static/source_13267256_BREP_565_1",
+      "triangles": 18,
+      "vertices": 11
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.45254844427108765
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886877059936523
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.805480091749757e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267209_BREP_77_1",
+      "candidate": "arena-static/source_13267260_BREP_72_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.45254844427108765
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886877059936523
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.805480091749757e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267212_BREP_75_1",
+      "candidate": "arena-static/source_13267262_BREP_74_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.5762786865234375e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267227_BREP_120_1",
+      "candidate": "arena-static/source_13267267_BREP_108_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874079704285
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.6816874742507935
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "arena-static/source_13267228_BREP_121_1",
+      "candidate": "arena-static/source_13267268_BREP_109_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.3025630116462708
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.907513976097107
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267206_BREP_220_1",
+      "candidate": "arena-static/source_13267270_BREP_209_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.9025630056858063
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.907513976097107
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.228781230931777e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267206_BREP_220_1",
+      "candidate": "arena-static/source_13267271_BREP_210_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.8025630116462708
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          11.907513976097107
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267206_BREP_220_1",
+      "candidate": "arena-static/source_13267272_BREP_211_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.09096598625183105
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.3795865774154663
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.987022399902344e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13267245_BREP_124_1",
+      "candidate": "arena-static/source_13267274_BREP_135_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          7.958680152893066
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          -0.1336531639099121
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.978687345981598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 3.4240261593687705e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13267278_BREP_139_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          7.937650799751282
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.04819822311401367
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.978687345981598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.3328003749250113e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266964_BREP_86_1",
+      "candidate": "arena-static/source_13267279_BREP_140_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267251_BREP_130_1",
+      "candidate": "arena-static/source_13267281_BREP_142_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          7.937650799751282
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.04819822311401367
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.978687345981598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 2.7314279645418166e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266959_BREP_81_1",
+      "candidate": "arena-static/source_13267284_BREP_145_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13267259_BREP_1092_1",
+      "candidate": "arena-static/source_13267289_BREP_1099_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.3515923023223877
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0009999275207519531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13266959_BREP_81_1",
+      "candidate": "arena-static/source_13267294_BREP_1117_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.0164529085159302
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0009999275207519531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 6.318092346191406e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13267295_BREP_1118_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -7.9376503229141235
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          6.592081308364868
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -2.977687418460846
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 3.816559456248789e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267251_BREP_130_1",
+      "candidate": "arena-static/source_13267297_BREP_1120_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.02102947235107422
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.169748902320862
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0009999275207519531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.106231689453125e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266959_BREP_81_1",
+      "candidate": "arena-static/source_13267299_BREP_1122_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.02102947235107422
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.1983043849468231
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          -3.2746872901916504
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 6.3478946685791016e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266960_BREP_82_1",
+      "candidate": "arena-static/source_13267300_BREP_1123_1",
+      "triangles": 8,
+      "vertices": 6
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          20.399091720581055
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.1703130900859833
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0009999275207519531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.583534496312372e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13266969_BREP_91_1",
+      "candidate": "arena-static/source_13267302_BREP_1125_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.09096574783325195
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.09089916944503784
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 8.060743171171152e-06,
+      "same_colours": true,
+      "reference": "arena-static/source_13267303_BREP_1126_1",
+      "candidate": "arena-static/source_13267304_BREP_1127_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          26.345322608947754
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13266980_BREP_1148_1",
+      "candidate": "arena-static/source_13267307_BREP_1133_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          26.345322608947754
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.6439999341964722
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13266979_BREP_1147_1",
+      "candidate": "arena-static/source_13267312_BREP_1138_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886873483657837
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13266980_BREP_1148_1",
+      "candidate": "arena-static/source_13267313_BREP_1139_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          20.709420204162598
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.4020000696182251
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13266981_BREP_1149_1",
+      "candidate": "arena-static/source_13267314_BREP_1140_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          20.709420204162598
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": false,
+      "reference": "arena-static/source_13266981_BREP_1149_1",
+      "candidate": "arena-static/source_13267315_BREP_1141_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886873111128807
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 6.705522537231445e-08,
+      "same_colours": true,
+      "reference": "arena-static/source_13267318_00_1",
+      "candidate": "arena-static/source_13267318_00_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          24.5
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          13.089999675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267320_BREP_590_1",
+      "candidate": "arena-static/source_13267320_BREP_590_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267321_BREP_591_1",
+      "candidate": "arena-static/source_13267321_BREP_591_1_1",
+      "triangles": 24,
+      "vertices": 14
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          22.661999702453613
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          14.836163759231567
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267322_BREP_592_1",
+      "candidate": "arena-static/source_13267322_BREP_592_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.746000051498413
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267322_BREP_592_1",
+      "candidate": "arena-static/source_13267323_BREP_593_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          22.661999702453613
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          13.090163588523865
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.5762786865234375e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267322_BREP_592_1",
+      "candidate": "arena-static/source_13267323_BREP_593_1_1",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267324_BREP_594_1",
+      "candidate": "arena-static/source_13267324_BREP_594_1_1",
+      "triangles": 68,
+      "vertices": 36
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267325_BREP_595_1",
+      "candidate": "arena-static/source_13267325_BREP_595_1_1",
+      "triangles": 96,
+      "vertices": 48
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "arena-static/source_13267326_BREP_597_1",
+      "candidate": "arena-static/source_13267326_BREP_597_1_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288686990737915
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267327_BREP_598_1",
+      "candidate": "arena-static/source_13267327_BREP_598_1_1",
+      "triangles": 20,
+      "vertices": 12
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267328_BREP_599_1",
+      "candidate": "arena-static/source_13267328_BREP_599_1_1",
+      "triangles": 16,
+      "vertices": 10
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267329_BREP_600_1",
+      "candidate": "arena-static/source_13267329_BREP_600_1_1",
+      "triangles": 16,
+      "vertices": 10
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687229156494
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.76837158203125e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267330_BREP_601_1",
+      "candidate": "arena-static/source_13267330_BREP_601_1_1",
+      "triangles": 48,
+      "vertices": 24
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.2886874675750732
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.384185791015625e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267331_BREP_596_1",
+      "candidate": "arena-static/source_13267331_BREP_596_1_1",
+      "triangles": 112,
+      "vertices": 56
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          3.288687437772751
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.086162567138672e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267586_0010_1",
+      "candidate": "arena-static/source_13267586_0010_1_1",
+      "triangles": 2652,
+      "vertices": 1326
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.015079185366630554
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.007849693298339844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1944189326376765e-07,
+      "same_colours": true,
+      "reference": "base/source_13267633_001_1_46",
+      "candidate": "base/source_13267635_001_1_48",
+      "triangles": 849,
+      "vertices": 426
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.1719999983906746
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.450580596923828e-09,
+      "same_colours": true,
+      "reference": "outpost/source_13267577_0009_1_34",
+      "candidate": "outpost/source_13267578_0009_1_35",
+      "triangles": 168,
+      "vertices": 84
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.29100000858306885
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267682_0013_1_28",
+      "candidate": "dart-station/source_13267683_0013_1_29",
+      "triangles": 288,
+      "vertices": 144
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.75
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267687_0013_1_33",
+      "candidate": "dart-station/source_13267697_0013_1_43",
+      "triangles": 218,
+      "vertices": 109
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.75
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267693_0013_1_39",
+      "candidate": "dart-station/source_13267703_0013_1_49",
+      "triangles": 218,
+      "vertices": 109
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.04430663771927357
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.011074399575591087
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2138452529907227
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.192238405779396e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267728_0013_1_74",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0009323135018348694
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.1222539134323597
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0002498030662536621
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267725_0013_1_71",
+      "candidate": "dart-station/source_13267729_0013_1_75",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05858572665601969
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.012852398678660393
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2100191712379456
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96410134680024e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267724_0013_1_70",
+      "candidate": "dart-station/source_13267733_0013_1_79",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.028802053071558475
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.005537200719118118
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.216238021850586
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267735_0013_1_81",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.028457341250032187
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.12453990988433361
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2180919647216797
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.1922474995817124e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267723_0013_1_69",
+      "candidate": "dart-station/source_13267736_0013_1_82",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.030665447935461998
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.13571590930223465
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.217500329017639
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267723_0013_1_69",
+      "candidate": "dart-station/source_13267738_0013_1_84",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.019920797552913427
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0024383999407291412
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0035761594772338867
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.192101990420136e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267739_0013_1_85",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.023258721455931664
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.004673600196838379
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.006232142448425293
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267737_0013_1_83",
+      "candidate": "dart-station/source_13267743_0013_1_89",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.052551464177668095
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.10853790864348412
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.209874451160431
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.96119202889698e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267730_0013_1_76",
+      "candidate": "dart-station/source_13267745_0013_1_91",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.006279606372117996
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.002489199861884117
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.897615432739258e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96628240423164e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267750_0013_1_96",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.851049304008484e-05
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.008097521960735321
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -2.104043960571289e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267731_0013_1_77",
+      "candidate": "dart-station/source_13267756_0013_1_102",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.028802053071558475
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.007112002000212669
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.216238021850586
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.192238405779396e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267758_0013_1_104",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0017664842307567596
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.00047326087951660156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267759_0013_1_105",
+      "candidate": "dart-station/source_13267760_0013_1_106",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.010795185808092356
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.006959598511457443
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0028924942016601562
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1926839205524788e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267761_0013_1_107",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0469072968699038
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.002590801566839218
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.213148355484009
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.754281321679498e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267724_0013_1_70",
+      "candidate": "dart-station/source_13267762_0013_1_108",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.007021286524832249
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.014582142233848572
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0018813610076904297
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 9.313225746154785e-10,
+      "same_colours": true,
+      "reference": "dart-station/source_13267731_0013_1_77",
+      "candidate": "dart-station/source_13267764_0013_1_110",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.004906902089715004
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0023876018822193146
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0013148188591003418
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267752_0013_1_98",
+      "candidate": "dart-station/source_13267767_0013_1_113",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05726209096610546
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.01544320210814476
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2086122632026672
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267725_0013_1_71",
+      "candidate": "dart-station/source_13267768_0013_1_114",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.04430663771927357
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.00944880023598671
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2138452529907227
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1926748300777466e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267770_0013_1_116",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.06594730913639069
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.015240002423524857
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.206284999847412
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1920928955078125e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267752_0013_1_98",
+      "candidate": "dart-station/source_13267771_0013_1_117",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.01197284460067749
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.001016000285744667
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0032081007957458496
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.963374150388733e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267737_0013_1_83",
+      "candidate": "dart-station/source_13267774_0013_1_120",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0169778848066926
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.10696310922503471
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.004549264907836914
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.1921292747407888e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267773_0013_1_119",
+      "candidate": "dart-station/source_13267775_0013_1_121",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0025528185069561005
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.004724400117993355
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0024455785751342773
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.862645149230957e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267776_0013_1_122",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.06462367624044418
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2048781514167786
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267747_0013_1_93",
+      "candidate": "dart-station/source_13267780_0013_1_126",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05804719589650631
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.13729070872068405
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.20840185880661
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267725_0013_1_71",
+      "candidate": "dart-station/source_13267782_0013_1_128",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.06174331810325384
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.004335781559348106
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.209173083305359
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.08250058582033e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267783_0013_1_129",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.002162223681807518
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.015445742756128311
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0011821985244750977
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.862645149230957e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267731_0013_1_77",
+      "candidate": "dart-station/source_13267785_0013_1_131",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.018548093270510435
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.01752600073814392
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.004969954490661621
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.754281321679498e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267789_0013_1_135",
+      "candidate": "dart-station/source_13267790_0013_1_136",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.006821824237704277
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.12890871055424213
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.003589451313018799
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.96410134680024e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267723_0013_1_69",
+      "candidate": "dart-station/source_13267791_0013_1_137",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05362975411117077
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.11051911115646362
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2113471031188965
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.862645149230957e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267730_0013_1_76",
+      "candidate": "dart-station/source_13267794_0013_1_140",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.007164078298956156
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0004571974277496338
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.001919567584991455
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.962101343243819e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267789_0013_1_135",
+      "candidate": "dart-station/source_13267795_0013_1_141",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.06639016047120094
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.12149190902709961
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.204404830932617
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267747_0013_1_93",
+      "candidate": "dart-station/source_13267796_0013_1_142",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05058870278298855
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.002489199861884117
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.210400402545929
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96628240423164e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267718_0013_1_64",
+      "candidate": "dart-station/source_13267797_0013_1_143",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0517651317641139
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.019964398816227913
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.211846709251404
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.08250058582033e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267773_0013_1_119",
+      "candidate": "dart-station/source_13267798_0013_1_144",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0034929774701595306
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0001346208155155182
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0008256435394287109
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267747_0013_1_93",
+      "candidate": "dart-station/source_13267799_0013_1_145",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.008229602128267288
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267725_0013_1_71",
+      "candidate": "dart-station/source_13267801_0013_1_147",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05868386570364237
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.00416560098528862
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.209992825984955
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96119202889698e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267742_0013_1_88",
+      "candidate": "dart-station/source_13267808_0013_1_154",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.046483295038342476
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.12240630947053432
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.209014415740967
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 2.634178031930877e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267793_0013_1_139",
+      "candidate": "dart-station/source_13267809_0013_1_155",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.015064192935824394
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.009448803961277008
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.004036426544189453
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267737_0013_1_83",
+      "candidate": "dart-station/source_13267810_0013_1_156",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.042786728125065565
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.1297215111553669
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2124908566474915
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.973728342098249e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267789_0013_1_135",
+      "candidate": "dart-station/source_13267814_0013_1_160",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05269744247198105
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.007264399901032448
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.21159690618515
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96628240423164e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267730_0013_1_76",
+      "candidate": "dart-station/source_13267816_0013_1_162",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.061821828596293926
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.002948939800262451
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.209152102470398
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1921292747407888e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267765_0013_1_111",
+      "candidate": "dart-station/source_13267817_0013_1_163",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.03366111544892192
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.001016000285744667
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2131744623184204
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1922474995817124e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267819_0013_1_165",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05142164835706353
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.005791202187538147
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.211938738822937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.3283064365386963e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267789_0013_1_135",
+      "candidate": "dart-station/source_13267820_0013_1_166",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0070180995389819145
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.1306359115988016
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0036420822143554688
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 1.1922747805724963e-07,
+      "same_colours": true,
+      "reference": "dart-station/source_13267725_0013_1_71",
+      "candidate": "dart-station/source_13267821_0013_1_167",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0015702089294791222
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.10879191011190414
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0004207491874694824
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 5.96119202889698e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267730_0013_1_76",
+      "candidate": "dart-station/source_13267822_0013_1_168",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.02021521283313632
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.013055598363280296
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.003655076026916504
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9816870751943665e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267726_0013_1_72",
+      "candidate": "dart-station/source_13267824_0013_1_170",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.04273642925545573
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.00858519971370697
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2142659425735474
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.656612873077393e-10,
+      "same_colours": true,
+      "reference": "dart-station/source_13267789_0013_1_135",
+      "candidate": "dart-station/source_13267825_0013_1_171",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.00024534668773412704
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.007213599979877472
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -6.574392318725586e-05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.967009246215726e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267747_0013_1_93",
+      "candidate": "dart-station/source_13267828_0013_1_174",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.006280835717916489
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.10899510979652405
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0016829967498779297
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": true,
+      "max_vertex_deviation_m": 0.0,
+      "same_colours": true,
+      "reference": "dart-station/source_13267751_0013_1_97",
+      "candidate": "dart-station/source_13267829_0013_1_175",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.05858572665601969
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0006096027791500092
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2100191712379456
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.97282079786955e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267724_0013_1_70",
+      "candidate": "dart-station/source_13267831_0013_1_177",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.0494601153768599
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.00614679791033268
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2107027769088745
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.9199706733309015e-09,
+      "same_colours": true,
+      "reference": "dart-station/source_13267724_0013_1_70",
+      "candidate": "dart-station/source_13267833_0013_1_179",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          0.06089197006076574
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0023876018822193146
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.0,
+          3.2094011902809143
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96119202889698e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267752_0013_1_98",
+      "candidate": "dart-station/source_13267834_0013_1_180",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.6084999889135361
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "dart-station/source_13267837_0013_1_183",
+      "candidate": "dart-station/source_13267838_0013_1_184",
+      "triangles": 446,
+      "vertices": 225
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0017499923706054688
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.960464477539063e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267872_7000001_1_26",
+      "candidate": "resource-zone/source_13267880_7000001_1_34",
+      "triangles": 350,
+      "vertices": 255
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.003810003399848938
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267924_7000001_1_78",
+      "candidate": "resource-zone/source_13267927_7000001_1_81",
+      "triangles": 92,
+      "vertices": 48
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.003810003399848938
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267925_7000001_1_79",
+      "candidate": "resource-zone/source_13267928_7000001_1_82",
+      "triangles": 92,
+      "vertices": 48
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.006349995732307434
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267924_7000001_1_78",
+      "candidate": "resource-zone/source_13267929_7000001_1_83",
+      "triangles": 92,
+      "vertices": 48
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.007620006799697876
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267925_7000001_1_79",
+      "candidate": "resource-zone/source_13267931_7000001_1_85",
+      "triangles": 92,
+      "vertices": 48
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -6.984919309616089e-10
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.013499975204467773
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 5.96050995210068e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267942_7000001_1_96",
+      "candidate": "resource-zone/source_13267946_7000001_1_100",
+      "triangles": 236,
+      "vertices": 120
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0169999897480011
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9802322387695312e-08,
+      "same_colours": true,
+      "reference": "resource-zone/source_13267954_7000001_1_108",
+      "candidate": "resource-zone/source_13267957_7000001_1_111",
+      "triangles": 236,
+      "vertices": 120
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.00026793405413627625
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.725290298461914e-09,
+      "same_colours": false,
+      "reference": "centre-platform/source_13267334_0006_1_2",
+      "candidate": "centre-platform/source_13267345_0006_1_13",
+      "triangles": 380,
+      "vertices": 190
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.00026792287826538086
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9802322387695312e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267335_0006_1_3",
+      "candidate": "centre-platform/source_13267346_0006_1_14",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.00026795268058776855
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9802322387695312e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267336_0006_1_4",
+      "candidate": "centre-platform/source_13267347_0006_1_15",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.0002679377794265747
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267337_0006_1_5",
+      "candidate": "centre-platform/source_13267348_0006_1_16",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.0002679303288459778
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.2351741790771484e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267339_0006_1_7",
+      "candidate": "centre-platform/source_13267350_0006_1_18",
+      "triangles": 402,
+      "vertices": 203
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.0002679377794265747
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267340_0006_1_8",
+      "candidate": "centre-platform/source_13267351_0006_1_19",
+      "triangles": 12,
+      "vertices": 8
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.0002679377794265747
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.4901161193847656e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267341_0006_1_9",
+      "candidate": "centre-platform/source_13267352_0006_1_20",
+      "triangles": 64,
+      "vertices": 34
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.0002679266035556793
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 1.1175870895385742e-08,
+      "same_colours": false,
+      "reference": "centre-platform/source_13267342_0006_1_10",
+      "candidate": "centre-platform/source_13267353_0006_1_21",
+      "triangles": 380,
+      "vertices": 190
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          -1.0,
+          -0.0,
+          -0.0,
+          -0.00026792287826538086
+        ],
+        [
+          -0.0,
+          -1.0,
+          -0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9802322387695312e-08,
+      "same_colours": true,
+      "reference": "centre-platform/source_13267343_0006_1_11",
+      "candidate": "centre-platform/source_13267354_0006_1_22",
+      "triangles": 238,
+      "vertices": 121
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.400000095367432
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.6443400084972382
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.6413436979055405
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.9988008435812754e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267167_BREP_547_1",
+      "candidate": "fortress/source_13267167_BREP_547_1",
+      "triangles": 44,
+      "vertices": 24
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.3999998569488525
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.6443399488925934
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.6413436755537987
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 4.865748688144761e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267168_BREP_147_1_1",
+      "candidate": "fortress/source_13267168_BREP_147_1_1",
+      "triangles": 144,
+      "vertices": 72
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.400000095367432
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.6443399339914322
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.6413436606526375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.1548612355798676e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267164_BREP_93_1",
+      "candidate": "fortress/source_13267164_BREP_93_1",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.399999998509884
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.6443400047719479
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.6413436606526375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 2.533471306550399e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267165_BREP_94_1",
+      "candidate": "fortress/source_13267165_BREP_94_1",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -7.399999834597111
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.6443399786949158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.6413436755537987
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 3.521532505183361e-07,
+      "same_colours": true,
+      "reference": "arena-static/source_13267166_BREP_95_1",
+      "candidate": "fortress/source_13267166_BREP_95_1",
+      "triangles": 28,
+      "vertices": 16
+    },
+    {
+      "candidate_to_reference_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          7.538001298904419
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          8.07479739189148
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.641344040632248
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mirrored": false,
+      "max_vertex_deviation_m": 7.177349673981843e-07,
+      "same_colours": true,
+      "reference": "arena-static/graft_141103_BREP_220",
+      "candidate": "undulating-road/graft_141103_BREP_220",
+      "triangles": 40588,
+      "vertices": 20296
+    }
+  ],
+  "duplicate_nodes": 182,
+  "duplicate_triangles": 51961,
+  "duplicate_triangles_same_colours": 51013,
+  "elapsed_seconds": 31.25508312502643
+}

@@ -1,0 +1,177 @@
+{
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+  "prototype_script_sha256": "e8af3568adfd95bbcd4910dcce4896f9ca3adf1deb684ac72a0e2bb693561353",
+  "product": "001_1_ASM",
+  "placements": 6,
+  "baseline_body_definitions": 402,
+  "shared_body_definitions": 67,
+  "rejected_style_orbits": 0,
+  "validation": {
+    "faces_checked": 402,
+    "all_shapes_valid": true,
+    "face_colours": {
+      "0.6275,0.6275,0.6275": 402
+    },
+    "per_face_colours_match": true,
+    "baseline_storage": {
+      "unique_leaf_definitions": 1,
+      "stored_faces": 402
+    },
+    "shared_storage": {
+      "unique_leaf_definitions": 1,
+      "stored_faces": 67
+    },
+    "max_face_centroid_delta_mm": 1.6124851494864604e-09,
+    "max_face_bbox_delta_mm": 1.5793908403338719e-09,
+    "max_face_area_delta_mm2": 5.153464321949741e-09,
+    "max_bidirectional_cut_area_mm2": 0.0,
+    "boolean_face_pairs_checked": 402,
+    "baseline_import": {
+      "faces": 402,
+      "vertices": 2208,
+      "solids": 0,
+      "shells": 402,
+      "roots": 1,
+      "bbox_min": [
+        -96.9851,
+        1103.1369,
+        -50.3698
+      ],
+      "bbox_max": [
+        96.9851,
+        1156.9137,
+        51.6922
+      ],
+      "face_colours": {
+        "0.6275,0.6275,0.6275": 402
+      }
+    },
+    "candidate_import": {
+      "faces": 402,
+      "vertices": 2208,
+      "solids": 0,
+      "shells": 402,
+      "roots": 1,
+      "bbox_min": [
+        -96.9851,
+        1103.1369,
+        -50.3698
+      ],
+      "bbox_max": [
+        96.9851,
+        1156.9137,
+        51.6922
+      ],
+      "face_colours": {
+        "None": 402
+      }
+    }
+  },
+  "baseline": {
+    "step_bytes": 1243487,
+    "sidecar_bytes": 0,
+    "tar_zstd_bytes": 122891,
+    "compression_seconds": 0.016732165997382253,
+    "sha256": "853241657e2128898487e1f390d72b41f7ac1c1546811b495d1ecd6daf184a36",
+    "archive_verified": true
+  },
+  "shared": {
+    "step_bytes": 225690,
+    "sidecar_bytes": 30078,
+    "tar_zstd_bytes": 26611,
+    "compression_seconds": 0.007669707993045449,
+    "sha256": "6c0baa6a1d631be8099e01e18ace8d113926faefc37af32860c7aa7706d211dd",
+    "archive_verified": true
+  },
+  "whole_product": {
+    "baseline_bodies": 11695,
+    "candidate_bodies": 11360,
+    "unchanged_remainder": {
+      "geometry_records": 1027393,
+      "copied_without_rewriting": true
+    },
+    "validation": {
+      "faces_checked": 12194,
+      "all_shapes_valid": true,
+      "face_colours": {
+        "0.6275,0.6275,0.6275": 12185,
+        "null": 7,
+        "1.0000,0.0000,0.0000": 1,
+        "0.0667,0.9804,0.0627": 1
+      },
+      "per_face_colours_match": true,
+      "baseline_storage": {
+        "unique_leaf_definitions": 2,
+        "stored_faces": 12194
+      },
+      "shared_storage": {
+        "unique_leaf_definitions": 3,
+        "stored_faces": 11859
+      },
+      "max_face_centroid_delta_mm": 1.6124851494864604e-09,
+      "max_face_bbox_delta_mm": 1.5793908403338719e-09,
+      "max_face_area_delta_mm2": 5.153464321949741e-09,
+      "max_bidirectional_cut_area_mm2": null,
+      "boolean_face_pairs_checked": 0,
+      "baseline_import": {
+        "faces": 12194,
+        "vertices": 66915,
+        "solids": 10,
+        "shells": 11701,
+        "roots": 1,
+        "bbox_min": [
+          -436.3095,
+          280.0,
+          -453.0
+        ],
+        "bbox_max": [
+          436.3095,
+          1180.0577,
+          302.7102
+        ],
+        "face_colours": {
+          "0.6275,0.6275,0.6275": 12185,
+          "None": 7,
+          "1.0000,0.0000,0.0000": 1,
+          "0.0667,0.9804,0.0627": 1
+        }
+      },
+      "candidate_import": {
+        "faces": 12194,
+        "vertices": 66915,
+        "solids": 10,
+        "shells": 11701,
+        "roots": 1,
+        "bbox_min": [
+          -436.3095,
+          280.0,
+          -453.0
+        ],
+        "bbox_max": [
+          436.3095,
+          1180.0577,
+          302.7102
+        ],
+        "face_colours": {
+          "None": 12194
+        }
+      }
+    },
+    "baseline": {
+      "step_bytes": 81333913,
+      "sidecar_bytes": 0,
+      "tar_zstd_bytes": 14687467,
+      "compression_seconds": 0.8596377079957165,
+      "sha256": "dc8e0bffb3dab4628d25724c9076caf7e7eddf6a4f76c7be5c9276ea3c7cff0f",
+      "archive_verified": true
+    },
+    "shared": {
+      "step_bytes": 80317434,
+      "sidecar_bytes": 30078,
+      "tar_zstd_bytes": 14658879,
+      "compression_seconds": 0.845368625014089,
+      "sha256": "e9083870a82ee17e5ad27db0aac62e74c07cb7637fd984660ec1194cc5725d5e",
+      "archive_verified": true
+    }
+  }
+}

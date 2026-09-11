@@ -1,0 +1,288 @@
+[
+  {
+    "reference_body": 93562,
+    "candidate_body": 93986,
+    "type": "SHELL_BASED_SURFACE_MODEL",
+    "products": [
+      "001_1_ASM"
+    ],
+    "extracted_step_bytes": [
+      59639,
+      59618
+    ],
+    "reference_valid": true,
+    "candidate_valid": true,
+    "bbox_max_delta_mm": 1.3642420526593924e-12,
+    "area_mm2": [
+      4.143399999941962,
+      4.143399999934902
+    ],
+    "volume_mm3": null,
+    "bidirectional_cut": [
+      {
+        "done": true,
+        "area_mm2": 0.0
+      },
+      {
+        "done": true,
+        "area_mm2": 0.0
+      }
+    ],
+    "reference_to_candidate_matrix_mm": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        -187.27027293480012
+      ],
+      [
+        0.0,
+        0.5735764366175081,
+        0.8191520441024129,
+        512.2453983248976
+      ],
+      [
+        0.0,
+        0.8191520441024129,
+        -0.5735764366175083,
+        -984.0142551806449
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "reference_body": 93556,
+    "candidate_body": 93980,
+    "type": "SHELL_BASED_SURFACE_MODEL",
+    "products": [
+      "001_1_ASM"
+    ],
+    "extracted_step_bytes": [
+      17428,
+      17428
+    ],
+    "reference_valid": true,
+    "candidate_valid": true,
+    "bbox_max_delta_mm": 7.23048287909478e-11,
+    "area_mm2": [
+      0.005999999935847579,
+      0.005999999949866985
+    ],
+    "volume_mm3": null,
+    "bidirectional_cut": [
+      {
+        "done": true,
+        "area_mm2": 0.0
+      },
+      {
+        "done": true,
+        "area_mm2": 0.0
+      }
+    ],
+    "reference_to_candidate_matrix_mm": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        -187.2702729348
+      ],
+      [
+        0.0,
+        0.5735764423850089,
+        0.8191520400639656,
+        512.2453917299376
+      ],
+      [
+        0.0,
+        0.8191520400639656,
+        -0.5735764423850089,
+        -984.0142506504017
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "reference_body": 93858,
+    "candidate_body": 94282,
+    "type": "SHELL_BASED_SURFACE_MODEL",
+    "products": [
+      "001_1_ASM"
+    ],
+    "extracted_step_bytes": [
+      17431,
+      17423
+    ],
+    "reference_valid": true,
+    "candidate_valid": true,
+    "bbox_max_delta_mm": 1.2641976354643703e-10,
+    "area_mm2": [
+      0.018000000016925654,
+      0.01800000000205915
+    ],
+    "volume_mm3": null,
+    "bidirectional_cut": [
+      {
+        "done": true,
+        "area_mm2": 0.0
+      },
+      {
+        "done": true,
+        "area_mm2": 0.0
+      }
+    ],
+    "reference_to_candidate_matrix_mm": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        -187.2702729348
+      ],
+      [
+        0.0,
+        0.5735764354285813,
+        0.8191520449349086,
+        512.2453996824686
+      ],
+      [
+        0.0,
+        0.8191520449349085,
+        -0.5735764354285815,
+        -984.0142561134444
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "reference_body": 428482,
+    "candidate_body": 428520,
+    "type": "MANIFOLD_SOLID_BREP",
+    "products": [
+      "7000001_1_69"
+    ],
+    "extracted_step_bytes": [
+      11915,
+      11928
+    ],
+    "reference_valid": true,
+    "candidate_valid": true,
+    "bbox_max_delta_mm": 5.002220859751105e-12,
+    "area_mm2": [
+      1.4878473468874782,
+      1.4878473468873665
+    ],
+    "volume_mm3": [
+      0.005565046934475364,
+      0.005565046934475035
+    ],
+    "bidirectional_cut": [
+      {
+        "done": true,
+        "area_mm2": 0.0
+      },
+      {
+        "done": true,
+        "area_mm2": 0.0
+      }
+    ],
+    "reference_to_candidate_matrix_mm": [
+      [
+        1.0,
+        -5.5772429978783204e-14,
+        0.0,
+        1.8285454675399535
+      ],
+      [
+        5.5772429978783204e-14,
+        1.0,
+        0.0,
+        -0.7617472782088034
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "reference_body": 428477,
+    "candidate_body": 428505,
+    "type": "MANIFOLD_SOLID_BREP",
+    "products": [
+      "7000001_1_69"
+    ],
+    "extracted_step_bytes": [
+      11924,
+      11928
+    ],
+    "reference_valid": true,
+    "candidate_valid": true,
+    "bbox_max_delta_mm": 5.286437954055145e-12,
+    "area_mm2": [
+      1.4878473467878233,
+      1.4878473468925746
+    ],
+    "volume_mm3": [
+      0.005565046934348562,
+      0.005565046934481778
+    ],
+    "bidirectional_cut": [
+      {
+        "done": true,
+        "area_mm2": 0.0
+      },
+      {
+        "done": true,
+        "area_mm2": 0.0
+      }
+    ],
+    "reference_to_candidate_matrix_mm": [
+      [
+        1.0,
+        -2.230903410020414e-13,
+        0.0,
+        6.797039257461659
+      ],
+      [
+        2.230903410020414e-13,
+        1.0,
+        0.0,
+        -1.062486751535971
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+]

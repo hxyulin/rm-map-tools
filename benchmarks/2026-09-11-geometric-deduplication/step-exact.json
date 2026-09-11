@@ -1,0 +1,572 @@
+{
+  "source": "/Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V1.2.0.step",
+  "source_bytes": 993297750,
+  "method": "Read-only STEP body graph duplicate audit. Does not authorize shape replacement.\n\nMatches ordered geometry graphs after replacing entity IDs with child hashes\nand ignoring simple entity display names, comments and whitespace. Numeric\nspellings, topology order and coordinates must match. Styles and product\nmetadata are deliberately outside the geometry fingerprint.\n",
+  "body_definitions": 79247,
+  "unique_body_fingerprints": 79198,
+  "duplicate_body_definitions": 49,
+  "visited_geometry_entities": 13042250,
+  "duplicate_groups_by_type": {
+    "SHELL_BASED_SURFACE_MODEL": 48,
+    "MANIFOLD_SOLID_BREP": 1
+  },
+  "duplicate_body_groups": [
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        82096,
+        82098
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        82561,
+        82562
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        83026,
+        83028
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        83491,
+        83493
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        83956,
+        83957
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        84421,
+        84423
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        84886,
+        84888
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        85351,
+        85353
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        85816,
+        85818
+      ],
+      "products": [
+        "0007_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99573,
+        99678
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99578,
+        99609
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99597,
+        99628
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99598,
+        99629
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99599,
+        99630
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99600,
+        99631
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99601,
+        99632
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99602,
+        99633
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99603,
+        99634
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99604,
+        99635
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99605,
+        99636
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99606,
+        99637
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99607,
+        99638
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99608,
+        99639
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99679,
+        99774
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99680,
+        99775
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99681,
+        99776
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99682,
+        99711
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99689,
+        99720
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99690,
+        99721
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99691,
+        99722
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99692,
+        99723
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99701,
+        99730
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99702,
+        99731
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99703,
+        99732
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99704,
+        99733
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99705,
+        99734
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99706,
+        99735
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99707,
+        99736
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99708,
+        99737
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99709,
+        99738
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        99710,
+        99739
+      ],
+      "products": [
+        "001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        100968,
+        100978
+      ],
+      "products": [
+        "0013_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        100969,
+        100979
+      ],
+      "products": [
+        "0013_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        126724,
+        126725
+      ],
+      "products": [
+        "7000001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        126726,
+        126727
+      ],
+      "products": [
+        "7000001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        126893,
+        126897
+      ],
+      "products": [
+        "7000001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        126894,
+        126898
+      ],
+      "products": [
+        "7000001_1_ASM"
+      ]
+    },
+    {
+      "type": "SHELL_BASED_SURFACE_MODEL",
+      "count": 2,
+      "body_ids": [
+        126896,
+        126900
+      ],
+      "products": [
+        "7000001_1_ASM"
+      ]
+    },
+    {
+      "type": "MANIFOLD_SOLID_BREP",
+      "count": 2,
+      "body_ids": [
+        427693,
+        427695
+      ],
+      "products": [
+        "BREP_1095_1",
+        "BREP_1098_1"
+      ]
+    }
+  ],
+  "duplicate_product_geometry_groups": [
+    [
+      {
+        "id": 13267241,
+        "name": "BREP_1095_1",
+        "bodies": 1
+      },
+      {
+        "id": 13267243,
+        "name": "BREP_1098_1",
+        "bodies": 1
+      }
+    ]
+  ],
+  "skipped": [],
+  "elapsed_seconds": 41.981902582978364,
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23"
+}

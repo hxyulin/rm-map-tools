@@ -1,0 +1,1525 @@
+{
+  "source": "/Users/hxyulin/dev/RM/assets/rm2026-cad/UTF-8__RMUC2026_V1.2.0.step",
+  "source_sha256": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+  "product": "001_1_ASM",
+  "placements_mm": [
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        -187.27027293480012
+      ],
+      [
+        0.0,
+        0.5735764366175081,
+        0.8191520441024129,
+        512.2453983248976
+      ],
+      [
+        0.0,
+        0.8191520441024129,
+        -0.5735764366175083,
+        -984.0142551806449
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        5.040590167482151e-11
+      ],
+      [
+        0.0,
+        1.0,
+        1.0030087871371052e-11,
+        -30.937157087073075
+      ],
+      [
+        0.0,
+        -1.0030198893673514e-11,
+        1.0000000000000002,
+        59.42972583475108
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        4.000355602329364e-11
+      ],
+      [
+        0.0,
+        0.5735764366197681,
+        0.8191520441008308,
+        481.32775903916786
+      ],
+      [
+        0.0,
+        0.8191520441008306,
+        -0.5735764366197682,
+        -924.6220227075278
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        1.000017846308765e-10
+      ],
+      [
+        0.0,
+        0.5735764361870025,
+        0.8191520444038562,
+        512.2649166202236
+      ],
+      [
+        0.0,
+        0.8191520444038562,
+        -0.5735764361870026,
+        -984.0517488701578
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        187.2702729349
+      ],
+      [
+        0.0,
+        0.9999999999999999,
+        -5.339847453100788e-10,
+        0.019517798610081627
+      ],
+      [
+        0.0,
+        5.339846342877763e-10,
+        1.0000000000000002,
+        -0.03749395761388996
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  ],
+  "orbits": [
+    {
+      "reference_body": 93562,
+      "instance_bodies": [
+        93562,
+        93986,
+        94511,
+        96522,
+        97477,
+        97901
+      ],
+      "geometry_entities": 802,
+      "source_body_names": [
+        "\u5b9e\u4f534616",
+        "\u5b9e\u4f535040",
+        "\u5b9e\u4f535565",
+        "\u5b9e\u4f537576",
+        "\u5b9e\u4f538531",
+        "\u5b9e\u4f538955"
+      ]
+    },
+    {
+      "reference_body": 93556,
+      "instance_bodies": [
+        93556,
+        93980,
+        94505,
+        96516,
+        97471,
+        97895
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534610",
+        "\u5b9e\u4f535034",
+        "\u5b9e\u4f535559",
+        "\u5b9e\u4f537570",
+        "\u5b9e\u4f538525",
+        "\u5b9e\u4f538949"
+      ]
+    },
+    {
+      "reference_body": 93569,
+      "instance_bodies": [
+        93569,
+        93993,
+        94518,
+        96529,
+        97484,
+        97908
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534623",
+        "\u5b9e\u4f535047",
+        "\u5b9e\u4f535572",
+        "\u5b9e\u4f537583",
+        "\u5b9e\u4f538538",
+        "\u5b9e\u4f538962"
+      ]
+    },
+    {
+      "reference_body": 93575,
+      "instance_bodies": [
+        93575,
+        93999,
+        94524,
+        96535,
+        97490,
+        97914
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534629",
+        "\u5b9e\u4f535053",
+        "\u5b9e\u4f535578",
+        "\u5b9e\u4f537589",
+        "\u5b9e\u4f538544",
+        "\u5b9e\u4f538968"
+      ]
+    },
+    {
+      "reference_body": 93581,
+      "instance_bodies": [
+        93581,
+        94005,
+        94530,
+        96541,
+        97496,
+        97920
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534635",
+        "\u5b9e\u4f535059",
+        "\u5b9e\u4f535584",
+        "\u5b9e\u4f537595",
+        "\u5b9e\u4f538550",
+        "\u5b9e\u4f538974"
+      ]
+    },
+    {
+      "reference_body": 93587,
+      "instance_bodies": [
+        93587,
+        94011,
+        94536,
+        96547,
+        97502,
+        97926
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534641",
+        "\u5b9e\u4f535065",
+        "\u5b9e\u4f535590",
+        "\u5b9e\u4f537601",
+        "\u5b9e\u4f538556",
+        "\u5b9e\u4f538980"
+      ]
+    },
+    {
+      "reference_body": 93593,
+      "instance_bodies": [
+        93593,
+        94017,
+        94542,
+        96553,
+        97508,
+        97932
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534647",
+        "\u5b9e\u4f535071",
+        "\u5b9e\u4f535596",
+        "\u5b9e\u4f537607",
+        "\u5b9e\u4f538562",
+        "\u5b9e\u4f538986"
+      ]
+    },
+    {
+      "reference_body": 93599,
+      "instance_bodies": [
+        93599,
+        94023,
+        94548,
+        96559,
+        97514,
+        97938
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534653",
+        "\u5b9e\u4f535077",
+        "\u5b9e\u4f535602",
+        "\u5b9e\u4f537613",
+        "\u5b9e\u4f538568",
+        "\u5b9e\u4f538992"
+      ]
+    },
+    {
+      "reference_body": 93605,
+      "instance_bodies": [
+        93605,
+        94029,
+        94554,
+        96565,
+        97520,
+        97944
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534659",
+        "\u5b9e\u4f535083",
+        "\u5b9e\u4f535608",
+        "\u5b9e\u4f537619",
+        "\u5b9e\u4f538574",
+        "\u5b9e\u4f538998"
+      ]
+    },
+    {
+      "reference_body": 93611,
+      "instance_bodies": [
+        93611,
+        94035,
+        94560,
+        96571,
+        97526,
+        97950
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534665",
+        "\u5b9e\u4f535089",
+        "\u5b9e\u4f535614",
+        "\u5b9e\u4f537625",
+        "\u5b9e\u4f538580",
+        "\u5b9e\u4f539004"
+      ]
+    },
+    {
+      "reference_body": 93617,
+      "instance_bodies": [
+        93617,
+        94041,
+        94566,
+        96577,
+        97532,
+        97956
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534671",
+        "\u5b9e\u4f535095",
+        "\u5b9e\u4f535620",
+        "\u5b9e\u4f537631",
+        "\u5b9e\u4f538586",
+        "\u5b9e\u4f539010"
+      ]
+    },
+    {
+      "reference_body": 93858,
+      "instance_bodies": [
+        93858,
+        94282,
+        94807,
+        96818,
+        97773,
+        98197
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534912",
+        "\u5b9e\u4f535336",
+        "\u5b9e\u4f535861",
+        "\u5b9e\u4f537872",
+        "\u5b9e\u4f538827",
+        "\u5b9e\u4f539251"
+      ]
+    },
+    {
+      "reference_body": 93863,
+      "instance_bodies": [
+        93863,
+        94287,
+        94812,
+        96823,
+        97778,
+        98202
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534917",
+        "\u5b9e\u4f535341",
+        "\u5b9e\u4f535866",
+        "\u5b9e\u4f537877",
+        "\u5b9e\u4f538832",
+        "\u5b9e\u4f539256"
+      ]
+    },
+    {
+      "reference_body": 93868,
+      "instance_bodies": [
+        93868,
+        94292,
+        94817,
+        96828,
+        97783,
+        98207
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534922",
+        "\u5b9e\u4f535346",
+        "\u5b9e\u4f535871",
+        "\u5b9e\u4f537882",
+        "\u5b9e\u4f538837",
+        "\u5b9e\u4f539261"
+      ]
+    },
+    {
+      "reference_body": 93873,
+      "instance_bodies": [
+        93873,
+        94297,
+        94822,
+        96833,
+        97788,
+        98212
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534927",
+        "\u5b9e\u4f535351",
+        "\u5b9e\u4f535876",
+        "\u5b9e\u4f537887",
+        "\u5b9e\u4f538842",
+        "\u5b9e\u4f539266"
+      ]
+    },
+    {
+      "reference_body": 93878,
+      "instance_bodies": [
+        93878,
+        94302,
+        94827,
+        96838,
+        97793,
+        98217
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534932",
+        "\u5b9e\u4f535356",
+        "\u5b9e\u4f535881",
+        "\u5b9e\u4f537892",
+        "\u5b9e\u4f538847",
+        "\u5b9e\u4f539271"
+      ]
+    },
+    {
+      "reference_body": 93883,
+      "instance_bodies": [
+        93883,
+        94307,
+        94832,
+        96843,
+        97798,
+        98222
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534937",
+        "\u5b9e\u4f535361",
+        "\u5b9e\u4f535886",
+        "\u5b9e\u4f537897",
+        "\u5b9e\u4f538852",
+        "\u5b9e\u4f539276"
+      ]
+    },
+    {
+      "reference_body": 93888,
+      "instance_bodies": [
+        93888,
+        94312,
+        94837,
+        96848,
+        97803,
+        98227
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534942",
+        "\u5b9e\u4f535366",
+        "\u5b9e\u4f535891",
+        "\u5b9e\u4f537902",
+        "\u5b9e\u4f538857",
+        "\u5b9e\u4f539281"
+      ]
+    },
+    {
+      "reference_body": 93893,
+      "instance_bodies": [
+        93893,
+        94317,
+        94842,
+        96853,
+        97808,
+        98232
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534947",
+        "\u5b9e\u4f535371",
+        "\u5b9e\u4f535896",
+        "\u5b9e\u4f537907",
+        "\u5b9e\u4f538862",
+        "\u5b9e\u4f539286"
+      ]
+    },
+    {
+      "reference_body": 93898,
+      "instance_bodies": [
+        93898,
+        94322,
+        94847,
+        96858,
+        97813,
+        98237
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534952",
+        "\u5b9e\u4f535376",
+        "\u5b9e\u4f535901",
+        "\u5b9e\u4f537912",
+        "\u5b9e\u4f538867",
+        "\u5b9e\u4f539291"
+      ]
+    },
+    {
+      "reference_body": 93903,
+      "instance_bodies": [
+        93903,
+        94327,
+        94852,
+        96863,
+        97818,
+        98242
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534957",
+        "\u5b9e\u4f535381",
+        "\u5b9e\u4f535906",
+        "\u5b9e\u4f537917",
+        "\u5b9e\u4f538872",
+        "\u5b9e\u4f539296"
+      ]
+    },
+    {
+      "reference_body": 93560,
+      "instance_bodies": [
+        93560,
+        93984,
+        94509,
+        96520,
+        97475,
+        97899
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534614",
+        "\u5b9e\u4f535038",
+        "\u5b9e\u4f535563",
+        "\u5b9e\u4f537574",
+        "\u5b9e\u4f538529",
+        "\u5b9e\u4f538953"
+      ]
+    },
+    {
+      "reference_body": 93570,
+      "instance_bodies": [
+        93570,
+        93994,
+        94519,
+        96530,
+        97485,
+        97909
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534624",
+        "\u5b9e\u4f535048",
+        "\u5b9e\u4f535573",
+        "\u5b9e\u4f537584",
+        "\u5b9e\u4f538539",
+        "\u5b9e\u4f538963"
+      ]
+    },
+    {
+      "reference_body": 93576,
+      "instance_bodies": [
+        93576,
+        94000,
+        94525,
+        96536,
+        97491,
+        97915
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534630",
+        "\u5b9e\u4f535054",
+        "\u5b9e\u4f535579",
+        "\u5b9e\u4f537590",
+        "\u5b9e\u4f538545",
+        "\u5b9e\u4f538969"
+      ]
+    },
+    {
+      "reference_body": 93582,
+      "instance_bodies": [
+        93582,
+        94006,
+        94531,
+        96542,
+        97497,
+        97921
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534636",
+        "\u5b9e\u4f535060",
+        "\u5b9e\u4f535585",
+        "\u5b9e\u4f537596",
+        "\u5b9e\u4f538551",
+        "\u5b9e\u4f538975"
+      ]
+    },
+    {
+      "reference_body": 93588,
+      "instance_bodies": [
+        93588,
+        94012,
+        94537,
+        96548,
+        97503,
+        97927
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534642",
+        "\u5b9e\u4f535066",
+        "\u5b9e\u4f535591",
+        "\u5b9e\u4f537602",
+        "\u5b9e\u4f538557",
+        "\u5b9e\u4f538981"
+      ]
+    },
+    {
+      "reference_body": 93594,
+      "instance_bodies": [
+        93594,
+        94018,
+        94543,
+        96554,
+        97509,
+        97933
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534648",
+        "\u5b9e\u4f535072",
+        "\u5b9e\u4f535597",
+        "\u5b9e\u4f537608",
+        "\u5b9e\u4f538563",
+        "\u5b9e\u4f538987"
+      ]
+    },
+    {
+      "reference_body": 93600,
+      "instance_bodies": [
+        93600,
+        94024,
+        94549,
+        96560,
+        97515,
+        97939
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534654",
+        "\u5b9e\u4f535078",
+        "\u5b9e\u4f535603",
+        "\u5b9e\u4f537614",
+        "\u5b9e\u4f538569",
+        "\u5b9e\u4f538993"
+      ]
+    },
+    {
+      "reference_body": 93606,
+      "instance_bodies": [
+        93606,
+        94030,
+        94555,
+        96566,
+        97521,
+        97945
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534660",
+        "\u5b9e\u4f535084",
+        "\u5b9e\u4f535609",
+        "\u5b9e\u4f537620",
+        "\u5b9e\u4f538575",
+        "\u5b9e\u4f538999"
+      ]
+    },
+    {
+      "reference_body": 93612,
+      "instance_bodies": [
+        93612,
+        94036,
+        94561,
+        96572,
+        97527,
+        97951
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534666",
+        "\u5b9e\u4f535090",
+        "\u5b9e\u4f535615",
+        "\u5b9e\u4f537626",
+        "\u5b9e\u4f538581",
+        "\u5b9e\u4f539005"
+      ]
+    },
+    {
+      "reference_body": 93567,
+      "instance_bodies": [
+        93567,
+        93991,
+        94516,
+        96527,
+        97482,
+        97906
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534621",
+        "\u5b9e\u4f535045",
+        "\u5b9e\u4f535570",
+        "\u5b9e\u4f537581",
+        "\u5b9e\u4f538536",
+        "\u5b9e\u4f538960"
+      ]
+    },
+    {
+      "reference_body": 93573,
+      "instance_bodies": [
+        93573,
+        93997,
+        94522,
+        96533,
+        97488,
+        97912
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534627",
+        "\u5b9e\u4f535051",
+        "\u5b9e\u4f535576",
+        "\u5b9e\u4f537587",
+        "\u5b9e\u4f538542",
+        "\u5b9e\u4f538966"
+      ]
+    },
+    {
+      "reference_body": 93579,
+      "instance_bodies": [
+        93579,
+        94003,
+        94528,
+        96539,
+        97494,
+        97918
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534633",
+        "\u5b9e\u4f535057",
+        "\u5b9e\u4f535582",
+        "\u5b9e\u4f537593",
+        "\u5b9e\u4f538548",
+        "\u5b9e\u4f538972"
+      ]
+    },
+    {
+      "reference_body": 93585,
+      "instance_bodies": [
+        93585,
+        94009,
+        94534,
+        96545,
+        97500,
+        97924
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534639",
+        "\u5b9e\u4f535063",
+        "\u5b9e\u4f535588",
+        "\u5b9e\u4f537599",
+        "\u5b9e\u4f538554",
+        "\u5b9e\u4f538978"
+      ]
+    },
+    {
+      "reference_body": 93591,
+      "instance_bodies": [
+        93591,
+        94015,
+        94540,
+        96551,
+        97506,
+        97930
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534645",
+        "\u5b9e\u4f535069",
+        "\u5b9e\u4f535594",
+        "\u5b9e\u4f537605",
+        "\u5b9e\u4f538560",
+        "\u5b9e\u4f538984"
+      ]
+    },
+    {
+      "reference_body": 93597,
+      "instance_bodies": [
+        93597,
+        94021,
+        94546,
+        96557,
+        97512,
+        97936
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534651",
+        "\u5b9e\u4f535075",
+        "\u5b9e\u4f535600",
+        "\u5b9e\u4f537611",
+        "\u5b9e\u4f538566",
+        "\u5b9e\u4f538990"
+      ]
+    },
+    {
+      "reference_body": 93603,
+      "instance_bodies": [
+        93603,
+        94027,
+        94552,
+        96563,
+        97518,
+        97942
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534657",
+        "\u5b9e\u4f535081",
+        "\u5b9e\u4f535606",
+        "\u5b9e\u4f537617",
+        "\u5b9e\u4f538572",
+        "\u5b9e\u4f538996"
+      ]
+    },
+    {
+      "reference_body": 93609,
+      "instance_bodies": [
+        93609,
+        94033,
+        94558,
+        96569,
+        97524,
+        97948
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534663",
+        "\u5b9e\u4f535087",
+        "\u5b9e\u4f535612",
+        "\u5b9e\u4f537623",
+        "\u5b9e\u4f538578",
+        "\u5b9e\u4f539002"
+      ]
+    },
+    {
+      "reference_body": 93615,
+      "instance_bodies": [
+        93615,
+        94039,
+        94564,
+        96575,
+        97530,
+        97954
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534669",
+        "\u5b9e\u4f535093",
+        "\u5b9e\u4f535618",
+        "\u5b9e\u4f537629",
+        "\u5b9e\u4f538584",
+        "\u5b9e\u4f539008"
+      ]
+    },
+    {
+      "reference_body": 93905,
+      "instance_bodies": [
+        93905,
+        94329,
+        94854,
+        96865,
+        97820,
+        98244
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534959",
+        "\u5b9e\u4f535383",
+        "\u5b9e\u4f535908",
+        "\u5b9e\u4f537919",
+        "\u5b9e\u4f538874",
+        "\u5b9e\u4f539298"
+      ]
+    },
+    {
+      "reference_body": 93908,
+      "instance_bodies": [
+        93908,
+        94332,
+        94857,
+        96868,
+        97823,
+        98247
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534962",
+        "\u5b9e\u4f535386",
+        "\u5b9e\u4f535911",
+        "\u5b9e\u4f537922",
+        "\u5b9e\u4f538877",
+        "\u5b9e\u4f539301"
+      ]
+    },
+    {
+      "reference_body": 93911,
+      "instance_bodies": [
+        93911,
+        94335,
+        94860,
+        96871,
+        97826,
+        98250
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534965",
+        "\u5b9e\u4f535389",
+        "\u5b9e\u4f535914",
+        "\u5b9e\u4f537925",
+        "\u5b9e\u4f538880",
+        "\u5b9e\u4f539304"
+      ]
+    },
+    {
+      "reference_body": 93914,
+      "instance_bodies": [
+        93914,
+        94338,
+        94863,
+        96874,
+        97829,
+        98253
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534968",
+        "\u5b9e\u4f535392",
+        "\u5b9e\u4f535917",
+        "\u5b9e\u4f537928",
+        "\u5b9e\u4f538883",
+        "\u5b9e\u4f539307"
+      ]
+    },
+    {
+      "reference_body": 93917,
+      "instance_bodies": [
+        93917,
+        94341,
+        94866,
+        96877,
+        97832,
+        98256
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534971",
+        "\u5b9e\u4f535395",
+        "\u5b9e\u4f535920",
+        "\u5b9e\u4f537931",
+        "\u5b9e\u4f538886",
+        "\u5b9e\u4f539310"
+      ]
+    },
+    {
+      "reference_body": 93920,
+      "instance_bodies": [
+        93920,
+        94344,
+        94869,
+        96880,
+        97835,
+        98259
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534974",
+        "\u5b9e\u4f535398",
+        "\u5b9e\u4f535923",
+        "\u5b9e\u4f537934",
+        "\u5b9e\u4f538889",
+        "\u5b9e\u4f539313"
+      ]
+    },
+    {
+      "reference_body": 93923,
+      "instance_bodies": [
+        93923,
+        94347,
+        94872,
+        96883,
+        97838,
+        98262
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534977",
+        "\u5b9e\u4f535401",
+        "\u5b9e\u4f535926",
+        "\u5b9e\u4f537937",
+        "\u5b9e\u4f538892",
+        "\u5b9e\u4f539316"
+      ]
+    },
+    {
+      "reference_body": 93926,
+      "instance_bodies": [
+        93926,
+        94350,
+        94875,
+        96886,
+        97841,
+        98265
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534980",
+        "\u5b9e\u4f535404",
+        "\u5b9e\u4f535929",
+        "\u5b9e\u4f537940",
+        "\u5b9e\u4f538895",
+        "\u5b9e\u4f539319"
+      ]
+    },
+    {
+      "reference_body": 93929,
+      "instance_bodies": [
+        93929,
+        94353,
+        94878,
+        96889,
+        97844,
+        98268
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534983",
+        "\u5b9e\u4f535407",
+        "\u5b9e\u4f535932",
+        "\u5b9e\u4f537943",
+        "\u5b9e\u4f538898",
+        "\u5b9e\u4f539322"
+      ]
+    },
+    {
+      "reference_body": 93526,
+      "instance_bodies": [
+        93526,
+        93950,
+        94475,
+        96486,
+        97441,
+        97865
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534580",
+        "\u5b9e\u4f535004",
+        "\u5b9e\u4f535529",
+        "\u5b9e\u4f537540",
+        "\u5b9e\u4f538495",
+        "\u5b9e\u4f538919"
+      ]
+    },
+    {
+      "reference_body": 93631,
+      "instance_bodies": [
+        93631,
+        94055,
+        94580,
+        96591,
+        97546,
+        97970
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534685",
+        "\u5b9e\u4f535109",
+        "\u5b9e\u4f535634",
+        "\u5b9e\u4f537645",
+        "\u5b9e\u4f538600",
+        "\u5b9e\u4f539024"
+      ]
+    },
+    {
+      "reference_body": 93696,
+      "instance_bodies": [
+        93696,
+        94120,
+        94645,
+        96656,
+        97611,
+        98035
+      ],
+      "geometry_entities": 74,
+      "source_body_names": [
+        "\u5b9e\u4f534750",
+        "\u5b9e\u4f535174",
+        "\u5b9e\u4f535699",
+        "\u5b9e\u4f537710",
+        "\u5b9e\u4f538665",
+        "\u5b9e\u4f539089"
+      ]
+    },
+    {
+      "reference_body": 93620,
+      "instance_bodies": [
+        93620,
+        94044,
+        94569,
+        96580,
+        97535,
+        97959
+      ],
+      "geometry_entities": 58,
+      "source_body_names": [
+        "\u5b9e\u4f534674",
+        "\u5b9e\u4f535098",
+        "\u5b9e\u4f535623",
+        "\u5b9e\u4f537634",
+        "\u5b9e\u4f538589",
+        "\u5b9e\u4f539013"
+      ]
+    },
+    {
+      "reference_body": 93948,
+      "instance_bodies": [
+        93948,
+        94372,
+        94897,
+        96908,
+        97863,
+        98287
+      ],
+      "geometry_entities": 58,
+      "source_body_names": [
+        "\u5b9e\u4f535002",
+        "\u5b9e\u4f535426",
+        "\u5b9e\u4f535951",
+        "\u5b9e\u4f537962",
+        "\u5b9e\u4f538917",
+        "\u5b9e\u4f539341"
+      ]
+    },
+    {
+      "reference_body": 93534,
+      "instance_bodies": [
+        93534,
+        93958,
+        94483,
+        96494,
+        97449,
+        97873
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534588",
+        "\u5b9e\u4f535012",
+        "\u5b9e\u4f535537",
+        "\u5b9e\u4f537548",
+        "\u5b9e\u4f538503",
+        "\u5b9e\u4f538927"
+      ]
+    },
+    {
+      "reference_body": 93536,
+      "instance_bodies": [
+        93536,
+        93960,
+        94485,
+        96496,
+        97451,
+        97875
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534590",
+        "\u5b9e\u4f535014",
+        "\u5b9e\u4f535539",
+        "\u5b9e\u4f537550",
+        "\u5b9e\u4f538505",
+        "\u5b9e\u4f538929"
+      ]
+    },
+    {
+      "reference_body": 93545,
+      "instance_bodies": [
+        93545,
+        93969,
+        94494,
+        96505,
+        97460,
+        97884
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534599",
+        "\u5b9e\u4f535023",
+        "\u5b9e\u4f535548",
+        "\u5b9e\u4f537559",
+        "\u5b9e\u4f538514",
+        "\u5b9e\u4f538938"
+      ]
+    },
+    {
+      "reference_body": 93554,
+      "instance_bodies": [
+        93554,
+        93978,
+        94503,
+        96514,
+        97469,
+        97893
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534608",
+        "\u5b9e\u4f535032",
+        "\u5b9e\u4f535557",
+        "\u5b9e\u4f537568",
+        "\u5b9e\u4f538523",
+        "\u5b9e\u4f538947"
+      ]
+    },
+    {
+      "reference_body": 93558,
+      "instance_bodies": [
+        93558,
+        93982,
+        94507,
+        96518,
+        97473,
+        97897
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534612",
+        "\u5b9e\u4f535036",
+        "\u5b9e\u4f535561",
+        "\u5b9e\u4f537572",
+        "\u5b9e\u4f538527",
+        "\u5b9e\u4f538951"
+      ]
+    },
+    {
+      "reference_body": 93564,
+      "instance_bodies": [
+        93564,
+        93988,
+        94513,
+        96524,
+        97479,
+        97903
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534618",
+        "\u5b9e\u4f535042",
+        "\u5b9e\u4f535567",
+        "\u5b9e\u4f537578",
+        "\u5b9e\u4f538533",
+        "\u5b9e\u4f538957"
+      ]
+    },
+    {
+      "reference_body": 93618,
+      "instance_bodies": [
+        93618,
+        94042,
+        94567,
+        96578,
+        97533,
+        97957
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534672",
+        "\u5b9e\u4f535096",
+        "\u5b9e\u4f535621",
+        "\u5b9e\u4f537632",
+        "\u5b9e\u4f538587",
+        "\u5b9e\u4f539011"
+      ]
+    },
+    {
+      "reference_body": 93633,
+      "instance_bodies": [
+        93633,
+        94057,
+        94582,
+        96593,
+        97548,
+        97972
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534687",
+        "\u5b9e\u4f535111",
+        "\u5b9e\u4f535636",
+        "\u5b9e\u4f537647",
+        "\u5b9e\u4f538602",
+        "\u5b9e\u4f539026"
+      ]
+    },
+    {
+      "reference_body": 93635,
+      "instance_bodies": [
+        93635,
+        94059,
+        94584,
+        96595,
+        97550,
+        97974
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534689",
+        "\u5b9e\u4f535113",
+        "\u5b9e\u4f535638",
+        "\u5b9e\u4f537649",
+        "\u5b9e\u4f538604",
+        "\u5b9e\u4f539028"
+      ]
+    },
+    {
+      "reference_body": 93641,
+      "instance_bodies": [
+        93641,
+        94065,
+        94590,
+        96601,
+        97556,
+        97980
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534695",
+        "\u5b9e\u4f535119",
+        "\u5b9e\u4f535644",
+        "\u5b9e\u4f537655",
+        "\u5b9e\u4f538610",
+        "\u5b9e\u4f539034"
+      ]
+    },
+    {
+      "reference_body": 93938,
+      "instance_bodies": [
+        93938,
+        94362,
+        94887,
+        96898,
+        97853,
+        98277
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534992",
+        "\u5b9e\u4f535416",
+        "\u5b9e\u4f535941",
+        "\u5b9e\u4f537952",
+        "\u5b9e\u4f538907",
+        "\u5b9e\u4f539331"
+      ]
+    },
+    {
+      "reference_body": 93942,
+      "instance_bodies": [
+        93942,
+        94366,
+        94891,
+        96902,
+        97857,
+        98281
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534996",
+        "\u5b9e\u4f535420",
+        "\u5b9e\u4f535945",
+        "\u5b9e\u4f537956",
+        "\u5b9e\u4f538911",
+        "\u5b9e\u4f539335"
+      ]
+    },
+    {
+      "reference_body": 93539,
+      "instance_bodies": [
+        93539,
+        93963,
+        94488,
+        96499,
+        97454,
+        97878
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534593",
+        "\u5b9e\u4f535017",
+        "\u5b9e\u4f535542",
+        "\u5b9e\u4f537553",
+        "\u5b9e\u4f538508",
+        "\u5b9e\u4f538932"
+      ]
+    },
+    {
+      "reference_body": 93637,
+      "instance_bodies": [
+        93637,
+        94061,
+        94586,
+        96597,
+        97552,
+        97976
+      ],
+      "geometry_entities": 42,
+      "source_body_names": [
+        "\u5b9e\u4f534691",
+        "\u5b9e\u4f535115",
+        "\u5b9e\u4f535640",
+        "\u5b9e\u4f537651",
+        "\u5b9e\u4f538606",
+        "\u5b9e\u4f539030"
+      ]
+    }
+  ],
+  "rejected_style_orbits": [],
+  "occurrence_names": {
+    "isolated": [
+      "001_1_ASM:0",
+      "001_1_ASM:1",
+      "001_1_ASM:2",
+      "001_1_ASM:3",
+      "001_1_ASM:4",
+      "001_1_ASM:5"
+    ],
+    "whole_product": [
+      "sheet-group:0",
+      "sheet-group:1",
+      "sheet-group:2",
+      "sheet-group:3",
+      "sheet-group:4",
+      "sheet-group:5"
+    ]
+  },
+  "identity_mapping": "Each column of instance_bodies/source_body_names corresponds to one placement; shared STEP bodies retain reference names."
+}
