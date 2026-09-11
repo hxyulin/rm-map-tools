@@ -77,7 +77,31 @@ def simplify_mesh(points, triangles, error_m, lock_borders=True):
     _, labels = connected_components(graph, directed=False)
     missing = ~np.isin(labels[source[:, 0]], labels[triangles.ravel()])
     if missing.any():
-        triangles = np.vstack([triangles, source[missing]])
+        # A common tolerance can erase a small fitting while larger parts still
+        # need that tolerance. Retry only missing components at progressively
+        # finer errors instead of restoring all their original tessellation.
+        pending = source[missing]
+        retained = [triangles]
+        maximum_error = float(error[0])
+        for refinement in range(1, 13):
+            retry_indices = np.ascontiguousarray(pending.ravel(), dtype=np.uint32)
+            retry_result = np.empty_like(retry_indices)
+            retry_error = np.zeros(1, np.float32)
+            limit = error_m / 2 ** refinement
+            retry_count = mo.simplify(retry_result, retry_indices, points,
+                                      target_index_count=3, target_error=limit,
+                                      options=options, result_error=retry_error)
+            if retry_count % 3 or retry_count > len(retry_indices) or not np.isfinite(retry_error[0]) or retry_error[0] > limit + 1e-7:
+                raise ValueError('invalid component refinement result')
+            reduced = retry_result[:retry_count].reshape(-1, 3)
+            retained.append(reduced)
+            maximum_error = max(maximum_error, float(retry_error[0]))
+            pending = pending[~np.isin(labels[pending[:, 0]], labels[reduced.ravel()])]
+            if not len(pending):
+                break
+        # Irreducible and degenerate components still retain their source faces.
+        triangles = np.vstack(retained + [pending])
+        error[0] = maximum_error
     used, inverse = np.unique(triangles, return_inverse=True)
     return points[used], inverse.reshape(-1, 3), float(error[0])
 
@@ -263,6 +287,8 @@ def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_
     record = {'method': METHOD if lock_borders else BOUNDARY_METHOD,
               'error_limit_mm': error_mm, 'deviation_triangles_per_direction': deviation_samples,
               'refinement_factor': 4 if lock_borders else 2,
+              'component_retention': 'retry-missing-at-half-error-v1',
+              'component_refinement_steps': 12,
               'preserved_primitives': list(preserve),
               'estimated_error_mm': max((p.get('estimated_error_mm', 0) for p in details), default=0),
               'sampled_deviation_limit_mm': sampled_limit_mm,
