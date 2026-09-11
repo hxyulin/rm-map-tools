@@ -1,0 +1,32 @@
+{
+  "visual": {
+    "before": 167914,
+    "after_total": 167914,
+    "extracted": {
+      "energy-unit-1": 1343,
+      "energy-unit-2": 1335,
+      "energy-unit-3": 1339,
+      "energy-unit-4": 1366,
+      "energy-unit-5": 1319,
+      "energy-unit-6": 1357
+    },
+    "missing": 0,
+    "extra": 0,
+    "coordinate_comparison_decimal_places": 10
+  },
+  "collision": {
+    "before": 168125,
+    "after_total": 168125,
+    "extracted": {
+      "energy-unit-1": 1681,
+      "energy-unit-2": 1668,
+      "energy-unit-3": 1655,
+      "energy-unit-4": 1697,
+      "energy-unit-5": 1647,
+      "energy-unit-6": 1670
+    },
+    "missing": 0,
+    "extra": 0,
+    "coordinate_comparison_decimal_places": 10
+  }
+}

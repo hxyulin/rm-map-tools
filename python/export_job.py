@@ -20,17 +20,19 @@ SCRIPTS = {
     'elements': 'export_elements.py',
     'semantics': 'export_semantics.py',
     'deploy': 'deploy_field.py',
+    'entities': 'extract_entities.py',
 }
 REQUIRED = {
     'field': {'package', 'index', 'equipment', 'out'},
     'elements': {'package', 'index', 'rules', 'field', 'out'},
     'semantics': {'package', 'rules', 'out'},
+    'entities': {'package', 'rules', 'out'},
     'deploy': {'field', 'elements', 'out'},
 }
 OPTIONAL = {
     'field': {'floor', 'arena_products', 'grafts', 'graft_floor', 'graft_colours', 'texture_atlas'},
     'elements': {'semantics', 'graft', 'graft_floor', 'graft_colours', 'texture_atlas'},
-    'semantics': set(), 'deploy': set(),
+    'semantics': set(), 'deploy': set(), 'entities': set(),
 }
 PATHS = {'package', 'index', 'equipment', 'out', 'rules', 'field', 'elements', 'semantics', 'texture_atlas'}
 
@@ -57,13 +59,13 @@ def build_commands(job_path, interpreter=None):
     outputs = []
     for stage in stages:
         if not isinstance(stage, dict) or not isinstance(stage.get('type'), str) or stage['type'] not in SCRIPTS:
-            raise ValueError('stage: expected field, elements, semantics or deploy')
+            raise ValueError('stage: expected field, elements, semantics, entities or deploy')
         kind = stage['type']
         keys = set(stage) - {'type'}
         if keys - REQUIRED[kind] - OPTIONAL[kind] or REQUIRED[kind] - keys:
             raise ValueError(f'{kind}: required {sorted(REQUIRED[kind])}; optional {sorted(OPTIONAL[kind])}')
         cmd = [interpreter or sys.executable, str(Path(__file__).with_name(SCRIPTS[kind]))]
-        positional = ['package', 'index'] if kind in ('field', 'elements') else ['package'] if kind == 'semantics' else []
+        positional = ['package', 'index'] if kind in ('field', 'elements') else ['package'] if kind in ('semantics', 'entities') else []
         for key in positional:
             cmd.append(path(stage[key]))
         if policy and kind in ('field', 'elements'):

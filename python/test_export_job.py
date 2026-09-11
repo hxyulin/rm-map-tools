@@ -32,6 +32,15 @@ class ExportJobTests(unittest.TestCase):
         self.assertIn('--field=' + str(self.root / 'field'), commands[1])
         self.assertIn('--out=' + str(self.root / 'runtime'), commands[2])
 
+    def test_entity_extraction_stage(self):
+        self.config['stages'].append({'type': 'entities', 'package': 'runtime',
+                                     'rules': 'units.json', 'out': 'with-units'})
+        command = self.build()[-1]
+        self.assertTrue(command[1].endswith('extract_entities.py'))
+        self.assertEqual(command[2], str(self.root / 'runtime'))
+        self.assertIn('--rules=' + str(self.root / 'units.json'), command)
+        self.assertIn('--out=' + str(self.root / 'with-units'), command)
+
     def test_atlas_path_is_relative_to_job(self):
         self.config['stages'][1]['texture_atlas'] = 'artwork.json'
         self.assertIn('--texture-atlas=' + str(self.root / 'artwork.json'), self.build()[1])
