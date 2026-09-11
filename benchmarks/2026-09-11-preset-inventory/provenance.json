@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-11",
+  "base_revision": "7c69d95f83c751e01cb1ee948c0d29f8ff11080c",
+  "python": "3.12.13",
+  "ocp": "8.0.1.0",
+  "numpy": "2.5.3",
+  "inputs": {
+    "source/RMUC2026_V1.2.0.step": "90daa72dfaf83989e9fd81b9ff1fdebcb297fcbbe07006c62f7670d33d454a23",
+    "python/mesh_parts.py": "d4b0ea6d26189f46baa42cbe693065663c9287e390eb70c47707660e9510155e",
+    "python/export_field_package.py": "a0139b3722d4f69e9268c8e6666013290abd8ff98d5be570e5a70b18732e5443",
+    "python/export_policy.py": "7377aa57e70f62543b073f6657cff18db13b54e88471811b48add0ea7871de0c"
+  }
+}

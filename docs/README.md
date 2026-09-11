@@ -10,6 +10,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Getting started](getting-started.md) | Install, download, split, and validate |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
+| [Simplification counts](simplification-results.md) | Preset mesh inventories and measured reduction passes |
 | [Architecture](architecture.md) | Pipeline and code layout |
 | [Interactive viewer](viewer.md) | Inspect models and adjust joints in the documentation site |
 | [Documentation site](site.md) | Run locally, edit pages, and deploy to GitHub Pages |

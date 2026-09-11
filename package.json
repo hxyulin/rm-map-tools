@@ -7,7 +7,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:test": "node --test scripts/viewer.test.mjs",
-    "docs:check": "python3 scripts/check_docs.py",
+    "docs:check": "python3 scripts/update_simplification_counts.py --check && python3 scripts/check_docs.py",
     "docs:models": "ocpenv/bin/python scripts/prepare_viewer_models.py",
     "docs:test-models": "node --test scripts/viewer-models.test.mjs"
   },

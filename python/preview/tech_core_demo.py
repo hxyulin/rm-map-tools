@@ -16,6 +16,10 @@ from semantic_reconstruction import add_reconstruction
 from semantic_geometry import split_geometry
 
 
+# Numerical guards for the disposable display rig, not measured mechanical stops.
+PREVIEW_JOINT_RANGE = (-1.2, 1.2)
+
+
 def rigid_rotation(origin, axis, angle):
     rotation = Rotation.from_rotvec(np.asarray(axis) * angle).as_matrix()
     result = np.eye(4)
@@ -48,7 +52,7 @@ def solve_poses(axes, point, targets, rotations):
             error = Rotation.from_matrix(rotation.T @ pose[:3, :3]).as_rotvec()
             return np.r_[10 * (position-target), error]
 
-        fit = least_squares(residual, q, bounds=(-1.2, 1.2),
+        fit = least_squares(residual, q, bounds=PREVIEW_JOINT_RANGE,
                             ftol=1e-11, xtol=1e-11, gtol=1e-11, max_nfev=150)
         q = fit.x
         pose = forward(axes, q)
@@ -201,6 +205,11 @@ def prepare_demo(document, binary, binding):
               'restored_tool_enclosure_triangles': 26513,
               'tool_enclosure_partition_sha256': fingerprint.hexdigest(),
               'schematic_bearings': [a['name'] for a in additions]}
+    for joint in binding['joints']:
+        display_joint = doc['nodes'][joint['motion_node']]['extras']['rm']['joint']
+        display_joint['preview_range'] = list(PREVIEW_JOINT_RANGE)
+        display_joint['preview_range_source'] = 'CAD display-rig numerical guards; not physical limits'
+    report['preview_joint_range_rad'] = list(PREVIEW_JOINT_RANGE)
     return doc, binary, axes, point, direction, report
 
 

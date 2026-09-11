@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-11",
+  "preview_joint_range_rad": [
+    -1.2,
+    1.2
+  ],
+  "previous_range_rad": [
+    -0.13962634015954636,
+    0.13962634015954636
+  ],
+  "physical_limits_status": "unknown",
+  "geometry_binary_unchanged": true,
+  "other_four_model_files_unchanged": true,
+  "simulator_core": "unchanged fixed reference frames",
+  "tests": {
+    "viewer_model_tests": 6,
+    "viewer_tests": 5,
+    "python_trajectory_tests": 3,
+    "python_articulated_export_tests": 4,
+    "site_build": "passed",
+    "source_and_built_links": "passed",
+    "extracted_zip_model_tests": 6
+  },
+  "browser": {
+    "wider_drag": "target reached; displayed residual 0.5 mm",
+    "elbow_rad": 0.623,
+    "reset": "all six joints restored to zero"
+  },
+  "old_archive_sha256": "fe64cb6fd9440e22e54a55254302f75c90185f44472665c0a00f68bccf8e81e2",
+  "new_archive_sha256": "f7278ecb214dfc00b2a5ae3df0b65a457824f6ffb302aa860ccfedddd6f3df48"
+}

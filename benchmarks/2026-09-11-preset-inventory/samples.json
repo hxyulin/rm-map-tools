@@ -1,0 +1,563 @@
+[
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 10,
+        "split_retries": 82,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "fine_retries": 10,
+        "split_retries": 82,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 2549102,
+      "triangles": 1030355,
+      "glb_bytes": 73545300,
+      "sha256": "37824004d79b8998d68c9cb92b21e0ccedcc33090547263f38acc9537335e37d"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 2549102,
+      "triangles": 1030355,
+      "glb_bytes": 73545300,
+      "sha256": "37824004d79b8998d68c9cb92b21e0ccedcc33090547263f38acc9537335e37d"
+    },
+    "seconds": 11.148280124994926
+  },
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "recovery": {
+      "visual": {
+        "split_retries": 13,
+        "fine_retries": 54,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "split_retries": 13,
+        "fine_retries": 72,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 1613634,
+      "triangles": 670718,
+      "glb_bytes": 46778496,
+      "sha256": "60691a901c69288cd680856f10f00a7f4f17f6967c014ed438ba7ad87d73cf39"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 1245568,
+      "triangles": 525843,
+      "glb_bytes": 36206452,
+      "sha256": "15d1c3bac2493a0716c170b98df3ff44380b33ac98636158572f0261b069b12d"
+    },
+    "seconds": 11.822841624962166
+  },
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 185,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "fine_retries": 296,
+        "split_retries": 6,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 1058895,
+      "triangles": 456640,
+      "glb_bytes": 30895888,
+      "sha256": "07d8c227e8e6430d31512f8b44e4f80fef97994823d4988763848333296ba645"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 992098,
+      "triangles": 435286,
+      "glb_bytes": 29036524,
+      "sha256": "506e171da501f5b3f6d820e647d493333d2689a6b7b8fbff04cafafe3692247e"
+    },
+    "seconds": 9.99566579196835
+  },
+  {
+    "asset": "resource-zone",
+    "part": "7000001_1_ASM",
+    "source_sha256": "d4ff9d3f72bc7ebfac720df23920b8befde219545dca0bc5084326345d887959",
+    "preset": "vision",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 0.5,
+        "angular_deflection_rad": 0.15
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "split_retries": 196,
+        "analytic_bands": 4,
+        "fine_retries": 2,
+        "narrow_face_retries": 1
+      },
+      "collision": {
+        "fine_retries": 10,
+        "split_retries": 82,
+        "analytic_bands": 1,
+        "narrow_face_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 9539040,
+      "triangles": 3609422,
+      "glb_bytes": 272252264,
+      "sha256": "97531f9fbbef9a69b56ad05df946ec150606f465a2baacd8ebd499bdf4fb5ae9"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 3,
+      "vertices": 2549102,
+      "triangles": 1030355,
+      "glb_bytes": 73545300,
+      "sha256": "37824004d79b8998d68c9cb92b21e0ccedcc33090547263f38acc9537335e37d"
+    },
+    "seconds": 35.62515445903409
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "source_sha256": "0c4e7646f5617aa7fc1e26c2635e8a6ec7b9305f90da4811f6c9ffd05a723faa",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "split_retries": 19,
+        "analytic_bands": 3,
+        "fine_retries": 1
+      },
+      "collision": {
+        "split_retries": 19,
+        "analytic_bands": 3,
+        "fine_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 863983,
+      "triangles": 323469,
+      "glb_bytes": 24495312,
+      "sha256": "2e3cd4af76ef8a4b161e3134e812d17fed7f57ca00c5dfbba6457b5df443ff4b"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 863983,
+      "triangles": 323469,
+      "glb_bytes": 24495312,
+      "sha256": "2e3cd4af76ef8a4b161e3134e812d17fed7f57ca00c5dfbba6457b5df443ff4b"
+    },
+    "seconds": 5.101055209001061
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "source_sha256": "0c4e7646f5617aa7fc1e26c2635e8a6ec7b9305f90da4811f6c9ffd05a723faa",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 9,
+        "split_retries": 5
+      },
+      "collision": {
+        "fine_retries": 17,
+        "split_retries": 4
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 588681,
+      "triangles": 222716,
+      "glb_bytes": 16724976,
+      "sha256": "1cb5dad14f04506beb9fce5b2f6555e412007b8a61dc0711b9c44e1f4f9027ff"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 489542,
+      "triangles": 183620,
+      "glb_bytes": 13896136,
+      "sha256": "44263432f5c8a64f2b5572a74e9d2a26c2da5649faf188cbf46eed10e678dba6"
+    },
+    "seconds": 9.079398792004213
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "source_sha256": "0c4e7646f5617aa7fc1e26c2635e8a6ec7b9305f90da4811f6c9ffd05a723faa",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 16
+      },
+      "collision": {
+        "fine_retries": 25
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 429426,
+      "triangles": 160987,
+      "glb_bytes": 12197508,
+      "sha256": "a8bbc893df0aa5e6f3ac0e15cd692ebc82efca2f89a04ff51a10bad500785634"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 403203,
+      "triangles": 150887,
+      "glb_bytes": 11451964,
+      "sha256": "a000c135bbae3e0ad19f22b570a1e3fb62b419dbd516893ca280ac6821630bee"
+    },
+    "seconds": 5.310982041992247
+  },
+  {
+    "asset": "dart-station",
+    "part": "0013_1_ASM",
+    "source_sha256": "0c4e7646f5617aa7fc1e26c2635e8a6ec7b9305f90da4811f6c9ffd05a723faa",
+    "preset": "vision",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 0.5,
+        "angular_deflection_rad": 0.15
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "split_retries": 81,
+        "analytic_bands": 6
+      },
+      "collision": {
+        "split_retries": 19,
+        "analytic_bands": 3,
+        "fine_retries": 1
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 2659649,
+      "triangles": 971104,
+      "glb_bytes": 75341392,
+      "sha256": "b246f544a2c60fffbbe552c3e629816e08624ecc932f4a306d7bdf76492d2a1f"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 13,
+      "vertices": 863983,
+      "triangles": 323469,
+      "glb_bytes": 24495312,
+      "sha256": "2e3cd4af76ef8a4b161e3134e812d17fed7f57ca00c5dfbba6457b5df443ff4b"
+    },
+    "seconds": 21.277717332995962
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "source_sha256": "bbca3c5753b43cf29e5b5eb44d268dfd139f0090034f3bbb5f7cb92ecd62421b",
+    "preset": "legacy",
+    "settings": {
+      "collision_mode": "visual",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "analytic_bands": 3,
+        "split_retries": 7
+      },
+      "collision": {
+        "analytic_bands": 3,
+        "split_retries": 7
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 566434,
+      "triangles": 206617,
+      "glb_bytes": 16075004,
+      "sha256": "4a776ce58ed6a8465806ce3a491764448f889bf782170dd19a987793e60ad061"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 566434,
+      "triangles": 206617,
+      "glb_bytes": 16075004,
+      "sha256": "4a776ce58ed6a8465806ce3a491764448f889bf782170dd19a987793e60ad061"
+    },
+    "seconds": 2.111078166984953
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "source_sha256": "bbca3c5753b43cf29e5b5eb44d268dfd139f0090034f3bbb5f7cb92ecd62421b",
+    "preset": "simulation",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 4.0,
+        "angular_deflection_rad": 0.5
+      },
+      "collision": {
+        "linear_deflection_mm": 6.0,
+        "angular_deflection_rad": 0.65
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 24,
+        "analytic_bands": 3,
+        "split_retries": 4
+      },
+      "collision": {
+        "fine_retries": 26,
+        "analytic_bands": 3,
+        "split_retries": 4
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 393972,
+      "triangles": 145105,
+      "glb_bytes": 11198824,
+      "sha256": "9002df627dbea2bac8649716f9e6a869063c87981018f94a1a4ebf6fcb1e3b10"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 317989,
+      "triangles": 117392,
+      "glb_bytes": 9043124,
+      "sha256": "262a56fffd6eae17b461ae17460539496d4f726a9e5af3408016d83d30bd6a00"
+    },
+    "seconds": 2.9590914170257747
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "source_sha256": "bbca3c5753b43cf29e5b5eb44d268dfd139f0090034f3bbb5f7cb92ecd62421b",
+    "preset": "preview",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 8.0,
+        "angular_deflection_rad": 0.8
+      },
+      "collision": {
+        "linear_deflection_mm": 10.0,
+        "angular_deflection_rad": 0.9
+      }
+    },
+    "recovery": {
+      "visual": {
+        "fine_retries": 24,
+        "analytic_bands": 3,
+        "split_retries": 4
+      },
+      "collision": {
+        "fine_retries": 32,
+        "analytic_bands": 3,
+        "split_retries": 4
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 280155,
+      "triangles": 103805,
+      "glb_bytes": 7972220,
+      "sha256": "32c2f51f705fbae1fb9cf68e63d1d35519e2985f88f914e7bba06d260822c30c"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 266381,
+      "triangles": 98978,
+      "glb_bytes": 7583780,
+      "sha256": "1a37fd7615bc98acbca4f825580866fcaa7d39c7c5ea5abd0704f8b5a0da8042"
+    },
+    "seconds": 2.7036876250058413
+  },
+  {
+    "asset": "base",
+    "part": "001_1_ASM",
+    "source_sha256": "bbca3c5753b43cf29e5b5eb44d268dfd139f0090034f3bbb5f7cb92ecd62421b",
+    "preset": "vision",
+    "settings": {
+      "collision_mode": "separate",
+      "collision_enabled": true,
+      "visual": {
+        "linear_deflection_mm": 0.5,
+        "angular_deflection_rad": 0.15
+      },
+      "collision": {
+        "linear_deflection_mm": 2.0,
+        "angular_deflection_rad": 0.35
+      }
+    },
+    "recovery": {
+      "visual": {
+        "split_retries": 13,
+        "analytic_bands": 3
+      },
+      "collision": {
+        "analytic_bands": 3,
+        "split_retries": 7
+      }
+    },
+    "visual": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 1450831,
+      "triangles": 520109,
+      "glb_bytes": 41055696,
+      "sha256": "95c6c3904dc9949e60a8b6db5b6279c003dae1cd8a70d1fa83fc2dc3408c1fd9"
+    },
+    "collision": {
+      "meshes": 1,
+      "primitives": 4,
+      "vertices": 566434,
+      "triangles": 206617,
+      "glb_bytes": 16075004,
+      "sha256": "4a776ce58ed6a8465806ce3a491764448f889bf782170dd19a987793e60ad061"
+    },
+    "seconds": 5.436452874972019
+  }
+]

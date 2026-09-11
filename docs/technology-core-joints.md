@@ -62,6 +62,12 @@ unchanged.
 
 Inspect the fixed exported frames in the [interactive viewer](viewer.md).
 
+## Interactive end-effector dragging
+
+The [site viewer](viewer.md#drag-the-technology-core-tool) supports position dragging on the separate CAD display rig. A translation handle and a bounded cyclic-coordinate-descent solver use the existing six joint bindings. They use the display rig's ±1.2 rad preview ranges, about ±68.8°, and report residual position error. Orientation is free, and the handle represents the tool assembly's bounding-box center rather than a calibrated insertion point.
+
+This small viewer feature needs no new CAD partition or exported articulation contract. Full pose dragging with held orientation, physical joint limits, and collision avoidance would need additional work. The [range-update validation](../benchmarks/2026-09-11-core-preview-range/README.md) covers the wider exported display ranges. The Python trajectory examples below retain their separate orientation-constrained solver.
+
 ## Rule-based translation demo
 
 This separate demo illustrates the Level 2 requirement in rulebook section
@@ -80,7 +86,7 @@ This rig is never written back into the
 reference GLB and does not add articulated collision to the simulator.
 
 [`tech_core_demo.py`](../python/preview/tech_core_demo.py) stores the rig and
-trajectory implementation. The solver's angular bounds are numerical guards,
+trajectory implementation. The solver and exported display catalog share ±1.2 rad angular bounds. These are numerical guards,
 not mechanical stops. Tests compare its forward kinematics with the exported
 serial-frame transforms. The integration verifier also applies the solution
 to the actual preview scene and checks a 0.100 m tool displacement with

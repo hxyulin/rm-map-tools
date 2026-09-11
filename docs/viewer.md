@@ -16,6 +16,14 @@ The catalog loads models on demand, so opening this page does not download the w
 
 On GitHub, run the [documentation site](site.md) to use the viewer. The catalog needs the generated model bundle described there. Files opened through the local file controls stay in your browser and are not uploaded.
 
+## Drag the Technology Core tool
+
+Select Technology Core and click **Drag tool**. Drag an arrow to move along one world axis, or a plane square to move in two axes. The handle starts at the tool assembly's bounding-box center. The six-joint solver moves that point toward the target and updates the sliders. Click **Stop dragging tool** to hide the handle.
+
+This is position-only inverse kinematics on the CAD display rig. Tool orientation can change; tool roll remains available through its slider. The ±1.2 rad joint ranges, about ±68.8°, are preview guards, not measured mechanical limits. A target outside those ranges can remain unreached, and the viewer reports the remaining distance. Reset restores the rest pose and recenters the handle. Sliders also recenter it.
+
+The solver uses bounded iterations and a 0.5 mm position threshold. It can stop at a local solution, especially near a singular pose. There is no collision avoidance, calibrated tool-center point, or physical controller. The reference export still contains fixed joint frames; see [Technology Core joints](technology-core-joints.md).
+
 ## Open your exports
 
 Choose a GLB file, or choose a folder containing exported URDF or SDF equipment and its meshes. If a folder contains several models, select the one you want from the model list. The viewer resolves relative mesh paths and ROS `package://` paths within the selected folder. Missing or ambiguous files produce an error.

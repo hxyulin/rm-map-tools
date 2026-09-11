@@ -1,5 +1,8 @@
 # Export presets and tessellation policy
 
+See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
+
+
 Use `--preset simulation` for the RoboMaster simulator. It is now the default
 for `export_field_package.py` and `export_elements.py`. Each export produces
 one visual GLB and one collision GLB per asset. These are export-time LODs;
