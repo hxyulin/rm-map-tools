@@ -1,6 +1,6 @@
 # Architecture
 
-[Documentation](README.md) · [Exporting](exporting.md) · [Simplification](simplification.md)
+[Documentation](README.md) · [Exporting](exporting.md) · [Simplification](simplification.md) · [简体中文](zh/architecture.md)
 
 `rm-map-tools` separates source splitting, CAD meshing, and package processing. Rust handles STEP bytes and references. Python uses OCCT to import split parts and produces the assets consumed by viewers and simulators.
 

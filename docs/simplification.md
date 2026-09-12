@@ -1,9 +1,8 @@
 # Simplification
 
+[Documentation](README.md) · [Exporting](exporting.md) · [简体中文](zh/simplification.md)
+
 See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
-
-
-[Documentation](README.md) · [Exporting](exporting.md)
 
 Reduction happens at several stages. STEP splitting preserves source geometry; tessellation approximates CAD surfaces; later mesh simplification is lossy. Not every optimization belongs in every package, and the JSON export runner does not run all the steps below automatically.
 

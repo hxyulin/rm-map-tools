@@ -19,6 +19,14 @@ hashes the sidecar. Rules pin each input GLB hash to prevent applying a part
 mapping to a different release or tessellation. Regenerate the catalog and
 review selectors before updating a hash.
 
+## Contents
+
+- [Authoring rules](#authoring-rules)
+- [Layers](#layers)
+- [Current limits and consumer migration](#current-limits-and-consumer-migration)
+- [Shipped mappings and verification](#shipped-mappings-and-verification)
+- [Explicit geometry partitions](#explicit-geometry-partitions)
+
 ## Authoring rules
 
 A rules file has `schema_version: 1`, optional `source_sha256`, and `assets`

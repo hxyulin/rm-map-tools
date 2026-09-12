@@ -1,7 +1,7 @@
 # Reconstructed base interior
 
 The updated reconstruction follows the open Base in rulebook V2.1.0 Figure
-4-12 and the user's screenshot. It replaces the incorrect full-height triangular
+4-12 and a screenshot of the opened base. It replaces the incorrect full-height triangular
 housing with a low mounting plinth, three lower armor modules, and a narrow central core. The original struts and upper armor assemblies remain.
 
 ![Open base](previews/base-reconstructed-open.png)

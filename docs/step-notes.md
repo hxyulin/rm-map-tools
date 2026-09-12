@@ -4,6 +4,15 @@ Reference for anyone touching `model.rs`, `split.rs` or the package rules.
 Everything here was measured on the files, cross-checked with OCCT XCAF,
 and for V2.0.0 against the 9 h whole-file glb. Dates: 2026-09-10.
 
+## Contents
+
+- [1. The files and their exporters](#1-the-files-and-their-exporters)
+- [2. Ownership: which product owns a body](#2-ownership-which-product-owns-a-body)
+- [3. Assembly transforms](#3-assembly-transforms)
+- [4. Colours](#4-colours)
+- [5. Scanner requirements](#5-scanner-requirements-all-hit-in-practice)
+- [6. Other properties worth knowing](#6-other-properties-worth-knowing)
+
 ## 1. The files and their exporters
 
 | File | Exporter | Schema | Shape |

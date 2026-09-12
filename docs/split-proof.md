@@ -12,6 +12,15 @@ This checks the split, not downstream export filters. The later
 [geometry audit](geometry-audit.md) found and corrected omissions in the
 element exporter.
 
+## Contents
+
+- [1. Pipeline](#1-pipeline)
+- [2. Numbers](#2-numbers)
+- [3. Facts learned about the files](#3-facts-learned-about-the-files)
+- [4. Where things are](#4-where-things-are)
+- [5. Rust implementation](#5-rust-implementation-same-day)
+- [6. Next steps](#6-next-steps)
+
 ## 1. Pipeline
 
 | Stage | Script | What it does |
