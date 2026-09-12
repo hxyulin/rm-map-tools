@@ -2,7 +2,14 @@
 
 [Architecture](architecture.md) · [STEP notes](step-notes.md) · [Split proof](split-proof.md)
 
-## 2. Crates and modules
+## Contents
+
+- [1. Crates and modules](#1-crates-and-modules)
+- [2. Data structures](#2-data-structures)
+- [3. The split](#3-the-split)
+- [4. Verification](#4-verification)
+
+## 1. Crates and modules
 
 ```mermaid
 flowchart TB
@@ -39,7 +46,7 @@ The workspace denies `unsafe_code` except for the single memory-map call in
 `index::map_file`, which carries a SAFETY comment; clippy runs with
 `undocumented_unsafe_blocks = deny`.
 
-## 3. Data structures
+## 2. Data structures
 
 ### Index (in memory)
 
@@ -107,7 +114,7 @@ parts[]: file, product_id, name, entities, rewritten, bytes, seconds,
 face > shell > body, so consumers must use `face_colours` (see
 `step-notes.md` §4).
 
-## 4. The split
+## 3. The split
 
 ```mermaid
 flowchart LR
@@ -162,7 +169,7 @@ Products are split in parallel with rayon; each worker owns a `Scratch`
 - V2.0.0 layer lists hold 91 % of all references; anything that touches
   them per product must be O(members in closure), not O(list).
 
-## 6. Verification
+## 4. Verification
 
 - Unit tests: scanner fixture with a complex instance, comment and string
   containing a `#`; decode escapes; split list matching.

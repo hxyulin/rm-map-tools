@@ -2,6 +2,14 @@
 
 See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
 
+## Contents
+
+- [Commands](#commands)
+- [Exact asset and part overrides](#exact-asset-and-part-overrides)
+- [Deployment and simulator compatibility](#deployment-and-simulator-compatibility)
+- [Text, layers and articulation](#text-layers-and-articulation)
+- [Evidence](#evidence)
+- [Detail audit and configured pipelines](#detail-audit-and-configured-pipelines)
 
 Use `--preset simulation` for the RoboMaster simulator. It is now the default
 for `export_field_package.py` and `export_elements.py`. Each export produces

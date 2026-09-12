@@ -1,8 +1,18 @@
 # Exporting
 
-[Documentation](README.md) · [Getting started](getting-started.md) · [Simplification](simplification.md)
+[Documentation](README.md) · [Getting started](getting-started.md) · [Simplification](simplification.md) · [简体中文](zh/exporting.md)
 
 Choose the output by how you plan to use it. All commands below run from the repository root with the Python environment from [Getting started](getting-started.md).
+
+## Contents
+
+- [Supported outputs](#supported-outputs)
+- [Prepare the inputs](#prepare-the-inputs)
+- [Configure a complete export](#configure-a-complete-export)
+- [Build and inspect a GLB package](#build-and-inspect-a-glb-package)
+- [Export a static simulator scene](#export-a-static-simulator-scene)
+- [Export jointed equipment](#export-jointed-equipment)
+- [Inspect the result](#inspect-the-result)
 
 ## Supported outputs
 

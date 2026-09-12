@@ -34,19 +34,17 @@ target/release/rm-map-tools split out/v20.p21idx -o out/v20
 
 ## 文档
 
-以下指南以英文为主，部分技术文档附有中文说明。
+主指南提供中文版，深度技术参考以英文为主。
 
 | 指南 | 内容 |
 | --- | --- |
 | [入门](docs/getting-started.md) | 安装、下载、拆分与校验 |
 | [导出](docs/exporting.md) | 支持格式、输入要求与命令 |
 | [简化](docs/simplification.md) | 各优化步骤、执行顺序、设置与检查 |
-| [简化统计](docs/simplification-results.md) | 四种预设的网格、图元、顶点、三角形与文件大小，以及后续处理的实测结果 |
 | [架构](docs/architecture.md) | STEP 处理、资源生成及代码结构 |
-| [交互查看器](docs/viewer.md) | 旋转模型与调节关节 |
-| [全部文档](docs/README.md) | 技术参考、几何审计与测试记录 |
+| [全部文档](docs/README.md) | 技术参考、几何审计、测试记录与交互查看器 |
 
-文档也可构建为带交互模型控件的 VitePress 网站。运行 `npm ci` 和 `npm run docs:dev`，或查看[网站设置与 GitHub Pages 部署](docs/site.md)。
+文档也可构建为带交互模型控件和中英文切换的 VitePress 网站。运行 `npm ci` 和 `npm run docs:dev`，或查看[网站设置与 GitHub Pages 部署](docs/site.md)。
 
 ## 许可与源数据
 

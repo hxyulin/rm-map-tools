@@ -6,6 +6,17 @@ source-face classification and consumer migration remain in progress. See
 `../assets/rm2026-field` GLBs, and the supplied RMUC 2026 University Championship
 Rule Manual V2.1.0, dated 2026-07-17. Page numbers below are printed pages.
 
+## Contents
+
+- [Recommendation](#recommendation)
+- [What exists today](#what-exists-today)
+- [Mechanisms to model](#mechanisms-to-model)
+- [Proposed hierarchy and naming](#proposed-hierarchy-and-naming)
+- [Joint contract](#joint-contract)
+- [Armor, LED and color metadata](#armor-led-and-color-metadata)
+- [Rune appearances](#rune-appearances)
+- [Implementation order and acceptance checks](#implementation-order-and-acceptance-checks)
+
 ## Recommendation
 
 Make rm-map-tools own geometry grouping, joint frames, part names, target frames,

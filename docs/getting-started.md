@@ -1,6 +1,6 @@
 # Getting started
 
-[Documentation](README.md) · [Exporting](exporting.md)
+[Documentation](README.md) · [Exporting](exporting.md) · [简体中文](zh/getting-started.md)
 
 Run commands from the repository root. Source CAD and generated packages are local files, excluded from Git.
 

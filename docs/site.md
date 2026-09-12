@@ -1,6 +1,6 @@
 # Documentation site
 
-[Documentation](README.md) · [Interactive viewer](viewer.md)
+[Documentation](README.md) · [Interactive viewer](viewer.md) · [简体中文](zh/site.md)
 
 The site uses VitePress. Guides remain ordinary Markdown in `docs/`, readable on GitHub, with a Vue component for interactive model inspection. There is no separate copy of the documentation to maintain. The lockfile pins VitePress 1.6.4 with a Vite 6.4.3 override to use the patched development server.
 
@@ -35,6 +35,8 @@ For a fork, change the repository links and `base` in `docs/.vitepress/config.mj
 ## Edit the docs
 
 Keep the README focused on what the project does and how to start. Put procedures in the main guides, settings in technical references, and measured results in dated benchmark reports. Add new guides to the documentation index and sidebar.
+
+The main guides are bilingual. Each translated page has a twin under `docs/zh/`; the navbar language switch toggles between them, and on GitHub every file is single-language. When adding a guide, create both `docs/<name>.md` and `docs/zh/<name>.md`, and list both in the locale sidebars of `docs/.vitepress/config.mjs`. Deep technical references and dated benchmark reports stay English-only; Chinese pages link to them with `../` paths. `docs/simplification-results.md` is updated from measured data by script and has no twin.
 
 Repository links outside `docs/` are rewritten to GitHub when building the site. Markdown keeps its original relative paths for repository browsing. The viewer component is registered by the theme; a page can embed it with `<ModelViewer />`. It mounts only in the browser, keeping static builds independent of WebGL.
 

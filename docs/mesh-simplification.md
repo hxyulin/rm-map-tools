@@ -2,6 +2,11 @@
 
 See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
 
+## Contents
+
+- [Settings](#settings)
+- [Geometry, boundaries and semantics](#geometry-boundaries-and-semantics)
+- [Collider contracts and limits](#collider-contracts-and-limits)
 
 The simulator's default export uses checked edge-collapse simplification with
 open boundaries unlocked. Visual and collider settings are independent and live

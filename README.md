@@ -47,12 +47,10 @@ Continue with [Getting started](docs/getting-started.md) to validate the parts, 
 | [Getting started](docs/getting-started.md) | Setup, source downloads, splitting, and validation |
 | [Exporting](docs/exporting.md) | Supported formats, required inputs, and export commands |
 | [Simplification](docs/simplification.md) | Reduction stages, their order, settings, and checks |
-| [Simplification counts](docs/simplification-results.md) | Mesh, primitive, vertex, triangle, and size comparisons for every preset |
 | [Architecture](docs/architecture.md) | STEP processing, asset generation, and code layout |
-| [Interactive viewer](docs/viewer.md) | Orbit models and adjust joint coordinates |
-| [All documentation](docs/README.md) | Technical references, geometry audits, and benchmark reports |
+| [All documentation](docs/README.md) | Technical references, geometry audits, benchmark reports, and the interactive viewer |
 
-The guides also build as a VitePress site with interactive model controls. Run `npm ci` and `npm run docs:dev`, or see [site setup and GitHub Pages deployment](docs/site.md).
+The guides also build as a VitePress site with interactive model controls and an English / 简体中文 language toggle. Run `npm ci` and `npm run docs:dev`, or see [site setup and GitHub Pages deployment](docs/site.md).
 
 ## License and source data
 

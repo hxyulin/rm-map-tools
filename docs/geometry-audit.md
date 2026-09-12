@@ -7,6 +7,13 @@ The lossless text split and the simulator export are different stages. A
 complete split does not prove that a later product or body filter preserved
 every visible part.
 
+## Contents
+
+- [Confirmed export issues](#confirmed-export-issues)
+- [What the text parser accounts for](#what-the-text-parser-accounts-for)
+- [Useful fields beyond the current runtime data](#useful-fields-beyond-the-current-runtime-data)
+- [Validated regeneration](#validated-regeneration)
+
 ## Confirmed export issues
 
 - Both missing M letters in the centre platform's ROBOMASTER lettering are

@@ -5,6 +5,13 @@ glTF nodes and `articulation.json`. These are **joint frames only**. The CAD
 meshes remain at their source pose until their rigid membership is verified.
 Moving the frames does not animate the arm meshes or their collision.
 
+## Contents
+
+- [Interactive end-effector dragging](#interactive-end-effector-dragging)
+- [Rule-based translation demo](#rule-based-translation-demo)
+- [Pose tour](#pose-tour)
+- [Missing enclosure faces in the demo](#missing-enclosure-faces-in-the-demo)
+
 | Joint ID suffix | Source bearing evidence |
 | --- | --- |
 | `base_yaw` | Coaxial vertical base bearing cylinders in `0006_1_ASM` |
