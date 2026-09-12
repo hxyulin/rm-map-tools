@@ -29,6 +29,27 @@ def border_edges(points, triangles):
 
 
 class SimplificationTests(unittest.TestCase):
+    def test_explicit_protection_policy_keeps_metadata_and_selected_optics(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'mesh.glb'
+            points, triangles = grid()
+            writer = GlbWriter('root', {'version': '2.0'})
+            writer.add_node('carriage', points, triangles, ['1,1,1'] * len(triangles))
+            writer.add_node('optic', points, triangles, ['1,0,0'] * len(triangles))
+            writer.write(path)
+            doc, binary = read_glb(path)
+            for node in doc['nodes']:
+                if node.get('name') in {'carriage', 'optic'}:
+                    node['extras'] = {'rm': {'roles': ['dart_detector']}}
+            write_glb(path, doc, binary)
+            original_nodes = copy.deepcopy(doc['nodes'])
+            result = simplify_glb(path, 1, preserve=[{'node': 'optic', 'primitive': 0}],
+                                  protection_policy=lambda metadata: False)
+            changed, _ = read_glb(path)
+            self.assertEqual(original_nodes, changed['nodes'])
+            self.assertLess(result['after_triangles'], result['before_triangles'])
+            self.assertTrue(any(p.get('kept') == 'explicit_preservation' for p in result['primitives']))
+
     def test_retained_degenerate_component_has_valid_gltf_normals(self):
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'mesh.glb'

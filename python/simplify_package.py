@@ -182,7 +182,12 @@ def check_bindings(doc, binding):
                 raise ValueError('semantic surface binding mismatch')
 
 
-def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_samples=None, lock_borders=True, preserve=()):
+def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_samples=None, lock_borders=True, preserve=(), protection_policy=None):
+    """Simplify geometry; an optional metadata predicate selects protected surfaces.
+
+    Consumers that narrow protection must explicitly preserve their actual optical
+    primitives. The predicate never changes semantic metadata or joint bindings.
+    """
     if type(lock_borders) is not bool:
         raise ValueError('lock_borders must be boolean')
     if deviation_samples is None:
@@ -192,6 +197,7 @@ def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_
     if not lock_borders and deviation_samples < 1024:
         raise ValueError('unlocked boundaries require at least 1024 deviation samples per direction')
     sampled_limit_mm = error_mm * 4 if sampled_limit_mm is None else sampled_limit_mm
+    protection = protected if protection_policy is None else protection_policy
     doc, binary = read_glb(path)
     original_nodes = copy.deepcopy(doc['nodes'])
     if doc.get('skins') or doc.get('animations') or doc.get('extensionsUsed') or any('weights' in n or 'skin' in n for n in doc['nodes']):
@@ -217,7 +223,7 @@ def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_
     inherited = {}
     for i, world, parent in scene_nodes(doc):
         node = doc['nodes'][i]
-        inherited[i] = protected(node.get('extras', {}).get('rm', {})) or inherited.get(parent, False)
+        inherited[i] = protection(node.get('extras', {}).get('rm', {})) or inherited.get(parent, False)
         if 'mesh' in node:
             mi = node['mesh']
             scales[mi] = max(scales.get(mi, 0), float(np.linalg.svd(world[:3, :3], compute_uv=False).max()))
@@ -233,7 +239,7 @@ def simplify_glb(path, error_mm, binding=None, sampled_limit_mm=None, deviation_
             reason = None
             if (mi, pi) in preserved:
                 reason = 'explicit_preservation'
-            elif mi in protected_meshes or protected(p.get('extras', {}).get('rm', {})):
+            elif mi in protected_meshes or protection(p.get('extras', {}).get('rm', {})):
                 reason = 'protected_semantics'
             elif set(p['attributes']) - {'POSITION', 'NORMAL'}:
                 reason = 'additional_vertex_attributes'
