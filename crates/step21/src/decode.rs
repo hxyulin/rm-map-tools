@@ -2,6 +2,15 @@
 
 /// Decode a Part 21 string literal body (between the quotes): `''` is a
 /// quote, `\X2\HHHH...\X0\` is UTF-16BE hex, `\X\HH` is a Latin-1 byte.
+///
+/// # Examples
+///
+/// ```
+/// use step21::decode::decode_string;
+/// assert_eq!(decode_string(b"a''b"), "a'b");
+/// assert_eq!(decode_string(b"\\X2\\00E9\\X0\\"), "\u{e9}");
+/// assert_eq!(decode_string(b"\\X\\E9"), "\u{e9}");
+/// ```
 pub fn decode_string(raw: &[u8]) -> String {
     let mut out = String::with_capacity(raw.len());
     let mut i = 0;

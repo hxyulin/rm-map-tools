@@ -91,6 +91,7 @@ pub struct Splitter<'a> {
 pub struct Closure {
     /// Rows in the part, ascending.
     pub rows: Vec<Row>,
+    /// Re-emitted text of the list-carrying boilerplate rows, by row.
     pub rewritten: HashMap<Row, Vec<u8>>,
 }
 
@@ -101,6 +102,7 @@ pub struct Scratch {
 }
 
 impl Scratch {
+    /// Allocate scratch space sized for `ix`, reusable for every product.
     pub fn new(ix: &Index) -> Scratch {
         Scratch {
             mask: vec![false; ix.len()],
@@ -127,6 +129,9 @@ impl Scratch {
 }
 
 impl<'a> Splitter<'a> {
+    /// Precompute the reverse tables (which [`REVERSE`] rows point into
+    /// each entity) for one file. This is the only setup cost; afterwards
+    /// closures reuse it, so splitting many products is cheap.
     pub fn new(ix: &'a Index, m: &'a Model<'a>) -> Splitter<'a> {
         let crlf: &'static [u8] = if memchr::memmem::find(ix.header(), b"\r\n").is_some() {
             b"\r\n"
@@ -351,6 +356,10 @@ impl<'a> Splitter<'a> {
     }
 
     /// Write a part file for `closure`; returns the file size in bytes.
+    ///
+    /// # Errors
+    ///
+    /// Whatever the writer returns.
     pub fn write_part<W: Write>(&self, closure: &Closure, w: &mut W) -> io::Result<u64> {
         let ix = self.ix;
         let data = ix.data();
@@ -468,6 +477,14 @@ fn match_ref_list(t: &[u8]) -> Option<(usize, Vec<u32>)> {
 }
 
 /// `sanitised-name-<product id>.stp`, as the prototype names parts.
+///
+/// # Examples
+///
+/// ```
+/// use step21::split::part_filename;
+/// assert_eq!(part_filename("BREP 9", 14249), "BREP_9-14249.stp");
+/// assert_eq!(part_filename("", 5), "unnamed-5.stp");
+/// ```
 pub fn part_filename(name: &str, product_id: u32) -> String {
     let mut safe = String::new();
     let mut last_sep = false;

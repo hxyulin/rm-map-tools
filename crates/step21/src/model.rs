@@ -48,6 +48,7 @@ pub const TOPO_TYPES: [&str; 16] = [
 /// Interned colour: index into [`Model::colours`].
 pub type ColourId = u32;
 
+/// One interned colour: a canonical RGB key plus every name the file gives it.
 #[derive(Debug, Clone)]
 pub struct Colour {
     /// Canonical key `r,g,b` with four decimals, the identity used everywhere.
@@ -57,31 +58,47 @@ pub struct Colour {
     pub names: BTreeSet<String>,
 }
 
+/// One style row (`STYLED_ITEM` / `OVER_RIDING_STYLED_ITEM`) resolved to
+/// its target geometry and colours.
 #[derive(Debug, Clone, Copy)]
 pub struct Styled {
     /// Styled geometry row (face, shell, body, curve), if it resolves.
     pub target: Option<Row>,
+    /// Surface colour reachable from the style chain, if any.
     pub surface: Option<ColourId>,
+    /// Curve colour reachable from the style chain, if any.
     pub curve: Option<ColourId>,
+    /// True for `OVER_RIDING_STYLED_ITEM`.
     pub overriding: bool,
 }
 
+/// One assembly occurrence (a `NEXT_ASSEMBLY_USAGE_OCCURRENCE` row).
 #[derive(Debug, Clone, Copy)]
 pub struct Occurrence {
+    /// The occurrence row itself.
     pub row: Row,
+    /// Parent product, if its definition chain resolves.
     pub parent: Option<Row>,
+    /// Child product, if its definition chain resolves.
     pub child: Option<Row>,
 }
 
 /// Bounding box from vertex points, in the file's units (mm for DJI files).
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct BBox {
+    /// Smallest vertex coordinates.
     pub min: [f64; 3],
+    /// Largest vertex coordinates.
     pub max: [f64; 3],
+    /// Number of vertex points contributing.
     pub vertices: usize,
 }
 
+/// Product / assembly / body / style relations over an [`Index`], all
+/// expressed in index rows. Build one with [`Model::new`]; construction is
+/// a handful of passes over the index and touches no geometry.
 pub struct Model<'a> {
+    /// The index this model reads from.
     pub ix: &'a Index,
     t_face: u16,
     t_vertex: u16,
@@ -97,9 +114,13 @@ pub struct Model<'a> {
     is_shell: Vec<bool>,
     /// Product rows in file order, and their names.
     pub products: Vec<Row>,
+    /// Product row -> its name from the `PRODUCT` entity.
     pub product_name: HashMap<Row, String>,
+    /// Product definition formation -> owning product row.
     pub pdf_product: HashMap<Row, Row>,
+    /// Product definition -> owning product row.
     pub pd_product: HashMap<Row, Row>,
+    /// Product definition shape -> its product definition row.
     pub pds_pd: HashMap<Row, Row>,
     /// Shape representation row -> owning product row.
     pub rep_product: HashMap<Row, Row>,
@@ -107,17 +128,24 @@ pub struct Model<'a> {
     pub sdr_of_rep: HashMap<Row, Row>,
     /// (SHAPE_REPRESENTATION_RELATIONSHIP row, rep 1, rep 2).
     pub srr: Vec<(Row, Option<Row>, Option<Row>)>,
+    /// Product row -> its shape representation rows, ascending.
     pub product_reps: HashMap<Row, Vec<Row>>,
+    /// Every assembly occurrence, in file order.
     pub occurrences: Vec<Occurrence>,
     /// Parent product -> (occurrence row, child product).
     pub children: HashMap<Option<Row>, Vec<(Row, Option<Row>)>>,
+    /// Products that are nobody's child but have children or
+    /// representations: the assembly roots.
     pub roots: Vec<Row>,
-    /// (body row, representation row) in representation order.
+    /// Every body row with its representation, in representation order.
     pub bodies: Vec<(Row, Row)>,
+    /// Body row -> its representation row.
     pub body_rep: HashMap<Row, Row>,
+    /// Interned colours in first-appearance order; see [`ColourId`].
     pub colours: Vec<Colour>,
     colour_ids: HashMap<String, ColourId>,
     colour_of_row: HashMap<Row, ColourId>,
+    /// Style rows -> their resolved target and colours.
     pub styled: HashMap<Row, Styled>,
     /// Styled geometry row -> style rows in file order.
     pub styles_of_target: HashMap<Row, Vec<Row>>,
@@ -189,6 +217,8 @@ fn type_flags(ix: &Index, names: &[&str]) -> Vec<bool> {
 }
 
 impl<'a> Model<'a> {
+    /// Build the model over `ix` with a handful of index passes. See the
+    /// [crate root](crate) for a complete indexing-to-splitting example.
     pub fn new(ix: &'a Index) -> Model<'a> {
         let t = |n: &str| ix.type_id(n).unwrap_or(u16::MAX);
         let mut m = Model {
@@ -529,6 +559,7 @@ impl<'a> Model<'a> {
             .find_map(|s| self.styled[s].surface)
     }
 
+    /// Canonical `r,g,b` key of an interned colour.
     pub fn colour_key(&self, id: ColourId) -> &str {
         &self.colours[id as usize].key
     }
@@ -565,6 +596,7 @@ impl<'a> Model<'a> {
         })
     }
 
+    /// Face rows of a body, each once, in traversal order.
     pub fn body_faces(&self, body: Row) -> Vec<Row> {
         self.body_faces_shells(body)
             .into_iter()
@@ -661,6 +693,7 @@ impl<'a> Model<'a> {
         hist
     }
 
+    /// Product owning the representation that contains this body.
     pub fn body_product(&self, body: Row) -> Option<Row> {
         self.body_rep
             .get(&body)
@@ -668,6 +701,7 @@ impl<'a> Model<'a> {
             .copied()
     }
 
+    /// Name of product `p`, or `"?"` for rows that are not products.
     pub fn product_name(&self, p: Row) -> &str {
         self.product_name.get(&p).map(|s| s.as_str()).unwrap_or("?")
     }

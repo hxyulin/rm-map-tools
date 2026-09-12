@@ -35,14 +35,22 @@ pub struct Scanned {
 /// Result of scanning one byte range.
 #[derive(Debug, Default)]
 pub struct Chunk {
+    /// Distinct instance type names in order of first appearance; the
+    /// pseudo type [`CPLX`] stands in for complex instances.
     pub type_names: Vec<String>,
+    /// Scanned instances in file order.
     pub entities: Vec<Scanned>,
+    /// Outgoing references of all entities, concatenated in order.
     pub refs: Vec<u32>,
 }
 
 /// Scan `data[start..end]` for instances. `start` must be at or before the
 /// `#` of an instance start (or whitespace before one); `end` must be at an
 /// instance start boundary or the end of the data. Offsets are absolute.
+///
+/// # Errors
+///
+/// [`ScanError::Unterminated`] if the slice ends inside an instance.
 pub fn scan_chunk(data: &[u8], start: usize, end: usize) -> Result<Chunk, ScanError> {
     let mut out = Chunk::default();
     let mut type_ids: Vec<(Vec<u8>, u16)> = Vec::new();
@@ -82,6 +90,7 @@ pub fn scan_chunk(data: &[u8], start: usize, end: usize) -> Result<Chunk, ScanEr
 
 #[derive(Debug, thiserror::Error)]
 pub enum ScanError {
+    /// The data ended before an instance found its terminating `;`.
     #[error("unterminated instance #{id} at byte {offset}")]
     Unterminated { id: u32, offset: usize },
 }
@@ -180,7 +189,8 @@ fn scan_body(data: &[u8], mut pos: usize, refs: &mut Vec<u32>) -> Option<usize> 
     None
 }
 
-/// Byte offset just past `DATA;` (the start of the instance section).
+/// Byte offset just past the `DATA;` line that opens the instance section,
+/// or `None` if the file has none.
 pub fn data_section_start(data: &[u8]) -> Option<usize> {
     memmem::find(data, b"\nDATA;").map(|p| p + b"\nDATA;".len())
 }

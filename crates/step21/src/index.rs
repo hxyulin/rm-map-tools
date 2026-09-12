@@ -17,17 +17,23 @@ const MAGIC: &[u8; 8] = b"P21IDX\0\x01";
 
 #[derive(Debug, thiserror::Error)]
 pub enum IndexError {
+    /// Reading or writing a file failed.
     #[error("io error on {path}: {source}")]
     Io {
         path: PathBuf,
         source: std::io::Error,
     },
+    /// The STEP file has no `DATA;` line, so there is nothing to scan.
     #[error("{0} has no DATA section")]
     NoData(PathBuf),
+    /// The scanner hit an instance with no terminating `;`.
     #[error(transparent)]
     Scan(#[from] scan::ScanError),
+    /// The sidecar was not written by [`Index::save`].
     #[error("{0} is not a step21 index file")]
     BadMagic(PathBuf),
+    /// The STEP file named by the sidecar changed size since the index was
+    /// written, so the byte ranges may no longer match.
     #[error("index {index} was built from {step} of {expected} bytes, file now has {actual} bytes")]
     Stale {
         index: PathBuf,
@@ -46,6 +52,11 @@ fn io(path: &Path) -> impl FnOnce(std::io::Error) -> IndexError + '_ {
 
 /// Entity index of one file: per entity id, type, byte range and outgoing
 /// references, with the source file memory-mapped for text access.
+///
+/// Entities are identified by row (position in the index arrays, file
+/// order); [`Index::row`] maps an entity id to its row and most accessors
+/// take a [`Row`]. Build one with [`Index::build`], or index once and
+/// reuse with [`Index::save`] and [`Index::load`].
 pub struct Index {
     source: PathBuf,
     data_start: u64,
@@ -71,7 +82,22 @@ fn map_file(path: &Path) -> Result<Mmap, IndexError> {
 }
 
 impl Index {
-    /// Scan `path` in parallel and build the index in memory.
+    /// Scan `path` in parallel and build the index in memory. The file
+    /// stays memory-mapped for the lifetime of the index, so it must not
+    /// change while the index lives (the same holds for [`Index::load`]).
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// let ix = step21::Index::build(std::path::Path::new("arena.stp"))?;
+    /// println!("{} entities, {} references", ix.len(), ix.ref_count());
+    /// # Ok::<(), step21::IndexError>(())
+    /// ```
+    ///
+    /// # Errors
+    ///
+    /// Fails if `path` cannot be read or mapped, has no `DATA;` line, or
+    /// contains an unterminated instance (see [`IndexError`]).
     pub fn build(path: &Path) -> Result<Index, IndexError> {
         let mmap = map_file(path)?;
         let data: &[u8] = &mmap;
@@ -132,7 +158,12 @@ impl Index {
         })
     }
 
-    /// Write the sidecar file.
+    /// Write the sidecar file: a compact columnar copy of the index, to be
+    /// reopened later with [`Index::load`] instead of re-scanning.
+    ///
+    /// # Errors
+    ///
+    /// Fails if `path` cannot be written.
     pub fn save(&self, path: &Path) -> Result<(), IndexError> {
         let mut w = BufWriter::new(File::create(path).map_err(io(path))?);
         let e = io(path);
@@ -165,8 +196,22 @@ impl Index {
         r.map_err(e)
     }
 
-    /// Load a sidecar written by [`Index::save`]; the source file it names is
-    /// memory-mapped again and must have the recorded size.
+    /// Load a sidecar written by [`Index::save`] instead of re-scanning
+    /// the STEP file. The source file it names is memory-mapped again and
+    /// must still have the size recorded when the index was written.
+    ///
+    /// # Examples
+    ///
+    /// ```no_run
+    /// let ix = step21::Index::load(std::path::Path::new("arena.p21idx"))?;
+    /// # Ok::<(), step21::IndexError>(())
+    /// ```
+    ///
+    /// # Errors
+    ///
+    /// Fails if the sidecar cannot be read, was not written by
+    /// [`Index::save`], or the named STEP file is missing or resized (see
+    /// [`IndexError::Stale`]).
     pub fn load(path: &Path) -> Result<Index, IndexError> {
         let mut r = BufReader::new(File::open(path).map_err(io(path))?);
         let e = io(path);
@@ -229,6 +274,7 @@ impl Index {
         })
     }
 
+    /// The STEP file this index was built from.
     pub fn source(&self) -> &Path {
         &self.source
     }
@@ -240,27 +286,35 @@ impl Index {
     pub fn header(&self) -> &[u8] {
         &self.mmap[..self.data_start as usize]
     }
+    /// Number of indexed entities.
     pub fn len(&self) -> usize {
         self.ids.len()
     }
+    /// True when there are no entities.
     pub fn is_empty(&self) -> bool {
         self.ids.is_empty()
     }
+    /// Total number of recorded outgoing references.
     pub fn ref_count(&self) -> usize {
         self.refs.len()
     }
+    /// Distinct type names in the file, in first-appearance order.
     pub fn type_names(&self) -> &[String] {
         &self.type_names
     }
+    /// Position of `name` in [`Index::type_names`], if the file has that type.
     pub fn type_id(&self, name: &str) -> Option<u16> {
         self.type_ids.get(name).copied()
     }
+    /// Entity ids in file order: `ids()[row]` is the id of `row`.
     pub fn ids(&self) -> &[u32] {
         &self.ids
     }
+    /// Per-row positions into [`Index::type_names`].
     pub fn types(&self) -> &[u16] {
         &self.types
     }
+    /// Largest entity id in the file; the row lookup table covers `0..=self.max_id()`.
     pub fn max_id(&self) -> u32 {
         (self.row_of_id.len().saturating_sub(1)) as u32
     }
@@ -272,14 +326,17 @@ impl Index {
             _ => None,
         }
     }
+    /// Entity id of `row`.
     #[inline]
     pub fn id(&self, row: Row) -> u32 {
         self.ids[row as usize]
     }
+    /// Position of `row`'s type in [`Index::type_names`].
     #[inline]
     pub fn type_of(&self, row: Row) -> u16 {
         self.types[row as usize]
     }
+    /// Type name of `row`, e.g. `"PRODUCT"`.
     pub fn type_name(&self, row: Row) -> &str {
         &self.type_names[self.types[row as usize] as usize]
     }
