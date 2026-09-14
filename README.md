@@ -55,3 +55,26 @@ The guides also build as a VitePress site with interactive model controls and an
 ## License and source data
 
 Code and documentation are dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE). Official CAD and derived model geometry belong to DJI / RoboMaster and remain subject to their terms. This is an independent project. See [NOTICE.md](NOTICE.md).
+
+## Nix development environment
+
+On Apple Silicon macOS or Linux, review `.envrc` / `flake.nix`, then run
+`direnv allow` once. Alternatively run `nix develop` explicitly.
+
+The shell supplies SDFormat 15.4.0 and matching gz-math 8 Python bindings,
+URDF tools, NumPy, lxml, and native build tools without Homebrew. SDFormat
+and its matching Gazebo dependencies are built from hash-pinned upstream
+release archives in `nix/sdformat.nix`. The first build can take several minutes.
+Run `python3 python/export_sim.py --help` inside this shell. Existing CAD,
+MuJoCo, and USD environments remain separate; this shell covers SDF/URDF
+validation and does not replace the `ocpenv` CAD environment. The shell sets
+`SDFORMAT_PYTHON` so the exporter's child process uses matching bindings even
+when called from the existing Python 3.12 CAD virtualenv.
+
+Commit `flake.nix`, `flake.lock`, `.envrc` and `nix/`; `.direnv/` is local.
+Update nixpkgs with `nix flake update` and validate before committing the lock.
+
+Validate the packaged bindings and exporter integration with
+`nix build .#checks.aarch64-darwin.sdformat --no-link` (use your system name
+on Linux). This parses a synthetic scene and fails if SDFormat is skipped.
+The shell and check have been designed to avoid machine-global library paths.

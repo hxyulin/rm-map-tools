@@ -32,8 +32,8 @@ manifest marks as already inside `arena-static` are exported but not
 placed again. `verify` loads what was written back through the real
 libraries where they exist (MuJoCo, USD) and checks every instance's box
 against the manifest; the SDF is checked structurally, parsed with
-sdformat's Python bindings when they import (Homebrew's osrf/simulation
-`sdformat15` bottle is found automatically), and validated against the
+sdformat's Python bindings when they import (provided by the project
+Nix development shell), and validated against the
 schemas published at sdformat.org (mirrored into ~/.cache/rm-map-tools).
 
 Usage:
@@ -524,23 +524,17 @@ print(json.dumps({"module": mod.__name__, "version": root.version(), "world": wo
 
 
 def sdformat_parse(path):
-    """Parse an SDF file with sdformat's Python bindings in a child
-    interpreter, or return None when no bindings import. Homebrew's
-    osrf/simulation bottles (`brew install osrf/simulation/sdformat15`) are
-    found automatically: their modules live in
-    /opt/homebrew/opt/<pkg>/lib/pythonX.Y/site-packages and need the keg lib
-    directories on DYLD_LIBRARY_PATH; anything else needs PYTHONPATH (and
-    whatever loader path) set by the caller."""
-    import glob
+    """Parse using the current interpreter's SDFormat bindings, or return None.
+
+    SDFORMAT_PYTHON selects the flake's matching interpreter, including when
+    the exporter runs in a CAD virtualenv with a different Python ABI. Other
+    environments may use the current interpreter and PYTHONPATH.
+    Inherit the environment instead of injecting machine-global library paths.
+    """
     import subprocess
 
-    tag = f"python{sys.version_info.major}.{sys.version_info.minor}"
-    env = dict(os.environ)
-    site = [d for d in glob.glob(f"/opt/homebrew/opt/*/lib/{tag}/site-packages") if "sdformat" in d or "gz-math" in d]
-    libs = glob.glob("/opt/homebrew/opt/gz-math*/lib") + glob.glob("/opt/homebrew/opt/sdformat*/lib")
-    env["PYTHONPATH"] = os.pathsep.join(site + [env["PYTHONPATH"]] if env.get("PYTHONPATH") else site)
-    env["DYLD_LIBRARY_PATH"] = os.pathsep.join(libs + [env["DYLD_LIBRARY_PATH"]] if env.get("DYLD_LIBRARY_PATH") else libs)
-    r = subprocess.run([sys.executable, "-c", SDFORMAT_CHILD, path], env=env, capture_output=True, text=True)
+    interpreter = os.environ.get("SDFORMAT_PYTHON", sys.executable)
+    r = subprocess.run([interpreter, "-c", SDFORMAT_CHILD, path], capture_output=True, text=True)
     if r.returncode == 3:
         return None
     if r.returncode != 0:
