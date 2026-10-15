@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "Source product IDs disambiguate repeated opaque names. Root occurrences define ownership; nested fan occurrences stay with their owning assemblies.",
+    "2026 motion bindings, road grafts, reconstructions and decoration selections are not applicable to these source hashes."
+  ],
+  "sources": [
+    {
+      "id": "rmuc2027",
+      "source": "RMUC2027_V1.0.0.stp",
+      "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+      "up_axis": "z",
+      "product_names": {
+        "24844": "floor",
+        "2624872": "centre-platform",
+        "3757431": "red-ramp-dart-station",
+        "3782129": "blue-ramp-dart-station",
+        "3797498": "red-road",
+        "3813320": "blue-road",
+        "4056313": "red-resource-zone",
+        "4056432": "blue-resource-zone",
+        "4059177": "red-fortress",
+        "4059220": "blue-fortress",
+        "4069592": "base-footing",
+        "4070010": "fan-frame",
+        "2717102": "fan",
+        "4774244": "base"
+      }
+    },
+    {
+      "id": "rmul2027-3v3",
+      "source": "RMUL2027_3V3_V1.0.0.stp",
+      "source_sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+      "up_axis": "-y",
+      "product_names": {}
+    },
+    {
+      "id": "rmul2027-1v1",
+      "source": "RMUL2027_1V1_V1.0.0.stp",
+      "source_sha256": "954936e74885493836d73ba215e1c42efc3b6d40279478f5e5d626109e2cf6d1",
+      "up_axis": "-y",
+      "product_names": {}
+    },
+    {
+      "id": "energy-unit2027",
+      "source": "能量单元2027.stp",
+      "source_sha256": "998c5b394dde349311359afb3a547d1ce64296c30c8e45b0aefb1d092860eca9",
+      "up_axis": "y",
+      "product_names": {}
+    }
+  ]
+}

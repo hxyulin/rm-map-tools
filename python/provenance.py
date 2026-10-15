@@ -12,7 +12,7 @@ import subprocess
 
 REPOSITORY = "https://github.com/hxyulin/rm-map-tools"
 COPYRIGHT = (
-    "Geometry derived from DJI / RoboMaster's RMUC2026 competition CAD releases; "
+    "Geometry derived from DJI / RoboMaster competition CAD releases; "
     "for building and simulating RoboMaster robots only. See NOTICE.md in " + REPOSITORY
 )
 

@@ -125,7 +125,12 @@ class Model:
             for rf in R(rep):
                 b = ix.r(int(rf))
                 if b >= 0 and T[b] in self.t_body:
-                    self.bodies.append((b, rep)); self.body_rep[b] = rep
+                    # Property-only representations may reference a body again.
+                    # Keep one entry, preferring its product-owned representation.
+                    old = self.body_rep.get(b)
+                    if old is None or (old not in self.rep_product and rep in self.rep_product):
+                        self.body_rep[b] = rep
+        self.bodies = sorted(self.body_rep.items(), key=lambda item: (item[1], item[0]))
         self._ckey = {}; self.colour_names = {}
         # styles: target row -> (surface colour, curve colour, style row)
         self.style_of_target = collections.defaultdict(list)

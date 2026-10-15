@@ -174,6 +174,7 @@ async function browseMechanisms() {
       const data = await response.json()
       if (data.schema_version !== 1 || !data.models?.length) throw new Error('Invalid mechanism catalog.')
       catalog.value = data.models
+      if (!catalog.value.some(model => model.id === mechanism.value)) mechanism.value = catalog.value[0].id
     } catch (e) { error.value = e.message; status.value = 'Mechanisms unavailable'; return }
   }
   await showMechanism()
@@ -198,7 +199,7 @@ async function showMechanism() {
     if (!active || requestId !== loadId) { disposeObject(candidate); return }
     const binding = api.utils.bindCatalogJoints(gltf, model)
     joints.value = binding.controls; jointNodes = binding.nodes
-    if (model.up[1] === 1) candidate.rotation.x = Math.PI / 2
+    if (Math.abs(model.up[1]) === 1) candidate.rotation.x = model.up[1] * Math.PI / 2
     object = candidate; scene.add(object)
     coreIK = api.createCoreIK(object, model, joints.value, jointNodes)
     coreAvailable.value = !!coreIK

@@ -199,7 +199,7 @@ def write_assembly(splitter, name, label, items, path, source_sha256, pkg=None):
     extra = asm.build(name, label, items)
     header = provenance.step_header(
         ix.header, os.path.basename(path), "export_step_elements.py", ix.source, source_sha256,
-        f"RMUC2026 field element {name} ({label}), reference instance in its local frame",
+        f"RoboMaster field element {name} ({label}), reference instance in its local frame",
     )
     n, nrw, nbytes = splitter.write_closure(mask, rewritten, path, extra=extra, header=header)
     return {"entities_copied": int(n), "entities_rewritten": int(nrw), "entities_added": len(extra), "bytes": int(nbytes) + len(ix.header)}

@@ -406,11 +406,20 @@ impl<'a> Model<'a> {
         for rep in reps {
             for b in ix.refs_of(rep).iter().filter_map(|&r| ix.row(r)) {
                 if self.is_body[ix.type_of(b) as usize] {
-                    self.bodies.push((b, rep));
-                    self.body_rep.insert(b, rep);
+                    // Creo also references surface bodies from property-only
+                    // representations. Count each body once and prefer the
+                    // representation linked to an actual product definition.
+                    let previous = self.body_rep.get(&b).copied();
+                    if previous.is_none_or(|old| {
+                        !self.rep_product.contains_key(&old) && self.rep_product.contains_key(&rep)
+                    }) {
+                        self.body_rep.insert(b, rep);
+                    }
                 }
             }
         }
+        self.bodies = self.body_rep.iter().map(|(&b, &rep)| (b, rep)).collect();
+        self.bodies.sort_unstable_by_key(|&(b, rep)| (rep, b));
     }
 
     fn build_styles(&mut self) {
@@ -704,5 +713,48 @@ impl<'a> Model<'a> {
     /// Name of product `p`, or `"?"` for rows that are not products.
     pub fn product_name(&self, p: Row) -> &str {
         self.product_name.get(&p).map(|s| s.as_str()).unwrap_or("?")
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn shared_surface_body_keeps_product_owner() {
+        let path =
+            std::env::temp_dir().join(format!("step21-shared-surface-{}.stp", std::process::id()));
+        std::fs::write(
+            &path,
+            r#"ISO-10303-21;
+HEADER;
+ENDSEC;
+DATA;
+#1=PRODUCT('surface','surface','',(#4));
+#2=PRODUCT_DEFINITION_FORMATION('','',#1);
+#3=PRODUCT_DEFINITION('','',#2,$);
+#4=PRODUCT_CONTEXT('','part definition',$);
+#5=PRODUCT_DEFINITION_SHAPE('','',#3);
+#6=SHELL_BASED_SURFACE_MODEL('',(#7));
+#7=OPEN_SHELL('',(#8));
+#8=ADVANCED_FACE('',(),$,.T.);
+#9=SHAPE_DEFINITION_REPRESENTATION(#5,#10);
+#10=MANIFOLD_SURFACE_SHAPE_REPRESENTATION('',(#6),$);
+#11=SHAPE_REPRESENTATION('',(#6),$);
+ENDSEC;
+END-ISO-10303-21;
+"#,
+        )
+        .unwrap();
+        let ix = Index::build(&path).unwrap();
+        let model = Model::new(&ix);
+        let body = ix.row(6).unwrap();
+        assert_eq!(model.bodies.len(), 1);
+        assert_eq!(model.body_rep[&body], ix.row(10).unwrap());
+        assert_eq!(model.body_product(body), Some(ix.row(1).unwrap()));
+        let splitter = crate::split::Splitter::new(&ix, &model);
+        let closure = splitter.closure(ix.row(1).unwrap(), &mut crate::split::Scratch::new(&ix));
+        assert!(closure.rows.contains(&body));
+        std::fs::remove_file(path).unwrap();
     }
 }

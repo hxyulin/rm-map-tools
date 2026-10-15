@@ -6,7 +6,8 @@ This repository contains **tooling only**. The field models it operates on
 are the official RoboMaster University Championship (RMUC) and RoboMaster
 University League (RMUL) arena CAD releases published by **DJI / RoboMaster**
 for competition teams (`RMUC2026_V1.2.0.step`, `RMUC2026_V2.0.0.stp`,
-`RMUL2026.stp`, `能量单元.stp` and the files derived from them). Those models,
+`RMUL2026.stp`, `能量单元.stp`, the 2027 RMUC/RMUL releases recorded in
+`source/SOURCES.json`, and the files derived from them). Those models,
 their geometry, names, colours and structure are the intellectual property
 of SZ DJI Technology Co., Ltd. and its RoboMaster organising committee and
 are provided by them under the RoboMaster competition rules and download

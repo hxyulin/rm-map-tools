@@ -1,6 +1,6 @@
 {
   "notes": [
-    "Official DJI / RoboMaster CAD releases for the 2026 season, as published on bbs.robomaster.com.",
+    "Official DJI / RoboMaster CAD releases for the 2026 and 2027 seasons, as published on bbs.robomaster.com.",
     "sha256 is over the file exactly as served; null means nobody has downloaded that file through this script yet (run `download.py record <name>` after a download to fill it in).",
     "These files are never committed (see NOTICE.md and .gitignore); this record and the script are."
   ],
@@ -49,6 +49,42 @@
       "sha256": "35d105a221f4527e5c5e84ac607c94c797ec2e19c734974de4c5485c2c2d5ee7",
       "etag": "19F4C1927FE85A1A7D020EFB1DCA17C6-1",
       "last_modified": "Wed, 22 Oct 2025 04:25:16 GMT"
+    },
+    {
+      "name": "RMUC2027_V1.0.0.stp",
+      "title": "RMUC 2027 场地 V1.0.0",
+      "url": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/080ae7230f6c469c9bec9d2c892797b61791994813953/RMUC2027_V1.0.0.stp",
+      "bytes": 653443279,
+      "sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+      "etag": "565CACC9B50AB83FCC3C9176C80AA798-624",
+      "last_modified": "Wed, 14 Oct 2026 16:21:06 GMT"
+    },
+    {
+      "name": "RMUL2027_3V3_V1.0.0.stp",
+      "title": "RMUL 2027 3V3 场地 V1.0.0",
+      "url": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/12d6225c83984f00a0cc27628ecea74b1791994867597/RMUL2027_3V3_V1.0.0.stp",
+      "bytes": 1989786,
+      "sha256": "7d47c1b6a6a0253a732e46cb122bb84410b11d5134bcb5658104299db4a48ca4",
+      "etag": "D0A9D8C91CB5282714CA4C9C4432D80B-2",
+      "last_modified": "Wed, 14 Oct 2026 16:21:08 GMT"
+    },
+    {
+      "name": "RMUL2027_1V1_V1.0.0.stp",
+      "title": "RMUL 2027 1V1 场地 V1.0.0",
+      "url": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/cc52e8820e32454e8d34bcddc0b8ddfa1791994866414/RMUL2027_1V1_V1.0.0.stp",
+      "bytes": 1111060,
+      "sha256": "954936e74885493836d73ba215e1c42efc3b6d40279478f5e5d626109e2cf6d1",
+      "etag": "B69E75E458124891A8BE9A39899AB396-2",
+      "last_modified": "Wed, 14 Oct 2026 16:21:07 GMT"
+    },
+    {
+      "name": "能量单元2027.stp",
+      "title": "2027 能量单元 (rune energy unit)",
+      "url": "https://hz-rm-bbs-web-prod.oss-cn-hangzhou.aliyuncs.com/2c5546d12d7b4f5492998eef274d2f341791994875037/%E8%83%BD%E9%87%8F%E5%8D%95%E5%85%83.stp",
+      "bytes": 3066696,
+      "sha256": "998c5b394dde349311359afb3a547d1ce64296c30c8e45b0aefb1d092860eca9",
+      "etag": "2E52F85C75CB0F8B7C34C7258CA29553-3",
+      "last_modified": "Wed, 14 Oct 2026 16:21:16 GMT"
     }
   ]
 }

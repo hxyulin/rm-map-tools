@@ -4,6 +4,15 @@
 
 每个资源版本对应一次发布，不同工作流使用各自独立的压缩包。STEP、GLB、仿真器模型和文档查看器共用同一个发布 tag，便于一起核查来源与差异。只有资源版本变化时才需要发新版本，而不是每增加一种文件格式就发一次。
 
+## RoboMaster 2027
+
+[2027 资源发布](https://github.com/hxyulin/rm-map-tools/releases/tag/rm2027-assets-20261015)
+包含 RMUC、RMUL 3v3/1v1 和能量单元的 STEP、优化 GLB、SDF/URDF/USD
+以及 21 个查看器模型。模型保留 CAD 静止姿态，尚未绑定可动关节。
+见[发布说明（英文）](../releases/2026-10-15.md)和[构建指南（英文）](../rm2027.md)。
+
+## RMUC 2026
+
 | 下载 | 用途 |
 | --- | --- |
 | `rmuc2026-cad-step.zip` | 可编辑的基于源文件的 STEP 装配与位置元数据 |

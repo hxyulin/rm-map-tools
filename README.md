@@ -40,6 +40,10 @@ The download helper resumes interrupted transfers and verifies checksums. The sp
 
 Continue with [Getting started](docs/getting-started.md) to validate the parts, or [Exporting](docs/exporting.md) to build a simulator package. CAD processing uses a separate Python environment with OCCT.
 
+For the RMUC 2027, RMUL 2027 3v3/1v1, and energy-unit sources, see the
+[2027 asset build workflow](docs/rm2027.md). It generates CAD, optimized GLB,
+SDF/URDF/USD, and viewer archives from the checksum-pinned 2027 assemblies.
+
 ## Documentation
 
 | Guide | What you will find |
