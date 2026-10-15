@@ -6,18 +6,37 @@ import { pathToFileURL } from 'node:url'
 import { gunzipSync } from 'node:zlib'
 import { createHash } from 'node:crypto'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { Vector3 } from 'three'
+import { Box3, Vector3 } from 'three'
 import { bindCatalogJoints } from '../docs/.vitepress/theme/components/model-utils.mjs'
 
 const root = process.env.VIEWER_MODELS_DIR
   ? pathToFileURL(path.resolve(process.env.VIEWER_MODELS_DIR) + path.sep)
   : new URL('../docs/public/models/', import.meta.url)
 const catalog = JSON.parse(fs.readFileSync(new URL('catalog.json', root)))
-assert.deepEqual(catalog.models.map(m => m.id), ['base', 'rune', 'outpost', 'dart-station', 'tech-core'])
-for (const model of catalog.models) test(`${model.label}: every control moves bound CAD geometry and resets`, async () => {
+const season = process.env.VIEWER_MODELS_SEASON || '2026'
+assert.ok(['2026', '2027'].includes(season), 'unknown catalog season')
+assert.equal(catalog.schema_version, 1)
+if (season === '2026') {
+  assert.deepEqual(catalog.models.map(m => m.id), ['base', 'rune', 'outpost', 'dart-station', 'tech-core'])
+} else {
+  const expected = ['floor', 'centre-platform', 'red-ramp-dart-station', 'blue-ramp-dart-station',
+    'red-road', 'blue-road', 'red-resource-zone', 'blue-resource-zone', 'red-fortress',
+    'blue-fortress', 'base-footing', 'fan-frame', 'fan', 'base', 'full-map'].map(id => 'rmuc2027-' + id)
+  for (const source of ['rmul2027-3v3', 'rmul2027-1v1', 'energy-unit2027']) expected.push(source + '-arena', source + '-full-map')
+  assert.deepEqual(catalog.models.map(m => m.id), expected)
+  for (const model of catalog.models) {
+    assert.equal(model.joints.length, 0, '2027 models retain the source rest pose')
+    const up = model.id.startsWith('rmul') && model.id.endsWith('-arena') ? [0, -1, 0]
+      : model.id === 'energy-unit2027-arena' ? [0, 1, 0] : [0, 0, 1]
+    assert.deepEqual(model.up, up, model.id + ' source up axis')
+  }
+}
+for (const model of catalog.models) test(`${model.label}: geometry loads and bound controls reset`, async () => {
   const data = gunzipSync(fs.readFileSync(new URL(model.file, root)))
   assert.equal(createHash('sha256').update(data).digest('hex'), model.sha256)
   const gltf = await new GLTFLoader().parseAsync(data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength), '')
+  const box = new Box3().setFromObject(gltf.scene)
+  assert.ok(!box.isEmpty() && [...box.min.toArray(), ...box.max.toArray()].every(Number.isFinite), 'finite visible geometry')
   const { controls, nodes } = bindCatalogJoints(gltf, model)
   assert.equal(controls.length, model.joints.length)
   for (const control of controls) {
@@ -40,7 +59,7 @@ for (const model of catalog.models) test(`${model.label}: every control moves bo
 })
 
 // Solve against the real six-axis hierarchy, including a transformed model root.
-test('Core tool dragging converges, respects preview guards, and resets', async () => {
+test('Core tool dragging converges, respects preview guards, and resets', { skip: season !== '2026' }, async () => {
   const { createCoreIK } = await import('../docs/.vitepress/theme/components/core-ik.mjs')
   const model = catalog.models.find(m => m.id === 'tech-core')
   const data = gunzipSync(fs.readFileSync(new URL(model.file, root)))

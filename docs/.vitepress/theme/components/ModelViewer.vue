@@ -2,11 +2,15 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 
+const props = defineProps({
+  catalogPath: { type: String, default: '/models/catalog.json' },
+  initialModel: { type: String, default: 'base' }
+})
 const canvasHost = ref(null)
 const status = ref('Loading viewer…')
 const error = ref('')
 const catalog = ref([])
-const mechanism = ref('base')
+const mechanism = ref(props.initialModel)
 const mechanismNote = ref('')
 const models = ref([])
 const selected = ref('')
@@ -169,7 +173,7 @@ function loadSelected() { const model = models.value.find(m => m.name === select
 async function browseMechanisms() {
   if (!catalog.value.length) {
     try {
-      const response = await fetch(withBase('/models/catalog.json'))
+      const response = await fetch(withBase(props.catalogPath))
       if (!response.ok) throw new Error('The mechanism catalog is missing from this site build.')
       const data = await response.json()
       if (data.schema_version !== 1 || !data.models?.length) throw new Error('Invalid mechanism catalog.')
@@ -189,7 +193,8 @@ async function showMechanism() {
   status.value = `Loading ${model.label} · ${(model.bytes / 1e6).toFixed(1)} MB…`
   let candidate
   try {
-    const response = await fetch(withBase('/models/' + model.file), { signal: fetchController.signal })
+    const catalogUrl = new URL(withBase(props.catalogPath), window.location.href)
+    const response = await fetch(new URL(model.file, catalogUrl), { signal: fetchController.signal })
     if (!response.ok) throw new Error(`Could not download ${model.label}.`)
     const buffer = await api.utils.readCatalogModel(response)
     const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buffer)), b => b.toString(16).padStart(2, '0')).join('')
@@ -225,7 +230,7 @@ onMounted(async () => {
     scene = new THREE.Scene(); scene.background = new THREE.Color('#101923')
     camera = new THREE.PerspectiveCamera(42, 1, 0.001, 1000); camera.up.set(0, 0, 1)
     renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
-    renderer.domElement.setAttribute('aria-label', 'Interactive 3D model. Use the joint sliders below to change its pose.')
+    renderer.domElement.setAttribute('aria-label', 'Interactive 3D model. Drag to orbit and scroll to zoom.')
     canvasHost.value.appendChild(renderer.domElement)
     orbit = new OrbitControls(camera, renderer.domElement); orbit.enableDamping = true
     transform = new TransformControls(camera, renderer.domElement)
@@ -265,7 +270,12 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="model-viewer" aria-label="Model viewer">
-    <div v-if="catalog.length" class="mechanism-picker" aria-label="Choose a mechanism">
+    <label v-if="catalog.length > 8" class="model-select catalog-select">Model
+      <select v-model="mechanism" aria-label="Catalog model" :disabled="loading" @change="showMechanism">
+        <option v-for="item in catalog" :key="item.id" :value="item.id">{{ item.label }}</option>
+      </select>
+    </label>
+    <div v-else-if="catalog.length" class="mechanism-picker" aria-label="Choose a mechanism">
       <button v-for="item in catalog" :key="item.id" :aria-pressed="mechanism === item.id && !models.length" :disabled="loading" @click="mechanism = item.id; showMechanism()">{{ item.label }}<span>{{ item.joints.length }} joints</span></button>
     </div>
     <p v-if="mechanismNote && !models.length" class="mechanism-note">{{ mechanismNote }}</p>
@@ -326,5 +336,6 @@ output { font-variant-numeric: tabular-nums; }
 .animation-controls label:last-child { width: 100%; }
 .model-select { display: flex; align-items: center; gap: 12px; padding: 0 12px 12px; }
 .model-select select { min-width: 0; width: 100%; }
+.catalog-select { padding-top: 16px; }
 @media(max-width: 600px) { .viewer-canvas { height: 330px; } }
 </style>

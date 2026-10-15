@@ -2,6 +2,8 @@
 
 [文档](index.md) · [English](../viewer.md)
 
+[2027 场地与装配](viewer-2027.md) · **2026 机构**
+
 选择一个机构加载其 CAD 模型，用滑块移动各个可动实体；拖动旋转视角，滚轮缩放。**Focus** 聚焦某关节控制的几何；**Fit view** 显示整个机构。
 
 <ModelViewer />

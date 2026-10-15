@@ -14,6 +14,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Simplification counts](simplification-results.md) | Preset mesh inventories and measured reduction passes |
 | [Architecture](architecture.md) | Pipeline and code layout |
 | [Interactive viewer](viewer.md) | Inspect models and adjust joints in the documentation site |
+| [2027 viewer](viewer-2027.md) | Inspect the 2027 arenas, assemblies, and energy unit |
 | [Documentation site](site.md) | Run locally, edit pages, and deploy to GitHub Pages |
 
 ## Technical references

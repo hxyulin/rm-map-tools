@@ -1,5 +1,7 @@
 # Interactive model viewer
 
+[2027 arenas and assemblies](viewer-2027.md) · **2026 mechanisms**
+
 Choose a mechanism to load its CAD model, then use the sliders to move individual entities. Drag the view to orbit and scroll to zoom. **Focus** frames the geometry controlled by a particular joint; **Fit view** shows the whole mechanism.
 
 <ModelViewer />

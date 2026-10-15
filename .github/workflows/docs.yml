@@ -30,8 +30,23 @@ jobs:
           mkdir -p docs/public
           curl --fail --location --retry 3 "$DOCS_MODELS_URL" --output /tmp/docs-models.zip
           python3 -m zipfile -e /tmp/docs-models.zip docs/public
+      - name: Download 2027 viewer models
+        if: vars.DOCS_MODELS_2027_URL != ''
+        env:
+          DOCS_MODELS_2027_URL: ${{ vars.DOCS_MODELS_2027_URL }}
+        run: |
+          curl --fail --location --retry 3 "$DOCS_MODELS_2027_URL" --output /tmp/docs-models-2027.zip
+          python3 -m zipfile -e /tmp/docs-models-2027.zip /tmp/docs-models-2027
+          mkdir -p docs/public/models
+          mv /tmp/docs-models-2027/models docs/public/models/2027
       - name: Verify movable CAD entities
         if: vars.DOCS_MODELS_URL != '' || github.event_name != 'pull_request'
+        run: npm run docs:test-models
+      - name: Verify 2027 CAD models
+        if: vars.DOCS_MODELS_2027_URL != '' || github.event_name != 'pull_request'
+        env:
+          VIEWER_MODELS_DIR: docs/public/models/2027
+          VIEWER_MODELS_SEASON: '2027'
         run: npm run docs:test-models
       - run: npm run docs:check
       - run: npm run docs:test

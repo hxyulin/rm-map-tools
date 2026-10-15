@@ -64,4 +64,13 @@ python3 -m zipfile -c out/docs-viewer-models.zip docs/public/models
 
 把该压缩包地址设为仓库 Actions 变量 `DOCS_MODELS_URL`。文档工作流会把它下载到 `docs/public/`，测试全部五个模型，并纳入 Pages 产物；缺少目录模型时工作流不会部署查看器。拉取请求仍可在没有模型包的情况下构建 Markdown。生成的压缩包仍保留 DJI / RoboMaster 几何的归属与条款。
 
+[2027 查看器](viewer-2027.md)使用独立目录 `docs/public/models/2027/`。
+把 2027 发布中的 `docs-viewer-models.zip` 地址设为 `DOCS_MODELS_2027_URL`，
+工作流会同时下载两个赛季的资源，校验 2027 全部 21 个模型的哈希、几何和朝上方向，
+再一起部署。也可在本地把 2027 压缩包的 `models/` 内容复制到该目录，运行：
+
+```sh
+VIEWER_MODELS_DIR=docs/public/models/2027 VIEWER_MODELS_SEASON=2027 npm run docs:test-models
+```
+
 录制的 GIF/MP4 文件和独立的截帧/录像脚本已移除。数值化运动验证、源审计报告和可复用的关节/绑定辅助仍保留，静态几何对比图也作为证据保留。

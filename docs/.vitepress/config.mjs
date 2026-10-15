@@ -4,12 +4,12 @@ import path from 'node:path'
 const repository = 'https://github.com/hxyulin/rm-map-tools'
 
 const en = {
-  nav: [{ text: 'Guides', link: '/getting-started' }, { text: 'Model viewer', link: '/viewer' }],
+  nav: [{ text: 'Guides', link: '/getting-started' }, { text: '2027 viewer', link: '/viewer-2027' }, { text: '2026 mechanisms', link: '/viewer' }],
   sidebar: [
     { text: 'Use the tools', items: [
       { text: 'Overview', link: '/' }, { text: 'Downloads', link: '/releases' }, { text: 'Getting started', link: '/getting-started' },
       { text: 'Exporting', link: '/exporting' }, { text: 'Simplification', link: '/simplification' },
-      { text: 'Model viewer', link: '/viewer' }
+      { text: '2027 viewer', link: '/viewer-2027' }, { text: '2026 mechanisms', link: '/viewer' }
     ] },
     { text: 'Understand the pipeline', items: [
       { text: 'Architecture', link: '/architecture' }, { text: 'Export presets', link: '/export-presets' },
@@ -25,12 +25,12 @@ const en = {
 // Only the pages with a zh/ twin are listed here; deeper technical
 // references stay English-only and are reachable from "All references".
 const zh = {
-  nav: [{ text: '指南', link: '/zh/getting-started' }, { text: '模型查看器', link: '/zh/viewer' }],
+  nav: [{ text: '指南', link: '/zh/getting-started' }, { text: '2027 查看器', link: '/zh/viewer-2027' }, { text: '2026 机构', link: '/zh/viewer' }],
   sidebar: [
     { text: '使用工具', items: [
       { text: '总览', link: '/zh/' }, { text: '发布与下载', link: '/zh/releases' }, { text: '入门', link: '/zh/getting-started' },
       { text: '导出', link: '/zh/exporting' }, { text: '简化', link: '/zh/simplification' },
-      { text: '模型查看器', link: '/zh/viewer' }
+      { text: '2027 查看器', link: '/zh/viewer-2027' }, { text: '2026 机构', link: '/zh/viewer' }
     ] },
     { text: '理解流水线', items: [
       { text: '架构', link: '/zh/architecture' }, { text: '关节设备格式', link: '/zh/articulated-formats' },

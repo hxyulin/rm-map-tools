@@ -64,4 +64,19 @@ python3 -m zipfile -c out/docs-viewer-models.zip docs/public/models
 
 Set the repository Actions variable `DOCS_MODELS_URL` to that archive URL. The documentation workflow downloads it into `docs/public/`, tests all five models, and includes it in the Pages artifact. Publishing requires the bundle; the workflow will not deploy a viewer with missing catalog models. Pull requests can still build the Markdown without the bundle. The generated archive retains DJI / RoboMaster geometry ownership and terms.
 
+The [2027 viewer](viewer-2027.md) uses a separate catalog under
+`docs/public/models/2027/`. Set `DOCS_MODELS_2027_URL` to the 2027 release's
+`docs-viewer-models.zip`; the workflow downloads it alongside the 2026 bundle
+and verifies all 21 models, their hashes, geometry, and source up vectors.
+Both viewers are published together. For local use, extract the 2027 archive
+into a temporary directory and copy its `models/` contents into
+`docs/public/models/2027/`, then run:
+
+```sh
+VIEWER_MODELS_DIR=docs/public/models/2027 VIEWER_MODELS_SEASON=2027 npm run docs:test-models
+```
+
+`ModelViewer` accepts `catalog-path` and `initial-model` properties for these
+separate catalogs; download paths resolve relative to the selected catalog.
+
 Recorded GIF/MP4 files and standalone frame/video capture scripts have been removed. Numerical motion verification, source audit reports, and reusable joint/rig helpers remain available. Existing static geometry comparison images are retained as evidence.
