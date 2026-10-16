@@ -7,13 +7,13 @@ import tempfile
 import unittest
 from cad_document import CadDocument
 from cad_components import build_catalog, export_selection
-from cad_partition import compile_partition, _selection, _pack_step
+from cad_partition import compile_partition, _selection, _pack_step, _validate_mesh_stats
 from test_cad_document import FIXTURE
 
 
 class PartitionTests(unittest.TestCase):
     @contextmanager
-    def document(self, solid=False):
+    def document(self, solid=False, voids=False):
         text = FIXTURE.replace("#6=SHELL_BASED_SURFACE_MODEL('',(#7));", "#6=SHELL_BASED_SURFACE_MODEL('',(#7,#27));")
         text = text.replace('ENDSEC;\nEND-ISO', """
 #27=OPEN_SHELL('',(#28));
@@ -26,6 +26,12 @@ END-ISO""")
         if solid:
             text = text.replace("#6=SHELL_BASED_SURFACE_MODEL('',(#7,#27));", "#6=MANIFOLD_SOLID_BREP('',#7);")
             text = text.replace("#7=OPEN_SHELL('',(#8));", "#7=CLOSED_SHELL('',(#8,#28));")
+        if voids:
+            text = text.replace("#6=SHELL_BASED_SURFACE_MODEL('',(#7,#27));",
+                                "#6=BREP_WITH_VOIDS('',#7,(#39));")
+            text = text.replace('=OPEN_SHELL(', '=CLOSED_SHELL(')
+            text = text.replace('ENDSEC;\nEND-ISO',
+                                "#39=ORIENTED_CLOSED_SHELL('',*,#27,.F.);\nENDSEC;\nEND-ISO")
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp)/'source.step'
             path.write_text(text)
@@ -142,6 +148,85 @@ END-ISO""")
             with self.assertRaisesRegex(ValueError, 'unfiltered'):
                 export_selection(doc, selection, Path(tmp)/'bad',
                                  face_ids_by_body={6: [8]}, shell_ids_by_body={6: [7]})
+
+    def test_explicit_body_rules_override_groups_and_reject_ambiguous_ownership(self):
+        with self.document(solid=True) as doc:
+            policy = self.policy(doc)
+            spec = policy['products'][0]
+            spec['shell_rules'] = []
+            rule = {'body_ids': [6], 'group': 'part/solid', 'evidence': ['source fixture']}
+            spec['body_rules'] = [rule]
+            product = compile_partition(doc, self.catalog(doc), policy)['products'][0]
+            self.assertEqual(product['groups'][0]['id'], 'part/solid')
+            self.assertEqual(product['groups'][0]['face_ids'], [8, 28])
+            self.assertEqual(product['assignments'], {'explicit-body-rule': 1})
+            spec['body_rules'].append(dict(rule))
+            with self.assertRaisesRegex(ValueError, 'multiple body rules'):
+                compile_partition(doc, self.catalog(doc), policy)
+            for bad in ([999], [6, 6], []):
+                spec['body_rules'] = [{**rule, 'body_ids': bad}]
+                with self.assertRaisesRegex(ValueError, 'distinct original'):
+                    compile_partition(doc, self.catalog(doc), policy)
+            spec['body_rules'] = [{**rule, 'evidence': []}]
+            with self.assertRaisesRegex(ValueError, 'evidence'):
+                compile_partition(doc, self.catalog(doc), policy)
+
+    def test_body_rules_cannot_swallow_surface_shell_partitioning(self):
+        with self.document() as doc:
+            policy = self.policy(doc)
+            policy['products'][0]['body_rules'] = [
+                {'body_ids': [6], 'group': 'part/invalid', 'evidence': ['fixture']}]
+            with self.assertRaisesRegex(ValueError, 'non-surface'):
+                compile_partition(doc, self.catalog(doc), policy)
+
+    def test_mesh_validation_accepts_only_measured_zero_area_degeneracy(self):
+        _validate_mesh_stats({})
+        _validate_mesh_stats({'degenerate_faces': 1,
+                              'degenerate_details': [{'area_mm2': 0.0}]})
+        for stats in [
+            {'unmeshed_faces': 1},
+            {'degenerate_faces': 1},
+            {'degenerate_faces': 2, 'degenerate_details': [{'area_mm2': 0.0}]},
+            {'degenerate_faces': 1, 'degenerate_details': [{'area_mm2': 1e-8}]},
+            {'degenerate_faces': 1, 'degenerate_details': [{'area_mm2': float('nan')}]},
+            {'degenerate_faces': 1, 'degenerate_details': [{'area_mm2': float('inf')}]},
+        ]:
+            with self.assertRaises(ValueError):
+                _validate_mesh_stats(stats)
+
+    def test_source_unit_mode_keeps_solid_cavities_and_separates_surface_shells(self):
+        for voids in [False, True]:
+            with self.document(voids=voids) as doc:
+                policy = self.policy(doc)
+                spec = policy['products'][0]
+                spec['shell_rules'] = []
+                spec['split_source_units'] = True
+                product = compile_partition(doc, self.catalog(doc), policy)['products'][0]
+                groups = {g['id']: g['face_ids'] for g in product['groups']}
+                if voids:
+                    self.assertEqual(groups, {'part/body-6': [8, 28]})
+                    self.assertEqual(product['assignments'], {'original-solid-body': 1})
+                else:
+                    self.assertEqual(groups, {'part/shell-7': [8], 'part/shell-27': [28]})
+                    self.assertEqual(product['assignments'], {'original-surface-shell': 2})
+
+    def test_source_unit_mode_rejects_non_boolean_and_mixed_grouping(self):
+        with self.document() as doc:
+            for value in [1, 'true', None]:
+                policy = self.policy(doc)
+                policy['products'][0]['split_source_units'] = value
+                with self.assertRaisesRegex(ValueError, 'source-unit mode'):
+                    compile_partition(doc, self.catalog(doc), policy)
+            for key, value in [('shell_rules', [{'id': 'unused'}]),
+                               ('body_rules', [{'body_ids': [6]}]),
+                               ('body_group_overrides', {'part/other-bodies': 'part/mixed'})]:
+                policy = self.policy(doc)
+                spec = policy['products'][0]
+                spec['shell_rules'] = []
+                spec['split_source_units'] = True
+                spec[key] = value
+                with self.assertRaisesRegex(ValueError, 'source-unit mode'):
+                    compile_partition(doc, self.catalog(doc), policy)
 
     def test_stale_and_wrong_source_shell_rules_are_rejected(self):
         with self.document() as doc:

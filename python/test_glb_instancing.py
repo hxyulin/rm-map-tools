@@ -8,6 +8,17 @@ from gltf_scene import read_glb, read_glb_nodes, read_glb_local_nodes, accessor
 
 
 class InstancingTests(unittest.TestCase):
+    def test_fallback_is_distinct_from_explicit_source_gray(self):
+        writer = GlbWriter('root', {'version': '2.0'})
+        fallback = writer.material(None)
+        source = writer.material('0.6275,0.6275,0.6275')
+        self.assertEqual(writer.materials[fallback]['pbrMetallicRoughness'],
+                         writer.materials[source]['pbrMetallicRoughness'])
+        self.assertEqual(writer.materials[fallback]['extras'],
+                         {'step_colour_srgb': None, 'step_colour_origin': 'fallback'})
+        self.assertEqual(writer.materials[source]['extras']['step_colour_origin'], 'source')
+        self.assertNotEqual(fallback, source)
+
     def test_shared_geometry_transforms_colours_and_edges(self):
         p = np.array([[0.,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,1]])
         t = np.array([[0,1,2],[0,2,3],[0,4,1]])

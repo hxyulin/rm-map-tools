@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "secondary_product_ids": [
+    1754789,
+    2615748,
+    2624828,
+    2650147,
+    2717102,
+    4070010
+  ],
+  "secondary_scope": "Inspection hypothesis only: drone pads, fans, fan frames and grilles. Footings, walls, roofs and every terrain/marking body remain. Not an official CAD layer or a collision exclusion.",
+  "compositions": [
+    {
+      "name": "red-dart-complete",
+      "subtree": "red-dart-station-assembly",
+      "evidence": "Original parent #3757401: mechanism, timber walls/roof and two ancillary products."
+    },
+    {
+      "name": "blue-dart-complete",
+      "subtree": "blue-dart-station-assembly",
+      "evidence": "Original parent #3782100; same complete child product definitions at blue placements."
+    },
+    {
+      "name": "red-high-point-complete",
+      "subtree": "red-high-point-assembly",
+      "evidence": "Original parent #2717147: lower/upper terrain, fan frame 1 and two fans."
+    },
+    {
+      "name": "blue-high-point-complete",
+      "subtree": "blue-high-point-assembly",
+      "evidence": "Original parent #3782015: lower/upper terrain, fan frame 1 and two fans."
+    },
+    {
+      "name": "red-base-with-footing",
+      "occurrence_paths": [
+        [
+          4774249
+        ],
+        [
+          4069597
+        ]
+      ],
+      "evidence": "Explicit root siblings: Base bbox x 11.13..12.22 m lies over footing x 10.73..12.35 m; matching y footprint, base bottom z -1.44 m equals footing top. Fan frame 2 is remote and deliberately excluded.",
+      "footing_product_id": 4069592
+    },
+    {
+      "name": "blue-base-with-footing",
+      "occurrence_paths": [
+        [
+          4774258
+        ],
+        [
+          4069606
+        ]
+      ],
+      "evidence": "Point-mirrored root siblings with matching Base/footing bounds. This is an export composition, not a source assembly.",
+      "footing_product_id": 4069592
+    },
+    {
+      "name": "red-outpost-with-footing",
+      "occurrence_paths": [
+        [
+          2624875,
+          2603254
+        ],
+        [
+          2624875,
+          1800903
+        ]
+      ],
+      "evidence": "Source-world bbox matching: Outpost x 2.86..3.39, y 5.21..5.81 m lies on footing x 2.75..3.40, y 5.08..5.89 m; bottom -1.30 m meets footing top -1.28 m. Source sibling order is not the pairing order.",
+      "footing_product_id": 1800898
+    },
+    {
+      "name": "blue-outpost-with-footing",
+      "occurrence_paths": [
+        [
+          2624875,
+          2603241
+        ],
+        [
+          2624875,
+          1800916
+        ]
+      ],
+      "evidence": "Negative-x source-world bbox matches its footing: Outpost x -3.39..-2.86, y -2.56..-1.96 m; footing x -3.40..-2.75, y -2.64..-1.84 m. Source sibling order is not the pairing order.",
+      "footing_product_id": 1800898
+    },
+    {
+      "name": "red-resource-complete",
+      "subtree": "red-resource-zone",
+      "evidence": "Original parent #4056313: resource mechanism/structure/markings and six energy-unit occurrences."
+    },
+    {
+      "name": "blue-resource-complete",
+      "subtree": "blue-resource-zone",
+      "evidence": "Original parent #4056432: same resource area and six energy-unit occurrences."
+    }
+  ]
+}

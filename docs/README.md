@@ -9,6 +9,8 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Releases and downloads](releases.md) | Choose STEP, GLB, simulator, or viewer archives |
 | [Getting started](getting-started.md) | Install, download, split, and validate |
 | [RoboMaster 2027](rm2027.md) | Source compatibility and CAD, GLB, simulator, and viewer builds |
+| [Terrain and secondary equipment](terrain-equipment-rmuc2027.md) | 85 source-unit pieces, 25 products and preserved source placements |
+| [Remaining 2027 equipment](remaining-equipment-rmuc2027.md) | Tech Core, resource area, Dart station and Energy Unit source partitions |
 | [Complete CAD partitions](cad-partitions.md) | Full Rune/Outpost STEP and GLB exports with disjoint source-shell ownership |
 | [Source CAD components](cad-components.md) | Whole-body component catalogs, manual groups and isolated STEP work items |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
@@ -33,6 +35,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 - [Read-only CAD optimization passes](cad-optimization-passes.md), [Geometry audit](geometry-audit.md), [performance measurements](performance.md), and the [optimization reports](simplification.md#audits-and-experiments).
 - [RMUC 2027 non-base spatial components](non-base-components-rmuc2027.md), including rune/outpost shell candidates.
 - [RMUC 2027 layer qualification review](rmuc2027-layer-review.md) and [source component selections](cad-components.md).
+- [RMUC 2027 source colors and complete equipment compositions](appearance-compositions-rmuc2027.md), including the secondary-fixture comparison.
 - [Original articulation design](articulation-design.md), retained as design history. Use the semantic export reference for the implemented contract.
 
 The Markdown files are the source for both GitHub browsing and the documentation site. Dated benchmark reports retain their measured scope and reproduction inputs.

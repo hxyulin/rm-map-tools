@@ -74,7 +74,9 @@ Original STEP and runtime field packages remain untouched.
 
 Each component is then imported into OCCT. Native face counts must match its
 source partition, solid counts must match its original solid bodies, and mesh
-extraction must report no unmeshed or discarded degenerate faces. The sum of
+extraction must report no unmeshed nonzero-area faces. Native zero-area faces
+remain in STEP; each requires a recorded finite area below 1e-8 mm² and a
+matching degeneracy count before it can contribute no triangles. The sum of
 native component face counts must match the entire original product. Full
 assembly GLBs reuse these same component meshes and poses, avoiding a separate
 full-model tessellation or shape import with different healing decisions.
@@ -212,3 +214,9 @@ when generating a GLB. Expected native counts are five solids and 4,263 faces;
 the cover itself is an open surface patch. The original bundle still retains
 the cover in its upper cluster, so do not overlay this candidate onto that
 bundle without removing the corresponding faces there.
+
+The [remaining-equipment policy](remaining-equipment-rmuc2027.md) applies the same
+exporter to the Tech Core, resource area, Dart station and Energy Unit.
+
+For exhaustive original solid/surface-shell selection, see the
+[terrain and secondary-equipment source-unit policy](terrain-equipment-rmuc2027.md).

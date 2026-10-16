@@ -120,7 +120,10 @@ class GlbWriter:
                         "roughnessFactor": 0.8,
                     },
                     "doubleSided": True,
-                    "extras": {"step_colour_srgb": [r, g, b]},
+                    "extras": {
+                        "step_colour_srgb": [r, g, b] if key is not None else None,
+                        "step_colour_origin": "source" if key is not None else "fallback",
+                    },
                 }
             )
         return self.material_index[key]

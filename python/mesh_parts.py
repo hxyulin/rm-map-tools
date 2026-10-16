@@ -176,6 +176,8 @@ def face_meshes(face, lin, ang, stats):
     BRepGProp.SurfaceProperties_s(face, properties)
     if abs(properties.Mass()) < 1e-8:
         stats["degenerate_faces"] = stats.get("degenerate_faces", 0) + 1
+        stats.setdefault("degenerate_details", []).append({
+            "surface": str(BRepAdaptor_Surface(face).GetType()), "area_mm2": properties.Mass()})
         return []
     stats.setdefault("unmeshed_details", []).append({
         "surface": str(BRepAdaptor_Surface(face).GetType()), "area_mm2": properties.Mass()})

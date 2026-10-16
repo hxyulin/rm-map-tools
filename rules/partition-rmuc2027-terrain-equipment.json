@@ -1,0 +1,640 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (partition policy; source CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "length_unit": "millimetre",
+  "notes": [
+    "Partition every remaining original body and original surface-model shell into its own source-identity work item. No face patches, splitting, caps, Boolean operations or approximation.",
+    "This policy covers products not already in the Base/Outpost/Rune or remaining-equipment reviews. It includes Dart-station ancillary products to retain complete source ownership.",
+    "Groups use original entity IDs because topology does not establish physical function. No new motion, light or collision bindings are assigned.",
+    "Central deck #1781935 is BREP_WITH_VOIDS: its six inner shells are cavity boundaries and remain with the outer solid."
+  ],
+  "products": [
+    {
+      "product_id": 24844,
+      "name": "floor",
+      "fallback_group": "floor/unassigned",
+      "expected_group_signatures": {
+        "floor/body-23736": [
+          1,
+          0,
+          483
+        ],
+        "floor/body-24244": [
+          1,
+          0,
+          8
+        ],
+        "floor/body-24444": [
+          1,
+          0,
+          6
+        ],
+        "floor/body-24644": [
+          1,
+          0,
+          6
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 54261,
+      "name": "assembly-area",
+      "fallback_group": "assembly-area/unassigned",
+      "expected_group_signatures": {
+        "assembly-area/body-54155": [
+          1,
+          0,
+          555
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 1754789,
+      "name": "drone-landing-pad",
+      "fallback_group": "drone-landing-pad/unassigned",
+      "expected_group_signatures": {
+        "drone-landing-pad/body-1754682": [
+          1,
+          0,
+          60
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 1782082,
+      "name": "central-deck",
+      "fallback_group": "central-deck/unassigned",
+      "expected_group_signatures": {
+        "central-deck/body-1781935": [
+          1,
+          0,
+          648
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 1791071,
+      "name": "central-tunnel-side",
+      "fallback_group": "central-tunnel-side/unassigned",
+      "expected_group_signatures": {
+        "central-tunnel-side/body-1791020": [
+          1,
+          0,
+          210
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 1800061,
+      "name": "central-tunnel-side-red",
+      "fallback_group": "central-tunnel-side-red/unassigned",
+      "expected_group_signatures": {
+        "central-tunnel-side-red/body-1800009": [
+          1,
+          0,
+          210
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 1800898,
+      "name": "outpost-footing",
+      "fallback_group": "outpost-footing/unassigned",
+      "expected_group_signatures": {
+        "outpost-footing/body-1800877": [
+          1,
+          0,
+          21
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2615748,
+      "name": "under-highland-fan-grille",
+      "fallback_group": "under-highland-fan-grille/unassigned",
+      "expected_group_signatures": {
+        "under-highland-fan-grille/body-2615732": [
+          1,
+          0,
+          364
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2624828,
+      "name": "tunnel-fan-grille",
+      "fallback_group": "tunnel-fan-grille/unassigned",
+      "expected_group_signatures": {
+        "tunnel-fan-grille/body-2624811": [
+          1,
+          0,
+          263
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2643652,
+      "name": "red-trapezoid-highland",
+      "fallback_group": "red-trapezoid-highland/unassigned",
+      "expected_group_signatures": {
+        "red-trapezoid-highland/body-2643575": [
+          1,
+          0,
+          387
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2644728,
+      "name": "red-high-point-lower",
+      "fallback_group": "red-high-point-lower/unassigned",
+      "expected_group_signatures": {
+        "red-high-point-lower/body-2644689": [
+          1,
+          0,
+          26
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2649727,
+      "name": "red-high-point-upper",
+      "fallback_group": "red-high-point-upper/unassigned",
+      "expected_group_signatures": {
+        "red-high-point-upper/body-2648524": [
+          1,
+          0,
+          89
+        ],
+        "red-high-point-upper/body-2649689": [
+          1,
+          0,
+          14
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2650147,
+      "name": "fan-frame-one",
+      "fallback_group": "fan-frame-one/unassigned",
+      "expected_group_signatures": {
+        "fan-frame-one/body-2650124": [
+          1,
+          0,
+          11
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2717102,
+      "name": "fan",
+      "fallback_group": "fan/unassigned",
+      "expected_group_signatures": {
+        "fan/body-2717086": [
+          1,
+          0,
+          1607
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 2721188,
+      "name": "dart-station-timber",
+      "fallback_group": "dart-station-timber/unassigned",
+      "expected_group_signatures": {
+        "dart-station-timber/body-2717603": [
+          1,
+          0,
+          10
+        ],
+        "dart-station-timber/body-2717910": [
+          1,
+          0,
+          8
+        ],
+        "dart-station-timber/body-2721151": [
+          1,
+          0,
+          72
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3752527,
+      "name": "dart-station-part-3752527",
+      "fallback_group": "dart-station-part-3752527/unassigned",
+      "expected_group_signatures": {
+        "dart-station-part-3752527/body-3752506": [
+          1,
+          0,
+          58
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3757370,
+      "name": "dart-station-part-3757370",
+      "fallback_group": "dart-station-part-3757370/unassigned",
+      "expected_group_signatures": {
+        "dart-station-part-3757370/body-3757332": [
+          1,
+          0,
+          92
+        ],
+        "dart-station-part-3757370/shell-3757102": [
+          0,
+          1,
+          1
+        ],
+        "dart-station-part-3757370/shell-3757325": [
+          0,
+          1,
+          1
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3776088,
+      "name": "blue-trapezoid-highland",
+      "fallback_group": "blue-trapezoid-highland/unassigned",
+      "expected_group_signatures": {
+        "blue-trapezoid-highland/body-3776011": [
+          1,
+          0,
+          385
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3777164,
+      "name": "blue-high-point-lower",
+      "fallback_group": "blue-high-point-lower/unassigned",
+      "expected_group_signatures": {
+        "blue-high-point-lower/body-3777126": [
+          1,
+          0,
+          26
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3781945,
+      "name": "blue-high-point-upper",
+      "fallback_group": "blue-high-point-upper/unassigned",
+      "expected_group_signatures": {
+        "blue-high-point-upper/body-3778350": [
+          1,
+          0,
+          14
+        ],
+        "blue-high-point-upper/body-3781906": [
+          1,
+          0,
+          85
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3797438,
+      "name": "red-road-surface",
+      "fallback_group": "red-road-surface/unassigned",
+      "expected_group_signatures": {
+        "red-road-surface/body-3783190": [
+          1,
+          0,
+          26
+        ],
+        "red-road-surface/body-3784238": [
+          1,
+          0,
+          26
+        ],
+        "red-road-surface/body-3785286": [
+          1,
+          0,
+          26
+        ],
+        "red-road-surface/body-3785478": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3785670": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3785862": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3786054": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3786246": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3786438": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3786630": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3786822": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3787014": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3787286": [
+          1,
+          0,
+          8
+        ],
+        "red-road-surface/body-3789460": [
+          1,
+          0,
+          20
+        ],
+        "red-road-surface/body-3789652": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3789974": [
+          1,
+          0,
+          9
+        ],
+        "red-road-surface/body-3790166": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3790358": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3790550": [
+          1,
+          0,
+          6
+        ],
+        "red-road-surface/body-3791032": [
+          1,
+          0,
+          13
+        ],
+        "red-road-surface/body-3791514": [
+          1,
+          0,
+          13
+        ],
+        "red-road-surface/body-3792274": [
+          1,
+          0,
+          22
+        ],
+        "red-road-surface/body-3793034": [
+          1,
+          0,
+          22
+        ],
+        "red-road-surface/body-3793466": [
+          1,
+          0,
+          12
+        ],
+        "red-road-surface/shell-3797315": [
+          0,
+          1,
+          66
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 3813260,
+      "name": "blue-road-surface",
+      "fallback_group": "blue-road-surface/unassigned",
+      "expected_group_signatures": {
+        "blue-road-surface/body-3797789": [
+          1,
+          0,
+          8
+        ],
+        "blue-road-surface/body-3798897": [
+          1,
+          0,
+          26
+        ],
+        "blue-road-surface/body-3800005": [
+          1,
+          0,
+          26
+        ],
+        "blue-road-surface/body-3801113": [
+          1,
+          0,
+          26
+        ],
+        "blue-road-surface/body-3801313": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3801513": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3801713": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3801913": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3802113": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3802313": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3802817": [
+          1,
+          0,
+          13
+        ],
+        "blue-road-surface/body-3803321": [
+          1,
+          0,
+          13
+        ],
+        "blue-road-surface/body-3803521": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3804311": [
+          1,
+          0,
+          22
+        ],
+        "blue-road-surface/body-3805101": [
+          1,
+          0,
+          22
+        ],
+        "blue-road-surface/body-3807298": [
+          1,
+          0,
+          20
+        ],
+        "blue-road-surface/body-3807498": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3807837": [
+          1,
+          0,
+          9
+        ],
+        "blue-road-surface/body-3808037": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3808237": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3808437": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3808637": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3808837": [
+          1,
+          0,
+          6
+        ],
+        "blue-road-surface/body-3809282": [
+          1,
+          0,
+          12
+        ],
+        "blue-road-surface/shell-3813137": [
+          0,
+          1,
+          66
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 4059143,
+      "name": "fortress-structure",
+      "fallback_group": "fortress-structure/unassigned",
+      "expected_group_signatures": {
+        "fortress-structure/body-4057819": [
+          1,
+          0,
+          36
+        ],
+        "fortress-structure/body-4058278": [
+          1,
+          0,
+          12
+        ],
+        "fortress-structure/body-4058737": [
+          1,
+          0,
+          12
+        ],
+        "fortress-structure/body-4059105": [
+          1,
+          0,
+          10
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 4069592,
+      "name": "base-footing",
+      "fallback_group": "base-footing/unassigned",
+      "expected_group_signatures": {
+        "base-footing/body-4069550": [
+          1,
+          0,
+          243
+        ]
+      },
+      "split_source_units": true
+    },
+    {
+      "product_id": 4070010,
+      "name": "fan-frame-two",
+      "fallback_group": "fan-frame-two/unassigned",
+      "expected_group_signatures": {
+        "fan-frame-two/body-4069987": [
+          1,
+          0,
+          11
+        ]
+      },
+      "split_source_units": true
+    }
+  ]
+}

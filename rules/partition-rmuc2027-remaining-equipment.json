@@ -1,0 +1,253 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (partition policy; source CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "length_unit": "millimetre",
+  "notes": [
+    "Work partitions preserve all original body/shell faces exactly once; no source geometry edits or runtime bindings.",
+    "Part names are source-rest-pose visual proposals. The resource area is not asserted to be the entire referee supply-zone footprint.",
+    "Tech Core is a 418-shell surface model; the three work groups do not establish robot arm link ownership.",
+    "Dart positive-area faces must tessellate; measured zero-area native faces remain in STEP and are reported without triangles."
+  ],
+  "products": [
+    {
+      "product_id": 1751926,
+      "name": "technology-core",
+      "fallback_group": "technology-core/arm-and-shared",
+      "shell_rules": [
+        {
+          "id": "technology-core/pedestal-and-shoulder",
+          "group": "technology-core/pedestal-and-shoulder",
+          "body_id": 1751911,
+          "priority": 100,
+          "min_mm": [
+            -560,
+            -505,
+            -375
+          ],
+          "max_mm": [
+            110,
+            45,
+            235
+          ],
+          "evidence": [
+            "Manual source-rest-pose vertex envelope selects whole original shells only; uncertain and straddling shells stay in arm-and-shared. No rigid joint or motion assertion."
+          ]
+        },
+        {
+          "id": "technology-core/tool-head",
+          "group": "technology-core/tool-head",
+          "body_id": 1751911,
+          "priority": 100,
+          "min_mm": [
+            -845,
+            -1265,
+            -680
+          ],
+          "max_mm": [
+            -380,
+            -675,
+            -395
+          ],
+          "evidence": [
+            "Manual source-rest-pose vertex envelope selects whole original shells only; uncertain and straddling shells stay in arm-and-shared. No rigid joint or motion assertion."
+          ]
+        }
+      ],
+      "expected_group_signatures": {
+        "technology-core/arm-and-shared": [
+          0,
+          15,
+          628
+        ],
+        "technology-core/pedestal-and-shoulder": [
+          0,
+          13,
+          769
+        ],
+        "technology-core/tool-head": [
+          0,
+          390,
+          3495
+        ]
+      }
+    },
+    {
+      "product_id": 3998852,
+      "name": "resource-area",
+      "fallback_group": "resource-area/mechanism",
+      "body_group_overrides": {
+        "resource-area/other-bodies": "resource-area/mechanism"
+      },
+      "body_rules": [
+        {
+          "group": "resource-area/structure",
+          "body_ids": [
+            3957038
+          ],
+          "evidence": [
+            "Single 80-face source body contains the broad wall/deck structure; vertex extents distinguish it from the compact mechanism."
+          ]
+        },
+        {
+          "group": "resource-area/marking-plates",
+          "body_ids": [
+            3957486,
+            3957758
+          ],
+          "evidence": [
+            "Two eight-face source bodies have plate-like extents, far from the compact mechanism; retained as geometry, not collision exclusions."
+          ]
+        }
+      ],
+      "shell_rules": [],
+      "expected_group_signatures": {
+        "resource-area/marking-plates": [
+          2,
+          0,
+          16
+        ],
+        "resource-area/mechanism": [
+          41,
+          9,
+          4281
+        ],
+        "resource-area/structure": [
+          1,
+          0,
+          80
+        ]
+      }
+    },
+    {
+      "product_id": 3749800,
+      "name": "dart-station",
+      "fallback_group": "dart-station/deck-and-shared-hardware",
+      "body_group_overrides": {
+        "dart-station/other-bodies": "dart-station/deck-and-shared-hardware"
+      },
+      "body_rules": [
+        {
+          "group": "dart-station/frame",
+          "body_ids": [
+            3098185,
+            3099772,
+            3101359,
+            3102946,
+            3104533
+          ],
+          "evidence": [
+            "Full-height fused frame body and four source foot blocks; original whole bodies, without pretending internal details are independently articulated."
+          ]
+        },
+        {
+          "group": "dart-station/guide-rails",
+          "body_ids": [
+            3301978,
+            3317722
+          ],
+          "evidence": [
+            "Mirrored 358-face long rail bodies; source extents match the two visible door guides."
+          ]
+        },
+        {
+          "group": "dart-station/door-candidate",
+          "body_ids": [
+            3379458,
+            3319362,
+            3320984,
+            3322607,
+            3381098,
+            3382720,
+            3384343,
+            3386415,
+            3388055,
+            3389677,
+            3391300,
+            3392940,
+            3394562,
+            3396185,
+            3400014
+          ],
+          "evidence": [
+            "Raised panel body and nearby carriage fasteners/brackets, selected by source IDs and bounds. Candidate attachment requires visual review; no travel or joint is claimed."
+          ]
+        }
+      ],
+      "shell_rules": [
+        {
+          "id": "dart-station/door-candidate",
+          "group": "dart-station/door-candidate",
+          "body_id": 3749315,
+          "shell_ids": [
+            3738709,
+            3747016,
+            3689961,
+            3703657,
+            3716730,
+            3730336
+          ],
+          "priority": 100,
+          "evidence": [
+            "Two raised panel cover shells and four 304-face carriage shells. Shared small pieces remain in deck-and-shared-hardware rather than guessed moving."
+          ]
+        },
+        {
+          "id": "dart-station/frame",
+          "group": "dart-station/frame",
+          "body_id": 3749315,
+          "shell_ids": [
+            3418013,
+            3421561,
+            3425109,
+            3428657,
+            3460141
+          ],
+          "priority": 100,
+          "evidence": [
+            "Four corner-foot cover shells and full-width crossmember shell. Crossmember is deliberately excluded from nearby door-box selection."
+          ]
+        }
+      ],
+      "expected_group_signatures": {
+        "dart-station/deck-and-shared-hardware": [
+          42,
+          360,
+          10599
+        ],
+        "dart-station/door-candidate": [
+          15,
+          6,
+          3544
+        ],
+        "dart-station/frame": [
+          5,
+          5,
+          10231
+        ],
+        "dart-station/guide-rails": [
+          2,
+          0,
+          716
+        ]
+      }
+    },
+    {
+      "product_id": 4056216,
+      "name": "energy-unit",
+      "fallback_group": "energy-unit/unit",
+      "body_group_overrides": {
+        "energy-unit/other-bodies": "energy-unit/unit"
+      },
+      "shell_rules": [],
+      "expected_group_signatures": {
+        "energy-unit/unit": [
+          1,
+          0,
+          1424
+        ]
+      }
+    }
+  ]
+}

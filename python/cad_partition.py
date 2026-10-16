@@ -31,6 +31,8 @@ def compile_partition(document, catalog, policy):
     Explicit shell IDs or product-local vertex boxes propose ownership. Higher
     priority wins; equal-priority conflicts remain in the fallback group. Bounds
     do not crop shapes and cannot certify curved-surface envelopes or attachment.
+    split_source_units bypasses grouping and emits one part per original solid
+    or original surface-model shell. Solid cavity shells remain with their body.
     """
     if (policy.get('schema_version') != 1 or policy.get('source_sha256') != document.source_sha256
             or catalog.get('source_sha256') != document.source_sha256):
@@ -46,6 +48,10 @@ def compile_partition(document, catalog, policy):
             raise ValueError('duplicate product or unsafe export name')
         seen_products.add(product)
         fallback = spec['fallback_group']
+        split_units = spec.get('split_source_units', False)
+        if (not isinstance(split_units, bool) or split_units and any(spec.get(k) for k in
+                ('body_rules', 'shell_rules', 'body_group_overrides'))):
+            raise ValueError('source-unit mode must be boolean and cannot mix with grouping rules')
         rules = spec.get('shell_rules', [])
         bodies = sorted(b for p, b in components if p == product)
         if not bodies:
@@ -64,6 +70,16 @@ def compile_partition(document, catalog, policy):
                 low, high = [np.asarray(rule[k], float) for k in ('min_mm', 'max_mm')]
                 if low.shape != (3,) or high.shape != (3,) or not np.isfinite([low, high]).all() or np.any(high <= low):
                     raise ValueError('invalid shell region')
+        body_assignments = {}
+        for rule in spec.get('body_rules', []):
+            selected = rule.get('body_ids', [])
+            if (not rule.get('evidence') or not selected or len(selected) != len(set(selected))
+                    or not set(selected) <= set(bodies) or set(selected) & set(shell_sets)):
+                raise ValueError('body rule needs evidence and distinct original non-surface bodies')
+            for body in selected:
+                if body in body_assignments:
+                    raise ValueError('body is assigned by multiple body rules')
+                body_assignments[body] = rule['group']
         groups, units, source_faces = defaultdict(list), [], set()
         for body in bodies:
             row = ix.r(body)
@@ -77,10 +93,13 @@ def compile_partition(document, catalog, policy):
                     raise ValueError('partition source units are empty or share face identities')
                 source_faces |= faces
                 group, reason, matches = fallback, 'unmatched-source-shell', []
-                if shell is None:
+                if split_units:
+                    group = f'{spec["name"]}/body-{body}' if shell is None else f'{spec["name"]}/shell-{shell}'
+                    reason = 'original-solid-body' if shell is None else 'original-surface-shell'
+                elif shell is None:
                     original = components[product, body]['group']
-                    group = spec.get('body_group_overrides', {}).get(original, original)
-                    reason = 'existing-body-component'
+                    group = body_assignments.get(body, spec.get('body_group_overrides', {}).get(original, original))
+                    reason = 'explicit-body-rule' if body in body_assignments else 'existing-body-component'
                 else:
                     low, high, vertices = model.body_bbox(root)
                     for rule in rules:
@@ -159,6 +178,20 @@ def _pack_step(directory):
     path.unlink()
 
 
+def _validate_mesh_stats(stats):
+    """Accept only explicitly measured zero-area native faces without triangles.
+
+    These faces remain in exact STEP; they have no renderable area. Missing
+    nonzero-area faces and unaccounted degeneracy always fail bundle export.
+    """
+    if stats.get('unmeshed_faces'):
+        raise ValueError('incomplete native tessellation')
+    details = stats.get('degenerate_details', [])
+    if (stats.get('degenerate_faces', 0) != len(details)
+            or any(not np.isfinite(d['area_mm2']) or abs(d['area_mm2']) >= 1e-8 for d in details)):
+        raise ValueError('native degenerate faces lack verified zero-area measurements')
+
+
 def export_bundle(document, catalog, partition, out, *, lin_mm=.4, ang_rad=.25):
     """Export complete STEP/GLB assemblies and every disjoint component atomically.
 
@@ -227,8 +260,9 @@ def export_bundle(document, catalog, partition, out, *, lin_mm=.4, ang_rad=.25):
                     raise ValueError(f'Native import altered part topology: {group["id"]}: {counts}')
                 stats = {}
                 mesh = tessellate(native, lin_mm, ang_rad, stats=stats)
-                if mesh is None or stats.get('unmeshed_faces') or stats.get('degenerate_faces'):
+                if mesh is None:
                     raise ValueError(f'Incomplete native tessellation: {group["id"]}: {stats}')
+                _validate_mesh_stats(stats)
                 positions, triangles, colors, keys = mesh
                 color_keys = [keys[int(i)] for i in colors]
                 extras = {'cad_partition': {'source_sha256': document.source_sha256,
