@@ -28,7 +28,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 
 - [Base reconstruction](base-reconstruction.md), [interior audit](base-interior-audit.md), and [dart-target rail](base-dart-target.md).
 - [Dart window](dart-window.md) and [Technology Core joints](technology-core-joints.md).
-- [Geometry audit](geometry-audit.md), [performance measurements](performance.md), and the [optimization reports](simplification.md#audits-and-experiments).
+- [Read-only CAD optimization passes](cad-optimization-passes.md), [Geometry audit](geometry-audit.md), [performance measurements](performance.md), and the [optimization reports](simplification.md#audits-and-experiments).
 - [Original articulation design](articulation-design.md), retained as design history. Use the semantic export reference for the implemented contract.
 
 The Markdown files are the source for both GitHub browsing and the documentation site. Dated benchmark reports retain their measured scope and reproduction inputs.

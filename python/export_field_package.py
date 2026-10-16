@@ -35,6 +35,7 @@ Run in the OCP venv (see docs/previews.md). The output directory must not
 exist yet.
 """
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -140,8 +141,10 @@ class GlbWriter:
         self.accessors.append(acc)
         return len(self.accessors) - 1
 
-    def add_node(self, name, positions_m, triangles, colour_keys, matrix=None):
-        """positions_m: (n,3) float64 metres; triangles: (t,3) int; colour_keys: list per triangle."""
+    def add_node(self, name, positions_m, triangles, colour_keys, matrix=None, extras=None):
+        """Write metre-space triangles; optional node extras stay independent of shared meshes."""
+        if extras is not None and not isinstance(extras, dict):
+            raise ValueError('node extras must be an object')
         if matrix is not None:
             matrix = np.asarray(matrix, dtype=float)
             if (matrix.shape != (4, 4) or not np.isfinite(matrix).all()
@@ -150,6 +153,8 @@ class GlbWriter:
         if len(triangles) == 0:
             # Preserve the source node as an anchor for semantic bindings.
             self.nodes.append({"name": name})
+            if extras is not None:
+                self.nodes[-1]["extras"] = copy.deepcopy(extras)
             if matrix is not None:
                 self.nodes[-1]['matrix'] = matrix.flatten(order='F').tolist()
             return
@@ -164,6 +169,8 @@ class GlbWriter:
         if signature in self._geometry:
             mesh = self._geometry[signature]
             self.nodes.append({'name': name, 'mesh': mesh})
+            if extras is not None:
+                self.nodes[-1]['extras'] = copy.deepcopy(extras)
             if matrix is not None:
                 self.nodes[-1]['matrix'] = np.asarray(matrix).flatten(order='F').tolist()
             self.triangles += self._mesh_triangles[mesh]
@@ -206,6 +213,8 @@ class GlbWriter:
         self._geometry[signature] = mesh
         self._mesh_triangles[mesh] = len(triangles)
         self.nodes.append({"name": name, "mesh": mesh})
+        if extras is not None:
+            self.nodes[-1]["extras"] = copy.deepcopy(extras)
         if matrix is not None:
             self.nodes[-1]['matrix'] = np.asarray(matrix).flatten(order='F').tolist()
 

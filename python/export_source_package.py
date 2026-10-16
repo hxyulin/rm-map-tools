@@ -83,8 +83,10 @@ def export(pkg, config, out, policy, config_hash):
     expected = Counter(row for row, matrices in pkg.transforms.items() if pkg.bodies(row) for _ in matrices)
     actual = Counter()
     selections = {}
+    selection_paths = {}
     for anchor, spec in groups.items():
-        items = pkg.subtree_placed(anchor, np.eye(4))
+        occurrences = list(pkg.document.subtree(anchor))
+        items = [(r, m) for r, m, _ in occurrences]
         # A root with its own bodies must not swallow the child branches.
         if anchor == pkg.m.roots[0]:
             items = [(anchor, np.eye(4))]
@@ -92,6 +94,8 @@ def export(pkg, config, out, policy, config_hash):
         if not items:
             raise ValueError(f"empty source branch: {spec['name']}")
         selections[anchor] = items
+        paths = [path for r, _, path in occurrences if pkg.bodies(r)]
+        selection_paths[anchor] = paths[:1] if anchor == pkg.m.roots[0] else paths
         for row, _ in items:
             actual[row] += len(spec['matrices'])
     if actual != expected:
@@ -157,18 +161,24 @@ def export(pkg, config, out, policy, config_hash):
         placements = []
         for i, matrix in enumerate(spec['matrices']):
             pl = rotation @ in_metres(matrix) @ translation(origin)
-            placements.append(placement_entry(i, pl, 'source_occurrence', 0))
+            placement = placement_entry(i, pl, 'source_occurrence', 0)
+            placement['source_occurrence_path'] = spec['occurrences'][i:i+1]
+            placements.append(placement)
         for n, (row, matrix, meshes, stats) in enumerate(meshed):
             node = f'source_{int(pkg.ix.ids[row])}_{n}'
+            identity = pkg.document.node_identity(row, selection_paths[anchor][n])
+            identity['asset_product_id'] = int(pkg.ix.ids[anchor])
             local = in_metres(matrix)
             local[:3, 3] -= origin
             for kind, mesh in zip(('visual', 'collision'), meshes):
                 p, tri, col, colours = mesh
                 keys = [colours[int(c)] for c in col]
-                writers[kind].add_node(node, p / 1000, tri, keys, matrix=local)
+                writers[kind].add_node(node, p / 1000, tri, keys, matrix=local, extras={'cad_source': identity})
                 for i, pl in enumerate(placements):
                     full[kind].add_node(f'{name}_{i}_{node}', p / 1000, tri, keys,
-                                        matrix=np.asarray(pl['matrix_local_to_arena']) @ local)
+                                        matrix=np.asarray(pl['matrix_local_to_arena']) @ local,
+                                        extras={'cad_source': dict(identity, source_occurrence_path=
+                                            pl['source_occurrence_path'] + identity['relative_occurrence_path'])})
         entry = {'label': spec['label'], 'source_product_id': int(pkg.ix.ids[anchor]),
                  'source_occurrence_ids': spec['occurrences'], 'source_products': sorted({int(pkg.ix.ids[r]) for r, _ in items}),
                  'placements_in_source_arena_frame': placements, 'in_full_map': True,

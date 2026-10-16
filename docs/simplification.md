@@ -6,6 +6,10 @@ See [simplification counts](simplification-results.md) for mesh, primitive, vert
 
 Reduction happens at several stages. STEP splitting preserves source geometry; tessellation approximates CAD surfaces; later mesh simplification is lossy. Not every optimization belongs in every package, and the JSON export runner does not run all the steps below automatically.
 
+For source-first discovery without changing geometry, start with
+[read-only CAD optimization passes](cad-optimization-passes.md). These inventory
+existing assembly reuse and exact body-graph duplicates before any tessellation.
+
 ## Processing order
 
 1. **Split and validate the source.** Keep the original STEP, split manifest, and source hashes. Resolve missing faces and ownership errors before reducing detail. See [Getting started](getting-started.md) and [Geometry audit](geometry-audit.md).

@@ -8,6 +8,7 @@ Existing complete source packages are verified and reused; choose a fresh work
 directory after changing export settings. Failed exports retain their logs.
 """
 import argparse
+import copy
 import gzip
 import hashlib
 import json
@@ -69,10 +70,14 @@ def optimize(source, output):
             entry['triangles' if kind == 'visual' else 'collision_triangles'] = record['after_triangles']
             entry[kind + '_bytes'] = path.stat().st_size
             results[name][kind] = record
-            for node, points, triangles, colours, matrix in read_glb_local_nodes(path):
+            for node, points, triangles, colours, matrix, extras in read_glb_local_nodes(path, include_extras=True):
                 for i, placement in enumerate(entry['placements_in_source_arena_frame']):
+                    placed_extras = copy.deepcopy(extras)
+                    if identity := placed_extras.get('cad_source'):
+                        identity['source_occurrence_path'] = (placement.get('source_occurrence_path', [])
+                                                               + identity.get('relative_occurrence_path', []))
                     full[kind].add_node(f'{name}_{i}_{node}', points, triangles, colours,
-                        matrix=np.asarray(placement['matrix_local_to_arena']) @ matrix)
+                        matrix=np.asarray(placement['matrix_local_to_arena']) @ matrix, extras=placed_extras)
             print(f"{source.name}/{name}/{kind}: {record['before_triangles']} -> {record['after_triangles']} triangles", flush=True)
         entry['mesh_simplification'] = {k: {f: v for f, v in rec.items() if f != 'primitives'} for k, rec in results[name].items()}
         entry['step']['archive'] = 'rm2027-cad-step.zip'

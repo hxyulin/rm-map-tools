@@ -33,6 +33,31 @@ This stage needs no CAD kernel. OCCT imports the resulting parts to check faces,
 
 The Rust `.p21idx` sidecar and Python `.npz` source index are different formats. The CLI uses the former; Python geometry exporters use the latter alongside `parts.json` and the split STEP files.
 
+## Shared in-memory CAD document
+
+`python/cad_document.py` joins the exact STEP graph, assembly/ownership model
+and lazily imported OCCT XCAF working model. Discovery accepts STEP directly
+without an intermediate file, or reuses an existing parser index. Unknown
+metadata remains accessible from original entities rather than being reduced to
+render colors. Native import enables supported property, material, GD&T,
+instance-style, view and product metadata modes in addition to names/colors/layers.
+`python/cad_passes.py` adds immutable derived scenes, inspectable sharing plans
+and atomic application of exact geometry/presentation-definition sharing. Source
+identities, face correspondence, occurrences and style bindings stay separate.
+See [the pass infrastructure](cad-optimization-passes.md) for lifetime, source
+identity, mutable-model and language boundaries.
+
+The source exporter reuses this context through `Package(document=...)` and
+adds small `cad_source` node extras with source hash, product/body IDs and
+occurrence paths. Extras belong to instances and do not enter the mesh-sharing
+key. Release recomposition preserves these extras and full occurrence paths.
+The simulator adapter retains upstream extras as provenance rather than
+interpreting them as new gameplay bindings. The low-level mesh writer and reader can preserve node extras; callers
+recomposing older packages must opt into the reader's `include_extras=True`.
+This is source provenance, separate from gameplay/semantic IDs. Existing mesh
+adapters still reduce materials to effective RGB and may omit empty anchors or
+primitive attributes. They are not a general lossless CAD scene transport.
+
 ## Asset generation
 
 Field and element exporters apply placement and ownership rules, tessellate visual and collision geometry independently, and write GLBs with manifests and validation reports. Export policies control tolerances and explicit collision exclusions. Copied equipment retains its existing geometry and metadata.

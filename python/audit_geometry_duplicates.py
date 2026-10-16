@@ -23,8 +23,9 @@ NAME = re.compile(rb"^([A-Z_0-9]+\(\s*)'(?:[^']|'')*'", re.S)
 
 
 class GeometryFingerprints:
-    def __init__(self, index):
+    def __init__(self, index, *, ignore_display_names=True):
         self.ix = index
+        self.ignore_display_names = ignore_display_names
         self.memo = {}
         self.active = set()
 
@@ -41,7 +42,8 @@ class GeometryFingerprints:
         self.active.add(row)
         try:
             text = self.entity_text(row)
-            text = NAME.sub(rb"\1''", text, count=1)
+            if self.ignore_display_names:
+                text = NAME.sub(rb"\1''", text, count=1)
             def token(match):
                 if match.group(1) is not None:
                     child = self.ix.r(int(match.group(1)))

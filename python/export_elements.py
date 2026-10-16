@@ -140,19 +140,30 @@ from gltf_scene import read_glb_nodes, read_glb_local_nodes
 
 
 class Package:
-    """A split package with its model, placements and per-product solids."""
+    """Split geometry adapter over a shared in-memory CAD document.
 
-    def __init__(self, pkg, index):
+    An optional caller-owned ``document`` reuses source parsing, assembly and
+    metadata across passes and export. Keep that document open during export.
+    Legacy callers may still supply an index path.
+    """
+
+    def __init__(self, pkg, index=None, *, document=None):
+        from cad_document import CadDocument
         self.pkg = pkg
-        self.ix = Index(index)
+        if document is not None:
+            document.require_open()
+        self.ix = Index(index) if document is None else document.index
         units = geometry_length_units(self.ix)
         if not units or set(units) != {".MILLI.,.METRE."}:
             raise ValueError(f"expected millimetre geometry contexts, got {units}")
-        self.m = Model(self.ix)
-        self.nauo_T = nauo_transforms(self.ix, self.m)
+        self.m = Model(self.ix) if document is None else document.model
+        self.document = document if document is not None else CadDocument(self.ix, self.m, owns_index=False)
+        self.nauo_T = self.document.transforms
         self.transforms = occurrence_transforms(self.ix, self.m, self.nauo_T)
         parts = json.load(open(os.path.join(pkg, "parts.json")))
-        self.source = parts["source"]
+        self.source = str(document.source_path) if document is not None else parts["source"]
+        if document is not None and os.path.basename(parts["source"]) != document.source_path.name:
+            raise ValueError('split package and CAD document name different sources')
         self.by_id = {p["product_id"]: p for p in parts["parts"]}
         self.row_of_name = {}
         for r in self.m.product_name:

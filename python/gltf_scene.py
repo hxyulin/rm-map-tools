@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
 """GLB scene traversal shared by semantic and simulator exports. No CAD dependency."""
 import json
+import copy
 from pathlib import Path
 import struct
 
@@ -129,14 +130,19 @@ def read_glb_nodes(path):
     yield from _read_nodes(document, binary)
 
 
-def read_glb_local_nodes(path):
-    """Yield name, local points, triangles, colours, world matrix for mesh nodes."""
+def read_glb_local_nodes(path, *, include_extras=False):
+    """Yield name, points, triangles, colours, matrix; optionally append copied node extras.
+
+    The default five-item API remains unchanged. This color-only mesh reader does
+    not preserve arbitrary material/primitive attributes, textures or empty nodes.
+    """
     document, binary = read_glb(path)
-    transforms = [world for index, world, _ in scene_nodes(document)
+    nodes = [(index, world) for index, world, _ in scene_nodes(document)
                   if 'mesh' in document['nodes'][index]
                   and document['meshes'][document['nodes'][index]['mesh']]['primitives']]
-    for record, world in zip(_read_nodes(document, binary, apply_transforms=False), transforms):
-        yield (*record, world)
+    for record, (index, world) in zip(_read_nodes(document, binary, apply_transforms=False), nodes):
+        result = (*record, world)
+        yield (*result, copy.deepcopy(document['nodes'][index].get('extras', {}))) if include_extras else result
 
 
 def _read_nodes(document, binary, *, apply_transforms=True):

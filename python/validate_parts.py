@@ -38,10 +38,26 @@ def colour_key(col):
     return f'{r:.4f},{g:.4f},{b:.4f}'
 
 
+def enable_reader_metadata(reader):
+    """Enable available XCAF transfer modes without interpreting their source meaning.
+
+    Return the modes supported by this OCCT build. Unsupported modes remain
+    explicit; enabling a mode is not proof every source entity was imported.
+    """
+    modes = ('Color', 'Name', 'Layer', 'Props', 'Mat', 'GDT', 'SHUO', 'View', 'Meta', 'ProductMeta')
+    available = {}
+    for mode in modes:
+        setter = getattr(reader, 'Set'+mode+'Mode', None)
+        available[mode] = setter is not None
+        if setter is not None:
+            setter(True)
+    return available
+
+
 def read_part(path):
     doc = TDocStd_Document(TCollection_ExtendedString('MDTV-XCAF'))
     rd = STEPCAFControl_Reader()
-    rd.SetColorMode(True); rd.SetNameMode(True); rd.SetLayerMode(True)
+    enable_reader_metadata(rd)
     st = rd.ReadFile(path)
     if st != IFSelect_RetDone:
         return None, None, f'read status {st}'

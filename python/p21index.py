@@ -12,9 +12,9 @@ import numpy as np
 from multiprocessing import Pool
 
 # entity start at a line start; used only for chunk boundaries
-ENT_LINE = re.compile(rb'\n#\d+=')
+ENT_LINE = re.compile(rb'\n[ \t]*#\d+\s*=')
 # entity head: '#id=' then optional type name then '('  (empty name => complex instance)
-HEAD = re.compile(rb'#(\d+)=\s*([A-Z_0-9]*)\s*\(')
+HEAD = re.compile(rb'#(\d+)\s*=\s*([A-Z_0-9]*)\s*\(')
 # tokens: string literal | reference | terminator | comment
 TOK = re.compile(rb"'(?:[^']|'')*'|#(\d+)|(;)|/\*.*?\*/", re.S)
 
@@ -83,8 +83,11 @@ def build_index(path, workers=None, chunks_per_worker=4):
     workers = workers or os.cpu_count()
     header, bounds = chunk_bounds(path, workers * chunks_per_worker)
     jobs = [(path, bounds[i], bounds[i + 1]) for i in range(len(bounds) - 1)]
-    with Pool(workers) as pool:
-        parts = pool.map(parse_chunk, jobs)
+    if workers == 1:
+        parts = [parse_chunk(job) for job in jobs]
+    else:
+        with Pool(workers) as pool:
+            parts = pool.map(parse_chunk, jobs)
     # merge type tables
     gnames = {}
     out_ids = []; out_types = []; out_starts = []; out_lens = []; out_refstart = []; out_refs = []
@@ -116,19 +119,44 @@ class Index:
     """Loaded index with id->row lookup and per-entity accessors."""
 
     def __init__(self, npz_path):
-        z = np.load(npz_path)
+        with np.load(npz_path) as data:
+            self._load(data)
+
+    @classmethod
+    def from_step(cls, path, workers=None):
+        """Index STEP directly in memory; no persistent index or rewritten CAD is created."""
+        result = cls.__new__(cls)
+        if workers is not None and workers < 1:
+            raise ValueError('worker count must be positive')
+        result._load(build_index(os.fspath(path), workers=1 if workers is None else workers))
+        return result
+
+    def _load(self, z):
         self.ids = z['ids']; self.types = z['types']; self.starts = z['starts']
         self.lens = z['lens']; self.refstart = z['refstart']; self.refs = z['refs']
         self.typenames = [str(x) for x in z['typenames']]
         self.header = z['header'].tobytes()
         self.source = str(z['source']); self.size = int(z['size'])
         self.tid = {n: i for i, n in enumerate(self.typenames)}
+        if not len(self.ids):
+            raise ValueError('STEP contains no indexed entities')
         self.max_id = int(self.ids.max())
         self.row = np.full(self.max_id + 1, -1, dtype=np.int32)
         self.row[self.ids] = np.arange(len(self.ids), dtype=np.int32)
         self._f = open(self.source, 'rb')
         self.mm = mmap.mmap(self._f.fileno(), 0, access=mmap.ACCESS_READ)
         self.n = len(self.ids)
+
+    def close(self):
+        """Release the read-only source mapping and file handle."""
+        self.mm.close()
+        self._f.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *_):
+        self.close()
 
     def rows_of(self, *names):
         sel = np.zeros(self.n, dtype=bool)
