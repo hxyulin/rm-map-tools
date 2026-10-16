@@ -167,7 +167,7 @@ def run_document(document, names):
                 'Exact graph matching is sufficient but incomplete: no quantization, coordinate normalization, reflection or geometric fitting.']}
 
 
-def run(index, source_sha256, names, *, workers=None):
+def run(index, source_sha256, names, *, workers=None, intern_layers=False):
     """Read STEP directly or use an optional index cache, through the same document API."""
     validate_passes(names)
     path = Path(index)
@@ -177,6 +177,7 @@ def run(index, source_sha256, names, *, workers=None):
     options = {'expected_sha256': source_sha256}
     if direct:
         options['workers'] = workers
+        options['intern_layers'] = intern_layers
     started = time.perf_counter()
     with loader(path, **options) as document:
         loaded = time.perf_counter()
@@ -186,6 +187,9 @@ def run(index, source_sha256, names, *, workers=None):
         if not direct and file_hash(path) != index_digest:
             raise ValueError('input index changed during audit; discard results')
         report['inputs'].update(index=None if direct else str(path.resolve()), index_sha256=index_digest)
+        report['inputs'].update(layer_references_interned=document.index.layers_interned,
+                                stored_references=len(document.index.refs),
+                                logical_references=document.index.reference_count)
         report['source_and_index_unchanged'] = True
         return report
 
@@ -194,6 +198,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('index', type=Path, nargs='?', help='original STEP or optional .npz parser cache')
     ap.add_argument('--workers', type=int, default=4, help='STEP indexing worker count')
+    ap.add_argument('--intern-layers', action='store_true', help='pool layer references during STEP indexing; caches retain their own layout')
     ap.add_argument('--source-sha256')
     ap.add_argument('--out', type=Path, help='new JSON report; existing paths are refused')
     ap.add_argument('--passes', nargs='+', choices=list(PASSES), default=list(PASSES))
@@ -206,7 +211,7 @@ def main():
         ap.error('index, --source-sha256 and --out are required')
     if args.out.exists():
         ap.error('report already exists; choose a new path')
-    report = run(args.index, args.source_sha256, args.passes, workers=args.workers)
+    report = run(args.index, args.source_sha256, args.passes, workers=args.workers, intern_layers=args.intern_layers)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     # Exclusive creation prevents overwriting anything if another run wins.
     with args.out.open('x') as stream:

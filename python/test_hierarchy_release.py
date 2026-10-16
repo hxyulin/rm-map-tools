@@ -7,6 +7,8 @@ from pathlib import Path
 import tempfile
 import unittest
 import zipfile
+import tarfile
+import zstandard as zstd
 
 spec=importlib.util.spec_from_file_location('hierarchy_release',Path(__file__).resolve().parents[1]/'scripts/build_hierarchy_release.py')
 release=importlib.util.module_from_spec(spec);spec.loader.exec_module(release)
@@ -27,12 +29,28 @@ class HierarchyReleaseTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);source=self.package(root)
             release.validate_package(source,'original')
-            archive=release.package_release(source,root/'release','fixture-stage1',{'source_sha256':'original'})
+            archive=release.package_release(source,root/'release','fixture-stage1',{'source_sha256':'original'},archive_format='zip')
             with zipfile.ZipFile(archive) as zipped:
                 self.assertEqual(zipped.read('fixture-stage1/field.step'),(source/'field.step').read_bytes())
                 self.assertEqual(zipped.read('fixture-stage1/NOTICE.md'),b'source owner\n')
                 self.assertEqual(zipped.getinfo('fixture-stage1/field.step').date_time,(1980,1,1,0,0,0))
                 self.assertIn('fixture-stage1/release.json',zipped.namelist())
+            for line in (root/'release/SHA256SUMS').read_text().splitlines():
+                expected,name=line.split('  ');self.assertEqual(release.digest(root/'release'/name),expected)
+
+    def test_default_release_uses_maximum_zstd_with_provenance_and_checksums(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);source=self.package(root)
+            archive=release.package_release(source,root/'release','fixture-stage1',{'source_sha256':'original'})
+            self.assertTrue(archive.name.endswith('.tar.zst'))
+            with archive.open('rb') as compressed, zstd.ZstdDecompressor().stream_reader(compressed) as stream:
+                with tarfile.open(fileobj=stream,mode='r|') as tar:
+                    members={}
+                    for member in tar:
+                        self.assertEqual(member.mtime,0)
+                        members[member.name]=tar.extractfile(member).read()
+            self.assertEqual(members['fixture-stage1/field.step'],(source/'field.step').read_bytes())
+            self.assertEqual(json.loads(members['fixture-stage1/release.json'])['archive'],{'format':'tar.zst','compression_level':22})
             for line in (root/'release/SHA256SUMS').read_text().splitlines():
                 expected,name=line.split('  ');self.assertEqual(release.digest(root/'release'/name),expected)
 

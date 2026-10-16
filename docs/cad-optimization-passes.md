@@ -375,3 +375,197 @@ Use the [source component catalog](cad-components.md) to work on smaller source
 selections: it retains every original body and occurrence, supports manual
 whole-body groups and exports isolated, geometry/style-verified STEP work items
 on demand. Component organization remains separate from geometry optimization.
+
+## Exact STEP value sharing and storage investigation
+
+`python/cad_share_values.py` writes a **new candidate STEP**, rather than only
+changing an in-memory scene. It shares exact `CARTESIAN_POINT`, `DIRECTION`,
+`VECTOR` and whitelisted presentation definitions. It preserves literal numeric
+spellings and style names; it performs no rounding, refitting or healing.
+Vertices, edges, faces, shells, bodies, product/occurrence identities, layers and
+style bindings remain distinct. Named geometric values, direct layer/style
+targets and assembly placement frames and their support values are protected.
+It currently requires one explicit SI geometry length unit.
+
+The candidate is an immutable processing input: changing a shared value in place
+would affect all users. An editing pass must copy before writing. Removed source
+IDs resolve through the `aliases` table in `sharing.json`; aliases are definition
+sharing, never permission to merge semantic owners or collision instances.
+`source-hierarchy.json` is explicitly the unchanged input identity catalog, not a
+new checksum/ID manifest for the candidate. Its referenced definition IDs must
+be resolved through the aliases. This candidate is not yet wired into the
+runtime package exporter or release builder.
+
+```sh
+ocpenv/bin/python python/cad_share_values.py \
+  out/rmuc2027-hierarchy/field.step \
+  --hierarchy out/rmuc2027-hierarchy/hierarchy.json \
+  --native-baseline out/rmuc2027-hierarchy/native-validation.json \
+  --out out/rmuc2027-shared-values
+ocpenv/bin/python python/audit_step_storage.py \
+  out/rmuc2027-hierarchy out/rmuc2027-shared-values \
+  --native --out out/storage-comparison.json
+```
+
+Both commands refuse existing destinations. The sharing writer stages its output
+and publishes the candidate folder only after validation. An optional parser
+`.npz` cache may replace a STEP input, but is never required. The storage audit
+uses identical ZIP/DEFLATE level 6 settings for both complete packages, including
+identity sidecars and notices; it deletes measured archives unless
+`--archive-out NEW_DIRECTORY` is supplied. Single-run parse/native wall times are
+indicative and depend on the cache and machine load.
+
+Validation independently reparses the candidate, re-derives the protected sharing
+plan, compares every removed definition and every retained record, resolves all
+references and checks the complete rewritten byte stream. The full-field run
+also verifies all 202 assembly edges and native solid/face counts and bounds.
+Native transfer checks geometry/names, with presentation modes disabled; exact
+style-graph preservation plus the fully colored, rotated nested-instance test
+cover appearance separately. No placed triangle reduction is claimed.
+
+The 2026-10-17 investigation uses the reviewed stage-one hierarchy derived from
+RMUC2027 source SHA-256
+`a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0`.
+The source and published stage-one CAD payload remain unchanged.
+
+- STEP records: **4,800,811 → 3,665,363**, removing **1,135,448** exact
+  definitions, including 235,594 points, 269,224 directions and 178,771
+  presentation assignments.
+- STEP bytes: **652,000,969 → 582,858,019**, a **10.6%** reduction before
+  identity sidecars/compression.
+- Native coverage remains **629 solids / 214,794 placed faces**, with unchanged
+  bounds. Every source face/topology identity and all placements remain.
+- Layer records alone contain **354,417,455 bytes** (54.4% of the baseline
+  STEP), with 38,852,770 references. There are only **546 distinct ordered
+  membership lists** across 21,984 layer records. Interned reference arrays
+  would occupy **1,975,572 bytes**, versus **155,411,080 bytes** before interning,
+  excluding lookup/object overhead. The opt-in layout below now implements this
+  sharing; the default legacy layout still stores the original reference lists.
+- Frame-normalized body discovery finds 12 groups / 16 redundant-body
+  candidates, with a **572,097-byte upper bound** before replacement metadata.
+  That is under 0.1% of the original STEP and is not an equivalence proof.
+  Existing large assembly instances are already shared, so additional body
+  instancing is not the first storage priority.
+
+The opt-in interned layer-membership view below preserves each layer's name and
+identity while sharing its ordered references. A compact processing package
+could additionally externalize those lists into a
+reversible metadata sidecar. Such a package could retain all information, but its
+standalone STEP would lack the removed layer records: this must be an explicit
+export mode with reconstruction checks, never silent layer stripping. Ordinary
+STEP keeps the inline lists. Measure complete compressed packages as well as raw
+text; duplicated STEP text can already compress well, and identity maps have a
+real storage cost.
+
+Measured complete-package results are retained in
+[`benchmarks/2026-10-17-step-sharing/summary.json`](../benchmarks/2026-10-17-step-sharing/summary.json).
+The baseline ZIP is remeasured using the same archive settings and files as the
+candidate comparison, rather than using the release ZIP's additional packaging
+metadata.
+
+| Measure | Reviewed baseline | Shared candidate | Change |
+| --- | ---: | ---: | ---: |
+| STEP bytes | 652,000,969 | 582,858,019 | −10.6% |
+| Complete package bytes | 667,829,966 | 625,529,431 | −6.3% |
+| ZIP bytes, including identity sidecars | 104,029,765 | 99,567,101 | −4.3% |
+| Serial indexing, one run | 9.36 s | 8.46 s | −9.6% |
+| Native geometry/name read, one run | 44.23 s | 44.39 s | Effectively unchanged |
+
+The candidate ZIP's `sharing.json` costs 4,460,480 compressed bytes; retaining
+source identity is included in the result. The archive passed a full entry CRC
+read-back. Keep this as a candidate checkpoint rather than assuming fewer
+records guarantees faster native CAD import. The measurement does not establish
+a tessellation speedup. Temporary indexes, duplicate archives, unpacked candidate
+and the local CAD environment were removed after retaining one candidate ZIP and
+the reproducible tooling/results; the original source and published release were
+left intact.
+
+## Pooled layer references and Zstandard
+
+`Index.from_step(..., intern_layers=True)` and
+`CadDocument.from_step(..., intern_layers=True)` now offer an opt-in pooled
+reference layout. `audit_cad_passes.py --intern-layers` uses it directly; the
+index CLI accepts the same flag. Original STEP records, layer IDs, names,
+descriptions, membership order and repeated references are preserved. Layers
+with equal membership remain separate semantic objects. There is no STEP
+rewrite, layer suppression or geometric change.
+
+The parser recognizes ordinary layer argument syntax and reuses identical raw
+membership lists before repeatedly tokenizing their reference IDs. Unusual
+syntax and comments fall back to the original string/comment-aware tokenizer.
+A global pass merges exact ordered uint32 arrays across chunks, including
+whitespace variants. Parallel parsing, empty lists and legacy caches are tested.
+Shared references are read-only; editing requires a derived copy.
+
+The legacy flat-reference layout remains the default and its `.npz` caches still
+load. The opt-in Python cache records `reference_layout: layer-interned-v1` plus
+`layer_rows`, `layer_starts` and `layer_counts`. It is not the Rust interchange
+format. Consumers must use `refs_of(row)` or `reference_spans(rows)`: in the
+pooled layout, direct adjacent `refstart` offsets describe ordinary references,
+while layer spans address the shared pool. `len(index.refs)` counts stored
+values; `index.reference_count` counts logical occurrences. Missing-reference
+counts preserve logical multiplicity too. The splitters and storage profiler
+use these accessors; semantic discovery reuses pooled membership groups.
+
+This reduces index storage and parsing work. The splitter still expands layer
+memberships when constructing its per-layer reverse selection tables, and native
+OCCT import still reads the original STEP. Neither peak splitter memory nor
+native import performance is claimed to improve. `tar.zst` is the storage and
+transfer format; the parser still maps an unpacked STEP file.
+
+```sh
+ocpenv/bin/python python/audit_layer_interning.py \
+  out/rmuc2027-shared-values/field.step --out out/layer-interning.json
+ocpenv/bin/python python/audit_cad_passes.py source/RMUC2027_V1.0.0.stp \
+  --intern-layers --workers 1 \
+  --source-sha256 a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0 \
+  --out out/pooled-source-audit.json
+ocpenv/bin/python python/cad_archive.py out/rmuc2027-shared-values \
+  --levels 3 22 --out out/compression-comparison
+```
+
+The [full-field evidence](../benchmarks/2026-10-17-layer-interning/summary.json)
+uses the previous exact-sharing candidate, without changing its package contents:
+
+| Index measure | Flat | Pooled |
+| --- | ---: | ---: |
+| Logical references | 44,078,212 | 44,078,212 |
+| Stored reference values | 44,078,212 | 5,719,335 |
+| NumPy index array bytes | 293,982,622 | 140,898,858 |
+| Serial indexing, single run | 8.43 s | 5.18 s |
+| Model + semantic evidence, single run | 1.15 s | 1.09 s |
+
+That is **52.1% less NumPy array storage** and **38.6% less indexing time** in
+this run. Array totals exclude Python objects, source mappings and temporary/peak
+allocations. All 3,665,363 entity spans, 5,225,442 ordinary references, and 21,984
+layer records were checked; the complete semantic evidence reports agree.
+Membership pooling does not change standalone STEP bytes.
+
+Only two Zstandard levels were tested, using python-zstandard 0.25.0 / libzstd
+1.5.7 with one compression thread and frame checksums:
+
+| Complete package archive | Bytes | Compression | Decompression + verification | Frame window |
+| --- | ---: | ---: | ---: | ---: |
+| Earlier ZIP/DEFLATE 6 | 99,567,101 | 8.13 s | Not measured here | N/A |
+| `.tar.zst`, level 3 | 57,335,859 | 0.76 s | 0.65 s | 2 MiB |
+| `.tar.zst`, level 22 | 35,626,492 | 305.07 s | 0.59 s | 128 MiB |
+
+Level 22 saves **37.9%** versus level 3 and **64.2%** versus the ZIP, with no
+measured decompression slowdown. This is a single-run comparison, not a universal
+performance guarantee. Verification includes member SHA-256 checks and a second
+streamed pass proving complete single-frame EOF; a tar end marker alone does not
+prove the Zstandard checksum was present. No intermediate uncompressed tar is
+written. The compressor's allocated context measured 3,663,385 bytes at level 3
+and 874,070,679 bytes at level 22, excluding other process memory. The frame
+window sets a decoding memory requirement, rather than measuring total decoder
+RSS; see the [Zstandard manual](https://facebook.github.io/zstd/doc/api_manual_v1.5.7.html).
+
+Future CAD release builds default to `.tar.zst` **level 22**. Use
+`--archive-format zip` for the previous format, or `--zstd-level 3` for a quick
+development archive. Tar entries have normalized timestamps, owner/group and
+modes. All files are SHA-256 checked on read-back, truncated/trailing frames are
+rejected, and publication refuses a destination created during compression.
+Transport-only repackaging of the published baseline preserves its original
+payload; see the [release repacking workflow](cad-hierarchy.md). The retained sharing
+candidate is now `out/shared-values-archives/rmuc2027-shared-values.tar.zst`;
+its earlier local ZIP and temporary benchmark files can be discarded.

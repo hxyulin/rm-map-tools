@@ -42,7 +42,8 @@ SOLID_TYPES = ('MANIFOLD_SOLID_BREP', 'BREP_WITH_VOIDS', 'FACETED_BREP')
 
 def gather_refs(ix, rows):
     """flat array of ref *rows* (may be -1) for the given entity rows, plus owner index."""
-    starts = ix.refstart[rows]; lens = (ix.refstart[rows + 1] - starts).astype(np.int64)
+    starts, lens = ix.reference_spans(rows)
+    lens = lens.astype(np.int64)
     total = int(lens.sum())
     if total == 0:
         return np.zeros(0, np.int64), np.zeros(0, np.int64)
@@ -94,7 +95,7 @@ class Splitter:
                     if not mt:
                         spans.append(None); continue
                     lids = np.array([int(x) for x in re.findall(rb'#(\d+)', mt.group(0))], dtype=np.int64)
-                    allids = ix.refs[ix.refstart[row]:ix.refstart[row + 1]].astype(np.int64)
+                    allids = ix.refs_of(row).astype(np.int64)
                     li = -1
                     for k in range(len(allids) - len(lids) + 1):
                         if allids[k] == lids[0] and allids[k + len(lids) - 1] == lids[-1]:

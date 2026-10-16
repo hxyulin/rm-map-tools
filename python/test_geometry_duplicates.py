@@ -60,6 +60,7 @@ class DuplicateTests(unittest.TestCase):
             refs=np.array([4,5,6,5,5,7]),refstart=np.array([0,2,4,6,6,6,6,6]),
             row=np.array([-1,0,1,2,3,4,5,6]),
             r=lambda eid:eid-1,rows_of=lambda *types:np.array([0,1,2]))
+        ix.reference_spans=lambda rows:(ix.refstart[rows],np.diff(ix.refstart)[rows])
         result=estimate_removable_geometry(ix,[{'bodies':[{'id':1},{'id':2}]}])
         self.assertEqual(result['candidate_geometry_records'],2)
         self.assertEqual(result['candidate_geometry_text_bytes'],20)

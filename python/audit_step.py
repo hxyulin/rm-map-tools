@@ -39,9 +39,7 @@ def audit(index):
     placed = occurrence_transforms(ix, model, transforms)
     raw_bodies = set(ix.rows_of(*BODY_TYPES).tolist())
     owned = {b for b, rep in model.bodies if rep in model.rep_product}
-    references = ix.refs
-    in_range = references <= ix.max_id
-    unresolved = int((~in_range).sum() + (ix.row[references[in_range]] < 0).sum())
+    unresolved = ix.unresolved_reference_count()
     complex_types = collections.Counter()
     metadata = {}
     interesting = ('UNIT', 'MEASURE', 'PROPERTY', 'LAYER', 'INVIS', 'STYLE',

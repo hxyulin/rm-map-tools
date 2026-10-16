@@ -53,6 +53,7 @@ dual-licensed as above, without any additional terms or conditions.
 | Barlow, Barlow Condensed, JetBrains Mono (Google Fonts, loaded at view time) | preview page typography | SIL Open Font License 1.1 |
 | Rust crates listed in `Cargo.toml` (`memmap2`, `rayon`, `memchr`, `clap`, `anyhow`, `serde`, `serde_json`, `thiserror`) | the CLI and library | MIT / Apache-2.0 |
 | numpy | Python prototypes | BSD-3-Clause |
+| python-zstandard and its bundled libzstd | streaming tar.zst CAD archives and read-back verification | BSD-3-Clause |
 
 The earlier whole-file conversion recorded in `benchmarks/whole-file-reference/occt-conversion.json`
 (`RMUC2026_full.glb`) was produced with Open CASCADE from the DJI file and is

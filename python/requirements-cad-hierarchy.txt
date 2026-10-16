@@ -3,3 +3,4 @@
 # Stage-one source CAD exporter; mesh simplification dependencies are separate.
 cadquery-ocp==8.0.1.0.0
 numpy==2.5.4
+zstandard==0.25.0

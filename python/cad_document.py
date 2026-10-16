@@ -88,9 +88,9 @@ class CadDocument:
         self._working = None
 
     @classmethod
-    def from_step(cls, path, *, workers=None, expected_sha256=None):
-        """Load STEP directly, building the parser index in memory only."""
-        return cls(Index.from_step(path, workers=workers), expected_sha256=expected_sha256)
+    def from_step(cls, path, *, workers=None, expected_sha256=None, intern_layers=False):
+        """Load STEP in memory, optionally pooling exact ordered layer memberships."""
+        return cls(Index.from_step(path, workers=workers, intern_layers=intern_layers), expected_sha256=expected_sha256)
 
     @classmethod
     def from_index(cls, path, *, expected_sha256=None):

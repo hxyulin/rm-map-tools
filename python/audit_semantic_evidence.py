@@ -77,19 +77,25 @@ def semantic_evidence(ix, model):
     nonempty_descriptions = 0
     target_references = 0
     hint_counts = Counter()
+    shared_groups = {}
     for row in ix.rows_of('PRESENTATION_LAYER_ASSIGNMENT'):
         row = int(row)
         strings = [decode_p21(s) for s in STR_RE.findall(ix.text(row))]
         name, description = (strings+['', ''])[:2]
         refs = ix.refs_of(row)
-        digest = hashlib.sha256(refs.tobytes()).hexdigest()
-        group = next((memberships[i] for i in buckets[digest]
-                      if np.array_equal(memberships[i]['_refs'], refs)), None)
+        span_key = ix.layer_membership_key(row) if hasattr(ix, 'layer_membership_key') else None
+        group = shared_groups.get(span_key) if span_key is not None else None
+        if group is None:
+            digest = hashlib.sha256(refs.tobytes()).hexdigest()
+            group = next((memberships[i] for i in buckets[digest]
+                          if np.array_equal(memberships[i]['_refs'], refs)), None)
         if group is None:
             group = {'membership_group': len(memberships), 'membership_sha256': digest,
                      '_refs': refs, 'layers': []}
             buckets[digest].append(len(memberships))
             memberships.append(group)
+        if span_key is not None:
+            shared_groups[span_key] = group
         matched = hints(name+' '+description)
         hint_counts.update(matched)
         nonempty_descriptions += bool(description)

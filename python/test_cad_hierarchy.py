@@ -97,6 +97,19 @@ class HierarchyTests(unittest.TestCase):
                 expected=colors(original);actual=colors(full)
                 self.assertNotIn(None,expected)
                 self.assertEqual(actual,Counter({k:v*2 for k,v in expected.items()}))
+                # Exact value sharing must preserve inherited colors, face
+                # overrides and both differently placed nested instances.
+                from cad_share_values import plan_sharing, write_shared, validate_shared
+                from p21index import Index
+                with Index.from_step(root/'export/field.step') as ix:
+                    aliases,_=plan_sharing(ix)
+                    self.assertTrue(aliases)
+                    write_shared(ix,aliases,root/'shared.step')
+                    with Index.from_step(root/'shared.step') as shared:
+                        validate_shared(ix,shared,aliases)
+                        verify_assembly_graph(shared,report['assemblies'])
+                optimized,_,error=read_part(str(root/'shared.step'));self.assertIsNone(error)
+                self.assertEqual(colors(optimized),actual)
                 native=native_validate(root/'export')
                 self.assertEqual(native['native_faces'],24)
                 document.verify_source()

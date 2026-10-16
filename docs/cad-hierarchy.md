@@ -131,13 +131,15 @@ when consuming this hierarchy.
 
 The committed [release builder](../scripts/build_hierarchy_release.py) rebuilds
 stage one, performs native geometry/assembly checks, optionally compares it with
-the approved baseline, and packages a ZIP with provenance and SHA-256 checksums.
+the approved baseline, and packages a `.tar.zst` at level 22 with provenance and
+SHA-256 checksums. `--archive-format zip` retains ZIP/DEFLATE level 6 when needed;
+`--zstd-level` overrides the Zstandard setting for development.
 It requires a clean committed source checkout. Minimal exporter dependencies are
 pinned in [requirements-cad-hierarchy.txt](../python/requirements-cad-hierarchy.txt).
 
 ```sh
 ocpenv/bin/python scripts/build_hierarchy_release.py source/RMUC2027_V1.0.0.stp \
-  --tag rmuc2027-cad-stage1-20261017 \
+  --tag rmuc2027-cad-stage1-example \
   --work out/stage1-release-work --out out/stage1-release \
   --baseline out/rmuc2027-hierarchy
 ```
@@ -146,11 +148,32 @@ The archive includes the four CAD/check files, an upstream ownership notice,
 README and `release.json`. A standalone `release.json` records the exact tool
 commit, upstream source URL/hash, producer-file hashes, dependency versions and
 reproduction command. `SHA256SUMS` covers the archive and standalone provenance.
-Archive contents are CRC-checked and streamed back through SHA-256 before
-publication. Generated STEP headers record their build time, so regeneration
+Archive contents are streamed back through SHA-256 before publication.
+Zstandard archives enable frame checksums and validate complete frame EOF;
+ZIP archives validate entry CRCs. Tar metadata uses fixed timestamps, ownership
+and modes. Generated STEP headers record their build time, so regeneration
 preserves geometry/hierarchy invariants rather than promising byte-identical
 headers. Packaging does not publish; upload the verified files to a separate
 CAD asset release. Use a non-`v*` tag to avoid the CLI binary release workflow.
+The original `rmuc2027-cad-stage1-20261017` tagged builder uses ZIP; use
+`--archive-format zip` to request that format from newer tooling. The level 3/22 storage comparison is documented
+in the [layer and compression investigation](cad-optimization-passes.md#pooled-layer-references-and-zstandard).
+
+To replace only an existing release's compression, use
+[`repack_hierarchy_release.py`](../scripts/repack_hierarchy_release.py). It pins
+the original ZIP SHA-256, preserves all six payload files byte for byte (including
+the original `release.json`), and verifies the tar.zst through every file hash and
+complete frame EOF. A separate `repack.json` records the compression settings,
+original archive hash, producer hashes and size/timing measurements. Updated
+`SHA256SUMS` covers the new archive, unchanged provenance and repack metadata.
+This does not apply the sharing candidate or move the original source tag.
+
+```sh
+ocpenv/bin/python scripts/repack_hierarchy_release.py \
+  out/stage1-release/rmuc2027-cad-stage1-20261017.zip \
+  --source-zip-sha256 c7ac29aa56c045e7aca11cae9cb619bdffc93151177376f70d68005f2337796f \
+  --tag rmuc2027-cad-stage1-20261017 --out out/stage1-release-zstd
+```
 
 ## Remaining reuse opportunities
 
@@ -165,19 +188,26 @@ The next useful work is:
 1. Export canonical B-reps through a cache keyed by geometry, tessellation
    settings and effective appearance, retaining original face correspondence.
    Preserve shared mesh references through GLB and consumer loading.
-2. Connect exact presentation-graph sharing to an export adapter. The source
-   audit found 178,874 assignment definitions reducible to 103 distinct graphs
-   in memory while retaining every style binding. This release has not applied
-   that rewrite, and those counts do not measure final STEP bytes.
-3. Intern identical layer membership arrays in memory: the source has 3,674
+2. Integrate the validated exact value/style sharing candidate into the pipeline.
+   `python/cad_share_values.py` now writes a separate STEP candidate, reducing
+   178,874 presentation assignments to 103 while retaining every binding, and
+   sharing exact unnamed geometric values. See the
+   [storage investigation](cad-optimization-passes.md#exact-step-value-sharing-and-storage-investigation)
+   for measured raw/ZIP savings and identity-map costs. The published stage-one
+   release has not applied this rewrite.
+3. Adopt the opt-in pooled layer reference layout where consumers support it.
+   `CadDocument.from_step(..., intern_layers=True)` now implements this sharing.
+   The source has 3,674
    layer records but only 259 distinct membership lists. Preserve names and
    membership. STEP's inline aggregate lists still need representation, so an
    in-memory saving is not automatically a smaller standalone STEP.
 4. Investigate rigidly congruent parts whose local coordinate frames differ,
    especially repeated mechanism modules. The strict graph audit found only
    two additional identical body pairs (426 to 424 definitions). A broader
-   matcher needs a new geometric equivalence proof and per-face appearance map;
-   there is no measured saving for it yet.
+   matcher needs a new geometric equivalence proof and per-face appearance map.
+   The follow-up frame-normalized candidate audit has a raw geometry upper
+   bound below 0.1% of the original file, before replacement metadata; it is
+   not an equivalence certificate.
 
 Instancing saves definition storage, repeated tessellation and mesh-buffer
 duplication. Compatible runtime batching can save draw overhead. Each placed

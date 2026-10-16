@@ -20,6 +20,8 @@ import tempfile
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'python'))
+from cad_archive import create_archive
 FILES=('field.step','hierarchy.json','native-validation.json','NOTICE.md')
 
 
@@ -52,15 +54,17 @@ def validate_package(package, source_sha256, baseline=None):
     return report,native
 
 
-def package_release(package, out, tag, manifest):
-    """Atomically write a ZIP, standalone provenance and checksums; read it back."""
+def package_release(package, out, tag, manifest, *, archive_format='tar.zst', zstd_level=22):
+    """Atomically package CAD, provenance and checksums, with full byte read-back."""
     if not re.fullmatch(r'[a-z0-9][a-z0-9.-]*',tag):raise ValueError('unsafe release tag')
+    if archive_format not in ('tar.zst','zip'):raise ValueError('unsupported archive format')
     package,out=Path(package),Path(out)
     if out.exists():raise ValueError('release output exists')
     out.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(dir=out.parent) as temporary:
         stage=Path(temporary)/'release';stage.mkdir()
-        manifest={**manifest,'release_tag':tag,'files_sha256':{name:digest(package/name) for name in FILES}}
+        manifest={**manifest,'release_tag':tag,'files_sha256':{name:digest(package/name) for name in FILES},
+                  'archive':{'format':archive_format,'compression_level':zstd_level if archive_format=='tar.zst' else 6}}
         (stage/'release.json').write_text(json.dumps(manifest,indent=2)+'\n')
         readme=stage/'README.txt'
         readme.write_text(f'''RMUC 2027 stage-one hierarchical source CAD
@@ -78,21 +82,25 @@ Geometry remains DJI / RoboMaster property under upstream usage terms.
 See NOTICE.md. The tooling's MIT/Apache licences do not relicense this CAD.
 
 Reproduce from the tagged tooling source with the command in release.json.
-ZIP entry timestamps are fixed; generated STEP provenance includes build time.
+Archive entry timestamps are fixed; generated STEP provenance includes build time.
 ''')
-        name=tag+'.zip';archive=stage/name
+        name=tag+'.'+archive_format;archive=stage/name
         sources=[*( (file,package/file) for file in FILES),('release.json',stage/'release.json'),('README.txt',readme)]
-        with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as zipped:
-            for relative,path in sources:
-                info=zipfile.ZipInfo(tag+'/'+relative,date_time=(1980,1,1,0,0,0))
-                info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
-                with path.open('rb') as source,zipped.open(info,'w',force_zip64=True) as target:
-                    shutil.copyfileobj(source,target,length=1024*1024)
-        with zipfile.ZipFile(archive) as zipped:
-            if zipped.testzip() is not None:raise ValueError('archive CRC verification failed')
-            for relative,expected in manifest['files_sha256'].items():
-                with zipped.open(tag+'/'+relative) as stream:
-                    if hashlib.file_digest(stream,'sha256').hexdigest()!=expected:raise ValueError('archive read-back checksum mismatch')
+        if archive_format=='tar.zst':
+            create_archive(package,archive,level=zstd_level,include=FILES,
+                           extra_files={'release.json':stage/'release.json','README.txt':readme},prefix=tag)
+        else:
+            with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as zipped:
+                for relative,path in sources:
+                    info=zipfile.ZipInfo(tag+'/'+relative,date_time=(1980,1,1,0,0,0))
+                    info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
+                    with path.open('rb') as source,zipped.open(info,'w',force_zip64=True) as target:
+                        shutil.copyfileobj(source,target,length=1024*1024)
+            with zipfile.ZipFile(archive) as zipped:
+                if zipped.testzip() is not None:raise ValueError('archive CRC verification failed')
+                for relative,expected in manifest['files_sha256'].items():
+                    with zipped.open(tag+'/'+relative) as stream:
+                        if hashlib.file_digest(stream,'sha256').hexdigest()!=expected:raise ValueError('archive read-back checksum mismatch')
         (stage/'SHA256SUMS').write_text(''.join(f'{digest(stage/file)}  {file}\n' for file in [name,'release.json']))
         readme.unlink()
         stage.rename(out)
@@ -107,7 +115,10 @@ def main():
     parser.add_argument('--work',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--baseline',type=Path)
+    parser.add_argument('--archive-format',choices=['tar.zst','zip'],default='tar.zst')
+    parser.add_argument('--zstd-level',type=int,default=22)
     args=parser.parse_args()
+    if not 1<=args.zstd_level<=22:parser.error('--zstd-level must be between 1 and 22')
     if args.work.exists() or args.out.exists():raise ValueError('work and release outputs must be fresh')
     dirty=subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,text=True)
     if dirty.strip():raise ValueError('commit tracked source changes before a release build')
@@ -132,9 +143,9 @@ def main():
                                              'source_body_definitions','source_placed_bodies','source_product_occurrences']},
               'native_validation':native,
               'producer_files_sha256':{file:digest(ROOT/file) for file in tracked},
-              'environment':{'python':sys.version.split()[0],**{p:importlib.metadata.version(p) for p in ['cadquery-ocp','numpy']}},
-              'reproduce':f'python scripts/build_hierarchy_release.py source/{upstream["name"]} --tag {args.tag} --work out/stage1-work --out out/stage1-release'}
-    archive=package_release(args.work/'hierarchy',args.out,args.tag,manifest)
+              'environment':{'python':sys.version.split()[0],**{p:importlib.metadata.version(p) for p in ['cadquery-ocp','numpy','zstandard']}},
+              'reproduce':f'python scripts/build_hierarchy_release.py source/{upstream["name"]} --tag {args.tag} --work out/stage1-work --out out/stage1-release --archive-format {args.archive_format} --zstd-level {args.zstd_level}'}
+    archive=package_release(args.work/'hierarchy',args.out,args.tag,manifest,archive_format=args.archive_format,zstd_level=args.zstd_level)
     print('Verified release archive:',archive,flush=True)
 
 
