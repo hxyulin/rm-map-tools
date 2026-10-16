@@ -183,12 +183,15 @@ def select_components(catalog, selector):
             'components': [c for c in catalog['components'] if c['id'] in ids], 'occurrences': occurrences}
 
 
-def export_selection(document, selection, out):
+def export_selection(document, selection, out, *, shell_ids_by_body=None, face_ids_by_body=None, splitter=None):
     """Export one selected product's original bodies to STEP plus exact placement metadata.
 
     The STEP remains in its original product frame. Multiple placed copies are
     carried in selection.json; they are not baked into the geometry. Select a
     narrower group when an assembly spans multiple product coordinate frames.
+    Explicit face_ids_by_body exports original face patches as open surfaces;
+    it preserves face geometry/styles but deliberately gives up solid topology.
+    Such patches are inspection derivatives, not valid solid collision bodies.
     """
     from p21split import Splitter
     products = {c['product_id'] for c in selection['components']}
@@ -203,8 +206,17 @@ def export_selection(document, selection, out):
               if document.model.rep_product.get(rep) == document.index.r(product)}
     if not bodies or not bodies <= owners:
         raise ValueError('work selection body ownership differs from source')
-    splitter = Splitter(document.index, document.model)
-    mask, rewritten = splitter.closure_products([document.index.r(product)], body_ids=bodies)
+    shell_ids_by_body = shell_ids_by_body or {}
+    face_ids_by_body = face_ids_by_body or {}
+    if not set(face_ids_by_body) <= bodies:
+        raise ValueError('face selection names an unselected body')
+    if not set(shell_ids_by_body) <= bodies:
+        raise ValueError('shell selection names an unselected body')
+    splitter = splitter or Splitter(document.index, document.model)
+    if splitter.ix is not document.index or splitter.m is not document.model:
+        raise ValueError('splitter belongs to another source document')
+    mask, rewritten = splitter.closure_products([document.index.r(product)], body_ids=bodies,
+                                               shell_ids_by_body=shell_ids_by_body, face_ids_by_body=face_ids_by_body)
     actual = {int(document.index.ids[b]) for b in document.index.rows_of(*BODY_TYPES) if mask[b]}
     if actual != bodies:
         raise ValueError('STEP closure changed the selected body set')
@@ -215,22 +227,39 @@ def export_selection(document, selection, out):
         splitter.write_closure(mask, rewritten, stage/'source.step')
         # Reparse without importing/healing: selected geometry records must be byte-identical.
         with CadDocument.from_step(stage/'source.step', workers=1) as check:
-            selected_rows = [document.index.r(b) for b in bodies]
+            selected_rows = [document.index.r(b) for b in bodies if b not in shell_ids_by_body and b not in face_ids_by_body]
+            selected_rows.extend(document.index.r(s) for values in shell_ids_by_body.values() for s in values)
+            selected_rows.extend(document.index.r(f) for values in face_ids_by_body.values() for f in values)
             from p21split import forward_closure
             import numpy as np
             geometry = forward_closure(document.index, selected_rows, np.zeros(document.index.n, bool))
+            expected_faces = {int(document.index.ids[r]) for r in np.flatnonzero(geometry)
+                              if document.index.tname(int(r)) == 'ADVANCED_FACE'}
+            if expected_faces != {int(check.index.ids[r]) for r in check.index.rows_of('ADVANCED_FACE')}:
+                raise ValueError('export changed the selected source face set')
+            # Block original wrapper traversal while retaining parent-level style bindings.
+            for body in set(shell_ids_by_body) | set(face_ids_by_body):
+                geometry[document.index.r(body)] = True
+            for row in rewritten:
+                if document.index.tname(row) in ('OPEN_SHELL', 'CLOSED_SHELL'):
+                    geometry[row] = True
             style_rows = [style for row in np.flatnonzero(geometry)
                           for style in document.model.style_of_target.get(int(row), ())]
             preserved = forward_closure(document.index, style_rows, geometry.copy())
             for row in np.flatnonzero(preserved):
                 source_id = int(document.index.ids[row])
-                if check.index.r(source_id) < 0 or check.entity(source_id).raw != document.entity(source_id).raw:
+                expected = rewritten[row] if row in rewritten else document.entity(source_id).raw
+                if check.index.r(source_id) < 0 or check.entity(source_id).raw != expected:
                     raise ValueError('export changed a source geometry or style record')
             if any(check.index.r(int(ref)) < 0 for ref in check.index.refs):
                 raise ValueError('export has dangling references')
         document.verify_source()
         metadata = {**selection, 'work_step_sha256': hashlib.sha256((stage/'source.step').read_bytes()).hexdigest(),
-                    'geometry_and_style_records_preserved': True}
+                    'geometry_and_style_records_preserved': True,
+                    'selected_source_shell_ids': {str(b): sorted(ids) for b, ids in shell_ids_by_body.items()},
+                    'rewritten_surface_model_body_ids': sorted(set(shell_ids_by_body) | set(face_ids_by_body)),
+                    'selected_source_face_ids_by_body': {str(b): sorted(ids) for b, ids in face_ids_by_body.items()},
+                    'face_patch_topology': 'open surfaces; original source solid remains authority' if face_ids_by_body else None}
         (stage/'selection.json').write_text(json.dumps(metadata, indent=2, ensure_ascii=False)+'\n')
         stage.rename(out)
     return out

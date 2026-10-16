@@ -1,0 +1,424 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (partition policy; source CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "length_unit": "millimetre",
+  "notes": [
+    "Partition original solid bodies and complete source shells; do not crop faces or modify native geometry.",
+    "Work grouping proposes attachment only; it does not change runtime motion, lights, collision or scoring.",
+    "Rune arm boxes include a nearby 453-face cover shell. Prefer specific arm boxes over broad hub boxes. One-face shell matches remain outside arm groups to preserve the repeated 95-shell/999-face surface pattern.",
+    "All unmatched/conflicting source shells remain explicitly exported in a support-and-shared group."
+  ],
+  "products": [
+    {
+      "product_id": 2603236,
+      "name": "outpost",
+      "fallback_group": "outpost/support-and-shared",
+      "body_group_overrides": {
+        "outpost/other-bodies": "outpost/support-and-shared"
+      },
+      "shell_rules": [
+        {
+          "id": "outpost/rotor/module-0",
+          "body_id": 2601775,
+          "group": "outpost/rotor/module-0",
+          "priority": 1000,
+          "shell_ids": [
+            2498962
+          ],
+          "evidence": [
+            "Manual original-shell grouping from source bounds: three separate 688-face module surrounds, six lower-region shells and five upper-region shells. Attachment/motion remains a work proposal."
+          ]
+        },
+        {
+          "id": "outpost/rotor/module-1",
+          "body_id": 2601775,
+          "group": "outpost/rotor/module-1",
+          "priority": 1000,
+          "shell_ids": [
+            2527556
+          ],
+          "evidence": [
+            "Manual original-shell grouping from source bounds: three separate 688-face module surrounds, six lower-region shells and five upper-region shells. Attachment/motion remains a work proposal."
+          ]
+        },
+        {
+          "id": "outpost/rotor/module-2",
+          "body_id": 2601775,
+          "group": "outpost/rotor/module-2",
+          "priority": 1000,
+          "shell_ids": [
+            2556150
+          ],
+          "evidence": [
+            "Manual original-shell grouping from source bounds: three separate 688-face module surrounds, six lower-region shells and five upper-region shells. Attachment/motion remains a work proposal."
+          ]
+        },
+        {
+          "id": "outpost/fixed/lower-cluster",
+          "body_id": 2601775,
+          "group": "outpost/fixed/lower-cluster",
+          "priority": 1000,
+          "shell_ids": [
+            2439250,
+            2443527,
+            2447822,
+            2454924,
+            2462026,
+            2470368
+          ],
+          "evidence": [
+            "Manual original-shell grouping from source bounds: three separate 688-face module surrounds, six lower-region shells and five upper-region shells. Attachment/motion remains a work proposal."
+          ]
+        },
+        {
+          "id": "outpost/fixed/upper-cluster",
+          "body_id": 2601775,
+          "group": "outpost/fixed/upper-cluster",
+          "priority": 1000,
+          "shell_ids": [
+            2560247,
+            2564056,
+            2568239,
+            2571808,
+            2601768
+          ],
+          "evidence": [
+            "Manual original-shell grouping from source bounds: three separate 688-face module surrounds, six lower-region shells and five upper-region shells. Attachment/motion remains a work proposal."
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": 1354629,
+      "name": "rune",
+      "fallback_group": "rune/support-and-shared",
+      "body_group_overrides": {
+        "rune/other-bodies": "rune/support-and-shared"
+      },
+      "shell_rules": [
+        {
+          "id": "rune/banks/bank-a/arm-0",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/arm-0",
+          "priority": 100,
+          "min_mm": [
+            -500.7887,
+            -550.9739216321,
+            -706.9571137735
+          ],
+          "max_mm": [
+            -228.6187914244,
+            35.3139,
+            9.9375
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #907068, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-a/arm-1",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/arm-1",
+          "priority": 100,
+          "min_mm": [
+            -582.4358,
+            -768.568502409,
+            1.7994704410870002
+          ],
+          "max_mm": [
+            -260.8198798192,
+            -50.0429,
+            520.3258843433
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #953700, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-a/arm-2",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/arm-2",
+          "priority": 100,
+          "min_mm": [
+            -347.6998,
+            -141.7918602756,
+            245.9448
+          ],
+          "max_mm": [
+            -147.6364884129,
+            251.9867,
+            992.4327521621
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1000332, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-a/arm-3",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/arm-3",
+          "priority": 100,
+          "min_mm": [
+            -233.7105,
+            161.0298617961,
+            1.799470439166
+          ],
+          "max_mm": [
+            88.38343190178,
+            874.0028214151,
+            520.3022734732
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1046964, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-a/arm-4",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/arm-4",
+          "priority": 100,
+          "min_mm": [
+            -265.9251,
+            75.61597185902,
+            -707.0049651869
+          ],
+          "max_mm": [
+            5.67624641841,
+            657.6156,
+            9.9375
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1093596, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/arm-0",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/arm-0",
+          "priority": 100,
+          "min_mm": [
+            59.73677403535,
+            -758.8991,
+            -707.0049651819
+          ],
+          "max_mm": [
+            331.3381,
+            -176.8994923188,
+            9.9375
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1141790, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/arm-1",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/arm-1",
+          "priority": 100,
+          "min_mm": [
+            294.0318118773,
+            -136.5974,
+            -706.9571136942
+          ],
+          "max_mm": [
+            566.2017,
+            449.6904011772,
+            9.9375
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1188422, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/arm-2",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/arm-2",
+          "priority": 100,
+          "min_mm": [
+            326.2329002847,
+            -51.2406,
+            1.799470442294
+          ],
+          "max_mm": [
+            647.8488,
+            667.284981948,
+            520.3258843405
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1235054, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/arm-3",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/arm-3",
+          "priority": 100,
+          "min_mm": [
+            213.0495088749,
+            -353.2702,
+            245.9448
+          ],
+          "max_mm": [
+            413.1128,
+            40.50833981865,
+            992.4327521654
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1281686, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/arm-4",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/arm-4",
+          "priority": 100,
+          "min_mm": [
+            -22.97041144369,
+            -975.2863418802,
+            1.799470442218
+          ],
+          "max_mm": [
+            299.1235,
+            -262.3133822584,
+            520.302273477
+          ],
+          "exclude_face_counts": [
+            1
+          ],
+          "evidence": [
+            "Manual union of mechanical arm region and original 453-face shell #1328318, padded 1 mm. This cover requires 20\u201348 mm expansion, versus at least ~480 mm to the next arm box.",
+            "All ten arms reproduce 95 whole surface shells with 999 source faces; one-face incidental matches remain outside arm groups. Specific arm ownership precedes overlapping hub regions."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-a/hub-cluster",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-a/hub-cluster",
+          "priority": 50,
+          "min_mm": [
+            -479.3111,
+            -238.2338,
+            -217.5435
+          ],
+          "max_mm": [
+            -116.5099,
+            353.8819,
+            361.2283
+          ],
+          "evidence": [
+            "Existing source hub-region bounds, lower priority than contained arm selections; no center-based shell assignment."
+          ]
+        },
+        {
+          "id": "rune/banks/bank-b/hub-cluster",
+          "body_id": 1354072,
+          "group": "rune/banks/bank-b/hub-cluster",
+          "priority": 50,
+          "min_mm": [
+            181.9229,
+            -455.1654,
+            -217.5435
+          ],
+          "max_mm": [
+            544.7241,
+            136.9503,
+            361.2283
+          ],
+          "evidence": [
+            "Existing source hub-region bounds, lower priority than contained arm selections; no center-based shell assignment."
+          ]
+        }
+      ],
+      "expected_group_signatures": {
+        "rune/banks/bank-a/arm-0": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-a/arm-1": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-a/arm-2": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-a/arm-3": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-a/arm-4": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-b/arm-0": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-b/arm-1": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-b/arm-2": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-b/arm-3": [
+          10,
+          95,
+          2065
+        ],
+        "rune/banks/bank-b/arm-4": [
+          10,
+          95,
+          2065
+        ]
+      }
+    }
+  ]
+}

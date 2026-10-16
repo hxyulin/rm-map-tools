@@ -121,3 +121,10 @@ Their isolated STEP exports reparse with geometry/style records preserved, have
 no dangling references and import into OCCT with matching face counts. Placement
 sidecars retain all original instances. Review these mechanical selections and
 the three outpost shell candidates before assigning finer functional ownership.
+
+The follow-up [complete CAD partitions](cad-partitions.md) now export original
+shell subsets as well as bodies. They include the larger Rune arm cover shells,
+resolve arm/hub work ownership with an explicit priority, and retain all
+remaining geometry in a named remainder. The discovery ambiguity above remains
+a record of the earlier, narrower boxes; it is not geometry omitted from the
+complete exports.

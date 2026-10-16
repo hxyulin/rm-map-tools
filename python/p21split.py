@@ -123,12 +123,15 @@ class Splitter:
         thousands of single-face sheets next to a handful of solids)."""
         return self.closure_products([p], solids_only)
 
-    def closure_products(self, products, solids_only=False, body_ids=None):
+    def closure_products(self, products, solids_only=False, body_ids=None, shell_ids_by_body=None, face_ids_by_body=None):
         """Closure of several products at once (see `closure`): the reverse
         boilerplate is filtered against the union, so the result is one
         consistent file rather than a merge of per-product files. Optional body_ids
         selects explicit source bodies, including sheet models, without changing
-        their geometry, styles or product placement."""
+        their geometry, styles or product placement. shell_ids_by_body narrows only
+        explicit SHELL_BASED_SURFACE_MODEL shell lists; shell/face geometry is unchanged.
+        face_ids_by_body instead derives open surface patches from original faces;
+        source shell/body wrappers change, but face geometry is never clipped."""
         ix = self.ix
         seeds, reps = [], set()
         for p in products:
@@ -148,6 +151,65 @@ class Splitter:
                 lids = [int(x) for x in re.findall(rb'#(\d+)', mt.group(0))]
                 keep = np.array([i for i in lids if ix.row[i] not in blocked_set], dtype=np.int64)
                 rewritten[rep] = text[:mt.start()] + self.emit_list(keep) + text[mt.end():]
+        extra_blocked = []
+        for body_id, selected in (shell_ids_by_body or {}).items():
+            body = ix.r(body_id)
+            allowed = {b for b, rep in self.m.bodies if rep in reps}
+            if (body not in allowed or body in set(blocked.tolist()) or solids_only
+                    or ix.tname(body) != 'SHELL_BASED_SURFACE_MODEL'):
+                raise ValueError('shell selection must name a selected source surface-model body')
+            original = [int(x) for x in ix.refs_of(body)]
+            selected = list(selected)
+            if not selected or len(set(selected)) != len(selected) or not set(selected) <= set(original):
+                raise ValueError('shell selection must be a nonempty distinct subset of original shells')
+            if any(ix.tname(ix.r(s)) not in ('OPEN_SHELL', 'CLOSED_SHELL') for s in original):
+                raise ValueError('surface model has unsupported shell references')
+            text = ix.text(body)
+            literals = [(m.start(), m.end()) for m in TOK.finditer(text)
+                        if m.group(0).startswith((b"'", b'/*'))]
+            span = next((m for m in LIST_RE.finditer(text)
+                         if not any(a <= m.start() < b for a, b in literals)
+                         and [int(x) for x in re.findall(rb'#(\d+)', m.group(0))] == original), None)
+            if span is None:
+                raise ValueError('source shell list cannot be filtered unambiguously')
+            keep = np.array([s for s in original if s in set(selected)], dtype=np.int64)
+            rewritten[body] = text[:span.start()] + self.emit_list(keep) + text[span.end():]
+            extra_blocked.extend(ix.r(s) for s in original if s not in set(selected))
+        # Face patches deliberately become open surface models, never claimed solids.
+        # All original faces, bounds, edges and surfaces remain byte-identical.
+        for body_id, selected in (face_ids_by_body or {}).items():
+            body = ix.r(body_id)
+            allowed = {b for b, rep in self.m.bodies if rep in reps}
+            if (body not in allowed or body in set(blocked.tolist()) or solids_only
+                    or body_id in (shell_ids_by_body or {})):
+                raise ValueError('face selection must name a selected, unfiltered source body')
+            original = {int(ix.ids[f]) for f in self.m.body_faces(body)}
+            selected = list(selected)
+            if not selected or len(set(selected)) != len(selected) or not set(selected) <= original:
+                raise ValueError('face selection must be a nonempty distinct subset of original faces')
+            by_shell = collections.defaultdict(list)
+            all_shells = set()
+            for face, shell in self.m.body_faces_shells(body):
+                all_shells.add(shell)
+                if int(ix.ids[face]) in selected:
+                    by_shell[shell].append(int(ix.ids[face]))
+            if not by_shell:
+                raise ValueError('face selection has no supported original shells')
+            for shell, faces in by_shell.items():
+                rewritten[shell] = b"#%d=OPEN_SHELL(''," % int(ix.ids[shell]) + self.emit_list(np.array(faces)) + b');'
+            rewritten[body] = (b"#%d=SHELL_BASED_SURFACE_MODEL(''," % body_id
+                               + self.emit_list(np.array([int(ix.ids[r]) for r in by_shell])) + b');')
+            extra_blocked.extend(ix.r(f) for f in original - set(selected))
+            extra_blocked.extend(all_shells - set(by_shell))
+            # BREP_WITH_VOIDS refers to oriented wrappers as well as raw shells.
+            extra_blocked.extend(ix.r(int(r)) for r in ix.refs_of(body)
+                                 if ix.tname(ix.r(int(r))) == 'ORIENTED_CLOSED_SHELL')
+        blocked = np.unique(np.concatenate([blocked, np.asarray(extra_blocked, dtype=np.int64)]))
+        mask[blocked] = True
+        if face_ids_by_body:
+            seeds += [ix.r(int(f)) for values in face_ids_by_body.values() for f in values]
+            seeds += [r for r in rewritten if ix.tname(r) in ('OPEN_SHELL', 'CLOSED_SHELL')
+                      and r not in set(blocked.tolist())]
         forward_closure(ix, seeds, mask)
         mask[blocked] = False
         for _ in range(6):
@@ -176,6 +238,7 @@ class Splitter:
                 # rewritten entities: forward-close only their kept refs
                 plain = np.array([r for r in add.tolist() if r not in rewritten], dtype=np.int64)
                 mask[add] = True
+                mask[blocked] = True
                 if len(plain):
                     forward_closure(ix, plain, mask)
                 kept = []

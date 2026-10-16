@@ -139,3 +139,9 @@ fused solid geometry. `python/audit_component_regions.py` inventories those
 shells and compares their vertex bounds to manual regions. Shell candidates are
 not automatically attached to body groups, assigned motion or exported by this
 whole-body workflow. Overlaps and straddling shells remain explicit review work.
+
+For complete Rune/Outpost models including surface-container detail, use
+[complete CAD partitions](cad-partitions.md). The library exporter also accepts
+`shell_ids_by_body` for an explicit source-shell subset and an optional reusable
+`Splitter`; it verifies the filtered wrapper plus unchanged shell geometry and
+parent/face styles. The ordinary body-only CLI remains unchanged.

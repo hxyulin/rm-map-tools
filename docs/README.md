@@ -9,6 +9,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Releases and downloads](releases.md) | Choose STEP, GLB, simulator, or viewer archives |
 | [Getting started](getting-started.md) | Install, download, split, and validate |
 | [RoboMaster 2027](rm2027.md) | Source compatibility and CAD, GLB, simulator, and viewer builds |
+| [Complete CAD partitions](cad-partitions.md) | Full Rune/Outpost STEP and GLB exports with disjoint source-shell ownership |
 | [Source CAD components](cad-components.md) | Whole-body component catalogs, manual groups and isolated STEP work items |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
