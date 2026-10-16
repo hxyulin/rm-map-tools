@@ -1,0 +1,641 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (grouping policy; original CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "notes": [
+    "Product names are organizational labels from source occurrence descriptions, not runtime roles. Opaque dart-station parts retain numeric identity.",
+    "Whole original bodies are leaves; screen printing and internal details remain in those bodies.",
+    "Existing-binding groups derive from the reviewed simulator bindings. Additional spatial-candidate groups are organizational proposals validated against a pinned region plan; their physical roles and new motion remain unassigned.",
+    "Spatial candidate groups organize whole mechanical bodies only. Source surface-model shells can span/overlap these groups and are not included in arm/module selections unless explicitly selected as their original whole container."
+  ],
+  "product_names": {
+    "24844": "floor",
+    "54261": "assembly-area",
+    "1354629": "rune",
+    "1751926": "technology-core",
+    "1754789": "drone-landing-pad",
+    "1754833": "assembly-area-assembly",
+    "1782082": "central-deck",
+    "1791071": "central-tunnel-side",
+    "1800061": "central-tunnel-side-red",
+    "1800898": "outpost-footing",
+    "2603236": "outpost",
+    "2615748": "under-highland-fan-grille",
+    "2624828": "tunnel-fan-grille",
+    "2624872": "centre-platform",
+    "2643652": "red-trapezoid-highland",
+    "2643686": "red-trapezoid-assembly",
+    "2644728": "red-high-point-lower",
+    "2649727": "red-high-point-upper",
+    "2650147": "fan-frame-one",
+    "2717102": "fan",
+    "2717147": "red-high-point-assembly",
+    "2721188": "dart-station-timber",
+    "3749800": "dart-station",
+    "3752527": "dart-station-part-3752527",
+    "3757370": "dart-station-part-3757370",
+    "3757401": "red-dart-station-assembly",
+    "3757431": "red-ramp-dart-station",
+    "3776088": "blue-trapezoid-highland",
+    "3776123": "blue-trapezoid-assembly",
+    "3777164": "blue-high-point-lower",
+    "3781945": "blue-high-point-upper",
+    "3782015": "blue-high-point-assembly",
+    "3782100": "blue-dart-station-assembly",
+    "3782129": "blue-ramp-dart-station",
+    "3797438": "red-road-surface",
+    "3797498": "red-road",
+    "3813260": "blue-road-surface",
+    "3813320": "blue-road",
+    "3998852": "resource-area",
+    "4056216": "energy-unit",
+    "4056313": "red-resource-zone",
+    "4056432": "blue-resource-zone",
+    "4059143": "fortress-structure",
+    "4059177": "red-fortress",
+    "4059220": "blue-fortress",
+    "4069592": "base-footing",
+    "4070010": "fan-frame-two",
+    "4774244": "base",
+    "4774282": "arena"
+  },
+  "groups": [
+    {
+      "product_id": 2603236,
+      "path": [
+        "rotor",
+        "module-0"
+      ],
+      "body_ids": [
+        2104330,
+        2107796,
+        2200540,
+        2203298,
+        2203490
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "rotor",
+        "module-1"
+      ],
+      "body_ids": [
+        2206254,
+        2209720,
+        2302471,
+        2305243,
+        2305435
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "rotor",
+        "module-2"
+      ],
+      "body_ids": [
+        2308214,
+        2311680,
+        2404428,
+        2407197,
+        2407389
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 4774244,
+      "path": [
+        "shields",
+        "shield-0"
+      ],
+      "body_ids": [
+        4314593
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 4774244,
+      "path": [
+        "shields",
+        "shield-1"
+      ],
+      "body_ids": [
+        4353403
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 4774244,
+      "path": [
+        "shields",
+        "shield-2"
+      ],
+      "body_ids": [
+        4392221
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 4774244,
+      "path": [
+        "armor-screens"
+      ],
+      "body_ids": [
+        4099408,
+        4121375,
+        4143351
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 4774244,
+      "path": [
+        "fixed-other"
+      ],
+      "body_ids": [
+        4072376,
+        4077428,
+        4268930,
+        4275783,
+        4527988,
+        4531526,
+        4535064,
+        4538602,
+        4540478,
+        4542354,
+        4545066,
+        4549040,
+        4553014,
+        4556988,
+        4558565,
+        4561335,
+        4564115,
+        4566871,
+        4568881,
+        4570891,
+        4774151
+      ],
+      "evidence": [
+        "Existing simulator source-body binding: scripts/bind-rmuc2027-structures.py; see reviewed-motion-rmuc2027.json for pinned script evidence."
+      ],
+      "review_status": "existing-binding"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "fixed",
+        "lower-cluster"
+      ],
+      "body_ids": [
+        1842355,
+        1843213,
+        1844071,
+        2433633
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "outpost/fixed/lower-cluster"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "fixed",
+        "column-cluster"
+      ],
+      "body_ids": [
+        1920483,
+        1925186,
+        1929889
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "outpost/fixed/column-cluster"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "fixed",
+        "upper-cluster"
+      ],
+      "body_ids": [
+        2408935,
+        2409807,
+        2411353,
+        2412225,
+        2413771,
+        2416339,
+        2424923,
+        2427373,
+        2429828,
+        2430080,
+        2430332,
+        2430622,
+        2430912,
+        2431164,
+        2431416,
+        2431684,
+        2431952,
+        2432220,
+        2432388,
+        2101579
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "outpost/fixed/upper-cluster"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "arm-0"
+      ],
+      "body_ids": [
+        232961,
+        236990,
+        244628,
+        249962,
+        255290,
+        262923,
+        270687,
+        272103,
+        273758,
+        275408
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/arm-0"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "arm-1"
+      ],
+      "body_ids": [
+        279613,
+        283647,
+        291285,
+        296619,
+        301947,
+        309580,
+        317344,
+        318760,
+        320445,
+        322095
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/arm-1"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "arm-2"
+      ],
+      "body_ids": [
+        326300,
+        330329,
+        337967,
+        343301,
+        348501,
+        356134,
+        363898,
+        365314,
+        366969,
+        368619
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/arm-2"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "arm-3"
+      ],
+      "body_ids": [
+        372824,
+        376853,
+        384491,
+        389697,
+        394897,
+        402530,
+        410294,
+        411710,
+        413365,
+        415015
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/arm-3"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "arm-4"
+      ],
+      "body_ids": [
+        419220,
+        423249,
+        430887,
+        436221,
+        441549,
+        449182,
+        456946,
+        458362,
+        460017,
+        461667
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/arm-4"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "arm-0"
+      ],
+      "body_ids": [
+        465872,
+        469901,
+        477539,
+        482873,
+        488201,
+        495834,
+        503598,
+        505014,
+        506669,
+        508319
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/arm-0"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "arm-1"
+      ],
+      "body_ids": [
+        512524,
+        516553,
+        524191,
+        529525,
+        534853,
+        542486,
+        550250,
+        551666,
+        553321,
+        554971
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/arm-1"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "arm-2"
+      ],
+      "body_ids": [
+        559176,
+        563205,
+        570843,
+        576177,
+        581505,
+        589138,
+        596902,
+        598318,
+        599973,
+        601623
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/arm-2"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "arm-3"
+      ],
+      "body_ids": [
+        605833,
+        609867,
+        617505,
+        622711,
+        627911,
+        635544,
+        643308,
+        644729,
+        646384,
+        648039
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/arm-3"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "arm-4"
+      ],
+      "body_ids": [
+        652244,
+        656273,
+        663911,
+        669245,
+        674573,
+        682206,
+        689970,
+        691386,
+        693041,
+        694691
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/arm-4"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-a",
+        "hub-cluster"
+      ],
+      "body_ids": [
+        147664,
+        148482,
+        149300,
+        150118,
+        150936,
+        151754,
+        152572,
+        153390,
+        154208,
+        155026,
+        155844,
+        156662,
+        157480,
+        158298,
+        159116,
+        159934,
+        161473,
+        173936,
+        224972
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-a/hub-cluster"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "banks",
+        "bank-b",
+        "hub-cluster"
+      ],
+      "body_ids": [
+        69537,
+        70355,
+        71173,
+        71991,
+        72809,
+        73627,
+        74445,
+        75263,
+        76081,
+        76899,
+        77717,
+        78535,
+        79353,
+        80171,
+        80989,
+        81807,
+        83346,
+        95810,
+        146846,
+        228756
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified."
+      ],
+      "review_status": "spatial-candidate",
+      "region_id": "rune/banks/bank-b/hub-cluster"
+    },
+    {
+      "product_id": 2603236,
+      "path": [
+        "fixed",
+        "spanning-surface-model"
+      ],
+      "body_ids": [
+        2601775
+      ],
+      "evidence": [
+        "Original SHELL_BASED_SURFACE_MODEL container kept intact; source shells are inventoried separately in the region audit, not assigned to spatial components."
+      ],
+      "review_status": "source-identity"
+    },
+    {
+      "product_id": 1354629,
+      "path": [
+        "spanning-surface-model"
+      ],
+      "body_ids": [
+        1354072
+      ],
+      "evidence": [
+        "Original SHELL_BASED_SURFACE_MODEL container kept intact; source shells are inventoried separately in the region audit, not assigned to spatial components."
+      ],
+      "review_status": "source-identity"
+    }
+  ],
+  "region_plan": {
+    "path": "component-regions-rmuc2027.json",
+    "sha256": "e2db10ce368fbca9cde8d20819a8277b28556d7d473d209a974978aa7c49d535"
+  }
+}

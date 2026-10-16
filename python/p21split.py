@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# Copyright (c) 2026 hxyulin <hxyulin@proton.me>
 """Text-level per-product split of a STEP Part 21 file (Python counterpart of the Rust `split`).
 
 For every PRODUCT that owns shape representations, write a standalone STEP
@@ -18,7 +20,7 @@ Usage: p21split.py <index.npz> <out_dir> [--products name,name] [--limit N]
 """
 import sys, os, re, json, time, argparse, collections
 import numpy as np
-from p21index import Index
+from p21index import Index, TOK
 from p21model import Model, first_string, decode_p21
 
 # reverse-referenced entities: policy = ('key', ref position) or ('list',)
@@ -180,7 +182,9 @@ class Splitter:
                 for r in add.tolist():
                     if r in rewritten:
                         body = rewritten[r][rewritten[r].index(b'='):]  # skip own '#id='
-                        kept.extend(ix.row[int(x)] for x in re.findall(rb'#(\d+)', body))
+                        # Tokenize rewritten text: references in names/descriptions are literals.
+                        kept.extend(ix.r(int(token.group(1))) for token in TOK.finditer(body)
+                                    if token.group(1) is not None)
                 forward_closure(ix, np.array(kept, dtype=np.int64), mask)
                 mask[blocked] = False
             if int(mask.sum()) == before:

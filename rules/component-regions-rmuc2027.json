@@ -1,0 +1,562 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (selection policy; source CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "coordinate_frame": "product-local",
+  "length_unit": "millimetre",
+  "regions": [
+    {
+      "id": "outpost/fixed/lower-cluster",
+      "product_id": 2603236,
+      "min_mm": [
+        -266.5324,
+        -1.317,
+        -262.8344
+      ],
+      "max_mm": [
+        231.6031,
+        332.5944,
+        260.7433
+      ],
+      "expected_body_ids": [
+        1842355,
+        1843213,
+        1844071,
+        2433633
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "motion_filter": {
+        "motion": "fixed",
+        "motion_owner": "outpost.frame"
+      }
+    },
+    {
+      "id": "outpost/fixed/column-cluster",
+      "product_id": 2603236,
+      "min_mm": [
+        -197.6104,
+        301.9245,
+        -233.5116
+      ],
+      "max_mm": [
+        178.3896,
+        1135.1456,
+        231.4206
+      ],
+      "expected_body_ids": [
+        1920483,
+        1925186,
+        1929889
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "motion_filter": {
+        "motion": "fixed",
+        "motion_owner": "outpost.frame"
+      }
+    },
+    {
+      "id": "outpost/fixed/upper-cluster",
+      "product_id": 2603236,
+      "min_mm": [
+        -301.5031,
+        933.0381,
+        -284.9951
+      ],
+      "max_mm": [
+        193.3963,
+        1469.65,
+        282.9447
+      ],
+      "expected_body_ids": [
+        2408935,
+        2409807,
+        2411353,
+        2412225,
+        2413771,
+        2416339,
+        2424923,
+        2427373,
+        2429828,
+        2430080,
+        2430332,
+        2430622,
+        2430912,
+        2431164,
+        2431416,
+        2431684,
+        2431952,
+        2432220,
+        2432388,
+        2101579
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Filter uses existing reviewed outpost.frame binding; the upper box also contains the separately retained moving rotor modules."
+      ],
+      "motion_filter": {
+        "motion": "fixed",
+        "motion_owner": "outpost.frame"
+      }
+    },
+    {
+      "id": "rune/banks/bank-a/arm-0",
+      "product_id": 1354629,
+      "min_mm": [
+        -500.7887,
+        -526.559,
+        -692.9612
+      ],
+      "max_mm": [
+        -243.7871,
+        35.3139,
+        9.9375
+      ],
+      "expected_body_ids": [
+        232961,
+        236990,
+        244628,
+        249962,
+        255290,
+        262923,
+        270687,
+        272103,
+        273758,
+        275408
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-a/arm-1",
+      "product_id": 1354629,
+      "min_mm": [
+        -582.4358,
+        -743.6385,
+        6.4186
+      ],
+      "max_mm": [
+        -278.429,
+        -50.0429,
+        509.8099
+      ],
+      "expected_body_ids": [
+        279613,
+        283647,
+        291285,
+        296619,
+        301947,
+        309580,
+        317344,
+        318760,
+        320445,
+        322095
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-a/arm-2",
+      "product_id": 1354629,
+      "min_mm": [
+        -347.6998,
+        -120.9301,
+        245.9448
+      ],
+      "max_mm": [
+        -162.159,
+        251.9867,
+        980.0352
+      ],
+      "expected_body_ids": [
+        326300,
+        330329,
+        337967,
+        343301,
+        348501,
+        356134,
+        363898,
+        365314,
+        366969,
+        368619
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-a/arm-3",
+      "product_id": 1354629,
+      "min_mm": [
+        -233.7105,
+        181.0995,
+        6.4186
+      ],
+      "max_mm": [
+        39.3345,
+        873.9501,
+        509.8099
+      ],
+      "expected_body_ids": [
+        372824,
+        376853,
+        384491,
+        389697,
+        394897,
+        402530,
+        410294,
+        411710,
+        413365,
+        415015
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-a/arm-4",
+      "product_id": 1354629,
+      "min_mm": [
+        -265.9251,
+        95.7427,
+        -692.9612
+      ],
+      "max_mm": [
+        -42.6678,
+        657.6156,
+        9.9375
+      ],
+      "expected_body_ids": [
+        419220,
+        423249,
+        430887,
+        436221,
+        441549,
+        449182,
+        456946,
+        458362,
+        460017,
+        461667
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/arm-0",
+      "product_id": 1354629,
+      "min_mm": [
+        108.0808,
+        -758.8991,
+        -692.9612
+      ],
+      "max_mm": [
+        331.3381,
+        -197.0262,
+        9.9375
+      ],
+      "expected_body_ids": [
+        465872,
+        469901,
+        477539,
+        482873,
+        488201,
+        495834,
+        503598,
+        505014,
+        506669,
+        508319
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/arm-1",
+      "product_id": 1354629,
+      "min_mm": [
+        309.2001,
+        -136.5974,
+        -692.9612
+      ],
+      "max_mm": [
+        566.2017,
+        425.2754,
+        9.9375
+      ],
+      "expected_body_ids": [
+        512524,
+        516553,
+        524191,
+        529525,
+        534853,
+        542486,
+        550250,
+        551666,
+        553321,
+        554971
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/arm-2",
+      "product_id": 1354629,
+      "min_mm": [
+        343.842,
+        -51.2406,
+        6.4186
+      ],
+      "max_mm": [
+        647.8488,
+        642.3549,
+        509.8099
+      ],
+      "expected_body_ids": [
+        559176,
+        563205,
+        570843,
+        576177,
+        581505,
+        589138,
+        596902,
+        598318,
+        599973,
+        601623
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/arm-3",
+      "product_id": 1354629,
+      "min_mm": [
+        227.572,
+        -353.2702,
+        245.9448
+      ],
+      "max_mm": [
+        413.1128,
+        19.6466,
+        980.0352
+      ],
+      "expected_body_ids": [
+        605833,
+        609867,
+        617505,
+        622711,
+        627911,
+        635544,
+        643308,
+        644729,
+        646384,
+        648039
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/arm-4",
+      "product_id": 1354629,
+      "min_mm": [
+        26.0785,
+        -975.2336,
+        6.4186
+      ],
+      "max_mm": [
+        299.1235,
+        -282.383,
+        509.8099
+      ],
+      "expected_body_ids": [
+        652244,
+        656273,
+        663911,
+        669245,
+        674573,
+        682206,
+        689970,
+        691386,
+        693041,
+        694691
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified.",
+        "Ten-body candidate signature: 105,101,157,121,121,157,190,34,40,40 source faces; repeated in ten spatial clusters."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-a/hub-cluster",
+      "product_id": 1354629,
+      "min_mm": [
+        -479.3111,
+        -238.2338,
+        -217.5435
+      ],
+      "max_mm": [
+        -116.5099,
+        353.8819,
+        361.2283
+      ],
+      "expected_body_ids": [
+        147664,
+        148482,
+        149300,
+        150118,
+        150936,
+        151754,
+        152572,
+        153390,
+        154208,
+        155026,
+        155844,
+        156662,
+        157480,
+        158298,
+        159116,
+        159934,
+        161473,
+        173936,
+        224972
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified."
+      ]
+    },
+    {
+      "id": "rune/banks/bank-b/hub-cluster",
+      "product_id": 1354629,
+      "min_mm": [
+        181.9229,
+        -455.1654,
+        -217.5435
+      ],
+      "max_mm": [
+        544.7241,
+        136.9503,
+        361.2283
+      ],
+      "expected_body_ids": [
+        69537,
+        70355,
+        71173,
+        71991,
+        72809,
+        73627,
+        74445,
+        75263,
+        76081,
+        76899,
+        77717,
+        78535,
+        79353,
+        80171,
+        80989,
+        81807,
+        83346,
+        95810,
+        146846,
+        228756
+      ],
+      "evidence": [
+        "Manual whole-body candidate from repeated source body face-count patterns and product-local vertex bounds. Region uses their union plus 1 mm. No mechanical role or motion is certified."
+      ]
+    },
+    {
+      "id": "outpost/rotor/module-0",
+      "product_id": 2603236,
+      "min_mm": [
+        -310,
+        940,
+        -80
+      ],
+      "max_mm": [
+        -245,
+        1075,
+        80
+      ],
+      "expected_body_ids": [
+        2104330,
+        2107796,
+        2200540,
+        2203298,
+        2203490
+      ],
+      "evidence": [
+        "Manual box around an already reviewed five-body outpost module, expanded to inspect its neighboring surface-model shell. Matching shell membership does not certify attachment or motion."
+      ]
+    },
+    {
+      "id": "outpost/rotor/module-1",
+      "product_id": 2603236,
+      "min_mm": [
+        50,
+        1145,
+        170
+      ],
+      "max_mm": [
+        195,
+        1280,
+        285
+      ],
+      "expected_body_ids": [
+        2206254,
+        2209720,
+        2302471,
+        2305243,
+        2305435
+      ],
+      "evidence": [
+        "Manual box around an already reviewed five-body outpost module, expanded to inspect its neighboring surface-model shell. Matching shell membership does not certify attachment or motion."
+      ]
+    },
+    {
+      "id": "outpost/rotor/module-2",
+      "product_id": 2603236,
+      "min_mm": [
+        50,
+        1040,
+        -285
+      ],
+      "max_mm": [
+        195,
+        1175,
+        -170
+      ],
+      "expected_body_ids": [
+        2308214,
+        2311680,
+        2404428,
+        2407197,
+        2407389
+      ],
+      "evidence": [
+        "Manual box around an already reviewed five-body outpost module, expanded to inspect its neighboring surface-model shell. Matching shell membership does not certify attachment or motion."
+      ]
+    }
+  ],
+  "surface_model_body_ids": [
+    2601775,
+    1354072
+  ]
+}

@@ -91,6 +91,7 @@ Producer hashes identify the Python implementations used.
 
 | Pass | Evidence | What remains unresolved |
 | --- | --- | --- |
+| `semantic-evidence` | Exact assembly ownership, occurrence labels, layer membership/overlap, appearance families and motion-type records | Body motion and physical/decoration roles stay unknown; names are review hints |
 | `assembly-reuse` | Existing product identity, complete occurrence paths and source world matrices | Whether downstream exports already share those definitions; face/occurrence style and semantic handling |
 | `exact-body-reuse` | Identical ordered STEP geometry graph after substituting reference hashes and ignoring entity display names/comments/whitespace | Appearance, semantic ownership and export sharing; equivalent shapes encoded differently are deliberately missed |
 
@@ -201,6 +202,86 @@ or silhouettes are removed. Tessellating/exporting canonical body definitions
 with per-occurrence source appearance remains the next adapter step; existing
 runtime packages do not yet benefit from this sharing.
 
+## RMUC 2027 presentation layers and pass ordering
+
+A follow-up read-only inventory of the same source hash found **3,674**
+`PRESENTATION_LAYER_ASSIGNMENT` records, each with a distinct name and an empty
+description. Names include 109 `COLOR<number>` variants and 3,565 other names,
+mostly component-style identifiers. Examples include `BJDOOR-3`,
+`ARMOR_LIGHT_GUIDE_STRIP-V1_1`, `LED_4-1P6X1P6-0P7` and
+`LIGHT_ARMOR_BACK_SHELL`. Names are source hints, not reviewed semantic roles.
+
+The assignments contain **38,868,002 references**, including 38,480,666 face
+references. They cover 105,522 of 110,586 source faces; 102,370 faces appear in
+multiple layers. Among covered faces, the median layer count is 210 and the
+maximum is 1,409. These are overlapping presentation assignments, not a partition
+into physical parts, paint and equipment. All nine shell-based surface bodies
+have no direct layer membership; absence from a layer does not mean removable.
+
+There are only **259 distinct membership lists**, even preserving reference
+order and multiplicity. Hash candidates were checked with exact array equality:
+3,415 duplicate lists match, and the canonical lists contain 1,523,117 references
+instead of processing all 38,868,002 for each derived membership operation. One list is reused by 1,408 differently named layers.
+For example, the two layers `ARMOR_LIGHT_GUIDE_STRIP-V1_1` and
+`LED_4-1P6X1P6-0P7` each target the same 17,754 entities, including 17,660 faces.
+That layer name cannot safely identify just an armor light or LED.
+
+**Next lossless source pass:** intern identical membership lists, preserving all
+3,674 layer records, their names, descriptions, IDs and original memberships.
+This can reduce derived metadata duplication without treating layers as
+visibility, material, motion or collision instructions. It is a measured
+opportunity, not an implemented pass. The simulator checkout holds the compact
+inventories `local-assets/cad-audit/layers-probe.json` and `layer-coverage.json`;
+no large membership catalog or geometry package was generated.
+
+Keep pass stages explicit:
+
+1. **Import and inventory.** Pin source, units, ownership, assembly occurrences,
+   source metadata and transfer limitations. Preserve unrecognized entities.
+2. **Source representation sharing.** Exact geometry and presentation sharing,
+   then exact layer-membership sharing. Keep original identities and contexts.
+3. **Export canonical definitions.** Tessellate shared B-reps once per effective
+   settings/appearance variant; retain source-face correspondence. Geometry
+   instancing and per-occurrence styles must survive this boundary.
+4. **Mesh representation packing.** Deduplicate only complete identical vertex
+   records; share buffers and fully identical materials; concatenate compatible
+   primitives without changing expanded triangle attributes or winding.
+5. **Optional geometry/topology changes.** Retriangulation, CAD face coalescing,
+   Boolean union, internal-face removal, primitive fitting and coarser
+   tessellation need separate invariants and validation. A shape-exact change
+   can still alter face identity, normal/UV interpolation or physical contacts.
+6. **Validate and export.** Check the invariants of each pass and then the
+   composed result, including source IDs, occurrences, styles and colliders.
+
+Each pass should declare its input stage, preconditions, effect, protected
+boundaries and validation, and return an inspectable source/revision-bound plan.
+Keep the input scene available; apply atomically to a new derived scene. Report
+stored-definition/vertex/buffer counts separately from placed triangles and draw
+primitives so a storage optimization is not mislabeled a geometry reduction.
+
+### Exact mesh combining
+
+Concatenating existing triangle buffers can preserve geometry exactly. Start
+with meshes in the **same coordinate frame**, with identical full material and
+render state, compatible attribute layouts and the same rigid-motion owner.
+Keep source triangle ranges as provenance. Validate expanded position, normal,
+UV, tangent and other vertex attributes and winding exactly, not just bounds.
+Triangle count remains the same; the possible gain is fewer primitives/draws.
+
+Keep independently moving parts, runtime-controlled surfaces, collision/scoring
+owners and useful culling regions separate. Source layers alone do not establish
+these boundaries. Prefer instancing for repeated geometry; baking its copies
+into one merged mesh duplicates vertices and can undo the earlier sharing.
+Transform baking also introduces floating-point conversions, so it should not
+be included in the first bit-exact concatenation pass.
+
+Full-record vertex indexing and identical mesh sharing already exist in parts of
+the GLB writer. Measure what the complete export path preserves before adding a
+second implementation. Deduplicating positions alone can erase hard normals or
+UV seams; merging by RGB alone can erase alpha, texture or sidedness differences.
+CAD Boolean fusion is a different operation from mesh-buffer concatenation and
+should not be assumed lossless because its inputs touch or look coplanar.
+
 ## Next infrastructure stages
 
 1. **Trace reuse through each boundary.** Compare source definition/occurrence
@@ -231,3 +312,66 @@ by source/index, pass versions/configuration and producer hashes. Reuse canonica
 CAD and tessellation caches instead of copying whole field packages for every
 experiment. Preserve a runtime baseline until the replacement pipeline is
 validated.
+
+
+## Semantic evidence pass (RMUC 2027)
+
+`--passes semantic-evidence` inventories the source without importing native
+shapes. It retains all product/occurrence strings (important: useful Chinese
+labels live on assembly occurrences, while product identifiers are abbreviated),
+source body ownership, layer names/descriptions, exact membership groups and
+body/face coverage. Exact ordered lists are verified after hash grouping; each
+unique list is analyzed once. Unresolved references are counted. Source type
+counts and explicit motion-family records include complex STEP entities.
+Geometrical surfaces of revolution and mechanical product contexts are not
+motion records. Curves, shells and styled-item ownership are not guessed into
+body coverage.
+
+On source `a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0`:
+
+- 49 product definitions, 84 assembly occurrence edges, 426 body definitions.
+  These are CAD entities; occurrence edges are not the recursively expanded
+  placed-body count and do not establish gameplay entities by themselves.
+- No explicit motion-family records found. This does **not** establish that
+  every body is fixed. All motion assignments remain unknown.
+- 3,674 layers, 259 distinct ordered membership lists, no descriptions.
+  102,370 of 110,586 source faces belong to multiple layers. There are 109
+  colour-named layers, 30 lighting name hints and three equipment name hints;
+  categories may overlap. No motion, fixed-structure, terrain or decoration
+  name hints were found on layers with the current documented keyword rules.
+- Lighting-named layers share a 17,754-target membership containing 42 bodies
+  owned by outpost product #2603236. These are not individual light-strip masks.
+  `LIGHT_ARMOR_BACK_SHELL` refers to 733 faces plus one styled item within
+  base product #4774244; its name does not justify suppressing collisions.
+- The source has colour/style metadata, including 59,685 styled face targets,
+  but no material, texture or transparency entity types and no layer whose
+  targets consist entirely of appearance records.
+- Occurrence labels identify the floor, central highland, rune, outpost,
+  dart stations, fans, resource areas, fortresses and base. For example,
+  occurrence #24852 labels product #24844 `战场大地面_带丝印`; #1782087
+  labels product #1782082 `中央高地_地面带丝印`. These are combined structural
+  and screen-printed assemblies, not separately identified paint geometry.
+
+The report separates exact assembly membership, name hints, appearance metadata
+and unknown runtime roles. An appearance-only target list means that its
+references are style/colour/material records; it never means a geometric body
+can be removed. Colour styles alone do not distinguish paint from structural
+surfaces. Do not use layer names, missing kinematics or sheet topology to assign
+static geometry, animation owners, collision exclusions or texture baking.
+
+Next, bind reviewed roles using source SHA, occurrence path and body/face IDs.
+The simulator already has reviewed base-shield/outpost body bindings; those are
+an independent source of runtime knowledge, not information supplied by these
+layers. Keep moving equipment and independently controlled lights/armor as
+separate owners before any mesh batching. Review surfaces carrying artwork
+before proposing an explicit geometric-decoration-to-material conversion.
+
+The follow-up [layer qualification review](rmuc2027-layer-review.md) compares
+actual source face/body coverage against a pinned profile of the simulator's
+reviewed motion owners. `python/review_cad_layers.py` remains analysis-only;
+its component-selector candidates are not runtime roles or export policies.
+
+Use the [source component catalog](cad-components.md) to work on smaller source
+selections: it retains every original body and occurrence, supports manual
+whole-body groups and exports isolated, geometry/style-verified STEP work items
+on demand. Component organization remains separate from geometry optimization.

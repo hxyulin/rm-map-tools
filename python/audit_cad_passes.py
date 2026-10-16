@@ -17,6 +17,7 @@ import time
 import numpy as np
 from audit_geometry_duplicates import GeometryFingerprints
 from cad_document import CadDocument
+from audit_semantic_evidence import semantic_evidence
 from p21model import BODY_TYPES
 
 
@@ -116,6 +117,8 @@ def exact_body_reuse(ix, model):
 # A pass describes its effect before it can enter the runner. Mutating passes
 # belong in a separate, future apply pipeline with an explicit reviewed plan.
 PASSES = {
+    'semantic-evidence': {'version': 1, 'effect': 'read-only',
+                          'description': 'Layer, assembly, appearance and motion evidence; unresolved roles stay unknown'},
     'assembly-reuse': {'version': 1, 'effect': 'read-only',
                        'description': 'Existing product occurrences and explicit rigid placements'},
     'exact-body-reuse': {'version': 1, 'effect': 'read-only',
@@ -140,7 +143,9 @@ def run_document(document, names):
     results = []
     for name in names:
         print(f'CAD audit: {name}', flush=True)
-        if name == 'assembly-reuse':
+        if name == 'semantic-evidence':
+            findings = semantic_evidence(ix, model)
+        elif name == 'assembly-reuse':
             findings = assembly_reuse(ix, model, document.transforms)
         elif name == 'exact-body-reuse':
             findings = exact_body_reuse(ix, model)
@@ -152,7 +157,7 @@ def run_document(document, names):
             'inputs': {'source': str(document.source_path), 'source_sha256': document.source_sha256,
                        'source_bytes': ix.size},
             'producer_sha256': {p: file_hash(Path(__file__).with_name(p)) for p in
-                ('audit_cad_passes.py', 'cad_document.py', 'audit_geometry_duplicates.py',
+                ('audit_cad_passes.py', 'audit_semantic_evidence.py', 'cad_document.py', 'audit_geometry_duplicates.py',
                  'p21index.py', 'p21model.py', 'mesh_parts.py')},
             'source_unchanged': True, 'passes': results,
             'elapsed_seconds': time.perf_counter()-started,
@@ -208,7 +213,7 @@ def main():
         json.dump(report, stream, indent=2, allow_nan=False)
         stream.write('\n')
     print(json.dumps({'report': str(args.out), 'source_unchanged': True,
-                      'passes': [{k: v for k, v in p['findings'].items() if k not in ('groups', 'skipped')}
+                      'passes': [{k: v for k, v in p['findings'].items() if k not in ('groups', 'skipped', 'layer_memberships', 'products', 'assembly_occurrences', 'source_type_counts')}
                                  for p in report['passes']]}, indent=2))
 
 

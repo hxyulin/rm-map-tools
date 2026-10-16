@@ -1,0 +1,175 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (review policy; source CAD identities retain upstream ownership)",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "scope": "Existing simulator base/outpost motion partition only; all occurrences of the specified product. No claim of full mechanical motion support.",
+  "assignments": [
+    {
+      "product_id": 2603236,
+      "motion": "moving",
+      "body_ids": [
+        2104330,
+        2107796,
+        2200540,
+        2203298,
+        2203490,
+        2206254,
+        2209720,
+        2302471,
+        2305243,
+        2305435,
+        2308214,
+        2311680,
+        2404428,
+        2407197,
+        2407389
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "outpost: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "outpost.spin"
+    },
+    {
+      "product_id": 2603236,
+      "motion": "fixed",
+      "body_ids": [
+        1842355,
+        1843213,
+        1844071,
+        1920483,
+        1925186,
+        1929889,
+        2101579,
+        2408935,
+        2409807,
+        2411353,
+        2412225,
+        2413771,
+        2416339,
+        2424923,
+        2427373,
+        2429828,
+        2430080,
+        2430332,
+        2430622,
+        2430912,
+        2431164,
+        2431416,
+        2431684,
+        2431952,
+        2432220,
+        2432388,
+        2433633,
+        2601775
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "outpost: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "outpost.frame"
+    },
+    {
+      "product_id": 4774244,
+      "motion": "moving",
+      "body_ids": [
+        4314593
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "base: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "base.armor.0"
+    },
+    {
+      "product_id": 4774244,
+      "motion": "moving",
+      "body_ids": [
+        4353403
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "base: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "base.armor.1"
+    },
+    {
+      "product_id": 4774244,
+      "motion": "moving",
+      "body_ids": [
+        4392221
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "base: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "base.armor.2"
+    },
+    {
+      "product_id": 4774244,
+      "motion": "fixed",
+      "body_ids": [
+        4072376,
+        4077428,
+        4099408,
+        4121375,
+        4143351,
+        4268930,
+        4275783,
+        4527988,
+        4531526,
+        4535064,
+        4538602,
+        4540478,
+        4542354,
+        4545066,
+        4549040,
+        4553014,
+        4556988,
+        4558565,
+        4561335,
+        4564115,
+        4566871,
+        4568881,
+        4570891,
+        4774151
+      ],
+      "evidence": [
+        {
+          "kind": "reviewed-simulator-binding",
+          "repository": "rm-simulator",
+          "path": "scripts/bind-rmuc2027-structures.py",
+          "file_sha256": "335f7231705b7a62ff0bdb749febb7a3b9930f62a03e0702a825d35ec4fa70b5",
+          "detail": "base: explicit moving list and remaining unparented fixed bodies in the approved adapter; source CAD does not define this motion."
+        }
+      ],
+      "motion_owner": "base.frame"
+    }
+  ]
+}
