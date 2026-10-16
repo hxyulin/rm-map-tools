@@ -9,6 +9,8 @@
 ```mermaid
 flowchart TD
     STEP[Official STEP source] --> INDEX[Rust index and ownership graph]
+    STEP --> PREP[Source document and reviewed part hierarchy]
+    PREP --> CHECKPOINT[Stage 1 analytic STEP and identity manifest]
     INDEX --> SPLIT[Standalone STEP parts and parts.json]
     SPLIT --> OCCT[OCCT import and tessellation]
     NPZ[Python .npz source index] --> EXPORT[Field and element exporters]
@@ -24,6 +26,14 @@ flowchart TD
 ```
 
 These branches are separate workflows. A format adapter does not run every optimization automatically. See [Exporting](exporting.md) for inputs and [Simplification](simplification.md) for ordering constraints.
+
+The new source-first path publishes [stage-one hierarchical CAD](cad-hierarchy.md).
+This checkpoint preserves analytic geometry, source styles, identities and
+existing instances before tessellation. Existing runtime export jobs still start
+from the original STEP and their own rules. They do not automatically consume
+this checkpoint: that adapter must use its identity manifest to resolve the
+renamed product/wrapper IDs. Additional exact-sharing passes are separate from
+this first baseline release.
 
 ## Source processing
 

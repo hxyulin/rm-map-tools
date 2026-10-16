@@ -1,0 +1,14 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me>",
+  "schema_version": 1,
+  "name": "rmuc-2027",
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "components": "components-rmuc2027.json",
+  "motion_profile": "reviewed-motion-rmuc2027.json",
+  "regions": "component-regions-rmuc2027.json",
+  "compositions": "compositions-rmuc2027.json",
+  "partitions": ["partition-rmuc2027.json", "partition-rmuc2027-remaining-equipment.json", "partition-rmuc2027-terrain-equipment.json"],
+  "whole_product_fallbacks": [4774244],
+  "equipment_product_ids": [1354629, 1751926, 2603236, 3749800, 3998852, 4056216, 4774244]
+}

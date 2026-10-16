@@ -2,7 +2,7 @@
 """Tessellate split part files with OCCT into one compact binary mesh bundle
 for the web preview: per part, quantised uint16 positions, uint16 indices in
 chunks of <= 65535 vertices, one colour index per triangle (effective face
-colour from XCAF, fallback shell > solid > root), plus instance matrices from
+colour from XCAF, fallback shell > solid > nearest compound), plus instance matrices from
 the STEP assembly (identity for the arena, root-level transforms for the
 equipment).
 
@@ -185,6 +185,55 @@ def face_meshes(face, lin, ang, stats):
     return []
 
 
+def _instance_face_colours(roots, faces, colour_tool):
+    """Resolve definition-local face/body paint before applying instance locations.
+
+    ColorTool.GetColor on an assembly-located face can miss the color stored on
+    its unlocated definition. Walk XCAF references and map the resolved colors
+    back to the exact located faces used by tessellation.
+    """
+    from OCP.TDF import TDF_Label
+    from OCP.TopAbs import TopAbs_COMPOUND
+    result = {}
+    color = Quantity_Color()
+
+    def key(shape):
+        return colour_key(color) if (colour_tool.GetColor(shape, XCAFDoc_ColorSurf, color)
+                                    or colour_tool.GetColor(shape, XCAFDoc_ColorGen, color)) else None
+
+    def walk(label, location):
+        definition = TDF_Label()
+        if XCAFDoc_ShapeTool.GetReferredShape_s(label,definition):
+            location = location.Multiplied(XCAFDoc_ShapeTool.GetLocation_s(label))
+        else:
+            definition = label
+        children = TDF_LabelSequence()
+        if XCAFDoc_ShapeTool.GetComponents_s(definition,children):
+            for i in range(1,children.Length()+1): walk(children.Value(i),location)
+            return
+        shape = XCAFDoc_ShapeTool.GetShape_s(definition)
+        local_faces = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(shape,TopAbs_FACE,local_faces)
+        inherited = {}
+        for kind in (TopAbs_SHELL,TopAbs_SOLID,TopAbs_COMPOUND):
+            bodies = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(shape,kind,bodies)
+            # Reverse pre-order compounds so the nearest colored parent wins.
+            indices = range(bodies.Extent(),0,-1) if kind==TopAbs_COMPOUND else range(1,bodies.Extent()+1)
+            for i in indices:
+                body = bodies.FindKey(i); body_key = key(body)
+                if body_key is None: continue
+                explorer = TopExp_Explorer(body,TopAbs_FACE)
+                while explorer.More():
+                    inherited.setdefault(local_faces.FindIndex(explorer.Current()),body_key)
+                    explorer.Next()
+        for i in range(1,local_faces.Extent()+1):
+            face = local_faces.FindKey(i)
+            index = faces.FindIndex(face.Moved(location))
+            if index:
+                result[index] = key(face) or inherited.get(i)
+    for i in range(1,roots.Length()+1): walk(roots.Value(i),TopLoc_Location())
+    return result
+
+
 def tessellate(doc, lin, ang, stats=None, face_observer=None):
     """Tessellate every source face at the requested tolerance."""
     stats = {} if stats is None else stats
@@ -200,6 +249,7 @@ def tessellate(doc, lin, ang, stats=None, face_observer=None):
     shells = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(comp, TopAbs_SHELL, shells)
     solids = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(comp, TopAbs_SOLID, solids)
     col = Quantity_Color(); body_of = {}
+    instance_colours = _instance_face_colours(roots, faces, ct)
     for bodies in ([shells.FindKey(i) for i in range(1, shells.Extent() + 1)], [solids.FindKey(i) for i in range(1, solids.Extent() + 1)], root_shapes):
         for body in bodies:
             bc = colour_key(col) if (ct.GetColor(body, XCAFDoc_ColorSurf, col) or ct.GetColor(body, XCAFDoc_ColorGen, col)) else None
@@ -211,7 +261,9 @@ def tessellate(doc, lin, ang, stats=None, face_observer=None):
     pos = []; tris = []; tcol = []; colours = {}; nv = 0
     for i in range(1, faces.Extent() + 1):
         f = TopoDS.Face(faces.FindKey(i))
-        ck = colour_key(col) if (ct.GetColor(f, XCAFDoc_ColorSurf, col) or ct.GetColor(f, XCAFDoc_ColorGen, col)) else body_of.get(i)
+        ck = instance_colours.get(i)
+        if ck is None:
+            ck = colour_key(col) if (ct.GetColor(f, XCAFDoc_ColorSurf, col) or ct.GetColor(f, XCAFDoc_ColorGen, col)) else body_of.get(i)
         ci = colours.setdefault(ck, len(colours))
         pieces = face_meshes(f, lin, ang, stats)
         if face_observer is not None:

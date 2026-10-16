@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# Copyright (c) 2026 hxyulin <hxyulin@proton.me>
+# Stage-one source CAD exporter; mesh simplification dependencies are separate.
+cadquery-ocp==8.0.1.0.0
+numpy==2.5.4

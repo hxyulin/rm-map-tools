@@ -36,6 +36,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 - [RMUC 2027 non-base spatial components](non-base-components-rmuc2027.md), including rune/outpost shell candidates.
 - [RMUC 2027 layer qualification review](rmuc2027-layer-review.md) and [source component selections](cad-components.md).
 - [RMUC 2027 source colors and complete equipment compositions](appearance-compositions-rmuc2027.md), including the secondary-fixture comparison.
+- [Hierarchical source STEP export](cad-hierarchy.md), assembling the reviewed work parts into one named CAD tree.
 - [Original articulation design](articulation-design.md), retained as design history. Use the semantic export reference for the implemented contract.
 
 The Markdown files are the source for both GitHub browsing and the documentation site. Dated benchmark reports retain their measured scope and reproduction inputs.
