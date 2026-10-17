@@ -68,3 +68,9 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Separate Base visual/collision LOD and relief textures](base-surface-lods-rmuc2027.md): protected lights, source-outline collider plates, rejected flattening trials and source normal/height layers.
 
 - [Projectile-width Base closure and LED LOD](base-gap-led-rmuc2027.md): strict 17 mm gap policy, native bore skins, rotated slot widths and tighter light-material geometry.
+
+- [Base light primitives and hidden overlap](base-light-primitives-rmuc2027.md): two-triangle strip fronts, fitted icosphere caps, smooth normals and rejected protruding proxies.
+
+- [Base crossbar and lower-housing investigation](base-structure-audit-rmuc2027.md): current plane costs, targeted visual bore closure, rejected housing rebuild and panel-local next steps.
+
+- [Base top mounting row](base-mounting-row-rmuc2027.md): stepped-hole qualification, local recess removal and rim-matched end-mouth caps.

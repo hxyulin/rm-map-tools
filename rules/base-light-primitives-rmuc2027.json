@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "red_rgb": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "green_rgb": [
+    0.065,
+    0.981,
+    0.062
+  ],
+  "planar_cover_inset_mm": 0.15,
+  "planar_cover_padding_mm": 0.25,
+  "small_red_box_maximum_span_mm": 5.0,
+  "optic_source_unit_id": 4072376,
+  "optic_sphere_vertex_fit_limit_mm": 1e-05,
+  "optic_hidden_extension_mm": 1.0,
+  "optic_icosphere_subdivisions": [
+    1,
+    2
+  ],
+  "scope": "Explicit source-color visual primitive experiment; hidden overlap must be reviewed in complete assemblies. Non-light triangles and the approved 16857-triangle collider remain unchanged. No source STEP or detector changes.",
+  "remaining_red_error_mm": 0.25,
+  "remaining_red_sampled_limit_mm": 0.5,
+  "front_quad_faces_by_source_unit": {
+    "4314593": 4295960,
+    "4353403": 4334742,
+    "4392221": 4373580
+  }
+}
