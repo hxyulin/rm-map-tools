@@ -90,3 +90,5 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Remaining equipment opportunities](equipment-opportunities-rmuc2027.md): fan policy, Energy cavity proof, source tessellation trials, tool-head fragmentation and Rune detail costs.
 
 - [Fan locations and hollow-box proxy](../benchmarks/2026-10-17-fan-proxy/README.md): ten source placements and a 56-triangle thick frame/open-duct approximation.
+
+- [Global mounting-detail discovery](cad-mounting-details.md): read-only source-bound opening and fastener candidates across terrain and equipment.

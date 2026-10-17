@@ -149,3 +149,32 @@ these renders. [Reproduction and compact ledgers](../benchmarks/2026-10-17-equip
 retain source/output hashes, native feature costs, material-policy costs,
 negative cavity results and all trial metrics. Generated meshes and interactive
 comparisons remain under `out/rmuc2027-equipment-opportunities/`.
+
+## Selective Rune detail candidate
+
+The [selective Rune benchmark](../benchmarks/2026-10-17-rune-detail/README.md)
+reduces the complete Rune from 478,828 to **407,696** triangles (71,132 saved),
+with exact coloured/unresolved GLB attributes and a 5 mm chromatic-neighbour
+lock. It is a review candidate: rear housing occlusion changes slightly despite
+unchanged colour geometry. It does not replace installed assets or collision.
+
+## Rune flat-back candidate
+
+The user-approved [flat-back pass](../benchmarks/2026-10-17-rune-skin/README.md)
+replaces the detailed arm backs with native-profile flat dark panels and removes
+interior/rear surfaces and tiny neutral hardware. It reduces the Rune further
+to **255,621 triangles**, cumulatively 223,207 (46.6%) below the generic candidate.
+Large windows and separate arms survive; hubs/support keep their complete earlier
+LOD geometry. This supersedes the open-back intermediate and remains a visual
+review candidate, with collision and installed packages unchanged.
+
+## Rune front-detail removal
+
+The [smooth-front extension](../benchmarks/2026-10-17-rune-skin/README.md#smooth-front-candidate)
+replaces front mounting bores and shallow concentric relief with authored-colour
+native-profile panels. It also removes tiny cylinder-shell details and the newly
+occluded interior. The complete Rune drops to **153,586 triangles**, another
+102,035 saved beyond flat backs and 67.9% below the generic candidate. Flat backs,
+large openings and separate arms survive; hubs/support remain unchanged. The
+experimental field composition is **2,343,812 placed visual triangles**. Source
+CAD, collision, detectors and installed assets are unchanged.

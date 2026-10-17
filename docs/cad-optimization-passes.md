@@ -96,6 +96,7 @@ Producer hashes identify the Python implementations used.
 
 | Pass | Evidence | What remains unresolved |
 | --- | --- | --- |
+| `mounting-details` | [Source-bound mounting openings and coaxial hardware candidates](cad-mounting-details.md), across all body/shell definitions | Mouths are not physical hole counts; hardware roles, material/motion ownership and removability remain unconfirmed |
 | `semantic-evidence` | Exact assembly ownership, occurrence labels, layer membership/overlap, appearance families and motion-type records | Body motion and physical/decoration roles stay unknown; names are review hints |
 | `assembly-reuse` | Existing product identity, complete occurrence paths and source world matrices | Whether downstream exports already share those definitions; face/occurrence style and semantic handling |
 | `exact-body-reuse` | Identical ordered STEP geometry graph after substituting reference hashes and ignoring entity display names/comments/whitespace | Appearance, semantic ownership and export sharing; equivalent shapes encoded differently are deliberately missed |
