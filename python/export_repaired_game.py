@@ -112,8 +112,8 @@ def collision_scene(visual, ledger):
 def export(out):
     out = Path(out).resolve()
     if out.exists(): raise ValueError('output exists; choose a new directory')
-    source = ROOT / 'out/rmuc2027-low-repair/budget-sealed-field.glb'
-    report_path = source.parent / 'budget-sealed.json'; report = json.loads(report_path.read_text())
+    source = ROOT / 'out/rmuc2027-game-coverage/guarded/guarded-field.glb'
+    report_path = source.parent / 'guarded.json'; report = json.loads(report_path.read_text())
     if digest(source) != report['sha256']: raise ValueError('approved visual checksum mismatch')
     ledger_path = ROOT / 'out/rmuc2027-equipment-shells/summary.json'
     ledger = json.loads(ledger_path.read_text()); hierarchy = ROOT / 'out/rmuc2027-hierarchy/hierarchy.json'
@@ -194,7 +194,7 @@ def export(out):
             'helpers_sha256': {f: digest(ROOT / 'python' / f) for f in ['gltf_scene.py', 'cad_glb_composition.py', 'simplify_package.py', 'export_elements.py']},
             'placed_triangles': totals, 'coverage': coverage, 'bounds_local_m': bounds,
             'collision_contract': CONTRACT, 'motion': 'Source rest pose only; no fabricated native combat/joint bindings.',
-            'visual_policy': 'User-reviewed repaired Low; separate preceding collision meshes retained. Visual-only marking definitions excluded from collision.'})
+            'visual_policy': 'Reviewed Low with camera-independent source-piece coverage restoration; separate preceding collision meshes retained. Visual-only marking definitions excluded from collision.'})
         stage.rename(out)
     print(json.dumps({'output': str(out), 'placed_triangles': totals, 'coverage': coverage}, indent=2))
 

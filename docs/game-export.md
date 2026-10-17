@@ -1,6 +1,6 @@
 <!-- SPDX-License-Identifier: MIT OR Apache-2.0 -->
 <!-- Copyright (c) 2026 hxyulin <hxyulin@proton.me> -->
-# Repaired Low simulator export
+# Covered Low simulator export
 
 `python/export_repaired_game.py` packages the user-reviewed
 [repaired Low visuals](../benchmarks/2026-10-18-low-repair/README.md) for
@@ -8,6 +8,7 @@
 includes `CAD-NOTICE.md`. Generated exports and archives remain outside Git.
 
 ```sh
+ocpenv/bin/python python/guard_repaired_game.py
 ocpenv/bin/python python/export_repaired_game.py \
   --out ../rm-simulator/local-assets/field-2027-low
 ```
@@ -26,14 +27,19 @@ and placements retain original numeric CAD Z-up metres, with floor reference
 
 | Partition | Placements | Visual triangles per copy | Collision triangles per copy |
 | --- | ---: | ---: | ---: |
-| Floor | 1 | 849 | 5,898 |
-| Arena/static scenery | 1 | 70,436 | 181,763 |
-| Rune | 1 | 27,001 | 117,442 |
-| Outpost | 2 | 15,615 | 34,903 |
-| Base | 2 | 18,635 | 16,857 |
-| Tech Core | 2 | 14,342 | 68,488 |
+| Floor | 1 | 5,814 | 5,898 |
+| Arena/static scenery | 1 | 130,753 | 181,763 |
+| Rune | 1 | 61,349 | 117,442 |
+| Outpost | 2 | 21,406 | 34,903 |
+| Base | 2 | 29,836 | 16,857 |
+| Tech Core | 2 | 27,571 | 68,488 |
 
-Placed totals: **195,470 visual / 545,599 collision triangles**. Collision comes
+The coverage-guarded export contains **355,542 visual / 545,599 collision triangles**. It restores
+whole source-owned surface pieces with gaps exceeding the sampling policy,
+including the Fortress, floor, Base footings and road/high-ground panels.
+The guard checks every primitive and source piece without camera visibility,
+retains untouched Low attributes exactly and preserves materials/instances.
+See [the coverage repair report](../benchmarks/2026-10-18-game-coverage/README.md). Collision comes
 from the previous equipment-shell ledger: dedicated collision candidates where
 available, preceding approved visuals otherwise, zero for whole visual-only
 marking definitions. Unbounded Low triangles never become collision geometry.
@@ -56,7 +62,7 @@ nix develop -c cargo run --locked -p rm-simulator-app --features season-2027 -- 
   --cad-assets local-assets/field-2027-low --fly --start-paused
 ```
 
-Actual native inspection: **187,661 ground**, **187,296 fixture** (including
+Original unguarded native inspection: **187,661 ground**, **187,296 fixture** (including
 48 simulator perimeter triangles), and **170,690 equipment** triangles.
 Ten loader tests and eight layout tests pass. Python: **413 tests, 412 pass,
 one optional USD test skips**, including five new export tests for shared
@@ -65,7 +71,7 @@ checks and overwrite refusal.
 
 ## Portable archive
 
-The local export also has `field-2027-low.tar.zst`, a checksum sidecar and an
+The earlier unguarded export also has `field-2027-low.tar.zst`, a checksum sidecar and an
 archive report beside the directory. Level 22 compression uses the existing
 `cad_archive.create_archive` helper with prefix `field-2027-low`. It normalizes
 tar metadata and verifies every member by SHA-256 on read-back. The result is
