@@ -105,3 +105,7 @@ The Markdown files are the source for both GitHub browsing and the documentation
 
 - [Energy interior prism and complete arena accounting](../benchmarks/2026-10-17-arena-budget/README.md): exact exterior retention, placed versus shared visual counts, and a separately labeled full-map collision planning budget.
 - [Dart and Outpost detail LOD](../benchmarks/2026-10-17-dart-outpost/README.md): material-local dense guards, exact optical regions, per-member contact composition and native port clearance checks.
+- [Aggressive equipment shells and detail removal](../benchmarks/2026-10-17-equipment-shells/README.md): compact hardware omission, fitted end caps and assembled light-mask retention with source scene order preserved.
+- [Experimental ultra-low visual LOD palette](../benchmarks/2026-10-18-ultra-lod/README.md): five complete-arena levels, matched equipment views, and documented panel/silhouette failures at extreme budgets.
+- [Selective Low LOD repair](../benchmarks/2026-10-18-low-repair/README.md): finite-view piece qualification, local budget refinement, boundary/closure checks and hard-edge source-normal selection.
+- [Repaired Low game export](game-export.md): runtime partitions, shared equipment placements, independent collision meshes and a portable verified archive.

@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# Copyright (c) 2026 hxyulin <hxyulin@proton.me>
+"""Create an offline, source-colored LOD comparison palette."""
+import argparse
+import json
+from pathlib import Path
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--out', type=Path, required=True); a = ap.parse_args(); out = a.out.resolve()
+    report = json.loads((out / 'summary.json').read_text())
+    data = {'levels': report['levels'], 'views': [{k: r[k] for k in ['group', 'view', 'level', 'triangles', 'image']} for r in report['views']]}
+    for row in data['views']: row['image'] = str(out / row['image'])
+    html = '''<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+    body{margin:0;font:14px var(--font-sans,system-ui);color:var(--foreground,#ddd)}h3{margin:0 0 10px;font-size:19px}p{color:var(--muted-foreground,#aaa);font-size:13px;line-height:1.5}select,button{background:var(--secondary,#333);color:var(--foreground,#ddd);border:1px solid var(--border,#666);padding:7px;border-radius:5px}label{display:inline-flex;gap:6px;align-items:center;margin:0 14px 12px 0}table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0 18px}td,th{text-align:right;padding:5px;border-bottom:1px solid var(--border,#444);font-variant-numeric:tabular-nums}td:first-child,th:first-child{text-align:left}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}img{width:100%;display:block;border-radius:5px}.caption{padding:7px 0;font-size:13px}.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.thumbs button{padding:3px;cursor:pointer}.thumbs button[aria-pressed=true]{outline:2px solid var(--primary,#709cff)}.thumbs span{display:block;font-size:12px;padding:5px 0}.note{color:var(--warning,#ddae70)}@media(max-width:480px){.thumbs{grid-template-columns:repeat(2,1fr)}table{font-size:11px}td,th{padding:5px 2px}}
+    </style></head><body><h3>RMUC 2027 · visual LOD palette</h3><p>Whole-arena totals include every placement. Stored meshes count shared geometry once. Select equipment and a view, then click a LOD thumbnail.</p><table><thead><tr><th>LOD</th><th>Placed triangles</th><th>Stored triangles</th><th>Visual reduction</th><th>GLB MB</th></tr></thead><tbody id="stats"></tbody></table><label>Subject <select id="group"></select></label><label>View <select id="view"><option value="oblique">Oblique</option><option value="reverse">Reverse</option><option value="top">Top</option></select></label><div class="pair"><div><img id="before"><div id="bc" class="caption"></div></div><div><img id="after"><div id="ac" class="caption"></div></div></div><div id="thumbs" class="thumbs"></div><p class="note">Exploratory visuals only. Ultra and Extreme visibly tear panels and remove detail; they are budget probes, not approved replacements. Thin parts in Resource area and Rune need stronger protection. Collision assets are unchanged.</p><p>Matched 1200px orthographic diagnostic renders with CAD colors and embedded artwork. No runtime PBR, animation or continuous error guarantee. Targets are applied per primitive; actual retained counts are shown.</p><script>
+    const data=__DATA__;const names={field:'Full arena',base:'Base',outpost:'Outpost','dart-station':'Dart station',rune:'Rune','technology-core':'Tech Core','energy-unit':'Energy unit','resource-area':'Resource area'};let level='low';
+    const fmt=n=>n.toLocaleString();const title=s=>s[0].toUpperCase()+s.slice(1);const group=document.getElementById('group'),view=document.getElementById('view');group.innerHTML=Object.entries(names).map(([k,v])=>'<option value="'+k+'">'+v+'</option>').join('');group.value='outpost';document.getElementById('stats').innerHTML=data.levels.map(r=>'<tr><td>'+title(r.level)+'</td><td>'+fmt(r.placed_triangles)+'</td><td>'+fmt(r.stored_triangles)+'</td><td>'+(100*(1-r.placed_triangles/data.levels[0].placed_triangles)).toFixed(1)+'%</td><td>'+(r.bytes/1e6).toFixed(2)+'</td></tr>').join('');
+    function row(s){return data.views.find(r=>r.group===group.value&&r.view===view.value&&r.level===s)}function update(){const b=row('approved'),a=row(level);document.getElementById('before').src=b.image;document.getElementById('before').alt='Approved '+names[group.value];document.getElementById('after').src=a.image;document.getElementById('after').alt=title(level)+' '+names[group.value];document.getElementById('bc').textContent='Approved · '+fmt(b.triangles)+' triangles';document.getElementById('ac').textContent=title(level)+' · '+fmt(a.triangles)+' triangles';document.getElementById('thumbs').innerHTML=data.levels.slice(1).map(r=>{const x=row(r.level);return '<button data-level="'+r.level+'" aria-pressed="'+(level===r.level)+'"><img src="'+x.image+'" alt="'+r.level+' preview"><span>'+title(r.level)+' · '+fmt(x.triangles)+'</span></button>'}).join('');document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=b.dataset.level;update()})}group.onchange=update;view.onchange=update;update();
+    </script></body></html>'''.replace('__DATA__', json.dumps(data))
+    (out / 'review.html').write_text(html)
+
+
+if __name__ == '__main__': main()

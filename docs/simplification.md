@@ -59,6 +59,9 @@ These reports explain the development of the pipeline. They are dated results, n
 | Game-oriented road strips and separate equipment colliders | [RMUC 2027 trial](../benchmarks/2026-10-17-game-lods/README.md); source spline boundaries shared with caps, rigid material batching, 3/6 mm collision variants |
 | Source-profile collision parts | [Energy and Dart](../benchmarks/2026-10-17-collision-solids/README.md); complete meridians, window-preserving panel slabs and dense local remainder guards |
 | Dense material-local equipment LOD | [Dart and Outpost](../benchmarks/2026-10-17-dart-outpost/README.md); every triangle/corner checked per material, exact optical patches, per-member contact choices and preserved port rings |
+| Compact game-detail omission and fitted housings | [Equipment shells](../benchmarks/2026-10-17-equipment-shells/README.md); same-rigid backing checks, explicit engraved-cap envelopes and assembled optical-retention refinement |
+| Experimental visual budget palette | [Ultra-low LOD trials](../benchmarks/2026-10-18-ultra-lod/README.md); independently generated shared-mesh levels, matched views and explicit rejection of severe panel/topology damage; visual only |
+| Selective Low visual repair | [Low repair candidates](../benchmarks/2026-10-18-low-repair/README.md); raise budgets only for qualified pieces, preserve closed shells and boundary anchors, and select correct original hard-edge normals |
 | Repeated simplification against an original-source guard | [Recursive trials](../benchmarks/2026-09-11-recursive-simplification/README.md); review GLBs only, not a production default |
 
 Use [Performance](performance.md) for measured startup and memory results. Fewer triangles alone do not establish a frame-rate or physics speedup.
