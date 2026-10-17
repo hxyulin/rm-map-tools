@@ -56,3 +56,5 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Road-profile LOD preview and visual-only terrain markings](../benchmarks/2026-10-17-road-lod/README.md).
 
 - [Finite patch instancing and compact storage](cad-patch-instancing.md).
+
+- [Bounded native wall filling](cad-wall-fill.md): source-profile grille and rib-cavity replacement.

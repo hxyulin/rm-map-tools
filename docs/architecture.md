@@ -154,3 +154,7 @@ uses, retaining original topology, source appearance targets and marking roles.
 optional edge-vector interning. `GlbWriter.add_indexed_instance()` shares complete
 indexed payloads across material variants. See [finite patch instancing](cad-patch-instancing.md)
 for scope, compression measurements and native/runtime promotion gates.
+
+`cad_wall_fill.py` owns explicit native additive wall fills with source/panel
+history and bounded volume checks; `apply_wall_fills.py` applies pinned component
+policies and validates derived STEP/GLB exports. See [wall filling](cad-wall-fill.md).
