@@ -1,0 +1,37 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (policy; source geometry belongs to DJI / RoboMaster)",
+  "schema": "rm-base-shell-experiment-v1",
+  "approved_base_glb_sha256": "1a682e3f9f31e2574416b291884eae1ba0227c5d2ea35d2d0028fdd0b47c01ac",
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "planar_skins": {
+    "source_units": [4268930, 4527988, 4314593, 4353403, 4392221, 4594338, 4664029, 4693907, 4723785, 4756187, 4764759],
+    "plane_tolerance_mm": 0.001,
+    "boundary_tolerance_mm": 0.001,
+    "minimum_triangles": 8,
+    "preserve_apertures": true
+  },
+  "crossbar": {
+    "source_unit_id": 4268930,
+    "reference": "approved 18456-triangle crossbar including later mounting-row closures",
+    "error_mm": 1,
+    "sampled_limit_mm": 3,
+    "sample_count": 262144,
+    "maximum_iterations": 16,
+    "minimum_planar_face_area_mm2": 20000,
+    "protected_opening_width_mm": 17,
+    "corner_turn_degrees": 15
+  },
+  "backing_profiles": {
+    "source_unit_and_face_ids": [[4756187,4744482],[4664029,4652734],[4693907,4682612],[4723785,4712490]],
+    "signed_depth_mm": 1.5,
+    "strict_filled_opening_width_mm": 17,
+    "plate_lod_error_mm": 1,
+    "plate_lod_sampled_limit_mm": 3,
+    "whole_backing_sampled_limit_mm": 15,
+    "role": "Separate optional visual approximation of four backing shells; intentionally removes molded ribs and posts, not subject to the crossbar 3 mm budget"
+  },
+  "preserved": ["source member identities", "exact approved red/green GLB positions, normals, materials", "unchanged collider and detector bindings", "source STEP and installed assets"],
+  "visibility_audit": "62 two-sided orthographic isolated and assembled views. An audit only; no surface is deleted merely because it is unseen.",
+  "scope": "Measurement contract for benchmark scripts with explicit constants. Planar-boundary representation and source-outline plates; not a complete native shell reconstruction or continuous surface certificate. No runtime installation."
+}

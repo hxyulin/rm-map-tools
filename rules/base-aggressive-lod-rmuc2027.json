@@ -1,0 +1,19 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (policy; geometry retains upstream ownership)",
+  "schema": "rm-base-outline-guarded-lod-experiment-v1",
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "error_mm": 1,
+  "sampled_limit_mm": 3,
+  "maximum_iterations": 16,
+  "housing_sample_count": 65536,
+  "body_sample_count": 262144,
+  "minimum_planar_face_area_mm2": 20000,
+  "minimum_protected_opening_width_mm": 17,
+  "corner_turn_degrees": 15,
+  "native_vertex_match_mm": 0.01,
+  "unmatched_native_corner_neighbor_locks": 8,
+  "selected_source_unit_ids": [4099408, 4121375, 4143351, 4275783, 4314593, 4353403, 4392221, 4527988, 4594338, 4664029, 4693907, 4723785, 4756187, 4764759],
+  "preserve_exactly": ["approved red/green GLB positions, normals and materials", "crossbar 4268930", "other source members"],
+  "scope": "Measurement contract for benchmark scripts with these explicit constants. Approximate visual tessellation LOD; intentionally larger detail budget than the approved 1 mm candidate. Source STEP, collision, detectors and installed assets unchanged. Corner selection does not certify the intervening outline or permit every sub-17 mm feature to disappear."
+}

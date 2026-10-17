@@ -1,0 +1,15 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (policy; source geometry retains upstream ownership)",
+  "schema": "rm-base-housing-guarded-lod-v1",
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "source_unit_id": 4527988,
+  "native_detail_geometry_sha256": "0dd03c2af45262778ff441d6cb9557412fc6ea5dedcc9c005c920a8d3ba835da",
+  "current_visual_geometry_sha256": "efc8e1e6d22bc0e416e83d65070ad2e8bd856bfcf017bde0829d5a69e320b396",
+  "error_mm": 0.25,
+  "sampled_limit_mm": 1,
+  "sample_count": 65536,
+  "maximum_iterations": 16,
+  "candidate_neighbor_vertices": 32,
+  "scope": "Local vertex constraints on the approved native detail tessellation. Same nominal error and sampled guard; no intentional hole, relief, material, collision or detector deletion. Source and installed assets remain unchanged."
+}

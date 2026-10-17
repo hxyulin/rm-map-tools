@@ -74,3 +74,13 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Base crossbar and lower-housing investigation](base-structure-audit-rmuc2027.md): current plane costs, targeted visual bore closure, rejected housing rebuild and panel-local next steps.
 
 - [Base top mounting row](base-mounting-row-rmuc2027.md): stepped-hole qualification, local recess removal and rim-matched end-mouth caps.
+
+- [Local Base housing LOD](base-housing-local-lod-rmuc2027.md): protect failing neighborhoods with vertex locks, compare spatial subdivision and preserve complete Base GLB attributes.
+
+- [Aggressive Base detail LOD](base-aggressive-lod-rmuc2027.md): native outline constraints, a 3 mm sampled budget and exact approved lights across fourteen heavy members.
+
+- [Base planar skins and backing shells](base-shells-rmuc2027.md): boundary-defined patches, crossbar reduction and independently reviewable source-outline backing plates.
+
+- [Base panel surgery and texture patches](base-panel-textures-rmuc2027.md): finite source-profile panel trials followed by an embedded source-colour artwork texture, with rejected groove coverage recorded.
+
+- [Full-field inventory and other equipment trials](equipment-pipeline-rmuc2027.md): instance-aware totals and conservative planar/LOD passes on Outpost, Rune, Dart, Tech Core and other fixtures.

@@ -1,0 +1,41 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (policy; source appearance and geometry belong to DJI / RoboMaster)",
+  "schema": "rm-base-panel-texture-experiment-v1",
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "approved_base_glb_sha256": "fe1534378fa874bc73ae498ac64751f33826537ecad4b3b6243fabd9d269ad44",
+  "panel": {
+    "source_unit_id": 4268930,
+    "selected_source_face_id": 4202749,
+    "signed_depth_mm": -6,
+    "strict_filled_opening_width_mm": 17,
+    "selected_srgb": [0.2,0.2,0.2],
+    "position_rounding_step_mm": 0.0001,
+    "seam_lod_error_mm": 1,
+    "seam_lod_sampled_limit_mm": 3,
+    "reference_sampled_margin_mm": 3.001,
+    "other_independent_trials": [[4196198,8],[4213567,-3],[4222186,-3]]
+  },
+  "logo_texture": {
+    "source_unit_id": 4527988,
+    "support_source_face_id": 4465456,
+    "bounds_uv_mm": [-105,-75,105,65],
+    "height_limit_mm": 0.1,
+    "resolution": 1024,
+    "gutter_pixels": 8,
+    "required_sampled_coverage_fraction": 1,
+    "colour_space": "sRGB PNG, linear baseColorFactor one",
+    "uv_convention": "image top row is source +V; glTF V increases downward",
+    "normal_texture": false
+  },
+  "groove_trial": {
+    "source_unit_id": 4268930,
+    "support_source_face_id": 4202749,
+    "bounds_uv_mm": [-400,-44,-210,44],
+    "height_limit_mm": 0.7,
+    "projection_depth_band_mm": [-8,0.1],
+    "accepted": false,
+    "reason": "Incomplete source projection includes real openings. Preserve geometry pending finite aperture qualification."
+  },
+  "scope": "Explicit independent panel and planar appearance candidates. Samples are not continuous bounds. No whole-member hiddenness inference, source CAD mutation, collision change or runtime installation."
+}

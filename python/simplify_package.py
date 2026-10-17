@@ -46,8 +46,13 @@ def protected(metadata):
     return bool(set(metadata.get('roles', [])) & PROTECTED_ROLES or metadata.get('layer') in PROTECTED_LAYERS)
 
 
-def simplify_mesh(points, triangles, error_m, lock_borders=True):
-    """Weld identical positions, then collapse edges with the requested border policy."""
+def simplify_mesh(points, triangles, error_m, lock_borders=True, *, locked_vertex_indices=()):
+    """Weld positions and collapse edges, optionally locking selected input vertices.
+
+    ``locked_vertex_indices`` addresses the original input position array before
+    welding; locked coordinates survive while adjacent unconstrained edges may
+    collapse. Component-retention retries use the same locks.
+    """
     if type(lock_borders) is not bool:
         raise ValueError('lock_borders must be boolean')
     points, triangles = np.asarray(points, dtype=np.float32), np.asarray(triangles)
@@ -57,15 +62,46 @@ def simplify_mesh(points, triangles, error_m, lock_borders=True):
         raise ValueError('expected finite positive mesh error')
     if not np.isfinite(points).all() or not len(triangles) or triangles.min() < 0 or triangles.max() >= len(points):
         raise ValueError('invalid triangle mesh')
+    locked = np.asarray(locked_vertex_indices)
+    if locked.ndim != 1 or (len(locked) and (not np.issubdtype(locked.dtype, np.integer) or locked.min() < 0 or locked.max() >= len(points))):
+        raise ValueError('invalid locked vertex indices')
     points, inverse = np.unique(np.asarray(points, dtype=np.float32), axis=0, return_inverse=True)
     indices = np.ascontiguousarray(inverse[triangles.ravel()], dtype=np.uint32)
     points = np.ascontiguousarray(points)
     result = np.empty_like(indices)
     error = np.zeros(1, np.float32)
     options = mo.SIMPLIFY_ERROR_ABSOLUTE | (mo.SIMPLIFY_LOCK_BORDER if lock_borders else 0)
-    count = mo.simplify(result, indices, points, target_index_count=3,
-                        target_error=error_m, options=options,
-                        result_error=error)
+    vertex_lock = np.zeros(len(points), dtype=np.uint8)
+    if len(locked):
+        vertex_lock[inverse[locked]] = 1
+    # A zero-weight constant attribute leaves the geometric metric unchanged;
+    # this API exposes meshoptimizer's per-vertex locks.
+    attributes = np.zeros((len(points), 1), dtype=np.float32)
+    weights = np.zeros(1, dtype=np.float32)
+    def collapse(destination, source_indices, limit, measured):
+        if len(locked):
+            # meshoptimizer 0.2.30a0 exposes this wrapper but omits its ctypes
+            # signature; register the same C ABI the wrapper calls. No installed
+            # dependency source is modified.
+            import ctypes
+            from meshoptimizer._loader import lib
+            function = lib.meshopt_simplifyWithAttributes
+            if function.argtypes is None:
+                uintp = ctypes.POINTER(ctypes.c_uint)
+                floatp = ctypes.POINTER(ctypes.c_float)
+                function.argtypes = [uintp, uintp, ctypes.c_size_t, floatp,
+                    ctypes.c_size_t, ctypes.c_size_t, floatp, ctypes.c_size_t,
+                    floatp, ctypes.c_size_t, ctypes.POINTER(ctypes.c_ubyte),
+                    ctypes.c_size_t, ctypes.c_float, ctypes.c_uint, floatp]
+                function.restype = ctypes.c_size_t
+            return mo.simplify_with_attributes(destination, source_indices, points,
+                       attributes, weights, vertex_lock=vertex_lock,
+                       target_index_count=3, target_error=limit, options=options,
+                       result_error=measured)
+        return mo.simplify(destination, source_indices, points,
+                           target_index_count=3, target_error=limit, options=options,
+                           result_error=measured)
+    count = collapse(result, indices, error_m, error)
     if count % 3 or count > len(indices) or not np.isfinite(error[0]) or error[0] > error_m + 1e-7:
         raise ValueError(f'invalid simplifier result: count={count}, input={len(indices)}, error={error[0]}, limit={error_m}')
     triangles = result[:count].reshape(-1, 3)
@@ -88,9 +124,7 @@ def simplify_mesh(points, triangles, error_m, lock_borders=True):
             retry_result = np.empty_like(retry_indices)
             retry_error = np.zeros(1, np.float32)
             limit = error_m / 2 ** refinement
-            retry_count = mo.simplify(retry_result, retry_indices, points,
-                                      target_index_count=3, target_error=limit,
-                                      options=options, result_error=retry_error)
+            retry_count = collapse(retry_result, retry_indices, limit, retry_error)
             if retry_count % 3 or retry_count > len(retry_indices) or not np.isfinite(retry_error[0]) or retry_error[0] > limit + 1e-7:
                 raise ValueError('invalid component refinement result')
             reduced = retry_result[:retry_count].reshape(-1, 3)

@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MIT OR Apache-2.0
+# Copyright (c) 2026 hxyulin <hxyulin@proton.me>
+"""Build an interactive triangle inventory and equipment comparison page."""
+import argparse,html,json
+from pathlib import Path
+
+def main():
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('out',type=Path);a=ap.parse_args();out=a.out.resolve();report=json.loads((out/'review.json').read_bytes());total=report['totals'];groups=sorted(report['groups'],key=lambda r:r['native_placed_triangles']-r['lod_placed_triangles'],reverse=True)
+    labels={'native':'Native reference','planar':'Planar skins only','lod':'Planar + constrained LOD'}
+    files={r['group']:{stage:{view:str(out/'review'/r['group']/(stage+'-'+view+'.png')) for view in ['oblique','reverse','front','back','top','bottom']} for stage in labels} for r in groups}
+    rows=''.join('<tr><td>'+html.escape(r['group'])+'</td>'+''.join(f'<td>{r[k]:,}</td>' for k in ['native_placed_triangles','planar_placed_triangles','lod_placed_triangles'])+f'<td>{(1-r["lod_placed_triangles"]/r["native_placed_triangles"])*100:.1f}%</td></tr>' for r in groups)
+    options=''.join(f'<option>{html.escape(r["group"])}</option>' for r in groups)
+    page='''<!doctype html><html><head><meta charset="utf-8"><style>
+body{font:14px var(--font-sans,system-ui);color:var(--foreground);line-height:1.45}h2{font-size:20px;margin:0 0 8px}p{margin:8px 0;color:var(--muted-foreground)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.stat{padding:16px;background:var(--secondary);border-radius:12px}.stat b{font-size:23px;display:block;font-variant-numeric:tabular-nums}.stat span{font-size:12px}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}td,th{padding:7px 4px;border-bottom:1px solid var(--border);text-align:right}td:first-child,th:first-child{text-align:left}select{padding:7px;background:var(--secondary);color:var(--foreground);border:1px solid var(--border);border-radius:7px;margin:8px 6px 8px 0}.images{display:grid;grid-template-columns:1fr 1fr;gap:8px}img{width:100%;border-radius:8px}figcaption{font-size:12px;color:var(--muted-foreground)}figure{margin:0}.note{font-size:12px}@media(max-width:500px){.stat{padding:10px}.stat b{font-size:19px}table{font-size:11px}}
+</style></head><body><h2>Full-field triangle inventory & equipment trials</h2>
+<p>Placed visual triangles: every original occurrence is counted. Instancing saves stored data; each placed copy still contributes triangles.</p>
+<div class="stats">STATS</div>
+<p>The new trials save <b>3,214,296 placed triangles (45.8%)</b>. The uniform native reference is 8,311,552; the field totals above substitute the approved Base and four wall fills before comparing these equipment trials. The road-profile preview is excluded. This is an experimental composition ledger, not the installed simulator package.</p>
+<table><thead><tr><th>Equipment</th><th>Native placed</th><th>Planar only</th><th>+ LOD</th><th>Saved</th></tr></thead><tbody>ROWS</tbody></table>
+<select id="group">OPTIONS</select><select id="stage"><option value="lod">Planar + constrained LOD</option><option value="planar">Planar only</option></select><select id="view"><option value="oblique">Oblique</option><option value="reverse">Reverse</option><option value="front">Front</option><option value="back">Back</option><option value="top">Top</option><option value="bottom">Bottom</option></select>
+<div class="images"><figure><img id="before"><figcaption>Native reference · one source product</figcaption></figure><figure><img id="after"><figcaption id="caption"></figcaption></figure></div><p id="detail"></p>
+<p class="note">Per-native-shell processing preserves source membership. Chromatic and unresolved materials retain exact source triangle positions; chromatic GLB positions and colours are also verified. Other surfaces: 0.25 mm nominal LOD, 1 mm sampled guard, native broad-face corner locks. No hole closures, interior deletion, texture replacements, collision edits or runtime installation. These six fixed-pose views use flat two-sided diagnostic shading; they do not certify PBR, motion or continuous distance.</p>
+<script>const files=FILES,groups=GROUPS;function update(){let group=document.querySelector('#group').value,stage=document.querySelector('#stage').value,view=document.querySelector('#view').value,r=groups.find(r=>r.group===group);document.querySelector('#before').src=files[group].native[view];document.querySelector('#after').src=files[group][stage][view];document.querySelector('#caption').textContent=stage==='lod'?'Planar + constrained LOD':'Planar skins only';let checks=r.views.filter(x=>x.stage===stage);document.querySelector('#detail').textContent=`One product: ${r.native_triangles.toLocaleString()} → ${r[stage+'_triangles'].toLocaleString()} triangles. Maximum foreground-mask difference across six views: ${(Math.max(...checks.map(x=>x.foreground_difference_relative_fraction))*100).toFixed(3)}%.`;};document.querySelectorAll('select').forEach(s=>s.onchange=update);update();</script></body></html>'''
+    stats=[(f'{total["approved_base_per_placement"]:,}','Latest Base / placement'),(f'{total["before_other_equipment_trials_placed_triangles"]/1e6:.3f}M','Field before equipment trials'),(f'{total["combined_trial_placed_triangles"]/1e6:.3f}M','Field with equipment trials')]
+    page=page.replace('STATS',''.join(f'<div class="stat"><b>{v}</b><span>{s}</span></div>' for v,s in stats)).replace('ROWS',rows).replace('OPTIONS',options).replace('FILES',json.dumps(files)).replace('GROUPS',json.dumps(groups));(out/'review.html').write_text(page)
+
+if __name__=='__main__':main()
