@@ -2,6 +2,7 @@
 # Copyright (c) 2026 hxyulin <hxyulin@proton.me>
 """A merged STEP keeps disjoint shell wrappers, analytic faces and shared instances."""
 from collections import Counter
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -89,6 +90,27 @@ class HierarchyTests(unittest.TestCase):
                     changed[-1]['children'][0]['product_id']=-1
                     with self.assertRaisesRegex(ValueError,'pose changed'):
                         verify_assembly_graph(exported.index,changed)
+                    # Retain the reviewed catalog, separate body uses and paint
+                    # targets through differently placed nested shell instances.
+                    from cad_optimizer import build_optimizer_ir
+                    from cad_passes import CadScene
+                    ir=build_optimizer_ir(exported,hierarchy=root/'export/hierarchy.json')
+                    proof=ir.validate()
+                    views=ir.structural_views()
+                    structural_proof=views.validate(ir)
+                    self.assertEqual(structural_proof['body_incidence_hashes_checked'],len(exported.model.bodies))
+                    from dataclasses import replace
+                    with self.assertRaisesRegex(ValueError,'body root coverage'):
+                        replace(views,body_hashes=()).validate(ir)
+                    broken=replace(views.topology,orientations=-views.topology.orientations-1)
+                    with self.assertRaisesRegex(ValueError,'topology use table'):
+                        replace(views,topology=broken).validate(ir)
+                    self.assertEqual(proof['body_occurrences_retained'],4)
+                    self.assertEqual(json.loads(ir.source_hierarchy)['expected_placed_faces'],24)
+                    self.assertEqual([entry[:2] for entry in ir.style_bindings()],
+                                     [entry[:2] for entry in CadScene(exported).style_bindings()])
+                    poses=[body.matrix for body,_ in ir.body_uses()]
+                    self.assertTrue(any(np.allclose(pose,matrix,rtol=0,atol=1e-10) for pose in poses))
                 original,_,error=read_part(str(source));self.assertIsNone(error)
                 full,_,error=read_part(str(root/'export/field.step'));self.assertIsNone(error)
                 def colors(doc):

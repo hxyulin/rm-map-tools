@@ -55,6 +55,20 @@ class InstancingTests(unittest.TestCase):
         normals = accessor(doc,binary,prim['attributes']['NORMAL'])
         self.assertEqual(len(np.unique(normals,axis=0)),2)
 
+    def test_visual_only_collision_is_a_valid_json_only_anchor(self):
+        writer = GlbWriter('root', {'version':'2.0'})
+        writer.add_node('marking', np.empty((0,3)), np.empty((0,3),int), [],
+                        extras={'collision': False})
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'empty.glb'; writer.write(path)
+            document, binary = read_glb(path)
+            self.assertEqual(binary, b'')
+            self.assertNotIn('buffers', document)
+            self.assertNotIn('meshes', document)
+            self.assertNotIn('accessors', document)
+            self.assertFalse(document['nodes'][1]['extras']['collision'])
+            self.assertEqual(list(read_glb_nodes(path)), [])
+
     def test_large_mesh_uses_uint32_indices(self):
         p = np.zeros((65538, 3)); p[:, 0] = np.arange(len(p))
         t = np.arange(len(p)).reshape(-1, 3)

@@ -234,19 +234,27 @@ class GlbWriter:
             "bufferViews": self.buffer_views,
             "buffers": [{"byteLength": len(self.bin)}],
         }
+        if not self.bin:
+            # A visual-only part has a valid JSON-only collision anchor, not a
+            # zero-length glTF buffer/accessor or an invented proxy triangle.
+            for key in ('meshes', 'materials', 'accessors', 'bufferViews', 'buffers'):
+                gltf.pop(key, None)
+        if not children:
+            gltf['nodes'][0].pop('children')
         js = json.dumps(gltf, separators=(",", ":")).encode()
         while len(js) % 4:
             js += b" "
         bin_ = bytes(self.bin)
         while len(bin_) % 4:
             bin_ += b"\0"
-        total = 12 + 8 + len(js) + 8 + len(bin_)
+        total = 12 + 8 + len(js) + (8 + len(bin_) if bin_ else 0)
         with open(path, "wb") as f:
             f.write(struct.pack("<III", 0x46546C67, 2, total))
             f.write(struct.pack("<II", len(js), 0x4E4F534A))
             f.write(js)
-            f.write(struct.pack("<II", len(bin_), 0x004E4942))
-            f.write(bin_)
+            if bin_:
+                f.write(struct.pack("<II", len(bin_), 0x004E4942))
+                f.write(bin_)
 
 
 def source_checksum(source_path):

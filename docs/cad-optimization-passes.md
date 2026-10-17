@@ -2,6 +2,11 @@
 <!-- Copyright (c) 2026 hxyulin <hxyulin@proton.me> -->
 # Source CAD optimization passes
 
+The next-stage [optimizer IR](cad-optimizer-ir.md) builds packed shared geometry
+and appearance recipes and exact frame/scale instances from this source-owned
+foundation. It reports measured fine-grained reuse while retaining original
+topology incidence, paint bindings, hierarchy and per-use identity.
+
 Start with the original STEP model, before tessellation or mesh reduction.
 `python/audit_cad_passes.py` runs registered discovery passes on a shared
 in-memory document and writes a small findings JSON
@@ -569,3 +574,5 @@ Transport-only repackaging of the published baseline preserves its original
 payload; see the [release repacking workflow](cad-hierarchy.md). The retained sharing
 candidate is now `out/shared-values-archives/rmuc2027-shared-values.tar.zst`;
 its earlier local ZIP and temporary benchmark files can be discarded.
+
+[Finite patch matching and primitive fitting](cad-patch-fitting.md) adds source-face congruence and read-only approximation proposals, with separate exact and sampled-error contracts.

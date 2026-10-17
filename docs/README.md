@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: MIT OR Apache-2.0 -->
+<!-- Copyright (c) 2026 hxyulin <hxyulin@proton.me> -->
 # Documentation
 
 Start with [Getting started](getting-started.md) to split and validate a STEP file. Use [Exporting](exporting.md) to choose a package or simulator format, then [Simplification](simplification.md) to reduce its size.
@@ -13,6 +15,8 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Remaining 2027 equipment](remaining-equipment-rmuc2027.md) | Tech Core, resource area, Dart station and Energy Unit source partitions |
 | [Complete CAD partitions](cad-partitions.md) | Full Rune/Outpost STEP and GLB exports with disjoint source-shell ownership |
 | [Source CAD components](cad-components.md) | Whole-body component catalogs, manual groups and isolated STEP work items |
+| [Hierarchical optimization and LOD](cad-lod-optimization.md) | Pass ordering, compact storage, protected detail and per-component quality |
+| [Optimizer IR](cad-optimizer-ir.md) | Shared construction recipes, exact primitive normalization and source-owned instances |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
 | [Simplification counts](simplification-results.md) | Preset mesh inventories and measured reduction passes |
@@ -40,3 +44,13 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 - [Original articulation design](articulation-design.md), retained as design history. Use the semantic export reference for the implemented contract.
 
 The Markdown files are the source for both GitHub browsing and the documentation site. Dated benchmark reports retain their measured scope and reproduction inputs.
+
+- [Finite patch matching and primitive-fit discovery](cad-patch-fitting.md).
+
+- [Automatic vector geometry and precision-controlled export](cad-vector-ir.md).
+
+- [Source-bound vector component export](cad-vector-component.md).
+
+- [RMUC 2027 native terrain cost and paint investigation](../benchmarks/2026-10-17-terrain-cost/README.md).
+
+- [Road-profile LOD preview and visual-only terrain markings](../benchmarks/2026-10-17-road-lod/README.md).

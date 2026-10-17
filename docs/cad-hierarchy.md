@@ -177,6 +177,11 @@ ocpenv/bin/python scripts/repack_hierarchy_release.py \
 
 ## Remaining reuse opportunities
 
+The [source-backed optimizer IR](cad-optimizer-ir.md) now measures and prepares
+sharing below bodies, including unit analytic shapes with exact per-use scales.
+It keeps the reviewed hierarchy catalog and source ownership intact; it is not
+yet a standalone replacement for this STEP checkpoint or a mesh exporter.
+
 Existing instancing already stores the fan product once for ten placements and
 the energy-unit product once for twelve. Both Outposts and both Bases likewise
 share their respective model definitions; work-part definitions remain shared
