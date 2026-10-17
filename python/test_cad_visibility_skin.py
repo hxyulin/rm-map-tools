@@ -3,7 +3,7 @@
 """Directional skin policy checks independent of a native CAD installation."""
 import unittest
 import numpy as np
-from cad_visibility_skin import directional_skin, hemisphere_views
+from cad_visibility_skin import directional_skin, hemisphere_views, all_view_skin
 
 class VisibilitySkinTests(unittest.TestCase):
     def test_rear_and_interior_removed_and_source_indices_preserved(self):
@@ -22,4 +22,13 @@ class VisibilitySkinTests(unittest.TestCase):
         with self.assertRaises(ValueError):hemisphere_views([0,0,0])
         with self.assertRaises(ValueError):hemisphere_views([0,0,1],[90])
         with self.assertRaises(ValueError):directional_skin(np.eye(3),np.array([[0,1,2]]),np.array([0]),np.array([1]),[0,0,1],np.array([1]))
+    def test_all_view_retains_back_and_protected_interior(self):
+        p=np.array([[0.,0,1],[1,0,1],[1,1,1],[0,1,1],[0,0,0],[1,0,0],[1,1,0],[0,1,0],[.2,.2,.5],[.4,.2,.5],[.2,.4,.5],[.6,.6,.5],[.8,.6,.5],[.6,.8,.5]])
+        t=np.array([[0,1,2],[0,2,3],[4,6,5],[4,7,6],[8,9,10],[11,12,13]])
+        selected,proof=all_view_skin(p,t,np.array([0,0,0,0,1,2]),np.array([0,2]),protected_material_ids=[1])
+        # Both facing directions survive; detached unobserved material 2 does not.
+        np.testing.assert_array_equal(selected,[0,1,2,3,4])
+        np.testing.assert_array_equal(p[t[selected]],p[t[:5]])
+        self.assertEqual(proof['retained_triangles'],5)
+        with self.assertRaises(ValueError):all_view_skin(p,t,np.zeros(6,int),np.array([],dtype=int))
 if __name__=='__main__':unittest.main()

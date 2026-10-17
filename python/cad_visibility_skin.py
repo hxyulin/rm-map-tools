@@ -73,3 +73,32 @@ def directional_skin(points, triangles, material_ids, unit_ids, front, visible_t
     keep|=np.isin(weld[t],vertices).any(1)&eligible
     report={'input_triangles':len(t),'observed_triangles':len(observed),'rear_triangles':int((~eligible).sum()),'retained_triangles':int(keep.sum()),'removed_triangles':int((~keep).sum()),'removed_units':[int(k) for k in np.unique(u) if not keep[u==k].any()],'rear_normal_threshold':rear_normal_threshold,'plane_tolerance':plane_tolerance,'scope':'Directional finite-raster visual skin; open back and discarded interior, not all-view visibility proof, watertight solid or collision.'}
     return np.flatnonzero(keep),report
+
+
+def all_view_skin(points, triangles, material_ids, visible_triangle_ids, *,
+                  protected_material_ids=(), plane_tolerance_mm=.001):
+    """Keep all observed orientations, complete coplanar patches and one edge ring.
+
+    The caller supplies observations of **one rigid source-owned shell** from
+    directions around the full sphere. No other moving member may occlude it.
+    Protected materials survive in full. Retained triangles stay exact; omitted
+    surfaces are only unobserved in finite raster samples, never proved hidden.
+    Unlike a directional skin, this has no rear-facing rejection or open back.
+    """
+    p=np.asarray(points,float);t=np.asarray(triangles);m=np.asarray(material_ids)
+    observed=np.asarray(visible_triangle_ids)
+    if p.ndim!=2 or p.shape[1]!=3 or not np.isfinite(p).all() or t.ndim!=2 or t.shape[1]!=3 or not np.issubdtype(t.dtype,np.integer) or not len(t) or t.min()<0 or t.max()>=len(p) or m.shape!=(len(t),) or not np.issubdtype(m.dtype,np.integer):raise ValueError('invalid all-view skin mesh')
+    if observed.ndim!=1 or not np.issubdtype(observed.dtype,np.integer) or not len(observed) or observed.min()<0 or observed.max()>=len(t) or not math.isfinite(plane_tolerance_mm) or plane_tolerance_mm<=0:raise ValueError('invalid all-view observations/policy')
+    g=p[t];cross=np.cross(g[:,1]-g[:,0],g[:,2]-g[:,0]);length=np.linalg.norm(cross,axis=1)
+    normal=cross/np.maximum(length[:,None],1e-30);origin=(p.min(0)+p.max(0))/2
+    offsets=np.einsum('ij,ij->i',normal,g[:,0]-origin)
+    keys=np.c_[m,np.rint(normal/1e-5).astype(np.int64),np.rint(offsets/plane_tolerance_mm).astype(np.int64)]
+    _,groups=np.unique(keys,axis=0,return_inverse=True)
+    keep=np.isin(groups,np.unique(groups[observed]))|np.isin(m,protected_material_ids)
+    _,weld=np.unique(p,axis=0,return_inverse=True)
+    vertices=np.unique(weld[t[keep]]);keep|=np.isin(weld[t],vertices).any(1)
+    return np.flatnonzero(keep),{'pass':'all-view-shell-skin-v1','input_triangles':len(t),
+        'observed_triangles':len(observed),'retained_triangles':int(keep.sum()),
+        'protected_material_ids':list(map(int,protected_material_ids)),
+        'plane_tolerance_mm':plane_tolerance_mm,
+        'scope':'One rigid shell only; full-sphere finite-raster observations, coplanar expansion and one exact-position adjacency ring. No continuous visibility, solid, collision or animation equivalence claim.'}

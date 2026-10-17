@@ -178,3 +178,38 @@ occluded interior. The complete Rune drops to **153,586 triangles**, another
 large openings and separate arms survive; hubs/support remain unchanged. The
 experimental field composition is **2,343,812 placed visual triangles**. Source
 CAD, collision, detectors and installed assets are unchanged.
+
+## Composed baseline and Energy profiles
+
+The [composed visual pipeline](../benchmarks/2026-10-17-composed-pipeline/README.md)
+now builds complete instanced scenes from all 116 definitions / 171 uses. Explicit
+specialized-component precedence avoids replacing approved Base/fan/Rune skins
+with original-source mounting diagnostics. Other changed shells replay mounting
+edits before LOD; untouched shells retain exact exported attributes. This yields
+**1,573,606 placed visual triangles**, 770,206 (32.9%) below the previous 2,343,812
+composition. It remains an inspection candidate, with runtime/collision unchanged.
+
+The Energy Unit becomes **11,036 triangles** after composed mounting edits and
+qualified cavity omission. Separate [radial profile trials](../benchmarks/2026-10-17-energy-profile/README.md)
+reach 9,783 triangles at 48 angular segments; 96 segments grows to 13,719. They
+are not included in the field total: preserving the deep socket limits savings,
+and a single radial envelope changes undercuts and underside occlusion. Future
+fitting should bind outer skins and socket domains separately.
+
+## Residual hub, housing and plate candidates
+
+The [follow-up passes](../benchmarks/2026-10-17-residual-equipment/README.md)
+reduce the complete Rune from 136,655 to **117,442**, the Resource product from
+54,359 to **30,466** per placement, and the Tech Core from 74,068 to **68,488**
+per placement. The complete-field visual candidate becomes **1,495,447 placed
+triangles**, another 78,159 (5.0%) below the composed baseline. These five disjoint
+definition overrides preserve all original placements; neither earlier totals
+nor constituent/complete-equipment savings should be added twice.
+
+Most gains come from explicitly selected structural LOD and finite all-view
+skin omission within individual rigid shells. The Tech Core copper plate uses
+a native projected-profile 8 mm prism, replacing the speckled intermediate LOD;
+its rear relief is intentionally flattened. Optical/unselected meshes remain
+exact, while near-identical equipment silhouettes are finite diagnostics rather
+than a proof of invisibility. These are new visual-review candidates with source,
+collision, detectors and installed runtime unchanged.

@@ -92,3 +92,9 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Fan locations and hollow-box proxy](../benchmarks/2026-10-17-fan-proxy/README.md): ten source placements and a 56-triangle thick frame/open-duct approximation.
 
 - [Global mounting-detail discovery](cad-mounting-details.md): read-only source-bound opening and fastener candidates across terrain and equipment.
+
+- [Composed visual pipeline](../benchmarks/2026-10-17-composed-pipeline/README.md): source-edit/LOD precedence, complete instanced GLBs, actual full-field counts and equipment comparisons.
+
+- [Energy Unit radial profile trials](../benchmarks/2026-10-17-energy-profile/README.md): shared-ring LOD controls, retained socket geometry and unpromoted profile candidates.
+
+- [Residual Rune, Resource and Tech Core geometry](../benchmarks/2026-10-17-residual-equipment/README.md): source-owned structural LOD, full-sphere shell skins and native projected plate profiles.
