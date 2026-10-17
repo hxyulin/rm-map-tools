@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "visual_source_units": [
+    4392221,
+    4314593,
+    4353403,
+    4756187,
+    4664029,
+    4693907,
+    4723785,
+    4594338
+  ],
+  "visual_error_mm": 0.25,
+  "visual_sampled_limit_mm": 1.0,
+  "visual_protected_source_rgb": [
+    "1.0000,0.0000,0.0000",
+    "0.0650,0.9810,0.0620"
+  ],
+  "collision_error_mm": 3,
+  "collision_sampled_limit_mm": 6,
+  "collision_omit_maximum_span_mm": 20,
+  "collision_profiles": [
+    {
+      "source_unit_id": 4392221,
+      "source_face_id": 4369571,
+      "signed_depth_mm": -4.000000000148759,
+      "opposite_source_face_id": 4369069,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4392221,
+      "source_face_id": 4380482,
+      "signed_depth_mm": 6.999999999979025,
+      "opposite_source_face_id": 4381498,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4392221,
+      "source_face_id": 4374129,
+      "signed_depth_mm": -6.9999999999584475,
+      "opposite_source_face_id": 4374625,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4314593,
+      "source_face_id": 4291951,
+      "signed_depth_mm": 4.000000000073214,
+      "opposite_source_face_id": 4291449,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4314593,
+      "source_face_id": 4302854,
+      "signed_depth_mm": -6.999999999993122,
+      "opposite_source_face_id": 4303870,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4314593,
+      "source_face_id": 4296509,
+      "signed_depth_mm": -7.00000000000216,
+      "opposite_source_face_id": 4297005,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4353403,
+      "source_face_id": 4330733,
+      "signed_depth_mm": -4.000000000073271,
+      "opposite_source_face_id": 4330230,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4353403,
+      "source_face_id": 4341636,
+      "signed_depth_mm": -6.999999999914735,
+      "opposite_source_face_id": 4342652,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4353403,
+      "source_face_id": 4335291,
+      "signed_depth_mm": 7.000000000077819,
+      "opposite_source_face_id": 4335787,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4756187,
+      "source_face_id": 4744482,
+      "signed_depth_mm": 1.5,
+      "opposite_source_face_id": null,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4664029,
+      "source_face_id": 4652734,
+      "signed_depth_mm": 1.5,
+      "opposite_source_face_id": null,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4693907,
+      "source_face_id": 4682612,
+      "signed_depth_mm": 1.5,
+      "opposite_source_face_id": null,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4723785,
+      "source_face_id": 4712490,
+      "signed_depth_mm": 1.5,
+      "opposite_source_face_id": null,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    },
+    {
+      "source_unit_id": 4594338,
+      "source_face_id": 4584324,
+      "signed_depth_mm": 6.0,
+      "opposite_source_face_id": null,
+      "maximum_filled_hole_area_mm2": 100,
+      "role": "collision-only source-outline replacement"
+    }
+  ],
+  "scope": "Explicit review candidate. Profile plates omit backing relief and cap selected small holes; no runtime or scoring promotion.",
+  "collision_profile_sampled_limit_mm": 15
+}

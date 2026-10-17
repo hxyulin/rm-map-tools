@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "strict_collision_gap_mm": 17.0,
+  "collision_bore_source_units": [4268930,4527988,4314593,4353403,4392221,4594338],
+  "collision_backing_source_faces": [[4756187,4744482],[4664029,4652734],[4693907,4682612],[4723785,4712490]],
+  "collision_mesh_error_mm": 3.0,
+  "collision_mesh_sampled_limit_mm": 6.0,
+  "collision_reference_sampled_limit_mm": 15.0,
+  "visual_error_mm": 0.25,
+  "visual_sampled_limit_mm": 1.0,
+  "led_error_mm": 0.025,
+  "led_sampled_limit_mm": 0.1,
+  "led_rgb": ["1.0000,0.0000,0.0000","0.0650,0.9810,0.0620"],
+  "scope": "Derived Base source-member candidates. Strict width closure applies to complete bores and selected panel openings; no fusion across independently moving members or change to gameplay detectors. Visual LOD derives from the earlier 476924-triangle reference, not repeated reduction of its 275172-triangle successor."
+}

@@ -64,3 +64,7 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [RMUC 2027 Base geometry analysis](base-geometry-rmuc2027.md): original source-unit costs, tiny curved detail, trim complexity and sampled visibility.
 
 - [Native detail passes](cad-detail-passes.md): contained interiors, bounded fastener-bore smoothing and independent Base LOD trials.
+
+- [Separate Base visual/collision LOD and relief textures](base-surface-lods-rmuc2027.md): protected lights, source-outline collider plates, rejected flattening trials and source normal/height layers.
+
+- [Projectile-width Base closure and LED LOD](base-gap-led-rmuc2027.md): strict 17 mm gap policy, native bore skins, rotated slot widths and tighter light-material geometry.
