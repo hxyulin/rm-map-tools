@@ -98,3 +98,10 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Energy Unit radial profile trials](../benchmarks/2026-10-17-energy-profile/README.md): shared-ring LOD controls, retained socket geometry and unpromoted profile candidates.
 
 - [Residual Rune, Resource and Tech Core geometry](../benchmarks/2026-10-17-residual-equipment/README.md): source-owned structural LOD, full-sphere shell skins and native projected plate profiles.
+
+- [Game-oriented road and collision LOD](../benchmarks/2026-10-17-game-lods/README.md): shared native spline strips, complete adjoining caps, material-batched terrain, and independently guarded equipment colliders.
+
+- [Source-profile collision parts](../benchmarks/2026-10-17-collision-solids/README.md): complete Energy meridians with sockets/recesses, finite Dart panel prisms, dense remainder guards and opening checks.
+
+- [Energy interior prism and complete arena accounting](../benchmarks/2026-10-17-arena-budget/README.md): exact exterior retention, placed versus shared visual counts, and a separately labeled full-map collision planning budget.
+- [Dart and Outpost detail LOD](../benchmarks/2026-10-17-dart-outpost/README.md): material-local dense guards, exact optical regions, per-member contact composition and native port clearance checks.

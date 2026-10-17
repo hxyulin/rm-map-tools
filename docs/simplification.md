@@ -56,6 +56,9 @@ These reports explain the development of the pipeline. They are dated results, n
 | Component preservation refinements | [Component refinement](../benchmarks/2026-09-11-component-refinement/README.md), implemented in the simplifier |
 | Artwork conversion and collider backing | [Atlas simplification](../benchmarks/2026-09-11-atlas-simplification/README.md), [native textures](../benchmarks/2026-09-11-native-textures/README.md), [collision artwork](../benchmarks/2026-09-11-collision-artwork/README.md) |
 | Shared geometry and distribution compression | [Geometry sharing](../benchmarks/2026-09-11-geometry-sharing/README.md), [grouped sheet prototype](../benchmarks/2026-09-11-grouped-sheets/README.md), [deduplication exploration](../benchmarks/2026-09-11-geometric-deduplication/README.md) |
+| Game-oriented road strips and separate equipment colliders | [RMUC 2027 trial](../benchmarks/2026-10-17-game-lods/README.md); source spline boundaries shared with caps, rigid material batching, 3/6 mm collision variants |
+| Source-profile collision parts | [Energy and Dart](../benchmarks/2026-10-17-collision-solids/README.md); complete meridians, window-preserving panel slabs and dense local remainder guards |
+| Dense material-local equipment LOD | [Dart and Outpost](../benchmarks/2026-10-17-dart-outpost/README.md); every triangle/corner checked per material, exact optical patches, per-member contact choices and preserved port rings |
 | Repeated simplification against an original-source guard | [Recursive trials](../benchmarks/2026-09-11-recursive-simplification/README.md); review GLBs only, not a production default |
 
 Use [Performance](performance.md) for measured startup and memory results. Fewer triangles alone do not establish a frame-rate or physics speedup.
