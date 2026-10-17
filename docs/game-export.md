@@ -86,3 +86,33 @@ Run the snippet with the repository's Python environment and `python/` on
 `PYTHONPATH`. Archive creation refuses existing files. Extraction recreates the
 field directory; this is a local export, not a published GitHub release or a
 replacement of the simulator's tracked LFS package.
+
+## Native simulator binding stage
+
+The rest-pose export feeds a separate, reproducible binding stage:
+
+```sh
+ocpenv/bin/python python/bind_repaired_game.py \
+  --package ../rm-simulator/local-assets/field-2027-low \
+  --out ../rm-simulator/local-assets/field-2027-bound
+```
+
+This retains the approved meshes, materials, artwork, shared references and
+binary payloads. It inserts named motion pivots while verifying every original
+node's rest transform. Source STEP/native solid bounds identify the Outpost
+modules, including their surface-model LED shells; the high-fidelity Base source
+provides detector envelopes. Visual and collision selectors move together.
+
+Schema 2 `rmuc2027-bindings.json` exposes **386 Base/Outpost part records**, with
+source identity, component, paired node selectors and optional motion identity.
+The two placed Outposts and six Base shields become eight moving collider
+assemblies. Other equipment retains its source hierarchy but has no newly
+implemented gameplay. Detector rectangles remain source-envelope approximations;
+Base shield travel remains the simulator's illustrative 0.25 m setting.
+`structure-binding-build.json` records source and producer hashes and these limits.
+
+The simulator now tracks the bound package in its LFS `field-2027/` directory
+and selects it by default in normal app/server builds. Its original `field/`
+package remains available with `--cad-assets field`; a 2026-only build skips
+2027 discovery. The archive above remains the earlier **unbound** export, not
+this bound runtime package.
