@@ -58,3 +58,9 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Finite patch instancing and compact storage](cad-patch-instancing.md).
 
 - [Bounded native wall filling](cad-wall-fill.md): source-profile grille and rib-cavity replacement.
+
+- [Placed terrain triangle density](../benchmarks/2026-10-17-terrain-density/README.md): spatial hotspots, collision filters and instance-aware counts.
+
+- [RMUC 2027 Base geometry analysis](base-geometry-rmuc2027.md): original source-unit costs, tiny curved detail, trim complexity and sampled visibility.
+
+- [Native detail passes](cad-detail-passes.md): contained interiors, bounded fastener-bore smoothing and independent Base LOD trials.

@@ -1,0 +1,38 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "_copyright": "Copyright (c) 2026 hxyulin <hxyulin@proton.me> (policy; source geometry retains upstream ownership)",
+  "schema": "rm-base-detail-policy-v1",
+  "component_step_sha256": "0e746f0a224a825d1fcd9268863604fd22ec51c2291c7d5e9ceb5991135ff7e5",
+  "native_lod_source_units": [
+    4268930,
+    4527988
+  ],
+  "linear_deflection_mm": 0.1,
+  "angular_deflection_rad": 0.6,
+  "sampled_support_limit_mm": 0.12,
+  "hidden_unit_maximum_span_mm": 20,
+  "enclosure_clearance_mm": 0.001,
+  "bore_source_units": [
+    4527988
+  ],
+  "bore_maximum_radius_mm": 3,
+  "bore_maximum_depth_mm": 25,
+  "bore_radial_overlap_mm": 1e-05,
+  "maximum_added_bore_volume_mm3": 100000,
+  "notes": [
+    "Source-pose inspection candidates only; no runtime installation or motion ownership is inferred.",
+    "All source units outside the LOD/bore targets keep their original triangles and colors, except whole components that pass strict native opaque-material containment.",
+    "Red and green light-bearing small units are excluded from hidden-unit candidates. No visibility sampling authorizes deletion.",
+    "Only complete small circular bores with two planar inner-wire ends are plugged. Countersinks, curved ends, partial turns and unresolved intersections are skipped.",
+    "Native union with finite plugs bounds geometric additions by construction. Full complex-source difference is not claimed for this constructive pass.",
+    "Small hardware LOD is limited to <=20 mm source units made entirely of listed analytic surfaces, excluding red/green light-bearing units. The size/type filter is a quality policy, not a functional identity."
+  ],
+  "small_hardware_maximum_span_mm": 20,
+  "small_hardware_allowed_surfaces": [
+    "Plane",
+    "Cylinder",
+    "Cone",
+    "Sphere",
+    "Torus"
+  ]
+}
