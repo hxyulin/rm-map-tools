@@ -361,6 +361,18 @@ class OptimizerIR:
     units: bytes
     source_hierarchy: bytes | None = None
 
+    def affine_patch_instances(self, *, roles=None, budget_mm=1e-6):
+        """Factor eligible finite faces into quad/triangle affine uses plus fallbacks.
+
+        Dimensions, source topology, appearance targets, component ownership and
+        marking roles remain independent per use. Native validation is a later
+        promotion gate; this bounds source straight-boundary normalization only.
+        """
+        from cad_patch_instances import build_patch_instances
+        if self.source_hierarchy is None:
+            raise ValueError('affine patch instances require a reviewed hierarchy')
+        return build_patch_instances(self.document,json.loads(self.source_hierarchy),roles=roles,budget_mm=budget_mm)
+
     def collision_roles(self, path):
         """Bind visual-only markings to this source and its reviewed hierarchy.
 

@@ -106,6 +106,8 @@ class GlbWriter:
         self.triangles = 0
         self._geometry = {}
         self._mesh_triangles = {}
+        self._indexed_payloads = {}
+        self._indexed_material_meshes = {}
 
     def material(self, key):
         if key not in self.material_index:
@@ -220,6 +222,58 @@ class GlbWriter:
             self.nodes[-1]["extras"] = copy.deepcopy(extras)
         if matrix is not None:
             self.nodes[-1]['matrix'] = np.asarray(matrix).flatten(order='F').tolist()
+
+    def add_indexed_instance(self, name, positions, normals, triangles, colour_key, *, matrix, extras=None):
+        """Share complete indexed position/normal payloads across material variants.
+
+        This opt-in path accepts caller-owned template geometry and independent
+        TRS-decomposable placements. It does not infer a shape fit from an arbitrary mesh,
+        discard UVs from an existing primitive, or merge occurrence metadata.
+        """
+        positions = np.asarray(positions, dtype='<f4'); normals = np.asarray(normals, dtype='<f4')
+        triangles = np.asarray(triangles)
+        matrix = np.asarray(matrix, dtype=float)
+        if (positions.ndim != 2 or positions.shape[1] != 3 or normals.shape != positions.shape or
+                not np.isfinite(positions).all() or not np.isfinite(normals).all() or
+                np.any(np.linalg.norm(normals, axis=1) == 0)):
+            raise ValueError('invalid indexed position/normal attributes')
+        if (triangles.ndim != 2 or triangles.shape[1] != 3 or not np.issubdtype(triangles.dtype, np.integer) or
+                triangles.size and (triangles.min() < 0 or triangles.max() >= len(positions))):
+            raise ValueError('invalid indexed triangles')
+        if (matrix.shape != (4,4) or not np.isfinite(matrix).all() or
+                not np.allclose(matrix[3], [0,0,0,1]) or abs(np.linalg.det(matrix[:3,:3])) < 1e-30):
+            raise ValueError('invalid indexed instance transform')
+        axes = matrix[:3,:3] / np.linalg.norm(matrix[:3,:3], axis=0)
+        if not np.allclose(axes.T @ axes, np.eye(3), rtol=0, atol=1e-10):
+            raise ValueError('indexed glTF instance transform contains shear')
+        if extras is not None and not isinstance(extras, dict):
+            raise ValueError('instance extras must be an object')
+        if not len(triangles):
+            self.add_node(name, positions, triangles, [], matrix=matrix, extras=extras)
+            return
+        component = 5123 if len(positions) < 65536 else 5125
+        indices = triangles.astype('<u2' if component == 5123 else '<u4').reshape(-1)
+        chunks = [positions.tobytes(), normals.tobytes(), indices.tobytes()]
+        signature = b''.join(struct.pack('<Q', len(chunk))+chunk for chunk in chunks)
+        # Compare full bytes rather than accepting a digest match as identity.
+        payload = self._indexed_payloads.get(signature)
+        if payload is None:
+            pv = self._view(chunks[0], 34962); nv = self._view(chunks[1], 34962); iv = self._view(chunks[2], 34963)
+            payload = (self._accessor(pv, 5126, len(positions), 'VEC3', (positions.min(0), positions.max(0))),
+                       self._accessor(nv, 5126, len(normals), 'VEC3'),
+                       self._accessor(iv, component, len(indices), 'SCALAR'))
+            self._indexed_payloads[signature] = payload
+        material = self.material(colour_key)
+        key = (signature, material)
+        mesh = self._indexed_material_meshes.get(key)
+        if mesh is None:
+            mesh = len(self.meshes); self._indexed_material_meshes[key] = mesh
+            pa, na, ia = payload
+            self.meshes.append({'name': name, 'primitives': [{'attributes': {'POSITION': pa, 'NORMAL': na},
+                                'indices': ia, 'material': material, 'mode': 4}]})
+        node = {'name': name, 'mesh': mesh, 'matrix': matrix.flatten(order='F').tolist()}
+        if extras is not None: node['extras'] = copy.deepcopy(extras)
+        self.nodes.append(node); self.triangles += len(triangles)
 
     def write(self, path):
         children = list(range(1, len(self.nodes) + 1))

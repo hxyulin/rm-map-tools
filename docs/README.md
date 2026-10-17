@@ -54,3 +54,5 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [RMUC 2027 native terrain cost and paint investigation](../benchmarks/2026-10-17-terrain-cost/README.md).
 
 - [Road-profile LOD preview and visual-only terrain markings](../benchmarks/2026-10-17-road-lod/README.md).
+
+- [Finite patch instancing and compact storage](cad-patch-instancing.md).

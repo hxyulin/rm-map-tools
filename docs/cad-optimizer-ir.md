@@ -293,3 +293,11 @@ they do not replace the complete source-backed CAD/metadata authority.
 5. Introduce approximate CAD edits after those identities/maps are stable, with
    explicit per-pass deviation and topology/clearance checks. No such edit is
    established as safe or faithful by a successful template-sharing comparison.
+
+## Finite affine patch layer
+
+`OptimizerIR.affine_patch_instances()` now builds [bounded finite quad/triangle
+instances](cad-patch-instancing.md) against its reviewed hierarchy. Source aliases,
+component ownership, appearance targets, marking roles and all unsupported source
+faces remain explicit. Compact tables and an inspection GLB demonstrate shared
+payloads without merging those uses or installing a new runtime package.
