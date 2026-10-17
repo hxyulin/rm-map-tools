@@ -86,3 +86,7 @@ The Markdown files are the source for both GitHub browsing and the documentation
 - [Full-field inventory and other equipment trials](equipment-pipeline-rmuc2027.md): instance-aware totals and conservative planar/LOD passes on Outpost, Rune, Dart, Tech Core and other fixtures.
 
 - [Dart frame and Outpost upper detail LOD](equipment-structure-rmuc2027.md): recovery from conservative whole-shell fallbacks, protected colour neighborhoods and matched close-up reviews.
+
+- [Remaining equipment opportunities](equipment-opportunities-rmuc2027.md): fan policy, Energy cavity proof, source tessellation trials, tool-head fragmentation and Rune detail costs.
+
+- [Fan locations and hollow-box proxy](../benchmarks/2026-10-17-fan-proxy/README.md): ten source placements and a 56-triangle thick frame/open-duct approximation.
