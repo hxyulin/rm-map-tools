@@ -378,3 +378,107 @@ ocpenv/bin/python benchmarks/2026-10-18-team-robot/package_candidates.py --sourc
 ocpenv/bin/python benchmarks/2026-10-18-team-robot/review_candidates.py --sources SOURCE_DIR --neutral tunnel_heavy
 ocpenv/bin/python benchmarks/2026-10-18-team-robot/review_candidates.py --sources SOURCE_DIR --raw --neutral tunnel_heavy
 ```
+
+### Material-aware candidate appearance
+
+Candidate packaging also produces `materials.glb` and an auditable
+`materials.json`. `model.glb` remains the source appearance and `graphite.glb`
+remains the earlier uniform display option. `python/robot_materials.py` creates
+separate rubber, carbon, aluminum, steel, printed polymer, detector face,
+housing and illustrative red diffuser PBR materials. These are inferred visual
+choices, not source-authored material identifications or live referee lights.
+Original authored paint is preserved; only explicit unstyled fallback and the
+reviewed uniform pale CAD tint are eligible. Original materials/PBR metadata
+remain in the output, with per-primitive assignment reasons and source paths.
+
+Rules operate on leaf names, not entire wheel or armor assemblies. Carbon-tube
+clamps stay metal. Named AM02/AM12 modules use inspected envelope classes to
+separate faces, housings, diffusers and hardware. PIE mecanum roller sleeves,
+Future omni rollers, Hero tread bodies and SaltWave's named rollers are handled
+separately from hubs/side plates. DreamChaser's HEXROLL open shells require
+connected-component roller selection: append index subsets, keep every original
+triangle exactly once and retain all attributes. These dimensional selectors are
+CAD appearance settings, not rulebook dimensions. Unknown parts stay neutral;
+unnamed plates are not automatically claimed to be carbon fiber.
+
+The material pass verifies exact per-node triangle multiplicity, attribute
+bindings, original buffer bytes, source material/mesh declarations, hierarchy,
+poses and animation bindings. It does not add collision or physics behavior.
+The five complete raw candidates are reviewed separately; these material variants
+have not replaced the existing bound Omni/Hero runtime packages.
+
+```sh
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/package_candidates.py --sources SOURCE_DIR stair_heavy
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/review_candidates.py --sources SOURCE_DIR --materials stair_heavy
+```
+
+`review-materials/` uses the exported PBR base colors with the diagnostic diffuse
+rasterizer. It is a color-assignment review, not a metallic/roughness or carbon
+weave shading preview. No texture or extra tessellation is generated.
+
+### Source armor mount/replacement pass
+
+`python/robot_armor.py` identifies the face, housing and two diffusers inside
+reviewed AM02/AM12 source leaves, fits an outward scoring-face frame, and leaves
+separate brackets and fasteners intact. The flattened Zhulong source instead
+uses explicit whole-module solids 3/6/81/82, scoped to its pinned STEP identity;
+its damaged names are not used for inference. Its face normal is the reviewed
+15-degree installation angle. Physical housing dimensions are visual/physics
+fits; they do not automatically define an effective detection area.
+
+All five complete candidates now include `armor.json` and `armor-ready.glb`.
+The latter omits the selected source surfaces and embeds the fitted mount
+contract; a consumer must spawn the simulator modules at those frames. There
+are four unique mounts per candidate. SaltWave contains eight module leaves:
+four pairs overlap with approximately 1.2–1.3 mm offsets. Explicit primary/alias
+paths in `candidates.json` merge the reviewed pairs, checking center distance
+under 2 mm and compatible orientation before combining surface selectors. This
+is a source-specific alias policy, not a global proximity-based deletion pass.
+
+`bind_armor.py` applies the same pass to existing articulated Omni/Hero packages,
+writing to a separate output folder. It retains motion groups, source mounts,
+original notices and inferred material assignments. The replacement manifest
+contains body-frame FLU poses and housing dimensions. The simulator admits the
+contract only when it matches the fitted physics preset, then draws complete
+physical modules with the existing armor atlas and caller-owned light states.
+Without that contract, legacy packages retain their CAD and receive overlays.
+
+```sh
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/bind_armor.py \
+  --sources SOURCE_DIR --package SOURCE_DIR/assembled --out SOURCE_DIR/assembled-armored
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/bind_armor.py \
+  --sources SOURCE_DIR --package SOURCE_DIR/bound-hero --out SOURCE_DIR/bound-hero-armored
+ocpenv/bin/python -m unittest discover -s python -p 'test_robot*.py'
+```
+
+Validation verifies exact retained primitive/attribute bindings, source
+materials, hardware and transforms. The playable packages retain 164,663 source
+triangles (Omni) and 201,148 (Hero), before the simulator adds its small fitted
+modules. No CAD mesh becomes a detailed collision mesh. The Hero's physical
+shell is large, but the simulator intentionally retains its existing 101 × 94 mm
+small-detector policy pending a separate AM12 effective-area rules check. The
+raw donor candidates remain unbound chassis: mount metadata is not admission.
+
+### DreamChaser source-bound stair linkage
+
+`benchmarks/2026-10-18-team-robot/bind_stairs.py --sources SOURCE_DIR --out PACKAGE`
+exports the reviewed donor as `dreamchaser-stair-heavy-v1`. It pins the input
+STEP hash, preserves every source triangle before the separately approved armor
+surface replacement, and rebases source leaves onto rigid body/front/coupler/
+rear/slider/guide/wheel groups. Neutral, mid-climb and deployed GLBs are included.
+The manifest's `source_reconstruction_error_m` measures the double-precision
+rigid-frame round trip before GLB float32 storage, not a rendered error bound.
+Producer, linkage and input mesh hashes identify the reproducible recipe.
+
+`python/stair_linkage.py` contains disjoint reviewed source membership and an
+analytic closed planar linkage. Dimensions come from CAD bearings and the
+release's technical report Figures 2–3 (130/190/200/320 mm). The source is the
+raised-front endpoint; the level travel endpoint is solved from equal wheel
+heights. The upper manipulator and auxiliary sensor linkages remain fixed.
+The simulator applies caller-owned link frames and individual wheel suspension;
+it does not claim calibrated torque or deformable belts. This profile currently
+uses 2026 Engineer practice, without admitting RM2027 Heavy gameplay.
+
+```sh
+ocpenv/bin/python -m unittest discover -s python -p 'test_stair_linkage.py'
+```

@@ -15,6 +15,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'python'))
 from gltf_scene import read_glb, write_glb, mesh_instances
+from robot_armor import identify_armor, strip_armor_surfaces, verify_armor_replacement, merge_armor_aliases
+from robot_materials import apply_materials, verify_materials
 from robot_reference_geometry import apply_reference_exclusions, verify_reference_cleanup, compact_reference_resources
 
 
@@ -126,12 +128,31 @@ def main():
                                                 metallicFactor=.1, roughnessFactor=.45)
         changed_materials += 1
     write_glb(out / 'graphite.glb', styled, binary)
+    appearance = copy.deepcopy(document)
+    appearance_binary, material_report = apply_materials(appearance, binary, rows)
+    material_report['validation'] = verify_materials(document, binary, appearance, appearance_binary)
+    write_glb(out / 'materials.glb', appearance, appearance_binary)
+    (out / 'materials.json').write_text(json.dumps(material_report, ensure_ascii=False, indent=2) + '\n')
+    armor = identify_armor(appearance, appearance_binary, rows)
+    merge_armor_aliases(armor, source.get('armor_aliases', []))
+    if len(armor['modules']) != 4:
+        raise ValueError('candidate must identify four distinct reviewed armor mounts')
+    armor_ready = copy.deepcopy(appearance)
+    strip_armor_surfaces(armor_ready, armor)
+    armor['validation'] = verify_armor_replacement(appearance, armor_ready, armor)
+    armor_ready['asset'].setdefault('extras', {})['armor_bindings'] = armor
+    write_glb(out / 'armor-ready.glb', armor_ready, appearance_binary)
+    (out / 'armor.json').write_text(json.dumps(armor, ensure_ascii=False, indent=2) + '\n')
     manifest = {'schema': 'robot-candidate-v1', 'source': source,
                 'producer_sha256': digest(Path(__file__)), 'recipe_sha256': digest(args.recipe),
                 'inputs': {'low.glb': digest(folder / 'low.glb'),
                            'hierarchy.json': digest(args.sources / (name + '-hierarchy.json'))},
-                'files': {n: digest(out / n) for n in ['model.glb', 'graphite.glb']},
+                'files': {n: digest(out / n) for n in ['model.glb', 'graphite.glb', 'materials.glb', 'materials.json', 'armor-ready.glb', 'armor.json']},
                 'graphite_override_materials': changed_materials,
+                'display_material_counts': material_report['primitive_counts'],
+                'armor_modules': len(armor['modules']),
+                'armor_pass_sha256': digest(ROOT / 'python/robot_armor.py'),
+                'material_pass_sha256': digest(ROOT / 'python/robot_materials.py'),
                 'placed_triangles': placed_triangles,
                 'source_solid_groups': sum(n['extras']['native_solid_index'] > 0 for _, n in original_nodes),
                 'source_shell_groups': sum(n['extras'].get('source_leaf_path') is not None for _, n in original_nodes),
@@ -149,6 +170,9 @@ def main():
     notice = f"# Source-derived robot candidate\n\n{source['credit']}\n\n{source['source_article']}\n\n{source['terms']}\n\n"
     notice += ('Original geometry/materials remain third-party CAD. The simulator software license does not relicense them. '
                'Simplified visual candidate only; no inferred joints, mass/inertia, robot compliance or collision/scoring eligibility.\n')
+    notice += ('\nmaterials.glb adds inferred display materials only; original CAD colors remain in model.glb. '
+               'Red diffuser color is illustrative, with no live referee/team binding. '
+               'See materials.json for per-part evidence and preservation checks.\n')
     if excluded:
         notice += '\nExcluded CAD reference geometry (original source remains intact):\n'
         for row in excluded:

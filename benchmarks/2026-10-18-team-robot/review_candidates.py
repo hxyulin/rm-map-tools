@@ -21,13 +21,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sources', type=Path, required=True)
     parser.add_argument('--recipe', type=Path, default=Path(__file__).with_name('candidates.json'))
+    parser.add_argument('--materials', action='store_true', help='Render the classified PBR display variant.')
     parser.add_argument('--raw', action='store_true', help='Inspect the original cooked input, including CAD reference geometry.')
     parser.add_argument('--neutral', action='store_true', help='Use lighter unpainted surfaces for geometry inspection only.')
     parser.add_argument('source_id')
     args = parser.parse_args()
     source = json.loads(args.recipe.read_text())['sources'][args.source_id]
     folder = args.sources / (source['source_model_id'] + '-pilot')
-    document, binary = read_glb(folder / 'low.glb' if args.raw else folder / 'package/model.glb')
+    if args.materials and (args.raw or args.neutral):
+        parser.error('--materials cannot combine with --raw or --neutral')
+    document, binary = read_glb(folder / 'low.glb' if args.raw else folder / ('package/materials.glb' if args.materials else 'package/model.glb'))
     triangles, colors = [], []
     fallback = [.55, .57, .60] if args.neutral else [.095, .10, .11]
     for ni, pi, points, faces, material in mesh_instances(document, binary):
@@ -35,6 +38,9 @@ def main():
         rgb = np.asarray(mat.get('extras', {}).get('step_colour_srgb') or fallback)
         if np.array_equal(rgb, [.7922, .8196, .9333]):
             rgb = np.array(fallback)
+        if args.materials:
+            linear = np.array(mat.get('pbrMetallicRoughness', {}).get('baseColorFactor', [1, 1, 1, 1])[:3])
+            rgb = np.where(linear <= .0031308, linear * 12.92, 1.055 * linear ** (1 / 2.4) - .055)
         triangles.append(points[faces])
         colors.extend([rgb] * len(faces))
     points, colors = np.concatenate(triangles), np.array(colors)
@@ -53,7 +59,7 @@ def main():
         reference = np.concatenate(raw)
         low = reference.min((0, 1));high = reference.max((0, 1))
         reference -= np.array([(low[0] + high[0]) / 2, low[1], (low[2] + high[2]) / 2])
-    out = folder / ('review-raw' if args.raw else 'review');out.mkdir(exist_ok=True)
+    out = folder / ('review-materials' if args.materials else 'review-raw' if args.raw else 'review');out.mkdir(exist_ok=True)
     spec = importlib.util.spec_from_file_location('candidate_raster', ROOT / 'benchmarks/2026-10-17-base-passes/validate_render.py')
     raster = importlib.util.module_from_spec(spec);spec.loader.exec_module(raster)
     with tempfile.TemporaryDirectory() as temp:
@@ -63,7 +69,7 @@ def main():
                                 ('side', (1, .1, .00001)), ('top', (.00001, 1, 0))]:
             raster.raster(points, colors, reference, direction, helper, temp, out / (('neutral-' if args.neutral else '') + view + '.png'))
     stats = {'dimensions_gltf_m': np.ptp(points.reshape(-1, 3), axis=0).tolist(),
-             'triangles': len(points), 'material_policy': ('Neutral geometry diagnostic' if args.neutral else 'Graphite for explicit fallback and pale CAD tint; other source colors preserved.'),
+             'triangles': len(points), 'material_policy': ('Classified display materials; diffuse diagnostic, not full PBR lighting' if args.materials else 'Neutral geometry diagnostic' if args.neutral else 'Graphite for explicit fallback and pale CAD tint; other source colors preserved.'),
              'source_id': args.source_id, 'credit': source['credit'],
              'scope': ('Raw source with reference geometry.' if args.raw else 'Physical source candidate with reviewed reference geometry excluded.') + ' No fitted gameplay, suspension or articulation.'}
     (out / ('neutral-measurements.json' if args.neutral else 'measurements.json')).write_text(json.dumps(stats, ensure_ascii=False, indent=2) + '\n')
