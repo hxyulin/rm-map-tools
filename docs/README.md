@@ -17,6 +17,7 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Source CAD components](cad-components.md) | Whole-body component catalogs, manual groups and isolated STEP work items |
 | [Hierarchical optimization and LOD](cad-lod-optimization.md) | Pass ordering, compact storage, protected detail and per-component quality |
 | [Optimizer IR](cad-optimizer-ir.md) | Shared construction recipes, exact primitive normalization and source-owned instances |
+| [Referee hardware prototypes](referee-hardware.md) | Six checksum-pinned hardware models with coarse/rough visual tiers and source comparisons |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
 | [Simplification counts](simplification-results.md) | Preset mesh inventories and measured reduction passes |
