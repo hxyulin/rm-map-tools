@@ -482,3 +482,34 @@ uses 2026 Engineer practice, without admitting RM2027 Heavy gameplay.
 ```sh
 ocpenv/bin/python -m unittest discover -s python -p 'test_stair_linkage.py'
 ```
+
+### Tunnel donor bindings
+
+`benchmarks/2026-10-18-team-robot/bind_tunnel.py` binds PIE (`--source heavy`,
+the default) and Future (`--source infantry`) into schema-4 runtime packages.
+Pass `--sources SOURCE_DIR --out PACKAGE --base-config ENGINEER_CONFIG.json`.
+The simulator's `robot_tunnel export-base FILE` example produces the baseline.
+The manifest pins its hash along with the input GLB, STEP release, producer,
+configuration and each output pose. Source material tables and geometry buffers
+are retained exactly; only hierarchy transforms, approved armor surfaces and
+reviewed motor leads change. Each written GLB verifies unchanged binary payload
+and exact retained triangle count. No whole-model scaling is used.
+
+PIE's source cylinder axes and report §4.2 define a 7° shoulder leveling motion,
+counter-rotating elbow, 70 mm camera slide along its 45° rail and a 20° UWB hinge
+retraction. The shared scalar input is a prescribed simulator stow policy. The
+upper arm gets an oriented source envelope; an axis-aligned aggregate falsely
+fills space above the stowed arm. Fixed physical groups and fitted armor retain
+collision, while open/unclassified shells remain visual-only.
+
+Future's actual tyre leaves, excluding wheel mounts, determine loaded height
+(approximately 249 mm). Its source gimbal yaw is neutralized to the barrel
+heading. Pitch linkage motion is approximate, not a four-bar closure solution.
+The package includes fitted muzzle/camera offsets and four real armor mounts.
+The simulator tests these packages in a 250 mm contact fixture; this is not a
+certification for arbitrary terrain or elevated gun pitch. PIE remains an
+Engineer practice donor pending RM2027 Heavy admission.
+
+```sh
+ocpenv/bin/python -m unittest discover -s python -p 'test_tunnel_binding.py'
+```
