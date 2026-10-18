@@ -216,3 +216,37 @@ The complete source-pose envelopes are about 663 × 584 × 253 mm (Infantry) and
 a 250 mm tunnel; its static CAD envelope needs suspension/clearance calibration.
 The Hero is published in an unfolded pose. Fit source wheel, armor, camera,
 barrel and folding joints before treating either as a playable robot.
+
+
+## Artisans folding Hero binding
+
+`bind_hero.py` binds the lower folding axis and separate firing pitch of the
+Artisans STEP. Lower/upper hinge centres were fitted from the source bearing
+assemblies (source Z=122 / 236.47 mm, upper Y=9.1 mm). The source frame is rotated
+into glTF X-left/Y-up/Z-forward, with a fixed floor shift. A 127 degree fold and
+90 degree/s actuator are simulator assumptions; the upper firing stage
+counter-rotates the fold. Wheel-leg actuator motion and flexible feed-chain
+motion are not inferred.
+
+Open shells must retain source leaf ownership before binding. Otherwise the
+camera shell and unrelated open surfaces share one visual group and remain
+behind when the head moves. The additive `--faces` / `--split-shells` options
+preserve them without changing the default recipe for the earlier Omni.
+
+```sh
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/audit_source.py --sources SOURCE_DIR --out PREPARED_DIR --faces artisans-2026-tunnel-hero
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/prepare_source.py --sources SOURCE_DIR --out PREPARED_DIR --recipe benchmarks/2026-10-18-team-robot/candidates.json --split-shells --hierarchy PREPARED_DIR/artisans-2026-tunnel-hero-hierarchy.json --low-only hero
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/bind_hero.py --sources SOURCE_DIR --prepared PREPARED_DIR --out BOUND_DIR
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/validate_hero.py --prepared PREPARED_DIR BOUND_DIR
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/review.py BOUND_DIR --poses neutral mid-fold folded
+```
+
+The bound package contains 206,722 triangles across the original 738 solids and
+four open-shell leaf groups. It retains every prepared part, original source
+appearance and provenance. Named body/yaw/fold/pitch/four-wheel groups preserve
+source rest geometry up to float32 rebasing. `manifest.json` pins the source,
+prepared inputs, exporter and runtime scene; `CAD-NOTICE.md` retains author terms.
+The supplied review poses are not hardware travel or collision certification.
+In rm-simulator this is a 2026 Hero practice preset, with effective ray-wheel
+suspension and independent approximate collision proxies. The folded source
+camera view is occluded by chassis structure; third-person is available.

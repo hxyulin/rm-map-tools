@@ -31,11 +31,12 @@ def load(path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('package', type=Path)
+    parser.add_argument('--poses',nargs='+',default=['neutral','aimed','depressed'])
     args = parser.parse_args()
     folder = args.package;out = folder / 'review';out.mkdir(exist_ok=True)
     spec = importlib.util.spec_from_file_location('robot_raster', ROOT / 'benchmarks/2026-10-17-base-passes/validate_render.py')
     raster = importlib.util.module_from_spec(spec);spec.loader.exec_module(raster)
-    cases = {name: load(folder / (name + '.glb')) for name in ['neutral', 'aimed', 'depressed']}
+    cases = {name: load(folder / (name + '.glb')) for name in args.poses}
     reference = np.concatenate([p for p, c in cases.values()])
     stats = {}
     with tempfile.TemporaryDirectory() as temp:

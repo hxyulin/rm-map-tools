@@ -17,6 +17,8 @@ parser.add_argument('--sources',type=Path,required=True)
 parser.add_argument('--out',type=Path,required=True)
 parser.add_argument('--low-only',action='store_true',help='Use the reference tessellation for centering, without exporting its large review mesh.')
 parser.add_argument('--recipe',type=Path,default=Path(__file__).with_name('recipe.json'))
+parser.add_argument('--split-shells',action='store_true',help='Separate non-solid faces by audited source leaf; requires --hierarchy.')
+parser.add_argument('--hierarchy',type=Path)
 parser.add_argument('source_id', help='Source key in the checksum-pinned recipe.')
 args=parser.parse_args()
 recipe=json.loads(args.recipe.read_text());binding=recipe['sources'][args.source_id]
@@ -28,6 +30,15 @@ article={'url':binding['original_article_url'],'id':binding['source_article'].rs
 start=time.monotonic();doc,reader,error=read_part(str(source));assert error is None,error
 stats=analyse(doc);print(name,stats,flush=True)
 owners=solid_membership(doc);outputs={};reference=None;center=None
+leaf_paths={}
+if args.split_shells:
+ if args.hierarchy is None:raise ValueError('--split-shells requires a face-membership hierarchy')
+ rows=json.loads(args.hierarchy.read_text())
+ for leaf,row in enumerate(rows,1):
+  if 'children' in row:continue
+  if 'native_faces' not in row:raise ValueError('audit hierarchy with --faces first')
+  for face in row['native_faces']:
+   if face not in owners:owners[face]=-leaf;leaf_paths[-leaf]=row['path']
 for variant,linear,angular in [('source',.25,.3),('low',1.,.8)]:
  owner=[];p,t,c,palette=tessellate(doc,linear,angular,face_observer=lambda i,f,n:owner.extend([owners.get(i,0)]*n));owner=np.array(owner)
  if center is None:center=(p.min(0)+p.max(0))/2
@@ -46,7 +57,7 @@ for variant,linear,angular in [('source',.25,.3),('low',1.,.8)]:
  np.savez_compressed(out/(variant+'.npz'),positions_mm=p-center,triangles=t,material_ids=c,palette=np.array([v or '' for v in palette]))
  writer=GlbWriter(name,{'version':'2.0','copyright':credit+'; original CAD terms apply. Local visual experiment, not an official model.'})
  for (q,faces,colors),(sid,count) in zip(parts,counts):
-  writer.add_node('source-solid-'+str(sid),(q-center)/1000,faces,[palette[k] for k in colors],extras={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'native_solid_index':sid,'source_article':article['url'],'credit':credit,'semantic_role':'unclassified','collision_eligible':False,'articulation_bound':False})
+  writer.add_node('source-solid-'+str(sid),(q-center)/1000,faces,[palette[k] for k in colors],extras={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'native_solid_index':max(0,sid),**({'source_leaf_path':leaf_paths.get(sid)} if args.split_shells else {}),'source_article':article['url'],'credit':credit,'semantic_role':'unclassified','collision_eligible':False,'articulation_bound':False})
  writer.write(out/(variant+'.glb'))
  outputs[variant]={'triangles':len(t),'bytes':(out/(variant+'.glb')).stat().st_size,'native_solid_groups':len(counts),'linear_mm':linear,'angular_rad':angular,'decimation_error_mm':1. if variant=='low' else None}
  print(variant,outputs[variant],flush=True)

@@ -12,7 +12,7 @@ from OCP.TDF import TDF_Label
 from OCP.collections import Sequence_TDF_Label,IndexedMap_TopoDS_Shape_TopTools_ShapeMapHasher as ShapeMap
 from OCP.TopoDS import TopoDS_Compound
 from OCP.BRep import BRep_Builder
-from OCP.TopAbs import TopAbs_SOLID
+from OCP.TopAbs import TopAbs_SOLID,TopAbs_FACE
 from OCP.TopExp import TopExp
 from OCP.TopLoc import TopLoc_Location
 from OCP.Bnd import Bnd_Box
@@ -20,6 +20,7 @@ from OCP.BRepBndLib import BRepBndLib
 parser=argparse.ArgumentParser(description='Audit source occurrence ownership and recover the original cooked-mesh centre.')
 parser.add_argument('--sources',type=Path,required=True)
 parser.add_argument('--out',type=Path,required=True)
+parser.add_argument('--faces',action='store_true',help='Retain source face memberships, including open shell parts.')
 parser.add_argument('name')
 args=parser.parse_args()
 folder=args.out;folder.mkdir(parents=True,exist_ok=True);name=args.name
@@ -28,6 +29,7 @@ st=XCAFDoc_DocumentTool.ShapeTool_s(doc.Main());roots=Sequence_TDF_Label();st.Ge
 comp=TopoDS_Compound();builder=BRep_Builder();builder.MakeCompound(comp)
 for i in range(1,roots.Length()+1):builder.Add(comp,st.GetShape_s(roots.Value(i)))
 solids=ShapeMap();TopExp.MapShapes_s(comp,TopAbs_SOLID,solids)
+faces=ShapeMap();TopExp.MapShapes_s(comp,TopAbs_FACE,faces)
 def label_name(label):
  n=TDataStd_Name()
  return n.Get().ToExtString() if label.FindAttribute(TDataStd_Name.GetID_s(),n) else '?'
@@ -45,6 +47,9 @@ def walk(label,location,path):
  else:
   shape=st.GetShape_s(d).Moved(location);local=ShapeMap();TopExp.MapShapes_s(shape,TopAbs_SOLID,local)
   node['native_solids']=[solids.FindIndex(local.FindKey(i)) for i in range(1,local.Extent()+1)]
+  if args.faces:
+   local_faces=ShapeMap();TopExp.MapShapes_s(shape,TopAbs_FACE,local_faces)
+   node['native_faces']=[faces.FindIndex(local_faces.FindKey(i)) for i in range(1,local_faces.Extent()+1)]
   box=Bnd_Box();BRepBndLib.AddOptimal_s(shape,box,False,False)
   if not box.IsVoid():
    lo,hi=box.CornerMin(),box.CornerMax();node['bounds_mm']=[lo.X(),lo.Y(),lo.Z(),hi.X(),hi.Y(),hi.Z()]
