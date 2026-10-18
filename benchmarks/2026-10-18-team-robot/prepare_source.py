@@ -24,7 +24,8 @@ args=parser.parse_args()
 recipe=json.loads(args.recipe.read_text());binding=recipe['sources'][args.source_id]
 name=binding['source_model_id'];source=args.sources/(name+'.step');out=args.out/(name+'-pilot')
 if out.exists():raise ValueError('output directory must be new')
-if hashlib.sha256(source.read_bytes()).hexdigest()!=binding['cad_sha256']:raise ValueError('STEP checksum mismatch')
+source_sha256=hashlib.sha256(source.read_bytes()).hexdigest()
+if source_sha256!=binding['cad_sha256']:raise ValueError('STEP checksum mismatch')
 out.mkdir(parents=True)
 article={'url':binding['original_article_url'],'id':binding['source_article'].rsplit('/',1)[1]};credit=binding['credit']
 start=time.monotonic();doc,reader,error=read_part(str(source));assert error is None,error
@@ -57,11 +58,11 @@ for variant,linear,angular in [('source',.25,.3),('low',1.,.8)]:
  np.savez_compressed(out/(variant+'.npz'),positions_mm=p-center,triangles=t,material_ids=c,palette=np.array([v or '' for v in palette]))
  writer=GlbWriter(name,{'version':'2.0','copyright':credit+'; original CAD terms apply. Local visual experiment, not an official model.'})
  for (q,faces,colors),(sid,count) in zip(parts,counts):
-  writer.add_node('source-solid-'+str(sid),(q-center)/1000,faces,[palette[k] for k in colors],extras={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'native_solid_index':max(0,sid),**({'source_leaf_path':leaf_paths.get(sid)} if args.split_shells else {}),'source_article':article['url'],'credit':credit,'semantic_role':'unclassified','collision_eligible':False,'articulation_bound':False})
+  writer.add_node('source-solid-'+str(sid),(q-center)/1000,faces,[palette[k] for k in colors],extras={'source_sha256':source_sha256,'native_solid_index':max(0,sid),**({'source_leaf_path':leaf_paths.get(sid)} if args.split_shells else {}),'source_article':article['url'],'credit':credit,'semantic_role':'unclassified','collision_eligible':False,'articulation_bound':False})
  writer.write(out/(variant+'.glb'))
- outputs[variant]={'triangles':len(t),'bytes':(out/(variant+'.glb')).stat().st_size,'native_solid_groups':len(counts),'linear_mm':linear,'angular_rad':angular,'decimation_error_mm':1. if variant=='low' else None}
+ outputs[variant]={'triangles':len(t),'bytes':(out/(variant+'.glb')).stat().st_size,'mesh_groups':len(counts),'native_solid_groups':sum(sid>0 for sid,count in counts),'source_shell_groups':sum(sid<0 for sid,count in counts),'linear_mm':linear,'angular_rad':angular,'decimation_error_mm':1. if variant=='low' else None}
  print(variant,outputs[variant],flush=True)
-report={'source':source.name,'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'author_credit':credit,'article_url':article['url'],'archive_url':'https://bbs.herkules.dev/articles/'+article['id'],'source_stats':stats,'outputs':outputs,'elapsed_seconds':time.monotonic()-start,'policy':'Local visual review only. Source-solid and material boundaries retained. No semantic removal, hole filling, convex hulls, inferred physics or articulated binding. Meshoptimizer metric is not a certified deviation bound. CAD rights remain with original authors; intended use is noncommercial RoboMaster team exchange.'}
+report={'source':source.name,'sha256':source_sha256,'author_credit':credit,'article_url':article['url'],'archive_url':'https://bbs.herkules.dev/articles/'+article['id'],'source_stats':stats,'outputs':outputs,'elapsed_seconds':time.monotonic()-start,'policy':'Local visual review only. Source-solid and material boundaries retained. No semantic removal, hole filling, convex hulls, inferred physics or articulated binding. Meshoptimizer metric is not a certified deviation bound. CAD rights remain with original authors; intended use is noncommercial RoboMaster team exchange.'}
 (out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 notice=(f"# Source-derived robot candidate\n\n{credit}\n\n"
         f"Source article: {binding['source_article']}\nOriginal article: {binding['original_article_url']}\n\n"

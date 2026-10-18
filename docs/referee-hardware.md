@@ -250,3 +250,131 @@ The supplied review poses are not hardware travel or collision certification.
 In rm-simulator this is a 2026 Hero practice preset, with effective ray-wheel
 suspension and independent approximate collision proxies. The folded source
 camera view is occluded by chassis structure; third-person is available.
+
+
+## Source robot roster expansion (2026-10-19)
+
+`benchmarks/2026-10-18-team-robot/roster.json` records the selected replacement
+roster: existing assembled Omni Infantry, Future tunnel Infantry, Artisans Hero
+(reference), two Engineer-derived Heavy variants, and a tunnel Sentry. It is an
+intake inventory, not a runtime support declaration. The Hero does not stand in
+for a 2027 Heavy, and an Engineer CAD donor does not imply 2027 Heavy compliance.
+
+The tunnel Heavy donor is [Capital Normal University PIE / H3's 2026
+Engineer](https://bbs.herkules.dev/articles/01M0YXED5X9S8DKY2BBCT220PZ).
+Its directly attached ZIP contains the complete
+`【RM2026 工程机器人】首都师范大学 PIE战队/工程机器人-分区赛版本.STEP`.
+The STEP checksum and archive member are pinned as `tunnel_heavy` in
+`candidates.json`. Its report §4.2 describes horizontally folding serial arm
+links, a separate image-transmitter lift and a retracting UWB mount; §4.2.8
+covers the chassis. Preserve those assemblies rather than folding the entire
+arm as one rigid object. Source +Y is up, unlike the earlier source robots;
+the review rotation is explicitly identity. Source pose is not tunnel pose.
+All source faces are unstyled; graphite remains a presentation choice.
+
+DreamChaser's 2026 Engineer release is selected for the stair Heavy, and EGA's
+2026 complete tunnel Sentry for the Sentry. Their public releases link to Baidu
+Netdisk rather than a directly attached complete STEP. The user downloaded
+these releases on Metis and authorized their transfer. DreamChaser includes
+complete STEP assemblies. Both EGA ZIPs were inspected: they contain complete
+SolidWorks assemblies but only component STEP files. A complete Sentry STEP
+export is pending. Exact source checksums and joint ownership remain pending; do not replace them with an unrelated model or
+present their authors' real-robot capability claims as simulated capabilities.
+Ambition's directly attached ZIP had no complete neutral-format assembly,
+and SaltWave's complete Sentry STEP is an alternate, without verified tunnel
+capability. Neither is silently substituted into the chosen roster.
+
+For PIE, audit with `--faces`, then prepare with `--split-shells --hierarchy`
+(as for the Hero) using recipe key `tunnel_heavy`. Candidate packaging now
+attaches each open-shell mesh to its audited leaf, preserving separate camera,
+housing and arm ownership. Solid aliases retain their occurrence paths without
+duplicating placed geometry. Unknown/non-leaf shell paths fail packaging.
+Use the existing package/review commands with `tunnel_heavy`; original CAD,
+prepared meshes and images remain external generated files.
+
+The Metis transfer was verified by SHA-256 for 13 files / 3,497,690,266 bytes.
+DreamChaser's complete national-finals single-arm STEP is now pinned as
+`stair_heavy`. SaltWave's complete half-swerve/half-omni Sentry is pinned as
+`sentry_alternate`, a user-approved temporary option while EGA needs STEP
+conversion. SaltWave and DreamChaser both use source +Y up, confirmed by the deck
+plate thickness and yaw bearing plane. The
+rotations in `candidates.json` record those differences explicitly.
+
+PIE's first complete review package contains 165,541 triangles, 1,694 source
+solids and 16 separately owned shell groups. Original binary mesh payloads and
+source materials survive packaging exactly. Source-pose extents are about
+613 × 851 × 411 mm (width × length × height); this is an unbound arm pose, not
+a tunnel-clearance claim. Generate it with recipe key `tunnel_heavy`.
+
+Large unstyled assemblies exposed two avoidable costs. The preparer now hashes
+the STEP once per run rather than once per source mesh. Native analysis and
+meshing also skip paint lookups when the XCAF color table is empty, which proves
+no paint can be found. Colored documents retain the existing resolution path.
+Regression fixtures compare full geometry/palette/statistics against the former
+empty-table path and check that authored body paint remains present.
+
+The full PIE cook before and after these performance changes produced a
+byte-identical 13,528,740-byte `low.glb` (165,541 triangles). Measured cook time
+was 636.74 s before and 176.40 s after, about 3.6× faster in this run. This is a
+single local measurement, not a cross-machine benchmark. The redundant benchmark
+output was removed after recording the hashes and timings.
+
+DreamChaser's cooked package contains 337,237 triangles, 1,396 solids and 22
+separate shell groups; SaltWave's contains 218,879 triangles, 4,123 solids and
+four shell groups. Packaging preserves mesh binary payloads, source materials
+and complete/disjoint source ownership for both. These are source-pose visual
+candidates; the DreamChaser wheel linkages still need their drive/climb poses
+bound, and SaltWave steering/gimbal motion is unbound. Neither is yet a playable
+replacement in rm-simulator.
+
+
+## Remove CAD reference geometry from robot candidates
+
+`python/robot_reference_geometry.py` applies the reviewed `reference_exclusions`
+in `candidates.json` during candidate packaging. Original STEP and `low.glb`
+inputs remain intact. The pass selects checksum-scoped native solids or a
+specific component/region inside an audited source leaf; it checks occurrence
+names and expected triangle counts and fails on drift. A sphere fit or a word
+such as “range” is not an automatic removal rule.
+
+The initial cleanup removes:
+
+- PIE: the 70 mm controller exclusion hemisphere; a camera viewing volume and
+  overlapping coarse camera proxy (the complete VT03 remains); only the large
+  eight-triangle positioning-module viewing cone inside its mixed hardware leaf.
+- SaltWave: camera/controller exclusion hemispheres, camera viewing volume,
+  the wheel's `地面` CAD reference sheet, and two clearance cones merged into the
+  controller solid. The controller board ends at local Y=14 mm; the 92 helper
+  triangles extending beyond local Y=15 mm are selected in that source frame.
+  This 15 mm cut is an inspected CAD selector, not a competition-rule constant.
+
+PIE is now **165,147 triangles** (394 removed); SaltWave is **217,711 triangles**
+(1,168 removed). All actual controller boards, UWB hardware/connectors, cameras
+and LiDAR housings remain. In particular, `mid360带范围` contains the physical
+LiDAR and is retained; PIE's rounded energy-unit housing also remains. Other
+reviewed source models yielded no additional confirmed reference bodies. The
+Future part named `26铝柱M3×120×D5` produces a sphere-fit false positive because
+its coarse cylindrical vertices lie on a circumsphere; it is a physical post.
+DreamChaser's unusual wheel arrangement is its source linkage pose, not a
+missing-geometry problem, and is not flattened/scaled by this cleanup.
+
+The packager prunes unused mesh/accessor/buffer resources after exclusion and
+verifies exact retained vertex attributes, triangle membership, source materials
+and local part poses against the untouched cooked input. Empty source anchors
+and exclusion reasons remain in the hierarchy/manifest and generated notice.
+Retained attributes keep their exact bytes; the final GLB container is repacked,
+so its complete binary payload is intentionally different from the raw cook.
+All six candidate robot designs (seven source assemblies, including both
+halves of the assembled Omni) were checked for analogous spheres/cones, named helpers and loose reference sheets.
+
+`review_candidates.py` now renders the physical package by default. `--raw`
+shows the cooked reference geometry separately in `review-raw/`. Both use the
+same source frame and camera bounds, so changes to framing cannot disguise a
+geometry change. Re-run packaging before review when changing exclusion rules.
+
+```sh
+ocpenv/bin/python -m unittest discover -s python -p 'test_robot*.py'
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/package_candidates.py --sources SOURCE_DIR tunnel_heavy
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/review_candidates.py --sources SOURCE_DIR --neutral tunnel_heavy
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/review_candidates.py --sources SOURCE_DIR --raw --neutral tunnel_heavy
+```

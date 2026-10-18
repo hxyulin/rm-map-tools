@@ -13,7 +13,7 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from p21index import Index
 from p21model import Model, NUM_RE
-from validate_parts import read_part, colour_key
+from validate_parts import read_part, colour_key, has_source_colours
 from OCP.XCAFDoc import XCAFDoc_DocumentTool, XCAFDoc_ColorSurf, XCAFDoc_ColorGen, XCAFDoc_ShapeTool
 from OCP.collections import Sequence_TDF_Label as TDF_LabelSequence
 from OCP.collections import IndexedMap_TopoDS_Shape_TopTools_ShapeMapHasher as TopTools_IndexedMapOfShape
@@ -234,6 +234,11 @@ def _instance_face_colours(roots, faces, colour_tool):
     return result
 
 
+def _has_colours(colour_tool):
+    """An empty XCAF color table proves all existing color lookups return none."""
+    return has_source_colours(colour_tool)
+
+
 def tessellate(doc, lin, ang, stats=None, face_observer=None):
     """Tessellate every source face at the requested tolerance."""
     stats = {} if stats is None else stats
@@ -249,8 +254,9 @@ def tessellate(doc, lin, ang, stats=None, face_observer=None):
     shells = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(comp, TopAbs_SHELL, shells)
     solids = TopTools_IndexedMapOfShape(); TopExp.MapShapes_s(comp, TopAbs_SOLID, solids)
     col = Quantity_Color(); body_of = {}
-    instance_colours = _instance_face_colours(roots, faces, ct)
-    for bodies in ([shells.FindKey(i) for i in range(1, shells.Extent() + 1)], [solids.FindKey(i) for i in range(1, solids.Extent() + 1)], root_shapes):
+    has_colours = _has_colours(ct)
+    instance_colours = _instance_face_colours(roots, faces, ct) if has_colours else {}
+    for bodies in ([shells.FindKey(i) for i in range(1, shells.Extent() + 1)], [solids.FindKey(i) for i in range(1, solids.Extent() + 1)], root_shapes) if has_colours else ():
         for body in bodies:
             bc = colour_key(col) if (ct.GetColor(body, XCAFDoc_ColorSurf, col) or ct.GetColor(body, XCAFDoc_ColorGen, col)) else None
             ex = TopExp_Explorer(body, TopAbs_FACE)
@@ -262,7 +268,7 @@ def tessellate(doc, lin, ang, stats=None, face_observer=None):
     for i in range(1, faces.Extent() + 1):
         f = TopoDS.Face(faces.FindKey(i))
         ck = instance_colours.get(i)
-        if ck is None:
+        if ck is None and has_colours:
             ck = colour_key(col) if (ct.GetColor(f, XCAFDoc_ColorSurf, col) or ct.GetColor(f, XCAFDoc_ColorGen, col)) else body_of.get(i)
         ci = colours.setdefault(ck, len(colours))
         pieces = face_meshes(f, lin, ang, stats)

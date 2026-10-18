@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT OR Apache-2.0
 # Copyright (c) 2026 hxyulin <hxyulin@proton.me>
-"""Package a complete source-pose robot with audited assembly names and original materials."""
+"""Package source robot hardware with audited names, original materials and reviewed helper exclusions."""
 import argparse
 import copy
 from collections import defaultdict
@@ -15,10 +15,56 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'python'))
 from gltf_scene import read_glb, write_glb, mesh_instances
+from robot_reference_geometry import apply_reference_exclusions, verify_reference_cleanup, compact_reference_resources
 
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def attach_source_meshes(document, rows):
+    """Attach located meshes once, including open shells with audited leaf paths.
+
+    Occurrence nodes carry names/provenance only: cooked vertices already include
+    source placements, so applying occurrence transforms again would move them twice.
+    """
+    original_nodes = [(i, n) for i, n in enumerate(document['nodes']) if 'mesh' in n]
+    owners = defaultdict(list)
+    leaf_paths = {row['path'] for row in rows if 'children' not in row}
+    for row in rows:
+        for sid in row.get('native_solids', []):
+            if sid > 0:
+                owners[sid].append(row['path'])
+    groups = {}
+    for row in rows:
+        if row['path'] in groups:
+            raise ValueError('duplicate source occurrence path')
+        groups[row['path']] = len(document['nodes'])
+        document['nodes'].append({'name': row['name'], 'children': [],
+                                  'extras': {'source_occurrence_path': row['path'],
+                                             'source_occurrence_name': row['occurrence_name']}})
+    for row in rows:
+        document['nodes'][groups[row['path']]]['children'] += [groups[c] for c in row.get('children', [])]
+    root_children = [groups[r['path']] for r in rows if '/' not in r['path']]
+    unclassified = []
+    for i, node in original_nodes:
+        sid = node['extras']['native_solid_index']
+        shell_path = node['extras'].get('source_leaf_path')
+        if shell_path is not None and (sid != 0 or shell_path not in leaf_paths):
+            raise ValueError('shell must name an audited non-solid leaf')
+        paths = [shell_path] if shell_path is not None else owners[sid]
+        node['extras']['source_occurrence_paths'] = paths
+        # Coincident aliases retain all paths but attach their unique cooked mesh once.
+        if paths:
+            document['nodes'][groups[paths[0]]]['children'].append(i)
+        else:
+            root_children.append(i)
+            unclassified.append(sid)
+    document['nodes'][0]['children'] = root_children
+    referenced = [child for n in document['nodes'] for child in n.get('children', [])]
+    if not all(referenced.count(i) == 1 for i, _ in original_nodes):
+        raise ValueError('source mesh ownership must be complete and unique')
+    return unclassified
 
 
 def main():
@@ -35,34 +81,12 @@ def main():
     original_meshes = json.dumps(document['meshes'], sort_keys=True)
     original_nodes = [(i, n) for i, n in enumerate(document['nodes']) if 'mesh' in n]
     rows = json.loads((args.sources / (name + '-hierarchy.json')).read_text())
-    owners = defaultdict(list)
-    for row in rows:
-        for sid in row.get('native_solids', []):
-            owners[sid].append(row['path'])
-    groups = {}
-    for row in rows:
-        groups[row['path']] = len(document['nodes'])
-        document['nodes'].append({'name': row['name'], 'children': [],
-                                  'extras': {'source_occurrence_path': row['path'],
-                                             'source_occurrence_name': row['occurrence_name']}})
-    for row in rows:
-        document['nodes'][groups[row['path']]]['children'] += [groups[c] for c in row.get('children', [])]
-    root_children = [groups[r['path']] for r in rows if '/' not in r['path']]
-    unclassified = []
-    for i, node in original_nodes:
-        sid = node['extras']['native_solid_index']
-        node['extras']['source_occurrence_paths'] = owners[sid]
-        # Coincident source aliases share the already unique cooked native solid.
-        if owners[sid]:
-            document['nodes'][groups[owners[sid][0]]]['children'].append(i)
-        else:
-            root_children.append(i);unclassified.append(sid)
+    unclassified = attach_source_meshes(document, rows)
     points = np.concatenate([p for ni, pi, p, t, m in mesh_instances(document, binary)])
     rotation = np.asarray(source['review_rotation']);assert np.linalg.det(rotation) > .999
     rotated = points @ rotation.T;lo = rotated.min(0);hi = rotated.max(0)
     matrix = np.eye(4);matrix[:3, :3] = rotation
     matrix[:3, 3] = [-(lo[0] + hi[0]) / 2, -lo[1], -(lo[2] + hi[2]) / 2]
-    document['nodes'][0]['children'] = root_children
     document['nodes'][0]['matrix'] = matrix.flatten(order='F').tolist()
     document['asset']['extras'] = {'source': source, 'scope': 'Complete source-pose visual candidate; joints and physics are unbound.'}
     # Packaging changes only scene hierarchy and its rigid root frame.
@@ -70,12 +94,22 @@ def main():
     assert json.dumps(document['meshes'], sort_keys=True) == original_meshes
     referenced = [child for n in document['nodes'] for child in n.get('children', [])]
     assert all(referenced.count(i) == 1 for i, n in original_nodes)
+    original_binary = binary
+    original_geometry = copy.deepcopy(document)
+    center = json.loads((args.sources / (name + '-frame.json')).read_text())['source_center_mm'] if source.get('reference_exclusions') else None
+    binary, excluded = apply_reference_exclusions(document, binary, rows, source.get('reference_exclusions', []), center)
+    assert binary[:len(original_binary)] == original_binary
+    assert json.dumps(document['materials'], sort_keys=True) == original_materials
+    if excluded:
+        binary = compact_reference_resources(document, binary)
+    physical_points = np.concatenate([p for ni, pi, p, t, m in mesh_instances(document, binary)])
     out = folder / 'package';out.mkdir(exist_ok=True)
     write_glb(out / 'model.glb', document, binary)
     check, payload = read_glb(out / 'model.glb');assert payload == binary
+    validation = verify_reference_cleanup(original_geometry, original_binary, check, payload, excluded)
     source_triangles = sum(len(t) for ni, pi, p, t, m in mesh_instances(*read_glb(folder / 'low.glb')))
     placed_triangles = sum(len(t) for ni, pi, p, t, m in mesh_instances(check, payload))
-    assert source_triangles == placed_triangles
+    assert source_triangles - sum(r['removed_triangles'] for r in excluded) == placed_triangles
     styled = copy.deepcopy(document)
     changed_materials = 0
     for material in styled['materials']:
@@ -98,15 +132,27 @@ def main():
                            'hierarchy.json': digest(args.sources / (name + '-hierarchy.json'))},
                 'files': {n: digest(out / n) for n in ['model.glb', 'graphite.glb']},
                 'graphite_override_materials': changed_materials,
-                'placed_triangles': placed_triangles, 'source_solid_groups': len(original_nodes),
+                'placed_triangles': placed_triangles,
+                'source_solid_groups': sum(n['extras']['native_solid_index'] > 0 for _, n in original_nodes),
+                'source_shell_groups': sum(n['extras'].get('source_leaf_path') is not None for _, n in original_nodes),
                 'assembly_groups': len(rows), 'unclassified_native_solids': sorted(set(unclassified)),
-                'dimensions_gltf_m': (hi - lo).tolist(),
-                'geometry_binary_preserved': True, 'source_materials_preserved': True,
-                'scope': 'Review candidate only; not a fitted simulator chassis profile.'}
+                'dimensions_gltf_m': np.ptp(physical_points, axis=0).tolist(),
+                'source_pose_dimensions_gltf_m': (hi - lo).tolist(),
+                'reference_geometry_exclusions': excluded,
+                'reference_geometry_validation': validation,
+                'reference_pass_sha256': digest(ROOT / 'python/robot_reference_geometry.py'),
+                'geometry_binary_preserved': not bool(excluded), 'original_buffer_bytes_preserved': not bool(excluded),
+                'retained_attribute_bytes_preserved': True, 'unused_reference_resources_pruned': bool(excluded),
+                'retained_physical_surfaces_unchanged': True, 'source_materials_preserved': True,
+                'scope': 'Physical-geometry review candidate; reviewed CAD reference bodies excluded; not a fitted simulator chassis profile.'}
     (out / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     notice = f"# Source-derived robot candidate\n\n{source['credit']}\n\n{source['source_article']}\n\n{source['terms']}\n\n"
     notice += ('Original geometry/materials remain third-party CAD. The simulator software license does not relicense them. '
                'Simplified visual candidate only; no inferred joints, mass/inertia, robot compliance or collision/scoring eligibility.\n')
+    if excluded:
+        notice += '\nExcluded CAD reference geometry (original source remains intact):\n'
+        for row in excluded:
+            notice += f"- {row['path']} / {row['name']}: {row['reason']} ({row['removed_triangles']} triangles).\n"
     (out / 'CAD-NOTICE.md').write_text(notice)
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 

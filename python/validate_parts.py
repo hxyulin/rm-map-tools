@@ -67,6 +67,13 @@ def read_part(path):
     return doc, rd, None
 
 
+def has_source_colours(colour_tool):
+    """Check the XCAF color table before expensive shape-to-label paint lookups."""
+    labels = TDF_LabelSequence()
+    colour_tool.GetColors(labels)
+    return labels.Length() > 0
+
+
 def analyse(doc, mesh=False):
     st = XCAFDoc_DocumentTool.ShapeTool_s(doc.Main())
     ct = XCAFDoc_DocumentTool.ColorTool_s(doc.Main())
@@ -85,6 +92,7 @@ def analyse(doc, mesh=False):
             mn[k] = min(mn[k], v); mx[k] = max(mx[k], v)
     # colours: face colour, else colour of the owning solid/shell
     col = Quantity_Color(); hist = collections.Counter()
+    has_colours = has_source_colours(ct)
     body_of = {}
     root_shapes = [XCAFDoc_ShapeTool.GetShape_s(roots.Value(i)) for i in range(1, roots.Length() + 1)]
     # nearest coloured ancestor wins: shell, then solid, then the free root shape
@@ -93,7 +101,7 @@ def analyse(doc, mesh=False):
         [shells.FindKey(i) for i in range(1, shells.Extent() + 1)],
         [solids.FindKey(i) for i in range(1, solids.Extent() + 1)],
         root_shapes,
-    ):
+    ) if has_colours else ():
         for body in bodies:
             bc = None
             if ct.GetColor(body, XCAFDoc_ColorSurf, col) or ct.GetColor(body, XCAFDoc_ColorGen, col):
@@ -104,7 +112,9 @@ def analyse(doc, mesh=False):
                 if body_of.get(fi) is None:
                     body_of[fi] = bc
                 ex.Next()
-    for i in range(1, faces.Extent() + 1):
+    if not has_colours and faces.Extent():
+        hist["None"] = faces.Extent()
+    for i in range(1, faces.Extent() + 1) if has_colours else ():
         f = faces.FindKey(i)
         if ct.GetColor(f, XCAFDoc_ColorSurf, col) or ct.GetColor(f, XCAFDoc_ColorGen, col):
             hist[colour_key(col)] += 1
