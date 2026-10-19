@@ -513,3 +513,65 @@ Engineer practice donor pending RM2027 Heavy admission.
 ```sh
 ocpenv/bin/python -m unittest discover -s python -p 'test_tunnel_binding.py'
 ```
+
+### Source assembly workbench rig
+
+`benchmarks/2026-10-18-team-robot/bind_assembly.py` exports the complete PIE
+Engineer, three RMUC2027 Tech Core components and the source Energy Unit as
+five independently checksummed GLBs plus `assembly.json`. It is separate from
+the scalar tunnel-stow profile. Reproduction and the native equipment cache
+prerequisite are described in rm-simulator's `docs/assembly-workbench.md`.
+
+First use `python/audit_joint_axes.py STEP --out AUDIT.json` to obtain the PIE
+bearing evidence. The read-only auditor imports source STEP, records analytic
+cylinder lines/radii/bounds with OCCT face/shell/solid ordinals, and fingerprints
+the original bytes. Those ordinals are not original STEP entity IDs. The binder
+pins the PIE release, checks cached Core STEP/GLB pairs, and records input/output
+hashes and producer provenance. It audits Core source components automatically.
+
+PIE joints use the J1–J6 bearings and manually assigned source occurrence
+subtrees, including moving output shafts separate from fixed bearing outers.
+The gripper uses two distinct bearing lines (solids 1671/1670); source solid
+1684 is on the same axis as 1670. Core shells partition the six positioning
+links. Head shell 1224 supplies Q's front shaft line; cylindrical cam patches in
+1589 supply P's transverse line. Shell 1223 and 1430–1595 follow P; 1224–1429
+follow Q; the remaining head stays on the positioning flange. These assignments
+are explicit source-based hypotheses for moving-pose review. Reference axis
+origins can be anywhere on the same bearing line.
+
+Every retained source mesh is included once. Buffer bytes, primitive accessors,
+material tables and reference-pose vertices are checked, with no remeshing or
+schematic bearing replacement. Only previously approved dangling motor leads
+are omitted. The five exports total 540,465 triangles and remain disposable
+inspection assets outside Git. Their generated CAD-NOTICE retains PIE's exchange
+terms and DJI's equipment ownership.
+
+Joint ranges, grasp clocking and jaw opening are workbench policies. The source
+report supports a serial six-axis design and approximately 180° J4 travel, but
+it does not calibrate stops relative to the CAD zero. This is not torque,
+self-collision, sensor, attachment or competition-compliance validation.
+
+```sh
+ocpenv/bin/python -m unittest discover -s python -p 'test_assembly_binding.py'
+ocpenv/bin/python -m unittest discover -s python -p 'test_joint_axes.py'
+```
+
+The assembly workbench v3 binding fits P from Figure 5-7's 208 mm height,
+169 mm post reach and 15 mm hinge offset. The source post establishes E and the
+reference normal; P is E − 154 mm along that normal + 208 mm along source up.
+The 2026 English V2.1.0 manual (printed p82) and 2027 drawing share these
+measurements. Neither a small transverse fastener nor a 150 mm arc is used as
+P. The source socket basis is orthonormalized before constructing the rig.
+Q still follows shell 1430's carriage spindle as a source-group hypothesis;
+rigid membership and mechanical stops require review. The fitted pedestal OXYZ
+frame and head convex hull support placement rejection, not collision-free
+planning. Source geometry and materials remain unchanged.
+
+The v4 package also fits jaw stops to source TPU-pad triangle sweeps and actual
+Energy Unit cross-sections. Long rods have no vertices at the grip height, so
+the exporter intersects triangle edges with three axial planes instead of using
+vertex-only bounds. The 95 mm caps surround a 64.6 mm mid-body envelope at the
+grip; each jaw closes independently to that envelope plus 0.1 mm clearance.
+`python/gripper_fit.py` and its synthetic geometry tests cover this fit. The
+simulator uses these stops for a prescribed actuator and proximity-gated grasp,
+not force-based contact. All mesh and material buffers remain unchanged.
