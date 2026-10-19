@@ -27,12 +27,23 @@ class AssemblyBindingTests(unittest.TestCase):
         self.assertEqual(report['removed_nodes'],[2]);self.assertEqual(report['triangles'],1)
         with self.assertRaises(ValueError):binding.bind(doc,binary,lambda n:'unknown',np.eye(4),frames,'test')
     def test_rigid_source_subassemblies_and_jaw_ownership_are_distinct(self):
-        for path,owner in [('1/2/1/2','j1'),('1/2/2/5','j2'),('1/2/2/8/6','j2'),('1/2/2/8/9','j3'),('1/2/3/19','j3'),('1/2/3/20','j4'),('1/2/4/14','j4'),('1/2/7/3','j5'),('1/2/7/4','j6'),('1/2/8/7','jaw-right'),('1/2/8/9','jaw-left')]:
+        for path,owner in [('1/2/1/2','j1'),('1/2/2/5','j2'),('1/2/2/8/6','j2'),('1/2/2/8/9','j3'),('1/2/3/19','j3'),('1/2/3/20','j4'),('1/2/4/14','j4'),('1/2/7/3','j5'),('1/2/7/4','j6'),('1/2/8/6','jaw-right'),('1/2/8/10','jaw-left'),('1/2/3/21/11/1','uwb'),('1/2/5/1','uwb'),('1/2/6/1','camera-lift'),('1/2/8/7','jaw-right'),('1/2/8/9','jaw-left')]:
             self.assertEqual(binding.engineer_group(path),owner)
         self.assertIsNone(binding.engineer_group('1/2/8/1/2/5'))
         self.assertEqual(binding.engineer_group('1/2/8/1/3/5'),'j6')
         self.assertEqual(binding.engineer_group('1/1/63/2'),'j1')
         self.assertEqual(binding.engineer_group('1/1/63/3'),'body')
+        self.assertEqual(binding.engineer_group('1/3'),'j2')
+        self.assertEqual(binding.engineer_group('1/3/1'),'j2')
+        self.assertEqual(binding.engineer_group('1/30'),'body')
+    def test_camera_cable_omission_keeps_housing_and_lift_hardware(self):
+        for branch in ['4','5']:
+            root='1/2/6/1/1/1/1/'+branch
+            self.assertIsNone(binding.engineer_group(root))
+            for leaf in ['1','2','3','4']:
+                self.assertIsNone(binding.engineer_group(root+'/1/1/'+leaf))
+        for path in ['1/2/6/1/1/1/1/1','1/2/6/1/1/1/1/40','1/2/6/2','1/2/6/3','1/2/6/10']:
+            self.assertEqual(binding.engineer_group(path),'camera-lift')
     def test_all_core_shells_have_exactly_one_owner_and_new_shells_fail(self):
         self.assertEqual({binding.core_arm_group(i) for i in range(1,53)}, {'j1','j2','j3','j4','j5','j6'})
         self.assertEqual({binding.core_head_group(i) for i in range(1,1601)}, {'j6','p','q'})

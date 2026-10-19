@@ -15,6 +15,7 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'python'))
 from gltf_scene import read_glb,write_glb,mesh_instances,scene_nodes
 from audit_joint_axes import audit as audit_step
 from gripper_fit import section_radius,fit_angle,pad_radius
+from assembly_collision import export as export_collision
 C=np.array([[0.,0,1],[1,0,0],[0,1,0]]) # source PIE XYZ -> body FLU
 B=C.T # FLU -> native glTF left/up/forward
 BODY=np.array([-.04133,.18,.09173])
@@ -34,8 +35,18 @@ def transform(rotation,translation):
 def pose(m):
     q=Rotation.from_matrix(m[:3,:3]).as_quat();return dict(translation_m=m[:3,3].tolist(),rotation_wxyz=q[[3,0,1,2]].tolist())
 
+# Camera harnesses protrude in the source CAD but are flexible cables, not rigid
+# camera/lift structure. User-requested omission from visuals and collisions.
+CAMERA_CABLE_PATHS=('1/2/6/1/1/1/1/4','1/2/6/1/1/1/1/5')
+
+
 def engineer_group(path):
+    if any(path==p or path.startswith(p+'/') for p in CAMERA_CABLE_PATHS):return None
+    # Top-level shoulder insert shares L1's attachment origin and bearing axis.
+    # User-reviewed 2026-10-19: it rotates with L1, not the fixed chassis.
+    if path=='1/3' or path.startswith('1/3/'):return 'j2'
     if any(path.startswith(prefix) for prefix in ['1/1/1/10/2/','1/1/2/11/2/','1/1/3/10/2/','1/1/4/10/2/','1/2/8/1/2/']):return None
+    if path.startswith('1/2/3/21/11'):return 'uwb'
     if path.startswith('1/1/63/') and path.split('/')[3] in {'2','4'}:return 'j1'
     if not path.startswith('1/2/'):return 'body'
     section=path.split('/')[2]
@@ -45,7 +56,8 @@ def engineer_group(path):
         if any(path==p or path.startswith(p+'/') for p in ['1/2/2/8/1','1/2/2/8/5','1/2/2/8/8','1/2/2/8/9','1/2/2/8/10','1/2/2/8/11']):return 'j3'
         return 'j2'
     if section=='10':return 'j3'
-    if section in {'5','6'}:return 'j3' # source camera/UWB stay at source extension in assembly mode
+    if section=='5':return 'uwb'
+    if section=='6':return 'camera-lift'
     if section=='3':
         part=path.split('/')[3] if len(path.split('/'))>3 else ''
         return 'j4' if part in {'3','4','5','12','15','16','20'} else 'j3'
@@ -53,8 +65,8 @@ def engineer_group(path):
     if section=='7':return 'j6' if path.split('/')[3] in {'4','5'} else 'j5'
     if section=='8':
         part=path.split('/')[3] if len(path.split('/'))>3 else ''
-        if part in {'7','10','11','14'}:return 'jaw-right'
-        if part in {'6','8','9','12'}:return 'jaw-left'
+        if part in {'6','7','11','14'}:return 'jaw-right'
+        if part in {'8','9','10','12'}:return 'jaw-left'
         return 'j6'
     raise ValueError('unclassified PIE arm occurrence '+path)
 
@@ -140,6 +152,15 @@ def main():
         c=next(c for c in audit['cylinders'] if c.get('solid')==sid)
         origin=C@(native_point(c['point_mm'])-BODY);axis=C@np.array(c['axis']);frames[name]=transform(np.eye(3),origin)
         jaws.append(dict(name=name,origin_m=origin.tolist(),axis=axis.tolist(),open_rad=sign*0.55))
+    auxiliary=[]
+    for name,pivot,translation,axis,angle in [
+        ('camera-lift',[.07906,.27503,.02971],[0,-.0494975,-.0494975],[0,1,0],0.),
+        ('uwb',[.07083,.22038,-.06684],[0,0,0],[.0284937,0,.999594],-np.deg2rad(20))]:
+        origin=C@(np.array(pivot)-BODY);direction=C@np.array(axis);direction/=np.linalg.norm(direction)
+        rotation=Rotation.from_rotvec(direction*angle).as_matrix()
+        change=transform(rotation,origin-rotation@origin+C@np.array(translation))
+        frames[name]=transform(np.eye(3),origin)
+        auxiliary.append(dict(name=name,reference=pose(frames[name]),stowed_delta=pose(change)))
     owners={sid:r['path'] for r in rows for sid in r.get('native_solids',[])}
     def select(n):
         e=n.get('extras',{});return engineer_group(e.get('source_leaf_path') or owners.get(e.get('native_solid_index'),''))
@@ -149,7 +170,21 @@ def main():
         _,written=read_glb(target)
         if written!=b:raise ValueError('written geometry payload changed')
         files[name]=dict(file=target.name,sha256=sha(target));reports[name]=report
+    # Fail closed if a different source assembly invalidates the reviewed mount.
+    insert_placement=np.array(by['1/3']['placement'])
+    plate_placement=np.array(by['1/2/2/3']['placement'])
+    ownership_error=float(np.linalg.norm(insert_placement[:,3]-plate_placement[:,3]))
+    bearing_alignment=float(abs(insert_placement[:,2]@plate_placement[:,2]))
+    # Its local frame is clocked 180 degrees relative to the plate; the bearing
+    # line is identical, with opposite axis signs. Do not require identical frames.
+    if ownership_error>1e-8 or bearing_alignment<1-1e-12:raise ValueError('shoulder insert/L1 attachment mismatch')
     output('engineer',original,binary,select,transform(C,-C@BODY),frames,'engineer')
+    reports['engineer']['omitted_cable_assemblies']=[dict(path=path,
+        source_solids=sorted(sid for row in rows if row['path']==path or row['path'].startswith(path+'/') for sid in row.get('native_solids',[])),
+        reason='User-requested removal of protruding flexible camera wires and connector ends from visuals and collision geometry.') for path in CAMERA_CABLE_PATHS]
+    reports['engineer']['ownership_overrides']=[dict(path='1/3',owner='j2',
+        source_placement_reference='1/2/2/3',attachment_origin_difference_mm=ownership_error,bearing_axis_abs_dot=bearing_alignment,
+        reason='User-reviewed shoulder insert moves with L1; formerly frozen in chassis group. Geometry preserved.')]
     # RMUC2027 core: actual six UR-style positioning bearings. Points on each axis
     # are arbitrary gauges; they need not be at bearing-envelope centres.
     core_audits={}
@@ -230,17 +265,18 @@ def main():
         triangles=np.concatenate(pad_parts[jaw['name']]);pivot=(np.array(jaw['origin_m'])-tool[:3,3])@tool[:3,:3]
         jaw['closed_rad']=fit_angle(triangles,pivot,jaw['open_rad'],radius+.0001)
         jaw['pad_contact_radius_m']=pad_radius(triangles,pivot,jaw['closed_rad'])
-    config=dict(schema=4,assembly_frame=pose(transform(np.eye(3),o)),core_envelope_m=envelope.tolist(),
+    config=dict(schema=5,engineer_auxiliary=auxiliary,assembly_frame=pose(transform(np.eye(3),o)),core_envelope_m=envelope.tolist(),
         engineer=engineer,engineer_jaws=jaws,grasp=dict(unit_body_radius_m=radius,clearance_m=.0001,pad_paths=['1/2/8/7','1/2/8/9'],method='source-triangle-sections-and-pad-sweep-v1'),core=core,core_p_origin_m=p_origin.tolist(),
         core_p_axis=p_axis.tolist(),core_q_origin_m=(CORE_C@(np.array(qc['point_mm'])/1000-CORE_O)).tolist(),
         core_q_axis=(-CORE_C@np.array(qc['axis'])).tolist(),core_lift_axis=[0,0,1],engineer_bearings=evidence,
         core_bearings=core_evidence,core_p_calibration=dict(method='rulebook-figure-5-7',reference='2026 EN V2.1.0 p82; 2027 CN V1.0.0 Fig5-7',height_above_post_m=.208,post_reach_from_panel_m=.169,hinge_offset_from_panel_m=.015),core_q_bearing=qc,core_post_bearing=post,core_inputs=inputs,unit_source_sha256=sha(unit),source_step_sha256=audit['source_sha256'],
         policy='Source-preserved CAD rig. Joint ranges are numerical workbench guards; PIE J4 report describes about 180 degrees. Jaw opening, core bearing gauges and rigid ownership require visual review. P is fitted from Figure 5-7 dimensions (208/169/15 mm), not inferred from a small fastener; Q follows the 11.75 mm carriage spindle as a kinematic hypothesis. OXYZ +X is the reference post outward direction and O is the front floor-edge midpoint. No self-collision, torque or force calibration; P/Q and carriage groups are source-based hypotheses, not certified sensor geometry.')
     cfg=a.out/'assembly.json';cfg.write_text(json.dumps(config,indent=2)+'\n');files['config']=dict(file=cfg.name,sha256=sha(cfg))
+    files['collision']=export_collision(a.out)
     source_meta=json.loads(Path(__file__).with_name('candidates.json').read_text())['sources']['tunnel_heavy']
     notice=source_meta['credit']+'\n'+source_meta['source_article']+'\n'+source_meta['terms']+'\n\nDJI RoboMaster RMUC2027 V1.0.0 Technology Core and Energy Unit; upstream ownership retained.\n'+config['policy']+'\n'
     (a.out/'CAD-NOTICE.md').write_text(notice)
-    (a.out/'manifest.json').write_text(json.dumps(dict(schema=1,profile='pie-rmuc2027-assembly-workbench-v4',files=files,reports=reports,
+    (a.out/'manifest.json').write_text(json.dumps(dict(schema=1,profile='pie-rmuc2027-assembly-workbench-v5',files=files,reports=reports,
         source_step_sha256=audit['source_sha256'],input_mesh_sha256=sha(source/'pie-2026-tunnel-engineer-pilot/package/materials.glb'),input_hierarchy_sha256=sha(source/'pie-2026-tunnel-engineer-hierarchy.json'),audit_sha256=sha(a.audit),producer_sha256=sha(__file__),source_field_sha256='a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0'),indent=2)+'\n')
     print(json.dumps(reports,indent=2))
 

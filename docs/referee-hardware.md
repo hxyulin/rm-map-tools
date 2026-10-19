@@ -575,3 +575,50 @@ grip; each jaw closes independently to that envelope plus 0.1 mm clearance.
 `python/gripper_fit.py` and its synthetic geometry tests cover this fit. The
 simulator uses these stops for a prescribed actuator and proximity-gated grasp,
 not force-based contact. All mesh and material buffers remain unchanged.
+
+The v5 assembly binding adds `collision.json`, checksummed in the manifest and
+pinned to the five visual GLBs. `python/assembly_collision.py` retains exact
+Engineer/unit/head triangles and source-leaf convex positioning-arm envelopes;
+leaf boundaries support conservative runtime broad-phase hulls without filling
+apertures in the final surface query. Joint-neighbour, nested-wrist, coupled-gear
+and guided-carriage exceptions are explicit. Grasp and socket contact exceptions
+remain state-dependent in the simulator. The finite inspection floor has top
+z=0. This is prescribed collision rejection, not force dynamics or automatic
+collision-free path planning.
+
+Camera and UWB groups are separated from J3 and reuse the reviewed 70 mm rail
+and 20° hinge stow from the tunnel binding. Source jaw gears `/1/2/8/6` and
+`/1/2/8/10` follow the right and left pivots respectively. Rest vertices,
+material tables and binary payloads remain unchanged. Regenerate the package
+before using the v5 simulator adapter.
+
+```sh
+ocpenv/bin/python -m unittest discover -s python -p 'test_assembly_*.py'
+```
+
+
+### Reviewed shoulder insert ownership (2026-10-19)
+
+The top-level PIE occurrence `1/3` (source solid 1693,
+`零件3^2026工程-分区赛版本`) is a shoulder disk that moves with L1. It is bound to
+`engineer/j2`, rather than the stationary chassis. The user confirmed the
+moving ownership after exact source-leaf collision renders showed the disk
+being left behind as the arm moved. Its attachment origin matches L1 plate
+`1/2/2/3` within 9.5e-13 mm and its bearing axis is collinear; its local frame
+is clocked 180° relative to that plate. The exporter verifies the attachment
+and records this override in the manifest's Engineer report. Geometry buffers,
+materials, reference placement and retained triangle/node counts are unchanged.
+No broad body/arm collision exemption or geometry deletion is needed.
+
+
+### Assembly camera cable omission (2026-10-19)
+
+User-requested camera cable removal is pinned to PIE subassemblies
+`1/2/6/1/1/1/1/4` and `1/2/6/1/1/1/1/5` (source solids 1603–1610).
+These flexible harnesses and connector ends are omitted from active scene nodes
+before collision export; the housing and lift structure remain. The manifest's
+`omitted_cable_assemblies` records both roots, their source solids and the reason.
+Eight meshes / 802 triangles are removed, leaving 1674 Engineer mesh nodes and
+162899 triangles. All retained source geometry/material buffers stay unchanged.
+The earlier sampled camera/armor intersection clears at the same stowed posture
+and joints. This does not exempt the retained camera housing from collisions.
