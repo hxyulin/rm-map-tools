@@ -53,6 +53,13 @@ class ArmorBindingTests(unittest.TestCase):
         d,b,rows = self.fixture();rows[0]['name']='ordinary machined plate'
         self.assertEqual(identify_armor(d,b,rows)['modules'],[])
 
+    def test_ega_named_module_retains_its_carrier(self):
+        d,b,rows = self.fixture()
+        rows[0]['name'] = '小装甲板AM02-标准件V2-哨ver-0517_默认'
+        result = identify_armor(d,b,rows)
+        self.assertEqual(len(result['modules']), 1)
+        self.assertEqual([p['node'] for p in result['modules'][0]['replace_surfaces']], [0,1,2,3])
+
     def test_incomplete_module_fails_closed(self):
         d,b,rows = self.fixture();d['scenes'][0]['nodes'].remove(3)
         with self.assertRaisesRegex(ValueError,'two diffusers'):identify_armor(d,b,rows)

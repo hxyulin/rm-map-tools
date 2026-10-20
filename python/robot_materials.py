@@ -46,7 +46,7 @@ def classify(name, size_mm):
     a, b, c = size_mm
     # These selectors apply only inside complete named detector modules, not
     # their support plates. AM02 has a thin face, shell, two diffusers and lugs.
-    if re.search(r'装甲模块AM02|小装甲板模块|^大装甲$', name, re.I):
+    if re.search(r'装甲模块AM02|小装甲板模块|小装甲板AM02|^大装甲$', name, re.I):
         if 12 < a < 16 and 16 < b < 20 and 57 < c < 62:
             return 'team-diffuser', 'named AM02: reviewed 59 mm diffuser envelope'
         if a < 5 and b > 110 and c > 125:
@@ -70,7 +70,7 @@ def classify(name, size_mm):
         if 34 < a < 42 and 145 < b < 160 and 145 < c < 160:
             return 'rubber', 'reviewed Hero wheel: continuous tread body; separate side plates retained'
         return 'aluminum', 'reviewed Hero wheel: separate wheel side plate'
-    if name == '注塑滚子' or name == '聚氨酯包胶':
+    if name == '注塑滚子' or name == '聚氨酯包胶' or name.startswith('全向轮滚子-0517_'):
         return 'rubber', 'explicit roller/urethane leaf'
     # Carbon-tube clamps and attachment plates are not carbon tubes themselves.
     if re.search('碳', name) and not re.search('夹|固定|安装|支架|中心储矿', name):

@@ -622,3 +622,78 @@ Eight meshes / 802 triangles are removed, leaving 1674 Engineer mesh nodes and
 162899 triangles. All retained source geometry/material buffers stay unchanged.
 The earlier sampled camera/armor intersection clears at the same stowed posture
 and joints. This does not exempt the retained camera housing from collisions.
+
+## EGA tunnel Sentry STEP intake and runtime binding
+
+The user-supplied SolidWorks 2025 AP214 `EGA_TunnelSentry.step` (2026-10-20)
+completes the EGA intake. `candidates.json:tunnel_sentry` pins its SHA-256 and
+Fudan University Nebula EGA / alumls credit and noncommercial exchange terms.
+Its source coordinates are Y-up. Keep the original STEP outside Git, naming
+(or symlinking) it `ega-2026-tunnel-sentry.step` in the source directory.
+
+From this checkout, with the simulator's `robot_tunnel` example built:
+
+```sh
+SOURCE_DIR=../rm-simulator/local-assets/robot-cad-survey
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/audit_source.py \
+  --sources "$SOURCE_DIR" --out "$SOURCE_DIR" --faces ega-2026-tunnel-sentry
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/prepare_source.py \
+  --sources "$SOURCE_DIR" --out "$SOURCE_DIR" \
+  --recipe benchmarks/2026-10-18-team-robot/candidates.json \
+  --split-shells --hierarchy "$SOURCE_DIR/ega-2026-tunnel-sentry-hierarchy.json" \
+  --low-only tunnel_sentry
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/package_candidates.py \
+  --sources "$SOURCE_DIR" tunnel_sentry
+../rm-simulator/target/nix/debug/examples/robot_tunnel export-base "$SOURCE_DIR/ega-base-config.json"
+ocpenv/bin/python benchmarks/2026-10-18-team-robot/bind_sentry.py \
+  --sources "$SOURCE_DIR" --base-config "$SOURCE_DIR/ega-base-config.json" \
+  --out "$SOURCE_DIR/bound-tunnel-sentry"
+```
+
+The audit finds 1,172 occurrence entries and 1,626 solids. The low cook contains
+229,282 triangles in 1,626 solid and 14 shell groups. Packaging removes four
+named wheel swept-clearance envelopes (986 triangles), retaining their physical
+wheel leaves. The EGA-specific AM02 leaf spelling is explicitly recognized;
+carrier brackets remain. Named roller leaves receive the rubber material hint
+only where the source is unstyled. Source paint remains unchanged.
+
+`bind_sentry.py` writes schema-four `ega-tunnel-sentry-v1`, source notices, pinned
+checksums, unchanged mesh buffers, and neutral surface-coordinate validation
+below 0.1 micrometre. The bound CAD has 222,900 triangles, plus runtime armor. The standalone
+300 mm firing-axis/reference tube in the SM01 CAD (solid 1038, 32 triangles)
+is removed: it appears in the author CAD screenshot but not the real robot
+photograph. The muzzle offset uses the retained physical module front.
+The body basis follows the source barrel heading (32°); wheels, yaw, lower/upper
+pitch bearing groups and UWB are independently bound. The lower/upper pitch
+axes are at source Y=132.2/257.2 mm. The pitch tie-rod bearing pair is at
+(28,111.14)/(28,236.14) mm in source forward/up coordinates, giving the same
+125 mm link vector. The UWB follower from (27.5,84.57) to (50,182.01) mm equals
+the main-lift vector from (0,132.2) to (22.5,229.64) mm. Carrier counter rotations
+close both parallelograms; the pitch lower crank follows firing pitch separately.
+There is no guessed independent UWB actuator. `validate_linkages` checks both
+pins over 21 fold fractions and three aim pairs, and regression tests reject
+the old independent hinge and an incorrectly parented pitch follower.
+
+T uses a policy 100° lift endpoint, slightly below horizontal. Its actuator
+speed, 20 kg mass, spring/damper parameters and the unloaded interpretation of
+the source wheel anchors are simulator assumptions. Ordinary spring sag is
+4.905 mm; no preload height is added to cancel it. There is no source scaling or
+prescribed body-height teleport. Stowed source geometry is 250.4 mm high at the
+nominal wheel pose, about 245.5 mm after the simulated suspension settles.
+
+The simulator's 250 mm roof fixture passes stowed and rejects the raised control.
+It restores mid-motion, blocks an attempt to unfold inside, restows and exits;
+270 interior ticks reach a peak collider height of about 246.6 mm. Both poses
+also clear 650 mm. Live app console checks T in both directions and scene binding.
+The source archive's `说明文档.md`, real robot photo, CAD screenshot and tunnel
+video provided reference evidence; keep their original author ownership.
+Runtime integration and credits are described in rm-simulator's hardware guide.
+
+The EGA fixed-body collision envelope is fitted in the source chassis axes
+(-32° relative to its resting-barrel FLU frame). It encloses all source vertices
+with about 292 mm planar half extents, removing the empty corners of the old
+335 mm AABB without changing any mesh buffer. The simulator derives tunnel
+chassis heading from this rotation; it must align the X-wheel base, not the
+clocked resting barrel, when approaching a ramp. The independent suspension
+settings and linkage fits are unchanged. `test_ega_sentry.py` checks enclosure
+as well as both four-bar closures.

@@ -14,7 +14,7 @@ from scipy.spatial.transform import Rotation
 
 from gltf_scene import mesh_instances
 
-MODULE_NAME = re.compile(r'装甲模块AM02|小装甲板模块|^大装甲$')
+MODULE_NAME = re.compile(r'装甲模块AM02|小装甲板模块|小装甲板AM02|^大装甲$')
 
 
 def frame_from_face(points):
