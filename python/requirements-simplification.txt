@@ -3,3 +3,4 @@ meshoptimizer==0.2.30a0
 
 scipy>=1.12,<2
 vtk>=9.3,<10
+shapely>=2.1,<3
