@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "installed-reference-manual-review-20261023",
+  "authority": "User requested starting the new manual visual/collision investigation from installed simulator assets.",
+  "reference": "out/rmuc2027-installed-reference-review/review.json",
+  "placed_visual_triangles": 355542,
+  "placed_collision_triangles": 545599,
+  "pins": {
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/manifest.json": "8a92e1d6721be2e214cd48251fb6d9b2730c16f0df7116407dbfe819f9972586",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/equipment/manifest.json": "81328ffd604b80c39eaf67fc3fff7e96371961a0c24b592ddf9167eb9511a9e1",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/rmuc2027-bindings.json": "a6b7e958cae2646aa8698bb0a1143948319992d326a6475c7099d2327cff54e4",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/floor.glb": "8bdd3ed9cc6ba15de1afd99a1eb6cc305b99ad9ab58956be34f4dd0d1913c137",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/arena-static.glb": "f685058c5621e4c44379676987b14d96d37707278e8c14c18ec1308bc626cf1c",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/rune.glb": "ad46098035ad7340a7caa6edad4b616205a3e665a412cafbb1c88d1397acdd43",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/outpost.glb": "b23ccfc7bd42c54a5e8515775ef9e821548e977fb05d720147ccd4f5decadcb7",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/equipment/base.glb": "9f065965c41f4c08f1069cc4d15654d0b16d297be1c8cd2b8939759e298592db",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/equipment/tech-core.glb": "c11559f0f4cc8e963aa99e1b5aa3ff1c6ba607271ebce9246529f91f46141f84",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/floor-collision.glb": "d9a66ea6a780ddb6e1d41027ea371cdf0ba641aa052f8502940b0fee5d0a3654",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/arena-static-collision.glb": "e5fd7e282d1834a286fb9fd0e8b8d9744ee14cd42d40adfd590c75b274bf95f2",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/rune-collision.glb": "cb16aa644f025f93eaafa63aa9d816281e5a1246c0db7c6ef440afd6efb1fb62",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/outpost-collision.glb": "3fb58f703526eea28337f70b23b299b4fae4b90273b2c570384371ff2616c068",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/equipment/base-collision.glb": "12df7b8d23af649d515823467279325da2f0fd083bbc8b7792df39f3505716b4",
+    "/Users/hxyulin/dev/RM/rm-simulator/field-2027/equipment/tech-core-collision.glb": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54"
+  },
+  "scope": "New investigation reference; conservative visual checkpoint retained as comparison. No runtime installation or geometry adoption."
+}
