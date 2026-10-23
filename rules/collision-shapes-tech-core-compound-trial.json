@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "asset_id": "tech-core",
+  "source_sha256": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54",
+  "status": "prototype_requires_clearance_review",
+  "replacements": [
+    {
+      "node_index": 22,
+      "node_name": "native-shell-18",
+      "review_status": "three_cylinder_profile_prototype_not_contact_approved",
+      "cylinders": [
+        {
+          "center_m": [
+            -0.03467253008970099,
+            -0.5717656571907276,
+            -0.09553907030251842
+          ],
+          "axis_unit_vector": [
+            -0.3419999846100011,
+            0.0,
+            0.9396999577135028
+          ],
+          "radius_m": 0.07603598802452284,
+          "length_m": 0.19011293897968767,
+          "solid": true
+        },
+        {
+          "center_m": [
+            -0.04290953671824676,
+            -0.6181753179364625,
+            -0.10486379292238164
+          ],
+          "axis_unit_vector": [
+            -0.2158972245140377,
+            -0.9732489637391769,
+            -0.07858016943067532
+          ],
+          "radius_m": 0.07600000472928478,
+          "length_m": 0.09530004364984086,
+          "solid": true
+        },
+        {
+          "center_m": [
+            -0.00013002030374294898,
+            -0.5717656571907276,
+            -0.1904501710214212
+          ],
+          "axis_unit_vector": [
+            -0.3419999846100011,
+            0.0,
+            0.9396999577135028
+          ],
+          "radius_m": 0.0747049733909604,
+          "length_m": 0.011890051314879191,
+          "solid": true
+        }
+      ]
+    }
+  ]
+}

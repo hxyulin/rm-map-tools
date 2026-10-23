@@ -21,9 +21,12 @@ Choose the output by how you plan to use it. All commands below run from the rep
 | STEP `.stp` + `parts.json` | Rust `split` | Standalone source products; preserves geometry entities |
 | Visual/collision `.glb` + `manifest.json` | `export_field_package.py`, `export_elements.py` | Placed field assets with colors and separate collision geometry |
 | GLB metadata + `articulation.json` | `export_semantics.py` | Joints, armor, LEDs, team colors, and layers |
+| Prototype primitive JSON + SDF | `collision_shape_export.py` | Explicit cylinders plus exact retained GLB geometry; runtime adapter pending |
 | Static SDF, MJCF, USD | `export_sim.py` | Field scenes; articulated inputs require an explicit rest-pose bake |
 | Articulated SDF, URDF, USD | `export_articulated.py` | Individual equipment models using existing joint bindings |
 | PNG texture atlases, sidecar or embedded in GLB | `texture_atlas.py` or exporter option | Rasterized artwork; see [texture atlas export](texture-atlas.md) |
+
+For the experimental hybrid collision exporter, see [parameterized field collision export](collision-shapes-rmuc2027.md). It exports reviewed cylinder selections and remaining meshes; it does not install them into rm-simulator.
 
 URDF is an equipment export, and MJCF is a static scene export. Articulated XML models use STL mesh files; USD embeds its meshes. The articulated adapter retains base colors but does not convert textures or other PBR properties.
 

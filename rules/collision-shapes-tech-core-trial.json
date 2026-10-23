@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "asset_id": "tech-core",
+  "source_sha256": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54",
+  "status": "prototype_requires_clearance_review",
+  "replacements": [
+    {
+      "node_index": 22,
+      "node_name": "native-shell-18",
+      "review_status": "prototype_enclosing_cylinder_not_contact_approved",
+      "cylinder": {
+        "center_m": [
+          -0.03802568570931356,
+          -0.5961588336489839,
+          -0.10308595244242824
+        ],
+        "axis_unit_vector": [
+          -0.3419999846100011,
+          0.0,
+          0.9396999577135028
+        ],
+        "radius_m": 0.10350894462048492,
+        "length_m": 0.20200299029456692,
+        "solid": true
+      }
+    }
+  ]
+}
