@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-box-hull-rmuc2027-r2",
+  "reference": "rules/manual-review-reference-rmuc2027.json",
+  "user_approval": "User accepted the displayed R2 approximations and requested commit; no runtime installation requested.",
+  "selected_families": [
+    {
+      "asset": "outpost",
+      "nodes": [
+        26,
+        28,
+        30
+      ],
+      "operation": "closed-exterior hull; remove covered interior faces"
+    },
+    {
+      "asset": "tech-core",
+      "nodes": [
+        53,
+        54,
+        55,
+        56
+      ],
+      "island": 0,
+      "operation": "exact convex native alternative; retain mesh fallback unchanged"
+    },
+    {
+      "asset": "rune",
+      "nodes": [
+        121,
+        122,
+        123
+      ],
+      "island": 0,
+      "operation": "convex hull of selected support plates; fill reviewed fastener slots; retain other islands"
+    },
+    {
+      "asset": "arena-static",
+      "node_islands": {
+        "354": [
+          5,
+          6,
+          16
+        ],
+        "587": [
+          116,
+          147,
+          148
+        ]
+      },
+      "operation": "0.5mm inscribed envelope hull; reviewed strand-gap filling"
+    }
+  ],
+  "rejected": [
+    "whole Energy-unit hulls",
+    "whole resource-mechanism hulls",
+    "Core288 uncovered exterior",
+    "unreviewed whole-frame/enclosure hulls"
+  ],
+  "evidence": [
+    {
+      "path": "out/rmuc2027-box-hull-equipment-r2/shortlist.json",
+      "sha256": "14ef1c5de8acdb401be7c4ce4c729e3e2700fa62097a537ab20b981c58e3f666"
+    },
+    {
+      "path": "out/rmuc2027-box-hull-rune-r2/shortlist.json",
+      "sha256": "aec1a255cb3a52d62214051b8472af96fed256f92686ec451cb0d85fbb8f493d"
+    },
+    {
+      "path": "out/rmuc2027-box-hull-scenery-r2/adaptive.json",
+      "sha256": "77f8c77f0a9abba37357b6dbbecd66a3d9ce5903de362bfdb1e4b7fd17a4d619"
+    },
+    {
+      "path": "out/rmuc2027-box-hull-scenery-r2/closed-envelope-coverage.json",
+      "sha256": "d5eff7bdbfc5ee2b4221e752722fcf3371a02f451abdb066cbaecc4cc715d22b"
+    }
+  ],
+  "mesh_checkpoint": {
+    "stage_path": "out/rmuc2027-collision-review-checkpoint/stage.json",
+    "stage_sha256": "1b7105520faed093bd7a092f7071a29d8ad52bc95baa2a680c2c1be11d2c12e3",
+    "placed_triangles": 540411,
+    "placed_saving": 5188,
+    "assets": {
+      "floor": {
+        "sha256": "d9a66ea6a780ddb6e1d41027ea371cdf0ba641aa052f8502940b0fee5d0a3654",
+        "source_sha256": "d9a66ea6a780ddb6e1d41027ea371cdf0ba641aa052f8502940b0fee5d0a3654",
+        "triangles": 5898,
+        "placements": 1,
+        "placed_triangles": 5898
+      },
+      "arena-static": {
+        "sha256": "ad7cc7c7a0eeddd59f84bcc2a6d7b8d9daea0657fd6cc490aa04d2a18e387382",
+        "source_sha256": "e5fd7e282d1834a286fb9fd0e8b8d9744ee14cd42d40adfd590c75b274bf95f2",
+        "triangles": 179115,
+        "placements": 1,
+        "placed_triangles": 179115
+      },
+      "rune": {
+        "sha256": "1fb16b1af8944b1d4dc262fadd50e83eea1f195d84a0b6d1f35e909dca05bb21",
+        "source_sha256": "cb16aa644f025f93eaafa63aa9d816281e5a1246c0db7c6ef440afd6efb1fb62",
+        "triangles": 116006,
+        "placements": 1,
+        "placed_triangles": 116006
+      },
+      "outpost": {
+        "sha256": "ad9098680bb91a8bbd59fe9036e156da4d9f63390f078cc7e3ed12ab2bc965bd",
+        "source_sha256": "3fb58f703526eea28337f70b23b299b4fae4b90273b2c570384371ff2616c068",
+        "triangles": 34351,
+        "placements": 2,
+        "placed_triangles": 68702
+      },
+      "base": {
+        "sha256": "12df7b8d23af649d515823467279325da2f0fd083bbc8b7792df39f3505716b4",
+        "source_sha256": "12df7b8d23af649d515823467279325da2f0fd083bbc8b7792df39f3505716b4",
+        "triangles": 16857,
+        "placements": 2,
+        "placed_triangles": 33714
+      },
+      "tech-core": {
+        "sha256": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54",
+        "source_sha256": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54",
+        "triangles": 68488,
+        "placements": 2,
+        "placed_triangles": 136976
+      }
+    }
+  },
+  "native_alternative": {
+    "mesh_remainder_triangles": 538279,
+    "native_hull_leaves": 23,
+    "replaces_source_mesh_triangles": 7320,
+    "field_import_implemented": false,
+    "note": "Alternative to mesh fallback, not an additional saving. Core exact hulls have zero mesh-fallback saving."
+  },
+  "installed": false,
+  "contact_validated": false,
+  "reproduction": "ocpenv/bin/python -B benchmarks/2026-10-23-collision-review-checkpoint/checkpoint.py --build",
+  "storage": "CAD-derived GLBs and detailed geometry ledgers stay under ignored out/. Git records tooling, hashes and selection policy."
+}
