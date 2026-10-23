@@ -1,0 +1,974 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-core-arm-and-mount-rmuc2027-20261023",
+  "reference": "rules/manual-review-reference-rmuc2027.json",
+  "user_approval": "User accepted the arm, joint covers and three-cylinder mounting base and explicitly requested commit. Visual review approval; runtime/contact qualification remains outstanding.",
+  "source_sha256": {
+    "visual": "c11559f0f4cc8e963aa99e1b5aa3ff1c6ba607271ebce9246529f91f46141f84",
+    "collision": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54"
+  },
+  "native_selection": {
+    "source_sha256": "4bdec99f4d4c7f0c0fc3a335b5fa55309c3288d476da279ac5dcd3fa445a9e54",
+    "asset_id": "tech-core",
+    "replacements": [
+      {
+        "node_index": 5,
+        "node_name": "native-shell-1",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10000385486487486,
+              -0.5803000032901764,
+              0.08398857380058902
+            ],
+            "axis_unit_vector": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radius_m": 0.076,
+            "length_m": 0.1850000023841858,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.092918231706386,
+              -0.5718000183138199,
+              0.06454600506281864
+            ],
+            "axis_unit_vector": [
+              -0.3419999846100011,
+              0.0,
+              0.9396999577135028
+            ],
+            "radius_m": 0.07600451672215253,
+            "length_m": 0.14919748749492595,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 22,
+        "node_name": "native-shell-18",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.03467253008970099,
+              -0.5717656571907276,
+              -0.09553907030251842
+            ],
+            "axis_unit_vector": [
+              -0.3419999846100011,
+              0.0,
+              0.9396999577135028
+            ],
+            "radius_m": 0.07603598802452284,
+            "length_m": 0.19011293897968767,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.04290953671824676,
+              -0.6181753179364625,
+              -0.10486379292238164
+            ],
+            "axis_unit_vector": [
+              -0.2158972245140377,
+              -0.9732489637391769,
+              -0.07858016943067532
+            ],
+            "radius_m": 0.07600000472928478,
+            "length_m": 0.09530004364984086,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.00013002030374294898,
+              -0.5717656571907276,
+              -0.1904501710214212
+            ],
+            "axis_unit_vector": [
+              -0.3419999846100011,
+              0.0,
+              0.9396999577135028
+            ],
+            "radius_m": 0.0747049733909604,
+            "length_m": 0.011890051314879191,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 18,
+        "node_name": "native-shell-14",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.17050486438502113,
+              -1.201485933095376,
+              -0.15689168305658532
+            ],
+            "axis_unit_vector": [
+              -0.34199998461000114,
+              0.0,
+              0.9396999577135029
+            ],
+            "radius_m": 0.058,
+            "length_m": 0.15310200482975597,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.1648582526186059,
+              -1.1679112580152313,
+              -0.14924950009205765
+            ],
+            "axis_unit_vector": [
+              0.2158972245140377,
+              0.9732489637391769,
+              0.07858016943067532
+            ],
+            "radius_m": 0.058,
+            "length_m": 0.0689922073281753,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 25,
+        "node_name": "native-shell-21",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6586963656990026,
+              -0.8312705816899784,
+              -0.1979759398957173
+            ],
+            "axis_unit_vector": [
+              -0.34199998461000114,
+              0.0,
+              0.9396999577135029
+            ],
+            "radius_m": 0.0435,
+            "length_m": 0.12823183444072062,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.6390980857375516,
+              -0.8476694356280239,
+              -0.19059756699850403
+            ],
+            "axis_unit_vector": [
+              0.7398526005736481,
+              -0.6164849561716977,
+              0.26937785402365605
+            ],
+            "radius_m": 0.0435,
+            "length_m": 0.053194063017566136,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 30,
+        "node_name": "native-shell-26",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6151203461838215,
+              -0.823371206717823,
+              -0.3177077677809871
+            ],
+            "axis_unit_vector": [
+              1.0438460315549788e-06,
+              0.9999999999993798,
+              3.883402194798922e-07
+            ],
+            "radius_m": 0.0385,
+            "length_m": 0.10380005791129204,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.615120314831261,
+              -0.7933355888811021,
+              -0.3177077561169486
+            ],
+            "axis_unit_vector": [
+              1.0438460315549788e-06,
+              0.9999999999993798,
+              3.883402194798922e-07
+            ],
+            "radius_m": 0.041,
+            "length_m": 0.04372882223781293,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.623328841440959,
+              -0.8312712083674283,
+              -0.29515513813899347
+            ],
+            "axis_unit_vector": [
+              -0.34202014332561076,
+              -7.904069277324248e-09,
+              0.9396926207859295
+            ],
+            "radius_m": 0.0375,
+            "length_m": 0.0480000208813505,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 37,
+        "node_name": "native-shell-33",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6151931039303493,
+              -0.9335712111176134,
+              -0.3099421277573085
+            ],
+            "axis_unit_vector": [
+              -0.009353914955818454,
+              -3.785591830061183e-07,
+              0.9999562511804484
+            ],
+            "radius_m": 0.0385,
+            "length_m": 0.1035320773443402,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.6154826530748949,
+              -0.9335712228358607,
+              -0.2789886202174372
+            ],
+            "axis_unit_vector": [
+              -0.009353914955818454,
+              -3.785591830061183e-07,
+              0.9999562511804484
+            ],
+            "radius_m": 0.041,
+            "length_m": 0.041622353787273074,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.6151204361633905,
+              -0.9095711945206838,
+              -0.31770780125596
+            ],
+            "axis_unit_vector": [
+              1.0438460315049789e-06,
+              0.9999999999993798,
+              3.8834021943769215e-07
+            ],
+            "radius_m": 0.0375,
+            "length_m": 0.04800002731409096,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 17,
+        "node_name": "native-shell-13",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10817079874263202,
+              -0.9123683446406469,
+              -0.12861695263715514
+            ],
+            "axis_unit_vector": [
+              0.2158972245140377,
+              0.9732489637391769,
+              0.07858016943067532
+            ],
+            "radius_m": 0.0582,
+            "length_m": 0.45614149,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.05806844849234959,
+              -0.6865105988000368,
+              -0.11038118707599925
+            ],
+            "axis_unit_vector": [
+              0.2158972245140377,
+              0.9732489637391769,
+              0.07858016943067532
+            ],
+            "radius_m": 0.066,
+            "length_m": 0.008189999999999998,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.055277048507440245,
+              -0.6739271709731639,
+              -0.10936520049137921
+            ],
+            "axis_unit_vector": [
+              0.2158972245140377,
+              0.9732489637391769,
+              0.07858016943067532
+            ],
+            "radius_m": 0.076,
+            "length_m": 0.017868600000000002,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 26,
+        "node_name": "native-shell-22",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.44070510787667155,
+              -1.0129811290200676,
+              -0.11836334819858427
+            ],
+            "axis_unit_vector": [
+              0.7398526005736481,
+              -0.6164849561716977,
+              0.26937785402365605
+            ],
+            "radius_m": 0.0396,
+            "length_m": 0.48311000000000004,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.61493299678576,
+              -0.8678050866911946,
+              -0.18179913904261502
+            ],
+            "axis_unit_vector": [
+              0.7398526005736481,
+              -0.6164849561716977,
+              0.26937785402365605
+            ],
+            "radius_m": 0.0435,
+            "length_m": 0.012129999999999995,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.26755000523841493,
+              -1.157263268162492,
+              -0.05531815524288781
+            ],
+            "axis_unit_vector": [
+              0.7398526005736481,
+              -0.6164849561716977,
+              0.26937785402365605
+            ],
+            "radius_m": 0.0435,
+            "length_m": 0.015030000000000002,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 6,
+        "node_name": "native-shell-2",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10000000007286973,
+              -0.4741499871021477,
+              0.08400000020017236
+            ],
+            "axis_unit_vector": [
+              1.351675549266e-09,
+              1.0,
+              -3.713697793728e-09
+            ],
+            "radius_m": 0.076,
+            "length_m": 0.0027000016008817034,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 7,
+        "node_name": "native-shell-3",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10000000006944892,
+              -0.47165000438749466,
+              0.08400000019088666
+            ],
+            "axis_unit_vector": [
+              1.351675549266e-09,
+              1.0,
+              -3.713697793728e-09
+            ],
+            "radius_m": 0.076,
+            "length_m": 0.001699984673162587,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 12,
+        "node_name": "native-shell-8",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10000000008357213,
+              -0.48205000162124634,
+              0.08400000022950377
+            ],
+            "axis_unit_vector": [
+              1.351675549266e-09,
+              1.0,
+              -3.713697793728e-09
+            ],
+            "radius_m": 0.076,
+            "length_m": 0.011500001554383587,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 13,
+        "node_name": "native-shell-9",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.10000000007541471,
+              -0.47605000436306,
+              0.08400000020722377
+            ],
+            "axis_unit_vector": [
+              1.351675549266e-09,
+              1.0,
+              -3.713697793728e-09
+            ],
+            "radius_m": 0.07404015399404,
+            "length_m": 0.0004999941479168797,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 29,
+        "node_name": "native-shell-25",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6342050788660608,
+              -0.8312712086187548,
+              -0.26527292140497927
+            ],
+            "axis_unit_vector": [
+              -0.34202014332561076,
+              -7.904069277324248e-09,
+              0.9396926207859295
+            ],
+            "radius_m": 0.0435,
+            "length_m": 0.01500003698488689,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 34,
+        "node_name": "native-shell-30",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6151204006204043,
+              -0.8755212072996612,
+              -0.3177077880329132
+            ],
+            "axis_unit_vector": [
+              1.0438460315549788e-06,
+              0.9999999999993798,
+              3.883402194798922e-07
+            ],
+            "radius_m": 0.037,
+            "length_m": 0.0005000546892928314,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 35,
+        "node_name": "native-shell-31",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6151204059962393,
+              -0.8806712080328594,
+              -0.3177077900328817
+            ],
+            "axis_unit_vector": [
+              1.0438460315549788e-06,
+              0.9999999999993798,
+              3.883402194798922e-07
+            ],
+            "radius_m": 0.0375,
+            "length_m": 0.009800057212109454,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 40,
+        "node_name": "native-shell-36",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6147065504800744,
+              -0.9335711914265188,
+              -0.36195587456360967
+            ],
+            "axis_unit_vector": [
+              -0.009353914955818454,
+              -3.785591830061183e-07,
+              0.9999562511804484
+            ],
+            "radius_m": 0.037,
+            "length_m": 0.00050002959881229,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 41,
+        "node_name": "native-shell-37",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6146583778148722,
+              -0.9335711894768927,
+              -0.3671056495924661
+            ],
+            "axis_unit_vector": [
+              -0.009353914955818454,
+              -3.785591830061183e-07,
+              0.9999562511804484
+            ],
+            "radius_m": 0.0375,
+            "length_m": 0.009800028755833318,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 44,
+        "node_name": "native-shell-40",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6144605425222819,
+              -0.9335711814703358,
+              -0.3882547233713952
+            ],
+            "axis_unit_vector": [
+              -0.009353914955781457,
+              -3.785591831255185e-07,
+              0.9999562511804487
+            ],
+            "radius_m": 0.0375,
+            "length_m": 0.03250002774034299,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 51,
+        "node_name": "native-shell-47",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6156854376778486,
+              -0.9335712310426798,
+              -0.25731045313622747
+            ],
+            "axis_unit_vector": [
+              -0.009353914955818454,
+              -3.785596291424183e-07,
+              0.9999562511804484
+            ],
+            "radius_m": 0.039,
+            "length_m": 0.007000028806790441,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 53,
+        "node_name": "native-shell-49",
+        "cylinders": [
+          {
+            "center_m": [
+              0.002246922314203718,
+              -0.5717999976362432,
+              -0.1969211102668788
+            ],
+            "axis_unit_vector": [
+              -0.34202014332561076,
+              -7.904039587071248e-09,
+              0.9396926207859295
+            ],
+            "radius_m": 0.072,
+            "length_m": 0.007100015418292339,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 54,
+        "node_name": "native-shell-50",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6151202911732317,
+              -0.7706712095827087,
+              -0.3177077473153594
+            ],
+            "axis_unit_vector": [
+              1.0438460311599788e-06,
+              0.9999999999993798,
+              3.8834021983539217e-07
+            ],
+            "radius_m": 0.038,
+            "length_m": 0.0074000554654453325,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 55,
+        "node_name": "native-shell-51",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.6803606968283348,
+              -0.831271209685494,
+              -0.13846140327277592
+            ],
+            "axis_unit_vector": [
+              -0.34202014332561076,
+              -7.904072723713247e-09,
+              0.9396926207859295
+            ],
+            "radius_m": 0.042,
+            "length_m": 0.010300030588361049,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 56,
+        "node_name": "native-shell-52",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.14409770870194363,
+              -1.2014920783496166,
+              -0.22946666686099312
+            ],
+            "axis_unit_vector": [
+              -0.34202014332561076,
+              -7.904127429953247e-09,
+              0.9396926207859295
+            ],
+            "radius_m": 0.0585,
+            "length_m": 0.008000021371913447,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      },
+      {
+        "node_index": 72,
+        "node_name": "native-shell-15",
+        "cylinders": [
+          {
+            "center_m": [
+              -0.1,
+              -0.448900083899498,
+              0.084
+            ],
+            "axis_unit_vector": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radius_m": 0.0765,
+            "length_m": 0.042800167798995974,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.1,
+              -0.4193000046491623,
+              0.084
+            ],
+            "axis_unit_vector": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radius_m": 0.109,
+            "length_m": 0.02059999070167544,
+            "solid": true
+          },
+          {
+            "center_m": [
+              -0.18560171188489338,
+              -0.43631489834626386,
+              0.1153959415586036
+            ],
+            "axis_unit_vector": [
+              -0.9396926207958066,
+              0.0,
+              0.34202014329847374
+            ],
+            "radius_m": 0.026134807591501334,
+            "length_m": 0.03224533544933803,
+            "solid": true
+          }
+        ],
+        "review_status": "joint-and-base-cylinder-trial-not-contact-approved"
+      }
+    ]
+  },
+  "visual_tubes": [
+    {
+      "collision_node": 17,
+      "visual_node": 15,
+      "source_name": "native-shell-13",
+      "profile_mm": [
+        [
+          -381.23149,
+          57.7
+        ],
+        [
+          -380.93144,
+          58
+        ],
+        [
+          65.92,
+          58.143
+        ],
+        [
+          70.57,
+          59.278
+        ],
+        [
+          78.41,
+          64.633
+        ],
+        [
+          82.9,
+          73
+        ],
+        [
+          86.97,
+          76
+        ],
+        [
+          100.7686,
+          76
+        ],
+        [
+          100.7686,
+          72.5
+        ]
+      ],
+      "segments": 32,
+      "center_mm": [
+        -75.10381899262974,
+        -763.3048082838766,
+        -116.58155534492668
+      ],
+      "axis": [
+        0.2158972245140377,
+        0.9732489637391769,
+        0.07858016943067532
+      ],
+      "source_collision_triangles": 1452,
+      "source_visual_triangles": 1452,
+      "candidate_triangles": 512,
+      "source_to_candidate": {
+        "max_mm": 1.1866624625772872,
+        "p99_mm": 1.0224527798326428,
+        "samples": 25164
+      },
+      "candidate_to_source": {
+        "max_mm": 1.0920155839154282,
+        "p99_mm": 0.7743883458041761,
+        "samples": 18584
+      },
+      "axis_evidence": "/Users/hxyulin/dev/RM/rm-map-tools/out/rmuc2027-core-collision-manual/axis-17.npz",
+      "axis_evidence_sha256": "2aa1ff96e7876f259200353bcc810469db2a21b69d777539edf653a97211613a",
+      "deliberate_losses": "Fine fillet/chamfer and groove sections omitted; full open endpoints, main flare and collars retained."
+    },
+    {
+      "collision_node": 26,
+      "visual_node": 24,
+      "source_name": "native-shell-22",
+      "profile_mm": [
+        [
+          -238.73,
+          41.5
+        ],
+        [
+          -238.73,
+          43.5
+        ],
+        [
+          -230.42,
+          43.5
+        ],
+        [
+          -225.9,
+          40.4
+        ],
+        [
+          -223.88,
+          39.5
+        ],
+        [
+          225.57,
+          39.5
+        ],
+        [
+          229.5,
+          42.4
+        ],
+        [
+          232.57,
+          43.5
+        ],
+        [
+          244.38,
+          43.5
+        ],
+        [
+          244.38,
+          41.5
+        ]
+      ],
+      "segments": 32,
+      "center_mm": [
+        -442.7951914732921,
+        -1011.2395590188826,
+        -119.1243406362011
+      ],
+      "axis": [
+        0.7398526005736481,
+        -0.6164849561716977,
+        0.26937785402365605
+      ],
+      "source_collision_triangles": 1460,
+      "source_visual_triangles": 1084,
+      "candidate_triangles": 576,
+      "source_to_candidate": {
+        "max_mm": 1.1900789661064177,
+        "p99_mm": 0.9501832635524182,
+        "samples": 25220
+      },
+      "candidate_to_source": {
+        "max_mm": 1.0157616504524893,
+        "p99_mm": 0.777821660765441,
+        "samples": 19032
+      },
+      "axis_evidence": "/Users/hxyulin/dev/RM/rm-map-tools/out/rmuc2027-core-collision-manual/axis-26.npz",
+      "axis_evidence_sha256": "c2f032b989343a3a6dc9f6fa7313b3ca4d6872f15a59fd305b937a22390aa781",
+      "deliberate_losses": "Fine fillet/chamfer and groove sections omitted; full open endpoints, main flare and collars retained."
+    }
+  ],
+  "reviewed_files": {
+    "candidate_collision": {
+      "path": "out/rmuc2027-core-joints-base-r3/collision-tech-core.glb",
+      "sha256": "aab73b8efef83f022ece306055ebf1148d260151cc06983925c4e75667c2f2fa"
+    },
+    "unchanged_visual": {
+      "path": "out/rmuc2027-core-arm-proxies/visual-tech-core.glb",
+      "sha256": "c6a201addae0013eeb343ba70bdcbf99a005c9224c137fe0b642b6f6e98c7dc0"
+    }
+  },
+  "reviewed_evidence": {
+    "path": "out/rmuc2027-core-joints-base-r3/final-verification.json",
+    "sha256": "c76db93ec26c12f2dbd832eebc9374a4b1a735189bee6d707312f3a0ce929c51"
+  },
+  "counts_per_core": {
+    "visual": 26123,
+    "collision_preview": 51297,
+    "native_remaining_mesh": 47553,
+    "native_cylinders": 39,
+    "remaining_arm_mesh": 3354
+  },
+  "protected": "All visual geometry except the two approved arm tube profiles stays exact. Head collision, rectangular pedestal and squared elbow connector remain exact.",
+  "intentional_losses": [
+    "Joint, tube and mounting bores/access openings filled in collision.",
+    "Small fasteners, ports and fillets approximated; base tab rounded."
+  ],
+  "excluded": [
+    "node 27 squared elbow cylinder trial",
+    "earlier aggressive visual shell trials",
+    "other native hull alternatives"
+  ],
+  "installed": false,
+  "contact_validated": false,
+  "reviewed_payload_comparison": {
+    "visual": 1665,
+    "collision": 1665
+  },
+  "canonical_outputs": {
+    "visual": {
+      "unchanged_mesh_owners": 1663,
+      "before": 27571,
+      "after": 26123,
+      "sha256": "c6a201addae0013eeb343ba70bdcbf99a005c9224c137fe0b642b6f6e98c7dc0"
+    },
+    "collision": {
+      "unchanged_mesh_owners": 1641,
+      "before": 68488,
+      "after": 51297,
+      "sha256": "aab73b8efef83f022ece306055ebf1148d260151cc06983925c4e75667c2f2fa"
+    },
+    "native_remaining_mesh_triangles": 47553,
+    "native_cylinders": 39,
+    "files": {
+      "visual-tech-core.glb": "c6a201addae0013eeb343ba70bdcbf99a005c9224c137fe0b642b6f6e98c7dc0",
+      "collision-tech-core.glb": "aab73b8efef83f022ece306055ebf1148d260151cc06983925c4e75667c2f2fa",
+      "native/remainder.glb": "1ef8cafc933f7431704e81e088c9656fbfef3fc6218542bba5d62b5ff1469b6d",
+      "native/collision-shapes.json": "b939c1fa370de6f3dc2cc4603a296e137214787319c47e0e98dc5f6235ac84a0"
+    }
+  }
+}
