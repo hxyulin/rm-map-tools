@@ -1,0 +1,155 @@
+{
+  "_license": "SPDX-License-Identifier: MIT OR Apache-2.0",
+  "schema_version": 1,
+  "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
+  "authority": "User instruction, 2026-10-23: preserve the Tech Core crucial face, Armor Modules and Power Rune visual appearance.",
+  "role": "visual",
+  "protected_component_prefixes": [
+    "technology-core/tool-head",
+    "rune/",
+    "outpost/rotor/module-"
+  ],
+  "protected_assets": [
+    "rune"
+  ],
+  "protected_source_body_ids": {
+    "base": [
+      4099408,
+      4121375,
+      4143351,
+      4561335,
+      4564115,
+      4566871
+    ],
+    "outpost": [
+      2104330,
+      2107796,
+      2200540,
+      2203298,
+      2203490,
+      2206254,
+      2209720,
+      2302471,
+      2305243,
+      2305435,
+      2308214,
+      2311680,
+      2404428,
+      2407197,
+      2407389
+    ]
+  },
+  "requirements": [
+    "Protect complete visual modules, including neutral housings, outlines, apertures, trim, markings and lights; color alone does not define protection.",
+    "Protect the entire Tech Core tool head conservatively; its crucial slotted upper structure is functional geometry, not ventilation.",
+    "Do not delete compact detail, close holes, replace with hulls or flatten surfaces within protected scopes on the basis of size or neutral color.",
+    "Exact mesh sharing and coplanar retriangulation remain possible when surfaces, boundaries, appearance and ownership are preserved.",
+    "Any approximate visual change needs matched comparison against full STEP-derived source, including surrounding occluders. Previous acceptance of a simplified intermediate is insufficient.",
+    "Source-color renders are diagnostics. Do not claim runtime PBR, animation-pose or detector equivalence from finite static views.",
+    "These constraints apply to visuals; collision geometry needs its own functional/contact validation."
+  ],
+  "protected_source_shell_ids": {
+    "base": [
+      4634887,
+      4635071,
+      4635255,
+      4635439,
+      4664029,
+      4664121,
+      4664213,
+      4664305,
+      4664397,
+      4664489,
+      4664581,
+      4664765,
+      4664949,
+      4665133,
+      4665317,
+      4693907,
+      4693999,
+      4694091,
+      4694183,
+      4694275,
+      4694367,
+      4694459,
+      4694643,
+      4694827,
+      4695011,
+      4695195,
+      4723785,
+      4723877,
+      4723969,
+      4724061,
+      4724153,
+      4724245,
+      4724337
+    ],
+    "outpost": [
+      2498962,
+      2527556,
+      2556150
+    ]
+  },
+  "base_module_groups": {
+    "base.armor.0": {
+      "source_body_ids": [
+        4099408,
+        4566871
+      ],
+      "source_shell_ids": [
+        4723785,
+        4694643,
+        4694827,
+        4695011,
+        4695195,
+        4723877,
+        4723969,
+        4724061,
+        4724153,
+        4724245,
+        4724337
+      ],
+      "evidence": "geometry-matched front body, complementary side light, neutral housing shell and ten enclosed/corner hardware shells; shared carrier brackets recorded separately; physical grouping inferred from source bounds and isolated geometry, not an authored functional assembly"
+    },
+    "base.armor.1": {
+      "source_body_ids": [
+        4121375,
+        4564115
+      ],
+      "source_shell_ids": [
+        4693907,
+        4664765,
+        4664949,
+        4665133,
+        4665317,
+        4693999,
+        4694091,
+        4694183,
+        4694275,
+        4694367,
+        4694459
+      ],
+      "evidence": "geometry-matched front body, complementary side light, neutral housing shell and ten enclosed/corner hardware shells; shared carrier brackets recorded separately; physical grouping inferred from source bounds and isolated geometry, not an authored functional assembly"
+    },
+    "base.armor.2": {
+      "source_body_ids": [
+        4143351,
+        4561335
+      ],
+      "source_shell_ids": [
+        4664029,
+        4634887,
+        4635071,
+        4635255,
+        4635439,
+        4664121,
+        4664213,
+        4664305,
+        4664397,
+        4664489,
+        4664581
+      ],
+      "evidence": "geometry-matched front body, complementary side light, neutral housing shell and ten enclosed/corner hardware shells; shared carrier brackets recorded separately; physical grouping inferred from source bounds and isolated geometry, not an authored functional assembly"
+    }
+  }
+}
