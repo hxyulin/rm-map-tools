@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-dart-slim-beams-top-base-rmuc2027-20261024",
+  "base_rule": "rules/collision-core-head-rune-reviewed-rmuc2027.json",
+  "user_approval": "User accepted slimmer beam fit and top/base trial, withdrew the flat-sheet idea, and explicitly requested commit.",
+  "artifacts": {
+    "rmuc2027-dart-beams-refined/arena-static-collision.glb": {
+      "path": "out/rmuc2027-dart-beams-refined/arena-static-collision.glb",
+      "sha256": "7b87398303dcfa7fea84fc4f94a841e37f4b75606e031212e30e121daa11940c"
+    },
+    "rmuc2027-dart-beams-refined/paired-stage.json": {
+      "path": "out/rmuc2027-dart-beams-refined/paired-stage.json",
+      "sha256": "778d3eb060503252ef23591ce007f01993271745e407de02f35c7c05e8f273e3"
+    },
+    "rmuc2027-dart-beams-refined/verification.json": {
+      "path": "out/rmuc2027-dart-beams-refined/verification.json",
+      "sha256": "6b7e9ae39b5ce7cd9e0836d6da158f41368f6b11fa7d999a319d9050e4d30517"
+    },
+    "rmuc2027-dart-beams-refined/geometry-verification.json": {
+      "path": "out/rmuc2027-dart-beams-refined/geometry-verification.json",
+      "sha256": "4deb5b1b45a666aa4daf588b6535fedf52725d16418edea56606a7aa9ae7dd31"
+    },
+    "rmuc2027-dart-beams-refined/deck-ray-checks.json": {
+      "path": "out/rmuc2027-dart-beams-refined/deck-ray-checks.json",
+      "sha256": "b994eef2bccde3825ea06c22ca9183e92d29d3453c9fb86281a9b6e343ac47db"
+    },
+    "rmuc2027-dart-beams-refined/mesh-ccd-result.json": {
+      "path": "out/rmuc2027-dart-beams-refined/mesh-ccd-result.json",
+      "sha256": "035f8303d91ce004a8ec9b69f283c850853d0764c4296dab0ea11c7a223984dc"
+    },
+    "rmuc2027-dart-beams-refined/mesh-ccd-fixture.txt": {
+      "path": "out/rmuc2027-dart-beams-refined/mesh-ccd-fixture.txt",
+      "sha256": "bc0a9d079a9b9678d26483a45dfd7344fc960ae68e60395cb1c6360ca0fff312"
+    },
+    "rmuc2027-dart-beams-refined/mesh-ccd-cases.json": {
+      "path": "out/rmuc2027-dart-beams-refined/mesh-ccd-cases.json",
+      "sha256": "f1c330164af7d681a8905f8f8f4e8f0743550b5cef5edcba27dd9fa2f9029f87"
+    },
+    "rmuc2027-dart-beams-refined/mesh-ccd-placement.json": {
+      "path": "out/rmuc2027-dart-beams-refined/mesh-ccd-placement.json",
+      "sha256": "83d2b1733959e22a3231f079a23558f8226bf1ede31767a3e38ac826d23b337f"
+    },
+    "rmuc2027-dart-beams-refined/mesh-ccd.log": {
+      "path": "out/rmuc2027-dart-beams-refined/mesh-ccd.log",
+      "sha256": "f5ab529767466fd209e6b779adda91e07a1f13263ddf433104c17403ad382b7a"
+    },
+    "rmuc2027-dart-beams-refined/final-verification.json": {
+      "path": "out/rmuc2027-dart-beams-refined/final-verification.json",
+      "sha256": "48690334b54c1d91ad3db120941baa3a4df16999458cd2348ef6e27f1910f472"
+    },
+    "rmuc2027-dart-top-base/arena-static-collision.glb": {
+      "path": "out/rmuc2027-dart-top-base/arena-static-collision.glb",
+      "sha256": "8964036e2a5b031e1e8bcc92100dee053d3445f838e051eaa7fa51b8ef2d9e35"
+    },
+    "rmuc2027-dart-top-base/paired-stage.json": {
+      "path": "out/rmuc2027-dart-top-base/paired-stage.json",
+      "sha256": "829d7782f150eaa17ec314d173cbf742c59868dfede006c4419a649942ab1079"
+    },
+    "rmuc2027-dart-top-base/verification.json": {
+      "path": "out/rmuc2027-dart-top-base/verification.json",
+      "sha256": "31917b3c142242642c6bfb592abaaade67914ebe5cf8d4e4f13f4557645d3c94"
+    },
+    "rmuc2027-dart-top-base/geometry-verification.json": {
+      "path": "out/rmuc2027-dart-top-base/geometry-verification.json",
+      "sha256": "23c471576b2f3ea282ec01cf124188244e221f2a5bb28a0d0c6b15467f35e483"
+    },
+    "rmuc2027-dart-top-base/deck-ray-checks.json": {
+      "path": "out/rmuc2027-dart-top-base/deck-ray-checks.json",
+      "sha256": "e1fb0d2bd6c8f87b8fa449bf88e0226b2e85a8887757858d1420c5852eea0b71"
+    },
+    "rmuc2027-dart-top-base/mesh-ccd-result.json": {
+      "path": "out/rmuc2027-dart-top-base/mesh-ccd-result.json",
+      "sha256": "2f50e891d99af8355bb998c7cf8abd5bcaddd34e4b78f6822422b52b23fa1335"
+    },
+    "rmuc2027-dart-top-base/mesh-ccd-fixture.txt": {
+      "path": "out/rmuc2027-dart-top-base/mesh-ccd-fixture.txt",
+      "sha256": "f33d266222e6ab2a9174a26b0bcae8c9014d7bcdbecf1183445ac7c26f18a10a"
+    },
+    "rmuc2027-dart-top-base/mesh-ccd-cases.json": {
+      "path": "out/rmuc2027-dart-top-base/mesh-ccd-cases.json",
+      "sha256": "3885807c41a3e9775fe07e3c7c99793b1733debb2e05fceb48b3a08924ca495c"
+    },
+    "rmuc2027-dart-top-base/mesh-ccd-placement.json": {
+      "path": "out/rmuc2027-dart-top-base/mesh-ccd-placement.json",
+      "sha256": "83d2b1733959e22a3231f079a23558f8226bf1ede31767a3e38ac826d23b337f"
+    },
+    "rmuc2027-dart-top-base/mesh-ccd.log": {
+      "path": "out/rmuc2027-dart-top-base/mesh-ccd.log",
+      "sha256": "326bb7fe86a243f56616b21b587ec949897b8dcaa0268059d297f7ec7b2d3288"
+    },
+    "rmuc2027-dart-top-base/final-verification.json": {
+      "path": "out/rmuc2027-dart-top-base/final-verification.json",
+      "sha256": "b06899279189ea1483be18ead431fbea51b03bba959d1fdadbbb11fe5c7cbfd1"
+    }
+  },
+  "counts": {
+    "placed_visual_triangles": 344792,
+    "placed_native_remaining_mesh_triangles": 361034,
+    "placed_native_shapes": {
+      "cylinder": 80,
+      "box": 8,
+      "convex_hull": 33
+    },
+    "placed_diagnostic_triangles": 370714,
+    "dart_frame_owners": 9382,
+    "dart_savings_from_pre_dart_mesh": 25488
+  },
+  "policy": {
+    "visuals": "All visual bytes exact.",
+    "sides": "Reviewed slim long members with locally fitted hardware; one narrow opening remains closed.",
+    "top_base": "Four top rungs and five base crossbars, flat deck and local fittings; complex mounts and guides retained.",
+    "flat_sheet": false,
+    "new_native_leaves": 0
+  },
+  "evidence": {
+    "side_ccd_shots": 240,
+    "top_base_ccd_shots": 320,
+    "top_base_replaced_faces_enclosed": 10512,
+    "deck_surface_height_unchanged_rays": 1554,
+    "broad_overhead_query_max_change_mm": 2.5744809443644954
+  },
+  "installed": false,
+  "runtime_timing_measured": false,
+  "constraints": [
+    "CAD meshes/fixtures remain ignored outputs; only tooling/parameters/hashes committed.",
+    "New Dart solids remain mesh-backed.",
+    "Dynamic door/traversal/full-match and mixed native-shape field integration remain unqualified."
+  ]
+}
