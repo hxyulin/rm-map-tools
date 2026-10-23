@@ -116,7 +116,7 @@ is not a placed/world triangle or draw-call count.
 
 ## RMUC 2027 findings
 
-[Evidence and producer hashes](../benchmarks/2026-10-17-patch-fits/summary.json)
+Evidence and producer hashes
 refer to the reviewed stage-one STEP SHA-256
 `f561429d829e463fae5dd06d2b4eedbd9a7bbb87a0c9507ac6524fb47a021e73`.
 

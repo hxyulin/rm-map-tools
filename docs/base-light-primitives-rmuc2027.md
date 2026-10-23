@@ -127,5 +127,5 @@ visible red pixels in the worst whole view. These are sampled source poses, not
 complete occlusion, all moving states or runtime bounce validation.
 
 **300 Python tests run: 299 passed and one optional USD skip.**
-[Reproduction and measured evidence](../benchmarks/2026-10-17-base-light-primitives/README.md)
+Reproduction and measured evidence
 include the rejected box, planar-cover and coarse-sphere trials.

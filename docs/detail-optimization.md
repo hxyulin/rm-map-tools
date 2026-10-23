@@ -80,7 +80,7 @@ The first resource-zone sample dropped from 670,718 to 474,598 visual triangles
 and from 525,843 to 398,757 collision triangles, relative to the simulation
 preset. The deployed package drops from 7,308,820 to 5,785,692 visual triangles and
 from 4,929,741 to 3,973,663 static collider triangles. See the
-[benchmark report](../benchmarks/2026-09-11-detail-audit/README.md) for validation. No frame-time or physics speedup is inferred from triangle
+benchmark report for validation. No frame-time or physics speedup is inferred from triangle
 counts.
 
 ## Simplify the bound package

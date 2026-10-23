@@ -84,7 +84,7 @@ on the fans before attempting color-dependent simplification there. Preserve
 these generic candidates as the reference before adding source-bound closures,
 surface-aware primitives or artwork textures.
 
-[Reproduction and measured ledgers](../benchmarks/2026-10-17-equipment-pipeline/README.md)
+Reproduction and measured ledgers
 include the complete inventory, per-shell checks, output checksums and matched
 view metrics. Generated complete-product GLBs and images remain under
 `out/rmuc2027-equipment-pipeline/review/`.

@@ -107,5 +107,5 @@ Tests include exact-threshold circular and rectangular apertures, a rotated
 and native sphere intersections: a 17 mm sphere intersects a 16 mm bore's walls
 but fits an 18 mm bore. **295 tests run: 294 passed and one optional USD skip.**
 
-[Reproduction and full ledger](../benchmarks/2026-10-17-base-gap-led/README.md)
+Reproduction and full ledger
 retain rejected trials, settings, source identities and measured deviations.

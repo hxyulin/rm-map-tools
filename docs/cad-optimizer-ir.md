@@ -191,7 +191,7 @@ circle, ellipse, cylinder and sphere maps, including cylinder axial parameters.
 
 ## RMUC 2027 measurements
 
-[Evidence and producer hashes](../benchmarks/2026-10-17-optimizer-ir/summary.json)
+Evidence and producer hashes
 use the reviewed stage-one STEP SHA-256
 `f561429d829e463fae5dd06d2b4eedbd9a7bbb87a0c9507ac6524fb47a021e73`.
 
@@ -242,7 +242,7 @@ ocpenv/bin/python python/audit_ir_structure.py \
   --out out/ir-structure/summary.json
 ```
 
-The [structural audit evidence](../benchmarks/2026-10-17-optimizer-ir/structure.json)
+The structural audit evidence
 checks the same reviewed source:
 
 | Check | Full-field result |

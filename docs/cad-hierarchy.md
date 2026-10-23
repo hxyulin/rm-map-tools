@@ -15,6 +15,16 @@ The [RMUC 2027 policy](../rules/hierarchy-rmuc2027.json) combines the reviewed
 The Base stays one work group containing its complete original bodies; no finer
 functional Base partition has been reviewed.
 
+## Reviewed motion preparation
+
+The default RMUC 2027 policy now runs [source motion preparation](cad-source-motion.md)
+before grouping. It corrects Outpost carrier ownership, Rune hubs and fixed logos,
+Base target/shield ownership and the Dart door. The counts and original tree below
+describe the earlier 116-part checkpoint; the new motion-prepared hierarchy is a
+separate verified output. Body #2101579 is the explicit exception to whole-solid
+retention: complete original faces form two open surface parts, with no geometric
+approximation. See the source-motion guide for the wrapper and validation contract.
+
 ## Organization
 
 ```text

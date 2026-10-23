@@ -72,7 +72,7 @@ colored border solids retain their visuals and have zero collision triangles.
 The empty collision GLB retains an anchor without invalid zero-length buffers.
 Embedded markings require separately owned unpainted backing coverage; the
 initial policy preserves that footprint until backing coalescing is validated.
-See the [profile LOD and role measurements](../benchmarks/2026-10-17-road-lod/README.md).
+See the profile LOD and role measurements.
 Source-local metre
 coordinates are centered at the reported `origin_mm`; axes remain CAD Z-up.
 The report supplies the origin for reassembly. This review package is not yet a
@@ -99,7 +99,7 @@ polynomial differences.
 
 ## Candidate measurements
 
-[Evidence](../benchmarks/2026-10-17-vector-component/summary.json) pins the reviewed
+Evidence pins the reviewed
 stage-one source SHA and the exporter implementations:
 
 | Measurement | Result |

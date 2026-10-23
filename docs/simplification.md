@@ -2,7 +2,6 @@
 
 [Documentation](README.md) · [Exporting](exporting.md) · [简体中文](zh/simplification.md)
 
-See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
 
 Reduction happens at several stages. STEP splitting preserves source geometry; tessellation approximates CAD surfaces; later mesh simplification is lossy. Not every optimization belongs in every package, and the JSON export runner does not run all the steps below automatically.
 
@@ -50,18 +49,18 @@ These reports explain the development of the pipeline. They are dated results, n
 
 | Work | Status and evidence |
 | --- | --- |
-| Coarser tessellation | [Preset comparison](../benchmarks/2026-09-11-tessellation-presets/README.md) |
+| Coarser tessellation | Preset comparison |
 | Small surfaces and relaxed angular tolerances | [Detail audit](detail-optimization.md); automatic CAD hole/fillet removal is not enabled |
-| Locked and unlocked edge collapse | [Initial pass](../benchmarks/2026-09-11-mesh-simplification/README.md), [boundary study](../benchmarks/2026-09-11-aggressive-mesh/README.md), [unlocked output](../benchmarks/2026-09-11-unlocked-mesh/README.md) |
-| Component preservation refinements | [Component refinement](../benchmarks/2026-09-11-component-refinement/README.md), implemented in the simplifier |
-| Artwork conversion and collider backing | [Atlas simplification](../benchmarks/2026-09-11-atlas-simplification/README.md), [native textures](../benchmarks/2026-09-11-native-textures/README.md), [collision artwork](../benchmarks/2026-09-11-collision-artwork/README.md) |
-| Shared geometry and distribution compression | [Geometry sharing](../benchmarks/2026-09-11-geometry-sharing/README.md), [grouped sheet prototype](../benchmarks/2026-09-11-grouped-sheets/README.md), [deduplication exploration](../benchmarks/2026-09-11-geometric-deduplication/README.md) |
-| Game-oriented road strips and separate equipment colliders | [RMUC 2027 trial](../benchmarks/2026-10-17-game-lods/README.md); source spline boundaries shared with caps, rigid material batching, 3/6 mm collision variants |
-| Source-profile collision parts | [Energy and Dart](../benchmarks/2026-10-17-collision-solids/README.md); complete meridians, window-preserving panel slabs and dense local remainder guards |
-| Dense material-local equipment LOD | [Dart and Outpost](../benchmarks/2026-10-17-dart-outpost/README.md); every triangle/corner checked per material, exact optical patches, per-member contact choices and preserved port rings |
-| Compact game-detail omission and fitted housings | [Equipment shells](../benchmarks/2026-10-17-equipment-shells/README.md); same-rigid backing checks, explicit engraved-cap envelopes and assembled optical-retention refinement |
-| Experimental visual budget palette | [Ultra-low LOD trials](../benchmarks/2026-10-18-ultra-lod/README.md); independently generated shared-mesh levels, matched views and explicit rejection of severe panel/topology damage; visual only |
-| Selective Low visual repair | [Low repair candidates](../benchmarks/2026-10-18-low-repair/README.md); raise budgets only for qualified pieces, preserve closed shells and boundary anchors, and select correct original hard-edge normals |
-| Repeated simplification against an original-source guard | [Recursive trials](../benchmarks/2026-09-11-recursive-simplification/README.md); review GLBs only, not a production default |
+| Locked and unlocked edge collapse | Initial pass, boundary study, unlocked output |
+| Component preservation refinements | Component refinement, implemented in the simplifier |
+| Artwork conversion and collider backing | Atlas simplification, native textures, collision artwork |
+| Shared geometry and distribution compression | Geometry sharing, grouped sheet prototype, deduplication exploration |
+| Game-oriented road strips and separate equipment colliders | RMUC 2027 trial; source spline boundaries shared with caps, rigid material batching, 3/6 mm collision variants |
+| Source-profile collision parts | Energy and Dart; complete meridians, window-preserving panel slabs and dense local remainder guards |
+| Dense material-local equipment LOD | Dart and Outpost; every triangle/corner checked per material, exact optical patches, per-member contact choices and preserved port rings |
+| Compact game-detail omission and fitted housings | Equipment shells; same-rigid backing checks, explicit engraved-cap envelopes and assembled optical-retention refinement |
+| Experimental visual budget palette | Ultra-low LOD trials; independently generated shared-mesh levels, matched views and explicit rejection of severe panel/topology damage; visual only |
+| Selective Low visual repair | Low repair candidates; raise budgets only for qualified pieces, preserve closed shells and boundary anchors, and select correct original hard-edge normals |
+| Repeated simplification against an original-source guard | Recursive trials; review GLBs only, not a production default |
 
 Use [Performance](performance.md) for measured startup and memory results. Fewer triangles alone do not establish a frame-rate or physics speedup.

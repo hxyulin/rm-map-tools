@@ -464,7 +464,7 @@ text; duplicated STEP text can already compress well, and identity maps have a
 real storage cost.
 
 Measured complete-package results are retained in
-[`benchmarks/2026-10-17-step-sharing/summary.json`](../benchmarks/2026-10-17-step-sharing/summary.json).
+`benchmarks/2026-10-17-step-sharing/summary.json`.
 The baseline ZIP is remeasured using the same archive settings and files as the
 candidate comparison, rather than using the release ZIP's additional packaging
 metadata.
@@ -530,7 +530,7 @@ ocpenv/bin/python python/cad_archive.py out/rmuc2027-shared-values \
   --levels 3 22 --out out/compression-comparison
 ```
 
-The [full-field evidence](../benchmarks/2026-10-17-layer-interning/summary.json)
+The full-field evidence
 uses the previous exact-sharing candidate, without changing its package contents:
 
 | Index measure | Flat | Pooled |

@@ -84,7 +84,7 @@ The next useful step is local qualification of fastener bores and shallow
 panel details, followed by source-bound planar/analytic replacement or artwork
 bakes. Size/surface type alone does not establish that a feature is disposable.
 
-[Reproduction and compact ledgers](../benchmarks/2026-10-17-equipment-structure/README.md)
+Reproduction and compact ledgers
 include both initial and colour-protected trial inputs. Generated selected
 complete-product GLBs and all review images are under
 `out/rmuc2027-equipment-structure-final/`. The user visually approved the selected

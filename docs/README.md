@@ -20,7 +20,6 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 | [Referee hardware prototypes](referee-hardware.md) | Six checksum-pinned hardware models with coarse/rough visual tiers and source comparisons |
 | [Exporting](exporting.md) | Inputs, JSON jobs, GLB, SDF, URDF, MJCF, and USD |
 | [Simplification](simplification.md) | Processing order, artwork conversion, mesh reduction, and checks |
-| [Simplification counts](simplification-results.md) | Preset mesh inventories and measured reduction passes |
 | [Architecture](architecture.md) | Pipeline and code layout |
 | [Interactive viewer](viewer.md) | Inspect models and adjust joints in the documentation site |
 | [2027 viewer](viewer-2027.md) | Inspect the 2027 arenas, assemblies, and energy unit |
@@ -35,12 +34,15 @@ Start with [Getting started](getting-started.md) to split and validate a STEP fi
 
 ## Mechanisms and evidence
 
+- [Current source baseline](source-baseline-rmuc2027.md): preserved CAD and reviewed motion hierarchy.
+
 - [Base reconstruction](base-reconstruction.md), [interior audit](base-interior-audit.md), and [dart-target rail](base-dart-target.md).
 - [Dart window](dart-window.md) and [Technology Core joints](technology-core-joints.md).
 - [Read-only CAD optimization passes](cad-optimization-passes.md), [Geometry audit](geometry-audit.md), [performance measurements](performance.md), and the [optimization reports](simplification.md#audits-and-experiments).
 - [RMUC 2027 non-base spatial components](non-base-components-rmuc2027.md), including rune/outpost shell candidates.
 - [RMUC 2027 layer qualification review](rmuc2027-layer-review.md) and [source component selections](cad-components.md).
 - [RMUC 2027 source colors and complete equipment compositions](appearance-compositions-rmuc2027.md), including the secondary-fixture comparison.
+- [Reviewed source motion preparation](cad-source-motion.md), running before hierarchy construction.
 - [Hierarchical source STEP export](cad-hierarchy.md), assembling the reviewed work parts into one named CAD tree.
 - [Original articulation design](articulation-design.md), retained as design history. Use the semantic export reference for the implemented contract.
 
@@ -52,15 +54,12 @@ The Markdown files are the source for both GitHub browsing and the documentation
 
 - [Source-bound vector component export](cad-vector-component.md).
 
-- [RMUC 2027 native terrain cost and paint investigation](../benchmarks/2026-10-17-terrain-cost/README.md).
 
-- [Road-profile LOD preview and visual-only terrain markings](../benchmarks/2026-10-17-road-lod/README.md).
 
 - [Finite patch instancing and compact storage](cad-patch-instancing.md).
 
 - [Bounded native wall filling](cad-wall-fill.md): source-profile grille and rib-cavity replacement.
 
-- [Placed terrain triangle density](../benchmarks/2026-10-17-terrain-density/README.md): spatial hotspots, collision filters and instance-aware counts.
 
 - [RMUC 2027 Base geometry analysis](base-geometry-rmuc2027.md): original source-unit costs, tiny curved detail, trim complexity and sampled visibility.
 
@@ -90,23 +89,12 @@ The Markdown files are the source for both GitHub browsing and the documentation
 
 - [Remaining equipment opportunities](equipment-opportunities-rmuc2027.md): fan policy, Energy cavity proof, source tessellation trials, tool-head fragmentation and Rune detail costs.
 
-- [Fan locations and hollow-box proxy](../benchmarks/2026-10-17-fan-proxy/README.md): ten source placements and a 56-triangle thick frame/open-duct approximation.
 
 - [Global mounting-detail discovery](cad-mounting-details.md): read-only source-bound opening and fastener candidates across terrain and equipment.
 
-- [Composed visual pipeline](../benchmarks/2026-10-17-composed-pipeline/README.md): source-edit/LOD precedence, complete instanced GLBs, actual full-field counts and equipment comparisons.
 
-- [Energy Unit radial profile trials](../benchmarks/2026-10-17-energy-profile/README.md): shared-ring LOD controls, retained socket geometry and unpromoted profile candidates.
 
-- [Residual Rune, Resource and Tech Core geometry](../benchmarks/2026-10-17-residual-equipment/README.md): source-owned structural LOD, full-sphere shell skins and native projected plate profiles.
 
-- [Game-oriented road and collision LOD](../benchmarks/2026-10-17-game-lods/README.md): shared native spline strips, complete adjoining caps, material-batched terrain, and independently guarded equipment colliders.
 
-- [Source-profile collision parts](../benchmarks/2026-10-17-collision-solids/README.md): complete Energy meridians with sockets/recesses, finite Dart panel prisms, dense remainder guards and opening checks.
 
-- [Energy interior prism and complete arena accounting](../benchmarks/2026-10-17-arena-budget/README.md): exact exterior retention, placed versus shared visual counts, and a separately labeled full-map collision planning budget.
-- [Dart and Outpost detail LOD](../benchmarks/2026-10-17-dart-outpost/README.md): material-local dense guards, exact optical regions, per-member contact composition and native port clearance checks.
-- [Aggressive equipment shells and detail removal](../benchmarks/2026-10-17-equipment-shells/README.md): compact hardware omission, fitted end caps and assembled light-mask retention with source scene order preserved.
-- [Experimental ultra-low visual LOD palette](../benchmarks/2026-10-18-ultra-lod/README.md): five complete-arena levels, matched equipment views, and documented panel/silhouette failures at extreme budgets.
-- [Selective Low LOD repair](../benchmarks/2026-10-18-low-repair/README.md): finite-view piece qualification, local budget refinement, boundary/closure checks and hard-edge source-normal selection.
 - [Repaired Low game export](game-export.md): runtime partitions, shared equipment placements, independent collision meshes and a portable verified archive.

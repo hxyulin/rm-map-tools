@@ -98,7 +98,7 @@ triangles across two Base occurrences, down by 464,860. Its crossbar is 61,976
 triangles and lower housing 44,248; only their latter count incorporates plugs.
 Stage-one still instances a shared Base definition; no placed occurrence is lost.
 
-[The benchmark](../benchmarks/2026-10-17-base-passes/README.md) checks every retained
+The benchmark checks every retained
 unselected unit's ordered triangle positions, source diffuse values and original
 face IDs byte for byte. It also compares 18 matched source-pose views per accepted
 candidate, with fixed original framing. Render thresholds are a 0.2% foreground

@@ -123,6 +123,6 @@ area conservation, out-of-plane geometry, UV orientation, embedded PNG survival
 through compaction and the linear colour factor. Composition checks unchanged
 source nodes, rendered attributes, triangle totals and preserved lights.
 
-[Reproduction and measurement ledgers](../benchmarks/2026-10-17-base-panel-textures/README.md)
+Reproduction and measurement ledgers
 retain all proposals and the rejected groove projection. No source CAD or
 runtime collision data is overwritten.

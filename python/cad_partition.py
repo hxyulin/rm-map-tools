@@ -25,7 +25,7 @@ from cad_components import build_catalog, export_selection
 from p21split import Splitter
 
 
-def compile_partition(document, catalog, policy):
+def compile_partition(document, catalog, policy, *, source_motion=None):
     """Partition selected products completely, including whole source shells.
 
     Explicit shell IDs or product-local vertex boxes propose ownership. Higher
@@ -39,6 +39,8 @@ def compile_partition(document, catalog, policy):
         raise ValueError('partition policy schema/source SHA-256 mismatch')
     if policy.get('length_unit') != 'millimetre' or set(document.geometry_length_units) != {'.MILLI.,.METRE.'}:
         raise ValueError('partition regions require original millimetre geometry')
+    if source_motion and (source_motion.get('schema_version')!=1 or source_motion.get('source_sha256')!=document.source_sha256):
+        raise ValueError('prepared source motion schema/source SHA-256 mismatch')
     ix, model = document.index, document.model
     components = {(c['product_id'], c['body_id']): c for c in catalog['components']}
     results, seen_products = [], set()
@@ -81,6 +83,9 @@ def compile_partition(document, catalog, policy):
                     raise ValueError('body is assigned by multiple body rules')
                 body_assignments[body] = rule['group']
         groups, units, source_faces = defaultdict(list), [], set()
+        changed_groups=set()
+        motion_faces=(source_motion or {}).get('face_owners',{})
+        motion_default=(source_motion or {}).get('product_defaults',{}).get(str(product))
         for body in bodies:
             row = ix.r(body)
             shells = sorted(shell_sets[body]) if body in shell_sets else [None]
@@ -121,25 +126,48 @@ def compile_partition(document, catalog, policy):
                 unit = {'body_id': body, 'shell_id': shell, 'face_ids': sorted(faces),
                         'group': group, 'assignment': reason,
                         'matched_rules': [r['id'] for r in matches]}
-                groups[group].append(unit)
-                units.append(unit)
+                buckets=defaultdict(list)
+                for face in sorted(faces):
+                    binding=motion_faces.get(face)
+                    if binding and binding['product_id']!=product:
+                        raise ValueError('motion face product mismatch')
+                    destination=binding['group'] if binding else motion_default or group
+                    buckets[destination].append(face)
+                for destination,selected in buckets.items():
+                    if not destination.startswith(spec['name']+'/') or any(not re.fullmatch(r'[a-z0-9][a-z0-9-]*',p) for p in destination.split('/')):
+                        raise ValueError('unsafe motion group')
+                    changed=len(buckets)>1 or destination!=group
+                    if changed:changed_groups.update([group,destination])
+                    fragment={**unit,'group':destination,'face_ids':selected,
+                              'face_patch':len(buckets)>1,
+                              'motion_owners':sorted({motion_faces[f]['motion_owner'] for f in selected
+                                                    if f in motion_faces and motion_faces[f]['motion_owner'] is not None})}
+                    if changed or any(f in motion_faces for f in selected):fragment['assignment']='reviewed-source-motion'
+                    groups[destination].append(fragment)
+                    units.append(fragment)
         expected = {int(ix.ids[f]) for b in bodies for f in model.body_faces(ix.r(b))}
         if source_faces != expected:
             raise ValueError('partition dropped or added source faces')
         records = []
         for group, items in sorted(groups.items()):
             face_ids = sorted(f for u in items for f in u['face_ids'])
-            record = {'id': group, 'solid_body_ids': sorted(u['body_id'] for u in items if u['shell_id'] is None),
-                      'shell_ids_by_body': {str(b): sorted(u['shell_id'] for u in items if u['body_id'] == b)
-                                            for b in sorted({u['body_id'] for u in items if u['shell_id'] is not None})},
+            record = {'id': group, 'solid_body_ids': sorted(u['body_id'] for u in items if u['shell_id'] is None and not u.get('face_patch')),
+                      'shell_ids_by_body': {str(b): sorted(u['shell_id'] for u in items if u['body_id'] == b and not u.get('face_patch'))
+                                            for b in sorted({u['body_id'] for u in items if u['shell_id'] is not None and not u.get('face_patch')})},
+                      'face_ids_by_body':{str(b):sorted(f for u in items if u['body_id']==b for f in u['face_ids'])
+                                          for b in sorted({u['body_id'] for u in items if u.get('face_patch')})},
+                      'motion_owners':sorted({o for u in items for o in u.get('motion_owners',[])}),
                       'face_ids': face_ids, 'face_count': len(face_ids),
                       'unit_count': len(items), 'assignment_counts': dict(Counter(u['assignment'] for u in items)),
-                      'review_status': 'work-partition-only; attachment/motion not installed'}
+                      'review_status': 'reviewed-source-motion-ownership; actuator/controller separate' if source_motion and any(u['assignment']=='reviewed-source-motion' for u in items) else 'work-partition-only; attachment/motion not installed'}
+            for body in record['face_ids_by_body']:
+                record['solid_body_ids']=[b for b in record['solid_body_ids'] if b!=int(body)]
+                record['shell_ids_by_body'].pop(body,None)
             signature = spec.get('expected_group_signatures', {}).get(group)
-            if signature and (len(record['solid_body_ids']), sum(map(len, record['shell_ids_by_body'].values())), record['face_count']) != tuple(signature):
+            if signature and group not in changed_groups and (len(record['solid_body_ids']), sum(map(len, record['shell_ids_by_body'].values())), record['face_count']) != tuple(signature):
                 raise ValueError('partition group differs from its expected body/shell/face signature')
             records.append(record)
-        if set(spec.get('expected_group_signatures', {})) - set(groups):
+        if set(spec.get('expected_group_signatures', {})) - set(groups) - changed_groups:
             raise ValueError('expected partition group is missing')
         results.append({'name': spec['name'], 'product_id': product, 'source_body_ids': bodies,
                         'source_face_count': len(source_faces), 'source_shell_count': sum(map(len, shell_sets.values())),
@@ -148,14 +176,14 @@ def compile_partition(document, catalog, policy):
     document.verify_source()
     return {'schema_version': 1, 'source_sha256': document.source_sha256,
             'source_unchanged': True, 'products': results,
-            'limitations': ['Only original body/shell units are selected; no face clipping or geometric edits.',
+            'limitations': ['Original body/shell units or explicit motion-owned face patches; no face clipping or geometric edits.',
                 'Spatial groups are work proposals, not attachment, collision or motion authority.',
                 'Shared surface-model wrappers can appear in several files with disjoint shell lists.',
                 'A fallback group retains all unmatched or conflicting source shells.']}
 
 
 def _selection(catalog, product, group):
-    keys = set(group['solid_body_ids']) | {int(b) for b in group['shell_ids_by_body']}
+    keys = set(group['solid_body_ids']) | {int(b) for b in group['shell_ids_by_body']} | {int(b) for b in group.get('face_ids_by_body',{})}
     components = [c for c in catalog['components'] if c['product_id'] == product and c['body_id'] in keys]
     ids = {c['id'] for c in components}
     return {'source_sha256': catalog['source_sha256'], 'selector': group['id'],
@@ -251,7 +279,7 @@ def export_bundle(document, catalog, partition, out, *, lin_mm=.4, ang_rad=.25):
                 directory = folder/relative
                 selection = _selection(catalog, pid, group)
                 shell_map = {int(b): values for b, values in group['shell_ids_by_body'].items()}
-                export_selection(document, selection, directory, shell_ids_by_body=shell_map, splitter=splitter)
+                export_selection(document, selection, directory, shell_ids_by_body=shell_map, face_ids_by_body={int(b):ids for b,ids in group.get('face_ids_by_body',{}).items()}, splitter=splitter)
                 native, reader, error = read_part(str(directory/'source.step'))
                 if error:
                     raise ValueError(error)
@@ -267,7 +295,7 @@ def export_bundle(document, catalog, partition, out, *, lin_mm=.4, ang_rad=.25):
                 color_keys = [keys[int(i)] for i in colors]
                 extras = {'cad_partition': {'source_sha256': document.source_sha256,
                           'product_id': pid, 'group': group['id'], 'solid_body_ids': group['solid_body_ids'],
-                          'shell_ids_by_body': group['shell_ids_by_body'], 'source_face_count': group['face_count']}}
+                          'shell_ids_by_body': group['shell_ids_by_body'], 'face_ids_by_body':group.get('face_ids_by_body',{}), 'source_face_count': group['face_count']}}
                 writer = GlbWriter(group['id'], asset)
                 writer.add_node(group['id'], positions/1000, triangles, color_keys, matrix=rotation, extras=extras)
                 writer.write(directory/'visual.glb')

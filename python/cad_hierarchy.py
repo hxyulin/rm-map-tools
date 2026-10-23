@@ -8,7 +8,7 @@ its narrowed surface-model wrappers. This prevents shared wrapper IDs from
 merging disjoint shell selections when they enter one STEP file.
 """
 import argparse
-from collections import defaultdict
+from collections import defaultdict, Counter
 import gc
 import hashlib
 import json
@@ -148,7 +148,8 @@ def _group_tree(writer, name, leaves):
 def write_hierarchy(document, catalog, partitions, compositions, hierarchy_policy, out):
     """Write the full field once, keeping original analytic geometry and styles.
 
-    Whole solids and surface shells are work units; fused solids are not cut.
+    Whole solids and surface shells remain intact unless reviewed motion ownership
+    separates complete original faces into disjoint open surface patches.
     This builds an organizational hierarchy, not mechanical joints or motion.
     Returns a source-identity report after text-level preservation validation.
     """
@@ -162,7 +163,8 @@ def write_hierarchy(document, catalog, partitions, compositions, hierarchy_polic
             or len(products) != len(owned)):
         raise ValueError('hierarchy must cover every source product exactly once')
     all_faces = {int(ix.ids[f]) for f in ix.rows_of('ADVANCED_FACE')}
-    if set(f for p in products for g in p['groups'] for f in g['face_ids']) != all_faces:
+    face_counts=Counter(f for p in products for g in p['groups'] for f in g['face_ids'])
+    if set(face_counts) != all_faces or any(n!=1 for n in face_counts.values()):
         raise ValueError('hierarchy partitions do not cover every source face')
     splitter = Splitter(ix,model)
     helper = Assembly(ix,model,ix.max_id+1)
@@ -170,10 +172,18 @@ def write_hierarchy(document, catalog, partitions, compositions, hierarchy_polic
     # Surface wrappers are private to each shell subset. Their descendants are
     # immutable original geometry and can retain globally shared source IDs.
     geometry[ix.rows_of('SHELL_BASED_SURFACE_MODEL')] = False
+    patch_bodies={int(b) for p in products for g in p['groups'] for b in g.get('face_ids_by_body',{})}
+    private_patch_wrappers=set()
+    for body in patch_bodies:
+        private_patch_wrappers.add(ix.r(body))
+        private_patch_wrappers.update(shell for _,shell in model.body_faces_shells(ix.r(body)))
+        private_patch_wrappers.update(ix.r(int(ref)) for ref in ix.refs_of(ix.r(body))
+                                      if ix.tname(ix.r(int(ref)))=='ORIENTED_CLOSED_SHELL')
+    for row in private_patch_wrappers:geometry[row]=False
     rows = np.flatnonzero(geometry)
     for row in rows:
         if any(not geometry[ix.r(int(ref))] for ref in ix.refs_of(int(row))):
-            raise ValueError('shared geometry depends on a private part wrapper')
+            raise ValueError(f'shared geometry #{int(ix.ids[row])} {ix.tname(row)} depends on private wrapper {[int(ref) for ref in ix.refs_of(int(row)) if not geometry[ix.r(int(ref))]]}')
     source_digest = hashlib.sha256()
     product_handles, component_records = {}, []
     path = out/'field.step'
@@ -189,9 +199,9 @@ def write_hierarchy(document, catalog, partitions, compositions, hierarchy_polic
             axis_id, axis_matrix = helper.child_axis(sr_row)
             leaves = []
             for group in product['groups']:
-                bodies = set(group['solid_body_ids']) | {int(b) for b in group['shell_ids_by_body']}
+                bodies = set(group['solid_body_ids']) | {int(b) for b in group['shell_ids_by_body']} | {int(b) for b in group.get('face_ids_by_body',{})}
                 shells = {int(b):ids for b,ids in group['shell_ids_by_body'].items()}
-                mask, rewritten = splitter.closure_products([source_row],body_ids=bodies,shell_ids_by_body=shells)
+                mask, rewritten = splitter.closure_products([source_row],body_ids=bodies,shell_ids_by_body=shells,face_ids_by_body={int(b):ids for b,ids in group.get('face_ids_by_body',{}).items()})
                 private_rows = np.flatnonzero(mask & ~geometry)
                 first = writer.reserve(len(private_rows))
                 mapping = {int(ix.ids[row]):first+i for i,row in enumerate(private_rows)}
@@ -260,7 +270,8 @@ def write_hierarchy(document, catalog, partitions, compositions, hierarchy_polic
         for component in component_records:
             source_row=ix.r(component['source_product_id']); bodies=set(component['export_body_ids'])
             mask,rewritten=splitter.closure_products([source_row],body_ids=set(map(int,bodies)),
-                shell_ids_by_body={int(b):ids for b,ids in component['shell_ids_by_body'].items()})
+                shell_ids_by_body={int(b):ids for b,ids in component['shell_ids_by_body'].items()},
+                face_ids_by_body={int(b):ids for b,ids in component.get('face_ids_by_body',{}).items()})
             mapping={source_id:component['first_private_entity_id']+i for i,source_id in enumerate(component['private_source_entity_ids'])}
             for source_id,export_id in mapping.items():
                 raw=rewritten.get(ix.r(source_id),ix.text(ix.r(source_id)))
@@ -282,9 +293,12 @@ def write_hierarchy(document, catalog, partitions, compositions, hierarchy_polic
             'source_occurrences':occurrences,
             'source_product_definitions':{str(pid):handle['product'] for pid,handle in product_handles.items()},
             'coordinate_contract':'Original source assembly frame, millimetres, Z up; no geometric re-encoding or tessellation.',
+            'source_motion':hierarchy_policy.get('prepared_motion'),
+            'face_patch_body_ids':sorted(patch_bodies),
+            'private_patch_wrapper_ids':sorted(int(ix.ids[r]) for r in private_patch_wrappers),
             'root_product_id':root['product'],'components':component_records,'assemblies':writer.assemblies,
-            'limitations':['Organizational hierarchy only; no joints, motion, scoring or collision bindings.',
-                           'Whole solids stay whole; shared surface-model wrappers receive private identities.',
+            'limitations':['Rest-pose source motion groups/metadata only; no controllers, animated poses, scoring or runtime collision bindings.',
+                           'Whole solids stay whole except listed face_patch_body_ids, represented by disjoint original open face patches; no caps or new faces.',
                            'Leaf definitions retain original product coordinates. Equipment compositions get translated local origins.']}
     shutil.copyfile(Path(__file__).resolve().parents[1]/'NOTICE.md',out/'NOTICE.md')
     report['files_sha256']={name:hashlib.sha256((out/name).read_bytes()).hexdigest() for name in ['field.step','NOTICE.md']}
@@ -340,8 +354,12 @@ def main():
         stage=Path(tmp)/'hierarchy'
         loader=CadDocument.from_index if args.source.suffix=='.npz' else CadDocument.from_step
         with loader(args.source,expected_sha256=policy['source_sha256']) as document:
+            prepared_motion=None
+            if policy.get('source_motion'):
+                from cad_motion import compile_source_motion
+                prepared_motion=compile_source_motion(document,json.loads((base/policy['source_motion']).read_text()))
             catalog=build_catalog(document,inputs['components'],inputs['motion_profile'],inputs['regions'])
-            partitions=[compile_partition(document,catalog,p) for p in partition_policies]
+            partitions=[compile_partition(document,catalog,p,source_motion=prepared_motion) for p in partition_policies]
             covered={p['product_id'] for part in partitions for p in part['products']}
             missing={c['product_id'] for c in catalog['components']}-covered
             if missing!=set(policy['whole_product_fallbacks']): raise ValueError('unexpected unpartitioned products')
@@ -351,9 +369,11 @@ def main():
                     name=inputs['components']['product_names'][str(pid)]
                     groups={c['group']:name+'/source-model' for c in catalog['components'] if c['product_id']==pid}
                     specs.append({'name':name,'product_id':pid,'fallback_group':name+'/source-model','body_group_overrides':groups})
-                partitions.append(compile_partition(document,catalog,{'schema_version':1,'source_sha256':document.source_sha256,'length_unit':'millimetre','products':specs}))
+                partitions.append(compile_partition(document,catalog,{'schema_version':1,'source_sha256':document.source_sha256,'length_unit':'millimetre','products':specs},source_motion=prepared_motion))
+            if prepared_motion:
+                prepared_motion={k:v for k,v in prepared_motion.items() if k!='face_owners'}
             recipes=compile_compositions(catalog,inputs['compositions'])
-            report=write_hierarchy(document,catalog,partitions,recipes,{**policy,'secondary_product_ids':inputs['compositions']['secondary_product_ids']},stage)
+            report=write_hierarchy(document,catalog,partitions,recipes,{**policy,'prepared_motion':prepared_motion,'secondary_product_ids':inputs['compositions']['secondary_product_ids']},stage)
         del document,catalog,partitions;gc.collect()
         print('source preservation and assembly placement checks passed',flush=True)
         if args.validate_native:

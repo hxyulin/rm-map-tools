@@ -88,7 +88,7 @@ exclude the separately approved 16-section road preview, which has not yet
 replaced full native road meshing. The resulting STEP and GLB are candidates;
 no runtime package or published archive is changed.
 
-[Measurements and reproduction](../benchmarks/2026-10-17-wall-fill/README.md)
+Measurements and reproduction
 include matched source/candidate views. Visual and collision export can consume
 the same derived solid, avoiding two independent approximations. Runtime
 integration and approval remain separate from this native working pass.

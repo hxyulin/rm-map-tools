@@ -91,7 +91,7 @@ cover locked input aliases, retained components, unchanged material separation,
 local retry policy, strict guards and unresolved-region fallback. Full GLB
 composition independently checks the 338 unaffected members and total triangles.
 
-[Reproduction and measurement ledgers](../benchmarks/2026-10-17-base-housing-local-lod/README.md)
+Reproduction and measurement ledgers
 retain candidate, alternative and validation provenance. The housing received user visual approval before the
 [subsequent aggressive detail experiment](base-aggressive-lod-rmuc2027.md).
 The preceding light/crossbar work is committed as `f64548c`.

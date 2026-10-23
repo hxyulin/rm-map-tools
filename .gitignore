@@ -34,3 +34,12 @@ docs/.vitepress/dist/
 
 # Nix development environment cache.
 .direnv/
+
+# Generated benchmark measurements belong in out/, not repository history.
+/benchmarks/**/*.json
+/benchmarks/**/*.log
+/benchmarks/**/*.csv
+/benchmarks/**/*.patch
+/benchmarks/**/*.png
+/benchmarks/**/*.jpg
+/benchmarks/**/*.webp

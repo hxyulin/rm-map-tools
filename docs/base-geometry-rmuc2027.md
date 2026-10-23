@@ -100,7 +100,7 @@ of this complete native baseline.
    Reuse verified whole-unit geometry as a separate storage optimization.
 
 No reduction target is asserted until those native candidates are built and
-checked. [Evidence and reproduction](../benchmarks/2026-10-17-base-analysis/README.md)
+checked. Evidence and reproduction
 include full Base views, twelve isolated source units, spatial density plots and
 sampled visibility by unit. Diagnostic colors preserve resolved source diffuse
 values; 69,440 triangles across 1,433 faces retain unresolved local diffuse

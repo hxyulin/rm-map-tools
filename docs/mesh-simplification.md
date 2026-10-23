@@ -1,6 +1,5 @@
 # Simplify bound meshes for faster startup
 
-See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
 
 ## Contents
 
@@ -114,8 +113,8 @@ of every opening, thin wall or contact. Only explicitly protected optical geomet
 is exact. Broad terrain and procedural scoring bodies remain unchanged; equipment
 surfaces may be coarser. Use tighter settings for close-range CAD or vision work.
 
-The [unlocked export benchmark](../benchmarks/2026-09-11-unlocked-mesh/README.md)
+The unlocked export benchmark
 contains the deployed counts, startup measurements, source records and visual
-comparisons. Earlier [locked-border results](../benchmarks/2026-09-11-mesh-simplification/README.md)
-and the [boundary study](../benchmarks/2026-09-11-aggressive-mesh/README.md) explain
+comparisons. Earlier locked-border results
+and the boundary study explain
 why increasing STEP linear tolerance alone gave smaller savings.

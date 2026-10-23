@@ -73,7 +73,7 @@ Inspect the fixed exported frames in the [interactive viewer](viewer.md).
 
 The [site viewer](viewer.md#drag-the-technology-core-tool) supports position dragging on the separate CAD display rig. A translation handle and a bounded cyclic-coordinate-descent solver use the existing six joint bindings. They use the display rig's ±1.2 rad preview ranges, about ±68.8°, and report residual position error. Orientation is free, and the handle represents the tool assembly's bounding-box center rather than a calibrated insertion point.
 
-This small viewer feature needs no new CAD partition or exported articulation contract. Full pose dragging with held orientation, physical joint limits, and collision avoidance would need additional work. The [range-update validation](../benchmarks/2026-09-11-core-preview-range/README.md) covers the wider exported display ranges. The Python trajectory examples below retain their separate orientation-constrained solver.
+This small viewer feature needs no new CAD partition or exported articulation contract. Full pose dragging with held orientation, physical joint limits, and collision avoidance would need additional work. The range-update validation covers the wider exported display ranges. The Python trajectory examples below retain their separate orientation-constrained solver.
 
 ## Rule-based translation demo
 

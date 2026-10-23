@@ -2,7 +2,7 @@
 
 [文档](index.md) · [导出](exporting.md) · [English](../simplification.md)
 
-各预设与后续处理的网格、图元、顶点、三角形和文件大小实测见[简化统计](../simplification-results.md)。
+各预设与后续处理的网格、图元、顶点、三角形和文件大小实测见简化统计。
 
 缩减发生在多个阶段：STEP 拆分保留源几何，网格化近似 CAD 曲面，之后的网格简化是有损的。并非每个资源包都需要所有优化，JSON 导出运行器也不会自动执行以下全部步骤。
 
@@ -53,12 +53,12 @@ ocpenv/bin/python python/simplify_package.py rules/simplify-simulation.example.j
 
 | 工作 | 状态与证据 |
 | --- | --- |
-| 更粗的网格化 | [预设对比](../../benchmarks/2026-09-11-tessellation-presets/README.md) |
+| 更粗的网格化 | 预设对比 |
 | 小曲面与放宽角度容差 | [细节审计](../detail-optimization.md)；未启用自动 CAD 孔/圆角删除 |
-| 锁定与解锁边塌缩 | [初始轮](../../benchmarks/2026-09-11-mesh-simplification/README.md)、[边界研究](../../benchmarks/2026-09-11-aggressive-mesh/README.md)、[解锁输出](../../benchmarks/2026-09-11-unlocked-mesh/README.md) |
-| 连通分量保留改进 | [分量改进](../../benchmarks/2026-09-11-component-refinement/README.md)，已实现于简化器 |
-| 图案转换与碰撞底图 | [图集简化](../../benchmarks/2026-09-11-atlas-simplification/README.md)、[原生纹理](../../benchmarks/2026-09-11-native-textures/README.md)、[碰撞图案](../../benchmarks/2026-09-11-collision-artwork/README.md) |
-| 共享几何与分发压缩 | [几何共享](../../benchmarks/2026-09-11-geometry-sharing/README.md)、[成组薄板原型](../../benchmarks/2026-09-11-grouped-sheets/README.md)、[去重探索](../../benchmarks/2026-09-11-geometric-deduplication/README.md) |
-| 以原始源为上限的重复简化 | [递归试验](../../benchmarks/2026-09-11-recursive-simplification/README.md)；仅供检查 GLB，不是生产默认 |
+| 锁定与解锁边塌缩 | 初始轮、边界研究、解锁输出 |
+| 连通分量保留改进 | 分量改进，已实现于简化器 |
+| 图案转换与碰撞底图 | 图集简化、原生纹理、碰撞图案 |
+| 共享几何与分发压缩 | 几何共享、成组薄板原型、去重探索 |
+| 以原始源为上限的重复简化 | 递归试验；仅供检查 GLB，不是生产默认 |
 
 实测启动与内存结果见[性能记录](performance.md)。三角形更少本身不构成帧率或物理加速的证明。

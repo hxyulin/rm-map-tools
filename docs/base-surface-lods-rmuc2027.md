@@ -105,7 +105,7 @@ through openings, deep returns and LEDs remain geometry. Undercuts need another
 projection or retained geometry. Broad cover returns cannot be flattened merely
 because one front view looks flat—the rejected collision trial demonstrates it.
 
-[Benchmark inputs, commands and measurements](../benchmarks/2026-10-17-base-surface-lods/README.md)
+Benchmark inputs, commands and measurements
 retain the source pin, explicit selection policy, integrity results and failures.
 
 The subsequent [17 mm gap and LED pass](base-gap-led-rmuc2027.md) extends these

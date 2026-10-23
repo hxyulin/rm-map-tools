@@ -62,7 +62,7 @@ and independently moving parts are not inferred from visibility.
 
 The explicit [selection policy](../rules/base-mounting-row-rmuc2027.json) pins the
 component SHA-256 and distinguishes complete channels from end-mouth covers.
-The [benchmark](../benchmarks/2026-10-17-base-mounting-row/README.md) retains native
+The benchmark retains native
 proofs, the rejected rebuild, exact unchanged-triangle checks and matched renders.
 Seven isolated views include a view along the top cover normal; eighteen
 whole-Base views compare the approved crossbar with this successor. These are

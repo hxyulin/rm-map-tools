@@ -6,6 +6,7 @@
   "source_sha256": "a5ad3ede3b7674fc98f2e73b71717216383cb2b4b5dcdbe900c2038918bea8e0",
   "components": "components-rmuc2027.json",
   "motion_profile": "reviewed-motion-rmuc2027.json",
+  "source_motion": "source-motion-rmuc2027.json",
   "regions": "component-regions-rmuc2027.json",
   "compositions": "compositions-rmuc2027.json",
   "partitions": ["partition-rmuc2027.json", "partition-rmuc2027-remaining-equipment.json", "partition-rmuc2027-terrain-equipment.json"],

@@ -145,14 +145,14 @@ All distances are deterministic mesh samples, not continuous Hausdorff or native
 trim certificates. Views are flat two-sided diagnostics at one source pose,
 not runtime PBR or all-motion guarantees. Only the Energy cavity has qualified
 native enclosure evidence; no general hidden-geometry removal is inferred from
-these renders. [Reproduction and compact ledgers](../benchmarks/2026-10-17-equipment-opportunities/README.md)
+these renders. Reproduction and compact ledgers
 retain source/output hashes, native feature costs, material-policy costs,
 negative cavity results and all trial metrics. Generated meshes and interactive
 comparisons remain under `out/rmuc2027-equipment-opportunities/`.
 
 ## Selective Rune detail candidate
 
-The [selective Rune benchmark](../benchmarks/2026-10-17-rune-detail/README.md)
+The selective Rune benchmark
 reduces the complete Rune from 478,828 to **407,696** triangles (71,132 saved),
 with exact coloured/unresolved GLB attributes and a 5 mm chromatic-neighbour
 lock. It is a review candidate: rear housing occlusion changes slightly despite
@@ -160,7 +160,7 @@ unchanged colour geometry. It does not replace installed assets or collision.
 
 ## Rune flat-back candidate
 
-The user-approved [flat-back pass](../benchmarks/2026-10-17-rune-skin/README.md)
+The user-approved flat-back pass
 replaces the detailed arm backs with native-profile flat dark panels and removes
 interior/rear surfaces and tiny neutral hardware. It reduces the Rune further
 to **255,621 triangles**, cumulatively 223,207 (46.6%) below the generic candidate.
@@ -170,7 +170,7 @@ review candidate, with collision and installed packages unchanged.
 
 ## Rune front-detail removal
 
-The [smooth-front extension](../benchmarks/2026-10-17-rune-skin/README.md#smooth-front-candidate)
+The smooth-front extension
 replaces front mounting bores and shallow concentric relief with authored-colour
 native-profile panels. It also removes tiny cylinder-shell details and the newly
 occluded interior. The complete Rune drops to **153,586 triangles**, another
@@ -181,7 +181,7 @@ CAD, collision, detectors and installed assets are unchanged.
 
 ## Composed baseline and Energy profiles
 
-The [composed visual pipeline](../benchmarks/2026-10-17-composed-pipeline/README.md)
+The composed visual pipeline
 now builds complete instanced scenes from all 116 definitions / 171 uses. Explicit
 specialized-component precedence avoids replacing approved Base/fan/Rune skins
 with original-source mounting diagnostics. Other changed shells replay mounting
@@ -190,7 +190,7 @@ edits before LOD; untouched shells retain exact exported attributes. This yields
 composition. It remains an inspection candidate, with runtime/collision unchanged.
 
 The Energy Unit becomes **11,036 triangles** after composed mounting edits and
-qualified cavity omission. Separate [radial profile trials](../benchmarks/2026-10-17-energy-profile/README.md)
+qualified cavity omission. Separate radial profile trials
 reach 9,783 triangles at 48 angular segments; 96 segments grows to 13,719. They
 are not included in the field total: preserving the deep socket limits savings,
 and a single radial envelope changes undercuts and underside occlusion. Future
@@ -198,7 +198,7 @@ fitting should bind outer skins and socket domains separately.
 
 ## Residual hub, housing and plate candidates
 
-The [follow-up passes](../benchmarks/2026-10-17-residual-equipment/README.md)
+The follow-up passes
 reduce the complete Rune from 136,655 to **117,442**, the Resource product from
 54,359 to **30,466** per placement, and the Tech Core from 74,068 to **68,488**
 per placement. The complete-field visual candidate becomes **1,495,447 placed

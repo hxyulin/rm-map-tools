@@ -33,4 +33,4 @@ compacted. No geometry is clipped, discarded, or replaced by a collision proxy.
 Regenerate the simulator minimap after installing the new manifest.
 
 For the measured resource-zone extraction and the next simplification candidates,
-see [the resource entity audit](../benchmarks/2026-09-11-resource-entities/README.md).
+see the resource entity audit.

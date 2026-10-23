@@ -3,7 +3,7 @@
 # Covered Low simulator export
 
 `python/export_repaired_game.py` packages the user-reviewed
-[repaired Low visuals](../benchmarks/2026-10-18-low-repair/README.md) for
+repaired Low visuals for
 `rm-simulator`. CAD geometry/appearance belong to DJI / RoboMaster; the package
 includes `CAD-NOTICE.md`. Generated exports and archives remain outside Git.
 
@@ -39,7 +39,7 @@ whole source-owned surface pieces with gaps exceeding the sampling policy,
 including the Fortress, floor, Base footings and road/high-ground panels.
 The guard checks every primitive and source piece without camera visibility,
 retains untouched Low attributes exactly and preserves materials/instances.
-See [the coverage repair report](../benchmarks/2026-10-18-game-coverage/README.md). Collision comes
+See the coverage repair report. Collision comes
 from the previous equipment-shell ledger: dedicated collision candidates where
 available, preceding approved visuals otherwise, zero for whole visual-only
 marking definitions. Unbounded Low triangles never become collision geometry.

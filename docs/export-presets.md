@@ -1,6 +1,5 @@
 # Export presets and tessellation policy
 
-See [simplification counts](simplification-results.md) for mesh, primitive, vertex, triangle, and file-size measurements across all four tessellation presets and the later simplification passes.
 
 ## Contents
 
@@ -142,7 +141,7 @@ stay within material, source-provenance and moving-link boundaries.
 
 ## Evidence
 
-The [refreshed baseline](../benchmarks/2026-09-11-simulator-baseline/README.md)
+The refreshed baseline
 contains 9.74 million scene triangles and 8.43 million static collider triangles.
 In three large source-part samples, simulation settings reduced visual triangles
 by 30–35% and collision triangles by 43–49% relative to 2 mm / 0.35 rad. These are
@@ -154,7 +153,7 @@ files during deployment, coarsening after an existing fine OCCT mesh, cylindrica
 chord error and caps, explicit text exclusion, and simulator rejection/fallback
 for unmarked legacy colliders.
 
-The [complete simulation candidate](../benchmarks/2026-09-11-tessellation-presets/README.md)
+The complete simulation candidate
 passed export validation and runtime loading: 24.7% fewer scene triangles and
 41.5% fewer static collider triangles. It is available locally at
 `out/simulation-runtime`; it has not replaced the installed field. Timing

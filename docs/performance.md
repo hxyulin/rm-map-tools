@@ -8,7 +8,7 @@ The aim is to make field CAD practical on a laptop. The main measurements are el
 
 | Software | Hardware | Elapsed | Peak RAM | Evidence |
 | --- | --- | ---: | ---: | --- |
-| OCCT whole-file conversion | M5 Max Mac | 32,229 s, about 8 h 57 min | ~40 GB | [Conversion log](../benchmarks/whole-file-reference/occt-conversion.json); RAM in [project notes](split-proof.md); machine attributed by project owner |
+| OCCT whole-file conversion | M5 Max Mac | 32,229 s, about 8 h 57 min | ~40 GB | Conversion log; RAM in [project notes](split-proof.md); machine attributed by project owner |
 | SolidWorks 2024 | Ryzen 9 9950X3D | 15 h | ~25 GB | Project-owner report, 2026-09-11; no raw timing log |
 
 The OCCT log refers to `RMUC2026_V2.0.0.stp`. It records 25.1 s for file read, 7,834.6 s for XCAF transfer, 21.3 s for meshing, and 24,342.2 s for GLB serialization. Its reported total is 32,229.4 s. The log does not contain machine or RAM fields; those attributions are separate evidence. The SolidWorks report does not separately identify import, rebuild, and export phases, or pin the exact source version/settings.
@@ -40,4 +40,4 @@ The whole-file OCCT result includes a single large GLB write. The 257 s part val
 
 ## Simulator startup
 
-A separate three-run alternating comparison on M3 Pro measured median scene-ready time falling from 15.497 s to 5.734 s after bound-mesh simplification. Referenced GLBs fell from 587,168,572 to 259,669,320 bytes. OS caches were not cleared, and scene-ready means CPU instance setup, not first displayed frame. [Report and raw records](../benchmarks/2026-09-11-mesh-simplification/README.md).
+A separate three-run alternating comparison on M3 Pro measured median scene-ready time falling from 15.497 s to 5.734 s after bound-mesh simplification. Referenced GLBs fell from 587,168,572 to 259,669,320 bytes. OS caches were not cleared, and scene-ready means CPU instance setup, not first displayed frame. Report and raw records.

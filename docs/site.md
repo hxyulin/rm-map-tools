@@ -36,7 +36,7 @@ For a fork, change the repository links and `base` in `docs/.vitepress/config.mj
 
 Keep the README focused on what the project does and how to start. Put procedures in the main guides, settings in technical references, and measured results in dated benchmark reports. Add new guides to the documentation index and sidebar.
 
-The main guides are bilingual. Each translated page has a twin under `docs/zh/`; the navbar language switch toggles between them, and on GitHub every file is single-language. When adding a guide, create both `docs/<name>.md` and `docs/zh/<name>.md`, and list both in the locale sidebars of `docs/.vitepress/config.mjs`. Deep technical references and dated benchmark reports stay English-only; Chinese pages link to them with `../` paths. `docs/simplification-results.md` is updated from measured data by script and has no twin.
+The main guides are bilingual. Each translated page has a twin under `docs/zh/`; the navbar language switch toggles between them, and on GitHub every file is single-language. When adding a guide, create both `docs/<name>.md` and `docs/zh/<name>.md`, and list both in the locale sidebars of `docs/.vitepress/config.mjs`. Deep technical references and dated benchmark reports stay English-only; Chinese pages link to them with `../` paths.
 
 Repository links outside `docs/` are rewritten to GitHub when building the site. Markdown keeps its original relative paths for repository browsing. The viewer component is registered by the theme; a page can embed it with `<ModelViewer />`. It mounts only in the browser, keeping static builds independent of WebGL.
 

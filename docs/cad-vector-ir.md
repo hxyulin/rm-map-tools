@@ -170,7 +170,7 @@ license does not relicense CAD data.
 
 ## RMUC 2027 selection results
 
-[Retained evidence](../benchmarks/2026-10-17-vector-ir/summary.json) covers the
+Retained evidence covers the
 24 curve and 40 polygon examples from the prior audit. **19 curves** pass the
 continuous automatic policy. The 40 pinned-corner polygon templates qualify,
 reducing 1,982 source boundary vertices to 160 template corners. These are

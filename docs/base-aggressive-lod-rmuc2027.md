@@ -69,7 +69,7 @@ candidate received user visual approval before the subsequent shell experiment. 
 325 pass, one optional USD skip**, including native outline selection, collinear
 subdivisions, aperture thresholds, seed locks and existing guard fallback tests.
 
-[Reproduction, complete member counts and measurement ledgers](../benchmarks/2026-10-17-base-housing-aggressive/README.md)
+Reproduction, complete member counts and measurement ledgers
 retain the proof and the denser-lock alternative. No candidate is installed.
 Further large reductions should replace whole layered covers with explicit
 CAD-derived shell/planar representations and separate visual relief from body

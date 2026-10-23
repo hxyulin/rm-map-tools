@@ -102,7 +102,7 @@ For example, many Rune hits are already addressed by the front/back candidates.
 A zero fastener count can mean the source merged hardware into a larger unit or
 used unsupported geometry. The full report lists every candidate and skip.
 
-The [benchmark record](../benchmarks/2026-10-17-mounting-details/README.md) retains
+The benchmark record retains
 compact measurements, source/producer/report hashes and examples. The complete
 source-bound report is generated at
 `out/rmuc2027-mounting-details/audit-final.json`.
@@ -114,7 +114,7 @@ hardware, and validate local appearance/collision. This discovery pass writes
 
 ## Individual removal previews
 
-The [native preview benchmark](../benchmarks/2026-10-17-mounting-preview/README.md)
+The native preview benchmark
 turns explicit audit selections into separate original/holes/fasteners/combined
 visual candidates for all 36 affected work parts, plus five full equipment
 compositions. It fills only complete circular mouths under 17 mm and holds all

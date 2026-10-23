@@ -113,6 +113,6 @@ source palette replacement or detector simplification is introduced.
    defining panel UVs and silhouettes. The existing relief bake is infrastructure;
    no new texture savings are included in these measurements.
 
-[Reproduction and measurements](../benchmarks/2026-10-17-base-structure-audit/README.md)
+Reproduction and measurements
 retain source hashes and accepted/rejected trial evidence. Nothing is committed
 or promoted solely because a sampled view looks similar.

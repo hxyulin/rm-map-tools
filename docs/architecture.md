@@ -146,7 +146,7 @@ It does not yet drive native meshing, runtime selection or a new package format.
 `python/cad_collision_roles.py` provides source/hierarchy-pinned visual-only
 marking bindings. The component exporter and optional hierarchy planner consume
 these roles; embedded paint keeps separately owned collision backing coverage.
-See [road LOD and collision-role evidence](../benchmarks/2026-10-17-road-lod/README.md).
+See road LOD and collision-role evidence.
 
 `python/cad_patch_instances.py` factors bounded finite faces into affine quad/triangle
 uses, retaining original topology, source appearance targets and marking roles.

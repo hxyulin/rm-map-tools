@@ -290,7 +290,7 @@ overrides. The CLI currently exposes definition-wide overrides only. All importe
 uses stay protected until semantic review; fit and quantization overrides are
 rejected. The remaining budget margin reserves source/export numerical error.
 
-The [planning evidence](../benchmarks/2026-10-17-lod-plan/README.md) accounts for
+The planning evidence accounts for
 **116 component definitions, 171 placed component uses, 260 expanded hierarchy
 nodes, 110,586 unique source faces and 214,794 placed source faces**. The initial
 three visual levels plus fixed collision yield 684 request bindings and 484
@@ -319,7 +319,7 @@ The [source marking catalog](../rules/roles-rmuc2027-terrain.json) now binds kno
 terrain artwork using reviewed component/face IDs. Pass `--roles` to the hierarchy
 planner to omit whole-marking collision LOD requests. Integrated markings remain
 visual-only while separately owned unpainted backing retains terrain coverage.
-The [road LOD measurements](../benchmarks/2026-10-17-road-lod/README.md) document
+The road LOD measurements document
 current subdivision, coarser previews, native-baseline exclusion accounting and
 the zero-collision border export. Runtime switching and backing-domain merging
 remain separate stages; source markings are not inferred from colors at export.

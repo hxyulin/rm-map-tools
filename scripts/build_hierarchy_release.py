@@ -138,6 +138,8 @@ def main():
     manifest={'schema_version':1,'pipeline_stage':1,'kind':'hierarchical-source-cad','runtime_ready':False,
               'tool_commit':commit,'source_file':upstream['name'],'source_sha256':pin,'source_url':upstream['url'],
               'geometry_modifications':False,'additional_sharing_passes_applied':[],
+              'source_preparation_passes':['reviewed-source-motion'] if report.get('source_motion') else [],
+              'face_patch_body_ids':report.get('face_patch_body_ids',[]),
               'reviewed_baseline_matches':args.baseline is not None,
               'counts':{k:report[k] for k in ['work_part_definitions','source_face_definitions','expected_placed_faces',
                                              'source_body_definitions','source_placed_bodies','source_product_occurrences']},

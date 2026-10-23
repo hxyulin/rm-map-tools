@@ -114,5 +114,5 @@ colour/normal layers. Source-neutral geometry is not automatically decoration.
 Use component-specific LOD and preserve source ownership so close-up equipment
 and distant field scenery can choose different detail without changing collision.
 
-[Reproduction and measurement ledgers](../benchmarks/2026-10-17-base-shells/README.md)
+Reproduction and measurement ledgers
 retain alternative compositions, native profile proofs and all sampled views.

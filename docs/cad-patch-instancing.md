@@ -124,7 +124,7 @@ appearance resolution. Do not treat the diagnostic fallback color as CAD paint.
 
 ## Measured RMUC 2027 result
 
-The [evidence](../benchmarks/2026-10-17-patch-instances/README.md) pins source,
+The evidence pins source,
 producer and output hashes and checks all 110,586 source faces:
 
 | Measurement | Result |
