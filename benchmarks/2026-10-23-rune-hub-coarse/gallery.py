@@ -1,0 +1,27 @@
+"""Verify and present deliberately coarse Rune hub alternatives."""
+import json
+from pathlib import Path
+from coarse import OUT,scan
+renders=json.loads((OUT/'renders.json').read_text());assert len(renders['views'])==48
+for row in renders['views']:assert scan.digest(Path(row['path']))==row['sha256']
+proofs=[]
+for variant in ['simple-frame','coarse-hub']:
+ r=json.loads((OUT/variant/'verification.json').read_text())
+ for path,h in r['input_pins'].items():assert scan.digest(Path(path))==h
+ assert scan.digest(Path(r['candidate_collision']))==r['candidate_sha256']
+ proofs.append(json.loads((OUT/variant/'geometry-verification.json').read_text()))
+paths={variant:{bank:{scope:{view:{stage:str(OUT/variant/f'{bank}-{scope}-{view}-{stage}.webp')for stage in ['previous','candidate']}for view in ['oblique','face','reverse']}for scope in ['hub','bank']}for bank in ['bank-a','bank-b']}for variant in ['simple-frame','coarse-hub']}
+html='''<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+body{font-family:var(--font-sans);font-size:14px;line-height:1.5;color:var(--foreground)}p{margin:0 0 12px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}select{font:inherit;color:inherit;background:var(--background);padding:7px;border:1px solid var(--border);border-radius:var(--radius);max-width:100%}.images{display:grid;grid-template-columns:1fr 1fr;gap:10px}figure{margin:0}figcaption{margin-bottom:6px}img{width:100%;display:block;border-radius:var(--radius)}.muted{color:var(--muted-foreground);font-size:13px}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}th,td{text-align:left;padding:8px 4px;border-bottom:1px solid var(--border)}.note{padding:16px;background:var(--card);border-radius:var(--radius);margin:14px 0}</style></head><body>
+<p><strong>A much coarser Rune hub.</strong><br>The aggressive option replaces the fixed spokes and hardware with two stepped rings and a disk per bank. The smaller option simplifies only the surrounding frame and disk. All visuals and moving-arm meshes stay exact.</p>
+<div class="controls"><select id="variant" aria-label="Simplification"><option value="coarse-hub">Coarse hub assembly</option><option value="simple-frame">Simple frame only</option></select><select id="bank" aria-label="Bank"><option value="bank-a">Bank A</option><option value="bank-b">Bank B</option></select><select id="scope" aria-label="Scope"><option value="hub">Fixed hub</option><option value="bank">With rotating arms</option></select><select id="camera" aria-label="Camera"><option value="oblique">Oblique</option><option value="face">Face</option><option value="reverse">Reverse</option></select></div>
+<div class="images"><figure><figcaption>Previous proposal</figcaption><img id="before" alt="Prior detailed hub collision"></figure><figure><figcaption id="afterLabel">Coarse hub assembly</figcaption><img id="after" alt="Coarse hub collision alternative"></figure></div><p class="muted" style="margin-top:8px">Blue: changed prior collision. Orange: replacement solids. Grey: unchanged context. The actual visual Rune is unchanged.</p>
+<table><tr><th>Both fixed hubs</th><th>Previous</th><th>Simple frame</th><th>Coarse hub</th></tr><tr><td>Mesh triangles left</td><td>13,978</td><td>13,978</td><td>330</td></tr><tr><td>Native shapes</td><td>12 hulls</td><td>2 cylinders + 8 boxes</td><td>2 cylinders + 16 hulls</td></tr></table>
+<p><strong>Coarse hub saves another 13,648 mesh triangles.</strong> The 330-triangle reverse-side bracket remains. Whole-map remaining mesh becomes 386,852 triangles, plus native shapes.</p>
+<div class="note"><strong>Keep the disk opening and rotating space.</strong> The center channel is 116 mm square. The large rear ring stops 5 mm behind the arm sweep; the inner ring stays about 13.9 mm inside its radial limit. These bounds hold for every angle of the declared rigid bank spin. All 4,000 sampled disk rays retain the same first-hit disk.</div>
+<p>This deliberately fills broad gaps between the old spokes and removes some forward bracket ends. New surface-to-source distance reaches about 195 mm across those filled spaces. Those former projectile routes can close. The simpler frame option makes a smaller change.</p>
+<p class="muted">Native disk cylinders advance some sampled hits by up to 3.35 mm as rim detail fills. Individual target articulation, runtime contacts and speedup remain untested. The geometry, hierarchy, all 270 arm payloads, visual hashes and stage counts verify. Mixed native loading is still outstanding; nothing installed or committed.</p>
+<script>const paths=PATHS;function update(){const p=paths[variant.value][bank.value][scope.value][camera.value];before.src=p.previous;after.src=p.candidate;afterLabel.textContent=variant.selectedOptions[0].text;}for(const id of ['variant','bank','scope','camera'])document.getElementById(id).addEventListener('change',update);update();console.log('Coarse Rune hub alternatives: 48 matched images');</script></body></html>'''.replace('PATHS',json.dumps(paths))
+(OUT/'gallery.html').write_text(html)
+hashes={str(p.relative_to(OUT)):scan.digest(p)for p in OUT.rglob('*')if p.is_file()and p.name not in ['gallery.html','final-verification.json']}
+(OUT/'final-verification.json').write_text(json.dumps(dict(geometry=proofs,matched_images=48,artifact_sha256=hashes,installed=False),indent=2)+'\n');print('Verified both variants, input pins and 48 matched renders.')

@@ -1,0 +1,26 @@
+"""Validate and show the plate simplification."""
+import json
+from pathlib import Path
+from plate import b,BASE
+OUT=b.OUT;r=json.loads((OUT/'rod-base-plate/verification.json').read_text());old=json.loads(BASE.read_text());cut=json.loads((OUT/'cutaway-renders.json').read_text());full=json.loads((OUT/'renders.json').read_text())
+assert len(cut['views'])==12 and len(full['views'])==24
+for row in cut['views']+full['views']:assert b.scan.digest(Path(row['path']))==row['sha256']
+for path,h in r['input_pins'].items():assert b.scan.digest(Path(path))==h
+assert b.scan.digest(Path(r['candidate_collision']))==r['candidate_sha256']
+paths={}
+for view in ['right','back','left']:
+ paths[view]={mode:{stage:str(OUT/f'{mode}-{view}-{stage}.webp')for stage in ['previous','candidate']}for mode in ['plate-only','assembly']}
+ paths[view]['full']={'previous':str(Path(old['candidate_collision']).parent/f'head-{view}-candidate.webp'),'candidate':str(OUT/f'rod-base-plate/head-{view}-candidate.webp')}
+html='''<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+body{font-family:var(--font-sans);font-size:14px;line-height:1.5;color:var(--foreground)}p{margin:0 0 12px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}select{font:inherit;color:inherit;background:var(--background);padding:7px;border:1px solid var(--border);border-radius:var(--radius);max-width:100%}.images{display:grid;grid-template-columns:1fr 1fr;gap:10px}figure{margin:0}figcaption{margin-bottom:6px}img{width:100%;display:block;border-radius:var(--radius)}.muted{color:var(--muted-foreground);font-size:13px}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}th,td{text-align:left;padding:8px 4px;border-bottom:1px solid var(--border)}.note{padding:16px;background:var(--card);border-radius:var(--radius);margin:14px 0}</style></head><body>
+<p><strong>The plate under the rod fits as one convex hull.</strong><br>Its chamfered outline and thickness follow the original; holes and face recesses become solid collision. Visual appearance stays unchanged.</p>
+<div class="controls"><select id="mode" aria-label="View type"><option value="plate-only">Plate alone</option><option value="assembly">With block and rod</option><option value="full">Complete head</option></select><select id="camera" aria-label="Camera"><option value="right">Right side</option><option value="back">Back</option><option value="left">Left side</option></select></div>
+<div class="images"><figure><figcaption>Previous plate collision</figcaption><img id="before" alt="Previous detailed plate"></figure><figure><figcaption>Single convex hull</figcaption><img id="after" alt="Simplified plate hull"></figure></div><p id="caption" class="muted" style="margin-top:8px"></p>
+<table><tr><th>Per Core</th><th>Previous</th><th>Revised</th></tr><tr><td>This plate</td><td>531 mesh triangles</td><td>1 hull, 18 vertices</td></tr><tr><td>Head mesh triangles</td><td>5,240</td><td>4,709</td></tr><tr><td>Head native shapes¹</td><td>14</td><td>15</td></tr></table><p class="muted">¹ Existing 39 arm/base cylinders per Core are additional. Across both Cores: 1,062 mesh triangles removed, two hull leaves added. All previous 14 head shapes stay exact.</p>
+<div class="note"><strong>Exterior follows the source convex outline.</strong> The 18-vertex hull matches the source’s outer convex vertices within numerical precision. This does not preserve cavities: new faces over the filled holes/recesses are up to about 15.4 mm from the old surface in sampled checks.</div>
+<p>The previous solid rod, lower block, side recess frames, upper support and visual hashes remain exact. The plate’s former entry is intentionally closed, consistent with the solid-rod proposal.</p>
+<p class="muted">Retained geometry, provenance, primitive validity and stage counts pass verification. Inherited coarse contact changes remain: 303 changed hit/miss states in 9,396 central-interface rays, versus the earlier vector fit. Native grouped loading and runtime profiling remain outstanding. Nothing installed or committed.</p>
+<script>const paths=PATHS;function update(){const p=paths[camera.value][mode.value];before.src=p.previous;after.src=p.candidate;caption.textContent=mode.value==='plate-only'?'Matched views of the plate alone. Blue: previous collision mesh; orange: convex replacement.':mode.value==='assembly'?'Inspection cutaway: outer casing, side panels and backing plate hidden. The full candidate retains them.':'Complete head collision. Visual bytes unchanged.';}for(const id of ['mode','camera'])document.getElementById(id).addEventListener('change',update);update();console.log('Rod-base plate comparison ready');</script></body></html>'''.replace('PATHS',json.dumps(paths))
+(OUT/'gallery.html').write_text(html)
+hashes={str(p.relative_to(OUT)):b.scan.digest(p)for p in OUT.rglob('*')if p.is_file()and p.name not in ['gallery.html','final-verification.json']}
+(OUT/'final-verification.json').write_text(json.dumps(dict(geometry=json.loads((OUT/'geometry-verification.json').read_text()),delta=json.loads((OUT/'rod-base-plate/delta-verification.json').read_text()),matched_images=36,artifact_sha256=hashes,installed=False),indent=2)+'\n');print('Verified source pins, geometry and 36 matched renders.')

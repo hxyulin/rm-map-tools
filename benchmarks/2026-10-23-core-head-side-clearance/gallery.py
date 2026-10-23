@@ -1,0 +1,22 @@
+"""Interactive matched side-recess comparison."""
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'out/rmuc2027-core-head-side-clearance-simple'
+paths=dict(simple=str(OUT/'side-clearance-simple'),exact=str(ROOT/'out/rmuc2027-core-head-side-clearance/side-clearance'))
+paths={key:{view:{stage:str(Path(folder)/f'head-{view}-{stage}.webp')for stage in ['accepted','candidate','visual']}for view in ['right','left','front','back']}for key,folder in paths.items()}
+html='''<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+body{font-family:var(--font-sans);color:var(--foreground);font-size:14px;line-height:1.5}p{margin:0 0 12px}select{font:inherit;color:inherit;background:var(--background);border:1px solid var(--border);border-radius:var(--radius);padding:7px;max-width:100%}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.images{display:grid;grid-template-columns:1fr 1fr;gap:10px}figure{margin:0}figcaption{margin:0 0 6px}img{display:block;width:100%;border-radius:var(--radius)}.muted{color:var(--muted-foreground);font-size:13px}table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13px}td,th{text-align:left;padding:8px 4px;border-bottom:1px solid var(--border)}.note{padding:16px;background:var(--card);border-radius:var(--radius);margin:14px 0}
+</style></head><body>
+<p><strong>Keep the side recess; simplify its corners.</strong><br>The new collision frame has an open trapezoid in place of the rounded recess. Orange marks new collision shapes; grey marks retained geometry.</p>
+<div class="controls"><select id="variant" aria-label="Recess version"><option value="simple">Simplified recess</option><option value="exact">Exact side-panel alternative</option></select><select id="view" aria-label="Camera"><option value="right">Right side</option><option value="left">Left side</option><option value="front">Front</option><option value="back">Back</option></select><select id="reference" aria-label="Reference"><option value="accepted">Previous detailed collision</option><option value="visual">Unchanged visual</option></select></div>
+<div class="images"><figure><figcaption id="beforeLabel">Previous detailed collision</figcaption><img id="before" alt="Matched reference view"></figure><figure><figcaption id="afterLabel">Simplified recess</figcaption><img id="after" alt="Revised collision with open side recess"></figure></div>
+<p class="muted" style="margin-top:8px">Same camera and frame within each comparison. Visual asset bytes remain unchanged.</p>
+<table><tr><th>Head per Core</th><th>Exact panels</th><th>Simple panels</th></tr><tr><td>Mesh triangles</td><td>8,112</td><td>7,330</td></tr><tr><td>Native shapes</td><td>17 boxes</td><td>17 boxes + 8 hulls</td></tr><tr><td>Mesh reduction¹</td><td>66.9%</td><td>70.0%</td></tr></table>
+<p class="muted">¹ From the previous vector proposal's 24,474 head mesh triangles. The existing 39 arm/base cylinders per Core are additional and unchanged.</p>
+<div class="note"><strong>The opening stays; the rounded corners go.</strong> The simple panels preserve the source plane, slope and 2 mm thickness. Opening boundary deviation is bounded at about 6.3 mm in the panel plane. All 10,700 sampled opening-clearance points stay outside the new solids; checks exclude an 8 mm band around the border.</div>
+<p>Internal mechanisms still use coarse boxes. The central-interface grid has no hit/miss changes, but 107 of 9,396 rays shift more than 25 mm; the largest shift is 178.5 mm. Deeper cavity contacts remain approximate.</p>
+<p class="muted">Both versions pass retained-array, visual-hash, primitive-geometry and stage checks. Native grouped box/hull loading is still outstanding. Nothing installed or committed; runtime performance has not been measured. The simple frame uses more primitive leaves than the exact-panel option, so triangle savings alone do not settle which is faster.</p>
+<script>const paths=PATHS;function update(){const base=paths[variant.value],camera=view.value;before.src=base[camera][reference.value];after.src=base[camera].candidate;beforeLabel.textContent=reference.selectedOptions[0].text;afterLabel.textContent=variant.selectedOptions[0].text;}for(const id of ['variant','view','reference'])document.getElementById(id).addEventListener('change',update);update();console.log('Two recess versions, 48 matched images');</script></body></html>'''.replace('PATHS',json.dumps(paths))
+(OUT/'gallery.html').write_text(html)
+print(OUT/'gallery.html')

@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-core-head-and-projectile-covering-rune-hub-rmuc2027-20261023",
+  "user_approval": "User accepted the Core head, accepted the final Rune spoke/filled-center shape and conservative projectile coverage, then explicitly requested commit and continuation.",
+  "base_core_arm_rule": "rules/collision-core-arm-reviewed-rmuc2027.json",
+  "artifacts": {
+    "core_head": {
+      "report": {
+        "path": "out/rmuc2027-core-head-rod-base-plate/rod-base-plate/verification.json",
+        "sha256": "772f28b416f28adbb6d87a7277f88dbf48ebe263f125e512adbd65e1342ad26a"
+      },
+      "collision": {
+        "path": "out/rmuc2027-core-head-rod-base-plate/rod-base-plate/collision-tech-core.glb",
+        "sha256": "b42bb1f3e97f0051004d05f0b249874153748b13f03153c430b3ef727d7c06c2"
+      },
+      "native_recipe": {
+        "path": "out/rmuc2027-core-head-rod-base-plate/rod-base-plate/native-review/recipe.json",
+        "sha256": "dcdeb7d8545c2cccd76fda5a225c2791ccd10f2ed5762905ff05437ce3959c16"
+      },
+      "native_remainder": {
+        "path": "out/rmuc2027-core-head-rod-base-plate/rod-base-plate/native-review/remainder.glb",
+        "sha256": "d35910fdb54294cbfca630a19ae8d2255f891e58c12cfcd93fb32110a35323bb"
+      },
+      "visual": {
+        "path": "out/rmuc2027-core-arm-checkpoint/visual-tech-core.glb",
+        "sha256": "c6a201addae0013eeb343ba70bdcbf99a005c9224c137fe0b642b6f6e98c7dc0"
+      },
+      "geometry_proof": {
+        "path": "out/rmuc2027-core-head-rod-base-plate/rod-base-plate/geometry-verification.json",
+        "sha256": "0288c579614b11e63698d7a76ea5233eef71080d7ea6fc843f205dd09dc53110"
+      }
+    },
+    "rune_hub": {
+      "report": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/verification.json",
+        "sha256": "7e7c8b961c10b0de1e78e4477af1810861a3551d20f29295ebe8d341fd1ede8a"
+      },
+      "collision": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/rune-collision.glb",
+        "sha256": "d14f7c2a924732faa3fbdcbaf0bd93403b50d1f5d57719a015e71462861d2a88"
+      },
+      "native_recipe": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-review/recipe.json",
+        "sha256": "b12a9a892d3fb4a6c51f53985b7bb33ac6096007cea10d05a2401e7b5d135ad6"
+      },
+      "native_remainder": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-review/remainder.glb",
+        "sha256": "e112fa0b3860594d79126eddf4babade6ff5d3f45f9199a76a68ad666655b3b6"
+      },
+      "visual": {
+        "path": "out/rmuc2027-installed-reference-review/reference/visual/rune.glb",
+        "sha256": "ad46098035ad7340a7caa6edad4b616205a3e665a412cafbb1c88d1397acdd43"
+      },
+      "geometry_proof": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/geometry-verification.json",
+        "sha256": "e41bf0fb5b65cd11e55fa58f269f197c38e15da1c8d1de8c23a4fa262c91597e"
+      }
+    },
+    "rune_evidence": {
+      "native-ccd-result.json": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-ccd-result.json",
+        "sha256": "a7cf420f48db27f5c2deb5b63662dc1976282250b1dbfa8679083fa4f64ce16d"
+      },
+      "native-ccd-fixture.txt": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-ccd-fixture.txt",
+        "sha256": "de9094631756e2545f32ee6fa9071f289a4ac57fdd37897449eff49991cc345e"
+      },
+      "native-ccd-cases.json": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-ccd-cases.json",
+        "sha256": "49cb41968c5f3b6058fbac48f9b2ed5ec64cd3f075e4a7246833e2d697509fa5"
+      },
+      "native-ccd.log": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/native-ccd.log",
+        "sha256": "1eb467452391baadc106c2f602af759d6c5a9a8f5fa686346230500ffe0ff5c0"
+      },
+      "triangle-assignments.json": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/triangle-assignments.json",
+        "sha256": "1390d634977a840863e96f3ab16109b38f9717b1ff1854fd1a6882a1bcb18fcb"
+      },
+      "paired-stage.json": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/paired-stage.json",
+        "sha256": "317e53489d8a3e25b6629f7e240efc95055df0218a47cd79adf1150820a6ed5b"
+      },
+      "final-verification.json": {
+        "path": "out/rmuc2027-rune-hub-projectile-cover/final-verification.json",
+        "sha256": "41ca2d86057d41efc1f3cfa102a08439e5dc880dec161d87876963beae83ae4f"
+      }
+    }
+  },
+  "counts": {
+    "placed_visual_triangles": 344792,
+    "placed_native_remaining_mesh_triangles": 386522,
+    "placed_native_shapes": {
+      "cylinder": 80,
+      "box": 8,
+      "convex_hull": 33
+    },
+    "placed_diagnostic_triangles": 396202,
+    "core_head_mesh_per_unit": 4709,
+    "core_head_native_shapes_per_unit": 15,
+    "rune_remaining_mesh": 94523,
+    "rune_hub_native_hulls": 13,
+    "rune_hub_remaining_mesh": 0
+  },
+  "policies": {
+    "visuals": "Existing approved visual asset bytes stay exact.",
+    "core_head": "Approved coarse fixed internals and rod/plate fits; original front/outer skin retained with simplified side recesses.",
+    "rune_hub": "Five short spoke hulls and one filled center per bank plus one reverse bracket hull. Every original hub triangle is wholly enclosed by one convex solid; previous hulls also enclosed.",
+    "coverage_padding_mm": 0.25,
+    "source_face_normal_merge_degrees": 5,
+    "center_polygon_sides": 12,
+    "old_rune_5mm_axial_clearance_claim_withdrawn": true
+  },
+  "hub_evidence": {
+    "source_triangles_fully_enclosed": 18135,
+    "reopened_margin_min_mm": 0.24992077611796049,
+    "directional_rays": 187662,
+    "directional_misses": 0,
+    "native_ccd_trajectories": 94,
+    "native_ccd_shots": 376,
+    "native_ccd_passed": true
+  },
+  "constraints": [
+    "Only tooling/parameters/hashes committed; CAD-derived meshes/fixtures remain ignored outputs.",
+    "Grouped mixed-shape native field loading and full-match kinematic/scoring validation remain outstanding.",
+    "Native CCD evidence applies to fixed Rune hub shapes directly in WorldPhysics, not the entire field.",
+    "No speedup measured; native shape count remains separate from mesh triangle count."
+  ],
+  "runtime_supported": false,
+  "installed": false
+}
