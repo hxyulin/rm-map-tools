@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-outpost-hardware-and-rune-strips-rmuc2027-20261024",
+  "base_rule": "rules/collision-dart-reviewed-rmuc2027.json",
+  "user_approval": "User accepted the Outpost hardware and Rune strip collision trials, then explicitly requested commit.",
+  "artifacts": {
+    "outpost-collision.glb": {
+      "path": "out/rmuc2027-outpost-rune-next/outpost-collision.glb",
+      "sha256": "ad9610ca400b79674e2a99c98c0accc850a5a6a59c6125c2dbfbe7a219435d48"
+    },
+    "rune-collision.glb": {
+      "path": "out/rmuc2027-outpost-rune-next/rune-collision.glb",
+      "sha256": "dc941f4f8c8921847ed841b50a9f121ba505db40ebb61f9a18ef800355221b24"
+    },
+    "outpost-verification.json": {
+      "path": "out/rmuc2027-outpost-rune-next/outpost-verification.json",
+      "sha256": "cd0d1cf0516c376ee5b2c0ad1e65f8ed607f156c4b6c53cf914c31f1771e60b9"
+    },
+    "rune-verification.json": {
+      "path": "out/rmuc2027-outpost-rune-next/rune-verification.json",
+      "sha256": "5a44304a991fd878d8cf4871f057bf410017b557dd7d549e6a7edccb70d75d4b"
+    },
+    "paired-stage.json": {
+      "path": "out/rmuc2027-outpost-rune-next/paired-stage.json",
+      "sha256": "87f6d7129025e171dfc262645cd794d27c27017d94086303712587760be697d4"
+    },
+    "summary.json": {
+      "path": "out/rmuc2027-outpost-rune-next/summary.json",
+      "sha256": "a1ef6548c456957c000bf801596a67c29ed88ce683cdecf7ca17787ff4163970"
+    },
+    "geometry-verification.json": {
+      "path": "out/rmuc2027-outpost-rune-next/geometry-verification.json",
+      "sha256": "35fe35c9e9e95afb416953ffeb040d5a6fd96f7f06edc0f7973f3d78fb0a83ec"
+    },
+    "mesh-ccd-result.json": {
+      "path": "out/rmuc2027-outpost-rune-next/mesh-ccd-result.json",
+      "sha256": "6e76c8fe7c122f95ee1735da8aa8220c381a621d1611adf1b9c0fabd7864577d"
+    },
+    "mesh-ccd-fixture.txt": {
+      "path": "out/rmuc2027-outpost-rune-next/mesh-ccd-fixture.txt",
+      "sha256": "f92c66e790c3a64ff3b6581e510b92ec13f76de06cf6ccd550505a0653f05bad"
+    },
+    "mesh-ccd-cases.json": {
+      "path": "out/rmuc2027-outpost-rune-next/mesh-ccd-cases.json",
+      "sha256": "6442727737d0b3e3e6b02eed4bbeed86e16b6650e56a2221877b0057985d0951"
+    },
+    "mesh-ccd-placement.json": {
+      "path": "out/rmuc2027-outpost-rune-next/mesh-ccd-placement.json",
+      "sha256": "440a918a83edfba71b1df13f9fde4da0b0d504f52612cc0b567ab085143757d7"
+    },
+    "mesh-ccd.log": {
+      "path": "out/rmuc2027-outpost-rune-next/mesh-ccd.log",
+      "sha256": "c33d104715e1f7a5020d4157e737aa4a472947fec785caed654da7ddae88b0d3"
+    },
+    "final-verification.json": {
+      "path": "out/rmuc2027-outpost-rune-next/final-verification.json",
+      "sha256": "51fee650d553ccc2be3afef2658f9dddd12371becca2762b07ef65520ca76500"
+    }
+  },
+  "counts": {
+    "placed_triangles_saved": 26888,
+    "field_native_remaining_mesh_triangles": 334146,
+    "field_native_shapes": {
+      "cylinder": 80,
+      "box": 8,
+      "convex_hull": 33
+    },
+    "field_diagnostic_triangles": 343826,
+    "placed_visual_triangles": 344792,
+    "new_native_leaves": 0,
+    "installed": false
+  },
+  "policy": {
+    "outpost": "134 compact hardware boxes per unit in owners 14/23/25; broad shells and separate rotor/armor owners exact.",
+    "rune": "20 slender profile owners across ten rotating arms; concave outline retained; small bores filled; original motion ownership preserved.",
+    "visuals": "All protected and other visual bytes unchanged.",
+    "new_native_leaves": 0
+  },
+  "evidence": {
+    "source_faces_enclosed": {
+      "outpost": 7530,
+      "rune": 15736
+    },
+    "closed_solids_per_asset": {
+      "outpost": 134,
+      "rune": 20
+    },
+    "static_ccd_shots": 1392,
+    "static_ccd_passed": true,
+    "max_sampled_reverse_mm": {
+      "outpost": 4.289785178573532,
+      "rune": 2.1894870410702785
+    }
+  },
+  "constraints": [
+    "Only tooling/parameters/hashes committed; CAD meshes and fixtures stay ignored.",
+    "New shapes remain mesh-backed; Rune native hub remainder/sidecar not rebuilt by this trial.",
+    "Separated static CCD fixtures do not qualify live rotating-body collision, scoring or whole-field integration.",
+    "Not installed; runtime timing unmeasured."
+  ],
+  "installed": false
+}
